@@ -1,0 +1,19 @@
+[package]
+name = "msp430"
+version = "0.1.0"
+authors = ["YuhanLiin <linyuhan0315@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bare-metal = "0.1.0"
+msp430 = "0.1.0"
+vcell = "0.1.0"
+
+[dependencies.msp430-rt]
+optional = true
+version = "0.1.0"
+
+[features]
+rt = ["msp430-rt"]
