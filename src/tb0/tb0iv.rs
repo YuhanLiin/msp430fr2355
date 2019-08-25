@@ -1,15 +1,5 @@
 #[doc = "Reader of register TB0IV"]
 pub type R = crate::R<u16, super::TB0IV>;
-#[doc = "Writer for register TB0IV"]
-pub type W = crate::W<u16, super::TB0IV>;
-#[doc = "Register TB0IV `reset()`'s with value 0"]
-impl crate::ResetValue for super::TB0IV {
-    type Type = u16;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "Timer_B interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBIV_A {
@@ -105,74 +95,10 @@ impl TBIV_R {
         *self == TBIV_A::TBIFG
     }
 }
-#[doc = "Write proxy for field `TBIV`"]
-pub struct TBIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TBIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TBIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(TBIV_A::NONE)
-    }
-    #[doc = "Interrupt Source: Capture/compare 1; Interrupt Flag: TBxCCR1 CCIFG; Interrupt Priority: Highest"]
-    #[inline(always)]
-    pub fn tbccr1(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR1)
-    }
-    #[doc = "Interrupt Source: Capture/compare 2; Interrupt Flag: TBxCCR2 CCIFG"]
-    #[inline(always)]
-    pub fn tbccr2(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR2)
-    }
-    #[doc = "Interrupt Source: Capture/compare 3; Interrupt Flag: TBxCCR3 CCIFG"]
-    #[inline(always)]
-    pub fn tbccr3(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR3)
-    }
-    #[doc = "Interrupt Source: Capture/compare 4; Interrupt Flag: TBxCCR4 CCIFG"]
-    #[inline(always)]
-    pub fn tbccr4(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR4)
-    }
-    #[doc = "Interrupt Source: Capture/compare 5; Interrupt Flag: TBxCCR5 CCIFG"]
-    #[inline(always)]
-    pub fn tbccr5(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR5)
-    }
-    #[doc = "Interrupt Source: Capture/compare 6; Interrupt Flag: TBxCCR6 CCIFG"]
-    #[inline(always)]
-    pub fn tbccr6(self) -> &'a mut W {
-        self.variant(TBIV_A::TBCCR6)
-    }
-    #[doc = "Interrupt Source: Timer overflow; Interrupt Flag: TBxCTL TBIFG; Interrupt Priority: Lowest"]
-    #[inline(always)]
-    pub fn tbifg(self) -> &'a mut W {
-        self.variant(TBIV_A::TBIFG)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:15 - Timer_B interrupt vector value"]
     #[inline(always)]
     pub fn tbiv(&self) -> TBIV_R {
         TBIV_R::new((self.bits & 0xffff) as u16)
-    }
-}
-impl W {
-    #[doc = "Bits 0:15 - Timer_B interrupt vector value"]
-    #[inline(always)]
-    pub fn tbiv(&mut self) -> TBIV_W {
-        TBIV_W { w: self }
     }
 }

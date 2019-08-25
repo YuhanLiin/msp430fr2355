@@ -265,35 +265,6 @@ impl CCI_R {
         }
     }
 }
-#[doc = "Write proxy for field `CCI`"]
-pub struct CCI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
-}
 #[doc = "Capture/compare interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCIE_A {
@@ -753,7 +724,7 @@ impl<'a> SCS_W<'a> {
     }
     #[doc = "Asynchronous capture"]
     #[inline(always)]
-    pub fn r#async(self) -> &'a mut W {
+    pub fn async(self) -> &'a mut W {
         self.variant(SCS_A::ASYNC)
     }
     #[doc = "Synchronous capture"]
@@ -1044,11 +1015,6 @@ impl W {
     #[inline(always)]
     pub fn out(&mut self) -> OUT_W {
         OUT_W { w: self }
-    }
-    #[doc = "Bit 3 - Capture/compare input"]
-    #[inline(always)]
-    pub fn cci(&mut self) -> CCI_W {
-        CCI_W { w: self }
     }
     #[doc = "Bit 4 - Capture/compare interrupt enable"]
     #[inline(always)]

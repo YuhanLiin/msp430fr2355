@@ -1,15 +1,5 @@
 #[doc = "Reader of register P4IV"]
 pub type R = crate::R<u16, super::P4IV>;
-#[doc = "Writer for register P4IV"]
-pub type W = crate::W<u16, super::P4IV>;
-#[doc = "Register P4IV `reset()`'s with value 0"]
-impl crate::ResetValue for super::P4IV {
-    type Type = u16;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "Port 4 interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P4IV_A {
@@ -114,79 +104,10 @@ impl P4IV_R {
         *self == P4IV_A::P4IFG7
     }
 }
-#[doc = "Write proxy for field `P4IV`"]
-pub struct P4IV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P4IV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: P4IV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(P4IV_A::NONE)
-    }
-    #[doc = "Interrupt Source: Port 4.0 interrupt; Interrupt Flag: P4IFG0; Interrupt Priority: Highest"]
-    #[inline(always)]
-    pub fn p4ifg0(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG0)
-    }
-    #[doc = "Interrupt Source: Port 4.1 interrupt; Interrupt Flag: P4IFG1"]
-    #[inline(always)]
-    pub fn p4ifg1(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG1)
-    }
-    #[doc = "Interrupt Source: Port 4.2 interrupt; Interrupt Flag: P4IFG2"]
-    #[inline(always)]
-    pub fn p4ifg2(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG2)
-    }
-    #[doc = "Interrupt Source: Port 4.3 interrupt; Interrupt Flag: P4IFG3"]
-    #[inline(always)]
-    pub fn p4ifg3(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG3)
-    }
-    #[doc = "Interrupt Source: Port 4.4 interrupt; Interrupt Flag: P4IFG4"]
-    #[inline(always)]
-    pub fn p4ifg4(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG4)
-    }
-    #[doc = "Interrupt Source: Port 4.5 interrupt; Interrupt Flag: P4IFG5"]
-    #[inline(always)]
-    pub fn p4ifg5(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG5)
-    }
-    #[doc = "Interrupt Source: Port 4.6 interrupt; Interrupt Flag: P4IFG6"]
-    #[inline(always)]
-    pub fn p4ifg6(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG6)
-    }
-    #[doc = "Interrupt Source: Port 4.7 interrupt; Interrupt Flag: P4IFG7; Interrupt Priority: Lowest"]
-    #[inline(always)]
-    pub fn p4ifg7(self) -> &'a mut W {
-        self.variant(P4IV_A::P4IFG7)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u16) & 0x1f);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:4 - Port 4 interrupt vector value"]
     #[inline(always)]
     pub fn p4iv(&self) -> P4IV_R {
         P4IV_R::new((self.bits & 0x1f) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 0:4 - Port 4 interrupt vector value"]
-    #[inline(always)]
-    pub fn p4iv(&mut self) -> P4IV_W {
-        P4IV_W { w: self }
     }
 }

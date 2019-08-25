@@ -1,15 +1,5 @@
 #[doc = "Reader of register CPIV"]
 pub type R = crate::R<u16, super::CPIV>;
-#[doc = "Writer for register CPIV"]
-pub type W = crate::W<u16, super::CPIV>;
-#[doc = "Register CPIV `reset()`'s with value 0"]
-impl crate::ResetValue for super::CPIV {
-    type Type = u16;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIV_A {
@@ -60,49 +50,10 @@ impl CPIV_R {
         *self == CPIV_A::CPIIFG
     }
 }
-#[doc = "Write proxy for field `CPIV`"]
-pub struct CPIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(CPIV_A::NONE)
-    }
-    #[doc = "CPIFG"]
-    #[inline(always)]
-    pub fn cpifg(self) -> &'a mut W {
-        self.variant(CPIV_A::CPIFG)
-    }
-    #[doc = "CPIIFG"]
-    #[inline(always)]
-    pub fn cpiifg(self) -> &'a mut W {
-        self.variant(CPIV_A::CPIIFG)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:15 - Comparator interrupt vector word register"]
     #[inline(always)]
     pub fn cpiv(&self) -> CPIV_R {
         CPIV_R::new((self.bits & 0xffff) as u16)
-    }
-}
-impl W {
-    #[doc = "Bits 0:15 - Comparator interrupt vector word register"]
-    #[inline(always)]
-    pub fn cpiv(&mut self) -> CPIV_W {
-        CPIV_W { w: self }
     }
 }

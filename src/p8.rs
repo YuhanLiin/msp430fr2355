@@ -144,14 +144,12 @@ impl crate::Readable for P8IFG {}
 impl crate::Writable for P8IFG {}
 #[doc = "Port 8 Interrupt Flag"]
 pub mod p8ifg;
-#[doc = "Port 8 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p8iv](p8iv) module"]
+#[doc = "Port 8 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p8iv](p8iv) module"]
 pub type P8IV = crate::Reg<u16, _P8IV>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _P8IV;
 #[doc = "`read()` method returns [p8iv::R](p8iv::R) reader structure"]
 impl crate::Readable for P8IV {}
-#[doc = "`write(|w| ..)` method takes [p8iv::W](p8iv::W) writer structure"]
-impl crate::Writable for P8IV {}
 #[doc = "Port 8 Interrupt Vector Register"]
 pub mod p8iv;

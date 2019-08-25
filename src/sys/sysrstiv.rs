@@ -1,15 +1,5 @@
 #[doc = "Reader of register SYSRSTIV"]
 pub type R = crate::R<u16, super::SYSRSTIV>;
-#[doc = "Writer for register SYSRSTIV"]
-pub type W = crate::W<u16, super::SYSRSTIV>;
-#[doc = "Register SYSRSTIV `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYSRSTIV {
-    type Type = u16;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "Reset interrupt vector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSRSTIV_A {
@@ -204,129 +194,10 @@ impl SYSRSTIV_R {
         *self == SYSRSTIV_A::FLLUL
     }
 }
-#[doc = "Write proxy for field `SYSRSTIV`"]
-pub struct SYSRSTIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSRSTIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSRSTIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::NONE)
-    }
-    #[doc = "Brownout"]
-    #[inline(always)]
-    pub fn bor(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::BOR)
-    }
-    #[doc = "RSTIFG RST/NMI"]
-    #[inline(always)]
-    pub fn rstnmi(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::RSTNMI)
-    }
-    #[doc = "PMMSWBOR software BOR"]
-    #[inline(always)]
-    pub fn pmmswbor(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::PMMSWBOR)
-    }
-    #[doc = "LPMx.5 wakeup"]
-    #[inline(always)]
-    pub fn lpm5wu(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::LPM5WU)
-    }
-    #[doc = "Security violation"]
-    #[inline(always)]
-    pub fn secyv(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SECYV)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn sysrstiv_12(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SYSRSTIV_12)
-    }
-    #[doc = "SVSHIFG SVSH event"]
-    #[inline(always)]
-    pub fn svshifg(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SVSHIFG)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn sysrstiv_16(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SYSRSTIV_16)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn sysrstiv_18(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SYSRSTIV_18)
-    }
-    #[doc = "PMMSWPOR software POR"]
-    #[inline(always)]
-    pub fn pmmswpor(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::PMMSWPOR)
-    }
-    #[doc = "WDTIFG watchdog timeout"]
-    #[inline(always)]
-    pub fn wdtifg(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::WDTIFG)
-    }
-    #[doc = "WDTPW watchdog password violation"]
-    #[inline(always)]
-    pub fn wdtpw(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::WDTPW)
-    }
-    #[doc = "FRCTLPW password violation"]
-    #[inline(always)]
-    pub fn frctlpw(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::FRCTLPW)
-    }
-    #[doc = "Uncorrectable FRAM bit error detection"]
-    #[inline(always)]
-    pub fn ubdifg(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::UBDIFG)
-    }
-    #[doc = "Peripheral area fetch"]
-    #[inline(always)]
-    pub fn perf(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::PERF)
-    }
-    #[doc = "PMM password violation"]
-    #[inline(always)]
-    pub fn pmmpw(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::PMMPW)
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn sysrstiv_34(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::SYSRSTIV_34)
-    }
-    #[doc = "FLL unlock (PUC)"]
-    #[inline(always)]
-    pub fn fllul(self) -> &'a mut W {
-        self.variant(SYSRSTIV_A::FLLUL)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:15 - Reset interrupt vector"]
     #[inline(always)]
     pub fn sysrstiv(&self) -> SYSRSTIV_R {
         SYSRSTIV_R::new((self.bits & 0xffff) as u16)
-    }
-}
-impl W {
-    #[doc = "Bits 0:15 - Reset interrupt vector"]
-    #[inline(always)]
-    pub fn sysrstiv(&mut self) -> SYSRSTIV_W {
-        SYSRSTIV_W { w: self }
     }
 }

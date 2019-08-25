@@ -545,45 +545,6 @@ impl CAPTIO_R {
         *self == CAPTIO_A::CAPTIO_1
     }
 }
-#[doc = "Write proxy for field `CAPTIO`"]
-pub struct CAPTIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPTIO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPTIO_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Curent state 0 or Capacitive Touch IO is disabled"]
-    #[inline(always)]
-    pub fn captio_0(self) -> &'a mut W {
-        self.variant(CAPTIO_A::CAPTIO_0)
-    }
-    #[doc = "Current state 1"]
-    #[inline(always)]
-    pub fn captio_1(self) -> &'a mut W {
-        self.variant(CAPTIO_A::CAPTIO_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 1:3 - Capacitive Touch IO pin select"]
     #[inline(always)]
@@ -621,10 +582,5 @@ impl W {
     #[inline(always)]
     pub fn captioen(&mut self) -> CAPTIOEN_W {
         CAPTIOEN_W { w: self }
-    }
-    #[doc = "Bit 9 - Capacitive Touch IO state"]
-    #[inline(always)]
-    pub fn captio(&mut self) -> CAPTIO_W {
-        CAPTIO_W { w: self }
     }
 }

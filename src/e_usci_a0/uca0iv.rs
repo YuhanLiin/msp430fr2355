@@ -1,24 +1,18 @@
 #[doc = "Reader of register UCA0IV"]
 pub type R = crate::R<u16, super::UCA0IV>;
-#[doc = "Writer for register UCA0IV"]
-pub type W = crate::W<u16, super::UCA0IV>;
-#[doc = "Register UCA0IV `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA0IV {
-    type Type = u16;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "eUSCI_A interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCIV_A {
     #[doc = "0: No interrupt pending"]
     NONE,
-    #[doc = "2: Interrupt Source: Data received; Interrupt Flag: UCRXIFG; Interrupt Priority: Highest"]
+    #[doc = "2: Interrupt Source: Receive buffer full; Interrupt Flag: UCRXIFG; Interrupt Priority: Highest"]
     UCRXIFG,
-    #[doc = "4: Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG; Interrupt Priority: Lowest"]
+    #[doc = "4: Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG"]
     UCTXIFG,
+    #[doc = "6: Interrupt Source: Start bit received; Interrupt Flag: UCSTTIFG"]
+    UCSTTIFG,
+    #[doc = "8: Interrupt Source: Transmit complete; Interrupt Flag: UCTXCPTIFG; Interrupt Priority: Lowest"]
+    UCTXCPTIFG,
 }
 impl From<UCIV_A> for u16 {
     #[inline(always)]
@@ -27,6 +21,8 @@ impl From<UCIV_A> for u16 {
             UCIV_A::NONE => 0,
             UCIV_A::UCRXIFG => 2,
             UCIV_A::UCTXIFG => 4,
+            UCIV_A::UCSTTIFG => 6,
+            UCIV_A::UCTXCPTIFG => 8,
         }
     }
 }
@@ -41,6 +37,8 @@ impl UCIV_R {
             0 => Val(UCIV_A::NONE),
             2 => Val(UCIV_A::UCRXIFG),
             4 => Val(UCIV_A::UCTXIFG),
+            6 => Val(UCIV_A::UCSTTIFG),
+            8 => Val(UCIV_A::UCTXCPTIFG),
             i => Res(i),
         }
     }
@@ -59,37 +57,15 @@ impl UCIV_R {
     pub fn is_uctxifg(&self) -> bool {
         *self == UCIV_A::UCTXIFG
     }
-}
-#[doc = "Write proxy for field `UCIV`"]
-pub struct UCIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
+    #[doc = "Checks if the value of the field is `UCSTTIFG`"]
     #[inline(always)]
-    pub fn variant(self, variant: UCIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
+    pub fn is_ucsttifg(&self) -> bool {
+        *self == UCIV_A::UCSTTIFG
     }
-    #[doc = "No interrupt pending"]
+    #[doc = "Checks if the value of the field is `UCTXCPTIFG`"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
-        self.variant(UCIV_A::NONE)
-    }
-    #[doc = "Interrupt Source: Data received; Interrupt Flag: UCRXIFG; Interrupt Priority: Highest"]
-    #[inline(always)]
-    pub fn ucrxifg(self) -> &'a mut W {
-        self.variant(UCIV_A::UCRXIFG)
-    }
-    #[doc = "Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG; Interrupt Priority: Lowest"]
-    #[inline(always)]
-    pub fn uctxifg(self) -> &'a mut W {
-        self.variant(UCIV_A::UCTXIFG)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
-        self.w
+    pub fn is_uctxcptifg(&self) -> bool {
+        *self == UCIV_A::UCTXCPTIFG
     }
 }
 impl R {
@@ -97,12 +73,5 @@ impl R {
     #[inline(always)]
     pub fn uciv(&self) -> UCIV_R {
         UCIV_R::new((self.bits & 0xffff) as u16)
-    }
-}
-impl W {
-    #[doc = "Bits 0:15 - eUSCI_A interrupt vector value"]
-    #[inline(always)]
-    pub fn uciv(&mut self) -> UCIV_W {
-        UCIV_W { w: self }
     }
 }

@@ -49,45 +49,6 @@ impl REFOREADY_R {
         *self == REFOREADY_A::REFOREADY_1
     }
 }
-#[doc = "Write proxy for field `REFOREADY`"]
-pub struct REFOREADY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REFOREADY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REFOREADY_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "REFO unstable"]
-    #[inline(always)]
-    pub fn refoready_0(self) -> &'a mut W {
-        self.variant(REFOREADY_A::REFOREADY_0)
-    }
-    #[doc = "REFO ready to go"]
-    #[inline(always)]
-    pub fn refoready_1(self) -> &'a mut W {
-        self.variant(REFOREADY_A::REFOREADY_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
-}
 #[doc = "DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCOFFG_A {
@@ -770,11 +731,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 2 - REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)"]
-    #[inline(always)]
-    pub fn refoready(&mut self) -> REFOREADY_W {
-        REFOREADY_W { w: self }
-    }
     #[doc = "Bit 0 - DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition."]
     #[inline(always)]
     pub fn dcoffg(&mut self) -> DCOFFG_W {

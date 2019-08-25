@@ -2,7 +2,6 @@
 name = "msp430fr2355"
 version = "0.1.0"
 authors = ["YuhanLiin <linyuhan0315@hotmail.com>"]
-edition = "2018"
 description = "Peripheral access crate for MSP430FR2355 microcontroller"
 keywords = ["no-std", "msp430", "ti", "launchpad"]
 repository = "https://github.com/YuhanLiin/msp430fr2355"
