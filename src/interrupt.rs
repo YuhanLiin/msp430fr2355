@@ -37,7 +37,7 @@ extern "msp430-interrupt" {
 #[doc(hidden)]
 pub union Vector {
     _handler: unsafe extern "msp430-interrupt" fn(),
-    _reserved: u32,
+    _reserved: u16,
 }
 #[cfg(feature = "rt")]
 #[doc(hidden)]
