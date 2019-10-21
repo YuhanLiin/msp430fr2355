@@ -229,6 +229,13 @@ impl<U, REG> W<U, REG> {
         self
     }
 }
+impl<U: Copy, REG> W<U, REG> {
+    #[doc = "Return raw bits to be written to register"]
+    #[inline(always)]
+    pub fn get_bits(&self) -> U {
+        self.bits
+    }
+}
 #[doc = "Used if enumerated values cover not the whole range"]
 #[derive(Clone, Copy, PartialEq)]
 pub enum Variant<U, T> {
