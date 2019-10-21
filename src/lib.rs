@@ -1,5 +1,7 @@
 #![feature(abi_msp430_interrupt)]
 #![cfg_attr(feature = "rt", feature(global_asm))]
+#![cfg_attr(feature = "rt", feature(use_extern_macros))]
+#![cfg_attr(feature = "rt", feature(used))]
 #![doc = "Peripheral access API for MSP430FR2355 microcontrollers (generated using svd2rust v0.16.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.16.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
 #![deny(warnings)]
@@ -141,86 +143,6 @@ impl Deref for P6 {
 }
 #[doc = "P6"]
 pub mod p6;
-#[doc = "P7"]
-pub struct P7 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for P7 {}
-impl P7 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const p7::RegisterBlock {
-        0x0260 as *const _
-    }
-}
-impl Deref for P7 {
-    type Target = p7::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*P7::ptr() }
-    }
-}
-#[doc = "P7"]
-pub mod p7;
-#[doc = "P8"]
-pub struct P8 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for P8 {}
-impl P8 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const p8::RegisterBlock {
-        0x0260 as *const _
-    }
-}
-impl Deref for P8 {
-    type Target = p8::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*P8::ptr() }
-    }
-}
-#[doc = "P8"]
-pub mod p8;
-#[doc = "P9"]
-pub struct P9 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for P9 {}
-impl P9 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const p9::RegisterBlock {
-        0x0280 as *const _
-    }
-}
-impl Deref for P9 {
-    type Target = p9::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*P9::ptr() }
-    }
-}
-#[doc = "P9"]
-pub mod p9;
-#[doc = "P10"]
-pub struct P10 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for P10 {}
-impl P10 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const p10::RegisterBlock {
-        0x0280 as *const _
-    }
-}
-impl Deref for P10 {
-    type Target = p10::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*P10::ptr() }
-    }
-}
-#[doc = "P10"]
-pub mod p10;
 #[doc = "SFR"]
 pub struct SFR {
     _marker: PhantomData<*const ()>,
@@ -401,26 +323,6 @@ impl Deref for RTC {
 }
 #[doc = "RTC"]
 pub mod rtc;
-#[doc = "PJ"]
-pub struct PJ {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for PJ {}
-impl PJ {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const pj::RegisterBlock {
-        0x0320 as *const _
-    }
-}
-impl Deref for PJ {
-    type Target = pj::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*PJ::ptr() }
-    }
-}
-#[doc = "PJ"]
-pub mod pj;
 #[doc = "TB0"]
 pub struct TB0 {
     _marker: PhantomData<*const ()>,
@@ -798,14 +700,6 @@ pub struct Peripherals {
     pub P5: P5,
     #[doc = "P6"]
     pub P6: P6,
-    #[doc = "P7"]
-    pub P7: P7,
-    #[doc = "P8"]
-    pub P8: P8,
-    #[doc = "P9"]
-    pub P9: P9,
-    #[doc = "P10"]
-    pub P10: P10,
     #[doc = "SFR"]
     pub SFR: SFR,
     #[doc = "PMM"]
@@ -824,8 +718,6 @@ pub struct Peripherals {
     pub CAPTIO: CAPTIO,
     #[doc = "RTC"]
     pub RTC: RTC,
-    #[doc = "PJ"]
-    pub PJ: PJ,
     #[doc = "TB0"]
     pub TB0: TB0,
     #[doc = "TB1"]
@@ -897,18 +789,6 @@ impl Peripherals {
             P6: P6 {
                 _marker: PhantomData,
             },
-            P7: P7 {
-                _marker: PhantomData,
-            },
-            P8: P8 {
-                _marker: PhantomData,
-            },
-            P9: P9 {
-                _marker: PhantomData,
-            },
-            P10: P10 {
-                _marker: PhantomData,
-            },
             SFR: SFR {
                 _marker: PhantomData,
             },
@@ -934,9 +814,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             RTC: RTC {
-                _marker: PhantomData,
-            },
-            PJ: PJ {
                 _marker: PhantomData,
             },
             TB0: TB0 {

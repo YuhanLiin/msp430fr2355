@@ -18,21 +18,9 @@ pub struct RegisterBlock {
     _reserved5: [u8; 1usize],
     #[doc = "0x0c - Port 5 Select 1"]
     pub p5sel1: P5SEL1,
-    _reserved6: [u8; 1usize],
-    #[doc = "0x0e - Port 5 Interrupt Vector Register"]
-    pub p5iv: P5IV,
-    _reserved7: [u8; 6usize],
+    _reserved6: [u8; 9usize],
     #[doc = "0x16 - Port 5 Complement Select"]
     pub p5selc: P5SELC,
-    _reserved8: [u8; 1usize],
-    #[doc = "0x18 - Port 5 Interrupt Edge Select"]
-    pub p5ies: P5IES,
-    _reserved9: [u8; 1usize],
-    #[doc = "0x1a - Port 5 Interrupt Enable"]
-    pub p5ie: P5IE,
-    _reserved10: [u8; 1usize],
-    #[doc = "0x1c - Port 5 Interrupt Flag"]
-    pub p5ifg: P5IFG,
 }
 #[doc = "Port 5 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p5in](p5in) module"]
 pub type P5IN = crate::Reg<u8, _P5IN>;
@@ -111,45 +99,3 @@ impl crate::Readable for P5SELC {}
 impl crate::Writable for P5SELC {}
 #[doc = "Port 5 Complement Select"]
 pub mod p5selc;
-#[doc = "Port 5 Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p5ies](p5ies) module"]
-pub type P5IES = crate::Reg<u8, _P5IES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P5IES;
-#[doc = "`read()` method returns [p5ies::R](p5ies::R) reader structure"]
-impl crate::Readable for P5IES {}
-#[doc = "`write(|w| ..)` method takes [p5ies::W](p5ies::W) writer structure"]
-impl crate::Writable for P5IES {}
-#[doc = "Port 5 Interrupt Edge Select"]
-pub mod p5ies;
-#[doc = "Port 5 Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p5ie](p5ie) module"]
-pub type P5IE = crate::Reg<u8, _P5IE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P5IE;
-#[doc = "`read()` method returns [p5ie::R](p5ie::R) reader structure"]
-impl crate::Readable for P5IE {}
-#[doc = "`write(|w| ..)` method takes [p5ie::W](p5ie::W) writer structure"]
-impl crate::Writable for P5IE {}
-#[doc = "Port 5 Interrupt Enable"]
-pub mod p5ie;
-#[doc = "Port 5 Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p5ifg](p5ifg) module"]
-pub type P5IFG = crate::Reg<u8, _P5IFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P5IFG;
-#[doc = "`read()` method returns [p5ifg::R](p5ifg::R) reader structure"]
-impl crate::Readable for P5IFG {}
-#[doc = "`write(|w| ..)` method takes [p5ifg::W](p5ifg::W) writer structure"]
-impl crate::Writable for P5IFG {}
-#[doc = "Port 5 Interrupt Flag"]
-pub mod p5ifg;
-#[doc = "Port 5 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p5iv](p5iv) module"]
-pub type P5IV = crate::Reg<u16, _P5IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P5IV;
-#[doc = "`read()` method returns [p5iv::R](p5iv::R) reader structure"]
-impl crate::Readable for P5IV {}
-#[doc = "Port 5 Interrupt Vector Register"]
-pub mod p5iv;

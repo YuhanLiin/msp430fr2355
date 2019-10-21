@@ -22,17 +22,6 @@ pub struct RegisterBlock {
     _reserved6: [u8; 9usize],
     #[doc = "0x17 - Port 6 Complement Select"]
     pub p6selc: P6SELC,
-    _reserved7: [u8; 1usize],
-    #[doc = "0x19 - Port 6 Interrupt Edge Select"]
-    pub p6ies: P6IES,
-    _reserved8: [u8; 1usize],
-    #[doc = "0x1b - Port 6 Interrupt Enable"]
-    pub p6ie: P6IE,
-    _reserved9: [u8; 1usize],
-    #[doc = "0x1d - Port 6 Interrupt Flag"]
-    pub p6ifg: P6IFG,
-    #[doc = "0x1e - Port 6 Interrupt Vector Register"]
-    pub p6iv: P6IV,
 }
 #[doc = "Port 6 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p6in](p6in) module"]
 pub type P6IN = crate::Reg<u8, _P6IN>;
@@ -111,45 +100,3 @@ impl crate::Readable for P6SELC {}
 impl crate::Writable for P6SELC {}
 #[doc = "Port 6 Complement Select"]
 pub mod p6selc;
-#[doc = "Port 6 Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p6ies](p6ies) module"]
-pub type P6IES = crate::Reg<u8, _P6IES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P6IES;
-#[doc = "`read()` method returns [p6ies::R](p6ies::R) reader structure"]
-impl crate::Readable for P6IES {}
-#[doc = "`write(|w| ..)` method takes [p6ies::W](p6ies::W) writer structure"]
-impl crate::Writable for P6IES {}
-#[doc = "Port 6 Interrupt Edge Select"]
-pub mod p6ies;
-#[doc = "Port 6 Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p6ie](p6ie) module"]
-pub type P6IE = crate::Reg<u8, _P6IE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P6IE;
-#[doc = "`read()` method returns [p6ie::R](p6ie::R) reader structure"]
-impl crate::Readable for P6IE {}
-#[doc = "`write(|w| ..)` method takes [p6ie::W](p6ie::W) writer structure"]
-impl crate::Writable for P6IE {}
-#[doc = "Port 6 Interrupt Enable"]
-pub mod p6ie;
-#[doc = "Port 6 Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p6ifg](p6ifg) module"]
-pub type P6IFG = crate::Reg<u8, _P6IFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P6IFG;
-#[doc = "`read()` method returns [p6ifg::R](p6ifg::R) reader structure"]
-impl crate::Readable for P6IFG {}
-#[doc = "`write(|w| ..)` method takes [p6ifg::W](p6ifg::W) writer structure"]
-impl crate::Writable for P6IFG {}
-#[doc = "Port 6 Interrupt Flag"]
-pub mod p6ifg;
-#[doc = "Port 6 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p6iv](p6iv) module"]
-pub type P6IV = crate::Reg<u16, _P6IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P6IV;
-#[doc = "`read()` method returns [p6iv::R](p6iv::R) reader structure"]
-impl crate::Readable for P6IV {}
-#[doc = "Port 6 Interrupt Vector Register"]
-pub mod p6iv;
