@@ -2,6 +2,7 @@ extern crate msp430_atomic;
 
 use self::msp430_atomic::AtomicOperations;
 use core::marker;
+use core::ops::Not;
 
 #[doc = "This trait shows that register has `read` method"]
 #[doc = ""]
@@ -168,7 +169,7 @@ where
 impl<U, REG> Reg<U, REG>
 where
     Self: Readable + Writable,
-    U: AtomicOperations + Default + Copy,
+    U: AtomicOperations + Default + Copy + Not<Output = U>,
 {
     /// Set high every bit in the register that was set in the write proxy. Leave other bits
     /// untouched. The write is done in a single atomic instruction.
@@ -193,7 +194,7 @@ where
         F: FnOnce(&mut W<U, Self>) -> &mut W<U, Self>,
     {
         let bits = f(&mut W {
-            bits: Default::default(),
+            bits: !U::default(),
             _reg: marker::PhantomData,
         })
         .bits;
