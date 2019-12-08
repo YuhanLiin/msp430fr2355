@@ -19,8 +19,5 @@ vcell = "0.1.2"
 optional = true
 version = "0.1.4"
 
-[dependencies.msp430-atomic]
-git = "https://github.com/YuhanLiin/msp430-atomic"
-
 [features]
 rt = ["msp430-rt"]

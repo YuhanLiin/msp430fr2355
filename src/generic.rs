@@ -1,6 +1,3 @@
-extern crate msp430_atomic;
-
-use self::msp430_atomic::AtomicOperations;
 use core::marker;
 use core::ops::Not;
 
@@ -165,6 +162,51 @@ where
         );
     }
 }
+
+/// Atomic bitwise operations
+pub trait AtomicOperations {
+    /// Clear all bits in destination pointee that are zeroed in value.
+    unsafe fn atomic_and(dst: *mut Self, val: Self);
+    /// Clear all bits in destination pointee that are set in value
+    unsafe fn atomic_clear(dst: *mut Self, val: Self);
+    /// Set all bits in destination pointee that are set in value.
+    unsafe fn atomic_or(dst: *mut Self, val: Self);
+    /// Toggle all bits in destination pointee that are set in value.
+    unsafe fn atomic_xor(dst: *mut Self, val: Self);
+}
+
+macro_rules! atomic_int {
+    ($int_type:ident, $asm_suffix:expr) => {
+        impl AtomicOperations for $int_type {
+            #[inline(always)]
+            unsafe fn atomic_and(dst: *mut Self, val: Self) {
+                asm!(concat!("and", $asm_suffix, " $1, $0")
+                    :: "*m"(dst), "ir"(val) : "memory" : "volatile");
+            }
+
+            #[inline(always)]
+            unsafe fn atomic_clear(dst: *mut Self, val: Self) {
+                asm!(concat!("bic", $asm_suffix, " $1, $0")
+                    :: "*m"(dst), "ir"(val) : "memory" : "volatile");
+            }
+
+            #[inline(always)]
+            unsafe fn atomic_or(dst: *mut Self, val: Self) {
+                asm!(concat!("bis", $asm_suffix, " $1, $0")
+                    :: "*m"(dst), "ir"(val) : "memory" : "volatile");
+            }
+
+            #[inline(always)]
+            unsafe fn atomic_xor(dst: *mut Self, val: Self) {
+                asm!(concat!("xor", $asm_suffix, " $1, $0")
+                    :: "*m"(dst), "ir"(val) : "memory" : "volatile");
+            }
+        }
+    }
+}
+
+atomic_int!(u8, ".b");
+atomic_int!(u16, ".w");
 
 impl<U, REG> Reg<U, REG>
 where
