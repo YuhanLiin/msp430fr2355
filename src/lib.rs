@@ -352,6 +352,174 @@ impl Deref for P6 {
 }
 #[doc = "P6"]
 pub mod p6;
+#[doc = "SFR"]
+pub struct SFR {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SFR {}
+impl SFR {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sfr::RegisterBlock {
+        0x0100 as *const _
+    }
+}
+impl Deref for SFR {
+    type Target = sfr::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SFR::ptr() }
+    }
+}
+#[doc = "SFR"]
+pub mod sfr;
+#[doc = "PMM"]
+pub struct PMM {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PMM {}
+impl PMM {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pmm::RegisterBlock {
+        0x0120 as *const _
+    }
+}
+impl Deref for PMM {
+    type Target = pmm::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*PMM::ptr() }
+    }
+}
+#[doc = "PMM"]
+pub mod pmm;
+#[doc = "SYS"]
+pub struct SYS {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYS {}
+impl SYS {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sys::RegisterBlock {
+        0x0140 as *const _
+    }
+}
+impl Deref for SYS {
+    type Target = sys::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SYS::ptr() }
+    }
+}
+#[doc = "SYS"]
+pub mod sys;
+#[doc = "CS"]
+pub struct CS {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CS {}
+impl CS {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const cs::RegisterBlock {
+        0x0180 as *const _
+    }
+}
+impl Deref for CS {
+    type Target = cs::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*CS::ptr() }
+    }
+}
+#[doc = "CS"]
+pub mod cs;
+#[doc = "FRCTL"]
+pub struct FRCTL {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for FRCTL {}
+impl FRCTL {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const frctl::RegisterBlock {
+        0x01a0 as *const _
+    }
+}
+impl Deref for FRCTL {
+    type Target = frctl::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*FRCTL::ptr() }
+    }
+}
+#[doc = "FRCTL"]
+pub mod frctl;
+#[doc = "CRC"]
+pub struct CRC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CRC {}
+impl CRC {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const crc::RegisterBlock {
+        0x01c0 as *const _
+    }
+}
+impl Deref for CRC {
+    type Target = crc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*CRC::ptr() }
+    }
+}
+#[doc = "CRC"]
+pub mod crc;
+#[doc = "WDT_A"]
+pub struct WDT_A {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for WDT_A {}
+impl WDT_A {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const wdt_a::RegisterBlock {
+        0x01cc as *const _
+    }
+}
+impl Deref for WDT_A {
+    type Target = wdt_a::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*WDT_A::ptr() }
+    }
+}
+#[doc = "WDT_A"]
+pub mod wdt_a;
+#[doc = "RTC"]
+pub struct RTC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RTC {}
+impl RTC {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const rtc::RegisterBlock {
+        0x0300 as *const _
+    }
+}
+impl Deref for RTC {
+    type Target = rtc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*RTC::ptr() }
+    }
+}
+#[doc = "RTC"]
+pub mod rtc;
 #[doc = "TB0"]
 pub struct TB0 {
     _marker: PhantomData<*const ()>,
@@ -747,6 +915,22 @@ pub struct Peripherals {
     pub P5: P5,
     #[doc = "P6"]
     pub P6: P6,
+    #[doc = "SFR"]
+    pub SFR: SFR,
+    #[doc = "PMM"]
+    pub PMM: PMM,
+    #[doc = "SYS"]
+    pub SYS: SYS,
+    #[doc = "CS"]
+    pub CS: CS,
+    #[doc = "FRCTL"]
+    pub FRCTL: FRCTL,
+    #[doc = "CRC"]
+    pub CRC: CRC,
+    #[doc = "WDT_A"]
+    pub WDT_A: WDT_A,
+    #[doc = "RTC"]
+    pub RTC: RTC,
     #[doc = "TB0"]
     pub TB0: TB0,
     #[doc = "TB1"]
@@ -817,6 +1001,30 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             P6: P6 {
+                _marker: PhantomData,
+            },
+            SFR: SFR {
+                _marker: PhantomData,
+            },
+            PMM: PMM {
+                _marker: PhantomData,
+            },
+            SYS: SYS {
+                _marker: PhantomData,
+            },
+            CS: CS {
+                _marker: PhantomData,
+            },
+            FRCTL: FRCTL {
+                _marker: PhantomData,
+            },
+            CRC: CRC {
+                _marker: PhantomData,
+            },
+            WDT_A: WDT_A {
+                _marker: PhantomData,
+            },
+            RTC: RTC {
                 _marker: PhantomData,
             },
             TB0: TB0 {

@@ -678,6 +678,3636 @@
       </registers>
     </peripheral>
     <peripheral>
+      <name>SFR</name>
+      <description>SFR</description>
+      <baseAddress>256</baseAddress>
+      <registers>
+        <register>
+          <name>SFRIE1</name>
+          <description>Interrupt Enable</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>WDTIE</name>
+              <description>Watchdog timer interrupt enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OFIE</name>
+              <description>Oscillator fault interrupt enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VMAIE</name>
+              <description>Vacant memory access interrupt enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NMIIE</name>
+              <description>NMI pin interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBINIE</name>
+              <description>JTAG mailbox input interrupt enable</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBOUTIE</name>
+              <description>JTAG mailbox output interrupt enable</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupts disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupts enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SFRIFG1</name>
+          <description>Interrupt Flag</description>
+          <addressOffset>2</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>OFIFG</name>
+              <description>Oscillator fault interrupt flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFIFG_0</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OFIFG_1</name>
+                  <description>Interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VMAIFG</name>
+              <description>Vacant memory access interrupt flag</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>VMAIFG_0</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VMAIFG_1</name>
+                  <description>Interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NMIIFG</name>
+              <description>NMI pin interrupt flag</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NMIIFG_0</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NMIIFG_1</name>
+                  <description>Interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTIFG</name>
+              <description>Watchdog timer interrupt flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WDTIFG_0</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WDTIFG_1</name>
+                  <description>Interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBINIFG</name>
+              <description>JTAG mailbox input interrupt flag</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBINIFG_0</name>
+                  <description>No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBI0 is read by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBI0 and JMBI1 have been read by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBINIFG_1</name>
+                  <description>Interrupt pending. A message is waiting in the JMBIN registers. In 16-bit mode (JMBMODE = 0) when JMBI0 has been written by the JTAG module. In 32-bit mode (JMBMODE = 1) when JMBI0 and JMBI1 have been written by the JTAG module.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBOUTIFG</name>
+              <description>JTAG mailbox output interrupt flag</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBOUTIFG_0</name>
+                  <description>No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBO0 has been written with a new message to the JTAG module by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBO0 and JMBO1 have been written with new messages to the JTAG module by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBOUTIFG_1</name>
+                  <description>Interrupt pending. JMBO registers are ready for new messages. In 16-bit mode (JMBMODE = 0), JMBO0 has been received by the JTAG module and is ready for a new message from the CPU. In 32-bit mode (JMBMODE = 1), JMBO0 and JMBO1 have been received by the JTAG module and are ready for new messages from the CPU.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SFRRPCR</name>
+          <description>Reset Pin Control</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSNMI</name>
+              <description>NMI select</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset function</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NMI</name>
+                  <description>NMI function</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSNMIIES</name>
+              <description>NMI edge select</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RISING</name>
+                  <description>NMI on rising edge</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FALLING</name>
+                  <description>NMI on falling edge</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSRSTUP</name>
+              <description>Reset resistor pin pullup or pulldown</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PULLDOWN</name>
+                  <description>Pulldown is selected</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PULLUP</name>
+                  <description>Pullup is selected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSRSTRE</name>
+              <description>Reset pin resistor enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Pullup or pulldown resistor at the RST/NMI pin is disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Pullup or pulldown resistor at the RST/NMI pin is enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>PMM</name>
+      <description>PMM</description>
+      <baseAddress>288</baseAddress>
+      <registers>
+        <register>
+          <name>PMMCTL0</name>
+          <description>Power Management Module control register 0</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>REFLOW</name>
+              <description>Reflow pre-conditioning. Prepares device for reflow soldering. Write as 0 during normal operation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFLOW_0</name>
+                  <description>Normal operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFLOW_1</name>
+                  <description>Enable reflow pre-conditioning</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMSWBOR</name>
+              <description>Software brownout reset.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMSWBOR_0</name>
+                  <description>Normal operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMSWBOR_1</name>
+                  <description>Set to 1 to trigger a BOR</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMSWPOR</name>
+              <description>Software POR.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMSWPOR_0</name>
+                  <description>Normal operation</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMSWPOR_1</name>
+                  <description>Set to 1 to trigger a POR</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMREGOFF</name>
+              <description>Regulator off</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMREGOFF_0</name>
+                  <description>Regulator remains on when going into LPM3 or LPM4</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMREGOFF_1</name>
+                  <description>Regulator is turned off when going to LPM3 or LPM4. System enters LPM3.5 or LPM4.5, respectively.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SVSHE</name>
+              <description>High-side SVS enable.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SVSHE_0</name>
+                  <description>High-side SVS (SVSH) is disabled in LPM2, LPM3, LPM4, LPM3.5, and LPM4.5. SVSH is always enabled in active mode, LPM0, and LPM1.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SVSHE_1</name>
+                  <description>SVSH is always enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMPW</name>
+              <description>PMM password.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PMMCTL2</name>
+          <description>Power Management Module Control Register 2</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>INTREFEN</name>
+              <description>Internal reference enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INTREFEN_0</name>
+                  <description>Disable internal reference</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INTREFEN_1</name>
+                  <description>Enable internal reference</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EXTREFEN</name>
+              <description>External reference output enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EXTREFEN_0</name>
+                  <description>Disable external reference output</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EXTREFEN_1</name>
+                  <description>Enable internal reference output</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWRMODE</name>
+              <description>Power Mode Selection. The two bits are used to select the power supply in multi power supply systems. A single power supply system is not affected by the bits. Reserved for future use.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TSENSOREN</name>
+              <description>Temperature sensor enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TSENSOREN_0</name>
+                  <description>Disable temperature sensor</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TSENSOREN_1</name>
+                  <description>Enable temperature sensor</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFGENACT</name>
+              <description>Reference generator active. Read only.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFGENACT_0</name>
+                  <description>Reference generator not active</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFGENACT_1</name>
+                  <description>Reference generator active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFBGACT</name>
+              <description>Reference bandgap active. Ready only.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFBGACT_0</name>
+                  <description>Reference bandgap buffer not active</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFBGACT_1</name>
+                  <description>Reference bandgap buffer active</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BGMODE</name>
+              <description>Bandgap mode. Ready only.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BGMODE_0</name>
+                  <description>Static mode (higher precision)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BGMODE_1</name>
+                  <description>Sampled mode (lower power consumption)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFGENRDY</name>
+              <description>Variable reference voltage ready status.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFGENRDY_0</name>
+                  <description>Reference voltage output is not ready to be used.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFGENRDY_1</name>
+                  <description>Reference voltage output is ready to be used</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFBGRDY</name>
+              <description>Buffered bandgap voltage ready status.</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFBGRDY_0</name>
+                  <description>Buffered bandgap voltage is not ready to be used</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFBGRDY_1</name>
+                  <description>Buffered bandgap voltage is ready to be used</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFVSEL</name>
+              <description>Reference voltage level select. Can be modified only when REFGENBUSY = 0.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFVSEL_0</name>
+                  <description>00b = 1.5V</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_1</name>
+                  <description>01b = 2.0V</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_2</name>
+                  <description>10b = 2.5V</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFVSEL_3</name>
+                  <description>11b = Reserved</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFGEN</name>
+              <description>Reference generator one-time trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFGEN_0</name>
+                  <description>No trigger</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFGEN_1</name>
+                  <description>Generation of the reference voltage is started by writing 1 or by a hardware trigger</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFBGEN</name>
+              <description>Bandgap and bandgap buffer one-time trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFBG_0</name>
+                  <description>No trigger</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFBG_1</name>
+                  <description>Generation of the bandgap voltage is started by writing 1 or by a hardware trigger</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PMMIFG</name>
+          <description>PMM interrupt flag register</description>
+          <addressOffset>10</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>PMMBORIFG</name>
+              <description>PMM software brownout reset interrupt flag.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMBORIFG_0</name>
+                  <description>Reset not due to PMMSWBOR</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMBORIFG_1</name>
+                  <description>Reset due to PMMSWBOR</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMRSTIFG</name>
+              <description>PMM reset pin interrupt flag.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMBORIFG_0</name>
+                  <description>Reset not due to reset pin</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMBORIFG_1</name>
+                  <description>Reset due to reset pin</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMPORIFG</name>
+              <description>PMM software POR interrupt flag.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMBORIFG_0</name>
+                  <description>Reset not due to PMMSWPOR</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMBORIFG_1</name>
+                  <description>Reset due to PMMSWPOR</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SPWRIFG</name>
+              <description>Secondary Power interrupt flag. This bit only works in multi power supply systems. When the secondary power is ready to use, this bit is set., In single power supply systems, this bit does not work.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SVSHIFG</name>
+              <description>High-side SVS interrupt flag.</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SVSHIFG_0</name>
+                  <description>Reset not due to SVSH</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SVSHIFG_1</name>
+                  <description>Reset due to SVSH</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMLPM5IFG</name>
+              <description>LPMx.5 flag.</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PMMLPM5IFG_0</name>
+                  <description>Reset not due to wake-up from LPMx.5</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMLPM5IFG_1</name>
+                  <description>Reset due to wake-up from LPMx.5</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMMSPSIFG</name>
+              <description>PMM secondary power supply interrupt flag. Reserved for future multi power supply systems.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PPWRIFG</name>
+              <description>Primary Power interrupt flag. This bit only works in multi power supply systems. When the primary power is ready to use, this bit is set. In single power supply systems, this bit does not work</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PM5CTL0</name>
+          <description>Power mode 5 control register 0</description>
+          <addressOffset>16</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>LOCKLPM5</name>
+              <description>LPMx.5 Lock Bit</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOCKLPM5_0</name>
+                  <description>LPMx.5 configuration is not locked and defaults to its reset condition.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOCKLPM5_1</name>
+                  <description>LPMx.5 configuration remains locked. Pin state is held during LPMx.5 entry and exit.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LPM5SW</name>
+              <description>Reports or sets the LPM3.5 switch connection upon the switch mode set by LPM5SM. When this bit is set, the VLPM3.5 domain can accept full-speed read and write operation by CPU MCLK. If the switch is disconnected, all peripherals within this domain can only accept the operation no more than 40 kHz. In automatic mode (LPM5SM = 0), this bit represents the switch connection between Vcore and VLPM3.5. Any write to this bit has no effect. In manual mode (LPM5SM = 1), this bit can be fully read and written by software. When this bit is set, the switch connection between Vcore and VLPM3.5 is connected. Otherwise, the switch is disconnected.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LPM5SW_0</name>
+                  <description>LPMx.5 switch disconnected</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LPM5SW_1</name>
+                  <description>LPMx.5 switch connected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LPM5SM</name>
+              <description>Specifies the operation mode of the LPM3.5 switch.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LPM5SM_0</name>
+                  <description>Automatic mode for LPM3.5 switch that the switch is fully handled by the circuitry during mode switch.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LPM5SM_1</name>
+                  <description>Manual mode for LPM3.5 switch that the switch is specified by LPM5SW bit setting in software.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>SYS</name>
+      <description>SYS</description>
+      <baseAddress>320</baseAddress>
+      <registers>
+        <register>
+          <name>SYSCTL</name>
+          <description>System Control</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSRIVECT</name>
+              <description>RAM-based interrupt vectors</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FRAM</name>
+                  <description>Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RAM</name>
+                  <description>Interrupt vectors generated with end address TOP of RAM, when RAM available</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSPMMPE</name>
+              <description>PMM access protect</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYSPMMPE_0</name>
+                  <description>Access from anywhere in memory</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSPMMPE_1</name>
+                  <description>Access only from the BSL segments</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSBSLIND</name>
+              <description>BSL entry indication</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYSBSLIND_0</name>
+                  <description>No BSL entry sequence detected</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSBSLIND_1</name>
+                  <description>BSL entry sequence detected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSJTAGPIN</name>
+              <description>Dedicated JTAG pins enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SHARED</name>
+                  <description>Shared JTAG pins (JTAG mode selectable using SBW sequence)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DEDICATED</name>
+                  <description>Dedicated JTAG pins (explicit 4-wire JTAG mode selection)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSBSLC</name>
+          <description>Bootstrap Loader Configuration Register</description>
+          <addressOffset>2</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSBSLR</name>
+              <description>RAM assigned to BSL</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYSBSLR_0</name>
+                  <description>No RAM assigned to BSL area</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSBSLR_1</name>
+                  <description>Lowest 16 bytes of RAM assigned to BSL</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSBSLOFF</name>
+              <description>Bootstrap loader memory disable for the size covered in SYSBSLSIZE</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYSBSLOFF_0</name>
+                  <description>BSL memory is addressed when this area is read.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSBSLOFF_1</name>
+                  <description>BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYSBSLPE</name>
+              <description>Bootstrap loader memory protection enable for the size covered in SYSBSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit.</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYSBSLPE_0</name>
+                  <description>Area not protected. Read, program, and erase of BSL memory is possible.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSBSLPE_1</name>
+                  <description>Area protected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSJMBC</name>
+          <description>JTAG Mailbox Control</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>JMBIN0FG</name>
+              <description>Incoming JTAG Mailbox 0 flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBIN0FG_0</name>
+                  <description>JMBI0 has no new data</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBIN0FG_1</name>
+                  <description>JMBI0 has new data available</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBIN1FG</name>
+              <description>Incoming JTAG Mailbox 1 flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBIN1FG_0</name>
+                  <description>JMBI1 has no new data</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBIN1FG_1</name>
+                  <description>JMBI1 has new data available</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBOUT0FG</name>
+              <description>Outgoing JTAG Mailbox 0 flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBOUT0FG_0</name>
+                  <description>JMBO0 is not ready to receive new data</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBOUT0FG_1</name>
+                  <description>JMBO0 is ready to receive new data</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBOUT1FG</name>
+              <description>Outgoing JTAG Mailbox 1 flag</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBOUT1FG_0</name>
+                  <description>JMBO1 is not ready to receive new data</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBOUT1FG_1</name>
+                  <description>JMBO1 is ready to receive new data</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBMODE</name>
+              <description>Operation mode of JMB</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>16BIT</name>
+                  <description>16-bit transfers using JMBO0 and JMBI0 only</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32BIT</name>
+                  <description>32-bit transfers using JMBO0 with JMBO1 and JMBI0 with JMBI1</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBCLR0OFF</name>
+              <description>Incoming JTAG Mailbox 0 flag auto-clear disable</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBCLR0OFF_0</name>
+                  <description>JMBIN0FG cleared on read of JMB0IN register</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBCLR0OFF_1</name>
+                  <description>JMBIN0FG cleared by software</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JMBCLR1OFF</name>
+              <description>Incoming JTAG Mailbox 1 flag auto-clear disable</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>JMBCLR1OFF_0</name>
+                  <description>JMBIN1FG cleared on read of JMB1IN register</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBCLR1OFF_1</name>
+                  <description>JMBIN1FG cleared by software</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSJMBI0</name>
+          <description>JTAG Mailbox Input</description>
+          <addressOffset>8</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>MSGLO</name>
+              <description>JTAG mailbox incoming message low byte</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MSGHI</name>
+              <description>JTAG mailbox incoming message high byte</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSJMBI1</name>
+          <description>JTAG Mailbox Input 1 Register</description>
+          <addressOffset>10</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>MSGLO</name>
+              <description>JTAG mailbox incoming message low byte</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MSGHI</name>
+              <description>JTAG mailbox incoming message high byte</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSJMBO0</name>
+          <description>JTAG Mailbox Output</description>
+          <addressOffset>12</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>MSGLO</name>
+              <description>JTAG mailbox outgoing message low byte</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MSGHI</name>
+              <description>JTAG mailbox outgoing message high byte</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSJMBO1</name>
+          <description>JTAG Mailbox Output 1 Register</description>
+          <addressOffset>14</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>MSGLO</name>
+              <description>JTAG mailbox outgoing message low byte</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MSGHI</name>
+              <description>JTAG mailbox outgoing message high byte</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSUNIV</name>
+          <description>User NMI Vector Generator</description>
+          <addressOffset>26</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSUNIV</name>
+              <description>User NMI vector</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NMIIFG</name>
+                  <description>NMIIFG NMI pin</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OFIFG</name>
+                  <description>OFIFG oscillator fault</description>
+                  <value>4</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSSNIV</name>
+          <description>System NMI Vector Generator</description>
+          <addressOffset>28</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSSNIV</name>
+              <description>System NMI vector</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SVSLIFG</name>
+                  <description>SVS low-power reset entry</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UBDIFG</name>
+                  <description>Uncorrectable FRAM bit error detection</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACCTEIFG</name>
+                  <description>FRAM Access Time Error</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSSNIV_8</name>
+                  <description>Reserved</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSSNIV_10</name>
+                  <description>Reserved</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSSNIV_12</name>
+                  <description>Reserved</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSSNIV_14</name>
+                  <description>Reserved</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSSNIV_16</name>
+                  <description>Reserved</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VMAIFG</name>
+                  <description>VMAIFG Vacant memory access</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBINIFG</name>
+                  <description>JMBINIFG JTAG mailbox input</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JMBOUTIFG</name>
+                  <description>JMBOUTIFG JTAG mailbox output</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CBDIFG</name>
+                  <description>Correctable FRAM bit error detection</description>
+                  <value>24</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSRSTIV</name>
+          <description>Reset Vector Generator</description>
+          <addressOffset>30</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SYSRSTIV</name>
+              <description>Reset interrupt vector</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BOR</name>
+                  <description>Brownout</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RSTNMI</name>
+                  <description>RSTIFG RST/NMI</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMSWBOR</name>
+                  <description>PMMSWBOR software BOR</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LPM5WU</name>
+                  <description>LPMx.5 wakeup</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SECYV</name>
+                  <description>Security violation</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSRSTIV_12</name>
+                  <description>Reserved</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SVSHIFG</name>
+                  <description>SVSHIFG SVSH event</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSRSTIV_16</name>
+                  <description>Reserved</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSRSTIV_18</name>
+                  <description>Reserved</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMSWPOR</name>
+                  <description>PMMSWPOR software POR</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WDTIFG</name>
+                  <description>WDTIFG watchdog timeout</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WDTPW</name>
+                  <description>WDTPW watchdog password violation</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FRCTLPW</name>
+                  <description>FRCTLPW password violation</description>
+                  <value>26</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UBDIFG</name>
+                  <description>Uncorrectable FRAM bit error detection</description>
+                  <value>28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PERF</name>
+                  <description>Peripheral area fetch</description>
+                  <value>30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PMMPW</name>
+                  <description>PMM password violation</description>
+                  <value>32</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYSRSTIV_34</name>
+                  <description>Reserved</description>
+                  <value>34</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUL</name>
+                  <description>FLL unlock (PUC)</description>
+                  <value>36</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSCFG0</name>
+          <description>System Configuration Register 0</description>
+          <addressOffset>32</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>PFWP</name>
+              <description>Program FRAM write protection</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PFWP_0</name>
+                  <description>Program FRAM write enable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PFWP_1</name>
+                  <description>Program FRAM write protected (not writable)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DFWP</name>
+              <description>Data FRAM write protection</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DFWP_0</name>
+                  <description>Data FRAM write enable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DFWP_1</name>
+                  <description>Data FRAM write protected (not writable)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FRWPPW</name>
+              <description>FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FRWPOA</name>
+              <description>Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSCFG1</name>
+          <description>System Configuration Register 1</description>
+          <addressOffset>34</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>IREN</name>
+              <description>Infrared enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IREN_0</name>
+                  <description>Infrared function disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IREN_1</name>
+                  <description>Infrared function enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IRPSEL</name>
+              <description>Infrared polarity select</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IRPSEL_0</name>
+                  <description>Normal polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IRPSEL_1</name>
+                  <description>Inverted polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IRMSEL</name>
+              <description>Infrared mode select</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IRMSEL_0</name>
+                  <description>FSK mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IRMSEL_1</name>
+                  <description>ASK mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IRDSSEL</name>
+              <description>Infrared data source select</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IRDSSEL_0</name>
+                  <description>From hardware peripherals upon device configuration</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IRDSSEL_1</name>
+                  <description>From IRDATA bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IRDATA</name>
+              <description>Infrared data</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IRDATA_0</name>
+                  <description>Infrared data logic 0</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IRDATA_1</name>
+                  <description>Infrared data logic 1</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SYNCSEL</name>
+              <description>Captivate Conversion triggered Source Selection</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SYNCSEL_0</name>
+                  <description>External source is selected</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYNCSEL_1</name>
+                  <description>ADC as the source is selected</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYNCSEL_2</name>
+                  <description>internal source is selected</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYNCSEL_3</name>
+                  <description>Reserved</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSCFG2</name>
+          <description>System Configuration Register 2</description>
+          <addressOffset>36</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>ADCPCTL0</name>
+              <description>ADC input A0 pin select</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL0_0</name>
+                  <description>ADC input A0 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL0_1</name>
+                  <description>ADC input A0 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL1</name>
+              <description>ADC input A1 pin select</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL1_0</name>
+                  <description>ADC input A1 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL1_1</name>
+                  <description>ADC input A1 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL2</name>
+              <description>ADC input A2 pin select</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL2_0</name>
+                  <description>ADC input A2 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL2_1</name>
+                  <description>ADC input A2 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL3</name>
+              <description>ADC input A3 pin select</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL3_0</name>
+                  <description>ADC input A3 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL3_1</name>
+                  <description>ADC input A3 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL4</name>
+              <description>ADC input A4 pin select</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL4_0</name>
+                  <description>ADC input A4 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL4_1</name>
+                  <description>ADC input A4 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL5</name>
+              <description>ADC input A5 pin select</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL5_0</name>
+                  <description>ADC input A5 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL5_1</name>
+                  <description>ADC input A5 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL6</name>
+              <description>ADC input A6 pin select</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL6_0</name>
+                  <description>ADC input A6 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL6_1</name>
+                  <description>ADC input A6 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL7</name>
+              <description>ADC input A7 pin select</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL7_0</name>
+                  <description>ADC input A7 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL7_1</name>
+                  <description>ADC input A7 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL8</name>
+              <description>ADC input A8 pin select</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL8_0</name>
+                  <description>ADC input A8 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL8_1</name>
+                  <description>ADC input A8 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADCPCTL9</name>
+              <description>ADC input A9 pin select</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ADCPCTL9_0</name>
+                  <description>ADC input A9 disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADCPCTL9_1</name>
+                  <description>ADC input A9 enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>USCIBRMP</name>
+              <description>eUSCIB Remapping source selection , please refer to device specific for details</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>USCIBRMP_0</name>
+                  <description>P1.x is selected, please refer to device specific for details</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USCIBRMP_1</name>
+                  <description>other port is selected, please refer to device specific for details</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTCCKSEL</name>
+              <description>RTC clock selection</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTC_SMCLK</name>
+                  <description>SMCLK is selected</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTC_ACLK</name>
+                  <description>ACLK is selected</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYSCFG3</name>
+          <description>System Configuration Register 3</description>
+          <addressOffset>38</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>USCIARMP</name>
+              <description>eUSCIA remapping source selection, please refer to device specific for details</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>USCIARMP_0</name>
+                  <description>P1.x is selected, please refer to device specific for details</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USCIARMP_1</name>
+                  <description>other port is selected, please refer to device specific for details</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>CS</name>
+      <description>CS</description>
+      <baseAddress>384</baseAddress>
+      <registers>
+        <register>
+          <name>CSCTL0</name>
+          <description>Clock System Control 0</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>DCO</name>
+              <description>DCO tap selection. These bits select the DCO tap and are modified automatically during FLL operation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>9</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MOD</name>
+              <description>Modulation bit counter. These bits select the modulation pattern. All MOD bits are modified automatically during FLL operation. The DCO register value is incremented when the modulation bit counter rolls over from 31 to 0. If the modulation bit counter decrements from 0 to the maximum count, the DCO register value is also decreased.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL1</name>
+          <description>Clock System Control 1</description>
+          <addressOffset>2</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>DISMOD</name>
+              <description>Modulation. This bit enables/disables the modulation.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISMOD_0</name>
+                  <description>Modulation enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DISMOD_1</name>
+                  <description>Modulation disabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCORSEL</name>
+              <description>DCO Range Select</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DCORSEL_0</name>
+                  <description>1 MHz</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_1</name>
+                  <description>2 MHz</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_2</name>
+                  <description>4 MHz</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_3</name>
+                  <description>8 MHz</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_4</name>
+                  <description>12 MHz</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_5</name>
+                  <description>16 MHz</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_6</name>
+                  <description>20 MHz(Only avaliable in 24MHz clock system)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCORSEL_7</name>
+                  <description>24 MHz(Only avaliable in 24MHz clock system)</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCOFTRIM</name>
+              <description>DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DCOFTRIMEN</name>
+              <description>DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DCOFTRIMEN_0</name>
+                  <description>Disable frequency trim</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCOFTRIMEN_1</name>
+                  <description>Enable frequency trim</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL2</name>
+          <description>Clock System Control 2</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>FLLN</name>
+              <description>Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FLLD</name>
+              <description>FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>fDCOCLK / 1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>fDCOCLK / 2</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>fDCOCLK / 4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8</name>
+                  <description>fDCOCLK / 8</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16</name>
+                  <description>fDCOCLK / 16</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32</name>
+                  <description>fDCOCLK / 32</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLD_6</name>
+                  <description>fDCOCLK / 40(Only avaliable in 24MHz clock system)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLD_7</name>
+                  <description>fDCOCLK / 48(Only avaliable in 24MHz clock system)</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL3</name>
+          <description>Clock System Control 3</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>FLLREFDIV</name>
+              <description>FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>fFLLREFCLK / 1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32</name>
+                  <description>fFLLREFCLK / 32</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64</name>
+                  <description>fFLLREFCLK / 64</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>128</name>
+                  <description>fFLLREFCLK / 128</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>256</name>
+                  <description>fFLLREFCLK / 256</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>512</name>
+                  <description>fFLLREFCLK / 512</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLREFDIV_6</name>
+                  <description>fFLLREFCLK / 640 (only available in 24MHz clock system)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLREFDIV_7</name>
+                  <description>fFLLREFCLK / 768(only available in 24MHz clock system)</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SELREF</name>
+              <description>FLL reference select. These bits select the FLL reference clock source.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOCLK</name>
+                  <description>REFOCLK</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELREF_2</name>
+                  <description>served for future use</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELREF_3</name>
+                  <description>served for future use</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>REFOLP</name>
+              <description>REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFOLP_0</name>
+                  <description>REFO Low Power Disabled (High Power Mode)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOLP_1</name>
+                  <description>REFO Low Power Enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL4</name>
+          <description>Clock System Control 4</description>
+          <addressOffset>8</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>SELMS</name>
+              <description>Selects the MCLK and SMCLK source</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DCOCLKDIV</name>
+                  <description>DCOCLKDIV</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOCLK</name>
+                  <description>REFOCLK</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VLOCLK</name>
+                  <description>VLOCLK</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELMS_4</name>
+                  <description>Reserved for future use</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELMS_5</name>
+                  <description>Reserved for future use</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELMS_6</name>
+                  <description>Reserved for future use</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELMS_7</name>
+                  <description>Reserved for future use</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SELA</name>
+              <description>Selects the ACLK source</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK with divider (must be no more than 40 kHz)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOCLK</name>
+                  <description>REFO (internal 32-kHz clock source)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VLOCLK</name>
+                  <description>VLO (internal 10-kHz clock source)</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL5</name>
+          <description>Clock System Control 5</description>
+          <addressOffset>10</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>DIVM</name>
+              <description>MCLK source divider</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>/1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>/2</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>/4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8</name>
+                  <description>/8</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16</name>
+                  <description>/16</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32</name>
+                  <description>/32</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64</name>
+                  <description>/64</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>128</name>
+                  <description>/128</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DIVS</name>
+              <description>SMCLK source divider. SMCLK directly derives from MCLK. SMCLK frequency is the combination of DIVM and DIVS out of selected clock source.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>/1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2</name>
+                  <description>/2</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4</name>
+                  <description>/4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8</name>
+                  <description>/8</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SMCLKOFF</name>
+              <description>SMCLK off. This bit turns off SMCLK clock</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SMCLKOFF_0</name>
+                  <description>SMCLK on</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SMCLKOFF_1</name>
+                  <description>SMCLK off</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VLOAUTOOFF</name>
+              <description>VLO automatic off enable. This bit turns off VLO, if VLO is not used.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>VLOAUTOOFF_0</name>
+                  <description>VLO always on</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VLOAUTOOFF_1</name>
+                  <description>VLO automatically turned off if not used(default)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL6</name>
+          <description>Clock System Control 6</description>
+          <addressOffset>12</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>XT1AUTOOFF</name>
+              <description>XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1AUTOOFF_0</name>
+                  <description>XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1AUTOOFF_1</name>
+                  <description>XT1 is off if it is not used as a source for ACLK, MCLK, or SMCLK or is not used as a reference source required for FLL operation.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1AGCOFF</name>
+              <description>Automatic Gain Control (AGC) disable.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1AGCOFF_0</name>
+                  <description>AGC on</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1AGCOFF_1</name>
+                  <description>AGC off</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1HFFREQ</name>
+              <description>The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1HFFREQ_0</name>
+                  <description>1 to 4 MHz</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1HFFREQ_1</name>
+                  <description>4 MHz to 6 MHz</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1HFFREQ_2</name>
+                  <description>6 MHz to 16 MHz</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1HFFREQ_3</name>
+                  <description>16 MHz to 24 MHz</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1BYPASS</name>
+              <description>XT1 bypass select</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1BYPASS_0</name>
+                  <description>XT1 source internally</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1BYPASS_1</name>
+                  <description>XT1 sources externally from pin</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XTS</name>
+              <description>XT1 mode select</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XTS_0</name>
+                  <description>Low-frequency mode.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XTS_1</name>
+                  <description>High-frequency mode.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1DRIVE</name>
+              <description>The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1DRIVE_0</name>
+                  <description>Lowest drive strength and current consumption</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1DRIVE_1</name>
+                  <description>Lower drive strength and current consumption</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1DRIVE_2</name>
+                  <description>Higher drive strength and current consumption</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1DRIVE_3</name>
+                  <description>Highest drive strength and current consumption</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DIVA</name>
+              <description>ACLK source divider.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>/1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16</name>
+                  <description>/16</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32</name>
+                  <description>/32</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64</name>
+                  <description>/64</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>128</name>
+                  <description>/128</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>256</name>
+                  <description>/256</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>384</name>
+                  <description>/384</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>512</name>
+                  <description>/512</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>768</name>
+                  <description>/768(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1024</name>
+                  <description>/1024(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>108</name>
+                  <description>/108(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>338</name>
+                  <description>338(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>414</name>
+                  <description>414(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>640</name>
+                  <description>640(Only available in 24MHz clock system, 24 MHz preference)</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIVA_14</name>
+                  <description>Reserved</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIVA_15</name>
+                  <description>Reserved</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1FAULTOFF</name>
+              <description>The XT1 oscillator fault detection off</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1FAULTOFF_0</name>
+                  <description>Enabling XT1 fault to switch ACLK to REFO</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1FAULTOFF_1</name>
+                  <description>Disabling XT1 fault to switch ACLK to REFO</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL7</name>
+          <description>Clock System Control Register 7</description>
+          <addressOffset>14</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>REFOREADY</name>
+              <description>REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>REFOREADY_0</name>
+                  <description>REFO unstable</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REFOREADY_1</name>
+                  <description>REFO ready to go</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCOFFG</name>
+              <description>DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DCOFFG_0</name>
+                  <description>No fault condition occurred after the last reset.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCOFFG_1</name>
+                  <description>DCO fault. A DCO fault occurred after the last reset.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XT1OFFG</name>
+              <description>T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>XT1OFFG_0</name>
+                  <description>No fault condition occurred after the last reset.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1OFFG_1</name>
+                  <description>XT1 fault. An XT1 fault occurred after the last reset.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLLULIFG</name>
+              <description>FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLLULIFG_0</name>
+                  <description>FLLUNLOCK bits not equal to 10b</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLULIFG_1</name>
+                  <description>FLLUNLOCK bits equal to 10b</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ENSTFCNT1</name>
+              <description>Enable start counter for XT1.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ENSTFCNT1_0</name>
+                  <description>Startup fault counter disabled. Counter is cleared..</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENSTFCNT1_1</name>
+                  <description>Startup fault counter enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLLUNLOCK</name>
+              <description>Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLLUNLOCK_0</name>
+                  <description>FLL is locked. No unlock condition currently active.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCK_1</name>
+                  <description>DCOCLK is currently too slow.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCK_2</name>
+                  <description>DCOCLK is currently too fast.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCK_3</name>
+                  <description>DCOERROR. DCO out of range.</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLLUNLOCKHIS</name>
+              <description>Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLLUNLOCKHIS_0</name>
+                  <description>FLL is locked. No unlock situation has been detected since the last reset of these bits.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCKHIS_1</name>
+                  <description>DCOCLK has been too slow since the bits were cleared.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCKHIS_2</name>
+                  <description>DCOCLK has been too fast since the bits were cleared.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLUNLOCKHIS_3</name>
+                  <description>DCOCLK has been both too fast and too slow since the bits were cleared.</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLLULPUC</name>
+              <description>FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FLLWARNEN</name>
+              <description>Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated.</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLLWARNEN_0</name>
+                  <description>FLLUNLOCKHIS status cannot set OFIFG.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLLWARNEN_1</name>
+                  <description>FLLUNLOCKHIS status can set OFIFG.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSCTL8</name>
+          <description>Clock System Control Register 8</description>
+          <addressOffset>16</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>ACLKREQEN</name>
+              <description>ACLK clock request enable. Setting this enables conditional module requests for ACLK</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ACLKREQEN_0</name>
+                  <description>ACLK conditional requests are disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACLKREQEN_1</name>
+                  <description>ACLK conditional requests are enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MCLKREQEN</name>
+              <description>MCLK clock request enable. Setting this enables conditional module requests for MCLK</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MCLKREQEN_0</name>
+                  <description>MCLK conditional requests are disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MCLKREQEN_1</name>
+                  <description>MCLK conditional requests are enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SMCLKREQEN</name>
+              <description>SMCLK clock request enable. Setting this enables conditional module requests for SMCLK</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SMCLKREQEN_0</name>
+                  <description>SMCLK conditional requests are disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SMCLKREQEN_1</name>
+                  <description>SMCLK conditional requests are enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MODOSCREQEN</name>
+              <description>MODOSC clock request enable. Setting this enables conditional module requests for MODOSC.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODOSCREQEN_0</name>
+                  <description>MODOSC conditional requests are disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODOSCREQEN_1</name>
+                  <description>MODOSC conditional requests are enabled.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>FRCTL</name>
+      <description>FRCTL</description>
+      <baseAddress>416</baseAddress>
+      <registers>
+        <register>
+          <name>FRCTL0</name>
+          <description>FRAM Controller Control Register 0</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>NWAITS</name>
+              <description>Wait state numbers</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NWAITS_0</name>
+                  <description>FRAM wait states: 0</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_1</name>
+                  <description>FRAM wait states: 1</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_2</name>
+                  <description>FRAM wait states: 2</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_3</name>
+                  <description>FRAM wait states: 3</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_4</name>
+                  <description>FRAM wait states: 4</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_5</name>
+                  <description>FRAM wait states: 5</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_6</name>
+                  <description>FRAM wait states: 6</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NWAITS_7</name>
+                  <description>FRAM wait states: 7</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FRCTLPW</name>
+              <description>FRCTLPW password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GCCTL0</name>
+          <description>General Control Register 0</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>UBDRSTEN</name>
+              <description>Enable Power Up Clear (PUC) reset for the uncorrectable bit error detection flag (UBDIFG)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UBDRSTEN_0</name>
+                  <description>PUC not initiated on uncorrectable bit error detection flag.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UBDRSTEN_1</name>
+                  <description>PUC initiated on uncorrectable bit error detection flag. Generates vector in SYSRSTIV. Clear the UBDIE bit.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>UBDIE</name>
+              <description>Enable NMI event for the uncorrectable bit error detection flag (UBDIFG)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UBDIE_0</name>
+                  <description>Disable NMI for the uncorrectable bit error detection flag (UBDIFG).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UBDIE_1</name>
+                  <description>Enable NMI for the uncorrectable bit error detection flag (UBDIFG). Generates vector in SYSSNIV. Clear the UBDRSTEN bit.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CBDIE</name>
+              <description>Enable NMI event for the correctable bit error detection flag (CBDIFG)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CBDIE_0</name>
+                  <description>Disable NMI for the correctable bit error detection flag (CBDIFG).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CBDIE_1</name>
+                  <description>Disable NMI for the correctable bit error detection flag (CBDIFG). Generates vector in SYSSNIV.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FRPWR</name>
+              <description>FRAM Memory Power Control Request</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FRPWR_0</name>
+                  <description>Enable INACTIVE mode.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FRPWR_1</name>
+                  <description>Enable ACTIVE mode.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FRLPMPWR</name>
+              <description>Enables FRAM auto power up after LPM</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FRLPMPWR_0</name>
+                  <description>FRAM startup is delayed to the first FRAM access after exit from LPM</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FRLPMPWR_1</name>
+                  <description>FRAM is powered up immediately on exit from LPM</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GCCTL1</name>
+          <description>General Control Register 1</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>ACCTEIFG</name>
+              <description>Access time error flag</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ACCTEIFG_0</name>
+                  <description>No interrupt pending.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACCTEIFG_1</name>
+                  <description>Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>UBDIFG</name>
+              <description>FRAM uncorrectable bit error detection flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UBDIFG_0</name>
+                  <description>No interrupt pending.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UBDIFG_1</name>
+                  <description>Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CBDIFG</name>
+              <description>FRAM correctable bit error detection flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CBDIFG_0</name>
+                  <description>No interrupt is pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CBDIFG_1</name>
+                  <description>Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV if it is the highest pending interrupt.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>CRC</name>
+      <description>CRC</description>
+      <baseAddress>448</baseAddress>
+      <registers>
+        <register>
+          <name>CRCDI</name>
+          <description>CRC Data In</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>CRCDIRB</name>
+          <description>CRC Data In Reverse Byte</description>
+          <addressOffset>2</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>CRCINIRES</name>
+          <description>CRC Initialization and Result</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>CRCRESR</name>
+          <description>CRC Result Reverse</description>
+          <addressOffset>6</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>WDT_A</name>
+      <description>WDT_A</description>
+      <baseAddress>460</baseAddress>
+      <registers>
+        <register>
+          <name>WDTCTL</name>
+          <description>Watchdog Timer Control Register</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>WDTIS</name>
+              <description>Watchdog timer interval select</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>2G</name>
+                  <description>Watchdog clock source / (2^(31)) (18:12:16 at 32.768 kHz)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>128M</name>
+                  <description>Watchdog clock source /(2^(27)) (01:08:16 at 32.768 kHz)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8192K</name>
+                  <description>Watchdog clock source /(2^(23)) (00:04:16 at 32.768 kHz)</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>512K</name>
+                  <description>Watchdog clock source /(2^(19)) (00:00:16 at 32.768 kHz)</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32K</name>
+                  <description>Watchdog clock source /(2^(15)) (1 s at 32.768 kHz)</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8192</name>
+                  <description>Watchdog clock source / (2^(13)) (250 ms at 32.768 kHz)</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>512</name>
+                  <description>Watchdog clock source / (2^(9)) (15.625 ms at 32.768 kHz)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64</name>
+                  <description>Watchdog clock source / (2^(6)) (1.95 ms at 32.768 kHz)</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTCNTCL</name>
+              <description>Watchdog timer counter clear</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WDTCNTCL_0</name>
+                  <description>No action</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WDTCNTCL_1</name>
+                  <description>WDTCNT = 0000h</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTTMSEL</name>
+              <description>Watchdog timer mode select</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WDTTMSEL_0</name>
+                  <description>Watchdog mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WDTTMSEL_1</name>
+                  <description>Interval timer mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTSSEL</name>
+              <description>Watchdog timer clock source select</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SMCLK</name>
+                  <description>SMCLK</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACLK</name>
+                  <description>ACLK</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VLOCLK</name>
+                  <description>VLOCLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BCLK</name>
+                  <description>BCLK</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTHOLD</name>
+              <description>Watchdog timer hold</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNHOLD</name>
+                  <description>Watchdog timer is not stopped</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HOLD</name>
+                  <description>Watchdog timer is stopped</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTPW</name>
+              <description>Watchdog timer password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>RTC</name>
+      <description>RTC</description>
+      <baseAddress>768</baseAddress>
+      <registers>
+        <register>
+          <name>RTCCTL</name>
+          <description>RTCCTL0 Register</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>RTCIFG</name>
+              <description>Real-time interrupt flag. This bit reports the status of a pending interrupt. This read only bit can be cleared by reading RTCIV register.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTCIFG_0</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTCIFG_1</name>
+                  <description>Interrupt pending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTCIE</name>
+              <description>Real-time interrupt enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTCIE_0</name>
+                  <description>Interrupt disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTCIE_1</name>
+                  <description>Interrupt enabled</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTCSR</name>
+              <description>Real-time software reset. This is a write only bit and is always read with logic 0. 0b = Write 0 has no effect</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTCSR_0</name>
+                  <description>Write 0 has no effect</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTCSR_1</name>
+                  <description>Write 1 to this bit clears the counter value and reloads the shadow register value from the modulo register at the next tick of the selected source clock. No overflow event or interrupt is generated.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTCPS</name>
+              <description>Real-time clock pre-divider select</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1</name>
+                  <description>/1</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10</name>
+                  <description>/10</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>100</name>
+                  <description>/100</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1000</name>
+                  <description>/1000</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16</name>
+                  <description>/16</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>64</name>
+                  <description>/64</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>256</name>
+                  <description>/256</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1024</name>
+                  <description>/1024</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTCSS</name>
+              <description>Real-time clock source select</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Disabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SMCLK</name>
+                  <description>SMCLK</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XT1CLK</name>
+                  <description>XT1CLK</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VLOCLK</name>
+                  <description>VLOCLK</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RTCIV</name>
+          <description>Real-Time Clock Interrupt Vector Register</description>
+          <addressOffset>4</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>RTCIV</name>
+              <description>Real-time clock interrupt vector value</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTCIFG</name>
+                  <description>upt Source: RTC Counter Overflow; Interrupt Flag: RTCIFG</description>
+                  <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RTCMOD</name>
+          <description>RTC Counter Modulo Register</description>
+          <addressOffset>8</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>RTCCNT</name>
+          <description>RTC Counter Register</description>
+          <addressOffset>12</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
       <name>TB0</name>
       <description>TB0</description>
       <baseAddress>896</baseAddress>
