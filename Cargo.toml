@@ -17,7 +17,11 @@ vcell = "0.1.2"
 
 [dependencies.msp430-rt]
 optional = true
-version = "0.1.4"
+version = "0.2.0"
 
 [features]
 rt = ["msp430-rt"]
+
+[patch.crates-io]
+msp430 = { git = "https://github.com/rust-embedded/msp430", branch = "rt-up" }
+msp430-rt = { git = "https://github.com/rust-embedded/msp430-rt", branch = "rt-up" }
