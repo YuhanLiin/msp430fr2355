@@ -10,42 +10,20 @@ impl crate::ResetValue for super::ICCSC {
         0
     }
 }
-#[doc = "Current Interrupt Compare Mask of virtual stack specifies the current ICM at the top of virtual stack If ICM\\[1:0\\] is less than the priority level (ILSRx\\[1:0\\]) of the new interrupt, the corresponding source is sent to the CPU. Note that the ICMC is the element stack that the stack pointer is pointing to.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICMC_A {}
-impl From<ICMC_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ICMC_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ICMC`"]
-pub type ICMC_R = crate::R<u8, ICMC_A>;
-impl ICMC_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ICMC_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ICMC_R = crate::R<u8, u8>;
 #[doc = "Virtual stack full flag This bit indicates whether or not the virtual stack is full. It is automatically updated when the stack is pushed or popped.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VSFFLG_A {
     #[doc = "0: ICCMVS register is not full"]
-    VSFFLG_0,
+    VSFFLG_0 = 0,
     #[doc = "1: ICCMVS register is full"]
-    VSFFLG_1,
+    VSFFLG_1 = 1,
 }
 impl From<VSFFLG_A> for bool {
     #[inline(always)]
     fn from(variant: VSFFLG_A) -> Self {
-        match variant {
-            VSFFLG_A::VSFFLG_0 => false,
-            VSFFLG_A::VSFFLG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VSFFLG`"]
@@ -74,17 +52,14 @@ impl VSFFLG_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VSEFLG_A {
     #[doc = "0: Stack has valid data"]
-    VSEFLG_0,
+    VSEFLG_0 = 0,
     #[doc = "1: Stack has no valid data"]
-    VSEFLG_1,
+    VSEFLG_1 = 1,
 }
 impl From<VSEFLG_A> for bool {
     #[inline(always)]
     fn from(variant: VSEFLG_A) -> Self {
-        match variant {
-            VSEFLG_A::VSEFLG_0 => false,
-            VSEFLG_A::VSEFLG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VSEFLG`"]
@@ -113,17 +88,14 @@ impl VSEFLG_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICCEN_A {
     #[doc = "0: ICC module disabled"]
-    ICCEN_0,
+    ICCEN_0 = 0,
     #[doc = "1: ICC module enabled"]
-    ICCEN_1,
+    ICCEN_1 = 1,
 }
 impl From<ICCEN_A> for bool {
     #[inline(always)]
     fn from(variant: ICCEN_A) -> Self {
-        match variant {
-            ICCEN_A::ICCEN_0 => false,
-            ICCEN_A::ICCEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ICCEN`"]

@@ -2,40 +2,31 @@
 pub type R = crate::R<u16, super::P2IV>;
 #[doc = "Port 2 interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum P2IV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Interrupt Source: Port 2.0 interrupt; Interrupt Flag: P2IFG0; Interrupt Priority: Highest"]
-    P2IFG0,
+    P2IFG0 = 2,
     #[doc = "4: Interrupt Source: Port 2.1 interrupt; Interrupt Flag: P2IFG1"]
-    P2IFG1,
+    P2IFG1 = 4,
     #[doc = "6: Interrupt Source: Port 2.2 interrupt; Interrupt Flag: P2IFG2"]
-    P2IFG2,
+    P2IFG2 = 6,
     #[doc = "8: Interrupt Source: Port 2.3 interrupt; Interrupt Flag: P2IFG3"]
-    P2IFG3,
+    P2IFG3 = 8,
     #[doc = "10: Interrupt Source: Port 2.4 interrupt; Interrupt Flag: P2IFG4"]
-    P2IFG4,
+    P2IFG4 = 10,
     #[doc = "12: Interrupt Source: Port 2.5 interrupt; Interrupt Flag: P2IFG5"]
-    P2IFG5,
+    P2IFG5 = 12,
     #[doc = "14: Interrupt Source: Port 2.6 interrupt; Interrupt Flag: P2IFG6"]
-    P2IFG6,
+    P2IFG6 = 14,
     #[doc = "16: Interrupt Source: Port 2.7 interrupt; Interrupt Flag: P2IFG7; Interrupt Priority: Lowest"]
-    P2IFG7,
+    P2IFG7 = 16,
 }
 impl From<P2IV_A> for u8 {
     #[inline(always)]
     fn from(variant: P2IV_A) -> Self {
-        match variant {
-            P2IV_A::NONE => 0,
-            P2IV_A::P2IFG0 => 2,
-            P2IV_A::P2IFG1 => 4,
-            P2IV_A::P2IFG2 => 6,
-            P2IV_A::P2IFG3 => 8,
-            P2IV_A::P2IFG4 => 10,
-            P2IV_A::P2IFG5 => 12,
-            P2IV_A::P2IFG6 => 14,
-            P2IV_A::P2IFG7 => 16,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `P2IV`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA1STATW {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBUSY_A {
     #[doc = "0: eUSCI_A inactive"]
-    IDLE,
+    IDLE = 0,
     #[doc = "1: eUSCI_A transmitting or receiving"]
-    BUSY,
+    BUSY = 1,
 }
 impl From<UCBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: UCBUSY_A) -> Self {
-        match variant {
-            UCBUSY_A::IDLE => false,
-            UCBUSY_A::BUSY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBUSY`"]
@@ -53,17 +50,14 @@ impl UCBUSY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCADDR_UCIDLE_A {
     #[doc = "0: UCADDR: Received character is data. UCIDLE: No idle line detected"]
-    UCADDR_UCIDLE_0,
+    UCADDR_UCIDLE_0 = 0,
     #[doc = "1: UCADDR: Received character is an address. UCIDLE: Idle line detected"]
-    UCADDR_UCIDLE_1,
+    UCADDR_UCIDLE_1 = 1,
 }
 impl From<UCADDR_UCIDLE_A> for bool {
     #[inline(always)]
     fn from(variant: UCADDR_UCIDLE_A) -> Self {
-        match variant {
-            UCADDR_UCIDLE_A::UCADDR_UCIDLE_0 => false,
-            UCADDR_UCIDLE_A::UCADDR_UCIDLE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCADDR_UCIDLE`"]
@@ -131,17 +125,14 @@ impl<'a> UCADDR_UCIDLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXERR_A {
     #[doc = "0: No receive errors detected"]
-    UCRXERR_0,
+    UCRXERR_0 = 0,
     #[doc = "1: Receive error detected"]
-    UCRXERR_1,
+    UCRXERR_1 = 1,
 }
 impl From<UCRXERR_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXERR_A) -> Self {
-        match variant {
-            UCRXERR_A::UCRXERR_0 => false,
-            UCRXERR_A::UCRXERR_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXERR`"]
@@ -209,17 +200,14 @@ impl<'a> UCRXERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBRK_A {
     #[doc = "0: No break condition"]
-    UCBRK_0,
+    UCBRK_0 = 0,
     #[doc = "1: Break condition occurred"]
-    UCBRK_1,
+    UCBRK_1 = 1,
 }
 impl From<UCBRK_A> for bool {
     #[inline(always)]
     fn from(variant: UCBRK_A) -> Self {
-        match variant {
-            UCBRK_A::UCBRK_0 => false,
-            UCBRK_A::UCBRK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBRK`"]
@@ -287,17 +275,14 @@ impl<'a> UCBRK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCPE_A {
     #[doc = "0: No error"]
-    UCPE_0,
+    UCPE_0 = 0,
     #[doc = "1: Character received with parity error"]
-    UCPE_1,
+    UCPE_1 = 1,
 }
 impl From<UCPE_A> for bool {
     #[inline(always)]
     fn from(variant: UCPE_A) -> Self {
-        match variant {
-            UCPE_A::UCPE_0 => false,
-            UCPE_A::UCPE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCPE`"]
@@ -365,17 +350,14 @@ impl<'a> UCPE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCOE_A {
     #[doc = "0: No error"]
-    UCOE_0,
+    UCOE_0 = 0,
     #[doc = "1: Overrun error occurred"]
-    UCOE_1,
+    UCOE_1 = 1,
 }
 impl From<UCOE_A> for bool {
     #[inline(always)]
     fn from(variant: UCOE_A) -> Self {
-        match variant {
-            UCOE_A::UCOE_0 => false,
-            UCOE_A::UCOE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCOE`"]
@@ -443,17 +425,14 @@ impl<'a> UCOE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCFE_A {
     #[doc = "0: No error"]
-    UCFE_0,
+    UCFE_0 = 0,
     #[doc = "1: Character received with low stop bit"]
-    UCFE_1,
+    UCFE_1 = 1,
 }
 impl From<UCFE_A> for bool {
     #[inline(always)]
     fn from(variant: UCFE_A) -> Self {
-        match variant {
-            UCFE_A::UCFE_0 => false,
-            UCFE_A::UCFE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCFE`"]
@@ -521,17 +500,14 @@ impl<'a> UCFE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCLISTEN_A {
     #[doc = "0: Disabled"]
-    UCLISTEN_0,
+    UCLISTEN_0 = 0,
     #[doc = "1: Enabled. UCAxTXD is internally fed back to the receiver"]
-    UCLISTEN_1,
+    UCLISTEN_1 = 1,
 }
 impl From<UCLISTEN_A> for bool {
     #[inline(always)]
     fn from(variant: UCLISTEN_A) -> Self {
-        match variant {
-            UCLISTEN_A::UCLISTEN_0 => false,
-            UCLISTEN_A::UCLISTEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCLISTEN`"]

@@ -2,22 +2,19 @@
 pub type R = crate::R<u16, super::UCB0IV_SPI>;
 #[doc = "eUSCI_B interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum UCIV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Interrupt Source: Data received; Interrupt Flag: UCRXIFG; Interrupt Priority: Highest"]
-    UCRXIFG,
+    UCRXIFG = 2,
     #[doc = "4: Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG; Interrupt Priority: Lowest"]
-    UCTXIFG,
+    UCTXIFG = 4,
 }
 impl From<UCIV_A> for u16 {
     #[inline(always)]
     fn from(variant: UCIV_A) -> Self {
-        match variant {
-            UCIV_A::NONE => 0,
-            UCIV_A::UCRXIFG => 2,
-            UCIV_A::UCTXIFG => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCIV`"]

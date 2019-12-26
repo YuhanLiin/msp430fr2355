@@ -10,37 +10,13 @@ impl crate::ResetValue for super::ICCILSR2 {
         0
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR16_A {}
-impl From<ILSR16_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR16_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR16`"]
-pub type ILSR16_R = crate::R<u8, ILSR16_A>;
-impl ILSR16_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR16_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR16_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR16`"]
 pub struct ILSR16_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR16_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR16_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -48,37 +24,13 @@ impl<'a> ILSR16_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR17_A {}
-impl From<ILSR17_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR17_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR17`"]
-pub type ILSR17_R = crate::R<u8, ILSR17_A>;
-impl ILSR17_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR17_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR17_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR17`"]
 pub struct ILSR17_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR17_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR17_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -86,37 +38,13 @@ impl<'a> ILSR17_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR18_A {}
-impl From<ILSR18_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR18_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR18`"]
-pub type ILSR18_R = crate::R<u8, ILSR18_A>;
-impl ILSR18_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR18_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR18_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR18`"]
 pub struct ILSR18_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR18_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR18_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -124,37 +52,13 @@ impl<'a> ILSR18_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR19_A {}
-impl From<ILSR19_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR19_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR19`"]
-pub type ILSR19_R = crate::R<u8, ILSR19_A>;
-impl ILSR19_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR19_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR19_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR19`"]
 pub struct ILSR19_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR19_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR19_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -162,37 +66,13 @@ impl<'a> ILSR19_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR20_A {}
-impl From<ILSR20_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR20_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR20`"]
-pub type ILSR20_R = crate::R<u8, ILSR20_A>;
-impl ILSR20_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR20_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR20_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR20`"]
 pub struct ILSR20_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR20_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR20_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -200,37 +80,13 @@ impl<'a> ILSR20_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR21_A {}
-impl From<ILSR21_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR21_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR21`"]
-pub type ILSR21_R = crate::R<u8, ILSR21_A>;
-impl ILSR21_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR21_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR21_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR21`"]
 pub struct ILSR21_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR21_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR21_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -238,37 +94,13 @@ impl<'a> ILSR21_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR22_A {}
-impl From<ILSR22_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR22_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR22`"]
-pub type ILSR22_R = crate::R<u8, ILSR22_A>;
-impl ILSR22_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR22_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR22_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR22`"]
 pub struct ILSR22_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR22_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR22_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -276,37 +108,13 @@ impl<'a> ILSR22_W<'a> {
         self.w
     }
 }
-#[doc = "Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ILSR23_A {}
-impl From<ILSR23_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ILSR23_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ILSR23`"]
-pub type ILSR23_R = crate::R<u8, ILSR23_A>;
-impl ILSR23_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ILSR23_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ILSR23_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `ILSR23`"]
 pub struct ILSR23_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ILSR23_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ILSR23_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

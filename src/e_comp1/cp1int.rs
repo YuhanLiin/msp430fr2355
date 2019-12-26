@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CP1INT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIFG_A {
     #[doc = "0: No interrupt pending."]
-    CPIFG_0,
+    CPIFG_0 = 0,
     #[doc = "1: Output interrupt pending."]
-    CPIFG_1,
+    CPIFG_1 = 1,
 }
 impl From<CPIFG_A> for bool {
     #[inline(always)]
     fn from(variant: CPIFG_A) -> Self {
-        match variant {
-            CPIFG_A::CPIFG_0 => false,
-            CPIFG_A::CPIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPIFG`"]
@@ -92,17 +89,14 @@ impl<'a> CPIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIIFG_A {
     #[doc = "0: No interrupt pending."]
-    CPIIFG_0,
+    CPIIFG_0 = 0,
     #[doc = "1: Output interrupt pending."]
-    CPIIFG_1,
+    CPIIFG_1 = 1,
 }
 impl From<CPIIFG_A> for bool {
     #[inline(always)]
     fn from(variant: CPIIFG_A) -> Self {
-        match variant {
-            CPIIFG_A::CPIIFG_0 => false,
-            CPIIFG_A::CPIIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPIIFG`"]

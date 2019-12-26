@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA0ABCTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCABDEN_A {
     #[doc = "0: Baud-rate detection disabled. Length of break and synch field is not measured."]
-    UCABDEN_0,
+    UCABDEN_0 = 0,
     #[doc = "1: Baud-rate detection enabled. Length of break and synch field is measured and baud-rate settings are changed accordingly."]
-    UCABDEN_1,
+    UCABDEN_1 = 1,
 }
 impl From<UCABDEN_A> for bool {
     #[inline(always)]
     fn from(variant: UCABDEN_A) -> Self {
-        match variant {
-            UCABDEN_A::UCABDEN_0 => false,
-            UCABDEN_A::UCABDEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCABDEN`"]
@@ -92,17 +89,14 @@ impl<'a> UCABDEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBTOE_A {
     #[doc = "0: No error"]
-    UCBTOE_0,
+    UCBTOE_0 = 0,
     #[doc = "1: Length of break field exceeded 22 bit times"]
-    UCBTOE_1,
+    UCBTOE_1 = 1,
 }
 impl From<UCBTOE_A> for bool {
     #[inline(always)]
     fn from(variant: UCBTOE_A) -> Self {
-        match variant {
-            UCBTOE_A::UCBTOE_0 => false,
-            UCBTOE_A::UCBTOE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBTOE`"]
@@ -170,17 +164,14 @@ impl<'a> UCBTOE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTOE_A {
     #[doc = "0: No error"]
-    UCSTOE_0,
+    UCSTOE_0 = 0,
     #[doc = "1: Length of synch field exceeded measurable time"]
-    UCSTOE_1,
+    UCSTOE_1 = 1,
 }
 impl From<UCSTOE_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTOE_A) -> Self {
-        match variant {
-            UCSTOE_A::UCSTOE_0 => false,
-            UCSTOE_A::UCSTOE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTOE`"]
@@ -246,25 +237,21 @@ impl<'a> UCSTOE_W<'a> {
 }
 #[doc = "Break/synch delimiter length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCDELIM_A {
     #[doc = "0: 1 bit time"]
-    UCDELIM_0,
+    UCDELIM_0 = 0,
     #[doc = "1: 2 bit times"]
-    UCDELIM_1,
+    UCDELIM_1 = 1,
     #[doc = "2: 3 bit times"]
-    UCDELIM_2,
+    UCDELIM_2 = 2,
     #[doc = "3: 4 bit times"]
-    UCDELIM_3,
+    UCDELIM_3 = 3,
 }
 impl From<UCDELIM_A> for u8 {
     #[inline(always)]
     fn from(variant: UCDELIM_A) -> Self {
-        match variant {
-            UCDELIM_A::UCDELIM_0 => 0,
-            UCDELIM_A::UCDELIM_1 => 1,
-            UCDELIM_A::UCDELIM_2 => 2,
-            UCDELIM_A::UCDELIM_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCDELIM`"]

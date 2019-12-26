@@ -12,37 +12,29 @@ impl crate::ResetValue for super::TB1EX0 {
 }
 #[doc = "Input divider expansion\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TBIDEX_A {
     #[doc = "0: Divide by 1"]
-    _1,
+    _1 = 0,
     #[doc = "1: Divide by 2"]
-    _2,
+    _2 = 1,
     #[doc = "2: Divide by 3"]
-    _3,
+    _3 = 2,
     #[doc = "3: Divide by 4"]
-    _4,
+    _4 = 3,
     #[doc = "4: Divide by 5"]
-    _5,
+    _5 = 4,
     #[doc = "5: Divide by 6"]
-    _6,
+    _6 = 5,
     #[doc = "6: Divide by 7"]
-    _7,
+    _7 = 6,
     #[doc = "7: Divide by 8"]
-    _8,
+    _8 = 7,
 }
 impl From<TBIDEX_A> for u8 {
     #[inline(always)]
     fn from(variant: TBIDEX_A) -> Self {
-        match variant {
-            TBIDEX_A::_1 => 0,
-            TBIDEX_A::_2 => 1,
-            TBIDEX_A::_3 => 2,
-            TBIDEX_A::_4 => 3,
-            TBIDEX_A::_5 => 4,
-            TBIDEX_A::_6 => 5,
-            TBIDEX_A::_7 => 6,
-            TBIDEX_A::_8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TBIDEX`"]

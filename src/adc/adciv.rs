@@ -12,34 +12,27 @@ impl crate::ResetValue for super::ADCIV {
 }
 #[doc = "interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum ADCIV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Interrupt Source: ADCMEM0 overflow; Interrupt Flag: ADCOVIFG; Interrupt Priority: Highest"]
-    ADCOVIFG,
+    ADCOVIFG = 2,
     #[doc = "4: Interrupt Source: Conversion time overflow; Interrupt Flag: ADCTOVIFG"]
-    ADCTOVIFG,
+    ADCTOVIFG = 4,
     #[doc = "6: Interrupt Source: ADCHI Interrupt flag; Interrupt Flag: ADCHIIFG"]
-    ADCHIIFG,
+    ADCHIIFG = 6,
     #[doc = "8: Interrupt Source: ADCLO Interrupt flag; Interrupt Flag: ADCLOIFG"]
-    ADCLOIFG,
+    ADCLOIFG = 8,
     #[doc = "10: nterrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
-    ADCINIFG,
+    ADCINIFG = 10,
     #[doc = "12: Interrupt Source: ADC memory Interrupt flag; Interrupt Flag: ADCIFG0; Interrupt Priority: Lowest"]
-    ADCIFG0,
+    ADCIFG0 = 12,
 }
 impl From<ADCIV_A> for u16 {
     #[inline(always)]
     fn from(variant: ADCIV_A) -> Self {
-        match variant {
-            ADCIV_A::NONE => 0,
-            ADCIV_A::ADCOVIFG => 2,
-            ADCIV_A::ADCTOVIFG => 4,
-            ADCIV_A::ADCHIIFG => 6,
-            ADCIV_A::ADCLOIFG => 8,
-            ADCIV_A::ADCINIFG => 10,
-            ADCIV_A::ADCIFG0 => 12,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCIV`"]

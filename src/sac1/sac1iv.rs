@@ -2,22 +2,19 @@
 pub type R = crate::R<u16, super::SAC1IV>;
 #[doc = "SAC Interrupt Vector Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum SACIV1_A {
     #[doc = "0: No interrupt pending"]
-    SACIV_0,
+    SACIV_0 = 0,
     #[doc = "2: S&H completed interrupt flag (Highest priority)"]
-    SACIV_2,
+    SACIV_2 = 2,
     #[doc = "4: DAC channel update interrupt flag"]
-    SACIV_4,
+    SACIV_4 = 4,
 }
 impl From<SACIV1_A> for u16 {
     #[inline(always)]
     fn from(variant: SACIV1_A) -> Self {
-        match variant {
-            SACIV1_A::SACIV_0 => 0,
-            SACIV1_A::SACIV_2 => 2,
-            SACIV1_A::SACIV_4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SACIV1`"]

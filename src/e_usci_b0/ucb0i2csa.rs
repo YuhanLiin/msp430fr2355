@@ -10,37 +10,13 @@ impl crate::ResetValue for super::UCB0I2CSA {
         0
     }
 }
-#[doc = "I2C slave address\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum I2CSA_A {}
-impl From<I2CSA_A> for u16 {
-    #[inline(always)]
-    fn from(variant: I2CSA_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `I2CSA`"]
-pub type I2CSA_R = crate::R<u16, I2CSA_A>;
-impl I2CSA_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, I2CSA_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type I2CSA_R = crate::R<u16, u16>;
 #[doc = "Write proxy for field `I2CSA`"]
 pub struct I2CSA_W<'a> {
     w: &'a mut W,
 }
 impl<'a> I2CSA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: I2CSA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {

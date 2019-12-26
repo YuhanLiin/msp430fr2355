@@ -12,205 +12,141 @@ impl crate::ResetValue for super::CPDACDATA {
 }
 #[doc = "1st 6-bit DAC buffer Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPDACBUF1_A {
     #[doc = "0: 0v"]
-    CPDACBUF1_0,
+    CPDACBUF1_0 = 0,
     #[doc = "1: selected reference voltage * 1/64"]
-    CPDACBUF1_1,
+    CPDACBUF1_1 = 1,
     #[doc = "2: selected reference voltage * 2/64"]
-    CPDACBUF1_2,
+    CPDACBUF1_2 = 2,
     #[doc = "3: selected reference voltage * 3/64"]
-    CPDACBUF1_3,
+    CPDACBUF1_3 = 3,
     #[doc = "4: selected reference voltage * 4/64"]
-    CPDACBUF1_4,
+    CPDACBUF1_4 = 4,
     #[doc = "5: selected reference voltage * 5/64"]
-    CPDACBUF1_5,
+    CPDACBUF1_5 = 5,
     #[doc = "6: selected reference voltage * 6/64"]
-    CPDACBUF1_6,
+    CPDACBUF1_6 = 6,
     #[doc = "7: selected reference voltage * 7/64"]
-    CPDACBUF1_7,
+    CPDACBUF1_7 = 7,
     #[doc = "8: selected reference voltage * 8/64"]
-    CPDACBUF1_8,
+    CPDACBUF1_8 = 8,
     #[doc = "9: selected reference voltage *9/64"]
-    CPDACBUF1_9,
+    CPDACBUF1_9 = 9,
     #[doc = "10: selected reference voltage * 10/64"]
-    CPDACBUF1_10,
+    CPDACBUF1_10 = 10,
     #[doc = "11: selected reference voltage * 11/64"]
-    CPDACBUF1_11,
+    CPDACBUF1_11 = 11,
     #[doc = "12: selected reference voltage * 12/64"]
-    CPDACBUF1_12,
+    CPDACBUF1_12 = 12,
     #[doc = "13: selected reference voltage * 13/64"]
-    CPDACBUF1_13,
+    CPDACBUF1_13 = 13,
     #[doc = "14: selected reference voltage * 14/64"]
-    CPDACBUF1_14,
+    CPDACBUF1_14 = 14,
     #[doc = "15: selected reference voltage * 15/64"]
-    CPDACBUF1_15,
+    CPDACBUF1_15 = 15,
     #[doc = "16: selected reference voltage * 16/64"]
-    CPDACBUF1_16,
+    CPDACBUF1_16 = 16,
     #[doc = "17: selected reference voltage * 17/64"]
-    CPDACBUF1_17,
+    CPDACBUF1_17 = 17,
     #[doc = "18: selected reference voltage * 18/64"]
-    CPDACBUF1_18,
+    CPDACBUF1_18 = 18,
     #[doc = "19: selected reference voltage * 19/64"]
-    CPDACBUF1_19,
+    CPDACBUF1_19 = 19,
     #[doc = "20: selected reference voltage * 20/64"]
-    CPDACBUF1_20,
+    CPDACBUF1_20 = 20,
     #[doc = "21: selected reference voltage * 21/64"]
-    CPDACBUF1_21,
+    CPDACBUF1_21 = 21,
     #[doc = "22: selected reference voltage * 22/64"]
-    CPDACBUF1_22,
+    CPDACBUF1_22 = 22,
     #[doc = "23: selected reference voltage * 23/64"]
-    CPDACBUF1_23,
+    CPDACBUF1_23 = 23,
     #[doc = "24: selected reference voltage * 24/64"]
-    CPDACBUF1_24,
+    CPDACBUF1_24 = 24,
     #[doc = "25: selected reference voltage * 25/64"]
-    CPDACBUF1_25,
+    CPDACBUF1_25 = 25,
     #[doc = "26: selected reference voltage * 26/64"]
-    CPDACBUF1_26,
+    CPDACBUF1_26 = 26,
     #[doc = "27: selected reference voltage * 27/64"]
-    CPDACBUF1_27,
+    CPDACBUF1_27 = 27,
     #[doc = "28: selected reference voltage * 28/64"]
-    CPDACBUF1_28,
+    CPDACBUF1_28 = 28,
     #[doc = "29: selected reference voltage * 29/64"]
-    CPDACBUF1_29,
+    CPDACBUF1_29 = 29,
     #[doc = "30: selected reference voltage * 30/64"]
-    CPDACBUF1_30,
+    CPDACBUF1_30 = 30,
     #[doc = "31: selected reference voltage * 31/64"]
-    CPDACBUF1_31,
+    CPDACBUF1_31 = 31,
     #[doc = "32: selected reference voltage * 32/64"]
-    CPDACBUF1_32,
+    CPDACBUF1_32 = 32,
     #[doc = "33: selected reference voltage * 33/64"]
-    CPDACBUF1_33,
+    CPDACBUF1_33 = 33,
     #[doc = "34: selected reference voltage * 34/64"]
-    CPDACBUF1_34,
+    CPDACBUF1_34 = 34,
     #[doc = "35: selected reference voltage * 35/64"]
-    CPDACBUF1_35,
+    CPDACBUF1_35 = 35,
     #[doc = "36: selected reference voltage * 36/64"]
-    CPDACBUF1_36,
+    CPDACBUF1_36 = 36,
     #[doc = "37: selected reference voltage * 37/64"]
-    CPDACBUF1_37,
+    CPDACBUF1_37 = 37,
     #[doc = "38: selected reference voltage * 38/64"]
-    CPDACBUF1_38,
+    CPDACBUF1_38 = 38,
     #[doc = "39: selected reference voltage * 39/64"]
-    CPDACBUF1_39,
+    CPDACBUF1_39 = 39,
     #[doc = "40: selected reference voltage * 40/64"]
-    CPDACBUF1_40,
+    CPDACBUF1_40 = 40,
     #[doc = "41: selected reference voltage * 41/64"]
-    CPDACBUF1_41,
+    CPDACBUF1_41 = 41,
     #[doc = "42: selected reference voltage * 42/64"]
-    CPDACBUF1_42,
+    CPDACBUF1_42 = 42,
     #[doc = "43: selected reference voltage * 43/64"]
-    CPDACBUF1_43,
+    CPDACBUF1_43 = 43,
     #[doc = "44: selected reference voltage * 44/64"]
-    CPDACBUF1_44,
+    CPDACBUF1_44 = 44,
     #[doc = "45: selected reference voltage * 45/64"]
-    CPDACBUF1_45,
+    CPDACBUF1_45 = 45,
     #[doc = "46: selected reference voltage * 46/64"]
-    CPDACBUF1_46,
+    CPDACBUF1_46 = 46,
     #[doc = "47: selected reference voltage * 47/64"]
-    CPDACBUF1_47,
+    CPDACBUF1_47 = 47,
     #[doc = "48: selected reference voltage * 48/64"]
-    CPDACBUF1_48,
+    CPDACBUF1_48 = 48,
     #[doc = "49: selected reference voltage * 49/64"]
-    CPDACBUF1_49,
+    CPDACBUF1_49 = 49,
     #[doc = "50: selected reference voltage * 50/64"]
-    CPDACBUF1_50,
+    CPDACBUF1_50 = 50,
     #[doc = "51: selected reference voltage * 51/64"]
-    CPDACBUF1_51,
+    CPDACBUF1_51 = 51,
     #[doc = "52: selected reference voltage * 52/64"]
-    CPDACBUF1_52,
+    CPDACBUF1_52 = 52,
     #[doc = "53: selected reference voltage * 53/64"]
-    CPDACBUF1_53,
+    CPDACBUF1_53 = 53,
     #[doc = "54: selected reference voltage * 54/64"]
-    CPDACBUF1_54,
+    CPDACBUF1_54 = 54,
     #[doc = "55: selected reference voltage * 55/64"]
-    CPDACBUF1_55,
+    CPDACBUF1_55 = 55,
     #[doc = "56: selected reference voltage * 56/64"]
-    CPDACBUF1_56,
+    CPDACBUF1_56 = 56,
     #[doc = "57: selected reference voltage * 57/64"]
-    CPDACBUF1_57,
+    CPDACBUF1_57 = 57,
     #[doc = "58: selected reference voltage * 58/64"]
-    CPDACBUF1_58,
+    CPDACBUF1_58 = 58,
     #[doc = "59: selected reference voltage * 59/64"]
-    CPDACBUF1_59,
+    CPDACBUF1_59 = 59,
     #[doc = "60: selected reference voltage * 60/64"]
-    CPDACBUF1_60,
+    CPDACBUF1_60 = 60,
     #[doc = "61: selected reference voltage * 61/64"]
-    CPDACBUF1_61,
+    CPDACBUF1_61 = 61,
     #[doc = "62: selected reference voltage * 62/64"]
-    CPDACBUF1_62,
+    CPDACBUF1_62 = 62,
     #[doc = "63: selected reference voltage * 63/64"]
-    CPDACBUF1_63,
+    CPDACBUF1_63 = 63,
 }
 impl From<CPDACBUF1_A> for u8 {
     #[inline(always)]
     fn from(variant: CPDACBUF1_A) -> Self {
-        match variant {
-            CPDACBUF1_A::CPDACBUF1_0 => 0,
-            CPDACBUF1_A::CPDACBUF1_1 => 1,
-            CPDACBUF1_A::CPDACBUF1_2 => 2,
-            CPDACBUF1_A::CPDACBUF1_3 => 3,
-            CPDACBUF1_A::CPDACBUF1_4 => 4,
-            CPDACBUF1_A::CPDACBUF1_5 => 5,
-            CPDACBUF1_A::CPDACBUF1_6 => 6,
-            CPDACBUF1_A::CPDACBUF1_7 => 7,
-            CPDACBUF1_A::CPDACBUF1_8 => 8,
-            CPDACBUF1_A::CPDACBUF1_9 => 9,
-            CPDACBUF1_A::CPDACBUF1_10 => 10,
-            CPDACBUF1_A::CPDACBUF1_11 => 11,
-            CPDACBUF1_A::CPDACBUF1_12 => 12,
-            CPDACBUF1_A::CPDACBUF1_13 => 13,
-            CPDACBUF1_A::CPDACBUF1_14 => 14,
-            CPDACBUF1_A::CPDACBUF1_15 => 15,
-            CPDACBUF1_A::CPDACBUF1_16 => 16,
-            CPDACBUF1_A::CPDACBUF1_17 => 17,
-            CPDACBUF1_A::CPDACBUF1_18 => 18,
-            CPDACBUF1_A::CPDACBUF1_19 => 19,
-            CPDACBUF1_A::CPDACBUF1_20 => 20,
-            CPDACBUF1_A::CPDACBUF1_21 => 21,
-            CPDACBUF1_A::CPDACBUF1_22 => 22,
-            CPDACBUF1_A::CPDACBUF1_23 => 23,
-            CPDACBUF1_A::CPDACBUF1_24 => 24,
-            CPDACBUF1_A::CPDACBUF1_25 => 25,
-            CPDACBUF1_A::CPDACBUF1_26 => 26,
-            CPDACBUF1_A::CPDACBUF1_27 => 27,
-            CPDACBUF1_A::CPDACBUF1_28 => 28,
-            CPDACBUF1_A::CPDACBUF1_29 => 29,
-            CPDACBUF1_A::CPDACBUF1_30 => 30,
-            CPDACBUF1_A::CPDACBUF1_31 => 31,
-            CPDACBUF1_A::CPDACBUF1_32 => 32,
-            CPDACBUF1_A::CPDACBUF1_33 => 33,
-            CPDACBUF1_A::CPDACBUF1_34 => 34,
-            CPDACBUF1_A::CPDACBUF1_35 => 35,
-            CPDACBUF1_A::CPDACBUF1_36 => 36,
-            CPDACBUF1_A::CPDACBUF1_37 => 37,
-            CPDACBUF1_A::CPDACBUF1_38 => 38,
-            CPDACBUF1_A::CPDACBUF1_39 => 39,
-            CPDACBUF1_A::CPDACBUF1_40 => 40,
-            CPDACBUF1_A::CPDACBUF1_41 => 41,
-            CPDACBUF1_A::CPDACBUF1_42 => 42,
-            CPDACBUF1_A::CPDACBUF1_43 => 43,
-            CPDACBUF1_A::CPDACBUF1_44 => 44,
-            CPDACBUF1_A::CPDACBUF1_45 => 45,
-            CPDACBUF1_A::CPDACBUF1_46 => 46,
-            CPDACBUF1_A::CPDACBUF1_47 => 47,
-            CPDACBUF1_A::CPDACBUF1_48 => 48,
-            CPDACBUF1_A::CPDACBUF1_49 => 49,
-            CPDACBUF1_A::CPDACBUF1_50 => 50,
-            CPDACBUF1_A::CPDACBUF1_51 => 51,
-            CPDACBUF1_A::CPDACBUF1_52 => 52,
-            CPDACBUF1_A::CPDACBUF1_53 => 53,
-            CPDACBUF1_A::CPDACBUF1_54 => 54,
-            CPDACBUF1_A::CPDACBUF1_55 => 55,
-            CPDACBUF1_A::CPDACBUF1_56 => 56,
-            CPDACBUF1_A::CPDACBUF1_57 => 57,
-            CPDACBUF1_A::CPDACBUF1_58 => 58,
-            CPDACBUF1_A::CPDACBUF1_59 => 59,
-            CPDACBUF1_A::CPDACBUF1_60 => 60,
-            CPDACBUF1_A::CPDACBUF1_61 => 61,
-            CPDACBUF1_A::CPDACBUF1_62 => 62,
-            CPDACBUF1_A::CPDACBUF1_63 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPDACBUF1`"]
@@ -949,205 +885,141 @@ impl<'a> CPDACBUF1_W<'a> {
 }
 #[doc = "2nd 6-bit DAC buffer Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPDACBUF2_A {
     #[doc = "0: 0v"]
-    CPDACBUF2_0,
+    CPDACBUF2_0 = 0,
     #[doc = "1: selected reference voltage * 1/64"]
-    CPDACBUF2_1,
+    CPDACBUF2_1 = 1,
     #[doc = "2: selected reference voltage * 2/64"]
-    CPDACBUF2_2,
+    CPDACBUF2_2 = 2,
     #[doc = "3: selected reference voltage * 3/64"]
-    CPDACBUF2_3,
+    CPDACBUF2_3 = 3,
     #[doc = "4: selected reference voltage * 4/64"]
-    CPDACBUF2_4,
+    CPDACBUF2_4 = 4,
     #[doc = "5: selected reference voltage * 5/64"]
-    CPDACBUF2_5,
+    CPDACBUF2_5 = 5,
     #[doc = "6: selected reference voltage * 6/64"]
-    CPDACBUF2_6,
+    CPDACBUF2_6 = 6,
     #[doc = "7: selected reference voltage * 7/64"]
-    CPDACBUF2_7,
+    CPDACBUF2_7 = 7,
     #[doc = "8: selected reference voltage * 8/64"]
-    CPDACBUF2_8,
+    CPDACBUF2_8 = 8,
     #[doc = "9: selected reference voltage * 9/64"]
-    CPDACBUF2_9,
+    CPDACBUF2_9 = 9,
     #[doc = "10: selected reference voltage * 10/64"]
-    CPDACBUF2_10,
+    CPDACBUF2_10 = 10,
     #[doc = "11: selected reference voltage * 11/64"]
-    CPDACBUF2_11,
+    CPDACBUF2_11 = 11,
     #[doc = "12: selected reference voltage * 12/64"]
-    CPDACBUF2_12,
+    CPDACBUF2_12 = 12,
     #[doc = "13: selected reference voltage * 13/64"]
-    CPDACBUF2_13,
+    CPDACBUF2_13 = 13,
     #[doc = "14: selected reference voltage * 14/64"]
-    CPDACBUF2_14,
+    CPDACBUF2_14 = 14,
     #[doc = "15: selected reference voltage * 15/64"]
-    CPDACBUF2_15,
+    CPDACBUF2_15 = 15,
     #[doc = "16: selected reference voltage * 16/64"]
-    CPDACBUF2_16,
+    CPDACBUF2_16 = 16,
     #[doc = "17: selected reference voltage * 17/64"]
-    CPDACBUF2_17,
+    CPDACBUF2_17 = 17,
     #[doc = "18: selected reference voltage * 18/64"]
-    CPDACBUF2_18,
+    CPDACBUF2_18 = 18,
     #[doc = "19: selected reference voltage * 19/64"]
-    CPDACBUF2_19,
+    CPDACBUF2_19 = 19,
     #[doc = "20: selected reference voltage * 20/64"]
-    CPDACBUF2_20,
+    CPDACBUF2_20 = 20,
     #[doc = "21: selected reference voltage * 21/64"]
-    CPDACBUF2_21,
+    CPDACBUF2_21 = 21,
     #[doc = "22: selected reference voltage * 22/64"]
-    CPDACBUF2_22,
+    CPDACBUF2_22 = 22,
     #[doc = "23: selected reference voltage * 23/64"]
-    CPDACBUF2_23,
+    CPDACBUF2_23 = 23,
     #[doc = "24: selected reference voltage * 24/64"]
-    CPDACBUF2_24,
+    CPDACBUF2_24 = 24,
     #[doc = "25: selected reference voltage * 25/64"]
-    CPDACBUF2_25,
+    CPDACBUF2_25 = 25,
     #[doc = "26: selected reference voltage * 26/64"]
-    CPDACBUF2_26,
+    CPDACBUF2_26 = 26,
     #[doc = "27: selected reference voltage * 27/64"]
-    CPDACBUF2_27,
+    CPDACBUF2_27 = 27,
     #[doc = "28: selected reference voltage * 28/64"]
-    CPDACBUF2_28,
+    CPDACBUF2_28 = 28,
     #[doc = "29: selected reference voltage * 29/64"]
-    CPDACBUF2_29,
+    CPDACBUF2_29 = 29,
     #[doc = "30: selected reference voltage * 30/64"]
-    CPDACBUF2_30,
+    CPDACBUF2_30 = 30,
     #[doc = "31: selected reference voltage * 31/64"]
-    CPDACBUF2_31,
+    CPDACBUF2_31 = 31,
     #[doc = "32: selected reference voltage * 32/64"]
-    CPDACBUF2_32,
+    CPDACBUF2_32 = 32,
     #[doc = "33: selected reference voltage * 33/64"]
-    CPDACBUF2_33,
+    CPDACBUF2_33 = 33,
     #[doc = "34: selected reference voltage * 34/64"]
-    CPDACBUF2_34,
+    CPDACBUF2_34 = 34,
     #[doc = "35: selected reference voltage * 35/64"]
-    CPDACBUF2_35,
+    CPDACBUF2_35 = 35,
     #[doc = "36: selected reference voltage * 36/64"]
-    CPDACBUF2_36,
+    CPDACBUF2_36 = 36,
     #[doc = "37: selected reference voltage * 37/64"]
-    CPDACBUF2_37,
+    CPDACBUF2_37 = 37,
     #[doc = "38: selected reference voltage * 38/64"]
-    CPDACBUF2_38,
+    CPDACBUF2_38 = 38,
     #[doc = "39: selected reference voltage * 39/64"]
-    CPDACBUF2_39,
+    CPDACBUF2_39 = 39,
     #[doc = "40: selected reference voltage * 40/64"]
-    CPDACBUF2_40,
+    CPDACBUF2_40 = 40,
     #[doc = "41: selected reference voltage * 41/64"]
-    CPDACBUF2_41,
+    CPDACBUF2_41 = 41,
     #[doc = "42: selected reference voltage * 42/64"]
-    CPDACBUF2_42,
+    CPDACBUF2_42 = 42,
     #[doc = "43: selected reference voltage * 43/64"]
-    CPDACBUF2_43,
+    CPDACBUF2_43 = 43,
     #[doc = "44: selected reference voltage * 44/64"]
-    CPDACBUF2_44,
+    CPDACBUF2_44 = 44,
     #[doc = "45: selected reference voltage * 45/64"]
-    CPDACBUF2_45,
+    CPDACBUF2_45 = 45,
     #[doc = "46: selected reference voltage * 46/64"]
-    CPDACBUF2_46,
+    CPDACBUF2_46 = 46,
     #[doc = "47: selected reference voltage * 47/64"]
-    CPDACBUF2_47,
+    CPDACBUF2_47 = 47,
     #[doc = "48: selected reference voltage * 48/64"]
-    CPDACBUF2_48,
+    CPDACBUF2_48 = 48,
     #[doc = "49: selected reference voltage * 49/64"]
-    CPDACBUF2_49,
+    CPDACBUF2_49 = 49,
     #[doc = "50: selected reference voltage * 50/64"]
-    CPDACBUF2_50,
+    CPDACBUF2_50 = 50,
     #[doc = "51: selected reference voltage * 51/64"]
-    CPDACBUF2_51,
+    CPDACBUF2_51 = 51,
     #[doc = "52: selected reference voltage * 52/64"]
-    CPDACBUF2_52,
+    CPDACBUF2_52 = 52,
     #[doc = "53: selected reference voltage * 53/64"]
-    CPDACBUF2_53,
+    CPDACBUF2_53 = 53,
     #[doc = "54: selected reference voltage * 54/64"]
-    CPDACBUF2_54,
+    CPDACBUF2_54 = 54,
     #[doc = "55: selected reference voltage * 55/64"]
-    CPDACBUF2_55,
+    CPDACBUF2_55 = 55,
     #[doc = "56: selected reference voltage * 56/64"]
-    CPDACBUF2_56,
+    CPDACBUF2_56 = 56,
     #[doc = "57: selected reference voltage * 57/64"]
-    CPDACBUF2_57,
+    CPDACBUF2_57 = 57,
     #[doc = "58: selected reference voltage * 58/64"]
-    CPDACBUF2_58,
+    CPDACBUF2_58 = 58,
     #[doc = "59: selected reference voltage * 59/64"]
-    CPDACBUF2_59,
+    CPDACBUF2_59 = 59,
     #[doc = "60: selected reference voltage * 60/64"]
-    CPDACBUF2_60,
+    CPDACBUF2_60 = 60,
     #[doc = "61: selected reference voltage * 61/64"]
-    CPDACBUF2_61,
+    CPDACBUF2_61 = 61,
     #[doc = "62: selected reference voltage * 62/64"]
-    CPDACBUF2_62,
+    CPDACBUF2_62 = 62,
     #[doc = "63: selected reference voltage * 63/64"]
-    CPDACBUF2_63,
+    CPDACBUF2_63 = 63,
 }
 impl From<CPDACBUF2_A> for u8 {
     #[inline(always)]
     fn from(variant: CPDACBUF2_A) -> Self {
-        match variant {
-            CPDACBUF2_A::CPDACBUF2_0 => 0,
-            CPDACBUF2_A::CPDACBUF2_1 => 1,
-            CPDACBUF2_A::CPDACBUF2_2 => 2,
-            CPDACBUF2_A::CPDACBUF2_3 => 3,
-            CPDACBUF2_A::CPDACBUF2_4 => 4,
-            CPDACBUF2_A::CPDACBUF2_5 => 5,
-            CPDACBUF2_A::CPDACBUF2_6 => 6,
-            CPDACBUF2_A::CPDACBUF2_7 => 7,
-            CPDACBUF2_A::CPDACBUF2_8 => 8,
-            CPDACBUF2_A::CPDACBUF2_9 => 9,
-            CPDACBUF2_A::CPDACBUF2_10 => 10,
-            CPDACBUF2_A::CPDACBUF2_11 => 11,
-            CPDACBUF2_A::CPDACBUF2_12 => 12,
-            CPDACBUF2_A::CPDACBUF2_13 => 13,
-            CPDACBUF2_A::CPDACBUF2_14 => 14,
-            CPDACBUF2_A::CPDACBUF2_15 => 15,
-            CPDACBUF2_A::CPDACBUF2_16 => 16,
-            CPDACBUF2_A::CPDACBUF2_17 => 17,
-            CPDACBUF2_A::CPDACBUF2_18 => 18,
-            CPDACBUF2_A::CPDACBUF2_19 => 19,
-            CPDACBUF2_A::CPDACBUF2_20 => 20,
-            CPDACBUF2_A::CPDACBUF2_21 => 21,
-            CPDACBUF2_A::CPDACBUF2_22 => 22,
-            CPDACBUF2_A::CPDACBUF2_23 => 23,
-            CPDACBUF2_A::CPDACBUF2_24 => 24,
-            CPDACBUF2_A::CPDACBUF2_25 => 25,
-            CPDACBUF2_A::CPDACBUF2_26 => 26,
-            CPDACBUF2_A::CPDACBUF2_27 => 27,
-            CPDACBUF2_A::CPDACBUF2_28 => 28,
-            CPDACBUF2_A::CPDACBUF2_29 => 29,
-            CPDACBUF2_A::CPDACBUF2_30 => 30,
-            CPDACBUF2_A::CPDACBUF2_31 => 31,
-            CPDACBUF2_A::CPDACBUF2_32 => 32,
-            CPDACBUF2_A::CPDACBUF2_33 => 33,
-            CPDACBUF2_A::CPDACBUF2_34 => 34,
-            CPDACBUF2_A::CPDACBUF2_35 => 35,
-            CPDACBUF2_A::CPDACBUF2_36 => 36,
-            CPDACBUF2_A::CPDACBUF2_37 => 37,
-            CPDACBUF2_A::CPDACBUF2_38 => 38,
-            CPDACBUF2_A::CPDACBUF2_39 => 39,
-            CPDACBUF2_A::CPDACBUF2_40 => 40,
-            CPDACBUF2_A::CPDACBUF2_41 => 41,
-            CPDACBUF2_A::CPDACBUF2_42 => 42,
-            CPDACBUF2_A::CPDACBUF2_43 => 43,
-            CPDACBUF2_A::CPDACBUF2_44 => 44,
-            CPDACBUF2_A::CPDACBUF2_45 => 45,
-            CPDACBUF2_A::CPDACBUF2_46 => 46,
-            CPDACBUF2_A::CPDACBUF2_47 => 47,
-            CPDACBUF2_A::CPDACBUF2_48 => 48,
-            CPDACBUF2_A::CPDACBUF2_49 => 49,
-            CPDACBUF2_A::CPDACBUF2_50 => 50,
-            CPDACBUF2_A::CPDACBUF2_51 => 51,
-            CPDACBUF2_A::CPDACBUF2_52 => 52,
-            CPDACBUF2_A::CPDACBUF2_53 => 53,
-            CPDACBUF2_A::CPDACBUF2_54 => 54,
-            CPDACBUF2_A::CPDACBUF2_55 => 55,
-            CPDACBUF2_A::CPDACBUF2_56 => 56,
-            CPDACBUF2_A::CPDACBUF2_57 => 57,
-            CPDACBUF2_A::CPDACBUF2_58 => 58,
-            CPDACBUF2_A::CPDACBUF2_59 => 59,
-            CPDACBUF2_A::CPDACBUF2_60 => 60,
-            CPDACBUF2_A::CPDACBUF2_61 => 61,
-            CPDACBUF2_A::CPDACBUF2_62 => 62,
-            CPDACBUF2_A::CPDACBUF2_63 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPDACBUF2`"]

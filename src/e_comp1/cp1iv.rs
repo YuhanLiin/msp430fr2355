@@ -2,22 +2,19 @@
 pub type R = crate::R<u16, super::CP1IV>;
 #[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum CPIV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: CPIFG"]
-    CPIFG,
+    CPIFG = 2,
     #[doc = "4: CPIIFG"]
-    CPIIFG,
+    CPIIFG = 4,
 }
 impl From<CPIV_A> for u16 {
     #[inline(always)]
     fn from(variant: CPIV_A) -> Self {
-        match variant {
-            CPIV_A::NONE => 0,
-            CPIV_A::CPIFG => 2,
-            CPIV_A::CPIIFG => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPIV`"]

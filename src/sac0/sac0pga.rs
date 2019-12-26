@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SAC0PGA {
 }
 #[doc = "SAC PGA Mode Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSEL_A {
     #[doc = "0: Inverting PGA mode (external pad IN- is selected)"]
-    MSEL_0,
+    MSEL_0 = 0,
     #[doc = "1: Buffer mode (floating is selected )"]
-    MSEL_1,
+    MSEL_1 = 1,
     #[doc = "2: Non-inverting mode"]
-    MSEL_2,
+    MSEL_2 = 2,
     #[doc = "3: Cascade OA Inverting mode"]
-    MSEL_3,
+    MSEL_3 = 3,
 }
 impl From<MSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: MSEL_A) -> Self {
-        match variant {
-            MSEL_A::MSEL_0 => 0,
-            MSEL_A::MSEL_1 => 1,
-            MSEL_A::MSEL_2 => 2,
-            MSEL_A::MSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSEL`"]
@@ -107,37 +103,13 @@ impl<'a> MSEL_W<'a> {
         self.w
     }
 }
-#[doc = "SAC PGA Gain configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GAIN_A {}
-impl From<GAIN_A> for u8 {
-    #[inline(always)]
-    fn from(variant: GAIN_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `GAIN`"]
-pub type GAIN_R = crate::R<u8, GAIN_A>;
-impl GAIN_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, GAIN_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type GAIN_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `GAIN`"]
 pub struct GAIN_W<'a> {
     w: &'a mut W,
 }
 impl<'a> GAIN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GAIN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

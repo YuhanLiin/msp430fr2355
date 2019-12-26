@@ -10,42 +10,20 @@ impl crate::ResetValue for super::CP1CTL1 {
         0
     }
 }
-#[doc = "Comparator output value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPOUT_A {}
-impl From<CPOUT_A> for bool {
-    #[inline(always)]
-    fn from(variant: CPOUT_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `CPOUT`"]
-pub type CPOUT_R = crate::R<bool, CPOUT_A>;
-impl CPOUT_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, CPOUT_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type CPOUT_R = crate::R<bool, bool>;
 #[doc = "Comparator output polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPINV_A {
     #[doc = "0: Comparator output is non-inverted"]
-    CPINV_0,
+    CPINV_0 = 0,
     #[doc = "1: Comparator output is inverted"]
-    CPINV_1,
+    CPINV_1 = 1,
 }
 impl From<CPINV_A> for bool {
     #[inline(always)]
     fn from(variant: CPINV_A) -> Self {
-        match variant {
-            CPINV_A::CPINV_0 => false,
-            CPINV_A::CPINV_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPINV`"]
@@ -113,17 +91,14 @@ impl<'a> CPINV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIES_A {
     #[doc = "0: Rising edge for CPIFG, falling edge for CPIIFG"]
-    CPIES_0,
+    CPIES_0 = 0,
     #[doc = "1: Falling edge for CPIFG, rising edge for CPIIFG"]
-    CPIES_1,
+    CPIES_1 = 1,
 }
 impl From<CPIES_A> for bool {
     #[inline(always)]
     fn from(variant: CPIES_A) -> Self {
-        match variant {
-            CPIES_A::CPIES_0 => false,
-            CPIES_A::CPIES_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPIES`"]
@@ -191,17 +166,14 @@ impl<'a> CPIES_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPFLT_A {
     #[doc = "0: Comparator output is not filtered"]
-    CPFLT_0,
+    CPFLT_0 = 0,
     #[doc = "1: Comparator output is filtered"]
-    CPFLT_1,
+    CPFLT_1 = 1,
 }
 impl From<CPFLT_A> for bool {
     #[inline(always)]
     fn from(variant: CPFLT_A) -> Self {
-        match variant {
-            CPFLT_A::CPFLT_0 => false,
-            CPFLT_A::CPFLT_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPFLT`"]
@@ -267,25 +239,21 @@ impl<'a> CPFLT_W<'a> {
 }
 #[doc = "Analog Filter Delay selection. These bits are used to select the analog filter delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPFLTDLY_A {
     #[doc = "0: Typical filter delay of 450ns"]
-    CPFLTDLY_0,
+    CPFLTDLY_0 = 0,
     #[doc = "1: Typical filter delay of 900ns"]
-    CPFLTDLY_1,
+    CPFLTDLY_1 = 1,
     #[doc = "2: Typical filter delay of 1800ns"]
-    CPFLTDLY_2,
+    CPFLTDLY_2 = 2,
     #[doc = "3: Typical filter delay of 3600ns"]
-    CPFLTDLY_3,
+    CPFLTDLY_3 = 3,
 }
 impl From<CPFLTDLY_A> for u8 {
     #[inline(always)]
     fn from(variant: CPFLTDLY_A) -> Self {
-        match variant {
-            CPFLTDLY_A::CPFLTDLY_0 => 0,
-            CPFLTDLY_A::CPFLTDLY_1 => 1,
-            CPFLTDLY_A::CPFLTDLY_2 => 2,
-            CPFLTDLY_A::CPFLTDLY_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPFLTDLY`"]
@@ -366,17 +334,14 @@ impl<'a> CPFLTDLY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPMSEL_A {
     #[doc = "0: High-power & High speed mode (500nA)"]
-    CPMSEL_0,
+    CPMSEL_0 = 0,
     #[doc = "1: Low-power & Low speed mode (10nA)"]
-    CPMSEL_1,
+    CPMSEL_1 = 1,
 }
 impl From<CPMSEL_A> for bool {
     #[inline(always)]
     fn from(variant: CPMSEL_A) -> Self {
-        match variant {
-            CPMSEL_A::CPMSEL_0 => false,
-            CPMSEL_A::CPMSEL_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPMSEL`"]
@@ -444,17 +409,14 @@ impl<'a> CPMSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPEN_A {
     #[doc = "0: Comparator is disabled"]
-    CPEN_0,
+    CPEN_0 = 0,
     #[doc = "1: Comparator is enabled"]
-    CPEN_1,
+    CPEN_1 = 1,
 }
 impl From<CPEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPEN_A) -> Self {
-        match variant {
-            CPEN_A::CPEN_0 => false,
-            CPEN_A::CPEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPEN`"]
@@ -520,25 +482,21 @@ impl<'a> CPEN_W<'a> {
 }
 #[doc = "Programable Hysteresis mode. These bits are used to select the Hysteresis mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPHSEL_A {
     #[doc = "0: disable"]
-    CPHSEL_0,
+    CPHSEL_0 = 0,
     #[doc = "1: 10mV"]
-    CPHSEL_1,
+    CPHSEL_1 = 1,
     #[doc = "2: 20mV"]
-    CPHSEL_2,
+    CPHSEL_2 = 2,
     #[doc = "3: 30mV"]
-    CPHSEL_3,
+    CPHSEL_3 = 3,
 }
 impl From<CPHSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CPHSEL_A) -> Self {
-        match variant {
-            CPHSEL_A::CPHSEL_0 => 0,
-            CPHSEL_A::CPHSEL_1 => 1,
-            CPHSEL_A::CPHSEL_2 => 2,
-            CPHSEL_A::CPHSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPHSEL`"]
@@ -619,17 +577,14 @@ impl<'a> CPHSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIE_A {
     #[doc = "0: Interrupt output is disabled"]
-    CPIE_0,
+    CPIE_0 = 0,
     #[doc = "1: Interrupt output is enabled"]
-    CPIE_1,
+    CPIE_1 = 1,
 }
 impl From<CPIE_A> for bool {
     #[inline(always)]
     fn from(variant: CPIE_A) -> Self {
-        match variant {
-            CPIE_A::CPIE_0 => false,
-            CPIE_A::CPIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPIE`"]
@@ -697,17 +652,14 @@ impl<'a> CPIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPIIE_A {
     #[doc = "0: Interrupt inverted output is disabled"]
-    CPIIE_0,
+    CPIIE_0 = 0,
     #[doc = "1: Interrupt inverted output is enabled"]
-    CPIIE_1,
+    CPIIE_1 = 1,
 }
 impl From<CPIIE_A> for bool {
     #[inline(always)]
     fn from(variant: CPIIE_A) -> Self {
-        match variant {
-            CPIIE_A::CPIIE_0 => false,
-            CPIIE_A::CPIIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPIIE`"]

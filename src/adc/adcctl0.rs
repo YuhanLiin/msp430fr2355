@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADCCTL0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCSC_A {
     #[doc = "0: No sample-and-conversion-start"]
-    ADCSC_0,
+    ADCSC_0 = 0,
     #[doc = "1: Start sample-and-conversion"]
-    ADCSC_1,
+    ADCSC_1 = 1,
 }
 impl From<ADCSC_A> for bool {
     #[inline(always)]
     fn from(variant: ADCSC_A) -> Self {
-        match variant {
-            ADCSC_A::ADCSC_0 => false,
-            ADCSC_A::ADCSC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCSC`"]
@@ -92,17 +89,14 @@ impl<'a> ADCSC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCENC_A {
     #[doc = "0: ADC disabled"]
-    ADCENC_0,
+    ADCENC_0 = 0,
     #[doc = "1: ADC enabled"]
-    ADCENC_1,
+    ADCENC_1 = 1,
 }
 impl From<ADCENC_A> for bool {
     #[inline(always)]
     fn from(variant: ADCENC_A) -> Self {
-        match variant {
-            ADCENC_A::ADCENC_0 => false,
-            ADCENC_A::ADCENC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCENC`"]
@@ -170,17 +164,14 @@ impl<'a> ADCENC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCON_A {
     #[doc = "0: ADC off"]
-    ADCON_0,
+    ADCON_0 = 0,
     #[doc = "1: ADC on"]
-    ADCON_1,
+    ADCON_1 = 1,
 }
 impl From<ADCON_A> for bool {
     #[inline(always)]
     fn from(variant: ADCON_A) -> Self {
-        match variant {
-            ADCON_A::ADCON_0 => false,
-            ADCON_A::ADCON_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCON`"]
@@ -248,17 +239,14 @@ impl<'a> ADCON_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCMSC_A {
     #[doc = "0: The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert."]
-    ADCMSC_0,
+    ADCMSC_0 = 0,
     #[doc = "1: The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed."]
-    ADCMSC_1,
+    ADCMSC_1 = 1,
 }
 impl From<ADCMSC_A> for bool {
     #[inline(always)]
     fn from(variant: ADCMSC_A) -> Self {
-        match variant {
-            ADCMSC_A::ADCMSC_0 => false,
-            ADCMSC_A::ADCMSC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCMSC`"]
@@ -324,61 +312,45 @@ impl<'a> ADCMSC_W<'a> {
 }
 #[doc = "sample-and-hold time.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCSHT_A {
     #[doc = "0: 4 ADCCLK cycles"]
-    ADCSHT_0,
+    ADCSHT_0 = 0,
     #[doc = "1: 8 ADCCLK cycles"]
-    ADCSHT_1,
+    ADCSHT_1 = 1,
     #[doc = "2: 16 ADCCLK cycles"]
-    ADCSHT_2,
+    ADCSHT_2 = 2,
     #[doc = "3: 32 ADCCLK cycles"]
-    ADCSHT_3,
+    ADCSHT_3 = 3,
     #[doc = "4: 64 ADCCLK cycles"]
-    ADCSHT_4,
+    ADCSHT_4 = 4,
     #[doc = "5: 96 ADCCLK cycles"]
-    ADCSHT_5,
+    ADCSHT_5 = 5,
     #[doc = "6: 128 ADCCLK cycles"]
-    ADCSHT_6,
+    ADCSHT_6 = 6,
     #[doc = "7: 192 ADCCLK cycles"]
-    ADCSHT_7,
+    ADCSHT_7 = 7,
     #[doc = "8: 256 ADCCLK cycles"]
-    ADCSHT_8,
+    ADCSHT_8 = 8,
     #[doc = "9: 384 ADCCLK cycles"]
-    ADCSHT_9,
+    ADCSHT_9 = 9,
     #[doc = "10: 512 ADCCLK cycles"]
-    ADCSHT_10,
+    ADCSHT_10 = 10,
     #[doc = "11: 768 ADCCLK cycles"]
-    ADCSHT_11,
+    ADCSHT_11 = 11,
     #[doc = "12: 1024 ADCCLK cycles"]
-    ADCSHT_12,
+    ADCSHT_12 = 12,
     #[doc = "13: 1024 ADCCLK cycles"]
-    ADCSHT_13,
+    ADCSHT_13 = 13,
     #[doc = "14: 1024 ADCCLK cycles"]
-    ADCSHT_14,
+    ADCSHT_14 = 14,
     #[doc = "15: 1024 ADCCLK cycles"]
-    ADCSHT_15,
+    ADCSHT_15 = 15,
 }
 impl From<ADCSHT_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCSHT_A) -> Self {
-        match variant {
-            ADCSHT_A::ADCSHT_0 => 0,
-            ADCSHT_A::ADCSHT_1 => 1,
-            ADCSHT_A::ADCSHT_2 => 2,
-            ADCSHT_A::ADCSHT_3 => 3,
-            ADCSHT_A::ADCSHT_4 => 4,
-            ADCSHT_A::ADCSHT_5 => 5,
-            ADCSHT_A::ADCSHT_6 => 6,
-            ADCSHT_A::ADCSHT_7 => 7,
-            ADCSHT_A::ADCSHT_8 => 8,
-            ADCSHT_A::ADCSHT_9 => 9,
-            ADCSHT_A::ADCSHT_10 => 10,
-            ADCSHT_A::ADCSHT_11 => 11,
-            ADCSHT_A::ADCSHT_12 => 12,
-            ADCSHT_A::ADCSHT_13 => 13,
-            ADCSHT_A::ADCSHT_14 => 14,
-            ADCSHT_A::ADCSHT_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCSHT`"]

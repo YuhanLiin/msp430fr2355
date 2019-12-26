@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCB1CTLW0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSWRST_A {
     #[doc = "0: Disabled. eUSCI_B reset released for operation"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Enabled. eUSCI_B logic held in reset state"]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<UCSWRST_A> for bool {
     #[inline(always)]
     fn from(variant: UCSWRST_A) -> Self {
-        match variant {
-            UCSWRST_A::DISABLE => false,
-            UCSWRST_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSWRST`"]
@@ -92,17 +89,14 @@ impl<'a> UCSWRST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXSTT_A {
     #[doc = "0: Do not generate START condition"]
-    UCTXSTT_0,
+    UCTXSTT_0 = 0,
     #[doc = "1: Generate START condition"]
-    UCTXSTT_1,
+    UCTXSTT_1 = 1,
 }
 impl From<UCTXSTT_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXSTT_A) -> Self {
-        match variant {
-            UCTXSTT_A::UCTXSTT_0 => false,
-            UCTXSTT_A::UCTXSTT_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXSTT`"]
@@ -170,17 +164,14 @@ impl<'a> UCTXSTT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXSTP_A {
     #[doc = "0: No STOP generated"]
-    UCTXSTP_0,
+    UCTXSTP_0 = 0,
     #[doc = "1: Generate STOP"]
-    UCTXSTP_1,
+    UCTXSTP_1 = 1,
 }
 impl From<UCTXSTP_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXSTP_A) -> Self {
-        match variant {
-            UCTXSTP_A::UCTXSTP_0 => false,
-            UCTXSTP_A::UCTXSTP_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXSTP`"]
@@ -248,17 +239,14 @@ impl<'a> UCTXSTP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXNACK_A {
     #[doc = "0: Acknowledge normally"]
-    UCTXNACK_0,
+    UCTXNACK_0 = 0,
     #[doc = "1: Generate NACK"]
-    UCTXNACK_1,
+    UCTXNACK_1 = 1,
 }
 impl From<UCTXNACK_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXNACK_A) -> Self {
-        match variant {
-            UCTXNACK_A::UCTXNACK_0 => false,
-            UCTXNACK_A::UCTXNACK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXNACK`"]
@@ -326,17 +314,14 @@ impl<'a> UCTXNACK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTR_A {
     #[doc = "0: Receiver"]
-    RX,
+    RX = 0,
     #[doc = "1: Transmitter"]
-    TX,
+    TX = 1,
 }
 impl From<UCTR_A> for bool {
     #[inline(always)]
     fn from(variant: UCTR_A) -> Self {
-        match variant {
-            UCTR_A::RX => false,
-            UCTR_A::TX => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTR`"]
@@ -404,17 +389,14 @@ impl<'a> UCTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXACK_A {
     #[doc = "0: Do not acknowledge the slave address"]
-    UCTXACK_0,
+    UCTXACK_0 = 0,
     #[doc = "1: Acknowledge the slave address"]
-    UCTXACK_1,
+    UCTXACK_1 = 1,
 }
 impl From<UCTXACK_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXACK_A) -> Self {
-        match variant {
-            UCTXACK_A::UCTXACK_0 => false,
-            UCTXACK_A::UCTXACK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXACK`"]
@@ -480,25 +462,21 @@ impl<'a> UCTXACK_W<'a> {
 }
 #[doc = "eUSCI_B clock source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: UCLKI"]
-    UCLKI,
+    UCLKI = 0,
     #[doc = "1: ACLK"]
-    ACLK,
+    ACLK = 1,
     #[doc = "2: SMCLK"]
-    SMCLK,
+    SMCLK = 2,
     #[doc = "3: SMCLK"]
-    UCSSEL_3,
+    UCSSEL_3 = 3,
 }
 impl From<UCSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: UCSSEL_A) -> Self {
-        match variant {
-            UCSSEL_A::UCLKI => 0,
-            UCSSEL_A::ACLK => 1,
-            UCSSEL_A::SMCLK => 2,
-            UCSSEL_A::UCSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCSSEL`"]
@@ -579,17 +557,14 @@ impl<'a> UCSSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSYNC_A {
     #[doc = "0: Asynchronous mode"]
-    ASYNC,
+    ASYNC = 0,
     #[doc = "1: Synchronous mode"]
-    SYNC,
+    SYNC = 1,
 }
 impl From<UCSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: UCSYNC_A) -> Self {
-        match variant {
-            UCSYNC_A::ASYNC => false,
-            UCSYNC_A::SYNC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSYNC`"]
@@ -655,25 +630,21 @@ impl<'a> UCSYNC_W<'a> {
 }
 #[doc = "eUSCI_B mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCMODE_A {
     #[doc = "0: 3-pin SPI"]
-    UCMODE_0,
+    UCMODE_0 = 0,
     #[doc = "1: 4-pin SPI (master or slave enabled if STE = 1)"]
-    UCMODE_1,
+    UCMODE_1 = 1,
     #[doc = "2: 4-pin SPI (master or slave enabled if STE = 0)"]
-    UCMODE_2,
+    UCMODE_2 = 2,
     #[doc = "3: I2C mode"]
-    UCMODE_3,
+    UCMODE_3 = 3,
 }
 impl From<UCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UCMODE_A) -> Self {
-        match variant {
-            UCMODE_A::UCMODE_0 => 0,
-            UCMODE_A::UCMODE_1 => 1,
-            UCMODE_A::UCMODE_2 => 2,
-            UCMODE_A::UCMODE_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCMODE`"]
@@ -754,17 +725,14 @@ impl<'a> UCMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCMST_A {
     #[doc = "0: Slave mode"]
-    SLAVE,
+    SLAVE = 0,
     #[doc = "1: Master mode"]
-    MASTER,
+    MASTER = 1,
 }
 impl From<UCMST_A> for bool {
     #[inline(always)]
     fn from(variant: UCMST_A) -> Self {
-        match variant {
-            UCMST_A::SLAVE => false,
-            UCMST_A::MASTER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCMST`"]
@@ -832,17 +800,14 @@ impl<'a> UCMST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCMM_A {
     #[doc = "0: Single master environment. There is no other master in the system. The address compare unit is disabled."]
-    SINGLE,
+    SINGLE = 0,
     #[doc = "1: Multi-master environment"]
-    MULTI,
+    MULTI = 1,
 }
 impl From<UCMM_A> for bool {
     #[inline(always)]
     fn from(variant: UCMM_A) -> Self {
-        match variant {
-            UCMM_A::SINGLE => false,
-            UCMM_A::MULTI => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCMM`"]
@@ -910,17 +875,14 @@ impl<'a> UCMM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSLA10_A {
     #[doc = "0: Address slave with 7-bit address"]
-    _7BIT,
+    _7BIT = 0,
     #[doc = "1: Address slave with 10-bit address"]
-    _10BIT,
+    _10BIT = 1,
 }
 impl From<UCSLA10_A> for bool {
     #[inline(always)]
     fn from(variant: UCSLA10_A) -> Self {
-        match variant {
-            UCSLA10_A::_7BIT => false,
-            UCSLA10_A::_10BIT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSLA10`"]
@@ -988,17 +950,14 @@ impl<'a> UCSLA10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCA10_A {
     #[doc = "0: Own address is a 7-bit address"]
-    UCA10_0,
+    UCA10_0 = 0,
     #[doc = "1: Own address is a 10-bit address"]
-    UCA10_1,
+    UCA10_1 = 1,
 }
 impl From<UCA10_A> for bool {
     #[inline(always)]
     fn from(variant: UCA10_A) -> Self {
-        match variant {
-            UCA10_A::UCA10_0 => false,
-            UCA10_A::UCA10_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCA10`"]

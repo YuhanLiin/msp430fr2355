@@ -2,37 +2,29 @@
 pub type R = crate::R<u16, super::TB0IV>;
 #[doc = "Timer_B interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TBIV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Interrupt Source: Capture/compare 1; Interrupt Flag: TBxCCR1 CCIFG; Interrupt Priority: Highest"]
-    TBCCR1,
+    TBCCR1 = 2,
     #[doc = "4: Interrupt Source: Capture/compare 2; Interrupt Flag: TBxCCR2 CCIFG"]
-    TBCCR2,
+    TBCCR2 = 4,
     #[doc = "6: Interrupt Source: Capture/compare 3; Interrupt Flag: TBxCCR3 CCIFG"]
-    TBCCR3,
+    TBCCR3 = 6,
     #[doc = "8: Interrupt Source: Capture/compare 4; Interrupt Flag: TBxCCR4 CCIFG"]
-    TBCCR4,
+    TBCCR4 = 8,
     #[doc = "10: Interrupt Source: Capture/compare 5; Interrupt Flag: TBxCCR5 CCIFG"]
-    TBCCR5,
+    TBCCR5 = 10,
     #[doc = "12: Interrupt Source: Capture/compare 6; Interrupt Flag: TBxCCR6 CCIFG"]
-    TBCCR6,
+    TBCCR6 = 12,
     #[doc = "14: Interrupt Source: Timer overflow; Interrupt Flag: TBxCTL TBIFG; Interrupt Priority: Lowest"]
-    TBIFG,
+    TBIFG = 14,
 }
 impl From<TBIV_A> for u16 {
     #[inline(always)]
     fn from(variant: TBIV_A) -> Self {
-        match variant {
-            TBIV_A::NONE => 0,
-            TBIV_A::TBCCR1 => 2,
-            TBIV_A::TBCCR2 => 4,
-            TBIV_A::TBCCR3 => 6,
-            TBIV_A::TBCCR4 => 8,
-            TBIV_A::TBCCR5 => 10,
-            TBIV_A::TBCCR6 => 12,
-            TBIV_A::TBIFG => 14,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TBIV`"]

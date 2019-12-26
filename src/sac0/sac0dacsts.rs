@@ -10,39 +10,13 @@ impl crate::ResetValue for super::SAC0DACSTS {
         0
     }
 }
-#[doc = "SAC DAC data update flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DACIFG_A {}
-impl From<DACIFG_A> for bool {
-    #[inline(always)]
-    fn from(variant: DACIFG_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `DACIFG`"]
-pub type DACIFG_R = crate::R<bool, DACIFG_A>;
-impl DACIFG_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, DACIFG_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type DACIFG_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `DACIFG`"]
 pub struct DACIFG_W<'a> {
     w: &'a mut W,
 }
 impl<'a> DACIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DACIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {

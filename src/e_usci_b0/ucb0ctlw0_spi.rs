@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCB0CTLW0_SPI {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSWRST_A {
     #[doc = "0: Disabled. eUSCI_B reset released for operation"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Enabled. eUSCI_B logic held in reset state"]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<UCSWRST_A> for bool {
     #[inline(always)]
     fn from(variant: UCSWRST_A) -> Self {
-        match variant {
-            UCSWRST_A::DISABLE => false,
-            UCSWRST_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSWRST`"]
@@ -92,17 +89,14 @@ impl<'a> UCSWRST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTEM_A {
     #[doc = "0: STE pin is used to prevent conflicts with other masters"]
-    UCSTEM_0,
+    UCSTEM_0 = 0,
     #[doc = "1: STE pin is used to generate the enable signal for a 4-wire slave"]
-    UCSTEM_1,
+    UCSTEM_1 = 1,
 }
 impl From<UCSTEM_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTEM_A) -> Self {
-        match variant {
-            UCSTEM_A::UCSTEM_0 => false,
-            UCSTEM_A::UCSTEM_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTEM`"]
@@ -168,25 +162,21 @@ impl<'a> UCSTEM_W<'a> {
 }
 #[doc = "eUSCI_B clock source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: Reserved"]
-    UCSSEL_0,
+    UCSSEL_0 = 0,
     #[doc = "1: ACLK"]
-    ACLK,
+    ACLK = 1,
     #[doc = "2: SMCLK"]
-    SMCLK,
+    SMCLK = 2,
     #[doc = "3: SMCLK"]
-    UCSSEL_3,
+    UCSSEL_3 = 3,
 }
 impl From<UCSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: UCSSEL_A) -> Self {
-        match variant {
-            UCSSEL_A::UCSSEL_0 => 0,
-            UCSSEL_A::ACLK => 1,
-            UCSSEL_A::SMCLK => 2,
-            UCSSEL_A::UCSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCSSEL`"]
@@ -267,17 +257,14 @@ impl<'a> UCSSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSYNC_A {
     #[doc = "0: Asynchronous mode"]
-    ASYNC,
+    ASYNC = 0,
     #[doc = "1: Synchronous mode"]
-    SYNC,
+    SYNC = 1,
 }
 impl From<UCSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: UCSYNC_A) -> Self {
-        match variant {
-            UCSYNC_A::ASYNC => false,
-            UCSYNC_A::SYNC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSYNC`"]
@@ -343,25 +330,21 @@ impl<'a> UCSYNC_W<'a> {
 }
 #[doc = "eUSCI mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCMODE_A {
     #[doc = "0: 3-pin SPI"]
-    UCMODE_0,
+    UCMODE_0 = 0,
     #[doc = "1: 4-pin SPI with UCxSTE active high: Slave enabled when UCxSTE = 1"]
-    UCMODE_1,
+    UCMODE_1 = 1,
     #[doc = "2: 4-pin SPI with UCxSTE active low: Slave enabled when UCxSTE = 0"]
-    UCMODE_2,
+    UCMODE_2 = 2,
     #[doc = "3: I2C mode"]
-    UCMODE_3,
+    UCMODE_3 = 3,
 }
 impl From<UCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UCMODE_A) -> Self {
-        match variant {
-            UCMODE_A::UCMODE_0 => 0,
-            UCMODE_A::UCMODE_1 => 1,
-            UCMODE_A::UCMODE_2 => 2,
-            UCMODE_A::UCMODE_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCMODE`"]
@@ -442,17 +425,14 @@ impl<'a> UCMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCMST_A {
     #[doc = "0: Slave mode"]
-    SLAVE,
+    SLAVE = 0,
     #[doc = "1: Master mode"]
-    MASTER,
+    MASTER = 1,
 }
 impl From<UCMST_A> for bool {
     #[inline(always)]
     fn from(variant: UCMST_A) -> Self {
-        match variant {
-            UCMST_A::SLAVE => false,
-            UCMST_A::MASTER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCMST`"]
@@ -520,17 +500,14 @@ impl<'a> UCMST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UC7BIT_A {
     #[doc = "0: 8-bit data"]
-    _8BIT,
+    _8BIT = 0,
     #[doc = "1: 7-bit data"]
-    _7BIT,
+    _7BIT = 1,
 }
 impl From<UC7BIT_A> for bool {
     #[inline(always)]
     fn from(variant: UC7BIT_A) -> Self {
-        match variant {
-            UC7BIT_A::_8BIT => false,
-            UC7BIT_A::_7BIT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UC7BIT`"]
@@ -598,17 +575,14 @@ impl<'a> UC7BIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCMSB_A {
     #[doc = "0: LSB first"]
-    UCMSB_0,
+    UCMSB_0 = 0,
     #[doc = "1: MSB first"]
-    UCMSB_1,
+    UCMSB_1 = 1,
 }
 impl From<UCMSB_A> for bool {
     #[inline(always)]
     fn from(variant: UCMSB_A) -> Self {
-        match variant {
-            UCMSB_A::UCMSB_0 => false,
-            UCMSB_A::UCMSB_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCMSB`"]
@@ -676,17 +650,14 @@ impl<'a> UCMSB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCCKPL_A {
     #[doc = "0: The inactive state is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: The inactive state is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<UCCKPL_A> for bool {
     #[inline(always)]
     fn from(variant: UCCKPL_A) -> Self {
-        match variant {
-            UCCKPL_A::LOW => false,
-            UCCKPL_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCCKPL`"]
@@ -754,17 +725,14 @@ impl<'a> UCCKPL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCCKPH_A {
     #[doc = "0: Data is changed on the first UCLK edge and captured on the following edge."]
-    UCCKPH_0,
+    UCCKPH_0 = 0,
     #[doc = "1: Data is captured on the first UCLK edge and changed on the following edge."]
-    UCCKPH_1,
+    UCCKPH_1 = 1,
 }
 impl From<UCCKPH_A> for bool {
     #[inline(always)]
     fn from(variant: UCCKPH_A) -> Self {
-        match variant {
-            UCCKPH_A::UCCKPH_0 => false,
-            UCCKPH_A::UCCKPH_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCCKPH`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADCIE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCIE0_A {
     #[doc = "0: 0b = Interrupt disabled"]
-    ADCIE0_0,
+    ADCIE0_0 = 0,
     #[doc = "1: 1b = Interrupt enabled"]
-    ADCIE0_1,
+    ADCIE0_1 = 1,
 }
 impl From<ADCIE0_A> for bool {
     #[inline(always)]
     fn from(variant: ADCIE0_A) -> Self {
-        match variant {
-            ADCIE0_A::ADCIE0_0 => false,
-            ADCIE0_A::ADCIE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCIE0`"]
@@ -92,17 +89,14 @@ impl<'a> ADCIE0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCINIE_A {
     #[doc = "0: 0b = Inside of window interrupt disabled"]
-    ADCINIE_0,
+    ADCINIE_0 = 0,
     #[doc = "1: 1b = Inside of window interrupt enabled"]
-    ADCINIE_1,
+    ADCINIE_1 = 1,
 }
 impl From<ADCINIE_A> for bool {
     #[inline(always)]
     fn from(variant: ADCINIE_A) -> Self {
-        match variant {
-            ADCINIE_A::ADCINIE_0 => false,
-            ADCINIE_A::ADCINIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCINIE`"]
@@ -170,17 +164,14 @@ impl<'a> ADCINIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCLOIE_A {
     #[doc = "0: 0b = Below lower threshold interrupt disabled"]
-    ADCLOIE_0,
+    ADCLOIE_0 = 0,
     #[doc = "1: 1b = Below lower threshold interrupt enabled"]
-    ADCLOIE_1,
+    ADCLOIE_1 = 1,
 }
 impl From<ADCLOIE_A> for bool {
     #[inline(always)]
     fn from(variant: ADCLOIE_A) -> Self {
-        match variant {
-            ADCLOIE_A::ADCLOIE_0 => false,
-            ADCLOIE_A::ADCLOIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCLOIE`"]
@@ -248,17 +239,14 @@ impl<'a> ADCLOIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCHIIE_A {
     #[doc = "0: 0b = Above upper threshold interrupt disabled"]
-    ADCHIIE_0,
+    ADCHIIE_0 = 0,
     #[doc = "1: 1b = Above upper threshold interrupt enabled"]
-    ADCHIIE_1,
+    ADCHIIE_1 = 1,
 }
 impl From<ADCHIIE_A> for bool {
     #[inline(always)]
     fn from(variant: ADCHIIE_A) -> Self {
-        match variant {
-            ADCHIIE_A::ADCHIIE_0 => false,
-            ADCHIIE_A::ADCHIIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCHIIE`"]
@@ -326,17 +314,14 @@ impl<'a> ADCHIIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCOVIE_A {
     #[doc = "0: 0b = Overflow interrupt disabled"]
-    ADCOVIE_0,
+    ADCOVIE_0 = 0,
     #[doc = "1: 1b = Overflow interrupt enabled"]
-    ADCOVIE_1,
+    ADCOVIE_1 = 1,
 }
 impl From<ADCOVIE_A> for bool {
     #[inline(always)]
     fn from(variant: ADCOVIE_A) -> Self {
-        match variant {
-            ADCOVIE_A::ADCOVIE_0 => false,
-            ADCOVIE_A::ADCOVIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCOVIE`"]
@@ -404,17 +389,14 @@ impl<'a> ADCOVIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCTOVIE_A {
     #[doc = "0: 0b = Conversion time overflow interrupt disabled"]
-    ADCTOVIE_0,
+    ADCTOVIE_0 = 0,
     #[doc = "1: 1b = Conversion time overflow interrupt enabled"]
-    ADCTOVIE_1,
+    ADCTOVIE_1 = 1,
 }
 impl From<ADCTOVIE_A> for bool {
     #[inline(always)]
     fn from(variant: ADCTOVIE_A) -> Self {
-        match variant {
-            ADCTOVIE_A::ADCTOVIE_0 => false,
-            ADCTOVIE_A::ADCTOVIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCTOVIE`"]

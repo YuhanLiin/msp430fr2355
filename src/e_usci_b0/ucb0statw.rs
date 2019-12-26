@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::UCB0STATW>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBBUSY_A {
     #[doc = "0: Bus inactive"]
-    IDLE,
+    IDLE = 0,
     #[doc = "1: Bus busy"]
-    BUSY,
+    BUSY = 1,
 }
 impl From<UCBBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: UCBBUSY_A) -> Self {
-        match variant {
-            UCBBUSY_A::IDLE => false,
-            UCBBUSY_A::BUSY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBBUSY`"]
@@ -43,17 +40,14 @@ impl UCBBUSY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCGC_A {
     #[doc = "0: No general call address received"]
-    UCGC_0,
+    UCGC_0 = 0,
     #[doc = "1: General call address received"]
-    UCGC_1,
+    UCGC_1 = 1,
 }
 impl From<UCGC_A> for bool {
     #[inline(always)]
     fn from(variant: UCGC_A) -> Self {
-        match variant {
-            UCGC_A::UCGC_0 => false,
-            UCGC_A::UCGC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCGC`"]
@@ -82,17 +76,14 @@ impl UCGC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSCLLOW_A {
     #[doc = "0: SCL is not held low"]
-    UCSCLLOW_0,
+    UCSCLLOW_0 = 0,
     #[doc = "1: SCL is held low"]
-    UCSCLLOW_1,
+    UCSCLLOW_1 = 1,
 }
 impl From<UCSCLLOW_A> for bool {
     #[inline(always)]
     fn from(variant: UCSCLLOW_A) -> Self {
-        match variant {
-            UCSCLLOW_A::UCSCLLOW_0 => false,
-            UCSCLLOW_A::UCSCLLOW_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSCLLOW`"]
@@ -117,27 +108,8 @@ impl UCSCLLOW_R {
         *self == UCSCLLOW_A::UCSCLLOW_1
     }
 }
-#[doc = "Hardware byte counter value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCBCNT_A {}
-impl From<UCBCNT_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCBCNT_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCBCNT`"]
-pub type UCBCNT_R = crate::R<u8, UCBCNT_A>;
-impl UCBCNT_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCBCNT_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCBCNT_R = crate::R<u8, u8>;
 impl R {
     #[doc = "Bit 4 - Bus busy"]
     #[inline(always)]

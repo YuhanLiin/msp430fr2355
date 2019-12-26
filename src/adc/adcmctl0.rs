@@ -12,61 +12,45 @@ impl crate::ResetValue for super::ADCMCTL0 {
 }
 #[doc = "Input channel select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCINCH_A {
     #[doc = "0: A0 - see device-specific data sheet"]
-    ADCINCH_0,
+    ADCINCH_0 = 0,
     #[doc = "1: A1 - see device-specific data sheet"]
-    ADCINCH_1,
+    ADCINCH_1 = 1,
     #[doc = "2: A2 - see device-specific data sheet"]
-    ADCINCH_2,
+    ADCINCH_2 = 2,
     #[doc = "3: A3 - see device-specific data sheet"]
-    ADCINCH_3,
+    ADCINCH_3 = 3,
     #[doc = "4: A4 - see device-specific data sheet"]
-    ADCINCH_4,
+    ADCINCH_4 = 4,
     #[doc = "5: A5 - see device-specific data sheet"]
-    ADCINCH_5,
+    ADCINCH_5 = 5,
     #[doc = "6: A2 - see device-specific data sheet"]
-    ADCINCH_6,
+    ADCINCH_6 = 6,
     #[doc = "7: A7 - see device-specific data sheet"]
-    ADCINCH_7,
+    ADCINCH_7 = 7,
     #[doc = "8: A8 - see device-specific data sheet"]
-    ADCINCH_8,
+    ADCINCH_8 = 8,
     #[doc = "9: A9 - see device-specific data sheet"]
-    ADCINCH_9,
+    ADCINCH_9 = 9,
     #[doc = "10: A10 - see device-specific data sheet"]
-    ADCINCH_10,
+    ADCINCH_10 = 10,
     #[doc = "11: A11 - see device-specific data sheet"]
-    ADCINCH_11,
+    ADCINCH_11 = 11,
     #[doc = "12: A12 - see device-specific data sheet"]
-    ADCINCH_12,
+    ADCINCH_12 = 12,
     #[doc = "13: A13 - see device-specific data sheet"]
-    ADCINCH_13,
+    ADCINCH_13 = 13,
     #[doc = "14: A14 - see device-specific data sheet"]
-    ADCINCH_14,
+    ADCINCH_14 = 14,
     #[doc = "15: A15 - see device-specific data sheet"]
-    ADCINCH_15,
+    ADCINCH_15 = 15,
 }
 impl From<ADCINCH_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCINCH_A) -> Self {
-        match variant {
-            ADCINCH_A::ADCINCH_0 => 0,
-            ADCINCH_A::ADCINCH_1 => 1,
-            ADCINCH_A::ADCINCH_2 => 2,
-            ADCINCH_A::ADCINCH_3 => 3,
-            ADCINCH_A::ADCINCH_4 => 4,
-            ADCINCH_A::ADCINCH_5 => 5,
-            ADCINCH_A::ADCINCH_6 => 6,
-            ADCINCH_A::ADCINCH_7 => 7,
-            ADCINCH_A::ADCINCH_8 => 8,
-            ADCINCH_A::ADCINCH_9 => 9,
-            ADCINCH_A::ADCINCH_10 => 10,
-            ADCINCH_A::ADCINCH_11 => 11,
-            ADCINCH_A::ADCINCH_12 => 12,
-            ADCINCH_A::ADCINCH_13 => 13,
-            ADCINCH_A::ADCINCH_14 => 14,
-            ADCINCH_A::ADCINCH_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCINCH`"]
@@ -277,37 +261,29 @@ impl<'a> ADCINCH_W<'a> {
 }
 #[doc = "Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCSREF_A {
     #[doc = "0: 000b = V(R+) = AVCC and V(R-) = AVSS"]
-    ADCSREF_0,
+    ADCSREF_0 = 0,
     #[doc = "1: 001b = V(R+) = VREF and V(R-) = AVSS"]
-    ADCSREF_1,
+    ADCSREF_1 = 1,
     #[doc = "2: 010b = V(R+) = VEREF+ buffered and V(R-) = AVSS"]
-    ADCSREF_2,
+    ADCSREF_2 = 2,
     #[doc = "3: 011b =V(R+) = VEREF+ and V(R-) = AVSS"]
-    ADCSREF_3,
+    ADCSREF_3 = 3,
     #[doc = "4: 100b = V(R+) = AVCC and V(R-) = VEREF-"]
-    ADCSREF_4,
+    ADCSREF_4 = 4,
     #[doc = "5: 101b = V(R+) = VREF and V(R-) = VEREF-"]
-    ADCSREF_5,
+    ADCSREF_5 = 5,
     #[doc = "6: 110b = V(R+) = VEREF+ buffered and V(R-) = VEREF-"]
-    ADCSREF_6,
+    ADCSREF_6 = 6,
     #[doc = "7: 111b = V(R+) = VEREF+ and V(R-) = VEREF-"]
-    ADCSREF_7,
+    ADCSREF_7 = 7,
 }
 impl From<ADCSREF_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCSREF_A) -> Self {
-        match variant {
-            ADCSREF_A::ADCSREF_0 => 0,
-            ADCSREF_A::ADCSREF_1 => 1,
-            ADCSREF_A::ADCSREF_2 => 2,
-            ADCSREF_A::ADCSREF_3 => 3,
-            ADCSREF_A::ADCSREF_4 => 4,
-            ADCSREF_A::ADCSREF_5 => 5,
-            ADCSREF_A::ADCSREF_6 => 6,
-            ADCSREF_A::ADCSREF_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCSREF`"]
@@ -432,17 +408,14 @@ impl<'a> ADCSREF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXPCHEN_A {
     #[doc = "0: ADC channel expanded disable"]
-    EXPCHEN_0,
+    EXPCHEN_0 = 0,
     #[doc = "1: ADC channel expanded enable"]
-    EXPCHEN_1,
+    EXPCHEN_1 = 1,
 }
 impl From<EXPCHEN_A> for bool {
     #[inline(always)]
     fn from(variant: EXPCHEN_A) -> Self {
-        match variant {
-            EXPCHEN_A::EXPCHEN_0 => false,
-            EXPCHEN_A::EXPCHEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXPCHEN`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCB1IE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIE0_A {
     #[doc = "0: Interrupt disabled"]
-    UCRXIE0_0,
+    UCRXIE0_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCRXIE0_1,
+    UCRXIE0_1 = 1,
 }
 impl From<UCRXIE0_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIE0_A) -> Self {
-        match variant {
-            UCRXIE0_A::UCRXIE0_0 => false,
-            UCRXIE0_A::UCRXIE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIE0`"]
@@ -92,17 +89,14 @@ impl<'a> UCRXIE0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIE0_A {
     #[doc = "0: Interrupt disabled"]
-    UCTXIE0_0,
+    UCTXIE0_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCTXIE0_1,
+    UCTXIE0_1 = 1,
 }
 impl From<UCTXIE0_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIE0_A) -> Self {
-        match variant {
-            UCTXIE0_A::UCTXIE0_0 => false,
-            UCTXIE0_A::UCTXIE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIE0`"]
@@ -170,17 +164,14 @@ impl<'a> UCTXIE0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTTIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCSTTIE_0,
+    UCSTTIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCSTTIE_1,
+    UCSTTIE_1 = 1,
 }
 impl From<UCSTTIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTTIE_A) -> Self {
-        match variant {
-            UCSTTIE_A::UCSTTIE_0 => false,
-            UCSTTIE_A::UCSTTIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTTIE`"]
@@ -248,17 +239,14 @@ impl<'a> UCSTTIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTPIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCSTPIE_0,
+    UCSTPIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCSTPIE_1,
+    UCSTPIE_1 = 1,
 }
 impl From<UCSTPIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTPIE_A) -> Self {
-        match variant {
-            UCSTPIE_A::UCSTPIE_0 => false,
-            UCSTPIE_A::UCSTPIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTPIE`"]
@@ -326,17 +314,14 @@ impl<'a> UCSTPIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCALIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCALIE_0,
+    UCALIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCALIE_1,
+    UCALIE_1 = 1,
 }
 impl From<UCALIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCALIE_A) -> Self {
-        match variant {
-            UCALIE_A::UCALIE_0 => false,
-            UCALIE_A::UCALIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCALIE`"]
@@ -404,17 +389,14 @@ impl<'a> UCALIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCNACKIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCNACKIE_0,
+    UCNACKIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCNACKIE_1,
+    UCNACKIE_1 = 1,
 }
 impl From<UCNACKIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCNACKIE_A) -> Self {
-        match variant {
-            UCNACKIE_A::UCNACKIE_0 => false,
-            UCNACKIE_A::UCNACKIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCNACKIE`"]
@@ -482,17 +464,14 @@ impl<'a> UCNACKIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBCNTIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCBCNTIE_0,
+    UCBCNTIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCBCNTIE_1,
+    UCBCNTIE_1 = 1,
 }
 impl From<UCBCNTIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCBCNTIE_A) -> Self {
-        match variant {
-            UCBCNTIE_A::UCBCNTIE_0 => false,
-            UCBCNTIE_A::UCBCNTIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBCNTIE`"]
@@ -560,17 +539,14 @@ impl<'a> UCBCNTIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCCLTOIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCCLTOIE_0,
+    UCCLTOIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCCLTOIE_1,
+    UCCLTOIE_1 = 1,
 }
 impl From<UCCLTOIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCCLTOIE_A) -> Self {
-        match variant {
-            UCCLTOIE_A::UCCLTOIE_0 => false,
-            UCCLTOIE_A::UCCLTOIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCCLTOIE`"]
@@ -638,17 +614,14 @@ impl<'a> UCCLTOIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIE1_A {
     #[doc = "0: Interrupt disabled"]
-    UCRXIE1_0,
+    UCRXIE1_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCRXIE1_1,
+    UCRXIE1_1 = 1,
 }
 impl From<UCRXIE1_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIE1_A) -> Self {
-        match variant {
-            UCRXIE1_A::UCRXIE1_0 => false,
-            UCRXIE1_A::UCRXIE1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIE1`"]
@@ -716,17 +689,14 @@ impl<'a> UCRXIE1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIE1_A {
     #[doc = "0: Interrupt disabled"]
-    UCTXIE1_0,
+    UCTXIE1_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCTXIE1_1,
+    UCTXIE1_1 = 1,
 }
 impl From<UCTXIE1_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIE1_A) -> Self {
-        match variant {
-            UCTXIE1_A::UCTXIE1_0 => false,
-            UCTXIE1_A::UCTXIE1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIE1`"]
@@ -794,17 +764,14 @@ impl<'a> UCTXIE1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIE2_A {
     #[doc = "0: Interrupt disabled"]
-    UCRXIE2_0,
+    UCRXIE2_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCRXIE2_1,
+    UCRXIE2_1 = 1,
 }
 impl From<UCRXIE2_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIE2_A) -> Self {
-        match variant {
-            UCRXIE2_A::UCRXIE2_0 => false,
-            UCRXIE2_A::UCRXIE2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIE2`"]
@@ -872,17 +839,14 @@ impl<'a> UCRXIE2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIE2_A {
     #[doc = "0: Interrupt disabled"]
-    UCTXIE2_0,
+    UCTXIE2_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCTXIE2_1,
+    UCTXIE2_1 = 1,
 }
 impl From<UCTXIE2_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIE2_A) -> Self {
-        match variant {
-            UCTXIE2_A::UCTXIE2_0 => false,
-            UCTXIE2_A::UCTXIE2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIE2`"]
@@ -950,17 +914,14 @@ impl<'a> UCTXIE2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIE3_A {
     #[doc = "0: Interrupt disabled"]
-    UCRXIE3_0,
+    UCRXIE3_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCRXIE3_1,
+    UCRXIE3_1 = 1,
 }
 impl From<UCRXIE3_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIE3_A) -> Self {
-        match variant {
-            UCRXIE3_A::UCRXIE3_0 => false,
-            UCRXIE3_A::UCRXIE3_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIE3`"]
@@ -1028,17 +989,14 @@ impl<'a> UCRXIE3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIE3_A {
     #[doc = "0: Interrupt disabled"]
-    UCTXIE3_0,
+    UCTXIE3_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCTXIE3_1,
+    UCTXIE3_1 = 1,
 }
 impl From<UCTXIE3_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIE3_A) -> Self {
-        match variant {
-            UCTXIE3_A::UCTXIE3_0 => false,
-            UCTXIE3_A::UCTXIE3_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIE3`"]
@@ -1106,17 +1064,14 @@ impl<'a> UCTXIE3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBIT9IE_A {
     #[doc = "0: Interrupt disabled"]
-    UCBIT9IE_0,
+    UCBIT9IE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCBIT9IE_1,
+    UCBIT9IE_1 = 1,
 }
 impl From<UCBIT9IE_A> for bool {
     #[inline(always)]
     fn from(variant: UCBIT9IE_A) -> Self {
-        match variant {
-            UCBIT9IE_A::UCBIT9IE_0 => false,
-            UCBIT9IE_A::UCBIT9IE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBIT9IE`"]

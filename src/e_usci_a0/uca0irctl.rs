@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA0IRCTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCIREN_A {
     #[doc = "0: IrDA encoder/decoder disabled"]
-    UCIREN_0,
+    UCIREN_0 = 0,
     #[doc = "1: IrDA encoder/decoder enabled"]
-    UCIREN_1,
+    UCIREN_1 = 1,
 }
 impl From<UCIREN_A> for bool {
     #[inline(always)]
     fn from(variant: UCIREN_A) -> Self {
-        match variant {
-            UCIREN_A::UCIREN_0 => false,
-            UCIREN_A::UCIREN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCIREN`"]
@@ -92,17 +89,14 @@ impl<'a> UCIREN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCIRTXCLK_A {
     #[doc = "0: BRCLK"]
-    UCIRTXCLK_0,
+    UCIRTXCLK_0 = 0,
     #[doc = "1: BITCLK16 when UCOS16 = 1. Otherwise, BRCLK."]
-    UCIRTXCLK_1,
+    UCIRTXCLK_1 = 1,
 }
 impl From<UCIRTXCLK_A> for bool {
     #[inline(always)]
     fn from(variant: UCIRTXCLK_A) -> Self {
-        match variant {
-            UCIRTXCLK_A::UCIRTXCLK_0 => false,
-            UCIRTXCLK_A::UCIRTXCLK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCIRTXCLK`"]
@@ -166,37 +160,13 @@ impl<'a> UCIRTXCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Transmit pulse length\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCIRTXPL_A {}
-impl From<UCIRTXPL_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCIRTXPL_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCIRTXPL`"]
-pub type UCIRTXPL_R = crate::R<u8, UCIRTXPL_A>;
-impl UCIRTXPL_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCIRTXPL_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCIRTXPL_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `UCIRTXPL`"]
 pub struct UCIRTXPL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> UCIRTXPL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCIRTXPL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -208,17 +178,14 @@ impl<'a> UCIRTXPL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCIRRXFE_A {
     #[doc = "0: Receive filter disabled"]
-    UCIRRXFE_0,
+    UCIRRXFE_0 = 0,
     #[doc = "1: Receive filter enabled"]
-    UCIRRXFE_1,
+    UCIRRXFE_1 = 1,
 }
 impl From<UCIRRXFE_A> for bool {
     #[inline(always)]
     fn from(variant: UCIRRXFE_A) -> Self {
-        match variant {
-            UCIRRXFE_A::UCIRRXFE_0 => false,
-            UCIRRXFE_A::UCIRRXFE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCIRRXFE`"]
@@ -286,17 +253,14 @@ impl<'a> UCIRRXFE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCIRRXPL_A {
     #[doc = "0: IrDA transceiver delivers a high pulse when a light pulse is seen"]
-    HIGH,
+    HIGH = 0,
     #[doc = "1: IrDA transceiver delivers a low pulse when a light pulse is seen"]
-    LOW,
+    LOW = 1,
 }
 impl From<UCIRRXPL_A> for bool {
     #[inline(always)]
     fn from(variant: UCIRRXPL_A) -> Self {
-        match variant {
-            UCIRRXPL_A::HIGH => false,
-            UCIRRXPL_A::LOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCIRRXPL`"]
@@ -360,37 +324,13 @@ impl<'a> UCIRRXPL_W<'a> {
         self.w
     }
 }
-#[doc = "Receive filter length\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCIRRXFL_A {}
-impl From<UCIRRXFL_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCIRRXFL_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCIRRXFL`"]
-pub type UCIRRXFL_R = crate::R<u8, UCIRRXFL_A>;
-impl UCIRRXFL_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCIRRXFL_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCIRRXFL_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `UCIRRXFL`"]
 pub struct UCIRRXFL_W<'a> {
     w: &'a mut W,
 }
 impl<'a> UCIRRXFL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCIRRXFL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

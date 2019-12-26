@@ -14,7 +14,7 @@ pub struct RegisterBlock {
     #[doc = "0x0a - SAC Interrupt Vector Register"]
     pub sac3iv: SAC3IV,
 }
-#[doc = "SAC OA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3oa](sac3oa) module"]
+#[doc = "SAC OA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3oa](sac3oa) module"]
 pub type SAC3OA = crate::Reg<u16, _SAC3OA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -25,7 +25,7 @@ impl crate::Readable for SAC3OA {}
 impl crate::Writable for SAC3OA {}
 #[doc = "SAC OA Control Register"]
 pub mod sac3oa;
-#[doc = "SAC PGA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3pga](sac3pga) module"]
+#[doc = "SAC PGA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3pga](sac3pga) module"]
 pub type SAC3PGA = crate::Reg<u16, _SAC3PGA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -36,7 +36,7 @@ impl crate::Readable for SAC3PGA {}
 impl crate::Writable for SAC3PGA {}
 #[doc = "SAC PGA Control Register"]
 pub mod sac3pga;
-#[doc = "SAC DAC Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3dac](sac3dac) module"]
+#[doc = "SAC DAC Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3dac](sac3dac) module"]
 pub type SAC3DAC = crate::Reg<u16, _SAC3DAC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -47,7 +47,7 @@ impl crate::Readable for SAC3DAC {}
 impl crate::Writable for SAC3DAC {}
 #[doc = "SAC DAC Control Register"]
 pub mod sac3dac;
-#[doc = "SAC DAC Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3dat](sac3dat) module"]
+#[doc = "SAC DAC Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3dat](sac3dat) module"]
 pub type SAC3DAT = crate::Reg<u16, _SAC3DAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -58,7 +58,7 @@ impl crate::Readable for SAC3DAT {}
 impl crate::Writable for SAC3DAT {}
 #[doc = "SAC DAC Data Register"]
 pub mod sac3dat;
-#[doc = "SAC DAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3dacsts](sac3dacsts) module"]
+#[doc = "SAC DAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3dacsts](sac3dacsts) module"]
 pub type SAC3DACSTS = crate::Reg<u16, _SAC3DACSTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -69,7 +69,7 @@ impl crate::Readable for SAC3DACSTS {}
 impl crate::Writable for SAC3DACSTS {}
 #[doc = "SAC DAC Status Register"]
 pub mod sac3dacsts;
-#[doc = "SAC Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sac3iv](sac3iv) module"]
+#[doc = "SAC Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3iv](sac3iv) module"]
 pub type SAC3IV = crate::Reg<u16, _SAC3IV>;
 #[allow(missing_docs)]
 #[doc(hidden)]

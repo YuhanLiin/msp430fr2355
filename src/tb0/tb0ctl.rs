@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TB0CTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBIFG_A {
     #[doc = "0: No interrupt pending"]
-    TBIFG_0,
+    TBIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    TBIFG_1,
+    TBIFG_1 = 1,
 }
 impl From<TBIFG_A> for bool {
     #[inline(always)]
     fn from(variant: TBIFG_A) -> Self {
-        match variant {
-            TBIFG_A::TBIFG_0 => false,
-            TBIFG_A::TBIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBIFG`"]
@@ -92,17 +89,14 @@ impl<'a> TBIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBIE_A {
     #[doc = "0: Interrupt disabled"]
-    TBIE_0,
+    TBIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    TBIE_1,
+    TBIE_1 = 1,
 }
 impl From<TBIE_A> for bool {
     #[inline(always)]
     fn from(variant: TBIE_A) -> Self {
-        match variant {
-            TBIE_A::TBIE_0 => false,
-            TBIE_A::TBIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBIE`"]
@@ -166,39 +160,13 @@ impl<'a> TBIE_W<'a> {
         self.w
     }
 }
-#[doc = "TimerB clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TBCLR_A {}
-impl From<TBCLR_A> for bool {
-    #[inline(always)]
-    fn from(variant: TBCLR_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `TBCLR`"]
-pub type TBCLR_R = crate::R<bool, TBCLR_A>;
-impl TBCLR_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, TBCLR_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type TBCLR_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `TBCLR`"]
 pub struct TBCLR_W<'a> {
     w: &'a mut W,
 }
 impl<'a> TBCLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TBCLR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -218,25 +186,21 @@ impl<'a> TBCLR_W<'a> {
 }
 #[doc = "Mode control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MC_A {
     #[doc = "0: Stop mode: Timer is halted"]
-    STOP,
+    STOP = 0,
     #[doc = "1: Up mode: Timer counts up to TBxCL0"]
-    UP,
+    UP = 1,
     #[doc = "2: Continuous mode: Timer counts up to the value set by CNTL"]
-    CONTINUOUS,
+    CONTINUOUS = 2,
     #[doc = "3: Up/down mode: Timer counts up to TBxCL0 then down to 0000h"]
-    UPDOWN,
+    UPDOWN = 3,
 }
 impl From<MC_A> for u8 {
     #[inline(always)]
     fn from(variant: MC_A) -> Self {
-        match variant {
-            MC_A::STOP => 0,
-            MC_A::UP => 1,
-            MC_A::CONTINUOUS => 2,
-            MC_A::UPDOWN => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MC`"]
@@ -315,25 +279,21 @@ impl<'a> MC_W<'a> {
 }
 #[doc = "Input divider\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ID_A {
     #[doc = "0: /1"]
-    _1,
+    _1 = 0,
     #[doc = "1: /2"]
-    _2,
+    _2 = 1,
     #[doc = "2: /4"]
-    _4,
+    _4 = 2,
     #[doc = "3: /8"]
-    _8,
+    _8 = 3,
 }
 impl From<ID_A> for u8 {
     #[inline(always)]
     fn from(variant: ID_A) -> Self {
-        match variant {
-            ID_A::_1 => 0,
-            ID_A::_2 => 1,
-            ID_A::_4 => 2,
-            ID_A::_8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ID`"]
@@ -412,25 +372,21 @@ impl<'a> ID_W<'a> {
 }
 #[doc = "TimerB clock source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TBSSEL_A {
     #[doc = "0: TBxCLK"]
-    TBCLK,
+    TBCLK = 0,
     #[doc = "1: ACLK"]
-    ACLK,
+    ACLK = 1,
     #[doc = "2: SMCLK"]
-    SMCLK,
+    SMCLK = 2,
     #[doc = "3: INCLK"]
-    INCLK,
+    INCLK = 3,
 }
 impl From<TBSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: TBSSEL_A) -> Self {
-        match variant {
-            TBSSEL_A::TBCLK => 0,
-            TBSSEL_A::ACLK => 1,
-            TBSSEL_A::SMCLK => 2,
-            TBSSEL_A::INCLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TBSSEL`"]
@@ -509,25 +465,21 @@ impl<'a> TBSSEL_W<'a> {
 }
 #[doc = "Counter length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CNTL_A {
     #[doc = "0: 16-bit, TBxR(max) = 0FFFFh"]
-    _16,
+    _16 = 0,
     #[doc = "1: 12-bit, TBxR(max) = 0FFFh"]
-    _12,
+    _12 = 1,
     #[doc = "2: 10-bit, TBxR(max) = 03FFh"]
-    _10,
+    _10 = 2,
     #[doc = "3: 8-bit, TBxR(max) = 0FFh"]
-    _8,
+    _8 = 3,
 }
 impl From<CNTL_A> for u8 {
     #[inline(always)]
     fn from(variant: CNTL_A) -> Self {
-        match variant {
-            CNTL_A::_16 => 0,
-            CNTL_A::_12 => 1,
-            CNTL_A::_10 => 2,
-            CNTL_A::_8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNTL`"]
@@ -606,25 +558,21 @@ impl<'a> CNTL_W<'a> {
 }
 #[doc = "TBxCLn group\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TBCLGRP_A {
     #[doc = "0: Each TBxCLn latch loads independently"]
-    TBCLGRP_0,
+    TBCLGRP_0 = 0,
     #[doc = "1: TBxCL1+TBxCL2 (TBxCCR1 CLLD bits control the update); TBxCL3+TBxCL4 (TBxCCR3 CLLD bits control the update); TBxCL5+TBxCL6 (TBxCCR5 CLLD bits control the update); TBxCL0 independent"]
-    TBCLGRP_1,
+    TBCLGRP_1 = 1,
     #[doc = "2: TBxCL1+TBxCL2+TBxCL3 (TBxCCR1 CLLD bits control the update); TBxCL4+TBxCL5+TBxCL6 (TBxCCR4 CLLD bits control the update); TBxCL0 independent"]
-    TBCLGRP_2,
+    TBCLGRP_2 = 2,
     #[doc = "3: TBxCL0+TBxCL1+TBxCL2+TBxCL3+TBxCL4+TBxCL5+TBxCL6 (TBxCCR1 CLLD bits control the update)"]
-    TBCLGRP_3,
+    TBCLGRP_3 = 3,
 }
 impl From<TBCLGRP_A> for u8 {
     #[inline(always)]
     fn from(variant: TBCLGRP_A) -> Self {
-        match variant {
-            TBCLGRP_A::TBCLGRP_0 => 0,
-            TBCLGRP_A::TBCLGRP_1 => 1,
-            TBCLGRP_A::TBCLGRP_2 => 2,
-            TBCLGRP_A::TBCLGRP_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TBCLGRP`"]

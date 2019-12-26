@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA0CTLW0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSWRST_A {
     #[doc = "0: Disabled. eUSCI_A reset released for operation"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Enabled. eUSCI_A logic held in reset state"]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<UCSWRST_A> for bool {
     #[inline(always)]
     fn from(variant: UCSWRST_A) -> Self {
-        match variant {
-            UCSWRST_A::DISABLE => false,
-            UCSWRST_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSWRST`"]
@@ -92,17 +89,14 @@ impl<'a> UCSWRST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXBRK_A {
     #[doc = "0: Next frame transmitted is not a break"]
-    UCTXBRK_0,
+    UCTXBRK_0 = 0,
     #[doc = "1: Next frame transmitted is a break or a break/synch"]
-    UCTXBRK_1,
+    UCTXBRK_1 = 1,
 }
 impl From<UCTXBRK_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXBRK_A) -> Self {
-        match variant {
-            UCTXBRK_A::UCTXBRK_0 => false,
-            UCTXBRK_A::UCTXBRK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXBRK`"]
@@ -170,17 +164,14 @@ impl<'a> UCTXBRK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXADDR_A {
     #[doc = "0: Next frame transmitted is data"]
-    UCTXADDR_0,
+    UCTXADDR_0 = 0,
     #[doc = "1: Next frame transmitted is an address"]
-    UCTXADDR_1,
+    UCTXADDR_1 = 1,
 }
 impl From<UCTXADDR_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXADDR_A) -> Self {
-        match variant {
-            UCTXADDR_A::UCTXADDR_0 => false,
-            UCTXADDR_A::UCTXADDR_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXADDR`"]
@@ -248,17 +239,14 @@ impl<'a> UCTXADDR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCDORM_A {
     #[doc = "0: Not dormant. All received characters set UCRXIFG."]
-    UCDORM_0,
+    UCDORM_0 = 0,
     #[doc = "1: Dormant. Only characters that are preceded by an idle-line or with address bit set UCRXIFG. In UART mode with automatic baud-rate detection, only the combination of a break and synch field sets UCRXIFG."]
-    UCDORM_1,
+    UCDORM_1 = 1,
 }
 impl From<UCDORM_A> for bool {
     #[inline(always)]
     fn from(variant: UCDORM_A) -> Self {
-        match variant {
-            UCDORM_A::UCDORM_0 => false,
-            UCDORM_A::UCDORM_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCDORM`"]
@@ -326,17 +314,14 @@ impl<'a> UCDORM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBRKIE_A {
     #[doc = "0: Received break characters do not set UCRXIFG"]
-    UCBRKIE_0,
+    UCBRKIE_0 = 0,
     #[doc = "1: Received break characters set UCRXIFG"]
-    UCBRKIE_1,
+    UCBRKIE_1 = 1,
 }
 impl From<UCBRKIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCBRKIE_A) -> Self {
-        match variant {
-            UCBRKIE_A::UCBRKIE_0 => false,
-            UCBRKIE_A::UCBRKIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBRKIE`"]
@@ -404,17 +389,14 @@ impl<'a> UCBRKIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXEIE_A {
     #[doc = "0: Erroneous characters rejected and UCRXIFG is not set"]
-    UCRXEIE_0,
+    UCRXEIE_0 = 0,
     #[doc = "1: Erroneous characters received set UCRXIFG"]
-    UCRXEIE_1,
+    UCRXEIE_1 = 1,
 }
 impl From<UCRXEIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXEIE_A) -> Self {
-        match variant {
-            UCRXEIE_A::UCRXEIE_0 => false,
-            UCRXEIE_A::UCRXEIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXEIE`"]
@@ -480,25 +462,21 @@ impl<'a> UCRXEIE_W<'a> {
 }
 #[doc = "eUSCI_A clock source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: UCLK"]
-    UCLK,
+    UCLK = 0,
     #[doc = "1: ACLK"]
-    ACLK,
+    ACLK = 1,
     #[doc = "2: SMCLK"]
-    SMCLK,
+    SMCLK = 2,
     #[doc = "3: SMCLK"]
-    UCSSEL_3,
+    UCSSEL_3 = 3,
 }
 impl From<UCSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: UCSSEL_A) -> Self {
-        match variant {
-            UCSSEL_A::UCLK => 0,
-            UCSSEL_A::ACLK => 1,
-            UCSSEL_A::SMCLK => 2,
-            UCSSEL_A::UCSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCSSEL`"]
@@ -579,17 +557,14 @@ impl<'a> UCSSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSYNC_A {
     #[doc = "0: Asynchronous mode"]
-    ASYNC,
+    ASYNC = 0,
     #[doc = "1: Synchronous mode"]
-    SYNC,
+    SYNC = 1,
 }
 impl From<UCSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: UCSYNC_A) -> Self {
-        match variant {
-            UCSYNC_A::ASYNC => false,
-            UCSYNC_A::SYNC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSYNC`"]
@@ -655,25 +630,21 @@ impl<'a> UCSYNC_W<'a> {
 }
 #[doc = "eUSCI_A mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCMODE_A {
     #[doc = "0: UART mode"]
-    UCMODE_0,
+    UCMODE_0 = 0,
     #[doc = "1: Idle-line multiprocessor mode"]
-    UCMODE_1,
+    UCMODE_1 = 1,
     #[doc = "2: Address-bit multiprocessor mode"]
-    UCMODE_2,
+    UCMODE_2 = 2,
     #[doc = "3: UART mode with automatic baud-rate detection"]
-    UCMODE_3,
+    UCMODE_3 = 3,
 }
 impl From<UCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UCMODE_A) -> Self {
-        match variant {
-            UCMODE_A::UCMODE_0 => 0,
-            UCMODE_A::UCMODE_1 => 1,
-            UCMODE_A::UCMODE_2 => 2,
-            UCMODE_A::UCMODE_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCMODE`"]
@@ -754,17 +725,14 @@ impl<'a> UCMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSPB_A {
     #[doc = "0: One stop bit"]
-    UCSPB_0,
+    UCSPB_0 = 0,
     #[doc = "1: Two stop bits"]
-    UCSPB_1,
+    UCSPB_1 = 1,
 }
 impl From<UCSPB_A> for bool {
     #[inline(always)]
     fn from(variant: UCSPB_A) -> Self {
-        match variant {
-            UCSPB_A::UCSPB_0 => false,
-            UCSPB_A::UCSPB_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSPB`"]
@@ -832,17 +800,14 @@ impl<'a> UCSPB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UC7BIT_A {
     #[doc = "0: 8-bit data"]
-    _8BIT,
+    _8BIT = 0,
     #[doc = "1: 7-bit data"]
-    _7BIT,
+    _7BIT = 1,
 }
 impl From<UC7BIT_A> for bool {
     #[inline(always)]
     fn from(variant: UC7BIT_A) -> Self {
-        match variant {
-            UC7BIT_A::_8BIT => false,
-            UC7BIT_A::_7BIT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UC7BIT`"]
@@ -910,17 +875,14 @@ impl<'a> UC7BIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCMSB_A {
     #[doc = "0: LSB first"]
-    UCMSB_0,
+    UCMSB_0 = 0,
     #[doc = "1: MSB first"]
-    UCMSB_1,
+    UCMSB_1 = 1,
 }
 impl From<UCMSB_A> for bool {
     #[inline(always)]
     fn from(variant: UCMSB_A) -> Self {
-        match variant {
-            UCMSB_A::UCMSB_0 => false,
-            UCMSB_A::UCMSB_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCMSB`"]
@@ -988,17 +950,14 @@ impl<'a> UCMSB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCPAR_A {
     #[doc = "0: Odd parity"]
-    ODD,
+    ODD = 0,
     #[doc = "1: Even parity"]
-    EVEN,
+    EVEN = 1,
 }
 impl From<UCPAR_A> for bool {
     #[inline(always)]
     fn from(variant: UCPAR_A) -> Self {
-        match variant {
-            UCPAR_A::ODD => false,
-            UCPAR_A::EVEN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCPAR`"]
@@ -1066,17 +1025,14 @@ impl<'a> UCPAR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCPEN_A {
     #[doc = "0: Parity disabled"]
-    UCPEN_0,
+    UCPEN_0 = 0,
     #[doc = "1: Parity enabled. Parity bit is generated (UCAxTXD) and expected (UCAxRXD). In address-bit multiprocessor mode, the address bit is included in the parity calculation."]
-    UCPEN_1,
+    UCPEN_1 = 1,
 }
 impl From<UCPEN_A> for bool {
     #[inline(always)]
     fn from(variant: UCPEN_A) -> Self {
-        match variant {
-            UCPEN_A::UCPEN_0 => false,
-            UCPEN_A::UCPEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCPEN`"]

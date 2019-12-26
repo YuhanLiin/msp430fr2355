@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CPCTL0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPPEN_A {
     #[doc = "0: Selected analog input channel for V+ terminal is disabled."]
-    CPPEN_0,
+    CPPEN_0 = 0,
     #[doc = "1: Selected analog input channel for V+ terminal is enabled."]
-    CPPEN_1,
+    CPPEN_1 = 1,
 }
 impl From<CPPEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPPEN_A) -> Self {
-        match variant {
-            CPPEN_A::CPPEN_0 => false,
-            CPPEN_A::CPPEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPPEN`"]
@@ -90,37 +87,29 @@ impl<'a> CPPEN_W<'a> {
 }
 #[doc = "Channel input selected for the - terminal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPNSEL_A {
     #[doc = "0: select external input source"]
-    CPNSEL_0,
+    CPNSEL_0 = 0,
     #[doc = "1: select external input source"]
-    CPNSEL_1,
+    CPNSEL_1 = 1,
     #[doc = "2: select external input source"]
-    CPNSEL_2,
+    CPNSEL_2 = 2,
     #[doc = "3: select external input source"]
-    CPNSEL_3,
+    CPNSEL_3 = 3,
     #[doc = "4: device specific, please refer to device data sheet for details"]
-    CPNSEL_4,
+    CPNSEL_4 = 4,
     #[doc = "5: device specific, please refer to device data sheet for details"]
-    CPNSEL_5,
+    CPNSEL_5 = 5,
     #[doc = "6: 6-bit DAC"]
-    CPNSEL_6,
+    CPNSEL_6 = 6,
     #[doc = "7: Reserved"]
-    CPNSEL_7,
+    CPNSEL_7 = 7,
 }
 impl From<CPNSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CPNSEL_A) -> Self {
-        match variant {
-            CPNSEL_A::CPNSEL_0 => 0,
-            CPNSEL_A::CPNSEL_1 => 1,
-            CPNSEL_A::CPNSEL_2 => 2,
-            CPNSEL_A::CPNSEL_3 => 3,
-            CPNSEL_A::CPNSEL_4 => 4,
-            CPNSEL_A::CPNSEL_5 => 5,
-            CPNSEL_A::CPNSEL_6 => 6,
-            CPNSEL_A::CPNSEL_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPNSEL`"]
@@ -245,17 +234,14 @@ impl<'a> CPNSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPNEN_A {
     #[doc = "0: Selected analog input channel for V- terminal is disabled."]
-    CPNEN_0,
+    CPNEN_0 = 0,
     #[doc = "1: Selected analog input channel for V- terminal is enabled."]
-    CPNEN_1,
+    CPNEN_1 = 1,
 }
 impl From<CPNEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPNEN_A) -> Self {
-        match variant {
-            CPNEN_A::CPNEN_0 => false,
-            CPNEN_A::CPNEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPNEN`"]
@@ -321,37 +307,29 @@ impl<'a> CPNEN_W<'a> {
 }
 #[doc = "Channel input selected for the V+ terminal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPPSEL_A {
     #[doc = "0: select external input source"]
-    CPPSEL_0,
+    CPPSEL_0 = 0,
     #[doc = "1: select external input source"]
-    CPPSEL_1,
+    CPPSEL_1 = 1,
     #[doc = "2: select external input source"]
-    CPPSEL_2,
+    CPPSEL_2 = 2,
     #[doc = "3: select external input source"]
-    CPPSEL_3,
+    CPPSEL_3 = 3,
     #[doc = "4: device specific, please refer to device data sheet for details"]
-    CPPSEL_4,
+    CPPSEL_4 = 4,
     #[doc = "5: device specific, please refer to device data sheet for details"]
-    CPPSEL_5,
+    CPPSEL_5 = 5,
     #[doc = "6: 6-bit DAC"]
-    CPPSEL_6,
+    CPPSEL_6 = 6,
     #[doc = "7: Reserved"]
-    CPPSEL_7,
+    CPPSEL_7 = 7,
 }
 impl From<CPPSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CPPSEL_A) -> Self {
-        match variant {
-            CPPSEL_A::CPPSEL_0 => 0,
-            CPPSEL_A::CPPSEL_1 => 1,
-            CPPSEL_A::CPPSEL_2 => 2,
-            CPPSEL_A::CPPSEL_3 => 3,
-            CPPSEL_A::CPPSEL_4 => 4,
-            CPPSEL_A::CPPSEL_5 => 5,
-            CPPSEL_A::CPPSEL_6 => 6,
-            CPPSEL_A::CPPSEL_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPPSEL`"]

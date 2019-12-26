@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADCIFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCIFG0_A {
     #[doc = "0: No interrupt pending"]
-    ADCIFG0_0,
+    ADCIFG0_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCIFG0_1,
+    ADCIFG0_1 = 1,
 }
 impl From<ADCIFG0_A> for bool {
     #[inline(always)]
     fn from(variant: ADCIFG0_A) -> Self {
-        match variant {
-            ADCIFG0_A::ADCIFG0_0 => false,
-            ADCIFG0_A::ADCIFG0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCIFG0`"]
@@ -92,17 +89,14 @@ impl<'a> ADCIFG0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCINIFG_A {
     #[doc = "0: No interrupt pending"]
-    ADCINIFG_0,
+    ADCINIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCINIFG_1,
+    ADCINIFG_1 = 1,
 }
 impl From<ADCINIFG_A> for bool {
     #[inline(always)]
     fn from(variant: ADCINIFG_A) -> Self {
-        match variant {
-            ADCINIFG_A::ADCINIFG_0 => false,
-            ADCINIFG_A::ADCINIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCINIFG`"]
@@ -170,17 +164,14 @@ impl<'a> ADCINIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCLOIFG_A {
     #[doc = "0: No interrupt pending"]
-    ADCLOIFG_0,
+    ADCLOIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCLOIFG_1,
+    ADCLOIFG_1 = 1,
 }
 impl From<ADCLOIFG_A> for bool {
     #[inline(always)]
     fn from(variant: ADCLOIFG_A) -> Self {
-        match variant {
-            ADCLOIFG_A::ADCLOIFG_0 => false,
-            ADCLOIFG_A::ADCLOIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCLOIFG`"]
@@ -248,17 +239,14 @@ impl<'a> ADCLOIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCHIIFG_A {
     #[doc = "0: No interrupt pending"]
-    ADCHIIFG_0,
+    ADCHIIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCHIIFG_1,
+    ADCHIIFG_1 = 1,
 }
 impl From<ADCHIIFG_A> for bool {
     #[inline(always)]
     fn from(variant: ADCHIIFG_A) -> Self {
-        match variant {
-            ADCHIIFG_A::ADCHIIFG_0 => false,
-            ADCHIIFG_A::ADCHIIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCHIIFG`"]
@@ -326,17 +314,14 @@ impl<'a> ADCHIIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCOVIFG_A {
     #[doc = "0: No interrupt pending"]
-    ADCOVIFG_0,
+    ADCOVIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCOVIFG_1,
+    ADCOVIFG_1 = 1,
 }
 impl From<ADCOVIFG_A> for bool {
     #[inline(always)]
     fn from(variant: ADCOVIFG_A) -> Self {
-        match variant {
-            ADCOVIFG_A::ADCOVIFG_0 => false,
-            ADCOVIFG_A::ADCOVIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCOVIFG`"]
@@ -404,17 +389,14 @@ impl<'a> ADCOVIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCTOVIFG_A {
     #[doc = "0: No interrupt pending"]
-    ADCOVIFG_0,
+    ADCOVIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    ADCTOVIFG_1,
+    ADCTOVIFG_1 = 1,
 }
 impl From<ADCTOVIFG_A> for bool {
     #[inline(always)]
     fn from(variant: ADCTOVIFG_A) -> Self {
-        match variant {
-            ADCTOVIFG_A::ADCOVIFG_0 => false,
-            ADCTOVIFG_A::ADCTOVIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCTOVIFG`"]

@@ -1,92 +1,30 @@
 #[doc = "Reader of register ICCMVS"]
 pub type R = crate::R<u16, super::ICCMVS>;
-#[doc = "Interrupt compare mask virtual stack position 0 This field is the virtual stack register for ICM0.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICM0_A {}
-impl From<ICM0_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ICM0_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ICM0`"]
-pub type ICM0_R = crate::R<u8, ICM0_A>;
-impl ICM0_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ICM0_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
-#[doc = "Interrupt compare mask virtual stack position 1 This field is the virtual stack register for ICM1.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICM1_A {}
-impl From<ICM1_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ICM1_A) -> Self {
-        match variant {}
-    }
-}
+pub type ICM0_R = crate::R<u8, u8>;
 #[doc = "Reader of field `ICM1`"]
-pub type ICM1_R = crate::R<u8, ICM1_A>;
-impl ICM1_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ICM1_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
-#[doc = "Interrupt compare mask virtual stack position 3 This field is the virtual stack register for ICM3.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICM3_A {}
-impl From<ICM3_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ICM3_A) -> Self {
-        match variant {}
-    }
-}
+pub type ICM1_R = crate::R<u8, u8>;
 #[doc = "Reader of field `ICM3`"]
-pub type ICM3_R = crate::R<u8, ICM3_A>;
-impl ICM3_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ICM3_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ICM3_R = crate::R<u8, u8>;
 #[doc = "MVS stack pointer indicate register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MVSSP_A {
     #[doc = "0: 000b = Stack empty"]
-    MVSSP_0,
+    MVSSP_0 = 0,
     #[doc = "1: 001b = ICM0 affected"]
-    MVSSP_1,
+    MVSSP_1 = 1,
     #[doc = "2: 010b = ICM0 and ICM1 affected"]
-    MVSSP_2,
+    MVSSP_2 = 2,
     #[doc = "3: 011b = ICM0, ICM1, and ICM2 affected"]
-    MVSSP_3,
+    MVSSP_3 = 3,
     #[doc = "4: 100b = ICM0, ICM1, ICM2, and ICM3 affected. Also means the stack is full."]
-    MVSSP_4,
+    MVSSP_4 = 4,
 }
 impl From<MVSSP_A> for u8 {
     #[inline(always)]
     fn from(variant: MVSSP_A) -> Self {
-        match variant {
-            MVSSP_A::MVSSP_0 => 0,
-            MVSSP_A::MVSSP_1 => 1,
-            MVSSP_A::MVSSP_2 => 2,
-            MVSSP_A::MVSSP_3 => 3,
-            MVSSP_A::MVSSP_4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MVSSP`"]
@@ -131,27 +69,8 @@ impl MVSSP_R {
         *self == MVSSP_A::MVSSP_4
     }
 }
-#[doc = "Interrupt compare mask virtual stack position 2 This field is the virtual stack register for ICM2.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICM2_A {}
-impl From<ICM2_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ICM2_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ICM2`"]
-pub type ICM2_R = crate::R<u8, ICM2_A>;
-impl ICM2_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ICM2_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ICM2_R = crate::R<u8, u8>;
 impl R {
     #[doc = "Bits 0:1 - Interrupt compare mask virtual stack position 0 This field is the virtual stack register for ICM0."]
     #[inline(always)]

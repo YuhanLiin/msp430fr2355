@@ -1,0 +1,25 @@
+PROVIDE(PORT4 = DefaultHandler);
+PROVIDE(PORT3 = DefaultHandler);
+PROVIDE(PORT2 = DefaultHandler);
+PROVIDE(PORT1 = DefaultHandler);
+PROVIDE(SAC1_SAC3 = DefaultHandler);
+PROVIDE(SAC0_SAC2 = DefaultHandler);
+PROVIDE(ECOMP0_ECOMP1 = DefaultHandler);
+PROVIDE(ADC = DefaultHandler);
+PROVIDE(EUSCI_B1 = DefaultHandler);
+PROVIDE(EUSCI_B0 = DefaultHandler);
+PROVIDE(EUSCI_A1 = DefaultHandler);
+PROVIDE(EUSCI_A0 = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
+PROVIDE(RTC = DefaultHandler);
+PROVIDE(TIMER3_B1 = DefaultHandler);
+PROVIDE(TIMER3_B0 = DefaultHandler);
+PROVIDE(TIMER2_B1 = DefaultHandler);
+PROVIDE(TIMER2_B0 = DefaultHandler);
+PROVIDE(TIMER1_B1 = DefaultHandler);
+PROVIDE(TIMER1_B0 = DefaultHandler);
+PROVIDE(TIMER0_B1 = DefaultHandler);
+PROVIDE(TIMER0_B0 = DefaultHandler);
+PROVIDE(UNMI = DefaultHandler);
+PROVIDE(SYSNMI = DefaultHandler);
+

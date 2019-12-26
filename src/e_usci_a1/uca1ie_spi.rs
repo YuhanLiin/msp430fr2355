@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA1IE_SPI {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCRXIE_0,
+    UCRXIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCRXIE_1,
+    UCRXIE_1 = 1,
 }
 impl From<UCRXIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIE_A) -> Self {
-        match variant {
-            UCRXIE_A::UCRXIE_0 => false,
-            UCRXIE_A::UCRXIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIE`"]
@@ -92,17 +89,14 @@ impl<'a> UCRXIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIE_A {
     #[doc = "0: Interrupt disabled"]
-    UCTXIE_0,
+    UCTXIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCTXIE_1,
+    UCTXIE_1 = 1,
 }
 impl From<UCTXIE_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIE_A) -> Self {
-        match variant {
-            UCTXIE_A::UCTXIE_0 => false,
-            UCTXIE_A::UCTXIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIE`"]

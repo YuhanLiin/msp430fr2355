@@ -12,25 +12,21 @@ impl crate::ResetValue for super::UCB0CTLW1 {
 }
 #[doc = "Deglitch time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCGLIT_A {
     #[doc = "0: 50 ns"]
-    UCGLIT_0,
+    UCGLIT_0 = 0,
     #[doc = "1: 25 ns"]
-    UCGLIT_1,
+    UCGLIT_1 = 1,
     #[doc = "2: 12.5 ns"]
-    UCGLIT_2,
+    UCGLIT_2 = 2,
     #[doc = "3: 6.25 ns"]
-    UCGLIT_3,
+    UCGLIT_3 = 3,
 }
 impl From<UCGLIT_A> for u8 {
     #[inline(always)]
     fn from(variant: UCGLIT_A) -> Self {
-        match variant {
-            UCGLIT_A::UCGLIT_0 => 0,
-            UCGLIT_A::UCGLIT_1 => 1,
-            UCGLIT_A::UCGLIT_2 => 2,
-            UCGLIT_A::UCGLIT_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCGLIT`"]
@@ -109,25 +105,21 @@ impl<'a> UCGLIT_W<'a> {
 }
 #[doc = "Automatic STOP condition generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCASTP_A {
     #[doc = "0: No automatic STOP generation. The STOP condition is generated after the user sets the UCTXSTP bit. The value in UCBxTBCNT is a don't care."]
-    UCASTP_0,
+    UCASTP_0 = 0,
     #[doc = "1: UCBCNTIFG is set with the byte counter reaches the threshold defined in UCBxTBCNT"]
-    UCASTP_1,
+    UCASTP_1 = 1,
     #[doc = "2: A STOP condition is generated automatically after the byte counter value reached UCBxTBCNT. UCBCNTIFG is set with the byte counter reaching the threshold"]
-    UCASTP_2,
+    UCASTP_2 = 2,
     #[doc = "3: Reserved"]
-    UCASTP_3,
+    UCASTP_3 = 3,
 }
 impl From<UCASTP_A> for u8 {
     #[inline(always)]
     fn from(variant: UCASTP_A) -> Self {
-        match variant {
-            UCASTP_A::UCASTP_0 => 0,
-            UCASTP_A::UCASTP_1 => 1,
-            UCASTP_A::UCASTP_2 => 2,
-            UCASTP_A::UCASTP_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCASTP`"]
@@ -208,17 +200,14 @@ impl<'a> UCASTP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSWACK_A {
     #[doc = "0: The address acknowledge of the slave is controlled by the eUSCI_B module"]
-    UCSWACK_0,
+    UCSWACK_0 = 0,
     #[doc = "1: The user needs to trigger the sending of the address ACK by issuing UCTXACK"]
-    UCSWACK_1,
+    UCSWACK_1 = 1,
 }
 impl From<UCSWACK_A> for bool {
     #[inline(always)]
     fn from(variant: UCSWACK_A) -> Self {
-        match variant {
-            UCSWACK_A::UCSWACK_0 => false,
-            UCSWACK_A::UCSWACK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSWACK`"]
@@ -286,17 +275,14 @@ impl<'a> UCSWACK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTPNACK_A {
     #[doc = "0: Send a non-acknowledge before the STOP condition as a master receiver (conform to I2C standard)"]
-    UCSTPNACK_0,
+    UCSTPNACK_0 = 0,
     #[doc = "1: All bytes are acknowledged by the eUSCI_B when configured as master receiver"]
-    UCSTPNACK_1,
+    UCSTPNACK_1 = 1,
 }
 impl From<UCSTPNACK_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTPNACK_A) -> Self {
-        match variant {
-            UCSTPNACK_A::UCSTPNACK_0 => false,
-            UCSTPNACK_A::UCSTPNACK_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTPNACK`"]
@@ -362,25 +348,21 @@ impl<'a> UCSTPNACK_W<'a> {
 }
 #[doc = "Clock low timeout select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCCLTO_A {
     #[doc = "0: Disable clock low timeout counter"]
-    UCCLTO_0,
+    UCCLTO_0 = 0,
     #[doc = "1: 135 000 SYSCLK cycles (approximately 28 ms)"]
-    UCCLTO_1,
+    UCCLTO_1 = 1,
     #[doc = "2: 150 000 SYSCLK cycles (approximately 31 ms)"]
-    UCCLTO_2,
+    UCCLTO_2 = 2,
     #[doc = "3: 165 000 SYSCLK cycles (approximately 34 ms)"]
-    UCCLTO_3,
+    UCCLTO_3 = 3,
 }
 impl From<UCCLTO_A> for u8 {
     #[inline(always)]
     fn from(variant: UCCLTO_A) -> Self {
-        match variant {
-            UCCLTO_A::UCCLTO_0 => 0,
-            UCCLTO_A::UCCLTO_1 => 1,
-            UCCLTO_A::UCCLTO_2 => 2,
-            UCCLTO_A::UCCLTO_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCCLTO`"]
@@ -461,17 +443,14 @@ impl<'a> UCCLTO_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCETXINT_A {
     #[doc = "0: UCTXIFGx is set after an address match with UCxI2COAx and the direction bit indicating slave transmit"]
-    UCETXINT_0,
+    UCETXINT_0 = 0,
     #[doc = "1: UCTXIFG0 is set for each START condition"]
-    UCETXINT_1,
+    UCETXINT_1 = 1,
 }
 impl From<UCETXINT_A> for bool {
     #[inline(always)]
     fn from(variant: UCETXINT_A) -> Self {
-        match variant {
-            UCETXINT_A::UCETXINT_0 => false,
-            UCETXINT_A::UCETXINT_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCETXINT`"]

@@ -10,37 +10,13 @@ impl crate::ResetValue for super::UCB1I2COA3 {
         0
     }
 }
-#[doc = "I2C own address\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum I2COA3_A {}
-impl From<I2COA3_A> for u16 {
-    #[inline(always)]
-    fn from(variant: I2COA3_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `I2COA3`"]
-pub type I2COA3_R = crate::R<u16, I2COA3_A>;
-impl I2COA3_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, I2COA3_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type I2COA3_R = crate::R<u16, u16>;
 #[doc = "Write proxy for field `I2COA3`"]
 pub struct I2COA3_W<'a> {
     w: &'a mut W,
 }
 impl<'a> I2COA3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: I2COA3_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
@@ -52,17 +28,14 @@ impl<'a> I2COA3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCOAEN_A {
     #[doc = "0: The slave address defined in I2COA3 is disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: The slave address defined in I2COA3 is enabled"]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<UCOAEN_A> for bool {
     #[inline(always)]
     fn from(variant: UCOAEN_A) -> Self {
-        match variant {
-            UCOAEN_A::DISABLE => false,
-            UCOAEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCOAEN`"]

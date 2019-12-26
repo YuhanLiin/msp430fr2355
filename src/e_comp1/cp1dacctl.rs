@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CP1DACCTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPDACSW_A {
     #[doc = "0: CPDACBUF1 selected"]
-    CPDACSW_0,
+    CPDACSW_0 = 0,
     #[doc = "1: CPDACBUF2 selected"]
-    CPDACSW_1,
+    CPDACSW_1 = 1,
 }
 impl From<CPDACSW_A> for bool {
     #[inline(always)]
     fn from(variant: CPDACSW_A) -> Self {
-        match variant {
-            CPDACSW_A::CPDACSW_0 => false,
-            CPDACSW_A::CPDACSW_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPDACSW`"]
@@ -92,17 +89,14 @@ impl<'a> CPDACSW_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPDACBUFS_A {
     #[doc = "0: Comparator output is selected as the buffer control source"]
-    CPDACBUFS_0,
+    CPDACBUFS_0 = 0,
     #[doc = "1: CPDACSW bit is selected as the buffer control source"]
-    CPDACBUFS_1,
+    CPDACBUFS_1 = 1,
 }
 impl From<CPDACBUFS_A> for bool {
     #[inline(always)]
     fn from(variant: CPDACBUFS_A) -> Self {
-        match variant {
-            CPDACBUFS_A::CPDACBUFS_0 => false,
-            CPDACBUFS_A::CPDACBUFS_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPDACBUFS`"]
@@ -170,17 +164,14 @@ impl<'a> CPDACBUFS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPDACREFS_A {
     #[doc = "0: VDD selected"]
-    CPDACREFS_0,
+    CPDACREFS_0 = 0,
     #[doc = "1: on-chip VREF selected"]
-    CPDACREFS_1,
+    CPDACREFS_1 = 1,
 }
 impl From<CPDACREFS_A> for bool {
     #[inline(always)]
     fn from(variant: CPDACREFS_A) -> Self {
-        match variant {
-            CPDACREFS_A::CPDACREFS_0 => false,
-            CPDACREFS_A::CPDACREFS_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPDACREFS`"]
@@ -248,17 +239,14 @@ impl<'a> CPDACREFS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPDACEN_A {
     #[doc = "0: DAC output is disabled."]
-    CPDACEN_0,
+    CPDACEN_0 = 0,
     #[doc = "1: DAC output is enabled."]
-    CPDACEN_1,
+    CPDACEN_1 = 1,
 }
 impl From<CPDACEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPDACEN_A) -> Self {
-        match variant {
-            CPDACEN_A::CPDACEN_0 => false,
-            CPDACEN_A::CPDACEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPDACEN`"]

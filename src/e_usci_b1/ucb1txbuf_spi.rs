@@ -10,37 +10,13 @@ impl crate::ResetValue for super::UCB1TXBUF_SPI {
         0
     }
 }
-#[doc = "Transmit data buffer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCTXBUF_A {}
-impl From<UCTXBUF_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCTXBUF_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCTXBUF`"]
-pub type UCTXBUF_R = crate::R<u8, UCTXBUF_A>;
-impl UCTXBUF_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCTXBUF_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCTXBUF_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `UCTXBUF`"]
 pub struct UCTXBUF_W<'a> {
     w: &'a mut W,
 }
 impl<'a> UCTXBUF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXBUF_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

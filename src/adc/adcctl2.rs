@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADCCTL2 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCDF_A {
     #[doc = "0: Binary unsigned. Theoretically the analog input voltage V(REF) results in 0000h, the analog input voltage +V(REF) results in 03FFh."]
-    ADCDF_0,
+    ADCDF_0 = 0,
     #[doc = "1: Signed binary (2s complement), left aligned. Theoretically the analog input voltage V(REF) results in 8000h, the analog input voltage +V(REF) results in 7FC0h."]
-    ADCDF_1,
+    ADCDF_1 = 1,
 }
 impl From<ADCDF_A> for bool {
     #[inline(always)]
     fn from(variant: ADCDF_A) -> Self {
-        match variant {
-            ADCDF_A::ADCDF_0 => false,
-            ADCDF_A::ADCDF_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCDF`"]
@@ -90,25 +87,21 @@ impl<'a> ADCDF_W<'a> {
 }
 #[doc = "resolution\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCRES_A {
     #[doc = "0: 8 bit"]
-    ADCRES_0,
+    ADCRES_0 = 0,
     #[doc = "1: 10 bit"]
-    ADCRES_1,
+    ADCRES_1 = 1,
     #[doc = "2: 12 bit"]
-    ADCRES_2,
+    ADCRES_2 = 2,
     #[doc = "3: Reserved"]
-    ADCRES_3,
+    ADCRES_3 = 3,
 }
 impl From<ADCRES_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCRES_A) -> Self {
-        match variant {
-            ADCRES_A::ADCRES_0 => 0,
-            ADCRES_A::ADCRES_1 => 1,
-            ADCRES_A::ADCRES_2 => 2,
-            ADCRES_A::ADCRES_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCRES`"]
@@ -185,39 +178,13 @@ impl<'a> ADCRES_W<'a> {
         self.w
     }
 }
-#[doc = "ADC sampling rate.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCSR_A {}
-impl From<ADCSR_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADCSR_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `ADCSR`"]
-pub type ADCSR_R = crate::R<bool, ADCSR_A>;
-impl ADCSR_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, ADCSR_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type ADCSR_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `ADCSR`"]
 pub struct ADCSR_W<'a> {
     w: &'a mut W,
 }
 impl<'a> ADCSR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -237,25 +204,21 @@ impl<'a> ADCSR_W<'a> {
 }
 #[doc = "ADC predivider. This bit predivides the selected ADC clock source before it gets divided again using ADCDIVx.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCPDIV_A {
     #[doc = "0: Predivide by 1"]
-    _1,
+    _1 = 0,
     #[doc = "1: Predivide by 4"]
-    _4,
+    _4 = 1,
     #[doc = "2: Predivide by 64"]
-    _64,
+    _64 = 2,
     #[doc = "3: Reserved"]
-    ADCPDIV_3,
+    ADCPDIV_3 = 3,
 }
 impl From<ADCPDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCPDIV_A) -> Self {
-        match variant {
-            ADCPDIV_A::_1 => 0,
-            ADCPDIV_A::_4 => 1,
-            ADCPDIV_A::_64 => 2,
-            ADCPDIV_A::ADCPDIV_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCPDIV`"]

@@ -182,7 +182,7 @@ impl RegisterBlock {
         unsafe { &mut *(((self as *const Self) as *mut u8).add(30usize) as *mut UCA1IV) }
     }
 }
-#[doc = "eUSCI_Ax Control Word Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ctlw0](uca1ctlw0) module"]
+#[doc = "eUSCI_Ax Control Word Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ctlw0](uca1ctlw0) module"]
 pub type UCA1CTLW0 = crate::Reg<u16, _UCA1CTLW0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -193,7 +193,7 @@ impl crate::Readable for UCA1CTLW0 {}
 impl crate::Writable for UCA1CTLW0 {}
 #[doc = "eUSCI_Ax Control Word Register 0"]
 pub mod uca1ctlw0;
-#[doc = "eUSCI_Ax Control Word Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ctlw0_spi](uca1ctlw0_spi) module"]
+#[doc = "eUSCI_Ax Control Word Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ctlw0_spi](uca1ctlw0_spi) module"]
 pub type UCA1CTLW0_SPI = crate::Reg<u16, _UCA1CTLW0_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -204,7 +204,7 @@ impl crate::Readable for UCA1CTLW0_SPI {}
 impl crate::Writable for UCA1CTLW0_SPI {}
 #[doc = "eUSCI_Ax Control Word Register 0"]
 pub mod uca1ctlw0_spi;
-#[doc = "eUSCI_Ax Control Word Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ctlw1](uca1ctlw1) module"]
+#[doc = "eUSCI_Ax Control Word Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ctlw1](uca1ctlw1) module"]
 pub type UCA1CTLW1 = crate::Reg<u16, _UCA1CTLW1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -215,7 +215,7 @@ impl crate::Readable for UCA1CTLW1 {}
 impl crate::Writable for UCA1CTLW1 {}
 #[doc = "eUSCI_Ax Control Word Register 1"]
 pub mod uca1ctlw1;
-#[doc = "eUSCI_Ax Baud Rate Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1brw](uca1brw) module"]
+#[doc = "eUSCI_Ax Baud Rate Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1brw](uca1brw) module"]
 pub type UCA1BRW = crate::Reg<u16, _UCA1BRW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -226,7 +226,7 @@ impl crate::Readable for UCA1BRW {}
 impl crate::Writable for UCA1BRW {}
 #[doc = "eUSCI_Ax Baud Rate Control Word Register"]
 pub mod uca1brw;
-#[doc = "eUSCI_Ax Bit Rate Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1brw_spi](uca1brw_spi) module"]
+#[doc = "eUSCI_Ax Bit Rate Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1brw_spi](uca1brw_spi) module"]
 pub type UCA1BRW_SPI = crate::Reg<u16, _UCA1BRW_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -237,7 +237,7 @@ impl crate::Readable for UCA1BRW_SPI {}
 impl crate::Writable for UCA1BRW_SPI {}
 #[doc = "eUSCI_Ax Bit Rate Control Register 1"]
 pub mod uca1brw_spi;
-#[doc = "eUSCI_Ax Modulation Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1mctlw](uca1mctlw) module"]
+#[doc = "eUSCI_Ax Modulation Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1mctlw](uca1mctlw) module"]
 pub type UCA1MCTLW = crate::Reg<u16, _UCA1MCTLW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -248,7 +248,7 @@ impl crate::Readable for UCA1MCTLW {}
 impl crate::Writable for UCA1MCTLW {}
 #[doc = "eUSCI_Ax Modulation Control Word Register"]
 pub mod uca1mctlw;
-#[doc = "eUSCI_Ax Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1statw](uca1statw) module"]
+#[doc = "eUSCI_Ax Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1statw](uca1statw) module"]
 pub type UCA1STATW = crate::Reg<u16, _UCA1STATW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -259,7 +259,7 @@ impl crate::Readable for UCA1STATW {}
 impl crate::Writable for UCA1STATW {}
 #[doc = "eUSCI_Ax Status Register"]
 pub mod uca1statw;
-#[doc = "UCA1STATW_SPI\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1statw_spi](uca1statw_spi) module"]
+#[doc = "UCA1STATW_SPI\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1statw_spi](uca1statw_spi) module"]
 pub type UCA1STATW_SPI = crate::Reg<u16, _UCA1STATW_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -270,7 +270,7 @@ impl crate::Readable for UCA1STATW_SPI {}
 impl crate::Writable for UCA1STATW_SPI {}
 #[doc = "UCA1STATW_SPI"]
 pub mod uca1statw_spi;
-#[doc = "eUSCI_Ax Receive Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1rxbuf](uca1rxbuf) module"]
+#[doc = "eUSCI_Ax Receive Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1rxbuf](uca1rxbuf) module"]
 pub type UCA1RXBUF = crate::Reg<u16, _UCA1RXBUF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -279,7 +279,7 @@ pub struct _UCA1RXBUF;
 impl crate::Readable for UCA1RXBUF {}
 #[doc = "eUSCI_Ax Receive Buffer Register"]
 pub mod uca1rxbuf;
-#[doc = "eUSCI_Ax Receive Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1rxbuf_spi](uca1rxbuf_spi) module"]
+#[doc = "eUSCI_Ax Receive Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1rxbuf_spi](uca1rxbuf_spi) module"]
 pub type UCA1RXBUF_SPI = crate::Reg<u16, _UCA1RXBUF_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -288,7 +288,7 @@ pub struct _UCA1RXBUF_SPI;
 impl crate::Readable for UCA1RXBUF_SPI {}
 #[doc = "eUSCI_Ax Receive Buffer Register"]
 pub mod uca1rxbuf_spi;
-#[doc = "eUSCI_Ax Transmit Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1txbuf](uca1txbuf) module"]
+#[doc = "eUSCI_Ax Transmit Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1txbuf](uca1txbuf) module"]
 pub type UCA1TXBUF = crate::Reg<u16, _UCA1TXBUF>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -299,7 +299,7 @@ impl crate::Readable for UCA1TXBUF {}
 impl crate::Writable for UCA1TXBUF {}
 #[doc = "eUSCI_Ax Transmit Buffer Register"]
 pub mod uca1txbuf;
-#[doc = "eUSCI_Ax Transmit Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1txbuf_spi](uca1txbuf_spi) module"]
+#[doc = "eUSCI_Ax Transmit Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1txbuf_spi](uca1txbuf_spi) module"]
 pub type UCA1TXBUF_SPI = crate::Reg<u16, _UCA1TXBUF_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -310,7 +310,7 @@ impl crate::Readable for UCA1TXBUF_SPI {}
 impl crate::Writable for UCA1TXBUF_SPI {}
 #[doc = "eUSCI_Ax Transmit Buffer Register"]
 pub mod uca1txbuf_spi;
-#[doc = "eUSCI_Ax Auto Baud Rate Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1abctl](uca1abctl) module"]
+#[doc = "eUSCI_Ax Auto Baud Rate Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1abctl](uca1abctl) module"]
 pub type UCA1ABCTL = crate::Reg<u16, _UCA1ABCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -321,7 +321,7 @@ impl crate::Readable for UCA1ABCTL {}
 impl crate::Writable for UCA1ABCTL {}
 #[doc = "eUSCI_Ax Auto Baud Rate Control Register"]
 pub mod uca1abctl;
-#[doc = "eUSCI_Ax IrDA Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1irctl](uca1irctl) module"]
+#[doc = "eUSCI_Ax IrDA Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1irctl](uca1irctl) module"]
 pub type UCA1IRCTL = crate::Reg<u16, _UCA1IRCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -332,7 +332,7 @@ impl crate::Readable for UCA1IRCTL {}
 impl crate::Writable for UCA1IRCTL {}
 #[doc = "eUSCI_Ax IrDA Control Word Register"]
 pub mod uca1irctl;
-#[doc = "eUSCI_Ax Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ie](uca1ie) module"]
+#[doc = "eUSCI_Ax Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ie](uca1ie) module"]
 pub type UCA1IE = crate::Reg<u16, _UCA1IE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -343,7 +343,7 @@ impl crate::Readable for UCA1IE {}
 impl crate::Writable for UCA1IE {}
 #[doc = "eUSCI_Ax Interrupt Enable Register"]
 pub mod uca1ie;
-#[doc = "eUSCI_Ax Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ie_spi](uca1ie_spi) module"]
+#[doc = "eUSCI_Ax Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ie_spi](uca1ie_spi) module"]
 pub type UCA1IE_SPI = crate::Reg<u16, _UCA1IE_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -354,7 +354,7 @@ impl crate::Readable for UCA1IE_SPI {}
 impl crate::Writable for UCA1IE_SPI {}
 #[doc = "eUSCI_Ax Interrupt Enable Register"]
 pub mod uca1ie_spi;
-#[doc = "eUSCI_Ax Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ifg](uca1ifg) module"]
+#[doc = "eUSCI_Ax Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ifg](uca1ifg) module"]
 pub type UCA1IFG = crate::Reg<u16, _UCA1IFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -365,7 +365,7 @@ impl crate::Readable for UCA1IFG {}
 impl crate::Writable for UCA1IFG {}
 #[doc = "eUSCI_Ax Interrupt Flag Register"]
 pub mod uca1ifg;
-#[doc = "eUSCI_Ax Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1ifg_spi](uca1ifg_spi) module"]
+#[doc = "eUSCI_Ax Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ifg_spi](uca1ifg_spi) module"]
 pub type UCA1IFG_SPI = crate::Reg<u16, _UCA1IFG_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -376,7 +376,7 @@ impl crate::Readable for UCA1IFG_SPI {}
 impl crate::Writable for UCA1IFG_SPI {}
 #[doc = "eUSCI_Ax Interrupt Flag Register"]
 pub mod uca1ifg_spi;
-#[doc = "eUSCI_Ax Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1iv](uca1iv) module"]
+#[doc = "eUSCI_Ax Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1iv](uca1iv) module"]
 pub type UCA1IV = crate::Reg<u16, _UCA1IV>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -385,7 +385,7 @@ pub struct _UCA1IV;
 impl crate::Readable for UCA1IV {}
 #[doc = "eUSCI_Ax Interrupt Vector Register"]
 pub mod uca1iv;
-#[doc = "eUSCI_Ax Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [uca1iv_spi](uca1iv_spi) module"]
+#[doc = "eUSCI_Ax Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1iv_spi](uca1iv_spi) module"]
 pub type UCA1IV_SPI = crate::Reg<u16, _UCA1IV_SPI>;
 #[allow(missing_docs)]
 #[doc(hidden)]

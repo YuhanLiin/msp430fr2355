@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MPY32CTL0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYDLY32_A {
     #[doc = "0: Writes are delayed until 64-bit result (RES0 to RES3) is available."]
-    MPYDLY32_0,
+    MPYDLY32_0 = 0,
     #[doc = "1: Writes are delayed until 32-bit result (RES0 to RES1) is available. 8 MPYDLYWRTEN"]
-    MPYDLY32_1,
+    MPYDLY32_1 = 1,
 }
 impl From<MPYDLY32_A> for bool {
     #[inline(always)]
     fn from(variant: MPYDLY32_A) -> Self {
-        match variant {
-            MPYDLY32_A::MPYDLY32_0 => false,
-            MPYDLY32_A::MPYDLY32_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYDLY32`"]
@@ -92,17 +89,14 @@ impl<'a> MPYDLY32_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYDLYWRTEN_A {
     #[doc = "0: Writes are not delayed."]
-    MPYDLYWRTEN_0,
+    MPYDLYWRTEN_0 = 0,
     #[doc = "1: Writes are delayed."]
-    MPYDLYWRTEN_1,
+    MPYDLYWRTEN_1 = 1,
 }
 impl From<MPYDLYWRTEN_A> for bool {
     #[inline(always)]
     fn from(variant: MPYDLYWRTEN_A) -> Self {
-        match variant {
-            MPYDLYWRTEN_A::MPYDLYWRTEN_0 => false,
-            MPYDLYWRTEN_A::MPYDLYWRTEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYDLYWRTEN`"]
@@ -170,17 +164,14 @@ impl<'a> MPYDLYWRTEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYOP2_32_A {
     #[doc = "0: 16 bits."]
-    _16,
+    _16 = 0,
     #[doc = "1: 32 bits."]
-    _32,
+    _32 = 1,
 }
 impl From<MPYOP2_32_A> for bool {
     #[inline(always)]
     fn from(variant: MPYOP2_32_A) -> Self {
-        match variant {
-            MPYOP2_32_A::_16 => false,
-            MPYOP2_32_A::_32 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYOP2_32`"]
@@ -248,17 +239,14 @@ impl<'a> MPYOP2_32_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYOP1_32_A {
     #[doc = "0: 16 bits."]
-    _16,
+    _16 = 0,
     #[doc = "1: 32 bits."]
-    _32,
+    _32 = 1,
 }
 impl From<MPYOP1_32_A> for bool {
     #[inline(always)]
     fn from(variant: MPYOP1_32_A) -> Self {
-        match variant {
-            MPYOP1_32_A::_16 => false,
-            MPYOP1_32_A::_32 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYOP1_32`"]
@@ -324,25 +312,21 @@ impl<'a> MPYOP1_32_W<'a> {
 }
 #[doc = "Multiplier mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MPYM_A {
     #[doc = "0: MPY  Multiply"]
-    MPY,
+    MPY = 0,
     #[doc = "1: MPYS  Signed multiply"]
-    MPYS,
+    MPYS = 1,
     #[doc = "2: MAC  Multiply accumulate"]
-    MAC,
+    MAC = 2,
     #[doc = "3: MACS  Signed multiply accumulate"]
-    MACS,
+    MACS = 3,
 }
 impl From<MPYM_A> for u8 {
     #[inline(always)]
     fn from(variant: MPYM_A) -> Self {
-        match variant {
-            MPYM_A::MPY => 0,
-            MPYM_A::MPYS => 1,
-            MPYM_A::MAC => 2,
-            MPYM_A::MACS => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MPYM`"]
@@ -423,17 +407,14 @@ impl<'a> MPYM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYSAT_A {
     #[doc = "0: Saturation mode disabled."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Saturation mode enabled."]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<MPYSAT_A> for bool {
     #[inline(always)]
     fn from(variant: MPYSAT_A) -> Self {
-        match variant {
-            MPYSAT_A::DISABLE => false,
-            MPYSAT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYSAT`"]
@@ -501,17 +482,14 @@ impl<'a> MPYSAT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYFRAC_A {
     #[doc = "0: Fractional mode disabled."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Fractional mode enabled."]
-    ENABLE,
+    ENABLE = 1,
 }
 impl From<MPYFRAC_A> for bool {
     #[inline(always)]
     fn from(variant: MPYFRAC_A) -> Self {
-        match variant {
-            MPYFRAC_A::DISABLE => false,
-            MPYFRAC_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYFRAC`"]
@@ -579,17 +557,14 @@ impl<'a> MPYFRAC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MPYC_A {
     #[doc = "0: No carry for result."]
-    MPYC_0,
+    MPYC_0 = 0,
     #[doc = "1: Result has a carry."]
-    MPYC_1,
+    MPYC_1 = 1,
 }
 impl From<MPYC_A> for bool {
     #[inline(always)]
     fn from(variant: MPYC_A) -> Self {
-        match variant {
-            MPYC_A::MPYC_0 => false,
-            MPYC_A::MPYC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MPYC`"]

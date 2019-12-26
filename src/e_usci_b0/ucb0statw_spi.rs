@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCB0STATW_SPI {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCOE_A {
     #[doc = "0: No error"]
-    UCOE_0,
+    UCOE_0 = 0,
     #[doc = "1: Overrun error occurred"]
-    UCOE_1,
+    UCOE_1 = 1,
 }
 impl From<UCOE_A> for bool {
     #[inline(always)]
     fn from(variant: UCOE_A) -> Self {
-        match variant {
-            UCOE_A::UCOE_0 => false,
-            UCOE_A::UCOE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCOE`"]
@@ -92,17 +89,14 @@ impl<'a> UCOE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCFE_A {
     #[doc = "0: No error"]
-    UCFE_0,
+    UCFE_0 = 0,
     #[doc = "1: Bus conflict occurred"]
-    UCFE_1,
+    UCFE_1 = 1,
 }
 impl From<UCFE_A> for bool {
     #[inline(always)]
     fn from(variant: UCFE_A) -> Self {
-        match variant {
-            UCFE_A::UCFE_0 => false,
-            UCFE_A::UCFE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCFE`"]
@@ -170,17 +164,14 @@ impl<'a> UCFE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCLISTEN_A {
     #[doc = "0: Disabled"]
-    UCLISTEN_0,
+    UCLISTEN_0 = 0,
     #[doc = "1: Enabled. UCBxTXD is internally fed back to the receiver"]
-    UCLISTEN_1,
+    UCLISTEN_1 = 1,
 }
 impl From<UCLISTEN_A> for bool {
     #[inline(always)]
     fn from(variant: UCLISTEN_A) -> Self {
-        match variant {
-            UCLISTEN_A::UCLISTEN_0 => false,
-            UCLISTEN_A::UCLISTEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCLISTEN`"]

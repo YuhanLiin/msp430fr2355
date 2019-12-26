@@ -12,22 +12,19 @@ impl crate::ResetValue for super::SAC1OA {
 }
 #[doc = "SAC OA Positive input source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PSEL_A {
     #[doc = "0: External source selected"]
-    PSEL_0,
+    PSEL_0 = 0,
     #[doc = "1: 12-bit reference DAC source selected"]
-    PSEL_1,
+    PSEL_1 = 1,
     #[doc = "2: Pair OA source selected"]
-    PSEL_2,
+    PSEL_2 = 2,
 }
 impl From<PSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PSEL_A) -> Self {
-        match variant {
-            PSEL_A::PSEL_0 => 0,
-            PSEL_A::PSEL_1 => 1,
-            PSEL_A::PSEL_2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSEL`"]
@@ -96,17 +93,14 @@ impl<'a> PSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PMUXEN_A {
     #[doc = "0: All positive input sources are disconnected to OA positive port"]
-    PMUXEN_0,
+    PMUXEN_0 = 0,
     #[doc = "1: All positive input sources are connected to OA positive port"]
-    PMUXEN_1,
+    PMUXEN_1 = 1,
 }
 impl From<PMUXEN_A> for bool {
     #[inline(always)]
     fn from(variant: PMUXEN_A) -> Self {
-        match variant {
-            PMUXEN_A::PMUXEN_0 => false,
-            PMUXEN_A::PMUXEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PMUXEN`"]
@@ -172,22 +166,19 @@ impl<'a> PMUXEN_W<'a> {
 }
 #[doc = "SAC OA Negative input source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NSEL_A {
     #[doc = "0: External source selected"]
-    NSEL_0,
+    NSEL_0 = 0,
     #[doc = "1: PGA source selected"]
-    NSEL_1,
+    NSEL_1 = 1,
     #[doc = "2: Device Specific"]
-    NSEL_2,
+    NSEL_2 = 2,
 }
 impl From<NSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: NSEL_A) -> Self {
-        match variant {
-            NSEL_A::NSEL_0 => 0,
-            NSEL_A::NSEL_1 => 1,
-            NSEL_A::NSEL_2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NSEL`"]
@@ -256,17 +247,14 @@ impl<'a> NSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NMUXEN_A {
     #[doc = "0: All negative input sources are disconnected to OA negative port"]
-    NMUXEN_0,
+    NMUXEN_0 = 0,
     #[doc = "1: All negative input sources are connected to OA negative port"]
-    NMUXEN_1,
+    NMUXEN_1 = 1,
 }
 impl From<NMUXEN_A> for bool {
     #[inline(always)]
     fn from(variant: NMUXEN_A) -> Self {
-        match variant {
-            NMUXEN_A::NMUXEN_0 => false,
-            NMUXEN_A::NMUXEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NMUXEN`"]
@@ -334,17 +322,14 @@ impl<'a> NMUXEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OAEN_A {
     #[doc = "0: SAC OA is disabled, then the SAC OA output high impedance"]
-    OAEN_0,
+    OAEN_0 = 0,
     #[doc = "1: SAC OA is enabled, normal mode"]
-    OAEN_1,
+    OAEN_1 = 1,
 }
 impl From<OAEN_A> for bool {
     #[inline(always)]
     fn from(variant: OAEN_A) -> Self {
-        match variant {
-            OAEN_A::OAEN_0 => false,
-            OAEN_A::OAEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OAEN`"]
@@ -412,17 +397,14 @@ impl<'a> OAEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OAPM_A {
     #[doc = "0: High speed and high power"]
-    OAPM_0,
+    OAPM_0 = 0,
     #[doc = "1: Llow speed and low power"]
-    OAPM_1,
+    OAPM_1 = 1,
 }
 impl From<OAPM_A> for bool {
     #[inline(always)]
     fn from(variant: OAPM_A) -> Self {
-        match variant {
-            OAPM_A::OAPM_0 => false,
-            OAPM_A::OAPM_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OAPM`"]
@@ -490,17 +472,14 @@ impl<'a> OAPM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SACEN_A {
     #[doc = "0: SAC all modules are disabled, then the SAC output high impedance"]
-    SACEN_0,
+    SACEN_0 = 0,
     #[doc = "1: SAC all modules are enabled, normal mode"]
-    SACEN_1,
+    SACEN_1 = 1,
 }
 impl From<SACEN_A> for bool {
     #[inline(always)]
     fn from(variant: SACEN_A) -> Self {
-        match variant {
-            SACEN_A::SACEN_0 => false,
-            SACEN_A::SACEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SACEN`"]

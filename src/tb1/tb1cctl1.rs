@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TB1CCTL1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCIFG_A {
     #[doc = "0: No interrupt pending"]
-    CCIFG_0,
+    CCIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    CCIFG_1,
+    CCIFG_1 = 1,
 }
 impl From<CCIFG_A> for bool {
     #[inline(always)]
     fn from(variant: CCIFG_A) -> Self {
-        match variant {
-            CCIFG_A::CCIFG_0 => false,
-            CCIFG_A::CCIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCIFG`"]
@@ -92,17 +89,14 @@ impl<'a> CCIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COV_A {
     #[doc = "0: No capture overflow occurred"]
-    COV_0,
+    COV_0 = 0,
     #[doc = "1: Capture overflow occurred"]
-    COV_1,
+    COV_1 = 1,
 }
 impl From<COV_A> for bool {
     #[inline(always)]
     fn from(variant: COV_A) -> Self {
-        match variant {
-            COV_A::COV_0 => false,
-            COV_A::COV_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COV`"]
@@ -170,17 +164,14 @@ impl<'a> COV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT_A {
     #[doc = "0: Output low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Output high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<OUT_A> for bool {
     #[inline(always)]
     fn from(variant: OUT_A) -> Self {
-        match variant {
-            OUT_A::LOW => false,
-            OUT_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OUT`"]
@@ -244,42 +235,20 @@ impl<'a> OUT_W<'a> {
         self.w
     }
 }
-#[doc = "Capture/compare input\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCI_A {}
-impl From<CCI_A> for bool {
-    #[inline(always)]
-    fn from(variant: CCI_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `CCI`"]
-pub type CCI_R = crate::R<bool, CCI_A>;
-impl CCI_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, CCI_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type CCI_R = crate::R<bool, bool>;
 #[doc = "Capture/compare interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCIE_A {
     #[doc = "0: Interrupt disabled"]
-    CCIE_0,
+    CCIE_0 = 0,
     #[doc = "1: Interrupt enabled"]
-    CCIE_1,
+    CCIE_1 = 1,
 }
 impl From<CCIE_A> for bool {
     #[inline(always)]
     fn from(variant: CCIE_A) -> Self {
-        match variant {
-            CCIE_A::CCIE_0 => false,
-            CCIE_A::CCIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCIE`"]
@@ -345,37 +314,29 @@ impl<'a> CCIE_W<'a> {
 }
 #[doc = "Output mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OUTMOD_A {
     #[doc = "0: OUT bit value"]
-    OUTMOD_0,
+    OUTMOD_0 = 0,
     #[doc = "1: Set"]
-    OUTMOD_1,
+    OUTMOD_1 = 1,
     #[doc = "2: Toggle/reset"]
-    OUTMOD_2,
+    OUTMOD_2 = 2,
     #[doc = "3: Set/reset"]
-    OUTMOD_3,
+    OUTMOD_3 = 3,
     #[doc = "4: Toggle"]
-    OUTMOD_4,
+    OUTMOD_4 = 4,
     #[doc = "5: Reset"]
-    OUTMOD_5,
+    OUTMOD_5 = 5,
     #[doc = "6: Toggle/set"]
-    OUTMOD_6,
+    OUTMOD_6 = 6,
     #[doc = "7: Reset/set"]
-    OUTMOD_7,
+    OUTMOD_7 = 7,
 }
 impl From<OUTMOD_A> for u8 {
     #[inline(always)]
     fn from(variant: OUTMOD_A) -> Self {
-        match variant {
-            OUTMOD_A::OUTMOD_0 => 0,
-            OUTMOD_A::OUTMOD_1 => 1,
-            OUTMOD_A::OUTMOD_2 => 2,
-            OUTMOD_A::OUTMOD_3 => 3,
-            OUTMOD_A::OUTMOD_4 => 4,
-            OUTMOD_A::OUTMOD_5 => 5,
-            OUTMOD_A::OUTMOD_6 => 6,
-            OUTMOD_A::OUTMOD_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OUTMOD`"]
@@ -500,17 +461,14 @@ impl<'a> OUTMOD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAP_A {
     #[doc = "0: Compare mode"]
-    COMPARE,
+    COMPARE = 0,
     #[doc = "1: Capture mode"]
-    CAPTURE,
+    CAPTURE = 1,
 }
 impl From<CAP_A> for bool {
     #[inline(always)]
     fn from(variant: CAP_A) -> Self {
-        match variant {
-            CAP_A::COMPARE => false,
-            CAP_A::CAPTURE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CAP`"]
@@ -576,25 +534,21 @@ impl<'a> CAP_W<'a> {
 }
 #[doc = "Compare latch load\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLLD_A {
     #[doc = "0: TBxCLn loads on write to TBxCCRn"]
-    CLLD_0,
+    CLLD_0 = 0,
     #[doc = "1: TBxCLn loads when TBxR counts to 0"]
-    CLLD_1,
+    CLLD_1 = 1,
     #[doc = "2: TBxCLn loads when TBxR counts to 0 (up or continuous mode). TBxCLn loads when TBxR counts to TBxCL0 or to 0 (up/down mode)."]
-    CLLD_2,
+    CLLD_2 = 2,
     #[doc = "3: TBxCLn loads when TBxR counts to TBxCLn"]
-    CLLD_3,
+    CLLD_3 = 3,
 }
 impl From<CLLD_A> for u8 {
     #[inline(always)]
     fn from(variant: CLLD_A) -> Self {
-        match variant {
-            CLLD_A::CLLD_0 => 0,
-            CLLD_A::CLLD_1 => 1,
-            CLLD_A::CLLD_2 => 2,
-            CLLD_A::CLLD_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLLD`"]
@@ -675,17 +629,14 @@ impl<'a> CLLD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCS_A {
     #[doc = "0: Asynchronous capture"]
-    ASYNC,
+    ASYNC = 0,
     #[doc = "1: Synchronous capture"]
-    SYNC,
+    SYNC = 1,
 }
 impl From<SCS_A> for bool {
     #[inline(always)]
     fn from(variant: SCS_A) -> Self {
-        match variant {
-            SCS_A::ASYNC => false,
-            SCS_A::SYNC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SCS`"]
@@ -751,25 +702,21 @@ impl<'a> SCS_W<'a> {
 }
 #[doc = "Capture/compare input select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CCIS_A {
     #[doc = "0: CCIxA"]
-    CCIA,
+    CCIA = 0,
     #[doc = "1: CCIxB"]
-    CCIB,
+    CCIB = 1,
     #[doc = "2: GND"]
-    GND,
+    GND = 2,
     #[doc = "3: VCC"]
-    VCC,
+    VCC = 3,
 }
 impl From<CCIS_A> for u8 {
     #[inline(always)]
     fn from(variant: CCIS_A) -> Self {
-        match variant {
-            CCIS_A::CCIA => 0,
-            CCIS_A::CCIB => 1,
-            CCIS_A::GND => 2,
-            CCIS_A::VCC => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CCIS`"]
@@ -848,25 +795,21 @@ impl<'a> CCIS_W<'a> {
 }
 #[doc = "Capture mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CM_A {
     #[doc = "0: No capture"]
-    NONE,
+    NONE = 0,
     #[doc = "1: Capture on rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Capture on falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Capture on both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<CM_A> for u8 {
     #[inline(always)]
     fn from(variant: CM_A) -> Self {
-        match variant {
-            CM_A::NONE => 0,
-            CM_A::RISING => 1,
-            CM_A::FALLING => 2,
-            CM_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CM`"]

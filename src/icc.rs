@@ -14,7 +14,7 @@ pub struct RegisterBlock {
     #[doc = "0x0a - ICCILSR3"]
     pub iccilsr3: ICCILSR3,
 }
-#[doc = "ICCSC\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccsc](iccsc) module"]
+#[doc = "ICCSC\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccsc](iccsc) module"]
 pub type ICCSC = crate::Reg<u16, _ICCSC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -25,7 +25,7 @@ impl crate::Readable for ICCSC {}
 impl crate::Writable for ICCSC {}
 #[doc = "ICCSC"]
 pub mod iccsc;
-#[doc = "ICCMVS\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccmvs](iccmvs) module"]
+#[doc = "ICCMVS\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccmvs](iccmvs) module"]
 pub type ICCMVS = crate::Reg<u16, _ICCMVS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -34,7 +34,7 @@ pub struct _ICCMVS;
 impl crate::Readable for ICCMVS {}
 #[doc = "ICCMVS"]
 pub mod iccmvs;
-#[doc = "ICCILSR0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccilsr0](iccilsr0) module"]
+#[doc = "ICCILSR0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccilsr0](iccilsr0) module"]
 pub type ICCILSR0 = crate::Reg<u16, _ICCILSR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -45,7 +45,7 @@ impl crate::Readable for ICCILSR0 {}
 impl crate::Writable for ICCILSR0 {}
 #[doc = "ICCILSR0"]
 pub mod iccilsr0;
-#[doc = "ICCILSR1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccilsr1](iccilsr1) module"]
+#[doc = "ICCILSR1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccilsr1](iccilsr1) module"]
 pub type ICCILSR1 = crate::Reg<u16, _ICCILSR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -56,7 +56,7 @@ impl crate::Readable for ICCILSR1 {}
 impl crate::Writable for ICCILSR1 {}
 #[doc = "ICCILSR1"]
 pub mod iccilsr1;
-#[doc = "ICCILSR2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccilsr2](iccilsr2) module"]
+#[doc = "ICCILSR2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccilsr2](iccilsr2) module"]
 pub type ICCILSR2 = crate::Reg<u16, _ICCILSR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -67,7 +67,7 @@ impl crate::Readable for ICCILSR2 {}
 impl crate::Writable for ICCILSR2 {}
 #[doc = "ICCILSR2"]
 pub mod iccilsr2;
-#[doc = "ICCILSR3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iccilsr3](iccilsr3) module"]
+#[doc = "ICCILSR3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccilsr3](iccilsr3) module"]
 pub type ICCILSR3 = crate::Reg<u16, _ICCILSR3>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SAC1DAC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACEN_A {
     #[doc = "0: Disabled"]
-    DACEN_0,
+    DACEN_0 = 0,
     #[doc = "1: Enabled"]
-    DACEN_1,
+    DACEN_1 = 1,
 }
 impl From<DACEN_A> for bool {
     #[inline(always)]
     fn from(variant: DACEN_A) -> Self {
-        match variant {
-            DACEN_A::DACEN_0 => false,
-            DACEN_A::DACEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DACEN`"]
@@ -92,17 +89,14 @@ impl<'a> DACEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACIE_A {
     #[doc = "0: Disabled"]
-    DACIE_0,
+    DACIE_0 = 0,
     #[doc = "1: Enabled"]
-    DACIE_1,
+    DACIE_1 = 1,
 }
 impl From<DACIE_A> for bool {
     #[inline(always)]
     fn from(variant: DACIE_A) -> Self {
-        match variant {
-            DACIE_A::DACIE_0 => false,
-            DACIE_A::DACIE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DACIE`"]
@@ -170,17 +164,14 @@ impl<'a> DACIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACDMAE_A {
     #[doc = "0: DMA request disabled"]
-    DACDMAE_0,
+    DACDMAE_0 = 0,
     #[doc = "1: DMA request enabled"]
-    DACDMAE_1,
+    DACDMAE_1 = 1,
 }
 impl From<DACDMAE_A> for bool {
     #[inline(always)]
     fn from(variant: DACDMAE_A) -> Self {
-        match variant {
-            DACDMAE_A::DACDMAE_0 => false,
-            DACDMAE_A::DACDMAE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DACDMAE`"]
@@ -246,22 +237,19 @@ impl<'a> DACDMAE_W<'a> {
 }
 #[doc = "SAC DAC load select. Selects the load trigger for the DAC latch.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DACLSEL_A {
     #[doc = "0: DAC latch loads when DACDAT written"]
-    DACLSEL_0,
+    DACLSEL_0 = 0,
     #[doc = "2: Device specific 0. DAC always loads data from DACDAT at the positive edge of this signal"]
-    DACLSEL_2,
+    DACLSEL_2 = 2,
     #[doc = "3: Device specific 1. DAC always loads data from DACDAT at the positive edge of this signal"]
-    DACLSEL_3,
+    DACLSEL_3 = 3,
 }
 impl From<DACLSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DACLSEL_A) -> Self {
-        match variant {
-            DACLSEL_A::DACLSEL_0 => 0,
-            DACLSEL_A::DACLSEL_2 => 2,
-            DACLSEL_A::DACLSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DACLSEL`"]
@@ -330,17 +318,14 @@ impl<'a> DACLSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACSREF_A {
     #[doc = "0: AVCC"]
-    DACSREF_0,
+    DACSREF_0 = 0,
     #[doc = "1: Alternative reference"]
-    DACSREF_1,
+    DACSREF_1 = 1,
 }
 impl From<DACSREF_A> for bool {
     #[inline(always)]
     fn from(variant: DACSREF_A) -> Self {
-        match variant {
-            DACSREF_A::DACSREF_0 => false,
-            DACSREF_A::DACSREF_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DACSREF`"]

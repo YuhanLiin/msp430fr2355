@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADCCTL1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCBUSY_A {
     #[doc = "0: No operation is active."]
-    ADCBUSY_0,
+    ADCBUSY_0 = 0,
     #[doc = "1: A sequence, sample, or conversion is active."]
-    ADCBUSY_1,
+    ADCBUSY_1 = 1,
 }
 impl From<ADCBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: ADCBUSY_A) -> Self {
-        match variant {
-            ADCBUSY_A::ADCBUSY_0 => false,
-            ADCBUSY_A::ADCBUSY_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCBUSY`"]
@@ -51,25 +48,21 @@ impl ADCBUSY_R {
 }
 #[doc = "conversion sequence mode select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCCONSEQ_A {
     #[doc = "0: Single-channel, single-conversion"]
-    ADCCONSEQ_0,
+    ADCCONSEQ_0 = 0,
     #[doc = "1: Sequence-of-channels"]
-    ADCCONSEQ_1,
+    ADCCONSEQ_1 = 1,
     #[doc = "2: Repeat-single-channel"]
-    ADCCONSEQ_2,
+    ADCCONSEQ_2 = 2,
     #[doc = "3: Repeat-sequence-of-channels"]
-    ADCCONSEQ_3,
+    ADCCONSEQ_3 = 3,
 }
 impl From<ADCCONSEQ_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCCONSEQ_A) -> Self {
-        match variant {
-            ADCCONSEQ_A::ADCCONSEQ_0 => 0,
-            ADCCONSEQ_A::ADCCONSEQ_1 => 1,
-            ADCCONSEQ_A::ADCCONSEQ_2 => 2,
-            ADCCONSEQ_A::ADCCONSEQ_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCCONSEQ`"]
@@ -148,25 +141,21 @@ impl<'a> ADCCONSEQ_W<'a> {
 }
 #[doc = "clock source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCSSEL_A {
     #[doc = "0: ADCOSC (MODOSC)"]
-    ADCSSEL_0,
+    ADCSSEL_0 = 0,
     #[doc = "1: ACLK"]
-    ADCSSEL_1,
+    ADCSSEL_1 = 1,
     #[doc = "2: MCLK"]
-    ADCSSEL_2,
+    ADCSSEL_2 = 2,
     #[doc = "3: SMCLK"]
-    ADCSSEL_3,
+    ADCSSEL_3 = 3,
 }
 impl From<ADCSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCSSEL_A) -> Self {
-        match variant {
-            ADCSSEL_A::ADCSSEL_0 => 0,
-            ADCSSEL_A::ADCSSEL_1 => 1,
-            ADCSSEL_A::ADCSSEL_2 => 2,
-            ADCSSEL_A::ADCSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCSSEL`"]
@@ -245,37 +234,29 @@ impl<'a> ADCSSEL_W<'a> {
 }
 #[doc = "clock divider\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCDIV_A {
     #[doc = "0: /1"]
-    ADCDIV_0,
+    ADCDIV_0 = 0,
     #[doc = "1: /2"]
-    ADCDIV_1,
+    ADCDIV_1 = 1,
     #[doc = "2: /3"]
-    ADCDIV_2,
+    ADCDIV_2 = 2,
     #[doc = "3: /4"]
-    ADCDIV_3,
+    ADCDIV_3 = 3,
     #[doc = "4: /5"]
-    ADCDIV_4,
+    ADCDIV_4 = 4,
     #[doc = "5: /6"]
-    ADCDIV_5,
+    ADCDIV_5 = 5,
     #[doc = "6: /7"]
-    ADCDIV_6,
+    ADCDIV_6 = 6,
     #[doc = "7: /8"]
-    ADCDIV_7,
+    ADCDIV_7 = 7,
 }
 impl From<ADCDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCDIV_A) -> Self {
-        match variant {
-            ADCDIV_A::ADCDIV_0 => 0,
-            ADCDIV_A::ADCDIV_1 => 1,
-            ADCDIV_A::ADCDIV_2 => 2,
-            ADCDIV_A::ADCDIV_3 => 3,
-            ADCDIV_A::ADCDIV_4 => 4,
-            ADCDIV_A::ADCDIV_5 => 5,
-            ADCDIV_A::ADCDIV_6 => 6,
-            ADCDIV_A::ADCDIV_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCDIV`"]
@@ -400,17 +381,14 @@ impl<'a> ADCDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCISSH_A {
     #[doc = "0: The sample-input signal is not inverted."]
-    ADCISSH_0,
+    ADCISSH_0 = 0,
     #[doc = "1: The sample-input signal is inverted."]
-    ADCISSH_1,
+    ADCISSH_1 = 1,
 }
 impl From<ADCISSH_A> for bool {
     #[inline(always)]
     fn from(variant: ADCISSH_A) -> Self {
-        match variant {
-            ADCISSH_A::ADCISSH_0 => false,
-            ADCISSH_A::ADCISSH_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCISSH`"]
@@ -478,17 +456,14 @@ impl<'a> ADCISSH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCSHP_A {
     #[doc = "0: SAMPCON signal is sourced from the sample-input signal."]
-    ADCSHP_0,
+    ADCSHP_0 = 0,
     #[doc = "1: SAMPCON signal is sourced from the sampling timer."]
-    ADCSHP_1,
+    ADCSHP_1 = 1,
 }
 impl From<ADCSHP_A> for bool {
     #[inline(always)]
     fn from(variant: ADCSHP_A) -> Self {
-        match variant {
-            ADCSHP_A::ADCSHP_0 => false,
-            ADCSHP_A::ADCSHP_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCSHP`"]
@@ -554,25 +529,21 @@ impl<'a> ADCSHP_W<'a> {
 }
 #[doc = "sample-and-hold source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCSHS_A {
     #[doc = "0: ADCSC bit"]
-    ADCSHS_0,
+    ADCSHS_0 = 0,
     #[doc = "1: see the device-specific data sheet for source"]
-    ADCSHS_1,
+    ADCSHS_1 = 1,
     #[doc = "2: see the device-specific data sheet for source"]
-    ADCSHS_2,
+    ADCSHS_2 = 2,
     #[doc = "3: see the device-specific data sheet for source"]
-    ADCSHS_3,
+    ADCSHS_3 = 3,
 }
 impl From<ADCSHS_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCSHS_A) -> Self {
-        match variant {
-            ADCSHS_A::ADCSHS_0 => 0,
-            ADCSHS_A::ADCSHS_1 => 1,
-            ADCSHS_A::ADCSHS_2 => 2,
-            ADCSHS_A::ADCSHS_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCSHS`"]

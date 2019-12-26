@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCB1IFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIFG0_A {
     #[doc = "0: No interrupt pending"]
-    UCRXIFG0_0,
+    UCRXIFG0_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCRXIFG0_1,
+    UCRXIFG0_1 = 1,
 }
 impl From<UCRXIFG0_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIFG0_A) -> Self {
-        match variant {
-            UCRXIFG0_A::UCRXIFG0_0 => false,
-            UCRXIFG0_A::UCRXIFG0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIFG0`"]
@@ -92,17 +89,14 @@ impl<'a> UCRXIFG0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIFG0_A {
     #[doc = "0: No interrupt pending"]
-    UCTXIFG0_0,
+    UCTXIFG0_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCTXIFG0_1,
+    UCTXIFG0_1 = 1,
 }
 impl From<UCTXIFG0_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIFG0_A) -> Self {
-        match variant {
-            UCTXIFG0_A::UCTXIFG0_0 => false,
-            UCTXIFG0_A::UCTXIFG0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIFG0`"]
@@ -170,17 +164,14 @@ impl<'a> UCTXIFG0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTTIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCSTTIFG_0,
+    UCSTTIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCSTTIFG_1,
+    UCSTTIFG_1 = 1,
 }
 impl From<UCSTTIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTTIFG_A) -> Self {
-        match variant {
-            UCSTTIFG_A::UCSTTIFG_0 => false,
-            UCSTTIFG_A::UCSTTIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTTIFG`"]
@@ -248,17 +239,14 @@ impl<'a> UCSTTIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCSTPIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCSTPIFG_0,
+    UCSTPIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCSTPIFG_1,
+    UCSTPIFG_1 = 1,
 }
 impl From<UCSTPIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCSTPIFG_A) -> Self {
-        match variant {
-            UCSTPIFG_A::UCSTPIFG_0 => false,
-            UCSTPIFG_A::UCSTPIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCSTPIFG`"]
@@ -326,17 +314,14 @@ impl<'a> UCSTPIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCALIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCALIFG_0,
+    UCALIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCALIFG_1,
+    UCALIFG_1 = 1,
 }
 impl From<UCALIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCALIFG_A) -> Self {
-        match variant {
-            UCALIFG_A::UCALIFG_0 => false,
-            UCALIFG_A::UCALIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCALIFG`"]
@@ -404,17 +389,14 @@ impl<'a> UCALIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCNACKIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCNACKIFG_0,
+    UCNACKIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCNACKIFG_1,
+    UCNACKIFG_1 = 1,
 }
 impl From<UCNACKIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCNACKIFG_A) -> Self {
-        match variant {
-            UCNACKIFG_A::UCNACKIFG_0 => false,
-            UCNACKIFG_A::UCNACKIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCNACKIFG`"]
@@ -482,17 +464,14 @@ impl<'a> UCNACKIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBCNTIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCBCNTIFG_0,
+    UCBCNTIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCBCNTIFG_1,
+    UCBCNTIFG_1 = 1,
 }
 impl From<UCBCNTIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCBCNTIFG_A) -> Self {
-        match variant {
-            UCBCNTIFG_A::UCBCNTIFG_0 => false,
-            UCBCNTIFG_A::UCBCNTIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBCNTIFG`"]
@@ -560,17 +539,14 @@ impl<'a> UCBCNTIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCCLTOIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCCLTOIFG_0,
+    UCCLTOIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCCLTOIFG_1,
+    UCCLTOIFG_1 = 1,
 }
 impl From<UCCLTOIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCCLTOIFG_A) -> Self {
-        match variant {
-            UCCLTOIFG_A::UCCLTOIFG_0 => false,
-            UCCLTOIFG_A::UCCLTOIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCCLTOIFG`"]
@@ -638,17 +614,14 @@ impl<'a> UCCLTOIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIFG1_A {
     #[doc = "0: No interrupt pending"]
-    UCRXIFG1_0,
+    UCRXIFG1_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCRXIFG1_1,
+    UCRXIFG1_1 = 1,
 }
 impl From<UCRXIFG1_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIFG1_A) -> Self {
-        match variant {
-            UCRXIFG1_A::UCRXIFG1_0 => false,
-            UCRXIFG1_A::UCRXIFG1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIFG1`"]
@@ -716,17 +689,14 @@ impl<'a> UCRXIFG1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIFG1_A {
     #[doc = "0: No interrupt pending"]
-    UCTXIFG1_0,
+    UCTXIFG1_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCTXIFG1_1,
+    UCTXIFG1_1 = 1,
 }
 impl From<UCTXIFG1_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIFG1_A) -> Self {
-        match variant {
-            UCTXIFG1_A::UCTXIFG1_0 => false,
-            UCTXIFG1_A::UCTXIFG1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIFG1`"]
@@ -794,17 +764,14 @@ impl<'a> UCTXIFG1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIFG2_A {
     #[doc = "0: No interrupt pending"]
-    UCRXIFG2_0,
+    UCRXIFG2_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCRXIFG2_1,
+    UCRXIFG2_1 = 1,
 }
 impl From<UCRXIFG2_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIFG2_A) -> Self {
-        match variant {
-            UCRXIFG2_A::UCRXIFG2_0 => false,
-            UCRXIFG2_A::UCRXIFG2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIFG2`"]
@@ -872,17 +839,14 @@ impl<'a> UCRXIFG2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIFG2_A {
     #[doc = "0: No interrupt pending"]
-    UCTXIFG2_0,
+    UCTXIFG2_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCTXIFG2_1,
+    UCTXIFG2_1 = 1,
 }
 impl From<UCTXIFG2_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIFG2_A) -> Self {
-        match variant {
-            UCTXIFG2_A::UCTXIFG2_0 => false,
-            UCTXIFG2_A::UCTXIFG2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIFG2`"]
@@ -950,17 +914,14 @@ impl<'a> UCTXIFG2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIFG3_A {
     #[doc = "0: No interrupt pending"]
-    UCRXIFG3_0,
+    UCRXIFG3_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCRXIFG3_1,
+    UCRXIFG3_1 = 1,
 }
 impl From<UCRXIFG3_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIFG3_A) -> Self {
-        match variant {
-            UCRXIFG3_A::UCRXIFG3_0 => false,
-            UCRXIFG3_A::UCRXIFG3_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIFG3`"]
@@ -1028,17 +989,14 @@ impl<'a> UCRXIFG3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIFG3_A {
     #[doc = "0: No interrupt pending"]
-    UCTXIFG3_0,
+    UCTXIFG3_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCTXIFG3_1,
+    UCTXIFG3_1 = 1,
 }
 impl From<UCTXIFG3_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIFG3_A) -> Self {
-        match variant {
-            UCTXIFG3_A::UCTXIFG3_0 => false,
-            UCTXIFG3_A::UCTXIFG3_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIFG3`"]
@@ -1106,17 +1064,14 @@ impl<'a> UCTXIFG3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCBIT9IFG_A {
     #[doc = "0: No interrupt pending"]
-    UCBIT9IFG_0,
+    UCBIT9IFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCBIT9IFG_1,
+    UCBIT9IFG_1 = 1,
 }
 impl From<UCBIT9IFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCBIT9IFG_A) -> Self {
-        match variant {
-            UCBIT9IFG_A::UCBIT9IFG_0 => false,
-            UCBIT9IFG_A::UCBIT9IFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCBIT9IFG`"]

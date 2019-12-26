@@ -2,61 +2,45 @@
 pub type R = crate::R<u16, super::UCB1IV>;
 #[doc = "eUSCI_B interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum UCIV_A {
     #[doc = "0: No interrupt pending"]
-    NONE,
+    NONE = 0,
     #[doc = "2: Interrupt Source: Arbitration lost; Interrupt Flag: UCALIFG; Interrupt Priority: Highest"]
-    UCALIFG,
+    UCALIFG = 2,
     #[doc = "4: Interrupt Source: Not acknowledgment; Interrupt Flag: UCNACKIFG"]
-    UCNACKIFG,
+    UCNACKIFG = 4,
     #[doc = "6: Interrupt Source: Start condition received; Interrupt Flag: UCSTTIFG"]
-    UCSTTIFG,
+    UCSTTIFG = 6,
     #[doc = "8: Interrupt Source: Stop condition received; Interrupt Flag: UCSTPIFG"]
-    UCSTPIFG,
+    UCSTPIFG = 8,
     #[doc = "10: Interrupt Source: Slave 3 Data received; Interrupt Flag: UCRXIFG3"]
-    UCRXIFG3,
+    UCRXIFG3 = 10,
     #[doc = "12: Interrupt Source: Slave 3 Transmit buffer empty; Interrupt Flag: UCTXIFG3"]
-    UCTXIFG3,
+    UCTXIFG3 = 12,
     #[doc = "14: Interrupt Source: Slave 2 Data received; Interrupt Flag: UCRXIFG2"]
-    UCRXIFG2,
+    UCRXIFG2 = 14,
     #[doc = "16: Interrupt Source: Slave 2 Transmit buffer empty; Interrupt Flag: UCTXIFG2"]
-    UCTXIFG2,
+    UCTXIFG2 = 16,
     #[doc = "18: Interrupt Source: Slave 1 Data received; Interrupt Flag: UCRXIFG1"]
-    UCRXIFG1,
+    UCRXIFG1 = 18,
     #[doc = "20: Interrupt Source: Slave 1 Transmit buffer empty; Interrupt Flag: UCTXIFG1"]
-    UCTXIFG1,
+    UCTXIFG1 = 20,
     #[doc = "22: Interrupt Source: Data received; Interrupt Flag: UCRXIFG0"]
-    UCRXIFG0,
+    UCRXIFG0 = 22,
     #[doc = "24: Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG0"]
-    UCTXIFG0,
+    UCTXIFG0 = 24,
     #[doc = "26: Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG"]
-    UCBCNTIFG,
+    UCBCNTIFG = 26,
     #[doc = "28: Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG"]
-    UCCLTOIFG,
+    UCCLTOIFG = 28,
     #[doc = "30: Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
-    UCBIT9IFG,
+    UCBIT9IFG = 30,
 }
 impl From<UCIV_A> for u16 {
     #[inline(always)]
     fn from(variant: UCIV_A) -> Self {
-        match variant {
-            UCIV_A::NONE => 0,
-            UCIV_A::UCALIFG => 2,
-            UCIV_A::UCNACKIFG => 4,
-            UCIV_A::UCSTTIFG => 6,
-            UCIV_A::UCSTPIFG => 8,
-            UCIV_A::UCRXIFG3 => 10,
-            UCIV_A::UCTXIFG3 => 12,
-            UCIV_A::UCRXIFG2 => 14,
-            UCIV_A::UCTXIFG2 => 16,
-            UCIV_A::UCRXIFG1 => 18,
-            UCIV_A::UCTXIFG1 => 20,
-            UCIV_A::UCRXIFG0 => 22,
-            UCIV_A::UCTXIFG0 => 24,
-            UCIV_A::UCBCNTIFG => 26,
-            UCIV_A::UCCLTOIFG => 28,
-            UCIV_A::UCBIT9IFG => 30,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCIV`"]

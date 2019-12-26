@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA1IFG_SPI {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCRXIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCRXIFG_0,
+    UCRXIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCRXIFG_1,
+    UCRXIFG_1 = 1,
 }
 impl From<UCRXIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCRXIFG_A) -> Self {
-        match variant {
-            UCRXIFG_A::UCRXIFG_0 => false,
-            UCRXIFG_A::UCRXIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCRXIFG`"]
@@ -92,17 +89,14 @@ impl<'a> UCRXIFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCTXIFG_A {
     #[doc = "0: No interrupt pending"]
-    UCTXIFG_0,
+    UCTXIFG_0 = 0,
     #[doc = "1: Interrupt pending"]
-    UCTXIFG_1,
+    UCTXIFG_1 = 1,
 }
 impl From<UCTXIFG_A> for bool {
     #[inline(always)]
     fn from(variant: UCTXIFG_A) -> Self {
-        match variant {
-            UCTXIFG_A::UCTXIFG_0 => false,
-            UCTXIFG_A::UCTXIFG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCTXIFG`"]

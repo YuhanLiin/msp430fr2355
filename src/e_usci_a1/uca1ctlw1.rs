@@ -12,25 +12,21 @@ impl crate::ResetValue for super::UCA1CTLW1 {
 }
 #[doc = "Deglitch time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCGLIT_A {
     #[doc = "0: Approximately 2 ns (equivalent of 1 delay element)"]
-    UCGLIT_0,
+    UCGLIT_0 = 0,
     #[doc = "1: Approximately 50 ns"]
-    UCGLIT_1,
+    UCGLIT_1 = 1,
     #[doc = "2: Approximately 100 ns"]
-    UCGLIT_2,
+    UCGLIT_2 = 2,
     #[doc = "3: Approximately 200 ns"]
-    UCGLIT_3,
+    UCGLIT_3 = 3,
 }
 impl From<UCGLIT_A> for u8 {
     #[inline(always)]
     fn from(variant: UCGLIT_A) -> Self {
-        match variant {
-            UCGLIT_A::UCGLIT_0 => 0,
-            UCGLIT_A::UCGLIT_1 => 1,
-            UCGLIT_A::UCGLIT_2 => 2,
-            UCGLIT_A::UCGLIT_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCGLIT`"]

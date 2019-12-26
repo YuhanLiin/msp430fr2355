@@ -733,7 +733,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>MC</name>
@@ -952,7 +951,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -1219,7 +1217,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -1486,7 +1483,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -1885,7 +1881,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>MC</name>
@@ -2104,7 +2099,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -2371,7 +2365,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -2638,7 +2631,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -3037,7 +3029,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>MC</name>
@@ -3256,7 +3247,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -3523,7 +3513,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -3790,7 +3779,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -4189,7 +4177,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>MC</name>
@@ -4408,7 +4395,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -4675,7 +4661,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -4942,7 +4927,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -5209,7 +5193,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -5476,7 +5459,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -5743,7 +5725,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -6010,7 +5991,6 @@
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CCIE</name>
@@ -6504,7 +6484,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -7328,7 +7307,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCBRS</name>
@@ -7336,7 +7314,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -7581,7 +7558,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -7598,7 +7574,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCA0RXBUF</alternateRegister>
@@ -7616,7 +7591,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -7633,7 +7607,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCA0TXBUF</alternateRegister>
@@ -7784,7 +7757,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCIRRXFE</name>
@@ -7830,7 +7802,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -8918,7 +8889,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9002,7 +8972,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9019,7 +8988,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9036,7 +9004,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCB0RXBUF</alternateRegister>
@@ -9054,7 +9021,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9071,7 +9037,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCB0TXBUF</alternateRegister>
@@ -9089,7 +9054,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -9144,7 +9108,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -9180,7 +9143,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -9216,7 +9178,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -9252,7 +9213,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9269,7 +9229,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -9286,7 +9245,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -10713,7 +10671,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCBRS</name>
@@ -10721,7 +10678,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -10966,7 +10922,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -10983,7 +10938,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCA1RXBUF</alternateRegister>
@@ -11001,7 +10955,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -11018,7 +10971,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCA1TXBUF</alternateRegister>
@@ -11169,7 +11121,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCIRRXFE</name>
@@ -11215,7 +11166,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12303,7 +12253,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12387,7 +12336,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12404,7 +12352,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12421,7 +12368,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCB1RXBUF</alternateRegister>
@@ -12439,7 +12385,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12456,7 +12401,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
           <alternateRegister>UCB1TXBUF</alternateRegister>
@@ -12474,7 +12418,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -12529,7 +12472,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -12565,7 +12507,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -12601,7 +12542,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>UCOAEN</name>
@@ -12637,7 +12577,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12654,7 +12593,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -12671,7 +12609,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -13630,7 +13567,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>VSFFLG</name>
@@ -13704,7 +13640,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ICM1</name>
@@ -13712,7 +13647,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ICM3</name>
@@ -13720,7 +13654,6 @@
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>MVSSP</name>
@@ -13762,7 +13695,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -13779,7 +13711,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR1</name>
@@ -13787,7 +13718,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR2</name>
@@ -13795,7 +13725,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR3</name>
@@ -13803,7 +13732,6 @@
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR4</name>
@@ -13811,7 +13739,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR5</name>
@@ -13819,7 +13746,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR6</name>
@@ -13827,7 +13753,6 @@
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR7</name>
@@ -13835,7 +13760,6 @@
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -13852,7 +13776,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR9</name>
@@ -13860,7 +13783,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR10</name>
@@ -13868,7 +13790,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR11</name>
@@ -13876,7 +13797,6 @@
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR12</name>
@@ -13884,7 +13804,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR13</name>
@@ -13892,7 +13811,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR14</name>
@@ -13900,7 +13818,6 @@
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR15</name>
@@ -13908,7 +13825,6 @@
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -13925,7 +13841,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR17</name>
@@ -13933,7 +13848,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR18</name>
@@ -13941,7 +13855,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR19</name>
@@ -13949,7 +13862,6 @@
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR20</name>
@@ -13957,7 +13869,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR21</name>
@@ -13965,7 +13876,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR22</name>
@@ -13973,7 +13883,6 @@
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR23</name>
@@ -13981,7 +13890,6 @@
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -13998,7 +13906,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR25</name>
@@ -14006,7 +13913,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR26</name>
@@ -14014,7 +13920,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR27</name>
@@ -14022,7 +13927,6 @@
               <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR28</name>
@@ -14030,7 +13934,6 @@
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR29</name>
@@ -14038,7 +13941,6 @@
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR30</name>
@@ -14046,7 +13948,6 @@
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ILSR31</name>
@@ -14054,7 +13955,6 @@
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -14502,7 +14402,6 @@
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>ADCPDIV</name>
@@ -15186,7 +15085,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CPINV</name>
@@ -16378,7 +16276,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
-              <enumeratedValues/>
             </field>
             <field>
               <name>CPINV</name>
@@ -17606,7 +17503,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -17732,7 +17628,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>12</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -17749,7 +17644,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -17987,7 +17881,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18113,7 +18006,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>12</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18130,7 +18022,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18368,7 +18259,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18494,7 +18384,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>12</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18511,7 +18400,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18749,7 +18637,6 @@
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18875,7 +18762,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>12</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>
@@ -18892,7 +18778,6 @@
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-              <enumeratedValues/>
             </field>
           </fields>
         </register>

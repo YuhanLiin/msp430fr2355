@@ -14,17 +14,14 @@ impl crate::ResetValue for super::UCA0MCTLW {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCOS16_A {
     #[doc = "0: Disabled"]
-    UCOS16_0,
+    UCOS16_0 = 0,
     #[doc = "1: Enabled"]
-    UCOS16_1,
+    UCOS16_1 = 1,
 }
 impl From<UCOS16_A> for bool {
     #[inline(always)]
     fn from(variant: UCOS16_A) -> Self {
-        match variant {
-            UCOS16_A::UCOS16_0 => false,
-            UCOS16_A::UCOS16_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UCOS16`"]
@@ -88,37 +85,13 @@ impl<'a> UCOS16_W<'a> {
         self.w
     }
 }
-#[doc = "First modulation stage select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCBRF_A {}
-impl From<UCBRF_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCBRF_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCBRF`"]
-pub type UCBRF_R = crate::R<u8, UCBRF_A>;
-impl UCBRF_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCBRF_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCBRF_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `UCBRF`"]
 pub struct UCBRF_W<'a> {
     w: &'a mut W,
 }
 impl<'a> UCBRF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCBRF_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -126,37 +99,13 @@ impl<'a> UCBRF_W<'a> {
         self.w
     }
 }
-#[doc = "Second modulation stage select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UCBRS_A {}
-impl From<UCBRS_A> for u8 {
-    #[inline(always)]
-    fn from(variant: UCBRS_A) -> Self {
-        match variant {}
-    }
-}
 #[doc = "Reader of field `UCBRS`"]
-pub type UCBRS_R = crate::R<u8, UCBRS_A>;
-impl UCBRS_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, UCBRS_A> {
-        use crate::Variant::*;
-        match self.bits {
-            i => Res(i),
-        }
-    }
-}
+pub type UCBRS_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `UCBRS`"]
 pub struct UCBRS_W<'a> {
     w: &'a mut W,
 }
 impl<'a> UCBRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCBRS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
