@@ -20,7 +20,7 @@ optional = true
 version = "0.2.0"
 
 [features]
-rt = ["msp430-rt"]
+rt = ["msp430-rt/device"]
 
 [patch.crates-io]
 msp430 = { git = "https://github.com/rust-embedded/msp430", branch = "rt-up" }
