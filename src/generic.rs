@@ -1,4 +1,7 @@
+extern crate msp430_atomic;
+use self::msp430_atomic::AtomicOperations;
 use core::marker;
+use core::ops::Not;
 #[doc = "This trait shows that register has `read` method"]
 #[doc = ""]
 #[doc = "Registers marked with `Writable` can be also `modify`'ed"]
@@ -236,4 +239,52 @@ pub enum Variant<U, T> {
     Val(T),
     #[doc = "Raw bits"]
     Res(U),
+}
+impl<U, REG> Reg<U, REG>
+where
+    Self: Readable + Writable,
+    U: AtomicOperations + Default + Copy + Not<Output = U>,
+{
+    #[doc = "Set high every bit in the register that was set in the write proxy. Leave other bits"]
+    #[doc = "untouched. The write is done in a single atomic instruction."]
+    #[inline(always)]
+    pub unsafe fn set_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<U, Self>) -> &mut W<U, Self>,
+    {
+        let bits = f(&mut W {
+            bits: Default::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        U::atomic_or(self.register.as_ptr(), bits);
+    }
+    #[doc = "Clear every bit in the register that was cleared in the write proxy. Leave other bits"]
+    #[doc = "untouched. The write is done in a single atomic instruction."]
+    #[inline(always)]
+    pub unsafe fn clear_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<U, Self>) -> &mut W<U, Self>,
+    {
+        let bits = f(&mut W {
+            bits: !U::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        U::atomic_and(self.register.as_ptr(), bits);
+    }
+    #[doc = "Toggle every bit in the register that was set in the write proxy. Leave other bits"]
+    #[doc = "untouched. The write is done in a single atomic instruction."]
+    #[inline(always)]
+    pub unsafe fn toggle_bits<F>(&self, f: F)
+    where
+        F: FnOnce(&mut W<U, Self>) -> &mut W<U, Self>,
+    {
+        let bits = f(&mut W {
+            bits: Default::default(),
+            _reg: marker::PhantomData,
+        })
+        .bits;
+        U::atomic_xor(self.register.as_ptr(), bits);
+    }
 }

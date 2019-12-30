@@ -14,6 +14,7 @@ documentation = "https://docs.rs/msp430fr2355"
 bare-metal = "0.2.0"
 msp430 = "0.1.0"
 vcell = "0.1.2"
+msp430-atomic = "0.1.1"
 
 [dependencies.msp430-rt]
 optional = true
