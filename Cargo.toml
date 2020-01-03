@@ -12,7 +12,7 @@ documentation = "https://docs.rs/msp430fr2355"
 
 [dependencies]
 bare-metal = "0.2.0"
-msp430 = "0.1.0"
+msp430 = "0.2.0"
 vcell = "0.1.2"
 msp430-atomic = "0.1.1"
 
@@ -22,7 +22,3 @@ version = "0.2.0"
 
 [features]
 rt = ["msp430-rt/device"]
-
-[patch.crates-io]
-msp430 = { git = "https://github.com/rust-embedded/msp430", branch = "rt-up" }
-msp430-rt = { git = "https://github.com/rust-embedded/msp430-rt", branch = "rt-up" }
