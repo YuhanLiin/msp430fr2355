@@ -1,6 +1,6 @@
 [package]
 name = "msp430fr2355"
-version = "0.4.1"
+version = "0.4.2"
 authors = ["YuhanLiin <linyuhan0315@hotmail.com>"]
 description = "Peripheral access crate for MSP430FR2355 microcontroller"
 keywords = ["no-std", "msp430", "ti", "launchpad"]
@@ -12,9 +12,9 @@ documentation = "https://docs.rs/msp430fr2355"
 
 [dependencies]
 bare-metal = "0.2.0"
-msp430 = "0.2.0"
+msp430 = "0.2.2"
 vcell = "0.1.2"
-msp430-atomic = "0.1.1"
+msp430-atomic = "0.1.2"
 
 [dependencies.msp430-rt]
 optional = true
