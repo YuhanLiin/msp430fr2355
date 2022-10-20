@@ -1,17 +1,43 @@
-#[doc = "Reader of register CSCTL3"]
-pub type R = crate::R<u16, super::CSCTL3>;
-#[doc = "Writer for register CSCTL3"]
-pub type W = crate::W<u16, super::CSCTL3>;
-#[doc = "Register CSCTL3 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL3 {
-    type Type = u16;
+#[doc = "Register `CSCTL3` reader"]
+pub struct R(crate::R<CSCTL3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL3_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CSCTL3_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSCTL3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL3` writer"]
+pub struct W(crate::W<CSCTL3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL3_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL3_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FLLREFDIV` reader - FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1"]
+pub type FLLREFDIV_R = crate::FieldReader<u8, FLLREFDIV_A>;
 #[doc = "FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLREFDIV_A {
     #[doc = "0: fFLLREFCLK / 1"]
@@ -37,10 +63,8 @@ impl From<FLLREFDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FLLREFDIV`"]
-pub type FLLREFDIV_R = crate::R<u8, FLLREFDIV_A>;
 impl FLLREFDIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLREFDIV_A {
         match self.bits {
@@ -96,18 +120,10 @@ impl FLLREFDIV_R {
         *self == FLLREFDIV_A::FLLREFDIV_7
     }
 }
-#[doc = "Write proxy for field `FLLREFDIV`"]
-pub struct FLLREFDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLREFDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLREFDIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `FLLREFDIV` writer - FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1"]
+pub type FLLREFDIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL3_SPEC, u8, FLLREFDIV_A, 3, O>;
+impl<'a, const O: u8> FLLREFDIV_W<'a, O> {
     #[doc = "fFLLREFCLK / 1"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
@@ -148,15 +164,11 @@ impl<'a> FLLREFDIV_W<'a> {
     pub fn fllrefdiv_7(self) -> &'a mut W {
         self.variant(FLLREFDIV_A::FLLREFDIV_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u16) & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `SELREF` reader - FLL reference select. These bits select the FLL reference clock source."]
+pub type SELREF_R = crate::FieldReader<u8, SELREF_A>;
 #[doc = "FLL reference select. These bits select the FLL reference clock source.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELREF_A {
     #[doc = "0: XT1CLK"]
@@ -174,10 +186,8 @@ impl From<SELREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SELREF`"]
-pub type SELREF_R = crate::R<u8, SELREF_A>;
 impl SELREF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SELREF_A {
         match self.bits {
@@ -209,18 +219,10 @@ impl SELREF_R {
         *self == SELREF_A::SELREF_3
     }
 }
-#[doc = "Write proxy for field `SELREF`"]
-pub struct SELREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SELREF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SELREF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `SELREF` writer - FLL reference select. These bits select the FLL reference clock source."]
+pub type SELREF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL3_SPEC, u8, SELREF_A, 2, O>;
+impl<'a, const O: u8> SELREF_W<'a, O> {
     #[doc = "XT1CLK"]
     #[inline(always)]
     pub fn xt1clk(self) -> &'a mut W {
@@ -241,15 +243,11 @@ impl<'a> SELREF_W<'a> {
     pub fn selref_3(self) -> &'a mut W {
         self.variant(SELREF_A::SELREF_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u16) & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `REFOLP` reader - REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set."]
+pub type REFOLP_R = crate::BitReader<REFOLP_A>;
 #[doc = "REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum REFOLP_A {
     #[doc = "0: REFO Low Power Disabled (High Power Mode)"]
     REFOLP_0 = 0,
@@ -262,10 +260,8 @@ impl From<REFOLP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFOLP`"]
-pub type REFOLP_R = crate::R<bool, REFOLP_A>;
 impl REFOLP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFOLP_A {
         match self.bits {
@@ -284,18 +280,9 @@ impl REFOLP_R {
         *self == REFOLP_A::REFOLP_1
     }
 }
-#[doc = "Write proxy for field `REFOLP`"]
-pub struct REFOLP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REFOLP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REFOLP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `REFOLP` writer - REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set."]
+pub type REFOLP_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL3_SPEC, REFOLP_A, O>;
+impl<'a, const O: u8> REFOLP_W<'a, O> {
     #[doc = "REFO Low Power Disabled (High Power Mode)"]
     #[inline(always)]
     pub fn refolp_0(self) -> &'a mut W {
@@ -306,54 +293,64 @@ impl<'a> REFOLP_W<'a> {
     pub fn refolp_1(self) -> &'a mut W {
         self.variant(REFOLP_A::REFOLP_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1"]
     #[inline(always)]
     pub fn fllrefdiv(&self) -> FLLREFDIV_R {
-        FLLREFDIV_R::new((self.bits & 0x07) as u8)
+        FLLREFDIV_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:5 - FLL reference select. These bits select the FLL reference clock source."]
     #[inline(always)]
     pub fn selref(&self) -> SELREF_R {
-        SELREF_R::new(((self.bits >> 4) & 0x03) as u8)
+        SELREF_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 7 - REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set."]
     #[inline(always)]
     pub fn refolp(&self) -> REFOLP_R {
-        REFOLP_R::new(((self.bits >> 7) & 0x01) != 0)
+        REFOLP_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1"]
     #[inline(always)]
-    pub fn fllrefdiv(&mut self) -> FLLREFDIV_W {
-        FLLREFDIV_W { w: self }
+    pub fn fllrefdiv(&mut self) -> FLLREFDIV_W<0> {
+        FLLREFDIV_W::new(self)
     }
     #[doc = "Bits 4:5 - FLL reference select. These bits select the FLL reference clock source."]
     #[inline(always)]
-    pub fn selref(&mut self) -> SELREF_W {
-        SELREF_W { w: self }
+    pub fn selref(&mut self) -> SELREF_W<4> {
+        SELREF_W::new(self)
     }
     #[doc = "Bit 7 - REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set."]
     #[inline(always)]
-    pub fn refolp(&mut self) -> REFOLP_W {
-        REFOLP_W { w: self }
+    pub fn refolp(&mut self) -> REFOLP_W<7> {
+        REFOLP_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl3](index.html) module"]
+pub struct CSCTL3_SPEC;
+impl crate::RegisterSpec for CSCTL3_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl3::R](R) reader structure"]
+impl crate::Readable for CSCTL3_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl3::W](W) writer structure"]
+impl crate::Writable for CSCTL3_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL3 to value 0"]
+impl crate::Resettable for CSCTL3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

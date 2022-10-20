@@ -1,17 +1,43 @@
-#[doc = "Reader of register ADCIE"]
-pub type R = crate::R<u16, super::ADCIE>;
-#[doc = "Writer for register ADCIE"]
-pub type W = crate::W<u16, super::ADCIE>;
-#[doc = "Register ADCIE `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADCIE {
-    type Type = u16;
+#[doc = "Register `ADCIE` reader"]
+pub struct R(crate::R<ADCIE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADCIE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ADCIE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ADCIE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADCIE` writer"]
+pub struct W(crate::W<ADCIE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADCIE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADCIE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADCIE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADCIE0` reader - Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion."]
+pub type ADCIE0_R = crate::BitReader<ADCIE0_A>;
 #[doc = "Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCIE0_A {
     #[doc = "0: 0b = Interrupt disabled"]
     ADCIE0_0 = 0,
@@ -24,10 +50,8 @@ impl From<ADCIE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCIE0`"]
-pub type ADCIE0_R = crate::R<bool, ADCIE0_A>;
 impl ADCIE0_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCIE0_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl ADCIE0_R {
         *self == ADCIE0_A::ADCIE0_1
     }
 }
-#[doc = "Write proxy for field `ADCIE0`"]
-pub struct ADCIE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCIE0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCIE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCIE0` writer - Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion."]
+pub type ADCIE0_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCIE0_A, O>;
+impl<'a, const O: u8> ADCIE0_W<'a, O> {
     #[doc = "0b = Interrupt disabled"]
     #[inline(always)]
     pub fn adcie0_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> ADCIE0_W<'a> {
     pub fn adcie0_1(self) -> &'a mut W {
         self.variant(ADCIE0_A::ADCIE0_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `ADCINIE` reader - Interrupt enable for the inside of window interrupt of the window comparator."]
+pub type ADCINIE_R = crate::BitReader<ADCINIE_A>;
 #[doc = "Interrupt enable for the inside of window interrupt of the window comparator.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCINIE_A {
     #[doc = "0: 0b = Inside of window interrupt disabled"]
     ADCINIE_0 = 0,
@@ -99,10 +100,8 @@ impl From<ADCINIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCINIE`"]
-pub type ADCINIE_R = crate::R<bool, ADCINIE_A>;
 impl ADCINIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCINIE_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl ADCINIE_R {
         *self == ADCINIE_A::ADCINIE_1
     }
 }
-#[doc = "Write proxy for field `ADCINIE`"]
-pub struct ADCINIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCINIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCINIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCINIE` writer - Interrupt enable for the inside of window interrupt of the window comparator."]
+pub type ADCINIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCINIE_A, O>;
+impl<'a, const O: u8> ADCINIE_W<'a, O> {
     #[doc = "0b = Inside of window interrupt disabled"]
     #[inline(always)]
     pub fn adcinie_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> ADCINIE_W<'a> {
     pub fn adcinie_1(self) -> &'a mut W {
         self.variant(ADCINIE_A::ADCINIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ADCLOIE` reader - Interrupt enable for the below lower threshold interrupt of the window comparator."]
+pub type ADCLOIE_R = crate::BitReader<ADCLOIE_A>;
 #[doc = "Interrupt enable for the below lower threshold interrupt of the window comparator.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCLOIE_A {
     #[doc = "0: 0b = Below lower threshold interrupt disabled"]
     ADCLOIE_0 = 0,
@@ -174,10 +150,8 @@ impl From<ADCLOIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCLOIE`"]
-pub type ADCLOIE_R = crate::R<bool, ADCLOIE_A>;
 impl ADCLOIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCLOIE_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl ADCLOIE_R {
         *self == ADCLOIE_A::ADCLOIE_1
     }
 }
-#[doc = "Write proxy for field `ADCLOIE`"]
-pub struct ADCLOIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCLOIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCLOIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCLOIE` writer - Interrupt enable for the below lower threshold interrupt of the window comparator."]
+pub type ADCLOIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCLOIE_A, O>;
+impl<'a, const O: u8> ADCLOIE_W<'a, O> {
     #[doc = "0b = Below lower threshold interrupt disabled"]
     #[inline(always)]
     pub fn adcloie_0(self) -> &'a mut W {
@@ -218,25 +183,11 @@ impl<'a> ADCLOIE_W<'a> {
     pub fn adcloie_1(self) -> &'a mut W {
         self.variant(ADCLOIE_A::ADCLOIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ADCHIIE` reader - Interrupt enable for the above upper threshold interrupt of the window comparator."]
+pub type ADCHIIE_R = crate::BitReader<ADCHIIE_A>;
 #[doc = "Interrupt enable for the above upper threshold interrupt of the window comparator.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCHIIE_A {
     #[doc = "0: 0b = Above upper threshold interrupt disabled"]
     ADCHIIE_0 = 0,
@@ -249,10 +200,8 @@ impl From<ADCHIIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCHIIE`"]
-pub type ADCHIIE_R = crate::R<bool, ADCHIIE_A>;
 impl ADCHIIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCHIIE_A {
         match self.bits {
@@ -271,18 +220,9 @@ impl ADCHIIE_R {
         *self == ADCHIIE_A::ADCHIIE_1
     }
 }
-#[doc = "Write proxy for field `ADCHIIE`"]
-pub struct ADCHIIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCHIIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCHIIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCHIIE` writer - Interrupt enable for the above upper threshold interrupt of the window comparator."]
+pub type ADCHIIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCHIIE_A, O>;
+impl<'a, const O: u8> ADCHIIE_W<'a, O> {
     #[doc = "0b = Above upper threshold interrupt disabled"]
     #[inline(always)]
     pub fn adchiie_0(self) -> &'a mut W {
@@ -293,25 +233,11 @@ impl<'a> ADCHIIE_W<'a> {
     pub fn adchiie_1(self) -> &'a mut W {
         self.variant(ADCHIIE_A::ADCHIIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADCOVIE` reader - ADCMEM0 overflow interrupt enable."]
+pub type ADCOVIE_R = crate::BitReader<ADCOVIE_A>;
 #[doc = "ADCMEM0 overflow interrupt enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCOVIE_A {
     #[doc = "0: 0b = Overflow interrupt disabled"]
     ADCOVIE_0 = 0,
@@ -324,10 +250,8 @@ impl From<ADCOVIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCOVIE`"]
-pub type ADCOVIE_R = crate::R<bool, ADCOVIE_A>;
 impl ADCOVIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCOVIE_A {
         match self.bits {
@@ -346,18 +270,9 @@ impl ADCOVIE_R {
         *self == ADCOVIE_A::ADCOVIE_1
     }
 }
-#[doc = "Write proxy for field `ADCOVIE`"]
-pub struct ADCOVIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCOVIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCOVIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCOVIE` writer - ADCMEM0 overflow interrupt enable."]
+pub type ADCOVIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCOVIE_A, O>;
+impl<'a, const O: u8> ADCOVIE_W<'a, O> {
     #[doc = "0b = Overflow interrupt disabled"]
     #[inline(always)]
     pub fn adcovie_0(self) -> &'a mut W {
@@ -368,25 +283,11 @@ impl<'a> ADCOVIE_W<'a> {
     pub fn adcovie_1(self) -> &'a mut W {
         self.variant(ADCOVIE_A::ADCOVIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `ADCTOVIE` reader - ADC conversion-time-overflow interrupt enable."]
+pub type ADCTOVIE_R = crate::BitReader<ADCTOVIE_A>;
 #[doc = "ADC conversion-time-overflow interrupt enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCTOVIE_A {
     #[doc = "0: 0b = Conversion time overflow interrupt disabled"]
     ADCTOVIE_0 = 0,
@@ -399,10 +300,8 @@ impl From<ADCTOVIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCTOVIE`"]
-pub type ADCTOVIE_R = crate::R<bool, ADCTOVIE_A>;
 impl ADCTOVIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCTOVIE_A {
         match self.bits {
@@ -421,18 +320,9 @@ impl ADCTOVIE_R {
         *self == ADCTOVIE_A::ADCTOVIE_1
     }
 }
-#[doc = "Write proxy for field `ADCTOVIE`"]
-pub struct ADCTOVIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCTOVIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCTOVIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCTOVIE` writer - ADC conversion-time-overflow interrupt enable."]
+pub type ADCTOVIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIE_SPEC, ADCTOVIE_A, O>;
+impl<'a, const O: u8> ADCTOVIE_W<'a, O> {
     #[doc = "0b = Conversion time overflow interrupt disabled"]
     #[inline(always)]
     pub fn adctovie_0(self) -> &'a mut W {
@@ -443,84 +333,94 @@ impl<'a> ADCTOVIE_W<'a> {
     pub fn adctovie_1(self) -> &'a mut W {
         self.variant(ADCTOVIE_A::ADCTOVIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion."]
     #[inline(always)]
     pub fn adcie0(&self) -> ADCIE0_R {
-        ADCIE0_R::new((self.bits & 0x01) != 0)
+        ADCIE0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Interrupt enable for the inside of window interrupt of the window comparator."]
     #[inline(always)]
     pub fn adcinie(&self) -> ADCINIE_R {
-        ADCINIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADCINIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Interrupt enable for the below lower threshold interrupt of the window comparator."]
     #[inline(always)]
     pub fn adcloie(&self) -> ADCLOIE_R {
-        ADCLOIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADCLOIE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Interrupt enable for the above upper threshold interrupt of the window comparator."]
     #[inline(always)]
     pub fn adchiie(&self) -> ADCHIIE_R {
-        ADCHIIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        ADCHIIE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - ADCMEM0 overflow interrupt enable."]
     #[inline(always)]
     pub fn adcovie(&self) -> ADCOVIE_R {
-        ADCOVIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        ADCOVIE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - ADC conversion-time-overflow interrupt enable."]
     #[inline(always)]
     pub fn adctovie(&self) -> ADCTOVIE_R {
-        ADCTOVIE_R::new(((self.bits >> 5) & 0x01) != 0)
+        ADCTOVIE_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion."]
     #[inline(always)]
-    pub fn adcie0(&mut self) -> ADCIE0_W {
-        ADCIE0_W { w: self }
+    pub fn adcie0(&mut self) -> ADCIE0_W<0> {
+        ADCIE0_W::new(self)
     }
     #[doc = "Bit 1 - Interrupt enable for the inside of window interrupt of the window comparator."]
     #[inline(always)]
-    pub fn adcinie(&mut self) -> ADCINIE_W {
-        ADCINIE_W { w: self }
+    pub fn adcinie(&mut self) -> ADCINIE_W<1> {
+        ADCINIE_W::new(self)
     }
     #[doc = "Bit 2 - Interrupt enable for the below lower threshold interrupt of the window comparator."]
     #[inline(always)]
-    pub fn adcloie(&mut self) -> ADCLOIE_W {
-        ADCLOIE_W { w: self }
+    pub fn adcloie(&mut self) -> ADCLOIE_W<2> {
+        ADCLOIE_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt enable for the above upper threshold interrupt of the window comparator."]
     #[inline(always)]
-    pub fn adchiie(&mut self) -> ADCHIIE_W {
-        ADCHIIE_W { w: self }
+    pub fn adchiie(&mut self) -> ADCHIIE_W<3> {
+        ADCHIIE_W::new(self)
     }
     #[doc = "Bit 4 - ADCMEM0 overflow interrupt enable."]
     #[inline(always)]
-    pub fn adcovie(&mut self) -> ADCOVIE_W {
-        ADCOVIE_W { w: self }
+    pub fn adcovie(&mut self) -> ADCOVIE_W<4> {
+        ADCOVIE_W::new(self)
     }
     #[doc = "Bit 5 - ADC conversion-time-overflow interrupt enable."]
     #[inline(always)]
-    pub fn adctovie(&mut self) -> ADCTOVIE_W {
-        ADCTOVIE_W { w: self }
+    pub fn adctovie(&mut self) -> ADCTOVIE_W<5> {
+        ADCTOVIE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC Interrupt Enable 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcie](index.html) module"]
+pub struct ADCIE_SPEC;
+impl crate::RegisterSpec for ADCIE_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adcie::R](R) reader structure"]
+impl crate::Readable for ADCIE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adcie::W](W) writer structure"]
+impl crate::Writable for ADCIE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADCIE to value 0"]
+impl crate::Resettable for ADCIE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

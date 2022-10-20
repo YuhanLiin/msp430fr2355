@@ -1,7 +1,43 @@
-#[doc = "Reader of register SYSRSTIV"]
-pub type R = crate::R<u16, super::SYSRSTIV>;
+#[doc = "Register `SYSRSTIV` reader"]
+pub struct R(crate::R<SYSRSTIV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSRSTIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SYSRSTIV_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSRSTIV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSRSTIV` writer"]
+pub struct W(crate::W<SYSRSTIV_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSRSTIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSRSTIV_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSRSTIV_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SYSRSTIV` reader - Reset interrupt vector"]
+pub type SYSRSTIV_R = crate::FieldReader<u16, SYSRSTIV_A>;
 #[doc = "Reset interrupt vector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum SYSRSTIV_A {
     #[doc = "0: No interrupt pending"]
@@ -49,34 +85,31 @@ impl From<SYSRSTIV_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `SYSRSTIV`"]
-pub type SYSRSTIV_R = crate::R<u16, SYSRSTIV_A>;
 impl SYSRSTIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, SYSRSTIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SYSRSTIV_A> {
         match self.bits {
-            0 => Val(SYSRSTIV_A::NONE),
-            2 => Val(SYSRSTIV_A::BOR),
-            4 => Val(SYSRSTIV_A::RSTNMI),
-            6 => Val(SYSRSTIV_A::PMMSWBOR),
-            8 => Val(SYSRSTIV_A::LPM5WU),
-            10 => Val(SYSRSTIV_A::SECYV),
-            12 => Val(SYSRSTIV_A::SYSRSTIV_12),
-            14 => Val(SYSRSTIV_A::SVSHIFG),
-            16 => Val(SYSRSTIV_A::SYSRSTIV_16),
-            18 => Val(SYSRSTIV_A::SYSRSTIV_18),
-            20 => Val(SYSRSTIV_A::PMMSWPOR),
-            22 => Val(SYSRSTIV_A::WDTIFG),
-            24 => Val(SYSRSTIV_A::WDTPW),
-            26 => Val(SYSRSTIV_A::FRCTLPW),
-            28 => Val(SYSRSTIV_A::UBDIFG),
-            30 => Val(SYSRSTIV_A::PERF),
-            32 => Val(SYSRSTIV_A::PMMPW),
-            34 => Val(SYSRSTIV_A::SYSRSTIV_34),
-            36 => Val(SYSRSTIV_A::FLLUL),
-            i => Res(i),
+            0 => Some(SYSRSTIV_A::NONE),
+            2 => Some(SYSRSTIV_A::BOR),
+            4 => Some(SYSRSTIV_A::RSTNMI),
+            6 => Some(SYSRSTIV_A::PMMSWBOR),
+            8 => Some(SYSRSTIV_A::LPM5WU),
+            10 => Some(SYSRSTIV_A::SECYV),
+            12 => Some(SYSRSTIV_A::SYSRSTIV_12),
+            14 => Some(SYSRSTIV_A::SVSHIFG),
+            16 => Some(SYSRSTIV_A::SYSRSTIV_16),
+            18 => Some(SYSRSTIV_A::SYSRSTIV_18),
+            20 => Some(SYSRSTIV_A::PMMSWPOR),
+            22 => Some(SYSRSTIV_A::WDTIFG),
+            24 => Some(SYSRSTIV_A::WDTPW),
+            26 => Some(SYSRSTIV_A::FRCTLPW),
+            28 => Some(SYSRSTIV_A::UBDIFG),
+            30 => Some(SYSRSTIV_A::PERF),
+            32 => Some(SYSRSTIV_A::PMMPW),
+            34 => Some(SYSRSTIV_A::SYSRSTIV_34),
+            36 => Some(SYSRSTIV_A::FLLUL),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -179,6 +212,34 @@ impl R {
     #[doc = "Bits 0:15 - Reset interrupt vector"]
     #[inline(always)]
     pub fn sysrstiv(&self) -> SYSRSTIV_R {
-        SYSRSTIV_R::new((self.bits & 0xffff) as u16)
+        SYSRSTIV_R::new(self.bits)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Reset Vector Generator\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysrstiv](index.html) module"]
+pub struct SYSRSTIV_SPEC;
+impl crate::RegisterSpec for SYSRSTIV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sysrstiv::R](R) reader structure"]
+impl crate::Readable for SYSRSTIV_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sysrstiv::W](W) writer structure"]
+impl crate::Writable for SYSRSTIV_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSRSTIV to value 0"]
+impl crate::Resettable for SYSRSTIV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

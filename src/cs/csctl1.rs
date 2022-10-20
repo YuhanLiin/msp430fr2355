@@ -1,17 +1,43 @@
-#[doc = "Reader of register CSCTL1"]
-pub type R = crate::R<u16, super::CSCTL1>;
-#[doc = "Writer for register CSCTL1"]
-pub type W = crate::W<u16, super::CSCTL1>;
-#[doc = "Register CSCTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL1 {
-    type Type = u16;
+#[doc = "Register `CSCTL1` reader"]
+pub struct R(crate::R<CSCTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CSCTL1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSCTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL1` writer"]
+pub struct W(crate::W<CSCTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DISMOD` reader - Modulation. This bit enables/disables the modulation."]
+pub type DISMOD_R = crate::BitReader<DISMOD_A>;
 #[doc = "Modulation. This bit enables/disables the modulation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISMOD_A {
     #[doc = "0: Modulation enabled"]
     DISMOD_0 = 0,
@@ -24,10 +50,8 @@ impl From<DISMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DISMOD`"]
-pub type DISMOD_R = crate::R<bool, DISMOD_A>;
 impl DISMOD_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISMOD_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl DISMOD_R {
         *self == DISMOD_A::DISMOD_1
     }
 }
-#[doc = "Write proxy for field `DISMOD`"]
-pub struct DISMOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISMOD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISMOD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `DISMOD` writer - Modulation. This bit enables/disables the modulation."]
+pub type DISMOD_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL1_SPEC, DISMOD_A, O>;
+impl<'a, const O: u8> DISMOD_W<'a, O> {
     #[doc = "Modulation enabled"]
     #[inline(always)]
     pub fn dismod_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> DISMOD_W<'a> {
     pub fn dismod_1(self) -> &'a mut W {
         self.variant(DISMOD_A::DISMOD_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DCORSEL` reader - DCO Range Select"]
+pub type DCORSEL_R = crate::FieldReader<u8, DCORSEL_A>;
 #[doc = "DCO Range Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DCORSEL_A {
     #[doc = "0: 1 MHz"]
@@ -112,10 +113,8 @@ impl From<DCORSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DCORSEL`"]
-pub type DCORSEL_R = crate::R<u8, DCORSEL_A>;
 impl DCORSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCORSEL_A {
         match self.bits {
@@ -171,18 +170,10 @@ impl DCORSEL_R {
         *self == DCORSEL_A::DCORSEL_7
     }
 }
-#[doc = "Write proxy for field `DCORSEL`"]
-pub struct DCORSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCORSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DCORSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `DCORSEL` writer - DCO Range Select"]
+pub type DCORSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL1_SPEC, u8, DCORSEL_A, 3, O>;
+impl<'a, const O: u8> DCORSEL_W<'a, O> {
     #[doc = "1 MHz"]
     #[inline(always)]
     pub fn dcorsel_0(self) -> &'a mut W {
@@ -223,29 +214,15 @@ impl<'a> DCORSEL_W<'a> {
     pub fn dcorsel_7(self) -> &'a mut W {
         self.variant(DCORSEL_A::DCORSEL_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u16) & 0x07) << 1);
-        self.w
-    }
 }
-#[doc = "Reader of field `DCOFTRIM`"]
-pub type DCOFTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DCOFTRIM`"]
-pub struct DCOFTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCOFTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u16) & 0x07) << 4);
-        self.w
-    }
-}
+#[doc = "Field `DCOFTRIM` reader - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
+pub type DCOFTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DCOFTRIM` writer - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
+pub type DCOFTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL1_SPEC, u8, u8, 3, O>;
+#[doc = "Field `DCOFTRIMEN` reader - DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture."]
+pub type DCOFTRIMEN_R = crate::BitReader<DCOFTRIMEN_A>;
 #[doc = "DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCOFTRIMEN_A {
     #[doc = "0: Disable frequency trim"]
     DCOFTRIMEN_0 = 0,
@@ -258,10 +235,8 @@ impl From<DCOFTRIMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCOFTRIMEN`"]
-pub type DCOFTRIMEN_R = crate::R<bool, DCOFTRIMEN_A>;
 impl DCOFTRIMEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCOFTRIMEN_A {
         match self.bits {
@@ -280,18 +255,9 @@ impl DCOFTRIMEN_R {
         *self == DCOFTRIMEN_A::DCOFTRIMEN_1
     }
 }
-#[doc = "Write proxy for field `DCOFTRIMEN`"]
-pub struct DCOFTRIMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCOFTRIMEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DCOFTRIMEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `DCOFTRIMEN` writer - DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture."]
+pub type DCOFTRIMEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL1_SPEC, DCOFTRIMEN_A, O>;
+impl<'a, const O: u8> DCOFTRIMEN_W<'a, O> {
     #[doc = "Disable frequency trim"]
     #[inline(always)]
     pub fn dcoftrimen_0(self) -> &'a mut W {
@@ -302,64 +268,74 @@ impl<'a> DCOFTRIMEN_W<'a> {
     pub fn dcoftrimen_1(self) -> &'a mut W {
         self.variant(DCOFTRIMEN_A::DCOFTRIMEN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Modulation. This bit enables/disables the modulation."]
     #[inline(always)]
     pub fn dismod(&self) -> DISMOD_R {
-        DISMOD_R::new((self.bits & 0x01) != 0)
+        DISMOD_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - DCO Range Select"]
     #[inline(always)]
     pub fn dcorsel(&self) -> DCORSEL_R {
-        DCORSEL_R::new(((self.bits >> 1) & 0x07) as u8)
+        DCORSEL_R::new(((self.bits >> 1) & 7) as u8)
     }
     #[doc = "Bits 4:6 - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
     #[inline(always)]
     pub fn dcoftrim(&self) -> DCOFTRIM_R {
-        DCOFTRIM_R::new(((self.bits >> 4) & 0x07) as u8)
+        DCOFTRIM_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture."]
     #[inline(always)]
     pub fn dcoftrimen(&self) -> DCOFTRIMEN_R {
-        DCOFTRIMEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        DCOFTRIMEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Modulation. This bit enables/disables the modulation."]
     #[inline(always)]
-    pub fn dismod(&mut self) -> DISMOD_W {
-        DISMOD_W { w: self }
+    pub fn dismod(&mut self) -> DISMOD_W<0> {
+        DISMOD_W::new(self)
     }
     #[doc = "Bits 1:3 - DCO Range Select"]
     #[inline(always)]
-    pub fn dcorsel(&mut self) -> DCORSEL_W {
-        DCORSEL_W { w: self }
+    pub fn dcorsel(&mut self) -> DCORSEL_W<1> {
+        DCORSEL_W::new(self)
     }
     #[doc = "Bits 4:6 - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
     #[inline(always)]
-    pub fn dcoftrim(&mut self) -> DCOFTRIM_W {
-        DCOFTRIM_W { w: self }
+    pub fn dcoftrim(&mut self) -> DCOFTRIM_W<4> {
+        DCOFTRIM_W::new(self)
     }
     #[doc = "Bit 7 - DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture."]
     #[inline(always)]
-    pub fn dcoftrimen(&mut self) -> DCOFTRIMEN_W {
-        DCOFTRIMEN_W { w: self }
+    pub fn dcoftrimen(&mut self) -> DCOFTRIMEN_W<7> {
+        DCOFTRIMEN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl1](index.html) module"]
+pub struct CSCTL1_SPEC;
+impl crate::RegisterSpec for CSCTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl1::R](R) reader structure"]
+impl crate::Readable for CSCTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl1::W](W) writer structure"]
+impl crate::Writable for CSCTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL1 to value 0"]
+impl crate::Resettable for CSCTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

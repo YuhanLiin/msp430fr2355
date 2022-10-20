@@ -1,17 +1,43 @@
-#[doc = "Reader of register CP1DACDATA"]
-pub type R = crate::R<u16, super::CP1DACDATA>;
-#[doc = "Writer for register CP1DACDATA"]
-pub type W = crate::W<u16, super::CP1DACDATA>;
-#[doc = "Register CP1DACDATA `reset()`'s with value 0"]
-impl crate::ResetValue for super::CP1DACDATA {
-    type Type = u16;
+#[doc = "Register `CP1DACDATA` reader"]
+pub struct R(crate::R<CP1DACDATA_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CP1DACDATA_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CP1DACDATA_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CP1DACDATA_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CP1DACDATA` writer"]
+pub struct W(crate::W<CP1DACDATA_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CP1DACDATA_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CP1DACDATA_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CP1DACDATA_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CPDACBUF1` reader - 1st 6-bit DAC buffer Data"]
+pub type CPDACBUF1_R = crate::FieldReader<u8, CPDACBUF1_A>;
 #[doc = "1st 6-bit DAC buffer Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPDACBUF1_A {
     #[doc = "0: 0v"]
@@ -149,10 +175,8 @@ impl From<CPDACBUF1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPDACBUF1`"]
-pub type CPDACBUF1_R = crate::R<u8, CPDACBUF1_A>;
 impl CPDACBUF1_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPDACBUF1_A {
         match self.bits {
@@ -544,18 +568,10 @@ impl CPDACBUF1_R {
         *self == CPDACBUF1_A::CPDACBUF1_63
     }
 }
-#[doc = "Write proxy for field `CPDACBUF1`"]
-pub struct CPDACBUF1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPDACBUF1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPDACBUF1_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CPDACBUF1` writer - 1st 6-bit DAC buffer Data"]
+pub type CPDACBUF1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CP1DACDATA_SPEC, u8, CPDACBUF1_A, 6, O>;
+impl<'a, const O: u8> CPDACBUF1_W<'a, O> {
     #[doc = "0v"]
     #[inline(always)]
     pub fn cpdacbuf1_0(self) -> &'a mut W {
@@ -876,15 +892,11 @@ impl<'a> CPDACBUF1_W<'a> {
     pub fn cpdacbuf1_63(self) -> &'a mut W {
         self.variant(CPDACBUF1_A::CPDACBUF1_63)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u16) & 0x3f);
-        self.w
-    }
 }
+#[doc = "Field `CPDACBUF2` reader - 2nd 6-bit DAC buffer Data"]
+pub type CPDACBUF2_R = crate::FieldReader<u8, CPDACBUF2_A>;
 #[doc = "2nd 6-bit DAC buffer Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPDACBUF2_A {
     #[doc = "0: 0v"]
@@ -1022,10 +1034,8 @@ impl From<CPDACBUF2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPDACBUF2`"]
-pub type CPDACBUF2_R = crate::R<u8, CPDACBUF2_A>;
 impl CPDACBUF2_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPDACBUF2_A {
         match self.bits {
@@ -1417,18 +1427,10 @@ impl CPDACBUF2_R {
         *self == CPDACBUF2_A::CPDACBUF2_63
     }
 }
-#[doc = "Write proxy for field `CPDACBUF2`"]
-pub struct CPDACBUF2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPDACBUF2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPDACBUF2_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CPDACBUF2` writer - 2nd 6-bit DAC buffer Data"]
+pub type CPDACBUF2_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CP1DACDATA_SPEC, u8, CPDACBUF2_A, 6, O>;
+impl<'a, const O: u8> CPDACBUF2_W<'a, O> {
     #[doc = "0v"]
     #[inline(always)]
     pub fn cpdacbuf2_0(self) -> &'a mut W {
@@ -1749,12 +1751,6 @@ impl<'a> CPDACBUF2_W<'a> {
     pub fn cpdacbuf2_63(self) -> &'a mut W {
         self.variant(CPDACBUF2_A::CPDACBUF2_63)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u16) & 0x3f) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - 1st 6-bit DAC buffer Data"]
@@ -1771,12 +1767,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - 1st 6-bit DAC buffer Data"]
     #[inline(always)]
-    pub fn cpdacbuf1(&mut self) -> CPDACBUF1_W {
-        CPDACBUF1_W { w: self }
+    pub fn cpdacbuf1(&mut self) -> CPDACBUF1_W<0> {
+        CPDACBUF1_W::new(self)
     }
     #[doc = "Bits 8:13 - 2nd 6-bit DAC buffer Data"]
     #[inline(always)]
-    pub fn cpdacbuf2(&mut self) -> CPDACBUF2_W {
-        CPDACBUF2_W { w: self }
+    pub fn cpdacbuf2(&mut self) -> CPDACBUF2_W<8> {
+        CPDACBUF2_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "6-bit Comparator built-in DAC Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cp1dacdata](index.html) module"]
+pub struct CP1DACDATA_SPEC;
+impl crate::RegisterSpec for CP1DACDATA_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [cp1dacdata::R](R) reader structure"]
+impl crate::Readable for CP1DACDATA_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cp1dacdata::W](W) writer structure"]
+impl crate::Writable for CP1DACDATA_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CP1DACDATA to value 0"]
+impl crate::Resettable for CP1DACDATA_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

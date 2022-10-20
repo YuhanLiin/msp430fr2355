@@ -1,17 +1,43 @@
-#[doc = "Reader of register SYSCTL"]
-pub type R = crate::R<u16, super::SYSCTL>;
-#[doc = "Writer for register SYSCTL"]
-pub type W = crate::W<u16, super::SYSCTL>;
-#[doc = "Register SYSCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYSCTL {
-    type Type = u16;
+#[doc = "Register `SYSCTL` reader"]
+pub struct R(crate::R<SYSCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<SYSCTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSCTL` writer"]
+pub struct W(crate::W<SYSCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSCTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSCTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SYSRIVECT` reader - RAM-based interrupt vectors"]
+pub type SYSRIVECT_R = crate::BitReader<SYSRIVECT_A>;
 #[doc = "RAM-based interrupt vectors\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSRIVECT_A {
     #[doc = "0: Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh"]
     FRAM = 0,
@@ -24,10 +50,8 @@ impl From<SYSRIVECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYSRIVECT`"]
-pub type SYSRIVECT_R = crate::R<bool, SYSRIVECT_A>;
 impl SYSRIVECT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSRIVECT_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl SYSRIVECT_R {
         *self == SYSRIVECT_A::RAM
     }
 }
-#[doc = "Write proxy for field `SYSRIVECT`"]
-pub struct SYSRIVECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSRIVECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSRIVECT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `SYSRIVECT` writer - RAM-based interrupt vectors"]
+pub type SYSRIVECT_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCTL_SPEC, SYSRIVECT_A, O>;
+impl<'a, const O: u8> SYSRIVECT_W<'a, O> {
     #[doc = "Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh"]
     #[inline(always)]
     pub fn fram(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> SYSRIVECT_W<'a> {
     pub fn ram(self) -> &'a mut W {
         self.variant(SYSRIVECT_A::RAM)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SYSPMMPE` reader - PMM access protect"]
+pub type SYSPMMPE_R = crate::BitReader<SYSPMMPE_A>;
 #[doc = "PMM access protect\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSPMMPE_A {
     #[doc = "0: Access from anywhere in memory"]
     SYSPMMPE_0 = 0,
@@ -99,10 +100,8 @@ impl From<SYSPMMPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYSPMMPE`"]
-pub type SYSPMMPE_R = crate::R<bool, SYSPMMPE_A>;
 impl SYSPMMPE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSPMMPE_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl SYSPMMPE_R {
         *self == SYSPMMPE_A::SYSPMMPE_1
     }
 }
-#[doc = "Write proxy for field `SYSPMMPE`"]
-pub struct SYSPMMPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSPMMPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSPMMPE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `SYSPMMPE` writer - PMM access protect"]
+pub type SYSPMMPE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCTL_SPEC, SYSPMMPE_A, O>;
+impl<'a, const O: u8> SYSPMMPE_W<'a, O> {
     #[doc = "Access from anywhere in memory"]
     #[inline(always)]
     pub fn syspmmpe_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> SYSPMMPE_W<'a> {
     pub fn syspmmpe_1(self) -> &'a mut W {
         self.variant(SYSPMMPE_A::SYSPMMPE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `SYSBSLIND` reader - BSL entry indication"]
+pub type SYSBSLIND_R = crate::BitReader<SYSBSLIND_A>;
 #[doc = "BSL entry indication\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSBSLIND_A {
     #[doc = "0: No BSL entry sequence detected"]
     SYSBSLIND_0 = 0,
@@ -174,10 +150,8 @@ impl From<SYSBSLIND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYSBSLIND`"]
-pub type SYSBSLIND_R = crate::R<bool, SYSBSLIND_A>;
 impl SYSBSLIND_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSBSLIND_A {
         match self.bits {
@@ -196,8 +170,10 @@ impl SYSBSLIND_R {
         *self == SYSBSLIND_A::SYSBSLIND_1
     }
 }
+#[doc = "Field `SYSJTAGPIN` reader - Dedicated JTAG pins enable"]
+pub type SYSJTAGPIN_R = crate::BitReader<SYSJTAGPIN_A>;
 #[doc = "Dedicated JTAG pins enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSJTAGPIN_A {
     #[doc = "0: Shared JTAG pins (JTAG mode selectable using SBW sequence)"]
     SHARED = 0,
@@ -210,10 +186,8 @@ impl From<SYSJTAGPIN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYSJTAGPIN`"]
-pub type SYSJTAGPIN_R = crate::R<bool, SYSJTAGPIN_A>;
 impl SYSJTAGPIN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSJTAGPIN_A {
         match self.bits {
@@ -232,18 +206,9 @@ impl SYSJTAGPIN_R {
         *self == SYSJTAGPIN_A::DEDICATED
     }
 }
-#[doc = "Write proxy for field `SYSJTAGPIN`"]
-pub struct SYSJTAGPIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSJTAGPIN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSJTAGPIN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `SYSJTAGPIN` writer - Dedicated JTAG pins enable"]
+pub type SYSJTAGPIN_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCTL_SPEC, SYSJTAGPIN_A, O>;
+impl<'a, const O: u8> SYSJTAGPIN_W<'a, O> {
     #[doc = "Shared JTAG pins (JTAG mode selectable using SBW sequence)"]
     #[inline(always)]
     pub fn shared(self) -> &'a mut W {
@@ -254,59 +219,69 @@ impl<'a> SYSJTAGPIN_W<'a> {
     pub fn dedicated(self) -> &'a mut W {
         self.variant(SYSJTAGPIN_A::DEDICATED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - RAM-based interrupt vectors"]
     #[inline(always)]
     pub fn sysrivect(&self) -> SYSRIVECT_R {
-        SYSRIVECT_R::new((self.bits & 0x01) != 0)
+        SYSRIVECT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - PMM access protect"]
     #[inline(always)]
     pub fn syspmmpe(&self) -> SYSPMMPE_R {
-        SYSPMMPE_R::new(((self.bits >> 2) & 0x01) != 0)
+        SYSPMMPE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - BSL entry indication"]
     #[inline(always)]
     pub fn sysbslind(&self) -> SYSBSLIND_R {
-        SYSBSLIND_R::new(((self.bits >> 4) & 0x01) != 0)
+        SYSBSLIND_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Dedicated JTAG pins enable"]
     #[inline(always)]
     pub fn sysjtagpin(&self) -> SYSJTAGPIN_R {
-        SYSJTAGPIN_R::new(((self.bits >> 5) & 0x01) != 0)
+        SYSJTAGPIN_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - RAM-based interrupt vectors"]
     #[inline(always)]
-    pub fn sysrivect(&mut self) -> SYSRIVECT_W {
-        SYSRIVECT_W { w: self }
+    pub fn sysrivect(&mut self) -> SYSRIVECT_W<0> {
+        SYSRIVECT_W::new(self)
     }
     #[doc = "Bit 2 - PMM access protect"]
     #[inline(always)]
-    pub fn syspmmpe(&mut self) -> SYSPMMPE_W {
-        SYSPMMPE_W { w: self }
+    pub fn syspmmpe(&mut self) -> SYSPMMPE_W<2> {
+        SYSPMMPE_W::new(self)
     }
     #[doc = "Bit 5 - Dedicated JTAG pins enable"]
     #[inline(always)]
-    pub fn sysjtagpin(&mut self) -> SYSJTAGPIN_W {
-        SYSJTAGPIN_W { w: self }
+    pub fn sysjtagpin(&mut self) -> SYSJTAGPIN_W<5> {
+        SYSJTAGPIN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysctl](index.html) module"]
+pub struct SYSCTL_SPEC;
+impl crate::RegisterSpec for SYSCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sysctl::R](R) reader structure"]
+impl crate::Readable for SYSCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sysctl::W](W) writer structure"]
+impl crate::Writable for SYSCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSCTL to value 0"]
+impl crate::Resettable for SYSCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

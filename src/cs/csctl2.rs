@@ -1,31 +1,47 @@
-#[doc = "Reader of register CSCTL2"]
-pub type R = crate::R<u16, super::CSCTL2>;
-#[doc = "Writer for register CSCTL2"]
-pub type W = crate::W<u16, super::CSCTL2>;
-#[doc = "Register CSCTL2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL2 {
-    type Type = u16;
+#[doc = "Register `CSCTL2` reader"]
+pub struct R(crate::R<CSCTL2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FLLN`"]
-pub type FLLN_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `FLLN`"]
-pub struct FLLN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CSCTL2_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | ((value as u16) & 0x03ff);
-        self.w
+    fn from(reader: crate::R<CSCTL2_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CSCTL2` writer"]
+pub struct W(crate::W<CSCTL2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FLLN` reader - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
+pub type FLLN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `FLLN` writer - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
+pub type FLLN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL2_SPEC, u16, u16, 10, O>;
+#[doc = "Field `FLLD` reader - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
+pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
 #[doc = "FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLD_A {
     #[doc = "0: fDCOCLK / 1"]
@@ -51,10 +67,8 @@ impl From<FLLD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FLLD`"]
-pub type FLLD_R = crate::R<u8, FLLD_A>;
 impl FLLD_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLD_A {
         match self.bits {
@@ -110,18 +124,9 @@ impl FLLD_R {
         *self == FLLD_A::FLLD_7
     }
 }
-#[doc = "Write proxy for field `FLLD`"]
-pub struct FLLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `FLLD` writer - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
+pub type FLLD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL2_SPEC, u8, FLLD_A, 3, O>;
+impl<'a, const O: u8> FLLD_W<'a, O> {
     #[doc = "fDCOCLK / 1"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
@@ -162,12 +167,6 @@ impl<'a> FLLD_W<'a> {
     pub fn flld_7(self) -> &'a mut W {
         self.variant(FLLD_A::FLLD_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u16) & 0x07) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:9 - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
@@ -178,18 +177,44 @@ impl R {
     #[doc = "Bits 12:14 - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
     #[inline(always)]
     pub fn flld(&self) -> FLLD_R {
-        FLLD_R::new(((self.bits >> 12) & 0x07) as u8)
+        FLLD_R::new(((self.bits >> 12) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
     #[inline(always)]
-    pub fn flln(&mut self) -> FLLN_W {
-        FLLN_W { w: self }
+    pub fn flln(&mut self) -> FLLN_W<0> {
+        FLLN_W::new(self)
     }
     #[doc = "Bits 12:14 - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
     #[inline(always)]
-    pub fn flld(&mut self) -> FLLD_W {
-        FLLD_W { w: self }
+    pub fn flld(&mut self) -> FLLD_W<12> {
+        FLLD_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl2](index.html) module"]
+pub struct CSCTL2_SPEC;
+impl crate::RegisterSpec for CSCTL2_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl2::R](R) reader structure"]
+impl crate::Readable for CSCTL2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl2::W](W) writer structure"]
+impl crate::Writable for CSCTL2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL2 to value 0"]
+impl crate::Resettable for CSCTL2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

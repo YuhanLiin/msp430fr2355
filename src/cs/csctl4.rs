@@ -1,17 +1,43 @@
-#[doc = "Reader of register CSCTL4"]
-pub type R = crate::R<u16, super::CSCTL4>;
-#[doc = "Writer for register CSCTL4"]
-pub type W = crate::W<u16, super::CSCTL4>;
-#[doc = "Register CSCTL4 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL4 {
-    type Type = u16;
+#[doc = "Register `CSCTL4` reader"]
+pub struct R(crate::R<CSCTL4_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL4_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CSCTL4_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSCTL4_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL4` writer"]
+pub struct W(crate::W<CSCTL4_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL4_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL4_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL4_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SELMS` reader - Selects the MCLK and SMCLK source"]
+pub type SELMS_R = crate::FieldReader<u8, SELMS_A>;
 #[doc = "Selects the MCLK and SMCLK source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELMS_A {
     #[doc = "0: DCOCLKDIV"]
@@ -37,10 +63,8 @@ impl From<SELMS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SELMS`"]
-pub type SELMS_R = crate::R<u8, SELMS_A>;
 impl SELMS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SELMS_A {
         match self.bits {
@@ -96,18 +120,9 @@ impl SELMS_R {
         *self == SELMS_A::SELMS_7
     }
 }
-#[doc = "Write proxy for field `SELMS`"]
-pub struct SELMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SELMS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SELMS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `SELMS` writer - Selects the MCLK and SMCLK source"]
+pub type SELMS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL4_SPEC, u8, SELMS_A, 3, O>;
+impl<'a, const O: u8> SELMS_W<'a, O> {
     #[doc = "DCOCLKDIV"]
     #[inline(always)]
     pub fn dcoclkdiv(self) -> &'a mut W {
@@ -148,15 +163,11 @@ impl<'a> SELMS_W<'a> {
     pub fn selms_7(self) -> &'a mut W {
         self.variant(SELMS_A::SELMS_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u16) & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `SELA` reader - Selects the ACLK source"]
+pub type SELA_R = crate::FieldReader<u8, SELA_A>;
 #[doc = "Selects the ACLK source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELA_A {
     #[doc = "0: XT1CLK with divider (must be no more than 40 kHz)"]
@@ -172,10 +183,8 @@ impl From<SELA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SELA`"]
-pub type SELA_R = crate::R<u8, SELA_A>;
 impl SELA_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SELA_A {
         match self.bits {
@@ -201,16 +210,9 @@ impl SELA_R {
         *self == SELA_A::VLOCLK
     }
 }
-#[doc = "Write proxy for field `SELA`"]
-pub struct SELA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SELA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SELA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `SELA` writer - Selects the ACLK source"]
+pub type SELA_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL4_SPEC, u8, SELA_A, 2, O>;
+impl<'a, const O: u8> SELA_W<'a, O> {
     #[doc = "XT1CLK with divider (must be no more than 40 kHz)"]
     #[inline(always)]
     pub fn xt1clk(self) -> &'a mut W {
@@ -226,34 +228,54 @@ impl<'a> SELA_W<'a> {
     pub fn vloclk(self) -> &'a mut W {
         self.variant(SELA_A::VLOCLK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u16) & 0x03) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Selects the MCLK and SMCLK source"]
     #[inline(always)]
     pub fn selms(&self) -> SELMS_R {
-        SELMS_R::new((self.bits & 0x07) as u8)
+        SELMS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:9 - Selects the ACLK source"]
     #[inline(always)]
     pub fn sela(&self) -> SELA_R {
-        SELA_R::new(((self.bits >> 8) & 0x03) as u8)
+        SELA_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Selects the MCLK and SMCLK source"]
     #[inline(always)]
-    pub fn selms(&mut self) -> SELMS_W {
-        SELMS_W { w: self }
+    pub fn selms(&mut self) -> SELMS_W<0> {
+        SELMS_W::new(self)
     }
     #[doc = "Bits 8:9 - Selects the ACLK source"]
     #[inline(always)]
-    pub fn sela(&mut self) -> SELA_W {
-        SELA_W { w: self }
+    pub fn sela(&mut self) -> SELA_W<8> {
+        SELA_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl4](index.html) module"]
+pub struct CSCTL4_SPEC;
+impl crate::RegisterSpec for CSCTL4_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl4::R](R) reader structure"]
+impl crate::Readable for CSCTL4_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl4::W](W) writer structure"]
+impl crate::Writable for CSCTL4_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL4 to value 0"]
+impl crate::Resettable for CSCTL4_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

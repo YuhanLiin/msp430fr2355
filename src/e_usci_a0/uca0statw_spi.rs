@@ -1,17 +1,43 @@
-#[doc = "Reader of register UCA0STATW_SPI"]
-pub type R = crate::R<u16, super::UCA0STATW_SPI>;
-#[doc = "Writer for register UCA0STATW_SPI"]
-pub type W = crate::W<u16, super::UCA0STATW_SPI>;
-#[doc = "Register UCA0STATW_SPI `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA0STATW_SPI {
-    type Type = u16;
+#[doc = "Register `UCA0STATW_SPI` reader"]
+pub struct R(crate::R<UCA0STATW_SPI_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCA0STATW_SPI_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<UCA0STATW_SPI_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCA0STATW_SPI_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCA0STATW_SPI` writer"]
+pub struct W(crate::W<UCA0STATW_SPI_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCA0STATW_SPI_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCA0STATW_SPI_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCA0STATW_SPI_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCOE` reader - Overrun error flag"]
+pub type UCOE_R = crate::BitReader<UCOE_A>;
 #[doc = "Overrun error flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCOE_A {
     #[doc = "0: No error"]
     UCOE_0 = 0,
@@ -24,10 +50,8 @@ impl From<UCOE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCOE`"]
-pub type UCOE_R = crate::R<bool, UCOE_A>;
 impl UCOE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCOE_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl UCOE_R {
         *self == UCOE_A::UCOE_1
     }
 }
-#[doc = "Write proxy for field `UCOE`"]
-pub struct UCOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCOE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCOE` writer - Overrun error flag"]
+pub type UCOE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0STATW_SPI_SPEC, UCOE_A, O>;
+impl<'a, const O: u8> UCOE_W<'a, O> {
     #[doc = "No error"]
     #[inline(always)]
     pub fn ucoe_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> UCOE_W<'a> {
     pub fn ucoe_1(self) -> &'a mut W {
         self.variant(UCOE_A::UCOE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `UCFE` reader - Framing error flag"]
+pub type UCFE_R = crate::BitReader<UCFE_A>;
 #[doc = "Framing error flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCFE_A {
     #[doc = "0: No error"]
     UCFE_0 = 0,
@@ -99,10 +100,8 @@ impl From<UCFE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCFE`"]
-pub type UCFE_R = crate::R<bool, UCFE_A>;
 impl UCFE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCFE_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl UCFE_R {
         *self == UCFE_A::UCFE_1
     }
 }
-#[doc = "Write proxy for field `UCFE`"]
-pub struct UCFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCFE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCFE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCFE` writer - Framing error flag"]
+pub type UCFE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0STATW_SPI_SPEC, UCFE_A, O>;
+impl<'a, const O: u8> UCFE_W<'a, O> {
     #[doc = "No error"]
     #[inline(always)]
     pub fn ucfe_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> UCFE_W<'a> {
     pub fn ucfe_1(self) -> &'a mut W {
         self.variant(UCFE_A::UCFE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `UCLISTEN` reader - Listen enable"]
+pub type UCLISTEN_R = crate::BitReader<UCLISTEN_A>;
 #[doc = "Listen enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCLISTEN_A {
     #[doc = "0: Disabled"]
     UCLISTEN_0 = 0,
@@ -174,10 +150,8 @@ impl From<UCLISTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCLISTEN`"]
-pub type UCLISTEN_R = crate::R<bool, UCLISTEN_A>;
 impl UCLISTEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCLISTEN_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl UCLISTEN_R {
         *self == UCLISTEN_A::UCLISTEN_1
     }
 }
-#[doc = "Write proxy for field `UCLISTEN`"]
-pub struct UCLISTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCLISTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCLISTEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCLISTEN` writer - Listen enable"]
+pub type UCLISTEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0STATW_SPI_SPEC, UCLISTEN_A, O>;
+impl<'a, const O: u8> UCLISTEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn uclisten_0(self) -> &'a mut W {
@@ -218,54 +183,64 @@ impl<'a> UCLISTEN_W<'a> {
     pub fn uclisten_1(self) -> &'a mut W {
         self.variant(UCLISTEN_A::UCLISTEN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 5 - Overrun error flag"]
     #[inline(always)]
     pub fn ucoe(&self) -> UCOE_R {
-        UCOE_R::new(((self.bits >> 5) & 0x01) != 0)
+        UCOE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Framing error flag"]
     #[inline(always)]
     pub fn ucfe(&self) -> UCFE_R {
-        UCFE_R::new(((self.bits >> 6) & 0x01) != 0)
+        UCFE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Listen enable"]
     #[inline(always)]
     pub fn uclisten(&self) -> UCLISTEN_R {
-        UCLISTEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        UCLISTEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 5 - Overrun error flag"]
     #[inline(always)]
-    pub fn ucoe(&mut self) -> UCOE_W {
-        UCOE_W { w: self }
+    pub fn ucoe(&mut self) -> UCOE_W<5> {
+        UCOE_W::new(self)
     }
     #[doc = "Bit 6 - Framing error flag"]
     #[inline(always)]
-    pub fn ucfe(&mut self) -> UCFE_W {
-        UCFE_W { w: self }
+    pub fn ucfe(&mut self) -> UCFE_W<6> {
+        UCFE_W::new(self)
     }
     #[doc = "Bit 7 - Listen enable"]
     #[inline(always)]
-    pub fn uclisten(&mut self) -> UCLISTEN_W {
-        UCLISTEN_W { w: self }
+    pub fn uclisten(&mut self) -> UCLISTEN_W<7> {
+        UCLISTEN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "UCA0STATW_SPI\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca0statw_spi](index.html) module"]
+pub struct UCA0STATW_SPI_SPEC;
+impl crate::RegisterSpec for UCA0STATW_SPI_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [uca0statw_spi::R](R) reader structure"]
+impl crate::Readable for UCA0STATW_SPI_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uca0statw_spi::W](W) writer structure"]
+impl crate::Writable for UCA0STATW_SPI_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCA0STATW_SPI to value 0"]
+impl crate::Resettable for UCA0STATW_SPI_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

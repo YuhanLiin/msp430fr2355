@@ -1,17 +1,43 @@
-#[doc = "Reader of register UCB0CTLW0"]
-pub type R = crate::R<u16, super::UCB0CTLW0>;
-#[doc = "Writer for register UCB0CTLW0"]
-pub type W = crate::W<u16, super::UCB0CTLW0>;
-#[doc = "Register UCB0CTLW0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCB0CTLW0 {
-    type Type = u16;
+#[doc = "Register `UCB0CTLW0` reader"]
+pub struct R(crate::R<UCB0CTLW0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCB0CTLW0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<UCB0CTLW0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCB0CTLW0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCB0CTLW0` writer"]
+pub struct W(crate::W<UCB0CTLW0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCB0CTLW0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCB0CTLW0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCB0CTLW0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCSWRST` reader - Software reset enable"]
+pub type UCSWRST_R = crate::BitReader<UCSWRST_A>;
 #[doc = "Software reset enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCSWRST_A {
     #[doc = "0: Disabled. eUSCI_B reset released for operation"]
     DISABLE = 0,
@@ -24,10 +50,8 @@ impl From<UCSWRST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCSWRST`"]
-pub type UCSWRST_R = crate::R<bool, UCSWRST_A>;
 impl UCSWRST_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSWRST_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl UCSWRST_R {
         *self == UCSWRST_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `UCSWRST`"]
-pub struct UCSWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSWRST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSWRST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCSWRST` writer - Software reset enable"]
+pub type UCSWRST_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCSWRST_A, O>;
+impl<'a, const O: u8> UCSWRST_W<'a, O> {
     #[doc = "Disabled. eUSCI_B reset released for operation"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> UCSWRST_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(UCSWRST_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `UCTXSTT` reader - Transmit START condition in master mode"]
+pub type UCTXSTT_R = crate::BitReader<UCTXSTT_A>;
 #[doc = "Transmit START condition in master mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXSTT_A {
     #[doc = "0: Do not generate START condition"]
     UCTXSTT_0 = 0,
@@ -99,10 +100,8 @@ impl From<UCTXSTT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXSTT`"]
-pub type UCTXSTT_R = crate::R<bool, UCTXSTT_A>;
 impl UCTXSTT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXSTT_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl UCTXSTT_R {
         *self == UCTXSTT_A::UCTXSTT_1
     }
 }
-#[doc = "Write proxy for field `UCTXSTT`"]
-pub struct UCTXSTT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXSTT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXSTT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXSTT` writer - Transmit START condition in master mode"]
+pub type UCTXSTT_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCTXSTT_A, O>;
+impl<'a, const O: u8> UCTXSTT_W<'a, O> {
     #[doc = "Do not generate START condition"]
     #[inline(always)]
     pub fn uctxstt_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> UCTXSTT_W<'a> {
     pub fn uctxstt_1(self) -> &'a mut W {
         self.variant(UCTXSTT_A::UCTXSTT_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `UCTXSTP` reader - Transmit STOP condition in master mode"]
+pub type UCTXSTP_R = crate::BitReader<UCTXSTP_A>;
 #[doc = "Transmit STOP condition in master mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXSTP_A {
     #[doc = "0: No STOP generated"]
     UCTXSTP_0 = 0,
@@ -174,10 +150,8 @@ impl From<UCTXSTP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXSTP`"]
-pub type UCTXSTP_R = crate::R<bool, UCTXSTP_A>;
 impl UCTXSTP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXSTP_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl UCTXSTP_R {
         *self == UCTXSTP_A::UCTXSTP_1
     }
 }
-#[doc = "Write proxy for field `UCTXSTP`"]
-pub struct UCTXSTP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXSTP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXSTP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXSTP` writer - Transmit STOP condition in master mode"]
+pub type UCTXSTP_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCTXSTP_A, O>;
+impl<'a, const O: u8> UCTXSTP_W<'a, O> {
     #[doc = "No STOP generated"]
     #[inline(always)]
     pub fn uctxstp_0(self) -> &'a mut W {
@@ -218,25 +183,11 @@ impl<'a> UCTXSTP_W<'a> {
     pub fn uctxstp_1(self) -> &'a mut W {
         self.variant(UCTXSTP_A::UCTXSTP_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `UCTXNACK` reader - Transmit a NACK"]
+pub type UCTXNACK_R = crate::BitReader<UCTXNACK_A>;
 #[doc = "Transmit a NACK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXNACK_A {
     #[doc = "0: Acknowledge normally"]
     UCTXNACK_0 = 0,
@@ -249,10 +200,8 @@ impl From<UCTXNACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXNACK`"]
-pub type UCTXNACK_R = crate::R<bool, UCTXNACK_A>;
 impl UCTXNACK_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXNACK_A {
         match self.bits {
@@ -271,18 +220,9 @@ impl UCTXNACK_R {
         *self == UCTXNACK_A::UCTXNACK_1
     }
 }
-#[doc = "Write proxy for field `UCTXNACK`"]
-pub struct UCTXNACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXNACK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXNACK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXNACK` writer - Transmit a NACK"]
+pub type UCTXNACK_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCTXNACK_A, O>;
+impl<'a, const O: u8> UCTXNACK_W<'a, O> {
     #[doc = "Acknowledge normally"]
     #[inline(always)]
     pub fn uctxnack_0(self) -> &'a mut W {
@@ -293,25 +233,11 @@ impl<'a> UCTXNACK_W<'a> {
     pub fn uctxnack_1(self) -> &'a mut W {
         self.variant(UCTXNACK_A::UCTXNACK_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `UCTR` reader - Transmitter/receiver"]
+pub type UCTR_R = crate::BitReader<UCTR_A>;
 #[doc = "Transmitter/receiver\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTR_A {
     #[doc = "0: Receiver"]
     RX = 0,
@@ -324,10 +250,8 @@ impl From<UCTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTR`"]
-pub type UCTR_R = crate::R<bool, UCTR_A>;
 impl UCTR_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTR_A {
         match self.bits {
@@ -346,18 +270,9 @@ impl UCTR_R {
         *self == UCTR_A::TX
     }
 }
-#[doc = "Write proxy for field `UCTR`"]
-pub struct UCTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTR` writer - Transmitter/receiver"]
+pub type UCTR_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCTR_A, O>;
+impl<'a, const O: u8> UCTR_W<'a, O> {
     #[doc = "Receiver"]
     #[inline(always)]
     pub fn rx(self) -> &'a mut W {
@@ -368,25 +283,11 @@ impl<'a> UCTR_W<'a> {
     pub fn tx(self) -> &'a mut W {
         self.variant(UCTR_A::TX)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `UCTXACK` reader - Transmit ACK condition in slave mode"]
+pub type UCTXACK_R = crate::BitReader<UCTXACK_A>;
 #[doc = "Transmit ACK condition in slave mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXACK_A {
     #[doc = "0: Do not acknowledge the slave address"]
     UCTXACK_0 = 0,
@@ -399,10 +300,8 @@ impl From<UCTXACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXACK`"]
-pub type UCTXACK_R = crate::R<bool, UCTXACK_A>;
 impl UCTXACK_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXACK_A {
         match self.bits {
@@ -421,18 +320,9 @@ impl UCTXACK_R {
         *self == UCTXACK_A::UCTXACK_1
     }
 }
-#[doc = "Write proxy for field `UCTXACK`"]
-pub struct UCTXACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXACK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXACK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXACK` writer - Transmit ACK condition in slave mode"]
+pub type UCTXACK_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCTXACK_A, O>;
+impl<'a, const O: u8> UCTXACK_W<'a, O> {
     #[doc = "Do not acknowledge the slave address"]
     #[inline(always)]
     pub fn uctxack_0(self) -> &'a mut W {
@@ -443,25 +333,11 @@ impl<'a> UCTXACK_W<'a> {
     pub fn uctxack_1(self) -> &'a mut W {
         self.variant(UCTXACK_A::UCTXACK_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `UCSSEL` reader - eUSCI_B clock source select"]
+pub type UCSSEL_R = crate::FieldReader<u8, UCSSEL_A>;
 #[doc = "eUSCI_B clock source select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: UCLKI"]
@@ -479,10 +355,8 @@ impl From<UCSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UCSSEL`"]
-pub type UCSSEL_R = crate::R<u8, UCSSEL_A>;
 impl UCSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSSEL_A {
         match self.bits {
@@ -514,18 +388,10 @@ impl UCSSEL_R {
         *self == UCSSEL_A::UCSSEL_3
     }
 }
-#[doc = "Write proxy for field `UCSSEL`"]
-pub struct UCSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `UCSSEL` writer - eUSCI_B clock source select"]
+pub type UCSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, UCB0CTLW0_SPEC, u8, UCSSEL_A, 2, O>;
+impl<'a, const O: u8> UCSSEL_W<'a, O> {
     #[doc = "UCLKI"]
     #[inline(always)]
     pub fn uclki(self) -> &'a mut W {
@@ -546,15 +412,11 @@ impl<'a> UCSSEL_W<'a> {
     pub fn ucssel_3(self) -> &'a mut W {
         self.variant(UCSSEL_A::UCSSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u16) & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `UCSYNC` reader - Synchronous mode enable"]
+pub type UCSYNC_R = crate::BitReader<UCSYNC_A>;
 #[doc = "Synchronous mode enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCSYNC_A {
     #[doc = "0: Asynchronous mode"]
     ASYNC = 0,
@@ -567,10 +429,8 @@ impl From<UCSYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCSYNC`"]
-pub type UCSYNC_R = crate::R<bool, UCSYNC_A>;
 impl UCSYNC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSYNC_A {
         match self.bits {
@@ -589,21 +449,12 @@ impl UCSYNC_R {
         *self == UCSYNC_A::SYNC
     }
 }
-#[doc = "Write proxy for field `UCSYNC`"]
-pub struct UCSYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSYNC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSYNC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCSYNC` writer - Synchronous mode enable"]
+pub type UCSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCSYNC_A, O>;
+impl<'a, const O: u8> UCSYNC_W<'a, O> {
     #[doc = "Asynchronous mode"]
     #[inline(always)]
-    pub fn async(self) -> &'a mut W {
+    pub fn async_(self) -> &'a mut W {
         self.variant(UCSYNC_A::ASYNC)
     }
     #[doc = "Synchronous mode"]
@@ -611,25 +462,11 @@ impl<'a> UCSYNC_W<'a> {
     pub fn sync(self) -> &'a mut W {
         self.variant(UCSYNC_A::SYNC)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `UCMODE` reader - eUSCI_B mode"]
+pub type UCMODE_R = crate::FieldReader<u8, UCMODE_A>;
 #[doc = "eUSCI_B mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCMODE_A {
     #[doc = "0: 3-pin SPI"]
@@ -647,10 +484,8 @@ impl From<UCMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UCMODE`"]
-pub type UCMODE_R = crate::R<u8, UCMODE_A>;
 impl UCMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCMODE_A {
         match self.bits {
@@ -682,18 +517,10 @@ impl UCMODE_R {
         *self == UCMODE_A::UCMODE_3
     }
 }
-#[doc = "Write proxy for field `UCMODE`"]
-pub struct UCMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `UCMODE` writer - eUSCI_B mode"]
+pub type UCMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, UCB0CTLW0_SPEC, u8, UCMODE_A, 2, O>;
+impl<'a, const O: u8> UCMODE_W<'a, O> {
     #[doc = "3-pin SPI"]
     #[inline(always)]
     pub fn ucmode_0(self) -> &'a mut W {
@@ -714,15 +541,11 @@ impl<'a> UCMODE_W<'a> {
     pub fn ucmode_3(self) -> &'a mut W {
         self.variant(UCMODE_A::UCMODE_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 9)) | (((value as u16) & 0x03) << 9);
-        self.w
-    }
 }
+#[doc = "Field `UCMST` reader - Master mode select"]
+pub type UCMST_R = crate::BitReader<UCMST_A>;
 #[doc = "Master mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCMST_A {
     #[doc = "0: Slave mode"]
     SLAVE = 0,
@@ -735,10 +558,8 @@ impl From<UCMST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCMST`"]
-pub type UCMST_R = crate::R<bool, UCMST_A>;
 impl UCMST_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCMST_A {
         match self.bits {
@@ -757,18 +578,9 @@ impl UCMST_R {
         *self == UCMST_A::MASTER
     }
 }
-#[doc = "Write proxy for field `UCMST`"]
-pub struct UCMST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCMST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCMST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCMST` writer - Master mode select"]
+pub type UCMST_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCMST_A, O>;
+impl<'a, const O: u8> UCMST_W<'a, O> {
     #[doc = "Slave mode"]
     #[inline(always)]
     pub fn slave(self) -> &'a mut W {
@@ -779,25 +591,11 @@ impl<'a> UCMST_W<'a> {
     pub fn master(self) -> &'a mut W {
         self.variant(UCMST_A::MASTER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `UCMM` reader - Multi-master environment select"]
+pub type UCMM_R = crate::BitReader<UCMM_A>;
 #[doc = "Multi-master environment select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCMM_A {
     #[doc = "0: Single master environment. There is no other master in the system. The address compare unit is disabled."]
     SINGLE = 0,
@@ -810,10 +608,8 @@ impl From<UCMM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCMM`"]
-pub type UCMM_R = crate::R<bool, UCMM_A>;
 impl UCMM_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCMM_A {
         match self.bits {
@@ -832,18 +628,9 @@ impl UCMM_R {
         *self == UCMM_A::MULTI
     }
 }
-#[doc = "Write proxy for field `UCMM`"]
-pub struct UCMM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCMM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCMM_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCMM` writer - Multi-master environment select"]
+pub type UCMM_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCMM_A, O>;
+impl<'a, const O: u8> UCMM_W<'a, O> {
     #[doc = "Single master environment. There is no other master in the system. The address compare unit is disabled."]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -854,25 +641,11 @@ impl<'a> UCMM_W<'a> {
     pub fn multi(self) -> &'a mut W {
         self.variant(UCMM_A::MULTI)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `UCSLA10` reader - Slave addressing mode select"]
+pub type UCSLA10_R = crate::BitReader<UCSLA10_A>;
 #[doc = "Slave addressing mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCSLA10_A {
     #[doc = "0: Address slave with 7-bit address"]
     _7BIT = 0,
@@ -885,10 +658,8 @@ impl From<UCSLA10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCSLA10`"]
-pub type UCSLA10_R = crate::R<bool, UCSLA10_A>;
 impl UCSLA10_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSLA10_A {
         match self.bits {
@@ -907,18 +678,9 @@ impl UCSLA10_R {
         *self == UCSLA10_A::_10BIT
     }
 }
-#[doc = "Write proxy for field `UCSLA10`"]
-pub struct UCSLA10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSLA10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSLA10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCSLA10` writer - Slave addressing mode select"]
+pub type UCSLA10_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCSLA10_A, O>;
+impl<'a, const O: u8> UCSLA10_W<'a, O> {
     #[doc = "Address slave with 7-bit address"]
     #[inline(always)]
     pub fn _7bit(self) -> &'a mut W {
@@ -929,25 +691,11 @@ impl<'a> UCSLA10_W<'a> {
     pub fn _10bit(self) -> &'a mut W {
         self.variant(UCSLA10_A::_10BIT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `UCA10` reader - Own addressing mode select"]
+pub type UCA10_R = crate::BitReader<UCA10_A>;
 #[doc = "Own addressing mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCA10_A {
     #[doc = "0: Own address is a 7-bit address"]
     UCA10_0 = 0,
@@ -960,10 +708,8 @@ impl From<UCA10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCA10`"]
-pub type UCA10_R = crate::R<bool, UCA10_A>;
 impl UCA10_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCA10_A {
         match self.bits {
@@ -982,18 +728,9 @@ impl UCA10_R {
         *self == UCA10_A::UCA10_1
     }
 }
-#[doc = "Write proxy for field `UCA10`"]
-pub struct UCA10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCA10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCA10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCA10` writer - Own addressing mode select"]
+pub type UCA10_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB0CTLW0_SPEC, UCA10_A, O>;
+impl<'a, const O: u8> UCA10_W<'a, O> {
     #[doc = "Own address is a 7-bit address"]
     #[inline(always)]
     pub fn uca10_0(self) -> &'a mut W {
@@ -1004,154 +741,164 @@ impl<'a> UCA10_W<'a> {
     pub fn uca10_1(self) -> &'a mut W {
         self.variant(UCA10_A::UCA10_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Software reset enable"]
     #[inline(always)]
     pub fn ucswrst(&self) -> UCSWRST_R {
-        UCSWRST_R::new((self.bits & 0x01) != 0)
+        UCSWRST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit START condition in master mode"]
     #[inline(always)]
     pub fn uctxstt(&self) -> UCTXSTT_R {
-        UCTXSTT_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCTXSTT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transmit STOP condition in master mode"]
     #[inline(always)]
     pub fn uctxstp(&self) -> UCTXSTP_R {
-        UCTXSTP_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCTXSTP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Transmit a NACK"]
     #[inline(always)]
     pub fn uctxnack(&self) -> UCTXNACK_R {
-        UCTXNACK_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCTXNACK_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Transmitter/receiver"]
     #[inline(always)]
     pub fn uctr(&self) -> UCTR_R {
-        UCTR_R::new(((self.bits >> 4) & 0x01) != 0)
+        UCTR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Transmit ACK condition in slave mode"]
     #[inline(always)]
     pub fn uctxack(&self) -> UCTXACK_R {
-        UCTXACK_R::new(((self.bits >> 5) & 0x01) != 0)
+        UCTXACK_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - eUSCI_B clock source select"]
     #[inline(always)]
     pub fn ucssel(&self) -> UCSSEL_R {
-        UCSSEL_R::new(((self.bits >> 6) & 0x03) as u8)
+        UCSSEL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bit 8 - Synchronous mode enable"]
     #[inline(always)]
     pub fn ucsync(&self) -> UCSYNC_R {
-        UCSYNC_R::new(((self.bits >> 8) & 0x01) != 0)
+        UCSYNC_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 9:10 - eUSCI_B mode"]
     #[inline(always)]
     pub fn ucmode(&self) -> UCMODE_R {
-        UCMODE_R::new(((self.bits >> 9) & 0x03) as u8)
+        UCMODE_R::new(((self.bits >> 9) & 3) as u8)
     }
     #[doc = "Bit 11 - Master mode select"]
     #[inline(always)]
     pub fn ucmst(&self) -> UCMST_R {
-        UCMST_R::new(((self.bits >> 11) & 0x01) != 0)
+        UCMST_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 13 - Multi-master environment select"]
     #[inline(always)]
     pub fn ucmm(&self) -> UCMM_R {
-        UCMM_R::new(((self.bits >> 13) & 0x01) != 0)
+        UCMM_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Slave addressing mode select"]
     #[inline(always)]
     pub fn ucsla10(&self) -> UCSLA10_R {
-        UCSLA10_R::new(((self.bits >> 14) & 0x01) != 0)
+        UCSLA10_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Own addressing mode select"]
     #[inline(always)]
     pub fn uca10(&self) -> UCA10_R {
-        UCA10_R::new(((self.bits >> 15) & 0x01) != 0)
+        UCA10_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Software reset enable"]
     #[inline(always)]
-    pub fn ucswrst(&mut self) -> UCSWRST_W {
-        UCSWRST_W { w: self }
+    pub fn ucswrst(&mut self) -> UCSWRST_W<0> {
+        UCSWRST_W::new(self)
     }
     #[doc = "Bit 1 - Transmit START condition in master mode"]
     #[inline(always)]
-    pub fn uctxstt(&mut self) -> UCTXSTT_W {
-        UCTXSTT_W { w: self }
+    pub fn uctxstt(&mut self) -> UCTXSTT_W<1> {
+        UCTXSTT_W::new(self)
     }
     #[doc = "Bit 2 - Transmit STOP condition in master mode"]
     #[inline(always)]
-    pub fn uctxstp(&mut self) -> UCTXSTP_W {
-        UCTXSTP_W { w: self }
+    pub fn uctxstp(&mut self) -> UCTXSTP_W<2> {
+        UCTXSTP_W::new(self)
     }
     #[doc = "Bit 3 - Transmit a NACK"]
     #[inline(always)]
-    pub fn uctxnack(&mut self) -> UCTXNACK_W {
-        UCTXNACK_W { w: self }
+    pub fn uctxnack(&mut self) -> UCTXNACK_W<3> {
+        UCTXNACK_W::new(self)
     }
     #[doc = "Bit 4 - Transmitter/receiver"]
     #[inline(always)]
-    pub fn uctr(&mut self) -> UCTR_W {
-        UCTR_W { w: self }
+    pub fn uctr(&mut self) -> UCTR_W<4> {
+        UCTR_W::new(self)
     }
     #[doc = "Bit 5 - Transmit ACK condition in slave mode"]
     #[inline(always)]
-    pub fn uctxack(&mut self) -> UCTXACK_W {
-        UCTXACK_W { w: self }
+    pub fn uctxack(&mut self) -> UCTXACK_W<5> {
+        UCTXACK_W::new(self)
     }
     #[doc = "Bits 6:7 - eUSCI_B clock source select"]
     #[inline(always)]
-    pub fn ucssel(&mut self) -> UCSSEL_W {
-        UCSSEL_W { w: self }
+    pub fn ucssel(&mut self) -> UCSSEL_W<6> {
+        UCSSEL_W::new(self)
     }
     #[doc = "Bit 8 - Synchronous mode enable"]
     #[inline(always)]
-    pub fn ucsync(&mut self) -> UCSYNC_W {
-        UCSYNC_W { w: self }
+    pub fn ucsync(&mut self) -> UCSYNC_W<8> {
+        UCSYNC_W::new(self)
     }
     #[doc = "Bits 9:10 - eUSCI_B mode"]
     #[inline(always)]
-    pub fn ucmode(&mut self) -> UCMODE_W {
-        UCMODE_W { w: self }
+    pub fn ucmode(&mut self) -> UCMODE_W<9> {
+        UCMODE_W::new(self)
     }
     #[doc = "Bit 11 - Master mode select"]
     #[inline(always)]
-    pub fn ucmst(&mut self) -> UCMST_W {
-        UCMST_W { w: self }
+    pub fn ucmst(&mut self) -> UCMST_W<11> {
+        UCMST_W::new(self)
     }
     #[doc = "Bit 13 - Multi-master environment select"]
     #[inline(always)]
-    pub fn ucmm(&mut self) -> UCMM_W {
-        UCMM_W { w: self }
+    pub fn ucmm(&mut self) -> UCMM_W<13> {
+        UCMM_W::new(self)
     }
     #[doc = "Bit 14 - Slave addressing mode select"]
     #[inline(always)]
-    pub fn ucsla10(&mut self) -> UCSLA10_W {
-        UCSLA10_W { w: self }
+    pub fn ucsla10(&mut self) -> UCSLA10_W<14> {
+        UCSLA10_W::new(self)
     }
     #[doc = "Bit 15 - Own addressing mode select"]
     #[inline(always)]
-    pub fn uca10(&mut self) -> UCA10_W {
-        UCA10_W { w: self }
+    pub fn uca10(&mut self) -> UCA10_W<15> {
+        UCA10_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Bx Control Word Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0ctlw0](index.html) module"]
+pub struct UCB0CTLW0_SPEC;
+impl crate::RegisterSpec for UCB0CTLW0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [ucb0ctlw0::R](R) reader structure"]
+impl crate::Readable for UCB0CTLW0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ucb0ctlw0::W](W) writer structure"]
+impl crate::Writable for UCB0CTLW0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCB0CTLW0 to value 0"]
+impl crate::Resettable for UCB0CTLW0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

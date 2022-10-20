@@ -1,19 +1,45 @@
-#[doc = "Reader of register CP1CTL1"]
-pub type R = crate::R<u16, super::CP1CTL1>;
-#[doc = "Writer for register CP1CTL1"]
-pub type W = crate::W<u16, super::CP1CTL1>;
-#[doc = "Register CP1CTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CP1CTL1 {
-    type Type = u16;
+#[doc = "Register `CP1CTL1` reader"]
+pub struct R(crate::R<CP1CTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CP1CTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CPOUT`"]
-pub type CPOUT_R = crate::R<bool, bool>;
+impl From<crate::R<CP1CTL1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CP1CTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CP1CTL1` writer"]
+pub struct W(crate::W<CP1CTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CP1CTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CP1CTL1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CP1CTL1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CPOUT` reader - Comparator output value"]
+pub type CPOUT_R = crate::BitReader<bool>;
+#[doc = "Field `CPINV` reader - Comparator output polarity"]
+pub type CPINV_R = crate::BitReader<CPINV_A>;
 #[doc = "Comparator output polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPINV_A {
     #[doc = "0: Comparator output is non-inverted"]
     CPINV_0 = 0,
@@ -26,10 +52,8 @@ impl From<CPINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPINV`"]
-pub type CPINV_R = crate::R<bool, CPINV_A>;
 impl CPINV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPINV_A {
         match self.bits {
@@ -48,18 +72,9 @@ impl CPINV_R {
         *self == CPINV_A::CPINV_1
     }
 }
-#[doc = "Write proxy for field `CPINV`"]
-pub struct CPINV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPINV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPINV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPINV` writer - Comparator output polarity"]
+pub type CPINV_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPINV_A, O>;
+impl<'a, const O: u8> CPINV_W<'a, O> {
     #[doc = "Comparator output is non-inverted"]
     #[inline(always)]
     pub fn cpinv_0(self) -> &'a mut W {
@@ -70,25 +85,11 @@ impl<'a> CPINV_W<'a> {
     pub fn cpinv_1(self) -> &'a mut W {
         self.variant(CPINV_A::CPINV_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `CPIES` reader - Interrupt edge select for CEIIFG and CEIFG"]
+pub type CPIES_R = crate::BitReader<CPIES_A>;
 #[doc = "Interrupt edge select for CEIIFG and CEIFG\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPIES_A {
     #[doc = "0: Rising edge for CPIFG, falling edge for CPIIFG"]
     CPIES_0 = 0,
@@ -101,10 +102,8 @@ impl From<CPIES_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPIES`"]
-pub type CPIES_R = crate::R<bool, CPIES_A>;
 impl CPIES_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPIES_A {
         match self.bits {
@@ -123,18 +122,9 @@ impl CPIES_R {
         *self == CPIES_A::CPIES_1
     }
 }
-#[doc = "Write proxy for field `CPIES`"]
-pub struct CPIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPIES_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPIES_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPIES` writer - Interrupt edge select for CEIIFG and CEIFG"]
+pub type CPIES_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPIES_A, O>;
+impl<'a, const O: u8> CPIES_W<'a, O> {
     #[doc = "Rising edge for CPIFG, falling edge for CPIIFG"]
     #[inline(always)]
     pub fn cpies_0(self) -> &'a mut W {
@@ -145,25 +135,11 @@ impl<'a> CPIES_W<'a> {
     pub fn cpies_1(self) -> &'a mut W {
         self.variant(CPIES_A::CPIES_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CPFLT` reader - Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag."]
+pub type CPFLT_R = crate::BitReader<CPFLT_A>;
 #[doc = "Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPFLT_A {
     #[doc = "0: Comparator output is not filtered"]
     CPFLT_0 = 0,
@@ -176,10 +152,8 @@ impl From<CPFLT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPFLT`"]
-pub type CPFLT_R = crate::R<bool, CPFLT_A>;
 impl CPFLT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPFLT_A {
         match self.bits {
@@ -198,18 +172,9 @@ impl CPFLT_R {
         *self == CPFLT_A::CPFLT_1
     }
 }
-#[doc = "Write proxy for field `CPFLT`"]
-pub struct CPFLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPFLT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPFLT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPFLT` writer - Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag."]
+pub type CPFLT_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPFLT_A, O>;
+impl<'a, const O: u8> CPFLT_W<'a, O> {
     #[doc = "Comparator output is not filtered"]
     #[inline(always)]
     pub fn cpflt_0(self) -> &'a mut W {
@@ -220,25 +185,11 @@ impl<'a> CPFLT_W<'a> {
     pub fn cpflt_1(self) -> &'a mut W {
         self.variant(CPFLT_A::CPFLT_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `CPFLTDLY` reader - Analog Filter Delay selection. These bits are used to select the analog filter delay"]
+pub type CPFLTDLY_R = crate::FieldReader<u8, CPFLTDLY_A>;
 #[doc = "Analog Filter Delay selection. These bits are used to select the analog filter delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPFLTDLY_A {
     #[doc = "0: Typical filter delay of 450ns"]
@@ -256,10 +207,8 @@ impl From<CPFLTDLY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPFLTDLY`"]
-pub type CPFLTDLY_R = crate::R<u8, CPFLTDLY_A>;
 impl CPFLTDLY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPFLTDLY_A {
         match self.bits {
@@ -291,18 +240,10 @@ impl CPFLTDLY_R {
         *self == CPFLTDLY_A::CPFLTDLY_3
     }
 }
-#[doc = "Write proxy for field `CPFLTDLY`"]
-pub struct CPFLTDLY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPFLTDLY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPFLTDLY_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CPFLTDLY` writer - Analog Filter Delay selection. These bits are used to select the analog filter delay"]
+pub type CPFLTDLY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CP1CTL1_SPEC, u8, CPFLTDLY_A, 2, O>;
+impl<'a, const O: u8> CPFLTDLY_W<'a, O> {
     #[doc = "Typical filter delay of 450ns"]
     #[inline(always)]
     pub fn cpfltdly_0(self) -> &'a mut W {
@@ -323,15 +264,11 @@ impl<'a> CPFLTDLY_W<'a> {
     pub fn cpfltdly_3(self) -> &'a mut W {
         self.variant(CPFLTDLY_A::CPFLTDLY_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u16) & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `CPMSEL` reader - Power mode selection."]
+pub type CPMSEL_R = crate::BitReader<CPMSEL_A>;
 #[doc = "Power mode selection.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPMSEL_A {
     #[doc = "0: High-power & High speed mode (500nA)"]
     CPMSEL_0 = 0,
@@ -344,10 +281,8 @@ impl From<CPMSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPMSEL`"]
-pub type CPMSEL_R = crate::R<bool, CPMSEL_A>;
 impl CPMSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPMSEL_A {
         match self.bits {
@@ -366,18 +301,9 @@ impl CPMSEL_R {
         *self == CPMSEL_A::CPMSEL_1
     }
 }
-#[doc = "Write proxy for field `CPMSEL`"]
-pub struct CPMSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPMSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPMSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPMSEL` writer - Power mode selection."]
+pub type CPMSEL_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPMSEL_A, O>;
+impl<'a, const O: u8> CPMSEL_W<'a, O> {
     #[doc = "High-power & High speed mode (500nA)"]
     #[inline(always)]
     pub fn cpmsel_0(self) -> &'a mut W {
@@ -388,25 +314,11 @@ impl<'a> CPMSEL_W<'a> {
     pub fn cpmsel_1(self) -> &'a mut W {
         self.variant(CPMSEL_A::CPMSEL_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CPEN` reader - Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power."]
+pub type CPEN_R = crate::BitReader<CPEN_A>;
 #[doc = "Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPEN_A {
     #[doc = "0: Comparator is disabled"]
     CPEN_0 = 0,
@@ -419,10 +331,8 @@ impl From<CPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPEN`"]
-pub type CPEN_R = crate::R<bool, CPEN_A>;
 impl CPEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPEN_A {
         match self.bits {
@@ -441,18 +351,9 @@ impl CPEN_R {
         *self == CPEN_A::CPEN_1
     }
 }
-#[doc = "Write proxy for field `CPEN`"]
-pub struct CPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPEN` writer - Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power."]
+pub type CPEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPEN_A, O>;
+impl<'a, const O: u8> CPEN_W<'a, O> {
     #[doc = "Comparator is disabled"]
     #[inline(always)]
     pub fn cpen_0(self) -> &'a mut W {
@@ -463,25 +364,11 @@ impl<'a> CPEN_W<'a> {
     pub fn cpen_1(self) -> &'a mut W {
         self.variant(CPEN_A::CPEN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `CPHSEL` reader - Programable Hysteresis mode. These bits are used to select the Hysteresis mode."]
+pub type CPHSEL_R = crate::FieldReader<u8, CPHSEL_A>;
 #[doc = "Programable Hysteresis mode. These bits are used to select the Hysteresis mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPHSEL_A {
     #[doc = "0: disable"]
@@ -499,10 +386,8 @@ impl From<CPHSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPHSEL`"]
-pub type CPHSEL_R = crate::R<u8, CPHSEL_A>;
 impl CPHSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPHSEL_A {
         match self.bits {
@@ -534,18 +419,10 @@ impl CPHSEL_R {
         *self == CPHSEL_A::CPHSEL_3
     }
 }
-#[doc = "Write proxy for field `CPHSEL`"]
-pub struct CPHSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPHSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPHSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CPHSEL` writer - Programable Hysteresis mode. These bits are used to select the Hysteresis mode."]
+pub type CPHSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CP1CTL1_SPEC, u8, CPHSEL_A, 2, O>;
+impl<'a, const O: u8> CPHSEL_W<'a, O> {
     #[doc = "disable"]
     #[inline(always)]
     pub fn cphsel_0(self) -> &'a mut W {
@@ -566,15 +443,11 @@ impl<'a> CPHSEL_W<'a> {
     pub fn cphsel_3(self) -> &'a mut W {
         self.variant(CPHSEL_A::CPHSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u16) & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `CPIE` reader - Comparator interrupt output enable bit"]
+pub type CPIE_R = crate::BitReader<CPIE_A>;
 #[doc = "Comparator interrupt output enable bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPIE_A {
     #[doc = "0: Interrupt output is disabled"]
     CPIE_0 = 0,
@@ -587,10 +460,8 @@ impl From<CPIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPIE`"]
-pub type CPIE_R = crate::R<bool, CPIE_A>;
 impl CPIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPIE_A {
         match self.bits {
@@ -609,18 +480,9 @@ impl CPIE_R {
         *self == CPIE_A::CPIE_1
     }
 }
-#[doc = "Write proxy for field `CPIE`"]
-pub struct CPIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPIE` writer - Comparator interrupt output enable bit"]
+pub type CPIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPIE_A, O>;
+impl<'a, const O: u8> CPIE_W<'a, O> {
     #[doc = "Interrupt output is disabled"]
     #[inline(always)]
     pub fn cpie_0(self) -> &'a mut W {
@@ -631,25 +493,11 @@ impl<'a> CPIE_W<'a> {
     pub fn cpie_1(self) -> &'a mut W {
         self.variant(CPIE_A::CPIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `CPIIE` reader - Comparator inverted interrupt output enable bit"]
+pub type CPIIE_R = crate::BitReader<CPIIE_A>;
 #[doc = "Comparator inverted interrupt output enable bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPIIE_A {
     #[doc = "0: Interrupt inverted output is disabled"]
     CPIIE_0 = 0,
@@ -662,10 +510,8 @@ impl From<CPIIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CPIIE`"]
-pub type CPIIE_R = crate::R<bool, CPIIE_A>;
 impl CPIIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPIIE_A {
         match self.bits {
@@ -684,18 +530,9 @@ impl CPIIE_R {
         *self == CPIIE_A::CPIIE_1
     }
 }
-#[doc = "Write proxy for field `CPIIE`"]
-pub struct CPIIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPIIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPIIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CPIIE` writer - Comparator inverted interrupt output enable bit"]
+pub type CPIIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1CTL1_SPEC, CPIIE_A, O>;
+impl<'a, const O: u8> CPIIE_W<'a, O> {
     #[doc = "Interrupt inverted output is disabled"]
     #[inline(always)]
     pub fn cpiie_0(self) -> &'a mut W {
@@ -706,119 +543,129 @@ impl<'a> CPIIE_W<'a> {
     pub fn cpiie_1(self) -> &'a mut W {
         self.variant(CPIIE_A::CPIIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Comparator output value"]
     #[inline(always)]
     pub fn cpout(&self) -> CPOUT_R {
-        CPOUT_R::new((self.bits & 0x01) != 0)
+        CPOUT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Comparator output polarity"]
     #[inline(always)]
     pub fn cpinv(&self) -> CPINV_R {
-        CPINV_R::new(((self.bits >> 1) & 0x01) != 0)
+        CPINV_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - Interrupt edge select for CEIIFG and CEIFG"]
     #[inline(always)]
     pub fn cpies(&self) -> CPIES_R {
-        CPIES_R::new(((self.bits >> 4) & 0x01) != 0)
+        CPIES_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag."]
     #[inline(always)]
     pub fn cpflt(&self) -> CPFLT_R {
-        CPFLT_R::new(((self.bits >> 5) & 0x01) != 0)
+        CPFLT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Analog Filter Delay selection. These bits are used to select the analog filter delay"]
     #[inline(always)]
     pub fn cpfltdly(&self) -> CPFLTDLY_R {
-        CPFLTDLY_R::new(((self.bits >> 6) & 0x03) as u8)
+        CPFLTDLY_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bit 8 - Power mode selection."]
     #[inline(always)]
     pub fn cpmsel(&self) -> CPMSEL_R {
-        CPMSEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        CPMSEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power."]
     #[inline(always)]
     pub fn cpen(&self) -> CPEN_R {
-        CPEN_R::new(((self.bits >> 9) & 0x01) != 0)
+        CPEN_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:11 - Programable Hysteresis mode. These bits are used to select the Hysteresis mode."]
     #[inline(always)]
     pub fn cphsel(&self) -> CPHSEL_R {
-        CPHSEL_R::new(((self.bits >> 10) & 0x03) as u8)
+        CPHSEL_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 14 - Comparator interrupt output enable bit"]
     #[inline(always)]
     pub fn cpie(&self) -> CPIE_R {
-        CPIE_R::new(((self.bits >> 14) & 0x01) != 0)
+        CPIE_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Comparator inverted interrupt output enable bit"]
     #[inline(always)]
     pub fn cpiie(&self) -> CPIIE_R {
-        CPIIE_R::new(((self.bits >> 15) & 0x01) != 0)
+        CPIIE_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Comparator output polarity"]
     #[inline(always)]
-    pub fn cpinv(&mut self) -> CPINV_W {
-        CPINV_W { w: self }
+    pub fn cpinv(&mut self) -> CPINV_W<1> {
+        CPINV_W::new(self)
     }
     #[doc = "Bit 4 - Interrupt edge select for CEIIFG and CEIFG"]
     #[inline(always)]
-    pub fn cpies(&mut self) -> CPIES_W {
-        CPIES_W { w: self }
+    pub fn cpies(&mut self) -> CPIES_W<4> {
+        CPIES_W::new(self)
     }
     #[doc = "Bit 5 - Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag."]
     #[inline(always)]
-    pub fn cpflt(&mut self) -> CPFLT_W {
-        CPFLT_W { w: self }
+    pub fn cpflt(&mut self) -> CPFLT_W<5> {
+        CPFLT_W::new(self)
     }
     #[doc = "Bits 6:7 - Analog Filter Delay selection. These bits are used to select the analog filter delay"]
     #[inline(always)]
-    pub fn cpfltdly(&mut self) -> CPFLTDLY_W {
-        CPFLTDLY_W { w: self }
+    pub fn cpfltdly(&mut self) -> CPFLTDLY_W<6> {
+        CPFLTDLY_W::new(self)
     }
     #[doc = "Bit 8 - Power mode selection."]
     #[inline(always)]
-    pub fn cpmsel(&mut self) -> CPMSEL_W {
-        CPMSEL_W { w: self }
+    pub fn cpmsel(&mut self) -> CPMSEL_W<8> {
+        CPMSEL_W::new(self)
     }
     #[doc = "Bit 9 - Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power."]
     #[inline(always)]
-    pub fn cpen(&mut self) -> CPEN_W {
-        CPEN_W { w: self }
+    pub fn cpen(&mut self) -> CPEN_W<9> {
+        CPEN_W::new(self)
     }
     #[doc = "Bits 10:11 - Programable Hysteresis mode. These bits are used to select the Hysteresis mode."]
     #[inline(always)]
-    pub fn cphsel(&mut self) -> CPHSEL_W {
-        CPHSEL_W { w: self }
+    pub fn cphsel(&mut self) -> CPHSEL_W<10> {
+        CPHSEL_W::new(self)
     }
     #[doc = "Bit 14 - Comparator interrupt output enable bit"]
     #[inline(always)]
-    pub fn cpie(&mut self) -> CPIE_W {
-        CPIE_W { w: self }
+    pub fn cpie(&mut self) -> CPIE_W<14> {
+        CPIE_W::new(self)
     }
     #[doc = "Bit 15 - Comparator inverted interrupt output enable bit"]
     #[inline(always)]
-    pub fn cpiie(&mut self) -> CPIIE_W {
-        CPIIE_W { w: self }
+    pub fn cpiie(&mut self) -> CPIIE_W<15> {
+        CPIIE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Comparator Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cp1ctl1](index.html) module"]
+pub struct CP1CTL1_SPEC;
+impl crate::RegisterSpec for CP1CTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [cp1ctl1::R](R) reader structure"]
+impl crate::Readable for CP1CTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cp1ctl1::W](W) writer structure"]
+impl crate::Writable for CP1CTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CP1CTL1 to value 0"]
+impl crate::Resettable for CP1CTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

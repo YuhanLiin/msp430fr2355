@@ -1,17 +1,43 @@
-#[doc = "Reader of register TB3EX0"]
-pub type R = crate::R<u16, super::TB3EX0>;
-#[doc = "Writer for register TB3EX0"]
-pub type W = crate::W<u16, super::TB3EX0>;
-#[doc = "Register TB3EX0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::TB3EX0 {
-    type Type = u16;
+#[doc = "Register `TB3EX0` reader"]
+pub struct R(crate::R<TB3EX0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TB3EX0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<TB3EX0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TB3EX0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TB3EX0` writer"]
+pub struct W(crate::W<TB3EX0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TB3EX0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TB3EX0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TB3EX0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TBIDEX` reader - Input divider expansion"]
+pub type TBIDEX_R = crate::FieldReader<u8, TBIDEX_A>;
 #[doc = "Input divider expansion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TBIDEX_A {
     #[doc = "0: Divide by 1"]
@@ -37,10 +63,8 @@ impl From<TBIDEX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TBIDEX`"]
-pub type TBIDEX_R = crate::R<u8, TBIDEX_A>;
 impl TBIDEX_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TBIDEX_A {
         match self.bits {
@@ -96,18 +120,10 @@ impl TBIDEX_R {
         *self == TBIDEX_A::_8
     }
 }
-#[doc = "Write proxy for field `TBIDEX`"]
-pub struct TBIDEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TBIDEX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TBIDEX_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `TBIDEX` writer - Input divider expansion"]
+pub type TBIDEX_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, TB3EX0_SPEC, u8, TBIDEX_A, 3, O>;
+impl<'a, const O: u8> TBIDEX_W<'a, O> {
     #[doc = "Divide by 1"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
@@ -148,24 +164,44 @@ impl<'a> TBIDEX_W<'a> {
     pub fn _8(self) -> &'a mut W {
         self.variant(TBIDEX_A::_8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u16) & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Input divider expansion"]
     #[inline(always)]
     pub fn tbidex(&self) -> TBIDEX_R {
-        TBIDEX_R::new((self.bits & 0x07) as u8)
+        TBIDEX_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Input divider expansion"]
     #[inline(always)]
-    pub fn tbidex(&mut self) -> TBIDEX_W {
-        TBIDEX_W { w: self }
+    pub fn tbidex(&mut self) -> TBIDEX_W<0> {
+        TBIDEX_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timer_Bx Expansion Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tb3ex0](index.html) module"]
+pub struct TB3EX0_SPEC;
+impl crate::RegisterSpec for TB3EX0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [tb3ex0::R](R) reader structure"]
+impl crate::Readable for TB3EX0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [tb3ex0::W](W) writer structure"]
+impl crate::Writable for TB3EX0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TB3EX0 to value 0"]
+impl crate::Resettable for TB3EX0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

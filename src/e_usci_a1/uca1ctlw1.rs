@@ -1,17 +1,43 @@
-#[doc = "Reader of register UCA1CTLW1"]
-pub type R = crate::R<u16, super::UCA1CTLW1>;
-#[doc = "Writer for register UCA1CTLW1"]
-pub type W = crate::W<u16, super::UCA1CTLW1>;
-#[doc = "Register UCA1CTLW1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA1CTLW1 {
-    type Type = u16;
+#[doc = "Register `UCA1CTLW1` reader"]
+pub struct R(crate::R<UCA1CTLW1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCA1CTLW1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<UCA1CTLW1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCA1CTLW1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCA1CTLW1` writer"]
+pub struct W(crate::W<UCA1CTLW1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCA1CTLW1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCA1CTLW1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCA1CTLW1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCGLIT` reader - Deglitch time"]
+pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 #[doc = "Deglitch time\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCGLIT_A {
     #[doc = "0: Approximately 2 ns (equivalent of 1 delay element)"]
@@ -29,10 +55,8 @@ impl From<UCGLIT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UCGLIT`"]
-pub type UCGLIT_R = crate::R<u8, UCGLIT_A>;
 impl UCGLIT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCGLIT_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl UCGLIT_R {
         *self == UCGLIT_A::UCGLIT_3
     }
 }
-#[doc = "Write proxy for field `UCGLIT`"]
-pub struct UCGLIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCGLIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCGLIT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `UCGLIT` writer - Deglitch time"]
+pub type UCGLIT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, UCA1CTLW1_SPEC, u8, UCGLIT_A, 2, O>;
+impl<'a, const O: u8> UCGLIT_W<'a, O> {
     #[doc = "Approximately 2 ns (equivalent of 1 delay element)"]
     #[inline(always)]
     pub fn ucglit_0(self) -> &'a mut W {
@@ -96,24 +112,44 @@ impl<'a> UCGLIT_W<'a> {
     pub fn ucglit_3(self) -> &'a mut W {
         self.variant(UCGLIT_A::UCGLIT_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u16) & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Deglitch time"]
     #[inline(always)]
     pub fn ucglit(&self) -> UCGLIT_R {
-        UCGLIT_R::new((self.bits & 0x03) as u8)
+        UCGLIT_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Deglitch time"]
     #[inline(always)]
-    pub fn ucglit(&mut self) -> UCGLIT_W {
-        UCGLIT_W { w: self }
+    pub fn ucglit(&mut self) -> UCGLIT_W<0> {
+        UCGLIT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Ax Control Word Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1ctlw1](index.html) module"]
+pub struct UCA1CTLW1_SPEC;
+impl crate::RegisterSpec for UCA1CTLW1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [uca1ctlw1::R](R) reader structure"]
+impl crate::Readable for UCA1CTLW1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uca1ctlw1::W](W) writer structure"]
+impl crate::Writable for UCA1CTLW1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCA1CTLW1 to value 0"]
+impl crate::Resettable for UCA1CTLW1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

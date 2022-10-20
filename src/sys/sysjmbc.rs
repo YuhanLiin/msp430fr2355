@@ -1,17 +1,43 @@
-#[doc = "Reader of register SYSJMBC"]
-pub type R = crate::R<u16, super::SYSJMBC>;
-#[doc = "Writer for register SYSJMBC"]
-pub type W = crate::W<u16, super::SYSJMBC>;
-#[doc = "Register SYSJMBC `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYSJMBC {
-    type Type = u16;
+#[doc = "Register `SYSJMBC` reader"]
+pub struct R(crate::R<SYSJMBC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSJMBC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<SYSJMBC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSJMBC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSJMBC` writer"]
+pub struct W(crate::W<SYSJMBC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSJMBC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSJMBC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSJMBC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `JMBIN0FG` reader - Incoming JTAG Mailbox 0 flag"]
+pub type JMBIN0FG_R = crate::BitReader<JMBIN0FG_A>;
 #[doc = "Incoming JTAG Mailbox 0 flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBIN0FG_A {
     #[doc = "0: JMBI0 has no new data"]
     JMBIN0FG_0 = 0,
@@ -24,10 +50,8 @@ impl From<JMBIN0FG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBIN0FG`"]
-pub type JMBIN0FG_R = crate::R<bool, JMBIN0FG_A>;
 impl JMBIN0FG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBIN0FG_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl JMBIN0FG_R {
         *self == JMBIN0FG_A::JMBIN0FG_1
     }
 }
-#[doc = "Write proxy for field `JMBIN0FG`"]
-pub struct JMBIN0FG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBIN0FG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBIN0FG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBIN0FG` writer - Incoming JTAG Mailbox 0 flag"]
+pub type JMBIN0FG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSJMBC_SPEC, JMBIN0FG_A, O>;
+impl<'a, const O: u8> JMBIN0FG_W<'a, O> {
     #[doc = "JMBI0 has no new data"]
     #[inline(always)]
     pub fn jmbin0fg_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> JMBIN0FG_W<'a> {
     pub fn jmbin0fg_1(self) -> &'a mut W {
         self.variant(JMBIN0FG_A::JMBIN0FG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `JMBIN1FG` reader - Incoming JTAG Mailbox 1 flag"]
+pub type JMBIN1FG_R = crate::BitReader<JMBIN1FG_A>;
 #[doc = "Incoming JTAG Mailbox 1 flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBIN1FG_A {
     #[doc = "0: JMBI1 has no new data"]
     JMBIN1FG_0 = 0,
@@ -99,10 +100,8 @@ impl From<JMBIN1FG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBIN1FG`"]
-pub type JMBIN1FG_R = crate::R<bool, JMBIN1FG_A>;
 impl JMBIN1FG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBIN1FG_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl JMBIN1FG_R {
         *self == JMBIN1FG_A::JMBIN1FG_1
     }
 }
-#[doc = "Write proxy for field `JMBIN1FG`"]
-pub struct JMBIN1FG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBIN1FG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBIN1FG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBIN1FG` writer - Incoming JTAG Mailbox 1 flag"]
+pub type JMBIN1FG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSJMBC_SPEC, JMBIN1FG_A, O>;
+impl<'a, const O: u8> JMBIN1FG_W<'a, O> {
     #[doc = "JMBI1 has no new data"]
     #[inline(always)]
     pub fn jmbin1fg_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> JMBIN1FG_W<'a> {
     pub fn jmbin1fg_1(self) -> &'a mut W {
         self.variant(JMBIN1FG_A::JMBIN1FG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `JMBOUT0FG` reader - Outgoing JTAG Mailbox 0 flag"]
+pub type JMBOUT0FG_R = crate::BitReader<JMBOUT0FG_A>;
 #[doc = "Outgoing JTAG Mailbox 0 flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBOUT0FG_A {
     #[doc = "0: JMBO0 is not ready to receive new data"]
     JMBOUT0FG_0 = 0,
@@ -174,10 +150,8 @@ impl From<JMBOUT0FG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBOUT0FG`"]
-pub type JMBOUT0FG_R = crate::R<bool, JMBOUT0FG_A>;
 impl JMBOUT0FG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBOUT0FG_A {
         match self.bits {
@@ -196,8 +170,10 @@ impl JMBOUT0FG_R {
         *self == JMBOUT0FG_A::JMBOUT0FG_1
     }
 }
+#[doc = "Field `JMBOUT1FG` reader - Outgoing JTAG Mailbox 1 flag"]
+pub type JMBOUT1FG_R = crate::BitReader<JMBOUT1FG_A>;
 #[doc = "Outgoing JTAG Mailbox 1 flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBOUT1FG_A {
     #[doc = "0: JMBO1 is not ready to receive new data"]
     JMBOUT1FG_0 = 0,
@@ -210,10 +186,8 @@ impl From<JMBOUT1FG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBOUT1FG`"]
-pub type JMBOUT1FG_R = crate::R<bool, JMBOUT1FG_A>;
 impl JMBOUT1FG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBOUT1FG_A {
         match self.bits {
@@ -232,8 +206,10 @@ impl JMBOUT1FG_R {
         *self == JMBOUT1FG_A::JMBOUT1FG_1
     }
 }
+#[doc = "Field `JMBMODE` reader - Operation mode of JMB"]
+pub type JMBMODE_R = crate::BitReader<JMBMODE_A>;
 #[doc = "Operation mode of JMB\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBMODE_A {
     #[doc = "0: 16-bit transfers using JMBO0 and JMBI0 only"]
     _16BIT = 0,
@@ -246,10 +222,8 @@ impl From<JMBMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBMODE`"]
-pub type JMBMODE_R = crate::R<bool, JMBMODE_A>;
 impl JMBMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBMODE_A {
         match self.bits {
@@ -268,18 +242,9 @@ impl JMBMODE_R {
         *self == JMBMODE_A::_32BIT
     }
 }
-#[doc = "Write proxy for field `JMBMODE`"]
-pub struct JMBMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBMODE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBMODE` writer - Operation mode of JMB"]
+pub type JMBMODE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSJMBC_SPEC, JMBMODE_A, O>;
+impl<'a, const O: u8> JMBMODE_W<'a, O> {
     #[doc = "16-bit transfers using JMBO0 and JMBI0 only"]
     #[inline(always)]
     pub fn _16bit(self) -> &'a mut W {
@@ -290,25 +255,11 @@ impl<'a> JMBMODE_W<'a> {
     pub fn _32bit(self) -> &'a mut W {
         self.variant(JMBMODE_A::_32BIT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `JMBCLR0OFF` reader - Incoming JTAG Mailbox 0 flag auto-clear disable"]
+pub type JMBCLR0OFF_R = crate::BitReader<JMBCLR0OFF_A>;
 #[doc = "Incoming JTAG Mailbox 0 flag auto-clear disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBCLR0OFF_A {
     #[doc = "0: JMBIN0FG cleared on read of JMB0IN register"]
     JMBCLR0OFF_0 = 0,
@@ -321,10 +272,8 @@ impl From<JMBCLR0OFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBCLR0OFF`"]
-pub type JMBCLR0OFF_R = crate::R<bool, JMBCLR0OFF_A>;
 impl JMBCLR0OFF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBCLR0OFF_A {
         match self.bits {
@@ -343,18 +292,9 @@ impl JMBCLR0OFF_R {
         *self == JMBCLR0OFF_A::JMBCLR0OFF_1
     }
 }
-#[doc = "Write proxy for field `JMBCLR0OFF`"]
-pub struct JMBCLR0OFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBCLR0OFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBCLR0OFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBCLR0OFF` writer - Incoming JTAG Mailbox 0 flag auto-clear disable"]
+pub type JMBCLR0OFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSJMBC_SPEC, JMBCLR0OFF_A, O>;
+impl<'a, const O: u8> JMBCLR0OFF_W<'a, O> {
     #[doc = "JMBIN0FG cleared on read of JMB0IN register"]
     #[inline(always)]
     pub fn jmbclr0off_0(self) -> &'a mut W {
@@ -365,25 +305,11 @@ impl<'a> JMBCLR0OFF_W<'a> {
     pub fn jmbclr0off_1(self) -> &'a mut W {
         self.variant(JMBCLR0OFF_A::JMBCLR0OFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `JMBCLR1OFF` reader - Incoming JTAG Mailbox 1 flag auto-clear disable"]
+pub type JMBCLR1OFF_R = crate::BitReader<JMBCLR1OFF_A>;
 #[doc = "Incoming JTAG Mailbox 1 flag auto-clear disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBCLR1OFF_A {
     #[doc = "0: JMBIN1FG cleared on read of JMB1IN register"]
     JMBCLR1OFF_0 = 0,
@@ -396,10 +322,8 @@ impl From<JMBCLR1OFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBCLR1OFF`"]
-pub type JMBCLR1OFF_R = crate::R<bool, JMBCLR1OFF_A>;
 impl JMBCLR1OFF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBCLR1OFF_A {
         match self.bits {
@@ -418,18 +342,9 @@ impl JMBCLR1OFF_R {
         *self == JMBCLR1OFF_A::JMBCLR1OFF_1
     }
 }
-#[doc = "Write proxy for field `JMBCLR1OFF`"]
-pub struct JMBCLR1OFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBCLR1OFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBCLR1OFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBCLR1OFF` writer - Incoming JTAG Mailbox 1 flag auto-clear disable"]
+pub type JMBCLR1OFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSJMBC_SPEC, JMBCLR1OFF_A, O>;
+impl<'a, const O: u8> JMBCLR1OFF_W<'a, O> {
     #[doc = "JMBIN1FG cleared on read of JMB1IN register"]
     #[inline(always)]
     pub fn jmbclr1off_0(self) -> &'a mut W {
@@ -440,84 +355,94 @@ impl<'a> JMBCLR1OFF_W<'a> {
     pub fn jmbclr1off_1(self) -> &'a mut W {
         self.variant(JMBCLR1OFF_A::JMBCLR1OFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Incoming JTAG Mailbox 0 flag"]
     #[inline(always)]
     pub fn jmbin0fg(&self) -> JMBIN0FG_R {
-        JMBIN0FG_R::new((self.bits & 0x01) != 0)
+        JMBIN0FG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Incoming JTAG Mailbox 1 flag"]
     #[inline(always)]
     pub fn jmbin1fg(&self) -> JMBIN1FG_R {
-        JMBIN1FG_R::new(((self.bits >> 1) & 0x01) != 0)
+        JMBIN1FG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Outgoing JTAG Mailbox 0 flag"]
     #[inline(always)]
     pub fn jmbout0fg(&self) -> JMBOUT0FG_R {
-        JMBOUT0FG_R::new(((self.bits >> 2) & 0x01) != 0)
+        JMBOUT0FG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Outgoing JTAG Mailbox 1 flag"]
     #[inline(always)]
     pub fn jmbout1fg(&self) -> JMBOUT1FG_R {
-        JMBOUT1FG_R::new(((self.bits >> 3) & 0x01) != 0)
+        JMBOUT1FG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Operation mode of JMB"]
     #[inline(always)]
     pub fn jmbmode(&self) -> JMBMODE_R {
-        JMBMODE_R::new(((self.bits >> 4) & 0x01) != 0)
+        JMBMODE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - Incoming JTAG Mailbox 0 flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr0off(&self) -> JMBCLR0OFF_R {
-        JMBCLR0OFF_R::new(((self.bits >> 6) & 0x01) != 0)
+        JMBCLR0OFF_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Incoming JTAG Mailbox 1 flag auto-clear disable"]
     #[inline(always)]
     pub fn jmbclr1off(&self) -> JMBCLR1OFF_R {
-        JMBCLR1OFF_R::new(((self.bits >> 7) & 0x01) != 0)
+        JMBCLR1OFF_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Incoming JTAG Mailbox 0 flag"]
     #[inline(always)]
-    pub fn jmbin0fg(&mut self) -> JMBIN0FG_W {
-        JMBIN0FG_W { w: self }
+    pub fn jmbin0fg(&mut self) -> JMBIN0FG_W<0> {
+        JMBIN0FG_W::new(self)
     }
     #[doc = "Bit 1 - Incoming JTAG Mailbox 1 flag"]
     #[inline(always)]
-    pub fn jmbin1fg(&mut self) -> JMBIN1FG_W {
-        JMBIN1FG_W { w: self }
+    pub fn jmbin1fg(&mut self) -> JMBIN1FG_W<1> {
+        JMBIN1FG_W::new(self)
     }
     #[doc = "Bit 4 - Operation mode of JMB"]
     #[inline(always)]
-    pub fn jmbmode(&mut self) -> JMBMODE_W {
-        JMBMODE_W { w: self }
+    pub fn jmbmode(&mut self) -> JMBMODE_W<4> {
+        JMBMODE_W::new(self)
     }
     #[doc = "Bit 6 - Incoming JTAG Mailbox 0 flag auto-clear disable"]
     #[inline(always)]
-    pub fn jmbclr0off(&mut self) -> JMBCLR0OFF_W {
-        JMBCLR0OFF_W { w: self }
+    pub fn jmbclr0off(&mut self) -> JMBCLR0OFF_W<6> {
+        JMBCLR0OFF_W::new(self)
     }
     #[doc = "Bit 7 - Incoming JTAG Mailbox 1 flag auto-clear disable"]
     #[inline(always)]
-    pub fn jmbclr1off(&mut self) -> JMBCLR1OFF_W {
-        JMBCLR1OFF_W { w: self }
+    pub fn jmbclr1off(&mut self) -> JMBCLR1OFF_W<7> {
+        JMBCLR1OFF_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "JTAG Mailbox Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysjmbc](index.html) module"]
+pub struct SYSJMBC_SPEC;
+impl crate::RegisterSpec for SYSJMBC_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sysjmbc::R](R) reader structure"]
+impl crate::Readable for SYSJMBC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sysjmbc::W](W) writer structure"]
+impl crate::Writable for SYSJMBC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSJMBC to value 0"]
+impl crate::Resettable for SYSJMBC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
