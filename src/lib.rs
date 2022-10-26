@@ -1174,6 +1174,12 @@ impl Peripherals {
     #[inline]
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
+        Self::conjure()
+    }
+    /// Unchecked version of `Peripherals::take` that does not prevent the Peripheral from being
+    /// taken in the future
+    #[inline]
+    pub unsafe fn conjure() -> Self {
         Peripherals {
             P1: P1 {
                 _marker: PhantomData,
