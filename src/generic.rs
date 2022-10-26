@@ -625,9 +625,8 @@ impl_proxy!(u16);
 
 use msp430_atomic::AtomicOperations;
 
-impl<REG: Writable> Reg<REG>
+impl<REG: Readable + Writable> Reg<REG>
 where
-    Self: Readable + Writable,
     REG::Ux: AtomicOperations + Default + core::ops::Not<Output = REG::Ux>,
 {
     /// Set high every bit in the register that was set in the write proxy. Leave other bits
@@ -635,12 +634,12 @@ where
     #[inline(always)]
     pub unsafe fn set_bits<F>(&self, f: F)
     where
-        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+        F: FnOnce(&mut REG::Writer) -> &mut W<REG>,
     {
-        let bits = f(&mut W {
+        let bits = f(&mut REG::Writer::from(W {
             bits: Default::default(),
             _reg: marker::PhantomData,
-        })
+        }))
         .bits;
         REG::Ux::atomic_or(self.register.as_ptr(), bits);
     }
@@ -650,12 +649,12 @@ where
     #[inline(always)]
     pub unsafe fn clear_bits<F>(&self, f: F)
     where
-        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+        F: FnOnce(&mut REG::Writer) -> &mut W<REG>,
     {
-        let bits = f(&mut W {
+        let bits = f(&mut REG::Writer::from(W {
             bits: !REG::Ux::default(),
             _reg: marker::PhantomData,
-        })
+        }))
         .bits;
         REG::Ux::atomic_and(self.register.as_ptr(), bits);
     }
@@ -665,12 +664,12 @@ where
     #[inline(always)]
     pub unsafe fn toggle_bits<F>(&self, f: F)
     where
-        F: FnOnce(&mut W<REG>) -> &mut W<REG>,
+        F: FnOnce(&mut REG::Writer) -> &mut W<REG>,
     {
-        let bits = f(&mut W {
+        let bits = f(&mut REG::Writer::from(W {
             bits: Default::default(),
             _reg: marker::PhantomData,
-        })
+        }))
         .bits;
         REG::Ux::atomic_xor(self.register.as_ptr(), bits);
     }
