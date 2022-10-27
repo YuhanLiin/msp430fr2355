@@ -28,8 +28,9 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: nightly-2022-02-15
+          toolchain: nightly
           override: true
+          components: rust-src
 
       - name: Run cargo build
         uses: actions-rs/cargo@v1
