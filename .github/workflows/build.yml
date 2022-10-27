@@ -30,6 +30,7 @@ jobs:
           profile: minimal
           toolchain: nightly
           override: true
+          components: rust-src
 
       - name: Run cargo build
         uses: actions-rs/cargo@v1
