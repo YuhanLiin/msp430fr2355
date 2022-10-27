@@ -1,17 +1,43 @@
-#[doc = "Reader of register FRCTL0"]
-pub type R = crate::R<u16, super::FRCTL0>;
-#[doc = "Writer for register FRCTL0"]
-pub type W = crate::W<u16, super::FRCTL0>;
-#[doc = "Register FRCTL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::FRCTL0 {
-    type Type = u16;
+#[doc = "Register `FRCTL0` reader"]
+pub struct R(crate::R<FRCTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FRCTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<FRCTL0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FRCTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FRCTL0` writer"]
+pub struct W(crate::W<FRCTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FRCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FRCTL0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FRCTL0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `NWAITS` reader - Wait state numbers"]
+pub type NWAITS_R = crate::FieldReader<u8, NWAITS_A>;
 #[doc = "Wait state numbers\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NWAITS_A {
     #[doc = "0: FRAM wait states: 0"]
@@ -37,10 +63,8 @@ impl From<NWAITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `NWAITS`"]
-pub type NWAITS_R = crate::R<u8, NWAITS_A>;
 impl NWAITS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NWAITS_A {
         match self.bits {
@@ -96,18 +120,10 @@ impl NWAITS_R {
         *self == NWAITS_A::NWAITS_7
     }
 }
-#[doc = "Write proxy for field `NWAITS`"]
-pub struct NWAITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NWAITS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NWAITS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `NWAITS` writer - Wait state numbers"]
+pub type NWAITS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, FRCTL0_SPEC, u8, NWAITS_A, 3, O>;
+impl<'a, const O: u8> NWAITS_W<'a, O> {
     #[doc = "FRAM wait states: 0"]
     #[inline(always)]
     pub fn nwaits_0(self) -> &'a mut W {
@@ -148,32 +164,16 @@ impl<'a> NWAITS_W<'a> {
     pub fn nwaits_7(self) -> &'a mut W {
         self.variant(NWAITS_A::NWAITS_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u16) & 0x07) << 4);
-        self.w
-    }
 }
-#[doc = "Reader of field `FRCTLPW`"]
-pub type FRCTLPW_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FRCTLPW`"]
-pub struct FRCTLPW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRCTLPW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
-        self.w
-    }
-}
+#[doc = "Field `FRCTLPW` reader - FRCTLPW password"]
+pub type FRCTLPW_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FRCTLPW` writer - FRCTLPW password"]
+pub type FRCTLPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, FRCTL0_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 4:6 - Wait state numbers"]
     #[inline(always)]
     pub fn nwaits(&self) -> NWAITS_R {
-        NWAITS_R::new(((self.bits >> 4) & 0x07) as u8)
+        NWAITS_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:15 - FRCTLPW password"]
     #[inline(always)]
@@ -184,12 +184,38 @@ impl R {
 impl W {
     #[doc = "Bits 4:6 - Wait state numbers"]
     #[inline(always)]
-    pub fn nwaits(&mut self) -> NWAITS_W {
-        NWAITS_W { w: self }
+    pub fn nwaits(&mut self) -> NWAITS_W<4> {
+        NWAITS_W::new(self)
     }
     #[doc = "Bits 8:15 - FRCTLPW password"]
     #[inline(always)]
-    pub fn frctlpw(&mut self) -> FRCTLPW_W {
-        FRCTLPW_W { w: self }
+    pub fn frctlpw(&mut self) -> FRCTLPW_W<8> {
+        FRCTLPW_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "FRAM Controller Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frctl0](index.html) module"]
+pub struct FRCTL0_SPEC;
+impl crate::RegisterSpec for FRCTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [frctl0::R](R) reader structure"]
+impl crate::Readable for FRCTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [frctl0::W](W) writer structure"]
+impl crate::Writable for FRCTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FRCTL0 to value 0"]
+impl crate::Resettable for FRCTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

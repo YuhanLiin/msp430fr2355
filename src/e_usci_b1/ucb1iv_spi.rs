@@ -1,7 +1,43 @@
-#[doc = "Reader of register UCB1IV_SPI"]
-pub type R = crate::R<u16, super::UCB1IV_SPI>;
+#[doc = "Register `UCB1IV_SPI` reader"]
+pub struct R(crate::R<UCB1IV_SPI_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCB1IV_SPI_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<UCB1IV_SPI_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCB1IV_SPI_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCB1IV_SPI` writer"]
+pub struct W(crate::W<UCB1IV_SPI_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCB1IV_SPI_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCB1IV_SPI_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCB1IV_SPI_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCIV` reader - eUSCI_B interrupt vector value"]
+pub type UCIV_R = crate::FieldReader<u16, UCIV_A>;
 #[doc = "eUSCI_B interrupt vector value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum UCIV_A {
     #[doc = "0: No interrupt pending"]
@@ -17,18 +53,15 @@ impl From<UCIV_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `UCIV`"]
-pub type UCIV_R = crate::R<u16, UCIV_A>;
 impl UCIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, UCIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<UCIV_A> {
         match self.bits {
-            0 => Val(UCIV_A::NONE),
-            2 => Val(UCIV_A::UCRXIFG),
-            4 => Val(UCIV_A::UCTXIFG),
-            i => Res(i),
+            0 => Some(UCIV_A::NONE),
+            2 => Some(UCIV_A::UCRXIFG),
+            4 => Some(UCIV_A::UCTXIFG),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -51,6 +84,34 @@ impl R {
     #[doc = "Bits 0:15 - eUSCI_B interrupt vector value"]
     #[inline(always)]
     pub fn uciv(&self) -> UCIV_R {
-        UCIV_R::new((self.bits & 0xffff) as u16)
+        UCIV_R::new(self.bits)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Bx Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb1iv_spi](index.html) module"]
+pub struct UCB1IV_SPI_SPEC;
+impl crate::RegisterSpec for UCB1IV_SPI_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [ucb1iv_spi::R](R) reader structure"]
+impl crate::Readable for UCB1IV_SPI_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ucb1iv_spi::W](W) writer structure"]
+impl crate::Writable for UCB1IV_SPI_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCB1IV_SPI to value 0"]
+impl crate::Resettable for UCB1IV_SPI_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

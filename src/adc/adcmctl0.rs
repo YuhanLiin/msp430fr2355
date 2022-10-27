@@ -1,17 +1,43 @@
-#[doc = "Reader of register ADCMCTL0"]
-pub type R = crate::R<u16, super::ADCMCTL0>;
-#[doc = "Writer for register ADCMCTL0"]
-pub type W = crate::W<u16, super::ADCMCTL0>;
-#[doc = "Register ADCMCTL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADCMCTL0 {
-    type Type = u16;
+#[doc = "Register `ADCMCTL0` reader"]
+pub struct R(crate::R<ADCMCTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADCMCTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ADCMCTL0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ADCMCTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADCMCTL0` writer"]
+pub struct W(crate::W<ADCMCTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADCMCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADCMCTL0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADCMCTL0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADCINCH` reader - Input channel select"]
+pub type ADCINCH_R = crate::FieldReader<u8, ADCINCH_A>;
 #[doc = "Input channel select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCINCH_A {
     #[doc = "0: A0 - see device-specific data sheet"]
@@ -53,10 +79,8 @@ impl From<ADCINCH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCINCH`"]
-pub type ADCINCH_R = crate::R<u8, ADCINCH_A>;
 impl ADCINCH_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCINCH_A {
         match self.bits {
@@ -160,18 +184,10 @@ impl ADCINCH_R {
         *self == ADCINCH_A::ADCINCH_15
     }
 }
-#[doc = "Write proxy for field `ADCINCH`"]
-pub struct ADCINCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCINCH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCINCH_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCINCH` writer - Input channel select"]
+pub type ADCINCH_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCMCTL0_SPEC, u8, ADCINCH_A, 4, O>;
+impl<'a, const O: u8> ADCINCH_W<'a, O> {
     #[doc = "A0 - see device-specific data sheet"]
     #[inline(always)]
     pub fn adcinch_0(self) -> &'a mut W {
@@ -252,15 +268,11 @@ impl<'a> ADCINCH_W<'a> {
     pub fn adcinch_15(self) -> &'a mut W {
         self.variant(ADCINCH_A::ADCINCH_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u16) & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `ADCSREF` reader - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
+pub type ADCSREF_R = crate::FieldReader<u8, ADCSREF_A>;
 #[doc = "Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSREF_A {
     #[doc = "0: 000b = V(R+) = AVCC and V(R-) = AVSS"]
@@ -286,10 +298,8 @@ impl From<ADCSREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCSREF`"]
-pub type ADCSREF_R = crate::R<u8, ADCSREF_A>;
 impl ADCSREF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCSREF_A {
         match self.bits {
@@ -345,18 +355,10 @@ impl ADCSREF_R {
         *self == ADCSREF_A::ADCSREF_7
     }
 }
-#[doc = "Write proxy for field `ADCSREF`"]
-pub struct ADCSREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSREF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSREF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCSREF` writer - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
+pub type ADCSREF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCMCTL0_SPEC, u8, ADCSREF_A, 3, O>;
+impl<'a, const O: u8> ADCSREF_W<'a, O> {
     #[doc = "000b = V(R+) = AVCC and V(R-) = AVSS"]
     #[inline(always)]
     pub fn adcsref_0(self) -> &'a mut W {
@@ -397,15 +399,11 @@ impl<'a> ADCSREF_W<'a> {
     pub fn adcsref_7(self) -> &'a mut W {
         self.variant(ADCSREF_A::ADCSREF_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u16) & 0x07) << 4);
-        self.w
-    }
 }
+#[doc = "Field `EXPCHEN` reader - ADC input channels expanded"]
+pub type EXPCHEN_R = crate::BitReader<EXPCHEN_A>;
 #[doc = "ADC input channels expanded\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXPCHEN_A {
     #[doc = "0: ADC channel expanded disable"]
     EXPCHEN_0 = 0,
@@ -418,10 +416,8 @@ impl From<EXPCHEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EXPCHEN`"]
-pub type EXPCHEN_R = crate::R<bool, EXPCHEN_A>;
 impl EXPCHEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXPCHEN_A {
         match self.bits {
@@ -440,18 +436,9 @@ impl EXPCHEN_R {
         *self == EXPCHEN_A::EXPCHEN_1
     }
 }
-#[doc = "Write proxy for field `EXPCHEN`"]
-pub struct EXPCHEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXPCHEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EXPCHEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `EXPCHEN` writer - ADC input channels expanded"]
+pub type EXPCHEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCMCTL0_SPEC, EXPCHEN_A, O>;
+impl<'a, const O: u8> EXPCHEN_W<'a, O> {
     #[doc = "ADC channel expanded disable"]
     #[inline(always)]
     pub fn expchen_0(self) -> &'a mut W {
@@ -461,22 +448,6 @@ impl<'a> EXPCHEN_W<'a> {
     #[inline(always)]
     pub fn expchen_1(self) -> &'a mut W {
         self.variant(EXPCHEN_A::EXPCHEN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
-        self.w
     }
 }
 impl R {
@@ -488,28 +459,54 @@ impl R {
     #[doc = "Bits 4:6 - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
     #[inline(always)]
     pub fn adcsref(&self) -> ADCSREF_R {
-        ADCSREF_R::new(((self.bits >> 4) & 0x07) as u8)
+        ADCSREF_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 8 - ADC input channels expanded"]
     #[inline(always)]
     pub fn expchen(&self) -> EXPCHEN_R {
-        EXPCHEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        EXPCHEN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Input channel select"]
     #[inline(always)]
-    pub fn adcinch(&mut self) -> ADCINCH_W {
-        ADCINCH_W { w: self }
+    pub fn adcinch(&mut self) -> ADCINCH_W<0> {
+        ADCINCH_W::new(self)
     }
     #[doc = "Bits 4:6 - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
     #[inline(always)]
-    pub fn adcsref(&mut self) -> ADCSREF_W {
-        ADCSREF_W { w: self }
+    pub fn adcsref(&mut self) -> ADCSREF_W<4> {
+        ADCSREF_W::new(self)
     }
     #[doc = "Bit 8 - ADC input channels expanded"]
     #[inline(always)]
-    pub fn expchen(&mut self) -> EXPCHEN_W {
-        EXPCHEN_W { w: self }
+    pub fn expchen(&mut self) -> EXPCHEN_W<8> {
+        EXPCHEN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC Conversion Memory Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcmctl0](index.html) module"]
+pub struct ADCMCTL0_SPEC;
+impl crate::RegisterSpec for ADCMCTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adcmctl0::R](R) reader structure"]
+impl crate::Readable for ADCMCTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adcmctl0::W](W) writer structure"]
+impl crate::Writable for ADCMCTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADCMCTL0 to value 0"]
+impl crate::Resettable for ADCMCTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

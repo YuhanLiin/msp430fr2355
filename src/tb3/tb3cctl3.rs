@@ -1,17 +1,43 @@
-#[doc = "Reader of register TB3CCTL3"]
-pub type R = crate::R<u16, super::TB3CCTL3>;
-#[doc = "Writer for register TB3CCTL3"]
-pub type W = crate::W<u16, super::TB3CCTL3>;
-#[doc = "Register TB3CCTL3 `reset()`'s with value 0"]
-impl crate::ResetValue for super::TB3CCTL3 {
-    type Type = u16;
+#[doc = "Register `TB3CCTL3` reader"]
+pub struct R(crate::R<TB3CCTL3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TB3CCTL3_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<TB3CCTL3_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TB3CCTL3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TB3CCTL3` writer"]
+pub struct W(crate::W<TB3CCTL3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TB3CCTL3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TB3CCTL3_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TB3CCTL3_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CCIFG` reader - Capture/compare interrupt flag"]
+pub type CCIFG_R = crate::BitReader<CCIFG_A>;
 #[doc = "Capture/compare interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCIFG_A {
     #[doc = "0: No interrupt pending"]
     CCIFG_0 = 0,
@@ -24,10 +50,8 @@ impl From<CCIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CCIFG`"]
-pub type CCIFG_R = crate::R<bool, CCIFG_A>;
 impl CCIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCIFG_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl CCIFG_R {
         *self == CCIFG_A::CCIFG_1
     }
 }
-#[doc = "Write proxy for field `CCIFG`"]
-pub struct CCIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CCIFG` writer - Capture/compare interrupt flag"]
+pub type CCIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, CCIFG_A, O>;
+impl<'a, const O: u8> CCIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn ccifg_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> CCIFG_W<'a> {
     pub fn ccifg_1(self) -> &'a mut W {
         self.variant(CCIFG_A::CCIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `COV` reader - Capture overflow"]
+pub type COV_R = crate::BitReader<COV_A>;
 #[doc = "Capture overflow\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COV_A {
     #[doc = "0: No capture overflow occurred"]
     COV_0 = 0,
@@ -99,10 +100,8 @@ impl From<COV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `COV`"]
-pub type COV_R = crate::R<bool, COV_A>;
 impl COV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COV_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl COV_R {
         *self == COV_A::COV_1
     }
 }
-#[doc = "Write proxy for field `COV`"]
-pub struct COV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: COV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `COV` writer - Capture overflow"]
+pub type COV_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, COV_A, O>;
+impl<'a, const O: u8> COV_W<'a, O> {
     #[doc = "No capture overflow occurred"]
     #[inline(always)]
     pub fn cov_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> COV_W<'a> {
     pub fn cov_1(self) -> &'a mut W {
         self.variant(COV_A::COV_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `OUT` reader - Output"]
+pub type OUT_R = crate::BitReader<OUT_A>;
 #[doc = "Output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OUT_A {
     #[doc = "0: Output low"]
     LOW = 0,
@@ -174,10 +150,8 @@ impl From<OUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OUT`"]
-pub type OUT_R = crate::R<bool, OUT_A>;
 impl OUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUT_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl OUT_R {
         *self == OUT_A::HIGH
     }
 }
-#[doc = "Write proxy for field `OUT`"]
-pub struct OUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `OUT` writer - Output"]
+pub type OUT_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, OUT_A, O>;
+impl<'a, const O: u8> OUT_W<'a, O> {
     #[doc = "Output low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -218,27 +183,13 @@ impl<'a> OUT_W<'a> {
     pub fn high(self) -> &'a mut W {
         self.variant(OUT_A::HIGH)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
-#[doc = "Reader of field `CCI`"]
-pub type CCI_R = crate::R<bool, bool>;
+#[doc = "Field `CCI` reader - Capture/compare input"]
+pub type CCI_R = crate::BitReader<bool>;
+#[doc = "Field `CCIE` reader - Capture/compare interrupt enable"]
+pub type CCIE_R = crate::BitReader<CCIE_A>;
 #[doc = "Capture/compare interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCIE_A {
     #[doc = "0: Interrupt disabled"]
     CCIE_0 = 0,
@@ -251,10 +202,8 @@ impl From<CCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CCIE`"]
-pub type CCIE_R = crate::R<bool, CCIE_A>;
 impl CCIE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCIE_A {
         match self.bits {
@@ -273,18 +222,9 @@ impl CCIE_R {
         *self == CCIE_A::CCIE_1
     }
 }
-#[doc = "Write proxy for field `CCIE`"]
-pub struct CCIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CCIE` writer - Capture/compare interrupt enable"]
+pub type CCIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, CCIE_A, O>;
+impl<'a, const O: u8> CCIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn ccie_0(self) -> &'a mut W {
@@ -295,25 +235,11 @@ impl<'a> CCIE_W<'a> {
     pub fn ccie_1(self) -> &'a mut W {
         self.variant(CCIE_A::CCIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `OUTMOD` reader - Output mode"]
+pub type OUTMOD_R = crate::FieldReader<u8, OUTMOD_A>;
 #[doc = "Output mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUTMOD_A {
     #[doc = "0: OUT bit value"]
@@ -339,10 +265,8 @@ impl From<OUTMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OUTMOD`"]
-pub type OUTMOD_R = crate::R<u8, OUTMOD_A>;
 impl OUTMOD_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OUTMOD_A {
         match self.bits {
@@ -398,18 +322,10 @@ impl OUTMOD_R {
         *self == OUTMOD_A::OUTMOD_7
     }
 }
-#[doc = "Write proxy for field `OUTMOD`"]
-pub struct OUTMOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTMOD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUTMOD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `OUTMOD` writer - Output mode"]
+pub type OUTMOD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, TB3CCTL3_SPEC, u8, OUTMOD_A, 3, O>;
+impl<'a, const O: u8> OUTMOD_W<'a, O> {
     #[doc = "OUT bit value"]
     #[inline(always)]
     pub fn outmod_0(self) -> &'a mut W {
@@ -450,15 +366,11 @@ impl<'a> OUTMOD_W<'a> {
     pub fn outmod_7(self) -> &'a mut W {
         self.variant(OUTMOD_A::OUTMOD_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u16) & 0x07) << 5);
-        self.w
-    }
 }
+#[doc = "Field `CAP` reader - Capture mode"]
+pub type CAP_R = crate::BitReader<CAP_A>;
 #[doc = "Capture mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAP_A {
     #[doc = "0: Compare mode"]
     COMPARE = 0,
@@ -471,10 +383,8 @@ impl From<CAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CAP`"]
-pub type CAP_R = crate::R<bool, CAP_A>;
 impl CAP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAP_A {
         match self.bits {
@@ -493,18 +403,9 @@ impl CAP_R {
         *self == CAP_A::CAPTURE
     }
 }
-#[doc = "Write proxy for field `CAP`"]
-pub struct CAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CAP` writer - Capture mode"]
+pub type CAP_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, CAP_A, O>;
+impl<'a, const O: u8> CAP_W<'a, O> {
     #[doc = "Compare mode"]
     #[inline(always)]
     pub fn compare(self) -> &'a mut W {
@@ -515,25 +416,11 @@ impl<'a> CAP_W<'a> {
     pub fn capture(self) -> &'a mut W {
         self.variant(CAP_A::CAPTURE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CLLD` reader - Compare latch load"]
+pub type CLLD_R = crate::FieldReader<u8, CLLD_A>;
 #[doc = "Compare latch load\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLLD_A {
     #[doc = "0: TBxCLn loads on write to TBxCCRn"]
@@ -551,10 +438,8 @@ impl From<CLLD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CLLD`"]
-pub type CLLD_R = crate::R<u8, CLLD_A>;
 impl CLLD_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLLD_A {
         match self.bits {
@@ -586,18 +471,9 @@ impl CLLD_R {
         *self == CLLD_A::CLLD_3
     }
 }
-#[doc = "Write proxy for field `CLLD`"]
-pub struct CLLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLLD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLLD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CLLD` writer - Compare latch load"]
+pub type CLLD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TB3CCTL3_SPEC, u8, CLLD_A, 2, O>;
+impl<'a, const O: u8> CLLD_W<'a, O> {
     #[doc = "TBxCLn loads on write to TBxCCRn"]
     #[inline(always)]
     pub fn clld_0(self) -> &'a mut W {
@@ -618,15 +494,11 @@ impl<'a> CLLD_W<'a> {
     pub fn clld_3(self) -> &'a mut W {
         self.variant(CLLD_A::CLLD_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 9)) | (((value as u16) & 0x03) << 9);
-        self.w
-    }
 }
+#[doc = "Field `SCS` reader - Synchronize capture source"]
+pub type SCS_R = crate::BitReader<SCS_A>;
 #[doc = "Synchronize capture source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SCS_A {
     #[doc = "0: Asynchronous capture"]
     ASYNC = 0,
@@ -639,10 +511,8 @@ impl From<SCS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SCS`"]
-pub type SCS_R = crate::R<bool, SCS_A>;
 impl SCS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCS_A {
         match self.bits {
@@ -661,21 +531,12 @@ impl SCS_R {
         *self == SCS_A::SYNC
     }
 }
-#[doc = "Write proxy for field `SCS`"]
-pub struct SCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SCS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `SCS` writer - Synchronize capture source"]
+pub type SCS_W<'a, const O: u8> = crate::BitWriter<'a, u16, TB3CCTL3_SPEC, SCS_A, O>;
+impl<'a, const O: u8> SCS_W<'a, O> {
     #[doc = "Asynchronous capture"]
     #[inline(always)]
-    pub fn async(self) -> &'a mut W {
+    pub fn async_(self) -> &'a mut W {
         self.variant(SCS_A::ASYNC)
     }
     #[doc = "Synchronous capture"]
@@ -683,25 +544,11 @@ impl<'a> SCS_W<'a> {
     pub fn sync(self) -> &'a mut W {
         self.variant(SCS_A::SYNC)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `CCIS` reader - Capture/compare input select"]
+pub type CCIS_R = crate::FieldReader<u8, CCIS_A>;
 #[doc = "Capture/compare input select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CCIS_A {
     #[doc = "0: CCIxA"]
@@ -719,10 +566,8 @@ impl From<CCIS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CCIS`"]
-pub type CCIS_R = crate::R<u8, CCIS_A>;
 impl CCIS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCIS_A {
         match self.bits {
@@ -754,18 +599,9 @@ impl CCIS_R {
         *self == CCIS_A::VCC
     }
 }
-#[doc = "Write proxy for field `CCIS`"]
-pub struct CCIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCIS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CCIS` writer - Capture/compare input select"]
+pub type CCIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TB3CCTL3_SPEC, u8, CCIS_A, 2, O>;
+impl<'a, const O: u8> CCIS_W<'a, O> {
     #[doc = "CCIxA"]
     #[inline(always)]
     pub fn ccia(self) -> &'a mut W {
@@ -786,15 +622,11 @@ impl<'a> CCIS_W<'a> {
     pub fn vcc(self) -> &'a mut W {
         self.variant(CCIS_A::VCC)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u16) & 0x03) << 12);
-        self.w
-    }
 }
+#[doc = "Field `CM` reader - Capture mode"]
+pub type CM_R = crate::FieldReader<u8, CM_A>;
 #[doc = "Capture mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CM_A {
     #[doc = "0: No capture"]
@@ -812,10 +644,8 @@ impl From<CM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CM`"]
-pub type CM_R = crate::R<u8, CM_A>;
 impl CM_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CM_A {
         match self.bits {
@@ -847,18 +677,9 @@ impl CM_R {
         *self == CM_A::BOTH
     }
 }
-#[doc = "Write proxy for field `CM`"]
-pub struct CM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CM_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CM` writer - Capture mode"]
+pub type CM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TB3CCTL3_SPEC, u8, CM_A, 2, O>;
+impl<'a, const O: u8> CM_W<'a, O> {
     #[doc = "No capture"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -879,119 +700,139 @@ impl<'a> CM_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(CM_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u16) & 0x03) << 14);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Capture/compare interrupt flag"]
     #[inline(always)]
     pub fn ccifg(&self) -> CCIFG_R {
-        CCIFG_R::new((self.bits & 0x01) != 0)
+        CCIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Capture overflow"]
     #[inline(always)]
     pub fn cov(&self) -> COV_R {
-        COV_R::new(((self.bits >> 1) & 0x01) != 0)
+        COV_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Output"]
     #[inline(always)]
     pub fn out(&self) -> OUT_R {
-        OUT_R::new(((self.bits >> 2) & 0x01) != 0)
+        OUT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Capture/compare input"]
     #[inline(always)]
     pub fn cci(&self) -> CCI_R {
-        CCI_R::new(((self.bits >> 3) & 0x01) != 0)
+        CCI_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Capture/compare interrupt enable"]
     #[inline(always)]
     pub fn ccie(&self) -> CCIE_R {
-        CCIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        CCIE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:7 - Output mode"]
     #[inline(always)]
     pub fn outmod(&self) -> OUTMOD_R {
-        OUTMOD_R::new(((self.bits >> 5) & 0x07) as u8)
+        OUTMOD_R::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bit 8 - Capture mode"]
     #[inline(always)]
     pub fn cap(&self) -> CAP_R {
-        CAP_R::new(((self.bits >> 8) & 0x01) != 0)
+        CAP_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 9:10 - Compare latch load"]
     #[inline(always)]
     pub fn clld(&self) -> CLLD_R {
-        CLLD_R::new(((self.bits >> 9) & 0x03) as u8)
+        CLLD_R::new(((self.bits >> 9) & 3) as u8)
     }
     #[doc = "Bit 11 - Synchronize capture source"]
     #[inline(always)]
     pub fn scs(&self) -> SCS_R {
-        SCS_R::new(((self.bits >> 11) & 0x01) != 0)
+        SCS_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Capture/compare input select"]
     #[inline(always)]
     pub fn ccis(&self) -> CCIS_R {
-        CCIS_R::new(((self.bits >> 12) & 0x03) as u8)
+        CCIS_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - Capture mode"]
     #[inline(always)]
     pub fn cm(&self) -> CM_R {
-        CM_R::new(((self.bits >> 14) & 0x03) as u8)
+        CM_R::new(((self.bits >> 14) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Capture/compare interrupt flag"]
     #[inline(always)]
-    pub fn ccifg(&mut self) -> CCIFG_W {
-        CCIFG_W { w: self }
+    pub fn ccifg(&mut self) -> CCIFG_W<0> {
+        CCIFG_W::new(self)
     }
     #[doc = "Bit 1 - Capture overflow"]
     #[inline(always)]
-    pub fn cov(&mut self) -> COV_W {
-        COV_W { w: self }
+    pub fn cov(&mut self) -> COV_W<1> {
+        COV_W::new(self)
     }
     #[doc = "Bit 2 - Output"]
     #[inline(always)]
-    pub fn out(&mut self) -> OUT_W {
-        OUT_W { w: self }
+    pub fn out(&mut self) -> OUT_W<2> {
+        OUT_W::new(self)
     }
     #[doc = "Bit 4 - Capture/compare interrupt enable"]
     #[inline(always)]
-    pub fn ccie(&mut self) -> CCIE_W {
-        CCIE_W { w: self }
+    pub fn ccie(&mut self) -> CCIE_W<4> {
+        CCIE_W::new(self)
     }
     #[doc = "Bits 5:7 - Output mode"]
     #[inline(always)]
-    pub fn outmod(&mut self) -> OUTMOD_W {
-        OUTMOD_W { w: self }
+    pub fn outmod(&mut self) -> OUTMOD_W<5> {
+        OUTMOD_W::new(self)
     }
     #[doc = "Bit 8 - Capture mode"]
     #[inline(always)]
-    pub fn cap(&mut self) -> CAP_W {
-        CAP_W { w: self }
+    pub fn cap(&mut self) -> CAP_W<8> {
+        CAP_W::new(self)
     }
     #[doc = "Bits 9:10 - Compare latch load"]
     #[inline(always)]
-    pub fn clld(&mut self) -> CLLD_W {
-        CLLD_W { w: self }
+    pub fn clld(&mut self) -> CLLD_W<9> {
+        CLLD_W::new(self)
     }
     #[doc = "Bit 11 - Synchronize capture source"]
     #[inline(always)]
-    pub fn scs(&mut self) -> SCS_W {
-        SCS_W { w: self }
+    pub fn scs(&mut self) -> SCS_W<11> {
+        SCS_W::new(self)
     }
     #[doc = "Bits 12:13 - Capture/compare input select"]
     #[inline(always)]
-    pub fn ccis(&mut self) -> CCIS_W {
-        CCIS_W { w: self }
+    pub fn ccis(&mut self) -> CCIS_W<12> {
+        CCIS_W::new(self)
     }
     #[doc = "Bits 14:15 - Capture mode"]
     #[inline(always)]
-    pub fn cm(&mut self) -> CM_W {
-        CM_W { w: self }
+    pub fn cm(&mut self) -> CM_W<14> {
+        CM_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timer_B Capture/Compare Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tb3cctl3](index.html) module"]
+pub struct TB3CCTL3_SPEC;
+impl crate::RegisterSpec for TB3CCTL3_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [tb3cctl3::R](R) reader structure"]
+impl crate::Readable for TB3CCTL3_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [tb3cctl3::W](W) writer structure"]
+impl crate::Writable for TB3CCTL3_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TB3CCTL3 to value 0"]
+impl crate::Resettable for TB3CCTL3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

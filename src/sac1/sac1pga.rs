@@ -1,17 +1,43 @@
-#[doc = "Reader of register SAC1PGA"]
-pub type R = crate::R<u16, super::SAC1PGA>;
-#[doc = "Writer for register SAC1PGA"]
-pub type W = crate::W<u16, super::SAC1PGA>;
-#[doc = "Register SAC1PGA `reset()`'s with value 0"]
-impl crate::ResetValue for super::SAC1PGA {
-    type Type = u16;
+#[doc = "Register `SAC1PGA` reader"]
+pub struct R(crate::R<SAC1PGA_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SAC1PGA_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<SAC1PGA_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SAC1PGA_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SAC1PGA` writer"]
+pub struct W(crate::W<SAC1PGA_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SAC1PGA_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SAC1PGA_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SAC1PGA_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MSEL` reader - SAC PGA Mode Selection"]
+pub type MSEL_R = crate::FieldReader<u8, MSEL_A>;
 #[doc = "SAC PGA Mode Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MSEL_A {
     #[doc = "0: Inverting PGA mode (external pad IN- is selected)"]
@@ -29,10 +55,8 @@ impl From<MSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MSEL`"]
-pub type MSEL_R = crate::R<u8, MSEL_A>;
 impl MSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSEL_A {
         match self.bits {
@@ -64,18 +88,9 @@ impl MSEL_R {
         *self == MSEL_A::MSEL_3
     }
 }
-#[doc = "Write proxy for field `MSEL`"]
-pub struct MSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MSEL` writer - SAC PGA Mode Selection"]
+pub type MSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, SAC1PGA_SPEC, u8, MSEL_A, 2, O>;
+impl<'a, const O: u8> MSEL_W<'a, O> {
     #[doc = "Inverting PGA mode (external pad IN- is selected)"]
     #[inline(always)]
     pub fn msel_0(self) -> &'a mut W {
@@ -96,48 +111,58 @@ impl<'a> MSEL_W<'a> {
     pub fn msel_3(self) -> &'a mut W {
         self.variant(MSEL_A::MSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u16) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `GAIN`"]
-pub type GAIN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `GAIN`"]
-pub struct GAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u16) & 0x07) << 4);
-        self.w
-    }
-}
+#[doc = "Field `GAIN` reader - SAC PGA Gain configuration"]
+pub type GAIN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `GAIN` writer - SAC PGA Gain configuration"]
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, SAC1PGA_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:1 - SAC PGA Mode Selection"]
     #[inline(always)]
     pub fn msel(&self) -> MSEL_R {
-        MSEL_R::new((self.bits & 0x03) as u8)
+        MSEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:6 - SAC PGA Gain configuration"]
     #[inline(always)]
     pub fn gain(&self) -> GAIN_R {
-        GAIN_R::new(((self.bits >> 4) & 0x07) as u8)
+        GAIN_R::new(((self.bits >> 4) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - SAC PGA Mode Selection"]
     #[inline(always)]
-    pub fn msel(&mut self) -> MSEL_W {
-        MSEL_W { w: self }
+    pub fn msel(&mut self) -> MSEL_W<0> {
+        MSEL_W::new(self)
     }
     #[doc = "Bits 4:6 - SAC PGA Gain configuration"]
     #[inline(always)]
-    pub fn gain(&mut self) -> GAIN_W {
-        GAIN_W { w: self }
+    pub fn gain(&mut self) -> GAIN_W<4> {
+        GAIN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SAC PGA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac1pga](index.html) module"]
+pub struct SAC1PGA_SPEC;
+impl crate::RegisterSpec for SAC1PGA_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sac1pga::R](R) reader structure"]
+impl crate::Readable for SAC1PGA_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sac1pga::W](W) writer structure"]
+impl crate::Writable for SAC1PGA_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SAC1PGA to value 0"]
+impl crate::Resettable for SAC1PGA_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

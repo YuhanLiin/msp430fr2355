@@ -1,53 +1,43 @@
-#[doc = "Reader of register CSCTL7"]
-pub type R = crate::R<u16, super::CSCTL7>;
-#[doc = "Writer for register CSCTL7"]
-pub type W = crate::W<u16, super::CSCTL7>;
-#[doc = "Register CSCTL7 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL7 {
-    type Type = u16;
+#[doc = "Register `CSCTL7` reader"]
+pub struct R(crate::R<CSCTL7_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL7_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFOREADY_A {
-    #[doc = "0: REFO unstable"]
-    REFOREADY_0 = 0,
-    #[doc = "1: REFO ready to go"]
-    REFOREADY_1 = 1,
-}
-impl From<REFOREADY_A> for bool {
+impl From<crate::R<CSCTL7_SPEC>> for R {
     #[inline(always)]
-    fn from(variant: REFOREADY_A) -> Self {
-        variant as u8 != 0
+    fn from(reader: crate::R<CSCTL7_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `REFOREADY`"]
-pub type REFOREADY_R = crate::R<bool, REFOREADY_A>;
-impl REFOREADY_R {
-    #[doc = r"Get enumerated values variant"]
+#[doc = "Register `CSCTL7` writer"]
+pub struct W(crate::W<CSCTL7_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL7_SPEC>;
     #[inline(always)]
-    pub fn variant(&self) -> REFOREADY_A {
-        match self.bits {
-            false => REFOREADY_A::REFOREADY_0,
-            true => REFOREADY_A::REFOREADY_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `REFOREADY_0`"]
-    #[inline(always)]
-    pub fn is_refoready_0(&self) -> bool {
-        *self == REFOREADY_A::REFOREADY_0
-    }
-    #[doc = "Checks if the value of the field is `REFOREADY_1`"]
-    #[inline(always)]
-    pub fn is_refoready_1(&self) -> bool {
-        *self == REFOREADY_A::REFOREADY_1
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL7_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL7_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DCOFFG` reader - DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition."]
+pub type DCOFFG_R = crate::BitReader<DCOFFG_A>;
 #[doc = "DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCOFFG_A {
     #[doc = "0: No fault condition occurred after the last reset."]
     DCOFFG_0 = 0,
@@ -60,10 +50,8 @@ impl From<DCOFFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCOFFG`"]
-pub type DCOFFG_R = crate::R<bool, DCOFFG_A>;
 impl DCOFFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCOFFG_A {
         match self.bits {
@@ -82,18 +70,9 @@ impl DCOFFG_R {
         *self == DCOFFG_A::DCOFFG_1
     }
 }
-#[doc = "Write proxy for field `DCOFFG`"]
-pub struct DCOFFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCOFFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DCOFFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `DCOFFG` writer - DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition."]
+pub type DCOFFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, DCOFFG_A, O>;
+impl<'a, const O: u8> DCOFFG_W<'a, O> {
     #[doc = "No fault condition occurred after the last reset."]
     #[inline(always)]
     pub fn dcoffg_0(self) -> &'a mut W {
@@ -104,25 +83,11 @@ impl<'a> DCOFFG_W<'a> {
     pub fn dcoffg_1(self) -> &'a mut W {
         self.variant(DCOFFG_A::DCOFFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `XT1OFFG` reader - T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set."]
+pub type XT1OFFG_R = crate::BitReader<XT1OFFG_A>;
 #[doc = "T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XT1OFFG_A {
     #[doc = "0: No fault condition occurred after the last reset."]
     XT1OFFG_0 = 0,
@@ -135,10 +100,8 @@ impl From<XT1OFFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XT1OFFG`"]
-pub type XT1OFFG_R = crate::R<bool, XT1OFFG_A>;
 impl XT1OFFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1OFFG_A {
         match self.bits {
@@ -157,18 +120,9 @@ impl XT1OFFG_R {
         *self == XT1OFFG_A::XT1OFFG_1
     }
 }
-#[doc = "Write proxy for field `XT1OFFG`"]
-pub struct XT1OFFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1OFFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1OFFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XT1OFFG` writer - T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set."]
+pub type XT1OFFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, XT1OFFG_A, O>;
+impl<'a, const O: u8> XT1OFFG_W<'a, O> {
     #[doc = "No fault condition occurred after the last reset."]
     #[inline(always)]
     pub fn xt1offg_0(self) -> &'a mut W {
@@ -179,25 +133,47 @@ impl<'a> XT1OFFG_W<'a> {
     pub fn xt1offg_1(self) -> &'a mut W {
         self.variant(XT1OFFG_A::XT1OFFG_1)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `REFOREADY` reader - REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)"]
+pub type REFOREADY_R = crate::BitReader<REFOREADY_A>;
+#[doc = "REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum REFOREADY_A {
+    #[doc = "0: REFO unstable"]
+    REFOREADY_0 = 0,
+    #[doc = "1: REFO ready to go"]
+    REFOREADY_1 = 1,
+}
+impl From<REFOREADY_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
+    fn from(variant: REFOREADY_A) -> Self {
+        variant as u8 != 0
     }
 }
+impl REFOREADY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REFOREADY_A {
+        match self.bits {
+            false => REFOREADY_A::REFOREADY_0,
+            true => REFOREADY_A::REFOREADY_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `REFOREADY_0`"]
+    #[inline(always)]
+    pub fn is_refoready_0(&self) -> bool {
+        *self == REFOREADY_A::REFOREADY_0
+    }
+    #[doc = "Checks if the value of the field is `REFOREADY_1`"]
+    #[inline(always)]
+    pub fn is_refoready_1(&self) -> bool {
+        *self == REFOREADY_A::REFOREADY_1
+    }
+}
+#[doc = "Field `FLLULIFG` reader - FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set."]
+pub type FLLULIFG_R = crate::BitReader<FLLULIFG_A>;
 #[doc = "FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLLULIFG_A {
     #[doc = "0: FLLUNLOCK bits not equal to 10b"]
     FLLULIFG_0 = 0,
@@ -210,10 +186,8 @@ impl From<FLLULIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FLLULIFG`"]
-pub type FLLULIFG_R = crate::R<bool, FLLULIFG_A>;
 impl FLLULIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLULIFG_A {
         match self.bits {
@@ -232,18 +206,9 @@ impl FLLULIFG_R {
         *self == FLLULIFG_A::FLLULIFG_1
     }
 }
-#[doc = "Write proxy for field `FLLULIFG`"]
-pub struct FLLULIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLULIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLULIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `FLLULIFG` writer - FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set."]
+pub type FLLULIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, FLLULIFG_A, O>;
+impl<'a, const O: u8> FLLULIFG_W<'a, O> {
     #[doc = "FLLUNLOCK bits not equal to 10b"]
     #[inline(always)]
     pub fn fllulifg_0(self) -> &'a mut W {
@@ -254,25 +219,11 @@ impl<'a> FLLULIFG_W<'a> {
     pub fn fllulifg_1(self) -> &'a mut W {
         self.variant(FLLULIFG_A::FLLULIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `ENSTFCNT1` reader - Enable start counter for XT1."]
+pub type ENSTFCNT1_R = crate::BitReader<ENSTFCNT1_A>;
 #[doc = "Enable start counter for XT1.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENSTFCNT1_A {
     #[doc = "0: Startup fault counter disabled. Counter is cleared.."]
     ENSTFCNT1_0 = 0,
@@ -285,10 +236,8 @@ impl From<ENSTFCNT1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ENSTFCNT1`"]
-pub type ENSTFCNT1_R = crate::R<bool, ENSTFCNT1_A>;
 impl ENSTFCNT1_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENSTFCNT1_A {
         match self.bits {
@@ -307,18 +256,9 @@ impl ENSTFCNT1_R {
         *self == ENSTFCNT1_A::ENSTFCNT1_1
     }
 }
-#[doc = "Write proxy for field `ENSTFCNT1`"]
-pub struct ENSTFCNT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENSTFCNT1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENSTFCNT1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ENSTFCNT1` writer - Enable start counter for XT1."]
+pub type ENSTFCNT1_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, ENSTFCNT1_A, O>;
+impl<'a, const O: u8> ENSTFCNT1_W<'a, O> {
     #[doc = "Startup fault counter disabled. Counter is cleared.."]
     #[inline(always)]
     pub fn enstfcnt1_0(self) -> &'a mut W {
@@ -329,25 +269,11 @@ impl<'a> ENSTFCNT1_W<'a> {
     pub fn enstfcnt1_1(self) -> &'a mut W {
         self.variant(ENSTFCNT1_A::ENSTFCNT1_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `FLLUNLOCK` reader - Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set."]
+pub type FLLUNLOCK_R = crate::FieldReader<u8, FLLUNLOCK_A>;
 #[doc = "Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLUNLOCK_A {
     #[doc = "0: FLL is locked. No unlock condition currently active."]
@@ -365,10 +291,8 @@ impl From<FLLUNLOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FLLUNLOCK`"]
-pub type FLLUNLOCK_R = crate::R<u8, FLLUNLOCK_A>;
 impl FLLUNLOCK_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLUNLOCK_A {
         match self.bits {
@@ -400,18 +324,10 @@ impl FLLUNLOCK_R {
         *self == FLLUNLOCK_A::FLLUNLOCK_3
     }
 }
-#[doc = "Write proxy for field `FLLUNLOCK`"]
-pub struct FLLUNLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLUNLOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLUNLOCK_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `FLLUNLOCK` writer - Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set."]
+pub type FLLUNLOCK_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL7_SPEC, u8, FLLUNLOCK_A, 2, O>;
+impl<'a, const O: u8> FLLUNLOCK_W<'a, O> {
     #[doc = "FLL is locked. No unlock condition currently active."]
     #[inline(always)]
     pub fn fllunlock_0(self) -> &'a mut W {
@@ -432,15 +348,11 @@ impl<'a> FLLUNLOCK_W<'a> {
     pub fn fllunlock_3(self) -> &'a mut W {
         self.variant(FLLUNLOCK_A::FLLUNLOCK_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u16) & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `FLLUNLOCKHIS` reader - Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR."]
+pub type FLLUNLOCKHIS_R = crate::FieldReader<u8, FLLUNLOCKHIS_A>;
 #[doc = "Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FLLUNLOCKHIS_A {
     #[doc = "0: FLL is locked. No unlock situation has been detected since the last reset of these bits."]
@@ -458,10 +370,8 @@ impl From<FLLUNLOCKHIS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FLLUNLOCKHIS`"]
-pub type FLLUNLOCKHIS_R = crate::R<u8, FLLUNLOCKHIS_A>;
 impl FLLUNLOCKHIS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLUNLOCKHIS_A {
         match self.bits {
@@ -493,18 +403,10 @@ impl FLLUNLOCKHIS_R {
         *self == FLLUNLOCKHIS_A::FLLUNLOCKHIS_3
     }
 }
-#[doc = "Write proxy for field `FLLUNLOCKHIS`"]
-pub struct FLLUNLOCKHIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLUNLOCKHIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLUNLOCKHIS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `FLLUNLOCKHIS` writer - Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR."]
+pub type FLLUNLOCKHIS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL7_SPEC, u8, FLLUNLOCKHIS_A, 2, O>;
+impl<'a, const O: u8> FLLUNLOCKHIS_W<'a, O> {
     #[doc = "FLL is locked. No unlock situation has been detected since the last reset of these bits."]
     #[inline(always)]
     pub fn fllunlockhis_0(self) -> &'a mut W {
@@ -525,39 +427,15 @@ impl<'a> FLLUNLOCKHIS_W<'a> {
     pub fn fllunlockhis_3(self) -> &'a mut W {
         self.variant(FLLUNLOCKHIS_A::FLLUNLOCKHIS_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u16) & 0x03) << 10);
-        self.w
-    }
 }
-#[doc = "Reader of field `FLLULPUC`"]
-pub type FLLULPUC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FLLULPUC`"]
-pub struct FLLULPUC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLULPUC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
-        self.w
-    }
-}
+#[doc = "Field `FLLULPUC` reader - FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG."]
+pub type FLLULPUC_R = crate::BitReader<bool>;
+#[doc = "Field `FLLULPUC` writer - FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG."]
+pub type FLLULPUC_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, bool, O>;
+#[doc = "Field `FLLWARNEN` reader - Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated."]
+pub type FLLWARNEN_R = crate::BitReader<FLLWARNEN_A>;
 #[doc = "Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLLWARNEN_A {
     #[doc = "0: FLLUNLOCKHIS status cannot set OFIFG."]
     FLLWARNEN_0 = 0,
@@ -570,10 +448,8 @@ impl From<FLLWARNEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FLLWARNEN`"]
-pub type FLLWARNEN_R = crate::R<bool, FLLWARNEN_A>;
 impl FLLWARNEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLLWARNEN_A {
         match self.bits {
@@ -592,18 +468,9 @@ impl FLLWARNEN_R {
         *self == FLLWARNEN_A::FLLWARNEN_1
     }
 }
-#[doc = "Write proxy for field `FLLWARNEN`"]
-pub struct FLLWARNEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLLWARNEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLLWARNEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `FLLWARNEN` writer - Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated."]
+pub type FLLWARNEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL7_SPEC, FLLWARNEN_A, O>;
+impl<'a, const O: u8> FLLWARNEN_W<'a, O> {
     #[doc = "FLLUNLOCKHIS status cannot set OFIFG."]
     #[inline(always)]
     pub fn fllwarnen_0(self) -> &'a mut W {
@@ -614,109 +481,119 @@ impl<'a> FLLWARNEN_W<'a> {
     pub fn fllwarnen_1(self) -> &'a mut W {
         self.variant(FLLWARNEN_A::FLLWARNEN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
-        self.w
-    }
 }
 impl R {
-    #[doc = "Bit 2 - REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)"]
-    #[inline(always)]
-    pub fn refoready(&self) -> REFOREADY_R {
-        REFOREADY_R::new(((self.bits >> 2) & 0x01) != 0)
-    }
     #[doc = "Bit 0 - DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition."]
     #[inline(always)]
     pub fn dcoffg(&self) -> DCOFFG_R {
-        DCOFFG_R::new((self.bits & 0x01) != 0)
+        DCOFFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set."]
     #[inline(always)]
     pub fn xt1offg(&self) -> XT1OFFG_R {
-        XT1OFFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        XT1OFFG_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)"]
+    #[inline(always)]
+    pub fn refoready(&self) -> REFOREADY_R {
+        REFOREADY_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set."]
     #[inline(always)]
     pub fn fllulifg(&self) -> FLLULIFG_R {
-        FLLULIFG_R::new(((self.bits >> 4) & 0x01) != 0)
+        FLLULIFG_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable start counter for XT1."]
     #[inline(always)]
     pub fn enstfcnt1(&self) -> ENSTFCNT1_R {
-        ENSTFCNT1_R::new(((self.bits >> 6) & 0x01) != 0)
+        ENSTFCNT1_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set."]
     #[inline(always)]
     pub fn fllunlock(&self) -> FLLUNLOCK_R {
-        FLLUNLOCK_R::new(((self.bits >> 8) & 0x03) as u8)
+        FLLUNLOCK_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR."]
     #[inline(always)]
     pub fn fllunlockhis(&self) -> FLLUNLOCKHIS_R {
-        FLLUNLOCKHIS_R::new(((self.bits >> 10) & 0x03) as u8)
+        FLLUNLOCKHIS_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG."]
     #[inline(always)]
     pub fn fllulpuc(&self) -> FLLULPUC_R {
-        FLLULPUC_R::new(((self.bits >> 12) & 0x01) != 0)
+        FLLULPUC_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated."]
     #[inline(always)]
     pub fn fllwarnen(&self) -> FLLWARNEN_R {
-        FLLWARNEN_R::new(((self.bits >> 13) & 0x01) != 0)
+        FLLWARNEN_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition."]
     #[inline(always)]
-    pub fn dcoffg(&mut self) -> DCOFFG_W {
-        DCOFFG_W { w: self }
+    pub fn dcoffg(&mut self) -> DCOFFG_W<0> {
+        DCOFFG_W::new(self)
     }
     #[doc = "Bit 1 - T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set."]
     #[inline(always)]
-    pub fn xt1offg(&mut self) -> XT1OFFG_W {
-        XT1OFFG_W { w: self }
+    pub fn xt1offg(&mut self) -> XT1OFFG_W<1> {
+        XT1OFFG_W::new(self)
     }
     #[doc = "Bit 4 - FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set."]
     #[inline(always)]
-    pub fn fllulifg(&mut self) -> FLLULIFG_W {
-        FLLULIFG_W { w: self }
+    pub fn fllulifg(&mut self) -> FLLULIFG_W<4> {
+        FLLULIFG_W::new(self)
     }
     #[doc = "Bit 6 - Enable start counter for XT1."]
     #[inline(always)]
-    pub fn enstfcnt1(&mut self) -> ENSTFCNT1_W {
-        ENSTFCNT1_W { w: self }
+    pub fn enstfcnt1(&mut self) -> ENSTFCNT1_W<6> {
+        ENSTFCNT1_W::new(self)
     }
     #[doc = "Bits 8:9 - Unlock. These bits indicate the current FLL unlock condition. These bits are both set as long as the DCOFFG flag is set."]
     #[inline(always)]
-    pub fn fllunlock(&mut self) -> FLLUNLOCK_W {
-        FLLUNLOCK_W { w: self }
+    pub fn fllunlock(&mut self) -> FLLUNLOCK_W<8> {
+        FLLUNLOCK_W::new(self)
     }
     #[doc = "Bits 10:11 - Unlock history bits. These bits indicate the FLL unlock condition history. As soon as any unlock condition happens, the respective bits are set and remain set until cleared by software by writing 0 to it or by a POR."]
     #[inline(always)]
-    pub fn fllunlockhis(&mut self) -> FLLUNLOCKHIS_W {
-        FLLUNLOCKHIS_W { w: self }
+    pub fn fllunlockhis(&mut self) -> FLLUNLOCKHIS_W<10> {
+        FLLUNLOCKHIS_W::new(self)
     }
     #[doc = "Bit 12 - FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG."]
     #[inline(always)]
-    pub fn fllulpuc(&mut self) -> FLLULPUC_W {
-        FLLULPUC_W { w: self }
+    pub fn fllulpuc(&mut self) -> FLLULPUC_W<12> {
+        FLLULPUC_W::new(self)
     }
     #[doc = "Bit 13 - Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated."]
     #[inline(always)]
-    pub fn fllwarnen(&mut self) -> FLLWARNEN_W {
-        FLLWARNEN_W { w: self }
+    pub fn fllwarnen(&mut self) -> FLLWARNEN_W<13> {
+        FLLWARNEN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control Register 7\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl7](index.html) module"]
+pub struct CSCTL7_SPEC;
+impl crate::RegisterSpec for CSCTL7_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl7::R](R) reader structure"]
+impl crate::Readable for CSCTL7_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl7::W](W) writer structure"]
+impl crate::Writable for CSCTL7_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL7 to value 0"]
+impl crate::Resettable for CSCTL7_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

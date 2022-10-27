@@ -1,17 +1,43 @@
-#[doc = "Reader of register ADCIFG"]
-pub type R = crate::R<u16, super::ADCIFG>;
-#[doc = "Writer for register ADCIFG"]
-pub type W = crate::W<u16, super::ADCIFG>;
-#[doc = "Register ADCIFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADCIFG {
-    type Type = u16;
+#[doc = "Register `ADCIFG` reader"]
+pub struct R(crate::R<ADCIFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADCIFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ADCIFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ADCIFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADCIFG` writer"]
+pub struct W(crate::W<ADCIFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADCIFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADCIFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADCIFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADCIFG0` reader - ADCMEM0 interrupt flag"]
+pub type ADCIFG0_R = crate::BitReader<ADCIFG0_A>;
 #[doc = "ADCMEM0 interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCIFG0_A {
     #[doc = "0: No interrupt pending"]
     ADCIFG0_0 = 0,
@@ -24,10 +50,8 @@ impl From<ADCIFG0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCIFG0`"]
-pub type ADCIFG0_R = crate::R<bool, ADCIFG0_A>;
 impl ADCIFG0_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCIFG0_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl ADCIFG0_R {
         *self == ADCIFG0_A::ADCIFG0_1
     }
 }
-#[doc = "Write proxy for field `ADCIFG0`"]
-pub struct ADCIFG0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCIFG0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCIFG0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCIFG0` writer - ADCMEM0 interrupt flag"]
+pub type ADCIFG0_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCIFG0_A, O>;
+impl<'a, const O: u8> ADCIFG0_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adcifg0_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> ADCIFG0_W<'a> {
     pub fn adcifg0_1(self) -> &'a mut W {
         self.variant(ADCIFG0_A::ADCIFG0_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `ADCINIFG` reader - The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers."]
+pub type ADCINIFG_R = crate::BitReader<ADCINIFG_A>;
 #[doc = "The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCINIFG_A {
     #[doc = "0: No interrupt pending"]
     ADCINIFG_0 = 0,
@@ -99,10 +100,8 @@ impl From<ADCINIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCINIFG`"]
-pub type ADCINIFG_R = crate::R<bool, ADCINIFG_A>;
 impl ADCINIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCINIFG_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl ADCINIFG_R {
         *self == ADCINIFG_A::ADCINIFG_1
     }
 }
-#[doc = "Write proxy for field `ADCINIFG`"]
-pub struct ADCINIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCINIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCINIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCINIFG` writer - The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers."]
+pub type ADCINIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCINIFG_A, O>;
+impl<'a, const O: u8> ADCINIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adcinifg_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> ADCINIFG_W<'a> {
     pub fn adcinifg_1(self) -> &'a mut W {
         self.variant(ADCINIFG_A::ADCINIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ADCLOIFG` reader - The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register."]
+pub type ADCLOIFG_R = crate::BitReader<ADCLOIFG_A>;
 #[doc = "The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCLOIFG_A {
     #[doc = "0: No interrupt pending"]
     ADCLOIFG_0 = 0,
@@ -174,10 +150,8 @@ impl From<ADCLOIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCLOIFG`"]
-pub type ADCLOIFG_R = crate::R<bool, ADCLOIFG_A>;
 impl ADCLOIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCLOIFG_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl ADCLOIFG_R {
         *self == ADCLOIFG_A::ADCLOIFG_1
     }
 }
-#[doc = "Write proxy for field `ADCLOIFG`"]
-pub struct ADCLOIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCLOIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCLOIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCLOIFG` writer - The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register."]
+pub type ADCLOIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCLOIFG_A, O>;
+impl<'a, const O: u8> ADCLOIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adcloifg_0(self) -> &'a mut W {
@@ -218,25 +183,11 @@ impl<'a> ADCLOIFG_W<'a> {
     pub fn adcloifg_1(self) -> &'a mut W {
         self.variant(ADCLOIFG_A::ADCLOIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ADCHIIFG` reader - The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register."]
+pub type ADCHIIFG_R = crate::BitReader<ADCHIIFG_A>;
 #[doc = "The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCHIIFG_A {
     #[doc = "0: No interrupt pending"]
     ADCHIIFG_0 = 0,
@@ -249,10 +200,8 @@ impl From<ADCHIIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCHIIFG`"]
-pub type ADCHIIFG_R = crate::R<bool, ADCHIIFG_A>;
 impl ADCHIIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCHIIFG_A {
         match self.bits {
@@ -271,18 +220,9 @@ impl ADCHIIFG_R {
         *self == ADCHIIFG_A::ADCHIIFG_1
     }
 }
-#[doc = "Write proxy for field `ADCHIIFG`"]
-pub struct ADCHIIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCHIIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCHIIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCHIIFG` writer - The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register."]
+pub type ADCHIIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCHIIFG_A, O>;
+impl<'a, const O: u8> ADCHIIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adchiifg_0(self) -> &'a mut W {
@@ -293,25 +233,11 @@ impl<'a> ADCHIIFG_W<'a> {
     pub fn adchiifg_1(self) -> &'a mut W {
         self.variant(ADCHIIFG_A::ADCHIIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADCOVIFG` reader - The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read."]
+pub type ADCOVIFG_R = crate::BitReader<ADCOVIFG_A>;
 #[doc = "The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCOVIFG_A {
     #[doc = "0: No interrupt pending"]
     ADCOVIFG_0 = 0,
@@ -324,10 +250,8 @@ impl From<ADCOVIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCOVIFG`"]
-pub type ADCOVIFG_R = crate::R<bool, ADCOVIFG_A>;
 impl ADCOVIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCOVIFG_A {
         match self.bits {
@@ -346,18 +270,9 @@ impl ADCOVIFG_R {
         *self == ADCOVIFG_A::ADCOVIFG_1
     }
 }
-#[doc = "Write proxy for field `ADCOVIFG`"]
-pub struct ADCOVIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCOVIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCOVIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCOVIFG` writer - The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read."]
+pub type ADCOVIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCOVIFG_A, O>;
+impl<'a, const O: u8> ADCOVIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adcovifg_0(self) -> &'a mut W {
@@ -368,25 +283,11 @@ impl<'a> ADCOVIFG_W<'a> {
     pub fn adcovifg_1(self) -> &'a mut W {
         self.variant(ADCOVIFG_A::ADCOVIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `ADCTOVIFG` reader - The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed."]
+pub type ADCTOVIFG_R = crate::BitReader<ADCTOVIFG_A>;
 #[doc = "The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCTOVIFG_A {
     #[doc = "0: No interrupt pending"]
     ADCOVIFG_0 = 0,
@@ -399,10 +300,8 @@ impl From<ADCTOVIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCTOVIFG`"]
-pub type ADCTOVIFG_R = crate::R<bool, ADCTOVIFG_A>;
 impl ADCTOVIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCTOVIFG_A {
         match self.bits {
@@ -421,18 +320,9 @@ impl ADCTOVIFG_R {
         *self == ADCTOVIFG_A::ADCTOVIFG_1
     }
 }
-#[doc = "Write proxy for field `ADCTOVIFG`"]
-pub struct ADCTOVIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCTOVIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCTOVIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCTOVIFG` writer - The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed."]
+pub type ADCTOVIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCIFG_SPEC, ADCTOVIFG_A, O>;
+impl<'a, const O: u8> ADCTOVIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn adcovifg_0(self) -> &'a mut W {
@@ -443,84 +333,94 @@ impl<'a> ADCTOVIFG_W<'a> {
     pub fn adctovifg_1(self) -> &'a mut W {
         self.variant(ADCTOVIFG_A::ADCTOVIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - ADCMEM0 interrupt flag"]
     #[inline(always)]
     pub fn adcifg0(&self) -> ADCIFG0_R {
-        ADCIFG0_R::new((self.bits & 0x01) != 0)
+        ADCIFG0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers."]
     #[inline(always)]
     pub fn adcinifg(&self) -> ADCINIFG_R {
-        ADCINIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADCINIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register."]
     #[inline(always)]
     pub fn adcloifg(&self) -> ADCLOIFG_R {
-        ADCLOIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADCLOIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register."]
     #[inline(always)]
     pub fn adchiifg(&self) -> ADCHIIFG_R {
-        ADCHIIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        ADCHIIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read."]
     #[inline(always)]
     pub fn adcovifg(&self) -> ADCOVIFG_R {
-        ADCOVIFG_R::new(((self.bits >> 4) & 0x01) != 0)
+        ADCOVIFG_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed."]
     #[inline(always)]
     pub fn adctovifg(&self) -> ADCTOVIFG_R {
-        ADCTOVIFG_R::new(((self.bits >> 5) & 0x01) != 0)
+        ADCTOVIFG_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - ADCMEM0 interrupt flag"]
     #[inline(always)]
-    pub fn adcifg0(&mut self) -> ADCIFG0_W {
-        ADCIFG0_W { w: self }
+    pub fn adcifg0(&mut self) -> ADCIFG0_W<0> {
+        ADCIFG0_W::new(self)
     }
     #[doc = "Bit 1 - The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers."]
     #[inline(always)]
-    pub fn adcinifg(&mut self) -> ADCINIFG_W {
-        ADCINIFG_W { w: self }
+    pub fn adcinifg(&mut self) -> ADCINIFG_W<1> {
+        ADCINIFG_W::new(self)
     }
     #[doc = "Bit 2 - The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register."]
     #[inline(always)]
-    pub fn adcloifg(&mut self) -> ADCLOIFG_W {
-        ADCLOIFG_W { w: self }
+    pub fn adcloifg(&mut self) -> ADCLOIFG_W<2> {
+        ADCLOIFG_W::new(self)
     }
     #[doc = "Bit 3 - The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register."]
     #[inline(always)]
-    pub fn adchiifg(&mut self) -> ADCHIIFG_W {
-        ADCHIIFG_W { w: self }
+    pub fn adchiifg(&mut self) -> ADCHIIFG_W<3> {
+        ADCHIIFG_W::new(self)
     }
     #[doc = "Bit 4 - The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read."]
     #[inline(always)]
-    pub fn adcovifg(&mut self) -> ADCOVIFG_W {
-        ADCOVIFG_W { w: self }
+    pub fn adcovifg(&mut self) -> ADCOVIFG_W<4> {
+        ADCOVIFG_W::new(self)
     }
     #[doc = "Bit 5 - The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed."]
     #[inline(always)]
-    pub fn adctovifg(&mut self) -> ADCTOVIFG_W {
-        ADCTOVIFG_W { w: self }
+    pub fn adctovifg(&mut self) -> ADCTOVIFG_W<5> {
+        ADCTOVIFG_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcifg](index.html) module"]
+pub struct ADCIFG_SPEC;
+impl crate::RegisterSpec for ADCIFG_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adcifg::R](R) reader structure"]
+impl crate::Readable for ADCIFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adcifg::W](W) writer structure"]
+impl crate::Writable for ADCIFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADCIFG to value 0"]
+impl crate::Resettable for ADCIFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

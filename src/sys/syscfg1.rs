@@ -1,17 +1,43 @@
-#[doc = "Reader of register SYSCFG1"]
-pub type R = crate::R<u16, super::SYSCFG1>;
-#[doc = "Writer for register SYSCFG1"]
-pub type W = crate::W<u16, super::SYSCFG1>;
-#[doc = "Register SYSCFG1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYSCFG1 {
-    type Type = u16;
+#[doc = "Register `SYSCFG1` reader"]
+pub struct R(crate::R<SYSCFG1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSCFG1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<SYSCFG1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSCFG1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSCFG1` writer"]
+pub struct W(crate::W<SYSCFG1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSCFG1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSCFG1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSCFG1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `IREN` reader - Infrared enable"]
+pub type IREN_R = crate::BitReader<IREN_A>;
 #[doc = "Infrared enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IREN_A {
     #[doc = "0: Infrared function disabled"]
     IREN_0 = 0,
@@ -24,10 +50,8 @@ impl From<IREN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IREN`"]
-pub type IREN_R = crate::R<bool, IREN_A>;
 impl IREN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IREN_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl IREN_R {
         *self == IREN_A::IREN_1
     }
 }
-#[doc = "Write proxy for field `IREN`"]
-pub struct IREN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IREN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IREN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IREN` writer - Infrared enable"]
+pub type IREN_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG1_SPEC, IREN_A, O>;
+impl<'a, const O: u8> IREN_W<'a, O> {
     #[doc = "Infrared function disabled"]
     #[inline(always)]
     pub fn iren_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> IREN_W<'a> {
     pub fn iren_1(self) -> &'a mut W {
         self.variant(IREN_A::IREN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `IRPSEL` reader - Infrared polarity select"]
+pub type IRPSEL_R = crate::BitReader<IRPSEL_A>;
 #[doc = "Infrared polarity select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IRPSEL_A {
     #[doc = "0: Normal polarity"]
     IRPSEL_0 = 0,
@@ -99,10 +100,8 @@ impl From<IRPSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRPSEL`"]
-pub type IRPSEL_R = crate::R<bool, IRPSEL_A>;
 impl IRPSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRPSEL_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl IRPSEL_R {
         *self == IRPSEL_A::IRPSEL_1
     }
 }
-#[doc = "Write proxy for field `IRPSEL`"]
-pub struct IRPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRPSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IRPSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IRPSEL` writer - Infrared polarity select"]
+pub type IRPSEL_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG1_SPEC, IRPSEL_A, O>;
+impl<'a, const O: u8> IRPSEL_W<'a, O> {
     #[doc = "Normal polarity"]
     #[inline(always)]
     pub fn irpsel_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> IRPSEL_W<'a> {
     pub fn irpsel_1(self) -> &'a mut W {
         self.variant(IRPSEL_A::IRPSEL_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `IRMSEL` reader - Infrared mode select"]
+pub type IRMSEL_R = crate::BitReader<IRMSEL_A>;
 #[doc = "Infrared mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IRMSEL_A {
     #[doc = "0: FSK mode"]
     IRMSEL_0 = 0,
@@ -174,10 +150,8 @@ impl From<IRMSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRMSEL`"]
-pub type IRMSEL_R = crate::R<bool, IRMSEL_A>;
 impl IRMSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRMSEL_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl IRMSEL_R {
         *self == IRMSEL_A::IRMSEL_1
     }
 }
-#[doc = "Write proxy for field `IRMSEL`"]
-pub struct IRMSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRMSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IRMSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IRMSEL` writer - Infrared mode select"]
+pub type IRMSEL_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG1_SPEC, IRMSEL_A, O>;
+impl<'a, const O: u8> IRMSEL_W<'a, O> {
     #[doc = "FSK mode"]
     #[inline(always)]
     pub fn irmsel_0(self) -> &'a mut W {
@@ -218,25 +183,11 @@ impl<'a> IRMSEL_W<'a> {
     pub fn irmsel_1(self) -> &'a mut W {
         self.variant(IRMSEL_A::IRMSEL_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `IRDSSEL` reader - Infrared data source select"]
+pub type IRDSSEL_R = crate::BitReader<IRDSSEL_A>;
 #[doc = "Infrared data source select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IRDSSEL_A {
     #[doc = "0: From hardware peripherals upon device configuration"]
     IRDSSEL_0 = 0,
@@ -249,10 +200,8 @@ impl From<IRDSSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRDSSEL`"]
-pub type IRDSSEL_R = crate::R<bool, IRDSSEL_A>;
 impl IRDSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRDSSEL_A {
         match self.bits {
@@ -271,18 +220,9 @@ impl IRDSSEL_R {
         *self == IRDSSEL_A::IRDSSEL_1
     }
 }
-#[doc = "Write proxy for field `IRDSSEL`"]
-pub struct IRDSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRDSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IRDSSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IRDSSEL` writer - Infrared data source select"]
+pub type IRDSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG1_SPEC, IRDSSEL_A, O>;
+impl<'a, const O: u8> IRDSSEL_W<'a, O> {
     #[doc = "From hardware peripherals upon device configuration"]
     #[inline(always)]
     pub fn irdssel_0(self) -> &'a mut W {
@@ -293,25 +233,11 @@ impl<'a> IRDSSEL_W<'a> {
     pub fn irdssel_1(self) -> &'a mut W {
         self.variant(IRDSSEL_A::IRDSSEL_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `IRDATA` reader - Infrared data"]
+pub type IRDATA_R = crate::BitReader<IRDATA_A>;
 #[doc = "Infrared data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IRDATA_A {
     #[doc = "0: Infrared data logic 0"]
     IRDATA_0 = 0,
@@ -324,10 +250,8 @@ impl From<IRDATA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IRDATA`"]
-pub type IRDATA_R = crate::R<bool, IRDATA_A>;
 impl IRDATA_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRDATA_A {
         match self.bits {
@@ -346,18 +270,9 @@ impl IRDATA_R {
         *self == IRDATA_A::IRDATA_1
     }
 }
-#[doc = "Write proxy for field `IRDATA`"]
-pub struct IRDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRDATA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IRDATA_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IRDATA` writer - Infrared data"]
+pub type IRDATA_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG1_SPEC, IRDATA_A, O>;
+impl<'a, const O: u8> IRDATA_W<'a, O> {
     #[doc = "Infrared data logic 0"]
     #[inline(always)]
     pub fn irdata_0(self) -> &'a mut W {
@@ -368,25 +283,11 @@ impl<'a> IRDATA_W<'a> {
     pub fn irdata_1(self) -> &'a mut W {
         self.variant(IRDATA_A::IRDATA_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `SYNCSEL` reader - Captivate Conversion triggered Source Selection"]
+pub type SYNCSEL_R = crate::FieldReader<u8, SYNCSEL_A>;
 #[doc = "Captivate Conversion triggered Source Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYNCSEL_A {
     #[doc = "0: External source is selected"]
@@ -404,10 +305,8 @@ impl From<SYNCSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SYNCSEL`"]
-pub type SYNCSEL_R = crate::R<u8, SYNCSEL_A>;
 impl SYNCSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNCSEL_A {
         match self.bits {
@@ -439,18 +338,10 @@ impl SYNCSEL_R {
         *self == SYNCSEL_A::SYNCSEL_3
     }
 }
-#[doc = "Write proxy for field `SYNCSEL`"]
-pub struct SYNCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNCSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNCSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `SYNCSEL` writer - Captivate Conversion triggered Source Selection"]
+pub type SYNCSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, SYSCFG1_SPEC, u8, SYNCSEL_A, 2, O>;
+impl<'a, const O: u8> SYNCSEL_W<'a, O> {
     #[doc = "External source is selected"]
     #[inline(always)]
     pub fn syncsel_0(self) -> &'a mut W {
@@ -471,74 +362,94 @@ impl<'a> SYNCSEL_W<'a> {
     pub fn syncsel_3(self) -> &'a mut W {
         self.variant(SYNCSEL_A::SYNCSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u16) & 0x03) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Infrared enable"]
     #[inline(always)]
     pub fn iren(&self) -> IREN_R {
-        IREN_R::new((self.bits & 0x01) != 0)
+        IREN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Infrared polarity select"]
     #[inline(always)]
     pub fn irpsel(&self) -> IRPSEL_R {
-        IRPSEL_R::new(((self.bits >> 1) & 0x01) != 0)
+        IRPSEL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Infrared mode select"]
     #[inline(always)]
     pub fn irmsel(&self) -> IRMSEL_R {
-        IRMSEL_R::new(((self.bits >> 2) & 0x01) != 0)
+        IRMSEL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Infrared data source select"]
     #[inline(always)]
     pub fn irdssel(&self) -> IRDSSEL_R {
-        IRDSSEL_R::new(((self.bits >> 3) & 0x01) != 0)
+        IRDSSEL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Infrared data"]
     #[inline(always)]
     pub fn irdata(&self) -> IRDATA_R {
-        IRDATA_R::new(((self.bits >> 4) & 0x01) != 0)
+        IRDATA_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Captivate Conversion triggered Source Selection"]
     #[inline(always)]
     pub fn syncsel(&self) -> SYNCSEL_R {
-        SYNCSEL_R::new(((self.bits >> 6) & 0x03) as u8)
+        SYNCSEL_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Infrared enable"]
     #[inline(always)]
-    pub fn iren(&mut self) -> IREN_W {
-        IREN_W { w: self }
+    pub fn iren(&mut self) -> IREN_W<0> {
+        IREN_W::new(self)
     }
     #[doc = "Bit 1 - Infrared polarity select"]
     #[inline(always)]
-    pub fn irpsel(&mut self) -> IRPSEL_W {
-        IRPSEL_W { w: self }
+    pub fn irpsel(&mut self) -> IRPSEL_W<1> {
+        IRPSEL_W::new(self)
     }
     #[doc = "Bit 2 - Infrared mode select"]
     #[inline(always)]
-    pub fn irmsel(&mut self) -> IRMSEL_W {
-        IRMSEL_W { w: self }
+    pub fn irmsel(&mut self) -> IRMSEL_W<2> {
+        IRMSEL_W::new(self)
     }
     #[doc = "Bit 3 - Infrared data source select"]
     #[inline(always)]
-    pub fn irdssel(&mut self) -> IRDSSEL_W {
-        IRDSSEL_W { w: self }
+    pub fn irdssel(&mut self) -> IRDSSEL_W<3> {
+        IRDSSEL_W::new(self)
     }
     #[doc = "Bit 4 - Infrared data"]
     #[inline(always)]
-    pub fn irdata(&mut self) -> IRDATA_W {
-        IRDATA_W { w: self }
+    pub fn irdata(&mut self) -> IRDATA_W<4> {
+        IRDATA_W::new(self)
     }
     #[doc = "Bits 6:7 - Captivate Conversion triggered Source Selection"]
     #[inline(always)]
-    pub fn syncsel(&mut self) -> SYNCSEL_W {
-        SYNCSEL_W { w: self }
+    pub fn syncsel(&mut self) -> SYNCSEL_W<6> {
+        SYNCSEL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System Configuration Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syscfg1](index.html) module"]
+pub struct SYSCFG1_SPEC;
+impl crate::RegisterSpec for SYSCFG1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [syscfg1::R](R) reader structure"]
+impl crate::Readable for SYSCFG1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [syscfg1::W](W) writer structure"]
+impl crate::Writable for SYSCFG1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSCFG1 to value 0"]
+impl crate::Resettable for SYSCFG1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

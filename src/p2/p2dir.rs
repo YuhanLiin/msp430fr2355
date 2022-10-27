@@ -1,14 +1,64 @@
-#[doc = "Reader of register P2DIR"]
-pub type R = crate::R<u8, super::P2DIR>;
-#[doc = "Writer for register P2DIR"]
-pub type W = crate::W<u8, super::P2DIR>;
-#[doc = "Register P2DIR `reset()`'s with value 0"]
-impl crate::ResetValue for super::P2DIR {
-    type Type = u8;
+#[doc = "Register `P2DIR` reader"]
+pub struct R(crate::R<P2DIR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<P2DIR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<P2DIR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<P2DIR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `P2DIR` writer"]
+pub struct W(crate::W<P2DIR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<P2DIR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<P2DIR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<P2DIR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port 2 Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p2dir](index.html) module"]
+pub struct P2DIR_SPEC;
+impl crate::RegisterSpec for P2DIR_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [p2dir::R](R) reader structure"]
+impl crate::Readable for P2DIR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [p2dir::W](W) writer structure"]
+impl crate::Writable for P2DIR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets P2DIR to value 0"]
+impl crate::Resettable for P2DIR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
         0
     }
 }
-impl R {}
-impl W {}

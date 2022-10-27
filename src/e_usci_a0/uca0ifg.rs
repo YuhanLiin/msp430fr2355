@@ -1,17 +1,43 @@
-#[doc = "Reader of register UCA0IFG"]
-pub type R = crate::R<u16, super::UCA0IFG>;
-#[doc = "Writer for register UCA0IFG"]
-pub type W = crate::W<u16, super::UCA0IFG>;
-#[doc = "Register UCA0IFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA0IFG {
-    type Type = u16;
+#[doc = "Register `UCA0IFG` reader"]
+pub struct R(crate::R<UCA0IFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCA0IFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<UCA0IFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCA0IFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCA0IFG` writer"]
+pub struct W(crate::W<UCA0IFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCA0IFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCA0IFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCA0IFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCRXIFG` reader - Receive interrupt flag"]
+pub type UCRXIFG_R = crate::BitReader<UCRXIFG_A>;
 #[doc = "Receive interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCRXIFG_A {
     #[doc = "0: No interrupt pending"]
     UCRXIFG_0 = 0,
@@ -24,10 +50,8 @@ impl From<UCRXIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCRXIFG`"]
-pub type UCRXIFG_R = crate::R<bool, UCRXIFG_A>;
 impl UCRXIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCRXIFG_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl UCRXIFG_R {
         *self == UCRXIFG_A::UCRXIFG_1
     }
 }
-#[doc = "Write proxy for field `UCRXIFG`"]
-pub struct UCRXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCRXIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCRXIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCRXIFG` writer - Receive interrupt flag"]
+pub type UCRXIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0IFG_SPEC, UCRXIFG_A, O>;
+impl<'a, const O: u8> UCRXIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn ucrxifg_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> UCRXIFG_W<'a> {
     pub fn ucrxifg_1(self) -> &'a mut W {
         self.variant(UCRXIFG_A::UCRXIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `UCTXIFG` reader - Transmit interrupt flag"]
+pub type UCTXIFG_R = crate::BitReader<UCTXIFG_A>;
 #[doc = "Transmit interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXIFG_A {
     #[doc = "0: No interrupt pending"]
     UCTXIFG_0 = 0,
@@ -99,10 +100,8 @@ impl From<UCTXIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXIFG`"]
-pub type UCTXIFG_R = crate::R<bool, UCTXIFG_A>;
 impl UCTXIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXIFG_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl UCTXIFG_R {
         *self == UCTXIFG_A::UCTXIFG_1
     }
 }
-#[doc = "Write proxy for field `UCTXIFG`"]
-pub struct UCTXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXIFG` writer - Transmit interrupt flag"]
+pub type UCTXIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0IFG_SPEC, UCTXIFG_A, O>;
+impl<'a, const O: u8> UCTXIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn uctxifg_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> UCTXIFG_W<'a> {
     pub fn uctxifg_1(self) -> &'a mut W {
         self.variant(UCTXIFG_A::UCTXIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `UCSTTIFG` reader - Start bit interrupt flag"]
+pub type UCSTTIFG_R = crate::BitReader<UCSTTIFG_A>;
 #[doc = "Start bit interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCSTTIFG_A {
     #[doc = "0: No interrupt pending"]
     UCSTTIFG_0 = 0,
@@ -174,10 +150,8 @@ impl From<UCSTTIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCSTTIFG`"]
-pub type UCSTTIFG_R = crate::R<bool, UCSTTIFG_A>;
 impl UCSTTIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSTTIFG_A {
         match self.bits {
@@ -196,18 +170,9 @@ impl UCSTTIFG_R {
         *self == UCSTTIFG_A::UCSTTIFG_1
     }
 }
-#[doc = "Write proxy for field `UCSTTIFG`"]
-pub struct UCSTTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSTTIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCSTTIFG` writer - Start bit interrupt flag"]
+pub type UCSTTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0IFG_SPEC, UCSTTIFG_A, O>;
+impl<'a, const O: u8> UCSTTIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn ucsttifg_0(self) -> &'a mut W {
@@ -218,25 +183,11 @@ impl<'a> UCSTTIFG_W<'a> {
     pub fn ucsttifg_1(self) -> &'a mut W {
         self.variant(UCSTTIFG_A::UCSTTIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `UCTXCPTIFG` reader - Transmit ready interrupt enable"]
+pub type UCTXCPTIFG_R = crate::BitReader<UCTXCPTIFG_A>;
 #[doc = "Transmit ready interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCTXCPTIFG_A {
     #[doc = "0: No interrupt pending"]
     UCTXCPTIFG_0 = 0,
@@ -249,10 +200,8 @@ impl From<UCTXCPTIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCTXCPTIFG`"]
-pub type UCTXCPTIFG_R = crate::R<bool, UCTXCPTIFG_A>;
 impl UCTXCPTIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXCPTIFG_A {
         match self.bits {
@@ -271,18 +220,9 @@ impl UCTXCPTIFG_R {
         *self == UCTXCPTIFG_A::UCTXCPTIFG_1
     }
 }
-#[doc = "Write proxy for field `UCTXCPTIFG`"]
-pub struct UCTXCPTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXCPTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXCPTIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCTXCPTIFG` writer - Transmit ready interrupt enable"]
+pub type UCTXCPTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA0IFG_SPEC, UCTXCPTIFG_A, O>;
+impl<'a, const O: u8> UCTXCPTIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn uctxcptifg_0(self) -> &'a mut W {
@@ -293,64 +233,74 @@ impl<'a> UCTXCPTIFG_W<'a> {
     pub fn uctxcptifg_1(self) -> &'a mut W {
         self.variant(UCTXCPTIFG_A::UCTXCPTIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Receive interrupt flag"]
     #[inline(always)]
     pub fn ucrxifg(&self) -> UCRXIFG_R {
-        UCRXIFG_R::new((self.bits & 0x01) != 0)
+        UCRXIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit interrupt flag"]
     #[inline(always)]
     pub fn uctxifg(&self) -> UCTXIFG_R {
-        UCTXIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCTXIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Start bit interrupt flag"]
     #[inline(always)]
     pub fn ucsttifg(&self) -> UCSTTIFG_R {
-        UCSTTIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCSTTIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Transmit ready interrupt enable"]
     #[inline(always)]
     pub fn uctxcptifg(&self) -> UCTXCPTIFG_R {
-        UCTXCPTIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCTXCPTIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Receive interrupt flag"]
     #[inline(always)]
-    pub fn ucrxifg(&mut self) -> UCRXIFG_W {
-        UCRXIFG_W { w: self }
+    pub fn ucrxifg(&mut self) -> UCRXIFG_W<0> {
+        UCRXIFG_W::new(self)
     }
     #[doc = "Bit 1 - Transmit interrupt flag"]
     #[inline(always)]
-    pub fn uctxifg(&mut self) -> UCTXIFG_W {
-        UCTXIFG_W { w: self }
+    pub fn uctxifg(&mut self) -> UCTXIFG_W<1> {
+        UCTXIFG_W::new(self)
     }
     #[doc = "Bit 2 - Start bit interrupt flag"]
     #[inline(always)]
-    pub fn ucsttifg(&mut self) -> UCSTTIFG_W {
-        UCSTTIFG_W { w: self }
+    pub fn ucsttifg(&mut self) -> UCSTTIFG_W<2> {
+        UCSTTIFG_W::new(self)
     }
     #[doc = "Bit 3 - Transmit ready interrupt enable"]
     #[inline(always)]
-    pub fn uctxcptifg(&mut self) -> UCTXCPTIFG_W {
-        UCTXCPTIFG_W { w: self }
+    pub fn uctxcptifg(&mut self) -> UCTXCPTIFG_W<3> {
+        UCTXCPTIFG_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Ax Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca0ifg](index.html) module"]
+pub struct UCA0IFG_SPEC;
+impl crate::RegisterSpec for UCA0IFG_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [uca0ifg::R](R) reader structure"]
+impl crate::Readable for UCA0IFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uca0ifg::W](W) writer structure"]
+impl crate::Writable for UCA0IFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCA0IFG to value 0"]
+impl crate::Resettable for UCA0IFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

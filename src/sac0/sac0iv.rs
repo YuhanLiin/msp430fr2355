@@ -1,7 +1,43 @@
-#[doc = "Reader of register SAC0IV"]
-pub type R = crate::R<u16, super::SAC0IV>;
+#[doc = "Register `SAC0IV` reader"]
+pub struct R(crate::R<SAC0IV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SAC0IV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SAC0IV_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SAC0IV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SAC0IV` writer"]
+pub struct W(crate::W<SAC0IV_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SAC0IV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SAC0IV_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SAC0IV_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SACIV0` reader - SAC Interrupt Vector Register"]
+pub type SACIV0_R = crate::FieldReader<u16, SACIV0_A>;
 #[doc = "SAC Interrupt Vector Register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum SACIV0_A {
     #[doc = "0: No interrupt pending"]
@@ -17,18 +53,15 @@ impl From<SACIV0_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `SACIV0`"]
-pub type SACIV0_R = crate::R<u16, SACIV0_A>;
 impl SACIV0_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, SACIV0_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SACIV0_A> {
         match self.bits {
-            0 => Val(SACIV0_A::SACIV_0),
-            2 => Val(SACIV0_A::SACIV_2),
-            4 => Val(SACIV0_A::SACIV_4),
-            i => Res(i),
+            0 => Some(SACIV0_A::SACIV_0),
+            2 => Some(SACIV0_A::SACIV_2),
+            4 => Some(SACIV0_A::SACIV_4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SACIV_0`"]
@@ -51,6 +84,34 @@ impl R {
     #[doc = "Bits 0:15 - SAC Interrupt Vector Register"]
     #[inline(always)]
     pub fn saciv0(&self) -> SACIV0_R {
-        SACIV0_R::new((self.bits & 0xffff) as u16)
+        SACIV0_R::new(self.bits)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SAC Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac0iv](index.html) module"]
+pub struct SAC0IV_SPEC;
+impl crate::RegisterSpec for SAC0IV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sac0iv::R](R) reader structure"]
+impl crate::Readable for SAC0IV_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sac0iv::W](W) writer structure"]
+impl crate::Writable for SAC0IV_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SAC0IV to value 0"]
+impl crate::Resettable for SAC0IV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,17 +1,43 @@
-#[doc = "Reader of register CSCTL6"]
-pub type R = crate::R<u16, super::CSCTL6>;
-#[doc = "Writer for register CSCTL6"]
-pub type W = crate::W<u16, super::CSCTL6>;
-#[doc = "Register CSCTL6 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL6 {
-    type Type = u16;
+#[doc = "Register `CSCTL6` reader"]
+pub struct R(crate::R<CSCTL6_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL6_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CSCTL6_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSCTL6_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL6` writer"]
+pub struct W(crate::W<CSCTL6_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL6_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSCTL6_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSCTL6_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `XT1AUTOOFF` reader - XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used"]
+pub type XT1AUTOOFF_R = crate::BitReader<XT1AUTOOFF_A>;
 #[doc = "XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XT1AUTOOFF_A {
     #[doc = "0: XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation."]
     XT1AUTOOFF_0 = 0,
@@ -24,10 +50,8 @@ impl From<XT1AUTOOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XT1AUTOOFF`"]
-pub type XT1AUTOOFF_R = crate::R<bool, XT1AUTOOFF_A>;
 impl XT1AUTOOFF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1AUTOOFF_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl XT1AUTOOFF_R {
         *self == XT1AUTOOFF_A::XT1AUTOOFF_1
     }
 }
-#[doc = "Write proxy for field `XT1AUTOOFF`"]
-pub struct XT1AUTOOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1AUTOOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1AUTOOFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XT1AUTOOFF` writer - XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used"]
+pub type XT1AUTOOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, XT1AUTOOFF_A, O>;
+impl<'a, const O: u8> XT1AUTOOFF_W<'a, O> {
     #[doc = "XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation."]
     #[inline(always)]
     pub fn xt1autooff_0(self) -> &'a mut W {
@@ -68,25 +83,11 @@ impl<'a> XT1AUTOOFF_W<'a> {
     pub fn xt1autooff_1(self) -> &'a mut W {
         self.variant(XT1AUTOOFF_A::XT1AUTOOFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `XT1AGCOFF` reader - Automatic Gain Control (AGC) disable."]
+pub type XT1AGCOFF_R = crate::BitReader<XT1AGCOFF_A>;
 #[doc = "Automatic Gain Control (AGC) disable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XT1AGCOFF_A {
     #[doc = "0: AGC on"]
     XT1AGCOFF_0 = 0,
@@ -99,10 +100,8 @@ impl From<XT1AGCOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XT1AGCOFF`"]
-pub type XT1AGCOFF_R = crate::R<bool, XT1AGCOFF_A>;
 impl XT1AGCOFF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1AGCOFF_A {
         match self.bits {
@@ -121,18 +120,9 @@ impl XT1AGCOFF_R {
         *self == XT1AGCOFF_A::XT1AGCOFF_1
     }
 }
-#[doc = "Write proxy for field `XT1AGCOFF`"]
-pub struct XT1AGCOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1AGCOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1AGCOFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XT1AGCOFF` writer - Automatic Gain Control (AGC) disable."]
+pub type XT1AGCOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, XT1AGCOFF_A, O>;
+impl<'a, const O: u8> XT1AGCOFF_W<'a, O> {
     #[doc = "AGC on"]
     #[inline(always)]
     pub fn xt1agcoff_0(self) -> &'a mut W {
@@ -143,25 +133,11 @@ impl<'a> XT1AGCOFF_W<'a> {
     pub fn xt1agcoff_1(self) -> &'a mut W {
         self.variant(XT1AGCOFF_A::XT1AGCOFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `XT1HFFREQ` reader - The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation."]
+pub type XT1HFFREQ_R = crate::FieldReader<u8, XT1HFFREQ_A>;
 #[doc = "The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum XT1HFFREQ_A {
     #[doc = "0: 1 to 4 MHz"]
@@ -179,10 +155,8 @@ impl From<XT1HFFREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `XT1HFFREQ`"]
-pub type XT1HFFREQ_R = crate::R<u8, XT1HFFREQ_A>;
 impl XT1HFFREQ_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1HFFREQ_A {
         match self.bits {
@@ -214,18 +188,10 @@ impl XT1HFFREQ_R {
         *self == XT1HFFREQ_A::XT1HFFREQ_3
     }
 }
-#[doc = "Write proxy for field `XT1HFFREQ`"]
-pub struct XT1HFFREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1HFFREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1HFFREQ_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `XT1HFFREQ` writer - The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation."]
+pub type XT1HFFREQ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL6_SPEC, u8, XT1HFFREQ_A, 2, O>;
+impl<'a, const O: u8> XT1HFFREQ_W<'a, O> {
     #[doc = "1 to 4 MHz"]
     #[inline(always)]
     pub fn xt1hffreq_0(self) -> &'a mut W {
@@ -246,15 +212,11 @@ impl<'a> XT1HFFREQ_W<'a> {
     pub fn xt1hffreq_3(self) -> &'a mut W {
         self.variant(XT1HFFREQ_A::XT1HFFREQ_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u16) & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `XT1BYPASS` reader - XT1 bypass select"]
+pub type XT1BYPASS_R = crate::BitReader<XT1BYPASS_A>;
 #[doc = "XT1 bypass select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XT1BYPASS_A {
     #[doc = "0: XT1 source internally"]
     XT1BYPASS_0 = 0,
@@ -267,10 +229,8 @@ impl From<XT1BYPASS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XT1BYPASS`"]
-pub type XT1BYPASS_R = crate::R<bool, XT1BYPASS_A>;
 impl XT1BYPASS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1BYPASS_A {
         match self.bits {
@@ -289,18 +249,9 @@ impl XT1BYPASS_R {
         *self == XT1BYPASS_A::XT1BYPASS_1
     }
 }
-#[doc = "Write proxy for field `XT1BYPASS`"]
-pub struct XT1BYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1BYPASS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1BYPASS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XT1BYPASS` writer - XT1 bypass select"]
+pub type XT1BYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, XT1BYPASS_A, O>;
+impl<'a, const O: u8> XT1BYPASS_W<'a, O> {
     #[doc = "XT1 source internally"]
     #[inline(always)]
     pub fn xt1bypass_0(self) -> &'a mut W {
@@ -311,25 +262,11 @@ impl<'a> XT1BYPASS_W<'a> {
     pub fn xt1bypass_1(self) -> &'a mut W {
         self.variant(XT1BYPASS_A::XT1BYPASS_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `XTS` reader - XT1 mode select"]
+pub type XTS_R = crate::BitReader<XTS_A>;
 #[doc = "XT1 mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XTS_A {
     #[doc = "0: Low-frequency mode."]
     XTS_0 = 0,
@@ -342,10 +279,8 @@ impl From<XTS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XTS`"]
-pub type XTS_R = crate::R<bool, XTS_A>;
 impl XTS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XTS_A {
         match self.bits {
@@ -364,18 +299,9 @@ impl XTS_R {
         *self == XTS_A::XTS_1
     }
 }
-#[doc = "Write proxy for field `XTS`"]
-pub struct XTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XTS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XTS` writer - XT1 mode select"]
+pub type XTS_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, XTS_A, O>;
+impl<'a, const O: u8> XTS_W<'a, O> {
     #[doc = "Low-frequency mode."]
     #[inline(always)]
     pub fn xts_0(self) -> &'a mut W {
@@ -386,25 +312,11 @@ impl<'a> XTS_W<'a> {
     pub fn xts_1(self) -> &'a mut W {
         self.variant(XTS_A::XTS_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `XT1DRIVE` reader - The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required."]
+pub type XT1DRIVE_R = crate::FieldReader<u8, XT1DRIVE_A>;
 #[doc = "The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum XT1DRIVE_A {
     #[doc = "0: Lowest drive strength and current consumption"]
@@ -422,10 +334,8 @@ impl From<XT1DRIVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `XT1DRIVE`"]
-pub type XT1DRIVE_R = crate::R<u8, XT1DRIVE_A>;
 impl XT1DRIVE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1DRIVE_A {
         match self.bits {
@@ -457,18 +367,10 @@ impl XT1DRIVE_R {
         *self == XT1DRIVE_A::XT1DRIVE_3
     }
 }
-#[doc = "Write proxy for field `XT1DRIVE`"]
-pub struct XT1DRIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1DRIVE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1DRIVE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `XT1DRIVE` writer - The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required."]
+pub type XT1DRIVE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CSCTL6_SPEC, u8, XT1DRIVE_A, 2, O>;
+impl<'a, const O: u8> XT1DRIVE_W<'a, O> {
     #[doc = "Lowest drive strength and current consumption"]
     #[inline(always)]
     pub fn xt1drive_0(self) -> &'a mut W {
@@ -489,15 +391,11 @@ impl<'a> XT1DRIVE_W<'a> {
     pub fn xt1drive_3(self) -> &'a mut W {
         self.variant(XT1DRIVE_A::XT1DRIVE_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u16) & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `DIVA` reader - ACLK source divider."]
+pub type DIVA_R = crate::FieldReader<u8, DIVA_A>;
 #[doc = "ACLK source divider.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVA_A {
     #[doc = "0: /1"]
@@ -539,10 +437,8 @@ impl From<DIVA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVA`"]
-pub type DIVA_R = crate::R<u8, DIVA_A>;
 impl DIVA_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVA_A {
         match self.bits {
@@ -646,18 +542,9 @@ impl DIVA_R {
         *self == DIVA_A::DIVA_15
     }
 }
-#[doc = "Write proxy for field `DIVA`"]
-pub struct DIVA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVA_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `DIVA` writer - ACLK source divider."]
+pub type DIVA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL6_SPEC, u8, DIVA_A, 4, O>;
+impl<'a, const O: u8> DIVA_W<'a, O> {
     #[doc = "/1"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
@@ -738,15 +625,11 @@ impl<'a> DIVA_W<'a> {
     pub fn diva_15(self) -> &'a mut W {
         self.variant(DIVA_A::DIVA_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u16) & 0x0f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `XT1FAULTOFF` reader - The XT1 oscillator fault detection off"]
+pub type XT1FAULTOFF_R = crate::BitReader<XT1FAULTOFF_A>;
 #[doc = "The XT1 oscillator fault detection off\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XT1FAULTOFF_A {
     #[doc = "0: Enabling XT1 fault to switch ACLK to REFO"]
     XT1FAULTOFF_0 = 0,
@@ -759,10 +642,8 @@ impl From<XT1FAULTOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `XT1FAULTOFF`"]
-pub type XT1FAULTOFF_R = crate::R<bool, XT1FAULTOFF_A>;
 impl XT1FAULTOFF_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT1FAULTOFF_A {
         match self.bits {
@@ -781,18 +662,9 @@ impl XT1FAULTOFF_R {
         *self == XT1FAULTOFF_A::XT1FAULTOFF_1
     }
 }
-#[doc = "Write proxy for field `XT1FAULTOFF`"]
-pub struct XT1FAULTOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT1FAULTOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT1FAULTOFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `XT1FAULTOFF` writer - The XT1 oscillator fault detection off"]
+pub type XT1FAULTOFF_W<'a, const O: u8> = crate::BitWriter<'a, u16, CSCTL6_SPEC, XT1FAULTOFF_A, O>;
+impl<'a, const O: u8> XT1FAULTOFF_W<'a, O> {
     #[doc = "Enabling XT1 fault to switch ACLK to REFO"]
     #[inline(always)]
     pub fn xt1faultoff_0(self) -> &'a mut W {
@@ -803,53 +675,37 @@ impl<'a> XT1FAULTOFF_W<'a> {
     pub fn xt1faultoff_1(self) -> &'a mut W {
         self.variant(XT1FAULTOFF_A::XT1FAULTOFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used"]
     #[inline(always)]
     pub fn xt1autooff(&self) -> XT1AUTOOFF_R {
-        XT1AUTOOFF_R::new((self.bits & 0x01) != 0)
+        XT1AUTOOFF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Automatic Gain Control (AGC) disable."]
     #[inline(always)]
     pub fn xt1agcoff(&self) -> XT1AGCOFF_R {
-        XT1AGCOFF_R::new(((self.bits >> 1) & 0x01) != 0)
+        XT1AGCOFF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation."]
     #[inline(always)]
     pub fn xt1hffreq(&self) -> XT1HFFREQ_R {
-        XT1HFFREQ_R::new(((self.bits >> 2) & 0x03) as u8)
+        XT1HFFREQ_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 4 - XT1 bypass select"]
     #[inline(always)]
     pub fn xt1bypass(&self) -> XT1BYPASS_R {
-        XT1BYPASS_R::new(((self.bits >> 4) & 0x01) != 0)
+        XT1BYPASS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - XT1 mode select"]
     #[inline(always)]
     pub fn xts(&self) -> XTS_R {
-        XTS_R::new(((self.bits >> 5) & 0x01) != 0)
+        XTS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required."]
     #[inline(always)]
     pub fn xt1drive(&self) -> XT1DRIVE_R {
-        XT1DRIVE_R::new(((self.bits >> 6) & 0x03) as u8)
+        XT1DRIVE_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:11 - ACLK source divider."]
     #[inline(always)]
@@ -859,48 +715,74 @@ impl R {
     #[doc = "Bit 13 - The XT1 oscillator fault detection off"]
     #[inline(always)]
     pub fn xt1faultoff(&self) -> XT1FAULTOFF_R {
-        XT1FAULTOFF_R::new(((self.bits >> 13) & 0x01) != 0)
+        XT1FAULTOFF_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used"]
     #[inline(always)]
-    pub fn xt1autooff(&mut self) -> XT1AUTOOFF_W {
-        XT1AUTOOFF_W { w: self }
+    pub fn xt1autooff(&mut self) -> XT1AUTOOFF_W<0> {
+        XT1AUTOOFF_W::new(self)
     }
     #[doc = "Bit 1 - Automatic Gain Control (AGC) disable."]
     #[inline(always)]
-    pub fn xt1agcoff(&mut self) -> XT1AGCOFF_W {
-        XT1AGCOFF_W { w: self }
+    pub fn xt1agcoff(&mut self) -> XT1AGCOFF_W<1> {
+        XT1AGCOFF_W::new(self)
     }
     #[doc = "Bits 2:3 - The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation."]
     #[inline(always)]
-    pub fn xt1hffreq(&mut self) -> XT1HFFREQ_W {
-        XT1HFFREQ_W { w: self }
+    pub fn xt1hffreq(&mut self) -> XT1HFFREQ_W<2> {
+        XT1HFFREQ_W::new(self)
     }
     #[doc = "Bit 4 - XT1 bypass select"]
     #[inline(always)]
-    pub fn xt1bypass(&mut self) -> XT1BYPASS_W {
-        XT1BYPASS_W { w: self }
+    pub fn xt1bypass(&mut self) -> XT1BYPASS_W<4> {
+        XT1BYPASS_W::new(self)
     }
     #[doc = "Bit 5 - XT1 mode select"]
     #[inline(always)]
-    pub fn xts(&mut self) -> XTS_W {
-        XTS_W { w: self }
+    pub fn xts(&mut self) -> XTS_W<5> {
+        XTS_W::new(self)
     }
     #[doc = "Bits 6:7 - The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required."]
     #[inline(always)]
-    pub fn xt1drive(&mut self) -> XT1DRIVE_W {
-        XT1DRIVE_W { w: self }
+    pub fn xt1drive(&mut self) -> XT1DRIVE_W<6> {
+        XT1DRIVE_W::new(self)
     }
     #[doc = "Bits 8:11 - ACLK source divider."]
     #[inline(always)]
-    pub fn diva(&mut self) -> DIVA_W {
-        DIVA_W { w: self }
+    pub fn diva(&mut self) -> DIVA_W<8> {
+        DIVA_W::new(self)
     }
     #[doc = "Bit 13 - The XT1 oscillator fault detection off"]
     #[inline(always)]
-    pub fn xt1faultoff(&mut self) -> XT1FAULTOFF_W {
-        XT1FAULTOFF_W { w: self }
+    pub fn xt1faultoff(&mut self) -> XT1FAULTOFF_W<13> {
+        XT1FAULTOFF_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock System Control 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl6](index.html) module"]
+pub struct CSCTL6_SPEC;
+impl crate::RegisterSpec for CSCTL6_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl6::R](R) reader structure"]
+impl crate::Readable for CSCTL6_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl6::W](W) writer structure"]
+impl crate::Writable for CSCTL6_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL6 to value 0"]
+impl crate::Resettable for CSCTL6_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

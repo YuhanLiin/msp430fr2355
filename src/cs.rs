@@ -20,102 +20,39 @@ pub struct RegisterBlock {
     #[doc = "0x10 - Clock System Control Register 8"]
     pub csctl8: CSCTL8,
 }
-#[doc = "Clock System Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl0](csctl0) module"]
-pub type CSCTL0 = crate::Reg<u16, _CSCTL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL0;
-#[doc = "`read()` method returns [csctl0::R](csctl0::R) reader structure"]
-impl crate::Readable for CSCTL0 {}
-#[doc = "`write(|w| ..)` method takes [csctl0::W](csctl0::W) writer structure"]
-impl crate::Writable for CSCTL0 {}
+#[doc = "CSCTL0 (rw) register accessor: an alias for `Reg<CSCTL0_SPEC>`"]
+pub type CSCTL0 = crate::Reg<csctl0::CSCTL0_SPEC>;
 #[doc = "Clock System Control 0"]
 pub mod csctl0;
-#[doc = "Clock System Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl1](csctl1) module"]
-pub type CSCTL1 = crate::Reg<u16, _CSCTL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL1;
-#[doc = "`read()` method returns [csctl1::R](csctl1::R) reader structure"]
-impl crate::Readable for CSCTL1 {}
-#[doc = "`write(|w| ..)` method takes [csctl1::W](csctl1::W) writer structure"]
-impl crate::Writable for CSCTL1 {}
+#[doc = "CSCTL1 (rw) register accessor: an alias for `Reg<CSCTL1_SPEC>`"]
+pub type CSCTL1 = crate::Reg<csctl1::CSCTL1_SPEC>;
 #[doc = "Clock System Control 1"]
 pub mod csctl1;
-#[doc = "Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl2](csctl2) module"]
-pub type CSCTL2 = crate::Reg<u16, _CSCTL2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL2;
-#[doc = "`read()` method returns [csctl2::R](csctl2::R) reader structure"]
-impl crate::Readable for CSCTL2 {}
-#[doc = "`write(|w| ..)` method takes [csctl2::W](csctl2::W) writer structure"]
-impl crate::Writable for CSCTL2 {}
+#[doc = "CSCTL2 (rw) register accessor: an alias for `Reg<CSCTL2_SPEC>`"]
+pub type CSCTL2 = crate::Reg<csctl2::CSCTL2_SPEC>;
 #[doc = "Clock System Control 2"]
 pub mod csctl2;
-#[doc = "Clock System Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl3](csctl3) module"]
-pub type CSCTL3 = crate::Reg<u16, _CSCTL3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL3;
-#[doc = "`read()` method returns [csctl3::R](csctl3::R) reader structure"]
-impl crate::Readable for CSCTL3 {}
-#[doc = "`write(|w| ..)` method takes [csctl3::W](csctl3::W) writer structure"]
-impl crate::Writable for CSCTL3 {}
+#[doc = "CSCTL3 (rw) register accessor: an alias for `Reg<CSCTL3_SPEC>`"]
+pub type CSCTL3 = crate::Reg<csctl3::CSCTL3_SPEC>;
 #[doc = "Clock System Control 3"]
 pub mod csctl3;
-#[doc = "Clock System Control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl4](csctl4) module"]
-pub type CSCTL4 = crate::Reg<u16, _CSCTL4>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL4;
-#[doc = "`read()` method returns [csctl4::R](csctl4::R) reader structure"]
-impl crate::Readable for CSCTL4 {}
-#[doc = "`write(|w| ..)` method takes [csctl4::W](csctl4::W) writer structure"]
-impl crate::Writable for CSCTL4 {}
+#[doc = "CSCTL4 (rw) register accessor: an alias for `Reg<CSCTL4_SPEC>`"]
+pub type CSCTL4 = crate::Reg<csctl4::CSCTL4_SPEC>;
 #[doc = "Clock System Control 4"]
 pub mod csctl4;
-#[doc = "Clock System Control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl5](csctl5) module"]
-pub type CSCTL5 = crate::Reg<u16, _CSCTL5>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL5;
-#[doc = "`read()` method returns [csctl5::R](csctl5::R) reader structure"]
-impl crate::Readable for CSCTL5 {}
-#[doc = "`write(|w| ..)` method takes [csctl5::W](csctl5::W) writer structure"]
-impl crate::Writable for CSCTL5 {}
+#[doc = "CSCTL5 (rw) register accessor: an alias for `Reg<CSCTL5_SPEC>`"]
+pub type CSCTL5 = crate::Reg<csctl5::CSCTL5_SPEC>;
 #[doc = "Clock System Control 5"]
 pub mod csctl5;
-#[doc = "Clock System Control 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl6](csctl6) module"]
-pub type CSCTL6 = crate::Reg<u16, _CSCTL6>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL6;
-#[doc = "`read()` method returns [csctl6::R](csctl6::R) reader structure"]
-impl crate::Readable for CSCTL6 {}
-#[doc = "`write(|w| ..)` method takes [csctl6::W](csctl6::W) writer structure"]
-impl crate::Writable for CSCTL6 {}
+#[doc = "CSCTL6 (rw) register accessor: an alias for `Reg<CSCTL6_SPEC>`"]
+pub type CSCTL6 = crate::Reg<csctl6::CSCTL6_SPEC>;
 #[doc = "Clock System Control 6"]
 pub mod csctl6;
-#[doc = "Clock System Control Register 7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl7](csctl7) module"]
-pub type CSCTL7 = crate::Reg<u16, _CSCTL7>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL7;
-#[doc = "`read()` method returns [csctl7::R](csctl7::R) reader structure"]
-impl crate::Readable for CSCTL7 {}
-#[doc = "`write(|w| ..)` method takes [csctl7::W](csctl7::W) writer structure"]
-impl crate::Writable for CSCTL7 {}
+#[doc = "CSCTL7 (rw) register accessor: an alias for `Reg<CSCTL7_SPEC>`"]
+pub type CSCTL7 = crate::Reg<csctl7::CSCTL7_SPEC>;
 #[doc = "Clock System Control Register 7"]
 pub mod csctl7;
-#[doc = "Clock System Control Register 8\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl8](csctl8) module"]
-pub type CSCTL8 = crate::Reg<u16, _CSCTL8>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSCTL8;
-#[doc = "`read()` method returns [csctl8::R](csctl8::R) reader structure"]
-impl crate::Readable for CSCTL8 {}
-#[doc = "`write(|w| ..)` method takes [csctl8::W](csctl8::W) writer structure"]
-impl crate::Writable for CSCTL8 {}
+#[doc = "CSCTL8 (rw) register accessor: an alias for `Reg<CSCTL8_SPEC>`"]
+pub type CSCTL8 = crate::Reg<csctl8::CSCTL8_SPEC>;
 #[doc = "Clock System Control Register 8"]
 pub mod csctl8;

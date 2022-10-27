@@ -1,17 +1,43 @@
-#[doc = "Reader of register UCA1MCTLW"]
-pub type R = crate::R<u16, super::UCA1MCTLW>;
-#[doc = "Writer for register UCA1MCTLW"]
-pub type W = crate::W<u16, super::UCA1MCTLW>;
-#[doc = "Register UCA1MCTLW `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA1MCTLW {
-    type Type = u16;
+#[doc = "Register `UCA1MCTLW` reader"]
+pub struct R(crate::R<UCA1MCTLW_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCA1MCTLW_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<UCA1MCTLW_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UCA1MCTLW_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCA1MCTLW` writer"]
+pub struct W(crate::W<UCA1MCTLW_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCA1MCTLW_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UCA1MCTLW_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UCA1MCTLW_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCOS16` reader - Oversampling mode enabled"]
+pub type UCOS16_R = crate::BitReader<UCOS16_A>;
 #[doc = "Oversampling mode enabled\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UCOS16_A {
     #[doc = "0: Disabled"]
     UCOS16_0 = 0,
@@ -24,10 +50,8 @@ impl From<UCOS16_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCOS16`"]
-pub type UCOS16_R = crate::R<bool, UCOS16_A>;
 impl UCOS16_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCOS16_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl UCOS16_R {
         *self == UCOS16_A::UCOS16_1
     }
 }
-#[doc = "Write proxy for field `UCOS16`"]
-pub struct UCOS16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOS16_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCOS16_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `UCOS16` writer - Oversampling mode enabled"]
+pub type UCOS16_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA1MCTLW_SPEC, UCOS16_A, O>;
+impl<'a, const O: u8> UCOS16_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn ucos16_0(self) -> &'a mut W {
@@ -68,56 +83,20 @@ impl<'a> UCOS16_W<'a> {
     pub fn ucos16_1(self) -> &'a mut W {
         self.variant(UCOS16_A::UCOS16_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
-    }
 }
-#[doc = "Reader of field `UCBRF`"]
-pub type UCBRF_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `UCBRF`"]
-pub struct UCBRF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBRF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u16) & 0x0f) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `UCBRS`"]
-pub type UCBRS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `UCBRS`"]
-pub struct UCBRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBRS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
-        self.w
-    }
-}
+#[doc = "Field `UCBRF` reader - First modulation stage select"]
+pub type UCBRF_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `UCBRF` writer - First modulation stage select"]
+pub type UCBRF_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCA1MCTLW_SPEC, u8, u8, 4, O>;
+#[doc = "Field `UCBRS` reader - Second modulation stage select"]
+pub type UCBRS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `UCBRS` writer - Second modulation stage select"]
+pub type UCBRS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCA1MCTLW_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Oversampling mode enabled"]
     #[inline(always)]
     pub fn ucos16(&self) -> UCOS16_R {
-        UCOS16_R::new((self.bits & 0x01) != 0)
+        UCOS16_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - First modulation stage select"]
     #[inline(always)]
@@ -133,17 +112,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Oversampling mode enabled"]
     #[inline(always)]
-    pub fn ucos16(&mut self) -> UCOS16_W {
-        UCOS16_W { w: self }
+    pub fn ucos16(&mut self) -> UCOS16_W<0> {
+        UCOS16_W::new(self)
     }
     #[doc = "Bits 4:7 - First modulation stage select"]
     #[inline(always)]
-    pub fn ucbrf(&mut self) -> UCBRF_W {
-        UCBRF_W { w: self }
+    pub fn ucbrf(&mut self) -> UCBRF_W<4> {
+        UCBRF_W::new(self)
     }
     #[doc = "Bits 8:15 - Second modulation stage select"]
     #[inline(always)]
-    pub fn ucbrs(&mut self) -> UCBRS_W {
-        UCBRS_W { w: self }
+    pub fn ucbrs(&mut self) -> UCBRS_W<8> {
+        UCBRS_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Ax Modulation Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1mctlw](index.html) module"]
+pub struct UCA1MCTLW_SPEC;
+impl crate::RegisterSpec for UCA1MCTLW_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [uca1mctlw::R](R) reader structure"]
+impl crate::Readable for UCA1MCTLW_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uca1mctlw::W](W) writer structure"]
+impl crate::Writable for UCA1MCTLW_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCA1MCTLW to value 0"]
+impl crate::Resettable for UCA1MCTLW_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

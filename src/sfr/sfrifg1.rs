@@ -1,242 +1,43 @@
-#[doc = "Reader of register SFRIFG1"]
-pub type R = crate::R<u16, super::SFRIFG1>;
-#[doc = "Writer for register SFRIFG1"]
-pub type W = crate::W<u16, super::SFRIFG1>;
-#[doc = "Register SFRIFG1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::SFRIFG1 {
-    type Type = u16;
+#[doc = "Register `SFRIFG1` reader"]
+pub struct R(crate::R<SFRIFG1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SFRIFG1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Oscillator fault interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFIFG_A {
-    #[doc = "0: No interrupt pending"]
-    OFIFG_0 = 0,
-    #[doc = "1: Interrupt pending"]
-    OFIFG_1 = 1,
-}
-impl From<OFIFG_A> for bool {
+impl From<crate::R<SFRIFG1_SPEC>> for R {
     #[inline(always)]
-    fn from(variant: OFIFG_A) -> Self {
-        variant as u8 != 0
+    fn from(reader: crate::R<SFRIFG1_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `OFIFG`"]
-pub type OFIFG_R = crate::R<bool, OFIFG_A>;
-impl OFIFG_R {
-    #[doc = r"Get enumerated values variant"]
+#[doc = "Register `SFRIFG1` writer"]
+pub struct W(crate::W<SFRIFG1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SFRIFG1_SPEC>;
     #[inline(always)]
-    pub fn variant(&self) -> OFIFG_A {
-        match self.bits {
-            false => OFIFG_A::OFIFG_0,
-            true => OFIFG_A::OFIFG_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `OFIFG_0`"]
-    #[inline(always)]
-    pub fn is_ofifg_0(&self) -> bool {
-        *self == OFIFG_A::OFIFG_0
-    }
-    #[doc = "Checks if the value of the field is `OFIFG_1`"]
-    #[inline(always)]
-    pub fn is_ofifg_1(&self) -> bool {
-        *self == OFIFG_A::OFIFG_1
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `OFIFG`"]
-pub struct OFIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn variant(self, variant: OFIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn ofifg_0(self) -> &'a mut W {
-        self.variant(OFIFG_A::OFIFG_0)
-    }
-    #[doc = "Interrupt pending"]
-    #[inline(always)]
-    pub fn ofifg_1(self) -> &'a mut W {
-        self.variant(OFIFG_A::OFIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Vacant memory access interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VMAIFG_A {
-    #[doc = "0: No interrupt pending"]
-    VMAIFG_0 = 0,
-    #[doc = "1: Interrupt pending"]
-    VMAIFG_1 = 1,
-}
-impl From<VMAIFG_A> for bool {
+impl From<crate::W<SFRIFG1_SPEC>> for W {
     #[inline(always)]
-    fn from(variant: VMAIFG_A) -> Self {
-        variant as u8 != 0
+    fn from(writer: crate::W<SFRIFG1_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `VMAIFG`"]
-pub type VMAIFG_R = crate::R<bool, VMAIFG_A>;
-impl VMAIFG_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VMAIFG_A {
-        match self.bits {
-            false => VMAIFG_A::VMAIFG_0,
-            true => VMAIFG_A::VMAIFG_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VMAIFG_0`"]
-    #[inline(always)]
-    pub fn is_vmaifg_0(&self) -> bool {
-        *self == VMAIFG_A::VMAIFG_0
-    }
-    #[doc = "Checks if the value of the field is `VMAIFG_1`"]
-    #[inline(always)]
-    pub fn is_vmaifg_1(&self) -> bool {
-        *self == VMAIFG_A::VMAIFG_1
-    }
-}
-#[doc = "Write proxy for field `VMAIFG`"]
-pub struct VMAIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VMAIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VMAIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn vmaifg_0(self) -> &'a mut W {
-        self.variant(VMAIFG_A::VMAIFG_0)
-    }
-    #[doc = "Interrupt pending"]
-    #[inline(always)]
-    pub fn vmaifg_1(self) -> &'a mut W {
-        self.variant(VMAIFG_A::VMAIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "NMI pin interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NMIIFG_A {
-    #[doc = "0: No interrupt pending"]
-    NMIIFG_0 = 0,
-    #[doc = "1: Interrupt pending"]
-    NMIIFG_1 = 1,
-}
-impl From<NMIIFG_A> for bool {
-    #[inline(always)]
-    fn from(variant: NMIIFG_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Reader of field `NMIIFG`"]
-pub type NMIIFG_R = crate::R<bool, NMIIFG_A>;
-impl NMIIFG_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> NMIIFG_A {
-        match self.bits {
-            false => NMIIFG_A::NMIIFG_0,
-            true => NMIIFG_A::NMIIFG_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NMIIFG_0`"]
-    #[inline(always)]
-    pub fn is_nmiifg_0(&self) -> bool {
-        *self == NMIIFG_A::NMIIFG_0
-    }
-    #[doc = "Checks if the value of the field is `NMIIFG_1`"]
-    #[inline(always)]
-    pub fn is_nmiifg_1(&self) -> bool {
-        *self == NMIIFG_A::NMIIFG_1
-    }
-}
-#[doc = "Write proxy for field `NMIIFG`"]
-pub struct NMIIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NMIIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NMIIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn nmiifg_0(self) -> &'a mut W {
-        self.variant(NMIIFG_A::NMIIFG_0)
-    }
-    #[doc = "Interrupt pending"]
-    #[inline(always)]
-    pub fn nmiifg_1(self) -> &'a mut W {
-        self.variant(NMIIFG_A::NMIIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
-        self.w
-    }
-}
+#[doc = "Field `WDTIFG` reader - Watchdog timer interrupt flag"]
+pub type WDTIFG_R = crate::BitReader<WDTIFG_A>;
 #[doc = "Watchdog timer interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDTIFG_A {
     #[doc = "0: No interrupt pending"]
     WDTIFG_0 = 0,
@@ -249,10 +50,8 @@ impl From<WDTIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WDTIFG`"]
-pub type WDTIFG_R = crate::R<bool, WDTIFG_A>;
 impl WDTIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WDTIFG_A {
         match self.bits {
@@ -271,18 +70,9 @@ impl WDTIFG_R {
         *self == WDTIFG_A::WDTIFG_1
     }
 }
-#[doc = "Write proxy for field `WDTIFG`"]
-pub struct WDTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDTIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `WDTIFG` writer - Watchdog timer interrupt flag"]
+pub type WDTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, WDTIFG_A, O>;
+impl<'a, const O: u8> WDTIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn wdtifg_0(self) -> &'a mut W {
@@ -293,25 +83,161 @@ impl<'a> WDTIFG_W<'a> {
     pub fn wdtifg_1(self) -> &'a mut W {
         self.variant(WDTIFG_A::WDTIFG_1)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `OFIFG` reader - Oscillator fault interrupt flag"]
+pub type OFIFG_R = crate::BitReader<OFIFG_A>;
+#[doc = "Oscillator fault interrupt flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OFIFG_A {
+    #[doc = "0: No interrupt pending"]
+    OFIFG_0 = 0,
+    #[doc = "1: Interrupt pending"]
+    OFIFG_1 = 1,
+}
+impl From<OFIFG_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
-        self.w
+    fn from(variant: OFIFG_A) -> Self {
+        variant as u8 != 0
     }
 }
+impl OFIFG_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OFIFG_A {
+        match self.bits {
+            false => OFIFG_A::OFIFG_0,
+            true => OFIFG_A::OFIFG_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OFIFG_0`"]
+    #[inline(always)]
+    pub fn is_ofifg_0(&self) -> bool {
+        *self == OFIFG_A::OFIFG_0
+    }
+    #[doc = "Checks if the value of the field is `OFIFG_1`"]
+    #[inline(always)]
+    pub fn is_ofifg_1(&self) -> bool {
+        *self == OFIFG_A::OFIFG_1
+    }
+}
+#[doc = "Field `OFIFG` writer - Oscillator fault interrupt flag"]
+pub type OFIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, OFIFG_A, O>;
+impl<'a, const O: u8> OFIFG_W<'a, O> {
+    #[doc = "No interrupt pending"]
+    #[inline(always)]
+    pub fn ofifg_0(self) -> &'a mut W {
+        self.variant(OFIFG_A::OFIFG_0)
+    }
+    #[doc = "Interrupt pending"]
+    #[inline(always)]
+    pub fn ofifg_1(self) -> &'a mut W {
+        self.variant(OFIFG_A::OFIFG_1)
+    }
+}
+#[doc = "Field `VMAIFG` reader - Vacant memory access interrupt flag"]
+pub type VMAIFG_R = crate::BitReader<VMAIFG_A>;
+#[doc = "Vacant memory access interrupt flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum VMAIFG_A {
+    #[doc = "0: No interrupt pending"]
+    VMAIFG_0 = 0,
+    #[doc = "1: Interrupt pending"]
+    VMAIFG_1 = 1,
+}
+impl From<VMAIFG_A> for bool {
+    #[inline(always)]
+    fn from(variant: VMAIFG_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VMAIFG_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VMAIFG_A {
+        match self.bits {
+            false => VMAIFG_A::VMAIFG_0,
+            true => VMAIFG_A::VMAIFG_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VMAIFG_0`"]
+    #[inline(always)]
+    pub fn is_vmaifg_0(&self) -> bool {
+        *self == VMAIFG_A::VMAIFG_0
+    }
+    #[doc = "Checks if the value of the field is `VMAIFG_1`"]
+    #[inline(always)]
+    pub fn is_vmaifg_1(&self) -> bool {
+        *self == VMAIFG_A::VMAIFG_1
+    }
+}
+#[doc = "Field `VMAIFG` writer - Vacant memory access interrupt flag"]
+pub type VMAIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, VMAIFG_A, O>;
+impl<'a, const O: u8> VMAIFG_W<'a, O> {
+    #[doc = "No interrupt pending"]
+    #[inline(always)]
+    pub fn vmaifg_0(self) -> &'a mut W {
+        self.variant(VMAIFG_A::VMAIFG_0)
+    }
+    #[doc = "Interrupt pending"]
+    #[inline(always)]
+    pub fn vmaifg_1(self) -> &'a mut W {
+        self.variant(VMAIFG_A::VMAIFG_1)
+    }
+}
+#[doc = "Field `NMIIFG` reader - NMI pin interrupt flag"]
+pub type NMIIFG_R = crate::BitReader<NMIIFG_A>;
+#[doc = "NMI pin interrupt flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum NMIIFG_A {
+    #[doc = "0: No interrupt pending"]
+    NMIIFG_0 = 0,
+    #[doc = "1: Interrupt pending"]
+    NMIIFG_1 = 1,
+}
+impl From<NMIIFG_A> for bool {
+    #[inline(always)]
+    fn from(variant: NMIIFG_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl NMIIFG_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NMIIFG_A {
+        match self.bits {
+            false => NMIIFG_A::NMIIFG_0,
+            true => NMIIFG_A::NMIIFG_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NMIIFG_0`"]
+    #[inline(always)]
+    pub fn is_nmiifg_0(&self) -> bool {
+        *self == NMIIFG_A::NMIIFG_0
+    }
+    #[doc = "Checks if the value of the field is `NMIIFG_1`"]
+    #[inline(always)]
+    pub fn is_nmiifg_1(&self) -> bool {
+        *self == NMIIFG_A::NMIIFG_1
+    }
+}
+#[doc = "Field `NMIIFG` writer - NMI pin interrupt flag"]
+pub type NMIIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, NMIIFG_A, O>;
+impl<'a, const O: u8> NMIIFG_W<'a, O> {
+    #[doc = "No interrupt pending"]
+    #[inline(always)]
+    pub fn nmiifg_0(self) -> &'a mut W {
+        self.variant(NMIIFG_A::NMIIFG_0)
+    }
+    #[doc = "Interrupt pending"]
+    #[inline(always)]
+    pub fn nmiifg_1(self) -> &'a mut W {
+        self.variant(NMIIFG_A::NMIIFG_1)
+    }
+}
+#[doc = "Field `JMBINIFG` reader - JTAG mailbox input interrupt flag"]
+pub type JMBINIFG_R = crate::BitReader<JMBINIFG_A>;
 #[doc = "JTAG mailbox input interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBINIFG_A {
     #[doc = "0: No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBI0 is read by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBI0 and JMBI1 have been read by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read"]
     JMBINIFG_0 = 0,
@@ -324,10 +250,8 @@ impl From<JMBINIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBINIFG`"]
-pub type JMBINIFG_R = crate::R<bool, JMBINIFG_A>;
 impl JMBINIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBINIFG_A {
         match self.bits {
@@ -346,18 +270,9 @@ impl JMBINIFG_R {
         *self == JMBINIFG_A::JMBINIFG_1
     }
 }
-#[doc = "Write proxy for field `JMBINIFG`"]
-pub struct JMBINIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBINIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBINIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBINIFG` writer - JTAG mailbox input interrupt flag"]
+pub type JMBINIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, JMBINIFG_A, O>;
+impl<'a, const O: u8> JMBINIFG_W<'a, O> {
     #[doc = "No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBI0 is read by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBI0 and JMBI1 have been read by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read"]
     #[inline(always)]
     pub fn jmbinifg_0(self) -> &'a mut W {
@@ -368,25 +283,11 @@ impl<'a> JMBINIFG_W<'a> {
     pub fn jmbinifg_1(self) -> &'a mut W {
         self.variant(JMBINIFG_A::JMBINIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `JMBOUTIFG` reader - JTAG mailbox output interrupt flag"]
+pub type JMBOUTIFG_R = crate::BitReader<JMBOUTIFG_A>;
 #[doc = "JTAG mailbox output interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JMBOUTIFG_A {
     #[doc = "0: No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBO0 has been written with a new message to the JTAG module by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBO0 and JMBO1 have been written with new messages to the JTAG module by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read."]
     JMBOUTIFG_0 = 0,
@@ -399,10 +300,8 @@ impl From<JMBOUTIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `JMBOUTIFG`"]
-pub type JMBOUTIFG_R = crate::R<bool, JMBOUTIFG_A>;
 impl JMBOUTIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> JMBOUTIFG_A {
         match self.bits {
@@ -421,18 +320,9 @@ impl JMBOUTIFG_R {
         *self == JMBOUTIFG_A::JMBOUTIFG_1
     }
 }
-#[doc = "Write proxy for field `JMBOUTIFG`"]
-pub struct JMBOUTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JMBOUTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: JMBOUTIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `JMBOUTIFG` writer - JTAG mailbox output interrupt flag"]
+pub type JMBOUTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIFG1_SPEC, JMBOUTIFG_A, O>;
+impl<'a, const O: u8> JMBOUTIFG_W<'a, O> {
     #[doc = "No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBO0 has been written with a new message to the JTAG module by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBO0 and JMBO1 have been written with new messages to the JTAG module by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read."]
     #[inline(always)]
     pub fn jmboutifg_0(self) -> &'a mut W {
@@ -443,84 +333,94 @@ impl<'a> JMBOUTIFG_W<'a> {
     pub fn jmboutifg_1(self) -> &'a mut W {
         self.variant(JMBOUTIFG_A::JMBOUTIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
+    #[doc = "Bit 0 - Watchdog timer interrupt flag"]
+    #[inline(always)]
+    pub fn wdtifg(&self) -> WDTIFG_R {
+        WDTIFG_R::new((self.bits & 1) != 0)
+    }
     #[doc = "Bit 1 - Oscillator fault interrupt flag"]
     #[inline(always)]
     pub fn ofifg(&self) -> OFIFG_R {
-        OFIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        OFIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Vacant memory access interrupt flag"]
     #[inline(always)]
     pub fn vmaifg(&self) -> VMAIFG_R {
-        VMAIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        VMAIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - NMI pin interrupt flag"]
     #[inline(always)]
     pub fn nmiifg(&self) -> NMIIFG_R {
-        NMIIFG_R::new(((self.bits >> 4) & 0x01) != 0)
-    }
-    #[doc = "Bit 0 - Watchdog timer interrupt flag"]
-    #[inline(always)]
-    pub fn wdtifg(&self) -> WDTIFG_R {
-        WDTIFG_R::new((self.bits & 0x01) != 0)
+        NMIIFG_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - JTAG mailbox input interrupt flag"]
     #[inline(always)]
     pub fn jmbinifg(&self) -> JMBINIFG_R {
-        JMBINIFG_R::new(((self.bits >> 6) & 0x01) != 0)
+        JMBINIFG_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - JTAG mailbox output interrupt flag"]
     #[inline(always)]
     pub fn jmboutifg(&self) -> JMBOUTIFG_R {
-        JMBOUTIFG_R::new(((self.bits >> 7) & 0x01) != 0)
+        JMBOUTIFG_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
+    #[doc = "Bit 0 - Watchdog timer interrupt flag"]
+    #[inline(always)]
+    pub fn wdtifg(&mut self) -> WDTIFG_W<0> {
+        WDTIFG_W::new(self)
+    }
     #[doc = "Bit 1 - Oscillator fault interrupt flag"]
     #[inline(always)]
-    pub fn ofifg(&mut self) -> OFIFG_W {
-        OFIFG_W { w: self }
+    pub fn ofifg(&mut self) -> OFIFG_W<1> {
+        OFIFG_W::new(self)
     }
     #[doc = "Bit 3 - Vacant memory access interrupt flag"]
     #[inline(always)]
-    pub fn vmaifg(&mut self) -> VMAIFG_W {
-        VMAIFG_W { w: self }
+    pub fn vmaifg(&mut self) -> VMAIFG_W<3> {
+        VMAIFG_W::new(self)
     }
     #[doc = "Bit 4 - NMI pin interrupt flag"]
     #[inline(always)]
-    pub fn nmiifg(&mut self) -> NMIIFG_W {
-        NMIIFG_W { w: self }
-    }
-    #[doc = "Bit 0 - Watchdog timer interrupt flag"]
-    #[inline(always)]
-    pub fn wdtifg(&mut self) -> WDTIFG_W {
-        WDTIFG_W { w: self }
+    pub fn nmiifg(&mut self) -> NMIIFG_W<4> {
+        NMIIFG_W::new(self)
     }
     #[doc = "Bit 6 - JTAG mailbox input interrupt flag"]
     #[inline(always)]
-    pub fn jmbinifg(&mut self) -> JMBINIFG_W {
-        JMBINIFG_W { w: self }
+    pub fn jmbinifg(&mut self) -> JMBINIFG_W<6> {
+        JMBINIFG_W::new(self)
     }
     #[doc = "Bit 7 - JTAG mailbox output interrupt flag"]
     #[inline(always)]
-    pub fn jmboutifg(&mut self) -> JMBOUTIFG_W {
-        JMBOUTIFG_W { w: self }
+    pub fn jmboutifg(&mut self) -> JMBOUTIFG_W<7> {
+        JMBOUTIFG_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sfrifg1](index.html) module"]
+pub struct SFRIFG1_SPEC;
+impl crate::RegisterSpec for SFRIFG1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [sfrifg1::R](R) reader structure"]
+impl crate::Readable for SFRIFG1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sfrifg1::W](W) writer structure"]
+impl crate::Writable for SFRIFG1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SFRIFG1 to value 0"]
+impl crate::Resettable for SFRIFG1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

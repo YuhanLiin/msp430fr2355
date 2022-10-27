@@ -1,167 +1,43 @@
-#[doc = "Reader of register GCCTL1"]
-pub type R = crate::R<u16, super::GCCTL1>;
-#[doc = "Writer for register GCCTL1"]
-pub type W = crate::W<u16, super::GCCTL1>;
-#[doc = "Register GCCTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::GCCTL1 {
-    type Type = u16;
+#[doc = "Register `GCCTL1` reader"]
+pub struct R(crate::R<GCCTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GCCTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Access time error flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ACCTEIFG_A {
-    #[doc = "0: No interrupt pending."]
-    ACCTEIFG_0 = 0,
-    #[doc = "1: Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
-    ACCTEIFG_1 = 1,
-}
-impl From<ACCTEIFG_A> for bool {
+impl From<crate::R<GCCTL1_SPEC>> for R {
     #[inline(always)]
-    fn from(variant: ACCTEIFG_A) -> Self {
-        variant as u8 != 0
+    fn from(reader: crate::R<GCCTL1_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `ACCTEIFG`"]
-pub type ACCTEIFG_R = crate::R<bool, ACCTEIFG_A>;
-impl ACCTEIFG_R {
-    #[doc = r"Get enumerated values variant"]
+#[doc = "Register `GCCTL1` writer"]
+pub struct W(crate::W<GCCTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GCCTL1_SPEC>;
     #[inline(always)]
-    pub fn variant(&self) -> ACCTEIFG_A {
-        match self.bits {
-            false => ACCTEIFG_A::ACCTEIFG_0,
-            true => ACCTEIFG_A::ACCTEIFG_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ACCTEIFG_0`"]
-    #[inline(always)]
-    pub fn is_accteifg_0(&self) -> bool {
-        *self == ACCTEIFG_A::ACCTEIFG_0
-    }
-    #[doc = "Checks if the value of the field is `ACCTEIFG_1`"]
-    #[inline(always)]
-    pub fn is_accteifg_1(&self) -> bool {
-        *self == ACCTEIFG_A::ACCTEIFG_1
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `ACCTEIFG`"]
-pub struct ACCTEIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACCTEIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn variant(self, variant: ACCTEIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No interrupt pending."]
-    #[inline(always)]
-    pub fn accteifg_0(self) -> &'a mut W {
-        self.variant(ACCTEIFG_A::ACCTEIFG_0)
-    }
-    #[doc = "Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
-    #[inline(always)]
-    pub fn accteifg_1(self) -> &'a mut W {
-        self.variant(ACCTEIFG_A::ACCTEIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "FRAM uncorrectable bit error detection flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UBDIFG_A {
-    #[doc = "0: No interrupt pending."]
-    UBDIFG_0 = 0,
-    #[doc = "1: Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
-    UBDIFG_1 = 1,
-}
-impl From<UBDIFG_A> for bool {
+impl From<crate::W<GCCTL1_SPEC>> for W {
     #[inline(always)]
-    fn from(variant: UBDIFG_A) -> Self {
-        variant as u8 != 0
+    fn from(writer: crate::W<GCCTL1_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `UBDIFG`"]
-pub type UBDIFG_R = crate::R<bool, UBDIFG_A>;
-impl UBDIFG_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> UBDIFG_A {
-        match self.bits {
-            false => UBDIFG_A::UBDIFG_0,
-            true => UBDIFG_A::UBDIFG_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `UBDIFG_0`"]
-    #[inline(always)]
-    pub fn is_ubdifg_0(&self) -> bool {
-        *self == UBDIFG_A::UBDIFG_0
-    }
-    #[doc = "Checks if the value of the field is `UBDIFG_1`"]
-    #[inline(always)]
-    pub fn is_ubdifg_1(&self) -> bool {
-        *self == UBDIFG_A::UBDIFG_1
-    }
-}
-#[doc = "Write proxy for field `UBDIFG`"]
-pub struct UBDIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UBDIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UBDIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No interrupt pending."]
-    #[inline(always)]
-    pub fn ubdifg_0(self) -> &'a mut W {
-        self.variant(UBDIFG_A::UBDIFG_0)
-    }
-    #[doc = "Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
-    #[inline(always)]
-    pub fn ubdifg_1(self) -> &'a mut W {
-        self.variant(UBDIFG_A::UBDIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
-        self.w
-    }
-}
+#[doc = "Field `CBDIFG` reader - FRAM correctable bit error detection flag"]
+pub type CBDIFG_R = crate::BitReader<CBDIFG_A>;
 #[doc = "FRAM correctable bit error detection flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CBDIFG_A {
     #[doc = "0: No interrupt is pending"]
     CBDIFG_0 = 0,
@@ -174,10 +50,8 @@ impl From<CBDIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CBDIFG`"]
-pub type CBDIFG_R = crate::R<bool, CBDIFG_A>;
 impl CBDIFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CBDIFG_A {
         match self.bits {
@@ -196,18 +70,9 @@ impl CBDIFG_R {
         *self == CBDIFG_A::CBDIFG_1
     }
 }
-#[doc = "Write proxy for field `CBDIFG`"]
-pub struct CBDIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBDIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CBDIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CBDIFG` writer - FRAM correctable bit error detection flag"]
+pub type CBDIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, GCCTL1_SPEC, CBDIFG_A, O>;
+impl<'a, const O: u8> CBDIFG_W<'a, O> {
     #[doc = "No interrupt is pending"]
     #[inline(always)]
     pub fn cbdifg_0(self) -> &'a mut W {
@@ -218,54 +83,164 @@ impl<'a> CBDIFG_W<'a> {
     pub fn cbdifg_1(self) -> &'a mut W {
         self.variant(CBDIFG_A::CBDIFG_1)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `UBDIFG` reader - FRAM uncorrectable bit error detection flag"]
+pub type UBDIFG_R = crate::BitReader<UBDIFG_A>;
+#[doc = "FRAM uncorrectable bit error detection flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum UBDIFG_A {
+    #[doc = "0: No interrupt pending."]
+    UBDIFG_0 = 0,
+    #[doc = "1: Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
+    UBDIFG_1 = 1,
+}
+impl From<UBDIFG_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
+    fn from(variant: UBDIFG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r"Clears the field bit"]
+}
+impl UBDIFG_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
+    pub fn variant(&self) -> UBDIFG_A {
+        match self.bits {
+            false => UBDIFG_A::UBDIFG_0,
+            true => UBDIFG_A::UBDIFG_1,
+        }
     }
-    #[doc = r"Writes raw bits to the field"]
+    #[doc = "Checks if the value of the field is `UBDIFG_0`"]
     #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
-        self.w
+    pub fn is_ubdifg_0(&self) -> bool {
+        *self == UBDIFG_A::UBDIFG_0
+    }
+    #[doc = "Checks if the value of the field is `UBDIFG_1`"]
+    #[inline(always)]
+    pub fn is_ubdifg_1(&self) -> bool {
+        *self == UBDIFG_A::UBDIFG_1
+    }
+}
+#[doc = "Field `UBDIFG` writer - FRAM uncorrectable bit error detection flag"]
+pub type UBDIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, GCCTL1_SPEC, UBDIFG_A, O>;
+impl<'a, const O: u8> UBDIFG_W<'a, O> {
+    #[doc = "No interrupt pending."]
+    #[inline(always)]
+    pub fn ubdifg_0(self) -> &'a mut W {
+        self.variant(UBDIFG_A::UBDIFG_0)
+    }
+    #[doc = "Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
+    #[inline(always)]
+    pub fn ubdifg_1(self) -> &'a mut W {
+        self.variant(UBDIFG_A::UBDIFG_1)
+    }
+}
+#[doc = "Field `ACCTEIFG` reader - Access time error flag"]
+pub type ACCTEIFG_R = crate::BitReader<ACCTEIFG_A>;
+#[doc = "Access time error flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ACCTEIFG_A {
+    #[doc = "0: No interrupt pending."]
+    ACCTEIFG_0 = 0,
+    #[doc = "1: Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
+    ACCTEIFG_1 = 1,
+}
+impl From<ACCTEIFG_A> for bool {
+    #[inline(always)]
+    fn from(variant: ACCTEIFG_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ACCTEIFG_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ACCTEIFG_A {
+        match self.bits {
+            false => ACCTEIFG_A::ACCTEIFG_0,
+            true => ACCTEIFG_A::ACCTEIFG_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ACCTEIFG_0`"]
+    #[inline(always)]
+    pub fn is_accteifg_0(&self) -> bool {
+        *self == ACCTEIFG_A::ACCTEIFG_0
+    }
+    #[doc = "Checks if the value of the field is `ACCTEIFG_1`"]
+    #[inline(always)]
+    pub fn is_accteifg_1(&self) -> bool {
+        *self == ACCTEIFG_A::ACCTEIFG_1
+    }
+}
+#[doc = "Field `ACCTEIFG` writer - Access time error flag"]
+pub type ACCTEIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, GCCTL1_SPEC, ACCTEIFG_A, O>;
+impl<'a, const O: u8> ACCTEIFG_W<'a, O> {
+    #[doc = "No interrupt pending."]
+    #[inline(always)]
+    pub fn accteifg_0(self) -> &'a mut W {
+        self.variant(ACCTEIFG_A::ACCTEIFG_0)
+    }
+    #[doc = "Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt."]
+    #[inline(always)]
+    pub fn accteifg_1(self) -> &'a mut W {
+        self.variant(ACCTEIFG_A::ACCTEIFG_1)
     }
 }
 impl R {
-    #[doc = "Bit 3 - Access time error flag"]
+    #[doc = "Bit 1 - FRAM correctable bit error detection flag"]
     #[inline(always)]
-    pub fn accteifg(&self) -> ACCTEIFG_R {
-        ACCTEIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn cbdifg(&self) -> CBDIFG_R {
+        CBDIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - FRAM uncorrectable bit error detection flag"]
     #[inline(always)]
     pub fn ubdifg(&self) -> UBDIFG_R {
-        UBDIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        UBDIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 1 - FRAM correctable bit error detection flag"]
+    #[doc = "Bit 3 - Access time error flag"]
     #[inline(always)]
-    pub fn cbdifg(&self) -> CBDIFG_R {
-        CBDIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn accteifg(&self) -> ACCTEIFG_R {
+        ACCTEIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 3 - Access time error flag"]
+    #[doc = "Bit 1 - FRAM correctable bit error detection flag"]
     #[inline(always)]
-    pub fn accteifg(&mut self) -> ACCTEIFG_W {
-        ACCTEIFG_W { w: self }
+    pub fn cbdifg(&mut self) -> CBDIFG_W<1> {
+        CBDIFG_W::new(self)
     }
     #[doc = "Bit 2 - FRAM uncorrectable bit error detection flag"]
     #[inline(always)]
-    pub fn ubdifg(&mut self) -> UBDIFG_W {
-        UBDIFG_W { w: self }
+    pub fn ubdifg(&mut self) -> UBDIFG_W<2> {
+        UBDIFG_W::new(self)
     }
-    #[doc = "Bit 1 - FRAM correctable bit error detection flag"]
+    #[doc = "Bit 3 - Access time error flag"]
     #[inline(always)]
-    pub fn cbdifg(&mut self) -> CBDIFG_W {
-        CBDIFG_W { w: self }
+    pub fn accteifg(&mut self) -> ACCTEIFG_W<3> {
+        ACCTEIFG_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "General Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcctl1](index.html) module"]
+pub struct GCCTL1_SPEC;
+impl crate::RegisterSpec for GCCTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [gcctl1::R](R) reader structure"]
+impl crate::Readable for GCCTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gcctl1::W](W) writer structure"]
+impl crate::Writable for GCCTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GCCTL1 to value 0"]
+impl crate::Resettable for GCCTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

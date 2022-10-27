@@ -1,17 +1,43 @@
-#[doc = "Reader of register ADCCTL1"]
-pub type R = crate::R<u16, super::ADCCTL1>;
-#[doc = "Writer for register ADCCTL1"]
-pub type W = crate::W<u16, super::ADCCTL1>;
-#[doc = "Register ADCCTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADCCTL1 {
-    type Type = u16;
+#[doc = "Register `ADCCTL1` reader"]
+pub struct R(crate::R<ADCCTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADCCTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ADCCTL1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ADCCTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADCCTL1` writer"]
+pub struct W(crate::W<ADCCTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADCCTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADCCTL1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADCCTL1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADCBUSY` reader - ADC busy"]
+pub type ADCBUSY_R = crate::BitReader<ADCBUSY_A>;
 #[doc = "ADC busy\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCBUSY_A {
     #[doc = "0: No operation is active."]
     ADCBUSY_0 = 0,
@@ -24,10 +50,8 @@ impl From<ADCBUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCBUSY`"]
-pub type ADCBUSY_R = crate::R<bool, ADCBUSY_A>;
 impl ADCBUSY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCBUSY_A {
         match self.bits {
@@ -46,8 +70,10 @@ impl ADCBUSY_R {
         *self == ADCBUSY_A::ADCBUSY_1
     }
 }
+#[doc = "Field `ADCCONSEQ` reader - conversion sequence mode select"]
+pub type ADCCONSEQ_R = crate::FieldReader<u8, ADCCONSEQ_A>;
 #[doc = "conversion sequence mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCCONSEQ_A {
     #[doc = "0: Single-channel, single-conversion"]
@@ -65,10 +91,8 @@ impl From<ADCCONSEQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCCONSEQ`"]
-pub type ADCCONSEQ_R = crate::R<u8, ADCCONSEQ_A>;
 impl ADCCONSEQ_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCCONSEQ_A {
         match self.bits {
@@ -100,18 +124,10 @@ impl ADCCONSEQ_R {
         *self == ADCCONSEQ_A::ADCCONSEQ_3
     }
 }
-#[doc = "Write proxy for field `ADCCONSEQ`"]
-pub struct ADCCONSEQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCCONSEQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCCONSEQ_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCCONSEQ` writer - conversion sequence mode select"]
+pub type ADCCONSEQ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCCTL1_SPEC, u8, ADCCONSEQ_A, 2, O>;
+impl<'a, const O: u8> ADCCONSEQ_W<'a, O> {
     #[doc = "Single-channel, single-conversion"]
     #[inline(always)]
     pub fn adcconseq_0(self) -> &'a mut W {
@@ -132,15 +148,11 @@ impl<'a> ADCCONSEQ_W<'a> {
     pub fn adcconseq_3(self) -> &'a mut W {
         self.variant(ADCCONSEQ_A::ADCCONSEQ_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | (((value as u16) & 0x03) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ADCSSEL` reader - clock source select"]
+pub type ADCSSEL_R = crate::FieldReader<u8, ADCSSEL_A>;
 #[doc = "clock source select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSSEL_A {
     #[doc = "0: ADCOSC (MODOSC)"]
@@ -158,10 +170,8 @@ impl From<ADCSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCSSEL`"]
-pub type ADCSSEL_R = crate::R<u8, ADCSSEL_A>;
 impl ADCSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCSSEL_A {
         match self.bits {
@@ -193,18 +203,10 @@ impl ADCSSEL_R {
         *self == ADCSSEL_A::ADCSSEL_3
     }
 }
-#[doc = "Write proxy for field `ADCSSEL`"]
-pub struct ADCSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCSSEL` writer - clock source select"]
+pub type ADCSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCCTL1_SPEC, u8, ADCSSEL_A, 2, O>;
+impl<'a, const O: u8> ADCSSEL_W<'a, O> {
     #[doc = "ADCOSC (MODOSC)"]
     #[inline(always)]
     pub fn adcssel_0(self) -> &'a mut W {
@@ -225,15 +227,11 @@ impl<'a> ADCSSEL_W<'a> {
     pub fn adcssel_3(self) -> &'a mut W {
         self.variant(ADCSSEL_A::ADCSSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u16) & 0x03) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADCDIV` reader - clock divider"]
+pub type ADCDIV_R = crate::FieldReader<u8, ADCDIV_A>;
 #[doc = "clock divider\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCDIV_A {
     #[doc = "0: /1"]
@@ -259,10 +257,8 @@ impl From<ADCDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCDIV`"]
-pub type ADCDIV_R = crate::R<u8, ADCDIV_A>;
 impl ADCDIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCDIV_A {
         match self.bits {
@@ -318,18 +314,10 @@ impl ADCDIV_R {
         *self == ADCDIV_A::ADCDIV_7
     }
 }
-#[doc = "Write proxy for field `ADCDIV`"]
-pub struct ADCDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCDIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCDIV` writer - clock divider"]
+pub type ADCDIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCCTL1_SPEC, u8, ADCDIV_A, 3, O>;
+impl<'a, const O: u8> ADCDIV_W<'a, O> {
     #[doc = "/1"]
     #[inline(always)]
     pub fn adcdiv_0(self) -> &'a mut W {
@@ -370,15 +358,11 @@ impl<'a> ADCDIV_W<'a> {
     pub fn adcdiv_7(self) -> &'a mut W {
         self.variant(ADCDIV_A::ADCDIV_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u16) & 0x07) << 5);
-        self.w
-    }
 }
+#[doc = "Field `ADCISSH` reader - invert signal sample-and-hold"]
+pub type ADCISSH_R = crate::BitReader<ADCISSH_A>;
 #[doc = "invert signal sample-and-hold\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCISSH_A {
     #[doc = "0: The sample-input signal is not inverted."]
     ADCISSH_0 = 0,
@@ -391,10 +375,8 @@ impl From<ADCISSH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCISSH`"]
-pub type ADCISSH_R = crate::R<bool, ADCISSH_A>;
 impl ADCISSH_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCISSH_A {
         match self.bits {
@@ -413,18 +395,9 @@ impl ADCISSH_R {
         *self == ADCISSH_A::ADCISSH_1
     }
 }
-#[doc = "Write proxy for field `ADCISSH`"]
-pub struct ADCISSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCISSH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCISSH_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCISSH` writer - invert signal sample-and-hold"]
+pub type ADCISSH_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL1_SPEC, ADCISSH_A, O>;
+impl<'a, const O: u8> ADCISSH_W<'a, O> {
     #[doc = "The sample-input signal is not inverted."]
     #[inline(always)]
     pub fn adcissh_0(self) -> &'a mut W {
@@ -435,25 +408,11 @@ impl<'a> ADCISSH_W<'a> {
     pub fn adcissh_1(self) -> &'a mut W {
         self.variant(ADCISSH_A::ADCISSH_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `ADCSHP` reader - sample-and-hold pulse-mode select"]
+pub type ADCSHP_R = crate::BitReader<ADCSHP_A>;
 #[doc = "sample-and-hold pulse-mode select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCSHP_A {
     #[doc = "0: SAMPCON signal is sourced from the sample-input signal."]
     ADCSHP_0 = 0,
@@ -466,10 +425,8 @@ impl From<ADCSHP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ADCSHP`"]
-pub type ADCSHP_R = crate::R<bool, ADCSHP_A>;
 impl ADCSHP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCSHP_A {
         match self.bits {
@@ -488,18 +445,9 @@ impl ADCSHP_R {
         *self == ADCSHP_A::ADCSHP_1
     }
 }
-#[doc = "Write proxy for field `ADCSHP`"]
-pub struct ADCSHP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSHP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSHP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `ADCSHP` writer - sample-and-hold pulse-mode select"]
+pub type ADCSHP_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL1_SPEC, ADCSHP_A, O>;
+impl<'a, const O: u8> ADCSHP_W<'a, O> {
     #[doc = "SAMPCON signal is sourced from the sample-input signal."]
     #[inline(always)]
     pub fn adcshp_0(self) -> &'a mut W {
@@ -510,25 +458,11 @@ impl<'a> ADCSHP_W<'a> {
     pub fn adcshp_1(self) -> &'a mut W {
         self.variant(ADCSHP_A::ADCSHP_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `ADCSHS` reader - sample-and-hold source select"]
+pub type ADCSHS_R = crate::FieldReader<u8, ADCSHS_A>;
 #[doc = "sample-and-hold source select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCSHS_A {
     #[doc = "0: ADCSC bit"]
@@ -546,10 +480,8 @@ impl From<ADCSHS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADCSHS`"]
-pub type ADCSHS_R = crate::R<u8, ADCSHS_A>;
 impl ADCSHS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCSHS_A {
         match self.bits {
@@ -581,18 +513,10 @@ impl ADCSHS_R {
         *self == ADCSHS_A::ADCSHS_3
     }
 }
-#[doc = "Write proxy for field `ADCSHS`"]
-pub struct ADCSHS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSHS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSHS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADCSHS` writer - sample-and-hold source select"]
+pub type ADCSHS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADCCTL1_SPEC, u8, ADCSHS_A, 2, O>;
+impl<'a, const O: u8> ADCSHS_W<'a, O> {
     #[doc = "ADCSC bit"]
     #[inline(always)]
     pub fn adcshs_0(self) -> &'a mut W {
@@ -613,79 +537,99 @@ impl<'a> ADCSHS_W<'a> {
     pub fn adcshs_3(self) -> &'a mut W {
         self.variant(ADCSHS_A::ADCSHS_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u16) & 0x03) << 10);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - ADC busy"]
     #[inline(always)]
     pub fn adcbusy(&self) -> ADCBUSY_R {
-        ADCBUSY_R::new((self.bits & 0x01) != 0)
+        ADCBUSY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - conversion sequence mode select"]
     #[inline(always)]
     pub fn adcconseq(&self) -> ADCCONSEQ_R {
-        ADCCONSEQ_R::new(((self.bits >> 1) & 0x03) as u8)
+        ADCCONSEQ_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:4 - clock source select"]
     #[inline(always)]
     pub fn adcssel(&self) -> ADCSSEL_R {
-        ADCSSEL_R::new(((self.bits >> 3) & 0x03) as u8)
+        ADCSSEL_R::new(((self.bits >> 3) & 3) as u8)
     }
     #[doc = "Bits 5:7 - clock divider"]
     #[inline(always)]
     pub fn adcdiv(&self) -> ADCDIV_R {
-        ADCDIV_R::new(((self.bits >> 5) & 0x07) as u8)
+        ADCDIV_R::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bit 8 - invert signal sample-and-hold"]
     #[inline(always)]
     pub fn adcissh(&self) -> ADCISSH_R {
-        ADCISSH_R::new(((self.bits >> 8) & 0x01) != 0)
+        ADCISSH_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - sample-and-hold pulse-mode select"]
     #[inline(always)]
     pub fn adcshp(&self) -> ADCSHP_R {
-        ADCSHP_R::new(((self.bits >> 9) & 0x01) != 0)
+        ADCSHP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:11 - sample-and-hold source select"]
     #[inline(always)]
     pub fn adcshs(&self) -> ADCSHS_R {
-        ADCSHS_R::new(((self.bits >> 10) & 0x03) as u8)
+        ADCSHS_R::new(((self.bits >> 10) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 1:2 - conversion sequence mode select"]
     #[inline(always)]
-    pub fn adcconseq(&mut self) -> ADCCONSEQ_W {
-        ADCCONSEQ_W { w: self }
+    pub fn adcconseq(&mut self) -> ADCCONSEQ_W<1> {
+        ADCCONSEQ_W::new(self)
     }
     #[doc = "Bits 3:4 - clock source select"]
     #[inline(always)]
-    pub fn adcssel(&mut self) -> ADCSSEL_W {
-        ADCSSEL_W { w: self }
+    pub fn adcssel(&mut self) -> ADCSSEL_W<3> {
+        ADCSSEL_W::new(self)
     }
     #[doc = "Bits 5:7 - clock divider"]
     #[inline(always)]
-    pub fn adcdiv(&mut self) -> ADCDIV_W {
-        ADCDIV_W { w: self }
+    pub fn adcdiv(&mut self) -> ADCDIV_W<5> {
+        ADCDIV_W::new(self)
     }
     #[doc = "Bit 8 - invert signal sample-and-hold"]
     #[inline(always)]
-    pub fn adcissh(&mut self) -> ADCISSH_W {
-        ADCISSH_W { w: self }
+    pub fn adcissh(&mut self) -> ADCISSH_W<8> {
+        ADCISSH_W::new(self)
     }
     #[doc = "Bit 9 - sample-and-hold pulse-mode select"]
     #[inline(always)]
-    pub fn adcshp(&mut self) -> ADCSHP_W {
-        ADCSHP_W { w: self }
+    pub fn adcshp(&mut self) -> ADCSHP_W<9> {
+        ADCSHP_W::new(self)
     }
     #[doc = "Bits 10:11 - sample-and-hold source select"]
     #[inline(always)]
-    pub fn adcshs(&mut self) -> ADCSHS_W {
-        ADCSHS_W { w: self }
+    pub fn adcshs(&mut self) -> ADCSHS_W<10> {
+        ADCSHS_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcctl1](index.html) module"]
+pub struct ADCCTL1_SPEC;
+impl crate::RegisterSpec for ADCCTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adcctl1::R](R) reader structure"]
+impl crate::Readable for ADCCTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adcctl1::W](W) writer structure"]
+impl crate::Writable for ADCCTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADCCTL1 to value 0"]
+impl crate::Resettable for ADCCTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

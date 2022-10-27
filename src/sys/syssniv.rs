@@ -1,7 +1,43 @@
-#[doc = "Reader of register SYSSNIV"]
-pub type R = crate::R<u16, super::SYSSNIV>;
+#[doc = "Register `SYSSNIV` reader"]
+pub struct R(crate::R<SYSSNIV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSSNIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SYSSNIV_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSSNIV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSSNIV` writer"]
+pub struct W(crate::W<SYSSNIV_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSSNIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSSNIV_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSSNIV_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SYSSNIV` reader - System NMI vector"]
+pub type SYSSNIV_R = crate::FieldReader<u16, SYSSNIV_A>;
 #[doc = "System NMI vector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum SYSSNIV_A {
     #[doc = "0: No interrupt pending"]
@@ -37,28 +73,25 @@ impl From<SYSSNIV_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `SYSSNIV`"]
-pub type SYSSNIV_R = crate::R<u16, SYSSNIV_A>;
 impl SYSSNIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, SYSSNIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SYSSNIV_A> {
         match self.bits {
-            0 => Val(SYSSNIV_A::NONE),
-            2 => Val(SYSSNIV_A::SVSLIFG),
-            4 => Val(SYSSNIV_A::UBDIFG),
-            6 => Val(SYSSNIV_A::ACCTEIFG),
-            8 => Val(SYSSNIV_A::SYSSNIV_8),
-            10 => Val(SYSSNIV_A::SYSSNIV_10),
-            12 => Val(SYSSNIV_A::SYSSNIV_12),
-            14 => Val(SYSSNIV_A::SYSSNIV_14),
-            16 => Val(SYSSNIV_A::SYSSNIV_16),
-            18 => Val(SYSSNIV_A::VMAIFG),
-            20 => Val(SYSSNIV_A::JMBINIFG),
-            22 => Val(SYSSNIV_A::JMBOUTIFG),
-            24 => Val(SYSSNIV_A::CBDIFG),
-            i => Res(i),
+            0 => Some(SYSSNIV_A::NONE),
+            2 => Some(SYSSNIV_A::SVSLIFG),
+            4 => Some(SYSSNIV_A::UBDIFG),
+            6 => Some(SYSSNIV_A::ACCTEIFG),
+            8 => Some(SYSSNIV_A::SYSSNIV_8),
+            10 => Some(SYSSNIV_A::SYSSNIV_10),
+            12 => Some(SYSSNIV_A::SYSSNIV_12),
+            14 => Some(SYSSNIV_A::SYSSNIV_14),
+            16 => Some(SYSSNIV_A::SYSSNIV_16),
+            18 => Some(SYSSNIV_A::VMAIFG),
+            20 => Some(SYSSNIV_A::JMBINIFG),
+            22 => Some(SYSSNIV_A::JMBOUTIFG),
+            24 => Some(SYSSNIV_A::CBDIFG),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -131,6 +164,34 @@ impl R {
     #[doc = "Bits 0:15 - System NMI vector"]
     #[inline(always)]
     pub fn syssniv(&self) -> SYSSNIV_R {
-        SYSSNIV_R::new((self.bits & 0xffff) as u16)
+        SYSSNIV_R::new(self.bits)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System NMI Vector Generator\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syssniv](index.html) module"]
+pub struct SYSSNIV_SPEC;
+impl crate::RegisterSpec for SYSSNIV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [syssniv::R](R) reader structure"]
+impl crate::Readable for SYSSNIV_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [syssniv::W](W) writer structure"]
+impl crate::Writable for SYSSNIV_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSSNIV to value 0"]
+impl crate::Resettable for SYSSNIV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
