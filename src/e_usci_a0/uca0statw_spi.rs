@@ -34,6 +34,42 @@ impl From<crate::W<UCA0STATW_SPI_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UCBUSY` reader - eUSCI_A0 busy"]
+pub type UCBUSY_R = crate::BitReader<UCBUSY_A>;
+#[doc = "eUSCI_A0 busy\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum UCBUSY_A {
+    #[doc = "0: eUSCI_A0 inactive"]
+    IDLE = 0,
+    #[doc = "1: eUSCI_A0 transmitting or receiving"]
+    BUSY = 1,
+}
+impl From<UCBUSY_A> for bool {
+    #[inline(always)]
+    fn from(variant: UCBUSY_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl UCBUSY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UCBUSY_A {
+        match self.bits {
+            false => UCBUSY_A::IDLE,
+            true => UCBUSY_A::BUSY,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == UCBUSY_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[inline(always)]
+    pub fn is_busy(&self) -> bool {
+        *self == UCBUSY_A::BUSY
+    }
+}
 #[doc = "Field `UCOE` reader - Overrun error flag"]
 pub type UCOE_R = crate::BitReader<UCOE_A>;
 #[doc = "Overrun error flag\n\nValue on reset: 0"]
@@ -185,6 +221,11 @@ impl<'a, const O: u8> UCLISTEN_W<'a, O> {
     }
 }
 impl R {
+    #[doc = "Bit 0 - eUSCI_A0 busy"]
+    #[inline(always)]
+    pub fn ucbusy(&self) -> UCBUSY_R {
+        UCBUSY_R::new((self.bits & 1) != 0)
+    }
     #[doc = "Bit 5 - Overrun error flag"]
     #[inline(always)]
     pub fn ucoe(&self) -> UCOE_R {

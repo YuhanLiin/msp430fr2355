@@ -285,9 +285,57 @@ impl<'a, const O: u8> SVSHE_W<'a, O> {
     }
 }
 #[doc = "Field `PMMPW` reader - PMM password."]
-pub type PMMPW_R = crate::FieldReader<u8, u8>;
+pub type PMMPW_R = crate::FieldReader<u8, PMMPWR_A>;
+#[doc = "PMM password.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum PMMPWR_A {
+    #[doc = "150: Values always reads from the PMMCTL0 register"]
+    PASSWORD = 150,
+}
+impl From<PMMPWR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PMMPWR_A) -> Self {
+        variant as _
+    }
+}
+impl PMMPW_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<PMMPWR_A> {
+        match self.bits {
+            150 => Some(PMMPWR_A::PASSWORD),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWORD`"]
+    #[inline(always)]
+    pub fn is_password(&self) -> bool {
+        *self == PMMPWR_A::PASSWORD
+    }
+}
+#[doc = "PMM password.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum PMMPWW_AW {
+    #[doc = "165: Values which must be written to the PMMCTL0 register"]
+    PASSWORD = 165,
+}
+impl From<PMMPWW_AW> for u8 {
+    #[inline(always)]
+    fn from(variant: PMMPWW_AW) -> Self {
+        variant as _
+    }
+}
 #[doc = "Field `PMMPW` writer - PMM password."]
-pub type PMMPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PMMCTL0_SPEC, u8, u8, 8, O>;
+pub type PMMPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PMMCTL0_SPEC, u8, PMMPWW_AW, 8, O>;
+impl<'a, const O: u8> PMMPW_W<'a, O> {
+    #[doc = "Values which must be written to the PMMCTL0 register"]
+    #[inline(always)]
+    pub fn password(self) -> &'a mut W {
+        self.variant(PMMPWW_AW::PASSWORD)
+    }
+}
 impl R {
     #[doc = "Bit 0 - Reflow pre-conditioning. Prepares device for reflow soldering. Write as 0 during normal operation."]
     #[inline(always)]
