@@ -1,64 +1,23 @@
 #[doc = "Register `P2IN` reader"]
-pub struct R(crate::R<P2IN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<P2IN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<P2IN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<P2IN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<P2inSpec>;
 #[doc = "Register `P2IN` writer"]
-pub struct W(crate::W<P2IN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<P2IN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<P2inSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<P2IN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<P2IN_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Port 2 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p2in](index.html) module"]
-pub struct P2IN_SPEC;
-impl crate::RegisterSpec for P2IN_SPEC {
+impl W {}
+#[doc = "Port 2 Input\n\nYou can [`read`](crate::Reg::read) this register and get [`p2in::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p2in::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct P2inSpec;
+impl crate::RegisterSpec for P2inSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [p2in::R](R) reader structure"]
-impl crate::Readable for P2IN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [p2in::W](W) writer structure"]
-impl crate::Writable for P2IN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`p2in::R`](R) reader structure"]
+impl crate::Readable for P2inSpec {}
+#[doc = "`write(|w| ..)` method takes [`p2in::W`](W) writer structure"]
+impl crate::Writable for P2inSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets P2IN to value 0"]
-impl crate::Resettable for P2IN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for P2inSpec {}

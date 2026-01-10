@@ -1,64 +1,23 @@
 #[doc = "Register `MPYS32L` reader"]
-pub struct R(crate::R<MPYS32L_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MPYS32L_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MPYS32L_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MPYS32L_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Mpys32lSpec>;
 #[doc = "Register `MPYS32L` writer"]
-pub struct W(crate::W<MPYS32L_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MPYS32L_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<Mpys32lSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MPYS32L_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MPYS32L_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "32-bit operand 1 signed multiply low word\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpys32l](index.html) module"]
-pub struct MPYS32L_SPEC;
-impl crate::RegisterSpec for MPYS32L_SPEC {
+impl W {}
+#[doc = "32-bit operand 1 signed multiply low word\n\nYou can [`read`](crate::Reg::read) this register and get [`mpys32l::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mpys32l::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Mpys32lSpec;
+impl crate::RegisterSpec for Mpys32lSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [mpys32l::R](R) reader structure"]
-impl crate::Readable for MPYS32L_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mpys32l::W](W) writer structure"]
-impl crate::Writable for MPYS32L_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`mpys32l::R`](R) reader structure"]
+impl crate::Readable for Mpys32lSpec {}
+#[doc = "`write(|w| ..)` method takes [`mpys32l::W`](W) writer structure"]
+impl crate::Writable for Mpys32lSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets MPYS32L to value 0"]
-impl crate::Resettable for MPYS32L_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Mpys32lSpec {}

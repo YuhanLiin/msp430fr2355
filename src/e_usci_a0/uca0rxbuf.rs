@@ -1,73 +1,27 @@
 #[doc = "Register `UCA0RXBUF` reader"]
-pub struct R(crate::R<UCA0RXBUF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCA0RXBUF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCA0RXBUF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCA0RXBUF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Uca0rxbufSpec>;
 #[doc = "Register `UCA0RXBUF` writer"]
-pub struct W(crate::W<UCA0RXBUF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCA0RXBUF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCA0RXBUF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCA0RXBUF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Uca0rxbufSpec>;
 #[doc = "Field `UCRXBUF` reader - Receive data buffer"]
-pub type UCRXBUF_R = crate::FieldReader<u8, u8>;
+pub type UcrxbufR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Receive data buffer"]
     #[inline(always)]
-    pub fn ucrxbuf(&self) -> UCRXBUF_R {
-        UCRXBUF_R::new((self.bits & 0xff) as u8)
+    pub fn ucrxbuf(&self) -> UcrxbufR {
+        UcrxbufR::new((self.bits & 0xff) as u8)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "eUSCI_Ax Receive Buffer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca0rxbuf](index.html) module"]
-pub struct UCA0RXBUF_SPEC;
-impl crate::RegisterSpec for UCA0RXBUF_SPEC {
+impl W {}
+#[doc = "eUSCI_Ax Receive Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`uca0rxbuf::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca0rxbuf::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Uca0rxbufSpec;
+impl crate::RegisterSpec for Uca0rxbufSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [uca0rxbuf::R](R) reader structure"]
-impl crate::Readable for UCA0RXBUF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [uca0rxbuf::W](W) writer structure"]
-impl crate::Writable for UCA0RXBUF_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`uca0rxbuf::R`](R) reader structure"]
+impl crate::Readable for Uca0rxbufSpec {}
+#[doc = "`write(|w| ..)` method takes [`uca0rxbuf::W`](W) writer structure"]
+impl crate::Writable for Uca0rxbufSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCA0RXBUF to value 0"]
-impl crate::Resettable for UCA0RXBUF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Uca0rxbufSpec {}

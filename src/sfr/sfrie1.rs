@@ -1,426 +1,399 @@
 #[doc = "Register `SFRIE1` reader"]
-pub struct R(crate::R<SFRIE1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SFRIE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SFRIE1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SFRIE1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Sfrie1Spec>;
 #[doc = "Register `SFRIE1` writer"]
-pub struct W(crate::W<SFRIE1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SFRIE1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Sfrie1Spec>;
+#[doc = "Watchdog timer interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Wdtie {
+    #[doc = "0: Interrupts disabled"]
+    Disable = 0,
+    #[doc = "1: Interrupts enabled"]
+    Enable = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Wdtie> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SFRIE1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SFRIE1_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Wdtie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `WDTIE` reader - Watchdog timer interrupt enable"]
-pub type WDTIE_R = crate::BitReader<WDTIE_A>;
-#[doc = "Watchdog timer interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WDTIE_A {
-    #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
-    #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
-}
-impl From<WDTIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: WDTIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl WDTIE_R {
+pub type WdtieR = crate::BitReader<Wdtie>;
+impl WdtieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDTIE_A {
+    pub const fn variant(&self) -> Wdtie {
         match self.bits {
-            false => WDTIE_A::DISABLE,
-            true => WDTIE_A::ENABLE,
+            false => Wdtie::Disable,
+            true => Wdtie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Interrupts disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == WDTIE_A::DISABLE
+        *self == Wdtie::Disable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Interrupts enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == WDTIE_A::ENABLE
+        *self == Wdtie::Enable
     }
 }
 #[doc = "Field `WDTIE` writer - Watchdog timer interrupt enable"]
-pub type WDTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, WDTIE_A, O>;
-impl<'a, const O: u8> WDTIE_W<'a, O> {
+pub type WdtieW<'a, REG> = crate::BitWriter<'a, REG, Wdtie>;
+impl<'a, REG> WdtieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(WDTIE_A::DISABLE)
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wdtie::Disable)
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(WDTIE_A::ENABLE)
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Wdtie::Enable)
+    }
+}
+#[doc = "Oscillator fault interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ofie {
+    #[doc = "0: Interrupts disabled"]
+    Disable = 0,
+    #[doc = "1: Interrupts enabled"]
+    Enable = 1,
+}
+impl From<Ofie> for bool {
+    #[inline(always)]
+    fn from(variant: Ofie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `OFIE` reader - Oscillator fault interrupt enable"]
-pub type OFIE_R = crate::BitReader<OFIE_A>;
-#[doc = "Oscillator fault interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum OFIE_A {
-    #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
-    #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
-}
-impl From<OFIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: OFIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl OFIE_R {
+pub type OfieR = crate::BitReader<Ofie>;
+impl OfieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OFIE_A {
+    pub const fn variant(&self) -> Ofie {
         match self.bits {
-            false => OFIE_A::DISABLE,
-            true => OFIE_A::ENABLE,
+            false => Ofie::Disable,
+            true => Ofie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Interrupts disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == OFIE_A::DISABLE
+        *self == Ofie::Disable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Interrupts enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == OFIE_A::ENABLE
+        *self == Ofie::Enable
     }
 }
 #[doc = "Field `OFIE` writer - Oscillator fault interrupt enable"]
-pub type OFIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, OFIE_A, O>;
-impl<'a, const O: u8> OFIE_W<'a, O> {
+pub type OfieW<'a, REG> = crate::BitWriter<'a, REG, Ofie>;
+impl<'a, REG> OfieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(OFIE_A::DISABLE)
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Ofie::Disable)
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(OFIE_A::ENABLE)
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Ofie::Enable)
+    }
+}
+#[doc = "Vacant memory access interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Vmaie {
+    #[doc = "0: Interrupts disabled"]
+    Disable = 0,
+    #[doc = "1: Interrupts enabled"]
+    Enable = 1,
+}
+impl From<Vmaie> for bool {
+    #[inline(always)]
+    fn from(variant: Vmaie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `VMAIE` reader - Vacant memory access interrupt enable"]
-pub type VMAIE_R = crate::BitReader<VMAIE_A>;
-#[doc = "Vacant memory access interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VMAIE_A {
-    #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
-    #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
-}
-impl From<VMAIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: VMAIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl VMAIE_R {
+pub type VmaieR = crate::BitReader<Vmaie>;
+impl VmaieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VMAIE_A {
+    pub const fn variant(&self) -> Vmaie {
         match self.bits {
-            false => VMAIE_A::DISABLE,
-            true => VMAIE_A::ENABLE,
+            false => Vmaie::Disable,
+            true => Vmaie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Interrupts disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == VMAIE_A::DISABLE
+        *self == Vmaie::Disable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Interrupts enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == VMAIE_A::ENABLE
+        *self == Vmaie::Enable
     }
 }
 #[doc = "Field `VMAIE` writer - Vacant memory access interrupt enable"]
-pub type VMAIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, VMAIE_A, O>;
-impl<'a, const O: u8> VMAIE_W<'a, O> {
+pub type VmaieW<'a, REG> = crate::BitWriter<'a, REG, Vmaie>;
+impl<'a, REG> VmaieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(VMAIE_A::DISABLE)
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Vmaie::Disable)
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(VMAIE_A::ENABLE)
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Vmaie::Enable)
+    }
+}
+#[doc = "NMI pin interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Nmiie {
+    #[doc = "0: Interrupts disabled"]
+    Disable = 0,
+    #[doc = "1: Interrupts enabled"]
+    Enable = 1,
+}
+impl From<Nmiie> for bool {
+    #[inline(always)]
+    fn from(variant: Nmiie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `NMIIE` reader - NMI pin interrupt enable"]
-pub type NMIIE_R = crate::BitReader<NMIIE_A>;
-#[doc = "NMI pin interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum NMIIE_A {
-    #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
-    #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
-}
-impl From<NMIIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: NMIIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl NMIIE_R {
+pub type NmiieR = crate::BitReader<Nmiie>;
+impl NmiieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NMIIE_A {
+    pub const fn variant(&self) -> Nmiie {
         match self.bits {
-            false => NMIIE_A::DISABLE,
-            true => NMIIE_A::ENABLE,
+            false => Nmiie::Disable,
+            true => Nmiie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Interrupts disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == NMIIE_A::DISABLE
+        *self == Nmiie::Disable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Interrupts enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == NMIIE_A::ENABLE
+        *self == Nmiie::Enable
     }
 }
 #[doc = "Field `NMIIE` writer - NMI pin interrupt enable"]
-pub type NMIIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, NMIIE_A, O>;
-impl<'a, const O: u8> NMIIE_W<'a, O> {
+pub type NmiieW<'a, REG> = crate::BitWriter<'a, REG, Nmiie>;
+impl<'a, REG> NmiieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(NMIIE_A::DISABLE)
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Nmiie::Disable)
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(NMIIE_A::ENABLE)
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Nmiie::Enable)
+    }
+}
+#[doc = "JTAG mailbox input interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Jmbinie {
+    #[doc = "0: Interrupts disabled"]
+    Disable = 0,
+    #[doc = "1: Interrupts enabled"]
+    Enable = 1,
+}
+impl From<Jmbinie> for bool {
+    #[inline(always)]
+    fn from(variant: Jmbinie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `JMBINIE` reader - JTAG mailbox input interrupt enable"]
-pub type JMBINIE_R = crate::BitReader<JMBINIE_A>;
-#[doc = "JTAG mailbox input interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum JMBINIE_A {
-    #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
-    #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
-}
-impl From<JMBINIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: JMBINIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl JMBINIE_R {
+pub type JmbinieR = crate::BitReader<Jmbinie>;
+impl JmbinieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> JMBINIE_A {
+    pub const fn variant(&self) -> Jmbinie {
         match self.bits {
-            false => JMBINIE_A::DISABLE,
-            true => JMBINIE_A::ENABLE,
+            false => Jmbinie::Disable,
+            true => Jmbinie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Interrupts disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == JMBINIE_A::DISABLE
+        *self == Jmbinie::Disable
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Interrupts enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == JMBINIE_A::ENABLE
+        *self == Jmbinie::Enable
     }
 }
 #[doc = "Field `JMBINIE` writer - JTAG mailbox input interrupt enable"]
-pub type JMBINIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, JMBINIE_A, O>;
-impl<'a, const O: u8> JMBINIE_W<'a, O> {
+pub type JmbinieW<'a, REG> = crate::BitWriter<'a, REG, Jmbinie>;
+impl<'a, REG> JmbinieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(JMBINIE_A::DISABLE)
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Jmbinie::Disable)
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(JMBINIE_A::ENABLE)
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Jmbinie::Enable)
     }
 }
-#[doc = "Field `JMBOUTIE` reader - JTAG mailbox output interrupt enable"]
-pub type JMBOUTIE_R = crate::BitReader<JMBOUTIE_A>;
 #[doc = "JTAG mailbox output interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum JMBOUTIE_A {
+pub enum Jmboutie {
     #[doc = "0: Interrupts disabled"]
-    DISABLE = 0,
+    Disable = 0,
     #[doc = "1: Interrupts enabled"]
-    ENABLE = 1,
+    Enable = 1,
 }
-impl From<JMBOUTIE_A> for bool {
+impl From<Jmboutie> for bool {
     #[inline(always)]
-    fn from(variant: JMBOUTIE_A) -> Self {
+    fn from(variant: Jmboutie) -> Self {
         variant as u8 != 0
     }
 }
-impl JMBOUTIE_R {
+#[doc = "Field `JMBOUTIE` reader - JTAG mailbox output interrupt enable"]
+pub type JmboutieR = crate::BitReader<Jmboutie>;
+impl JmboutieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> JMBOUTIE_A {
+    pub const fn variant(&self) -> Jmboutie {
         match self.bits {
-            false => JMBOUTIE_A::DISABLE,
-            true => JMBOUTIE_A::ENABLE,
+            false => Jmboutie::Disable,
+            true => Jmboutie::Enable,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == JMBOUTIE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == JMBOUTIE_A::ENABLE
-    }
-}
-#[doc = "Field `JMBOUTIE` writer - JTAG mailbox output interrupt enable"]
-pub type JMBOUTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, SFRIE1_SPEC, JMBOUTIE_A, O>;
-impl<'a, const O: u8> JMBOUTIE_W<'a, O> {
     #[doc = "Interrupts disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(JMBOUTIE_A::DISABLE)
+    pub fn is_disable(&self) -> bool {
+        *self == Jmboutie::Disable
     }
     #[doc = "Interrupts enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(JMBOUTIE_A::ENABLE)
+    pub fn is_enable(&self) -> bool {
+        *self == Jmboutie::Enable
+    }
+}
+#[doc = "Field `JMBOUTIE` writer - JTAG mailbox output interrupt enable"]
+pub type JmboutieW<'a, REG> = crate::BitWriter<'a, REG, Jmboutie>;
+impl<'a, REG> JmboutieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Interrupts disabled"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut crate::W<REG> {
+        self.variant(Jmboutie::Disable)
+    }
+    #[doc = "Interrupts enabled"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut crate::W<REG> {
+        self.variant(Jmboutie::Enable)
     }
 }
 impl R {
     #[doc = "Bit 0 - Watchdog timer interrupt enable"]
     #[inline(always)]
-    pub fn wdtie(&self) -> WDTIE_R {
-        WDTIE_R::new((self.bits & 1) != 0)
+    pub fn wdtie(&self) -> WdtieR {
+        WdtieR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Oscillator fault interrupt enable"]
     #[inline(always)]
-    pub fn ofie(&self) -> OFIE_R {
-        OFIE_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ofie(&self) -> OfieR {
+        OfieR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Vacant memory access interrupt enable"]
     #[inline(always)]
-    pub fn vmaie(&self) -> VMAIE_R {
-        VMAIE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn vmaie(&self) -> VmaieR {
+        VmaieR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - NMI pin interrupt enable"]
     #[inline(always)]
-    pub fn nmiie(&self) -> NMIIE_R {
-        NMIIE_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn nmiie(&self) -> NmiieR {
+        NmiieR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - JTAG mailbox input interrupt enable"]
     #[inline(always)]
-    pub fn jmbinie(&self) -> JMBINIE_R {
-        JMBINIE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn jmbinie(&self) -> JmbinieR {
+        JmbinieR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - JTAG mailbox output interrupt enable"]
     #[inline(always)]
-    pub fn jmboutie(&self) -> JMBOUTIE_R {
-        JMBOUTIE_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn jmboutie(&self) -> JmboutieR {
+        JmboutieR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Watchdog timer interrupt enable"]
     #[inline(always)]
-    pub fn wdtie(&mut self) -> WDTIE_W<0> {
-        WDTIE_W::new(self)
+    pub fn wdtie(&mut self) -> WdtieW<'_, Sfrie1Spec> {
+        WdtieW::new(self, 0)
     }
     #[doc = "Bit 1 - Oscillator fault interrupt enable"]
     #[inline(always)]
-    pub fn ofie(&mut self) -> OFIE_W<1> {
-        OFIE_W::new(self)
+    pub fn ofie(&mut self) -> OfieW<'_, Sfrie1Spec> {
+        OfieW::new(self, 1)
     }
     #[doc = "Bit 3 - Vacant memory access interrupt enable"]
     #[inline(always)]
-    pub fn vmaie(&mut self) -> VMAIE_W<3> {
-        VMAIE_W::new(self)
+    pub fn vmaie(&mut self) -> VmaieW<'_, Sfrie1Spec> {
+        VmaieW::new(self, 3)
     }
     #[doc = "Bit 4 - NMI pin interrupt enable"]
     #[inline(always)]
-    pub fn nmiie(&mut self) -> NMIIE_W<4> {
-        NMIIE_W::new(self)
+    pub fn nmiie(&mut self) -> NmiieW<'_, Sfrie1Spec> {
+        NmiieW::new(self, 4)
     }
     #[doc = "Bit 6 - JTAG mailbox input interrupt enable"]
     #[inline(always)]
-    pub fn jmbinie(&mut self) -> JMBINIE_W<6> {
-        JMBINIE_W::new(self)
+    pub fn jmbinie(&mut self) -> JmbinieW<'_, Sfrie1Spec> {
+        JmbinieW::new(self, 6)
     }
     #[doc = "Bit 7 - JTAG mailbox output interrupt enable"]
     #[inline(always)]
-    pub fn jmboutie(&mut self) -> JMBOUTIE_W<7> {
-        JMBOUTIE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn jmboutie(&mut self) -> JmboutieW<'_, Sfrie1Spec> {
+        JmboutieW::new(self, 7)
     }
 }
-#[doc = "Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sfrie1](index.html) module"]
-pub struct SFRIE1_SPEC;
-impl crate::RegisterSpec for SFRIE1_SPEC {
+#[doc = "Interrupt Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`sfrie1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sfrie1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Sfrie1Spec;
+impl crate::RegisterSpec for Sfrie1Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [sfrie1::R](R) reader structure"]
-impl crate::Readable for SFRIE1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sfrie1::W](W) writer structure"]
-impl crate::Writable for SFRIE1_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`sfrie1::R`](R) reader structure"]
+impl crate::Readable for Sfrie1Spec {}
+#[doc = "`write(|w| ..)` method takes [`sfrie1::W`](W) writer structure"]
+impl crate::Writable for Sfrie1Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SFRIE1 to value 0"]
-impl crate::Resettable for SFRIE1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Sfrie1Spec {}

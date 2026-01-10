@@ -1,80 +1,35 @@
 #[doc = "Register `SAC3DACSTS` reader"]
-pub struct R(crate::R<SAC3DACSTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SAC3DACSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SAC3DACSTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SAC3DACSTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Sac3dacstsSpec>;
 #[doc = "Register `SAC3DACSTS` writer"]
-pub struct W(crate::W<SAC3DACSTS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SAC3DACSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SAC3DACSTS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SAC3DACSTS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Sac3dacstsSpec>;
 #[doc = "Field `DACIFG` reader - SAC DAC data update flag"]
-pub type DACIFG_R = crate::BitReader<bool>;
+pub type DacifgR = crate::BitReader;
 #[doc = "Field `DACIFG` writer - SAC DAC data update flag"]
-pub type DACIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, SAC3DACSTS_SPEC, bool, O>;
+pub type DacifgW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SAC DAC data update flag"]
     #[inline(always)]
-    pub fn dacifg(&self) -> DACIFG_R {
-        DACIFG_R::new((self.bits & 1) != 0)
+    pub fn dacifg(&self) -> DacifgR {
+        DacifgR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - SAC DAC data update flag"]
     #[inline(always)]
-    pub fn dacifg(&mut self) -> DACIFG_W<0> {
-        DACIFG_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn dacifg(&mut self) -> DacifgW<'_, Sac3dacstsSpec> {
+        DacifgW::new(self, 0)
     }
 }
-#[doc = "SAC DAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sac3dacsts](index.html) module"]
-pub struct SAC3DACSTS_SPEC;
-impl crate::RegisterSpec for SAC3DACSTS_SPEC {
+#[doc = "SAC DAC Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sac3dacsts::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sac3dacsts::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Sac3dacstsSpec;
+impl crate::RegisterSpec for Sac3dacstsSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [sac3dacsts::R](R) reader structure"]
-impl crate::Readable for SAC3DACSTS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sac3dacsts::W](W) writer structure"]
-impl crate::Writable for SAC3DACSTS_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`sac3dacsts::R`](R) reader structure"]
+impl crate::Readable for Sac3dacstsSpec {}
+#[doc = "`write(|w| ..)` method takes [`sac3dacsts::W`](W) writer structure"]
+impl crate::Writable for Sac3dacstsSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SAC3DACSTS to value 0"]
-impl crate::Resettable for SAC3DACSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Sac3dacstsSpec {}

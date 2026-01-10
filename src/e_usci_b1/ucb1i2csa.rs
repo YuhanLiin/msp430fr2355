@@ -1,80 +1,35 @@
 #[doc = "Register `UCB1I2CSA` reader"]
-pub struct R(crate::R<UCB1I2CSA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB1I2CSA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB1I2CSA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB1I2CSA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb1i2csaSpec>;
 #[doc = "Register `UCB1I2CSA` writer"]
-pub struct W(crate::W<UCB1I2CSA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB1I2CSA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB1I2CSA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB1I2CSA_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Ucb1i2csaSpec>;
 #[doc = "Field `I2CSA` reader - I2C slave address"]
-pub type I2CSA_R = crate::FieldReader<u16, u16>;
+pub type I2csaR = crate::FieldReader<u16>;
 #[doc = "Field `I2CSA` writer - I2C slave address"]
-pub type I2CSA_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCB1I2CSA_SPEC, u16, u16, 10, O>;
+pub type I2csaW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     #[doc = "Bits 0:9 - I2C slave address"]
     #[inline(always)]
-    pub fn i2csa(&self) -> I2CSA_R {
-        I2CSA_R::new((self.bits & 0x03ff) as u16)
+    pub fn i2csa(&self) -> I2csaR {
+        I2csaR::new(self.bits & 0x03ff)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - I2C slave address"]
     #[inline(always)]
-    pub fn i2csa(&mut self) -> I2CSA_W<0> {
-        I2CSA_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn i2csa(&mut self) -> I2csaW<'_, Ucb1i2csaSpec> {
+        I2csaW::new(self, 0)
     }
 }
-#[doc = "eUSCI_Bx I2C Slave Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb1i2csa](index.html) module"]
-pub struct UCB1I2CSA_SPEC;
-impl crate::RegisterSpec for UCB1I2CSA_SPEC {
+#[doc = "eUSCI_Bx I2C Slave Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb1i2csa::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb1i2csa::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb1i2csaSpec;
+impl crate::RegisterSpec for Ucb1i2csaSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb1i2csa::R](R) reader structure"]
-impl crate::Readable for UCB1I2CSA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb1i2csa::W](W) writer structure"]
-impl crate::Writable for UCB1I2CSA_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb1i2csa::R`](R) reader structure"]
+impl crate::Readable for Ucb1i2csaSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb1i2csa::W`](W) writer structure"]
+impl crate::Writable for Ucb1i2csaSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB1I2CSA to value 0"]
-impl crate::Resettable for UCB1I2CSA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb1i2csaSpec {}

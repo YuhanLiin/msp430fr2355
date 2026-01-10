@@ -1,178 +1,133 @@
 #[doc = "Register `ICCILSR2` reader"]
-pub struct R(crate::R<ICCILSR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ICCILSR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ICCILSR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ICCILSR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Iccilsr2Spec>;
 #[doc = "Register `ICCILSR2` writer"]
-pub struct W(crate::W<ICCILSR2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ICCILSR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ICCILSR2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ICCILSR2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Iccilsr2Spec>;
 #[doc = "Field `ILSR16` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR16_R = crate::FieldReader<u8, u8>;
+pub type Ilsr16R = crate::FieldReader;
 #[doc = "Field `ILSR16` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR16_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr16W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR17` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit"]
-pub type ILSR17_R = crate::FieldReader<u8, u8>;
+pub type Ilsr17R = crate::FieldReader;
 #[doc = "Field `ILSR17` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit"]
-pub type ILSR17_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr17W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR18` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR18_R = crate::FieldReader<u8, u8>;
+pub type Ilsr18R = crate::FieldReader;
 #[doc = "Field `ILSR18` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR18_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr18W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR19` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR19_R = crate::FieldReader<u8, u8>;
+pub type Ilsr19R = crate::FieldReader;
 #[doc = "Field `ILSR19` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR19_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr19W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR20` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR20_R = crate::FieldReader<u8, u8>;
+pub type Ilsr20R = crate::FieldReader;
 #[doc = "Field `ILSR20` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR20_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr20W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR21` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR21_R = crate::FieldReader<u8, u8>;
+pub type Ilsr21R = crate::FieldReader;
 #[doc = "Field `ILSR21` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
-pub type ILSR21_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr21W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR22` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
-pub type ILSR22_R = crate::FieldReader<u8, u8>;
+pub type Ilsr22R = crate::FieldReader;
 #[doc = "Field `ILSR22` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
-pub type ILSR22_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr22W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ILSR23` reader - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
-pub type ILSR23_R = crate::FieldReader<u8, u8>;
+pub type Ilsr23R = crate::FieldReader;
 #[doc = "Field `ILSR23` writer - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
-pub type ILSR23_W<'a, const O: u8> = crate::FieldWriter<'a, u16, ICCILSR2_SPEC, u8, u8, 2, O>;
+pub type Ilsr23W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:1 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr16(&self) -> ILSR16_R {
-        ILSR16_R::new((self.bits & 3) as u8)
+    pub fn ilsr16(&self) -> Ilsr16R {
+        Ilsr16R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit"]
     #[inline(always)]
-    pub fn ilsr17(&self) -> ILSR17_R {
-        ILSR17_R::new(((self.bits >> 2) & 3) as u8)
+    pub fn ilsr17(&self) -> Ilsr17R {
+        Ilsr17R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr18(&self) -> ILSR18_R {
-        ILSR18_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn ilsr18(&self) -> Ilsr18R {
+        Ilsr18R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr19(&self) -> ILSR19_R {
-        ILSR19_R::new(((self.bits >> 6) & 3) as u8)
+    pub fn ilsr19(&self) -> Ilsr19R {
+        Ilsr19R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr20(&self) -> ILSR20_R {
-        ILSR20_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn ilsr20(&self) -> Ilsr20R {
+        Ilsr20R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr21(&self) -> ILSR21_R {
-        ILSR21_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn ilsr21(&self) -> Ilsr21R {
+        Ilsr21R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
     #[inline(always)]
-    pub fn ilsr22(&self) -> ILSR22_R {
-        ILSR22_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn ilsr22(&self) -> Ilsr22R {
+        Ilsr22R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
     #[inline(always)]
-    pub fn ilsr23(&self) -> ILSR23_R {
-        ILSR23_R::new(((self.bits >> 14) & 3) as u8)
+    pub fn ilsr23(&self) -> Ilsr23R {
+        Ilsr23R::new(((self.bits >> 14) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr16(&mut self) -> ILSR16_W<0> {
-        ILSR16_W::new(self)
+    pub fn ilsr16(&mut self) -> Ilsr16W<'_, Iccilsr2Spec> {
+        Ilsr16W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit"]
     #[inline(always)]
-    pub fn ilsr17(&mut self) -> ILSR17_W<2> {
-        ILSR17_W::new(self)
+    pub fn ilsr17(&mut self) -> Ilsr17W<'_, Iccilsr2Spec> {
+        Ilsr17W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr18(&mut self) -> ILSR18_W<4> {
-        ILSR18_W::new(self)
+    pub fn ilsr18(&mut self) -> Ilsr18W<'_, Iccilsr2Spec> {
+        Ilsr18W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr19(&mut self) -> ILSR19_W<6> {
-        ILSR19_W::new(self)
+    pub fn ilsr19(&mut self) -> Ilsr19W<'_, Iccilsr2Spec> {
+        Ilsr19W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr20(&mut self) -> ILSR20_W<8> {
-        ILSR20_W::new(self)
+    pub fn ilsr20(&mut self) -> Ilsr20W<'_, Iccilsr2Spec> {
+        Ilsr20W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit."]
     #[inline(always)]
-    pub fn ilsr21(&mut self) -> ILSR21_W<10> {
-        ILSR21_W::new(self)
+    pub fn ilsr21(&mut self) -> Ilsr21W<'_, Iccilsr2Spec> {
+        Ilsr21W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
     #[inline(always)]
-    pub fn ilsr22(&mut self) -> ILSR22_W<12> {
-        ILSR22_W::new(self)
+    pub fn ilsr22(&mut self) -> Ilsr22W<'_, Iccilsr2Spec> {
+        Ilsr22W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each"]
     #[inline(always)]
-    pub fn ilsr23(&mut self) -> ILSR23_W<14> {
-        ILSR23_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ilsr23(&mut self) -> Ilsr23W<'_, Iccilsr2Spec> {
+        Ilsr23W::new(self, 14)
     }
 }
-#[doc = "ICCILSR2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iccilsr2](index.html) module"]
-pub struct ICCILSR2_SPEC;
-impl crate::RegisterSpec for ICCILSR2_SPEC {
+#[doc = "ICCILSR2\n\nYou can [`read`](crate::Reg::read) this register and get [`iccilsr2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`iccilsr2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Iccilsr2Spec;
+impl crate::RegisterSpec for Iccilsr2Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [iccilsr2::R](R) reader structure"]
-impl crate::Readable for ICCILSR2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [iccilsr2::W](W) writer structure"]
-impl crate::Writable for ICCILSR2_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`iccilsr2::R`](R) reader structure"]
+impl crate::Readable for Iccilsr2Spec {}
+#[doc = "`write(|w| ..)` method takes [`iccilsr2::W`](W) writer structure"]
+impl crate::Writable for Iccilsr2Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ICCILSR2 to value 0"]
-impl crate::Resettable for ICCILSR2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Iccilsr2Spec {}

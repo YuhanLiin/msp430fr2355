@@ -1,49 +1,15 @@
 #[doc = "Register `CSCTL2` reader"]
-pub struct R(crate::R<CSCTL2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSCTL2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSCTL2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSCTL2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Csctl2Spec>;
 #[doc = "Register `CSCTL2` writer"]
-pub struct W(crate::W<CSCTL2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSCTL2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSCTL2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSCTL2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<Csctl2Spec>;
 #[doc = "Field `FLLN` reader - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
-pub type FLLN_R = crate::FieldReader<u16, u16>;
+pub type FllnR = crate::FieldReader<u16>;
 #[doc = "Field `FLLN` writer - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
-pub type FLLN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CSCTL2_SPEC, u16, u16, 10, O>;
-#[doc = "Field `FLLD` reader - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
-pub type FLLD_R = crate::FieldReader<u8, FLLD_A>;
+pub type FllnW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FLLD_A {
+pub enum Flld {
     #[doc = "0: fDCOCLK / 1"]
     _1 = 0,
     #[doc = "1: fDCOCLK / 2"]
@@ -57,164 +23,161 @@ pub enum FLLD_A {
     #[doc = "5: fDCOCLK / 32"]
     _32 = 5,
     #[doc = "6: fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
-    FLLD_6 = 6,
+    Flld6 = 6,
     #[doc = "7: fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
-    FLLD_7 = 7,
+    Flld7 = 7,
 }
-impl From<FLLD_A> for u8 {
+impl From<Flld> for u8 {
     #[inline(always)]
-    fn from(variant: FLLD_A) -> Self {
+    fn from(variant: Flld) -> Self {
         variant as _
     }
 }
-impl FLLD_R {
+impl crate::FieldSpec for Flld {
+    type Ux = u8;
+}
+impl crate::IsEnum for Flld {}
+#[doc = "Field `FLLD` reader - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
+pub type FlldR = crate::FieldReader<Flld>;
+impl FlldR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLLD_A {
+    pub const fn variant(&self) -> Flld {
         match self.bits {
-            0 => FLLD_A::_1,
-            1 => FLLD_A::_2,
-            2 => FLLD_A::_4,
-            3 => FLLD_A::_8,
-            4 => FLLD_A::_16,
-            5 => FLLD_A::_32,
-            6 => FLLD_A::FLLD_6,
-            7 => FLLD_A::FLLD_7,
+            0 => Flld::_1,
+            1 => Flld::_2,
+            2 => Flld::_4,
+            3 => Flld::_8,
+            4 => Flld::_16,
+            5 => Flld::_32,
+            6 => Flld::Flld6,
+            7 => Flld::Flld7,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        *self == FLLD_A::_1
-    }
-    #[doc = "Checks if the value of the field is `_2`"]
-    #[inline(always)]
-    pub fn is_2(&self) -> bool {
-        *self == FLLD_A::_2
-    }
-    #[doc = "Checks if the value of the field is `_4`"]
-    #[inline(always)]
-    pub fn is_4(&self) -> bool {
-        *self == FLLD_A::_4
-    }
-    #[doc = "Checks if the value of the field is `_8`"]
-    #[inline(always)]
-    pub fn is_8(&self) -> bool {
-        *self == FLLD_A::_8
-    }
-    #[doc = "Checks if the value of the field is `_16`"]
-    #[inline(always)]
-    pub fn is_16(&self) -> bool {
-        *self == FLLD_A::_16
-    }
-    #[doc = "Checks if the value of the field is `_32`"]
-    #[inline(always)]
-    pub fn is_32(&self) -> bool {
-        *self == FLLD_A::_32
-    }
-    #[doc = "Checks if the value of the field is `FLLD_6`"]
-    #[inline(always)]
-    pub fn is_flld_6(&self) -> bool {
-        *self == FLLD_A::FLLD_6
-    }
-    #[doc = "Checks if the value of the field is `FLLD_7`"]
-    #[inline(always)]
-    pub fn is_flld_7(&self) -> bool {
-        *self == FLLD_A::FLLD_7
-    }
-}
-#[doc = "Field `FLLD` writer - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
-pub type FLLD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CSCTL2_SPEC, u8, FLLD_A, 3, O>;
-impl<'a, const O: u8> FLLD_W<'a, O> {
     #[doc = "fDCOCLK / 1"]
     #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(FLLD_A::_1)
+    pub fn is_1(&self) -> bool {
+        *self == Flld::_1
     }
     #[doc = "fDCOCLK / 2"]
     #[inline(always)]
-    pub fn _2(self) -> &'a mut W {
-        self.variant(FLLD_A::_2)
+    pub fn is_2(&self) -> bool {
+        *self == Flld::_2
     }
     #[doc = "fDCOCLK / 4"]
     #[inline(always)]
-    pub fn _4(self) -> &'a mut W {
-        self.variant(FLLD_A::_4)
+    pub fn is_4(&self) -> bool {
+        *self == Flld::_4
     }
     #[doc = "fDCOCLK / 8"]
     #[inline(always)]
-    pub fn _8(self) -> &'a mut W {
-        self.variant(FLLD_A::_8)
+    pub fn is_8(&self) -> bool {
+        *self == Flld::_8
     }
     #[doc = "fDCOCLK / 16"]
     #[inline(always)]
-    pub fn _16(self) -> &'a mut W {
-        self.variant(FLLD_A::_16)
+    pub fn is_16(&self) -> bool {
+        *self == Flld::_16
     }
     #[doc = "fDCOCLK / 32"]
     #[inline(always)]
-    pub fn _32(self) -> &'a mut W {
-        self.variant(FLLD_A::_32)
+    pub fn is_32(&self) -> bool {
+        *self == Flld::_32
     }
     #[doc = "fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
     #[inline(always)]
-    pub fn flld_6(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_6)
+    pub fn is_flld_6(&self) -> bool {
+        *self == Flld::Flld6
     }
     #[doc = "fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
     #[inline(always)]
-    pub fn flld_7(self) -> &'a mut W {
-        self.variant(FLLD_A::FLLD_7)
+    pub fn is_flld_7(&self) -> bool {
+        *self == Flld::Flld7
+    }
+}
+#[doc = "Field `FLLD` writer - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
+pub type FlldW<'a, REG> = crate::FieldWriter<'a, REG, 3, Flld, crate::Safe>;
+impl<'a, REG> FlldW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "fDCOCLK / 1"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_1)
+    }
+    #[doc = "fDCOCLK / 2"]
+    #[inline(always)]
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_2)
+    }
+    #[doc = "fDCOCLK / 4"]
+    #[inline(always)]
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_4)
+    }
+    #[doc = "fDCOCLK / 8"]
+    #[inline(always)]
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_8)
+    }
+    #[doc = "fDCOCLK / 16"]
+    #[inline(always)]
+    pub fn _16(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_16)
+    }
+    #[doc = "fDCOCLK / 32"]
+    #[inline(always)]
+    pub fn _32(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::_32)
+    }
+    #[doc = "fDCOCLK / 40(Only avaliable in 24MHz clock system)"]
+    #[inline(always)]
+    pub fn flld_6(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::Flld6)
+    }
+    #[doc = "fDCOCLK / 48(Only avaliable in 24MHz clock system)"]
+    #[inline(always)]
+    pub fn flld_7(self) -> &'a mut crate::W<REG> {
+        self.variant(Flld::Flld7)
     }
 }
 impl R {
     #[doc = "Bits 0:9 - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
     #[inline(always)]
-    pub fn flln(&self) -> FLLN_R {
-        FLLN_R::new((self.bits & 0x03ff) as u16)
+    pub fn flln(&self) -> FllnR {
+        FllnR::new(self.bits & 0x03ff)
     }
     #[doc = "Bits 12:14 - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
     #[inline(always)]
-    pub fn flld(&self) -> FLLD_R {
-        FLLD_R::new(((self.bits >> 12) & 7) as u8)
+    pub fn flld(&self) -> FlldR {
+        FlldR::new(((self.bits >> 12) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
     #[inline(always)]
-    pub fn flln(&mut self) -> FLLN_W<0> {
-        FLLN_W::new(self)
+    pub fn flln(&mut self) -> FllnW<'_, Csctl2Spec> {
+        FllnW::new(self, 0)
     }
     #[doc = "Bits 12:14 - FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits."]
     #[inline(always)]
-    pub fn flld(&mut self) -> FLLD_W<12> {
-        FLLD_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn flld(&mut self) -> FlldW<'_, Csctl2Spec> {
+        FlldW::new(self, 12)
     }
 }
-#[doc = "Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl2](index.html) module"]
-pub struct CSCTL2_SPEC;
-impl crate::RegisterSpec for CSCTL2_SPEC {
+#[doc = "Clock System Control 2\n\nYou can [`read`](crate::Reg::read) this register and get [`csctl2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csctl2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Csctl2Spec;
+impl crate::RegisterSpec for Csctl2Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [csctl2::R](R) reader structure"]
-impl crate::Readable for CSCTL2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csctl2::W](W) writer structure"]
-impl crate::Writable for CSCTL2_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`csctl2::R`](R) reader structure"]
+impl crate::Readable for Csctl2Spec {}
+#[doc = "`write(|w| ..)` method takes [`csctl2::W`](W) writer structure"]
+impl crate::Writable for Csctl2Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CSCTL2 to value 0"]
-impl crate::Resettable for CSCTL2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Csctl2Spec {}
