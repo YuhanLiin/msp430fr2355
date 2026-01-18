@@ -1,186 +1,147 @@
 #[doc = "Register `CP1INT` reader"]
-pub struct R(crate::R<CP1INT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CP1INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CP1INT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CP1INT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Cp1intSpec>;
 #[doc = "Register `CP1INT` writer"]
-pub struct W(crate::W<CP1INT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CP1INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Cp1intSpec>;
+#[doc = "Comparator output interrupt flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Cpifg {
+    #[doc = "0: No interrupt pending."]
+    Cpifg0 = 0,
+    #[doc = "1: Output interrupt pending."]
+    Cpifg1 = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Cpifg> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CP1INT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CP1INT_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Cpifg) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `CPIFG` reader - Comparator output interrupt flag"]
-pub type CPIFG_R = crate::BitReader<CPIFG_A>;
-#[doc = "Comparator output interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CPIFG_A {
-    #[doc = "0: No interrupt pending."]
-    CPIFG_0 = 0,
-    #[doc = "1: Output interrupt pending."]
-    CPIFG_1 = 1,
-}
-impl From<CPIFG_A> for bool {
-    #[inline(always)]
-    fn from(variant: CPIFG_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CPIFG_R {
+pub type CpifgR = crate::BitReader<Cpifg>;
+impl CpifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPIFG_A {
+    pub const fn variant(&self) -> Cpifg {
         match self.bits {
-            false => CPIFG_A::CPIFG_0,
-            true => CPIFG_A::CPIFG_1,
+            false => Cpifg::Cpifg0,
+            true => Cpifg::Cpifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `CPIFG_0`"]
+    #[doc = "No interrupt pending."]
     #[inline(always)]
     pub fn is_cpifg_0(&self) -> bool {
-        *self == CPIFG_A::CPIFG_0
+        *self == Cpifg::Cpifg0
     }
-    #[doc = "Checks if the value of the field is `CPIFG_1`"]
+    #[doc = "Output interrupt pending."]
     #[inline(always)]
     pub fn is_cpifg_1(&self) -> bool {
-        *self == CPIFG_A::CPIFG_1
+        *self == Cpifg::Cpifg1
     }
 }
 #[doc = "Field `CPIFG` writer - Comparator output interrupt flag"]
-pub type CPIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1INT_SPEC, CPIFG_A, O>;
-impl<'a, const O: u8> CPIFG_W<'a, O> {
+pub type CpifgW<'a, REG> = crate::BitWriter<'a, REG, Cpifg>;
+impl<'a, REG> CpifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No interrupt pending."]
     #[inline(always)]
-    pub fn cpifg_0(self) -> &'a mut W {
-        self.variant(CPIFG_A::CPIFG_0)
+    pub fn cpifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpifg::Cpifg0)
     }
     #[doc = "Output interrupt pending."]
     #[inline(always)]
-    pub fn cpifg_1(self) -> &'a mut W {
-        self.variant(CPIFG_A::CPIFG_1)
+    pub fn cpifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpifg::Cpifg1)
     }
 }
-#[doc = "Field `CPIIFG` reader - Comparator output inverted interrupt flag"]
-pub type CPIIFG_R = crate::BitReader<CPIIFG_A>;
 #[doc = "Comparator output inverted interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CPIIFG_A {
+pub enum Cpiifg {
     #[doc = "0: No interrupt pending."]
-    CPIIFG_0 = 0,
+    Cpiifg0 = 0,
     #[doc = "1: Output interrupt pending."]
-    CPIIFG_1 = 1,
+    Cpiifg1 = 1,
 }
-impl From<CPIIFG_A> for bool {
+impl From<Cpiifg> for bool {
     #[inline(always)]
-    fn from(variant: CPIIFG_A) -> Self {
+    fn from(variant: Cpiifg) -> Self {
         variant as u8 != 0
     }
 }
-impl CPIIFG_R {
+#[doc = "Field `CPIIFG` reader - Comparator output inverted interrupt flag"]
+pub type CpiifgR = crate::BitReader<Cpiifg>;
+impl CpiifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPIIFG_A {
+    pub const fn variant(&self) -> Cpiifg {
         match self.bits {
-            false => CPIIFG_A::CPIIFG_0,
-            true => CPIIFG_A::CPIIFG_1,
+            false => Cpiifg::Cpiifg0,
+            true => Cpiifg::Cpiifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `CPIIFG_0`"]
-    #[inline(always)]
-    pub fn is_cpiifg_0(&self) -> bool {
-        *self == CPIIFG_A::CPIIFG_0
-    }
-    #[doc = "Checks if the value of the field is `CPIIFG_1`"]
-    #[inline(always)]
-    pub fn is_cpiifg_1(&self) -> bool {
-        *self == CPIIFG_A::CPIIFG_1
-    }
-}
-#[doc = "Field `CPIIFG` writer - Comparator output inverted interrupt flag"]
-pub type CPIIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, CP1INT_SPEC, CPIIFG_A, O>;
-impl<'a, const O: u8> CPIIFG_W<'a, O> {
     #[doc = "No interrupt pending."]
     #[inline(always)]
-    pub fn cpiifg_0(self) -> &'a mut W {
-        self.variant(CPIIFG_A::CPIIFG_0)
+    pub fn is_cpiifg_0(&self) -> bool {
+        *self == Cpiifg::Cpiifg0
     }
     #[doc = "Output interrupt pending."]
     #[inline(always)]
-    pub fn cpiifg_1(self) -> &'a mut W {
-        self.variant(CPIIFG_A::CPIIFG_1)
+    pub fn is_cpiifg_1(&self) -> bool {
+        *self == Cpiifg::Cpiifg1
+    }
+}
+#[doc = "Field `CPIIFG` writer - Comparator output inverted interrupt flag"]
+pub type CpiifgW<'a, REG> = crate::BitWriter<'a, REG, Cpiifg>;
+impl<'a, REG> CpiifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No interrupt pending."]
+    #[inline(always)]
+    pub fn cpiifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpiifg::Cpiifg0)
+    }
+    #[doc = "Output interrupt pending."]
+    #[inline(always)]
+    pub fn cpiifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Cpiifg::Cpiifg1)
     }
 }
 impl R {
     #[doc = "Bit 0 - Comparator output interrupt flag"]
     #[inline(always)]
-    pub fn cpifg(&self) -> CPIFG_R {
-        CPIFG_R::new((self.bits & 1) != 0)
+    pub fn cpifg(&self) -> CpifgR {
+        CpifgR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Comparator output inverted interrupt flag"]
     #[inline(always)]
-    pub fn cpiifg(&self) -> CPIIFG_R {
-        CPIIFG_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn cpiifg(&self) -> CpiifgR {
+        CpiifgR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comparator output interrupt flag"]
     #[inline(always)]
-    pub fn cpifg(&mut self) -> CPIFG_W<0> {
-        CPIFG_W::new(self)
+    pub fn cpifg(&mut self) -> CpifgW<'_, Cp1intSpec> {
+        CpifgW::new(self, 0)
     }
     #[doc = "Bit 1 - Comparator output inverted interrupt flag"]
     #[inline(always)]
-    pub fn cpiifg(&mut self) -> CPIIFG_W<1> {
-        CPIIFG_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn cpiifg(&mut self) -> CpiifgW<'_, Cp1intSpec> {
+        CpiifgW::new(self, 1)
     }
 }
-#[doc = "Comparator Interrupt Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cp1int](index.html) module"]
-pub struct CP1INT_SPEC;
-impl crate::RegisterSpec for CP1INT_SPEC {
+#[doc = "Comparator Interrupt Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cp1int::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp1int::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp1intSpec;
+impl crate::RegisterSpec for Cp1intSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [cp1int::R](R) reader structure"]
-impl crate::Readable for CP1INT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cp1int::W](W) writer structure"]
-impl crate::Writable for CP1INT_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`cp1int::R`](R) reader structure"]
+impl crate::Readable for Cp1intSpec {}
+#[doc = "`write(|w| ..)` method takes [`cp1int::W`](W) writer structure"]
+impl crate::Writable for Cp1intSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CP1INT to value 0"]
-impl crate::Resettable for CP1INT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Cp1intSpec {}

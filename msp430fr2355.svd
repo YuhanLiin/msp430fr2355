@@ -1128,6 +1128,24 @@
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <name>PMMPWR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Values always reads from the PMMCTL0 register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>PMMPWW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Values which must be written to the PMMCTL0 register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -11172,6 +11190,26 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
+            <field>
+              <name>UCBUSY</name>
+              <description>eUSCI_A0 busy</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <name>UCBUSY</name>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>eUSCI_A0 inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>eUSCI_A0 transmitting or receiving</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
           <alternateRegister>UCA0STATW</alternateRegister>
         </register>
@@ -12582,6 +12620,26 @@
                 <enumeratedValue>
                   <name>UCLISTEN_1</name>
                   <description>Enabled. UCBxTXD is internally fed back to the receiver</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>UCBUSY</name>
+              <description>eUSCI_B0 busy</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <name>UCBUSY</name>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>eUSCI_B0 inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>eUSCI_B0 transmitting or receiving</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -14536,6 +14594,26 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
+            <field>
+              <name>UCBUSY</name>
+              <description>eUSCI_A1 busy</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <name>UCBUSY</name>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>eUSCI_A1 inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>eUSCI_A1 transmitting or receiving</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
           <alternateRegister>UCA1STATW</alternateRegister>
         </register>
@@ -15946,6 +16024,26 @@
                 <enumeratedValue>
                   <name>UCLISTEN_1</name>
                   <description>Enabled. UCBxTXD is internally fed back to the receiver</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>UCBUSY</name>
+              <description>eUSCI_B1 busy</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <name>UCBUSY</name>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>eUSCI_B1 inactive</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>eUSCI_B1 transmitting or receiving</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>

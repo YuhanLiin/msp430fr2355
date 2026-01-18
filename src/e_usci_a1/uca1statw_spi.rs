@@ -1,246 +1,251 @@
 #[doc = "Register `UCA1STATW_SPI` reader"]
-pub struct R(crate::R<UCA1STATW_SPI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCA1STATW_SPI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCA1STATW_SPI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCA1STATW_SPI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Uca1statwSpiSpec>;
 #[doc = "Register `UCA1STATW_SPI` writer"]
-pub struct W(crate::W<UCA1STATW_SPI_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCA1STATW_SPI_SPEC>;
+pub type W = crate::W<Uca1statwSpiSpec>;
+#[doc = "eUSCI_A1 busy\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucbusy {
+    #[doc = "0: eUSCI_A1 inactive"]
+    Idle = 0,
+    #[doc = "1: eUSCI_A1 transmitting or receiving"]
+    Busy = 1,
+}
+impl From<Ucbusy> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: Ucbusy) -> Self {
+        variant as u8 != 0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Field `UCBUSY` reader - eUSCI_A1 busy"]
+pub type UcbusyR = crate::BitReader<Ucbusy>;
+impl UcbusyR {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub const fn variant(&self) -> Ucbusy {
+        match self.bits {
+            false => Ucbusy::Idle,
+            true => Ucbusy::Busy,
+        }
+    }
+    #[doc = "eUSCI_A1 inactive"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == Ucbusy::Idle
+    }
+    #[doc = "eUSCI_A1 transmitting or receiving"]
+    #[inline(always)]
+    pub fn is_busy(&self) -> bool {
+        *self == Ucbusy::Busy
     }
 }
-impl From<crate::W<UCA1STATW_SPI_SPEC>> for W {
+#[doc = "Overrun error flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucoe {
+    #[doc = "0: No error"]
+    Ucoe0 = 0,
+    #[doc = "1: Overrun error occurred"]
+    Ucoe1 = 1,
+}
+impl From<Ucoe> for bool {
     #[inline(always)]
-    fn from(writer: crate::W<UCA1STATW_SPI_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Ucoe) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCOE` reader - Overrun error flag"]
-pub type UCOE_R = crate::BitReader<UCOE_A>;
-#[doc = "Overrun error flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCOE_A {
-    #[doc = "0: No error"]
-    UCOE_0 = 0,
-    #[doc = "1: Overrun error occurred"]
-    UCOE_1 = 1,
-}
-impl From<UCOE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCOE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCOE_R {
+pub type UcoeR = crate::BitReader<Ucoe>;
+impl UcoeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCOE_A {
+    pub const fn variant(&self) -> Ucoe {
         match self.bits {
-            false => UCOE_A::UCOE_0,
-            true => UCOE_A::UCOE_1,
+            false => Ucoe::Ucoe0,
+            true => Ucoe::Ucoe1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCOE_0`"]
-    #[inline(always)]
-    pub fn is_ucoe_0(&self) -> bool {
-        *self == UCOE_A::UCOE_0
-    }
-    #[doc = "Checks if the value of the field is `UCOE_1`"]
-    #[inline(always)]
-    pub fn is_ucoe_1(&self) -> bool {
-        *self == UCOE_A::UCOE_1
-    }
-}
-#[doc = "Field `UCOE` writer - Overrun error flag"]
-pub type UCOE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA1STATW_SPI_SPEC, UCOE_A, O>;
-impl<'a, const O: u8> UCOE_W<'a, O> {
     #[doc = "No error"]
     #[inline(always)]
-    pub fn ucoe_0(self) -> &'a mut W {
-        self.variant(UCOE_A::UCOE_0)
+    pub fn is_ucoe_0(&self) -> bool {
+        *self == Ucoe::Ucoe0
     }
     #[doc = "Overrun error occurred"]
     #[inline(always)]
-    pub fn ucoe_1(self) -> &'a mut W {
-        self.variant(UCOE_A::UCOE_1)
+    pub fn is_ucoe_1(&self) -> bool {
+        *self == Ucoe::Ucoe1
+    }
+}
+#[doc = "Field `UCOE` writer - Overrun error flag"]
+pub type UcoeW<'a, REG> = crate::BitWriter<'a, REG, Ucoe>;
+impl<'a, REG> UcoeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No error"]
+    #[inline(always)]
+    pub fn ucoe_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucoe::Ucoe0)
+    }
+    #[doc = "Overrun error occurred"]
+    #[inline(always)]
+    pub fn ucoe_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucoe::Ucoe1)
+    }
+}
+#[doc = "Framing error flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucfe {
+    #[doc = "0: No error"]
+    Ucfe0 = 0,
+    #[doc = "1: Bus conflict occurred"]
+    Ucfe1 = 1,
+}
+impl From<Ucfe> for bool {
+    #[inline(always)]
+    fn from(variant: Ucfe) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCFE` reader - Framing error flag"]
-pub type UCFE_R = crate::BitReader<UCFE_A>;
-#[doc = "Framing error flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCFE_A {
-    #[doc = "0: No error"]
-    UCFE_0 = 0,
-    #[doc = "1: Bus conflict occurred"]
-    UCFE_1 = 1,
-}
-impl From<UCFE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCFE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCFE_R {
+pub type UcfeR = crate::BitReader<Ucfe>;
+impl UcfeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCFE_A {
+    pub const fn variant(&self) -> Ucfe {
         match self.bits {
-            false => UCFE_A::UCFE_0,
-            true => UCFE_A::UCFE_1,
+            false => Ucfe::Ucfe0,
+            true => Ucfe::Ucfe1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCFE_0`"]
-    #[inline(always)]
-    pub fn is_ucfe_0(&self) -> bool {
-        *self == UCFE_A::UCFE_0
-    }
-    #[doc = "Checks if the value of the field is `UCFE_1`"]
-    #[inline(always)]
-    pub fn is_ucfe_1(&self) -> bool {
-        *self == UCFE_A::UCFE_1
-    }
-}
-#[doc = "Field `UCFE` writer - Framing error flag"]
-pub type UCFE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA1STATW_SPI_SPEC, UCFE_A, O>;
-impl<'a, const O: u8> UCFE_W<'a, O> {
     #[doc = "No error"]
     #[inline(always)]
-    pub fn ucfe_0(self) -> &'a mut W {
-        self.variant(UCFE_A::UCFE_0)
+    pub fn is_ucfe_0(&self) -> bool {
+        *self == Ucfe::Ucfe0
     }
     #[doc = "Bus conflict occurred"]
     #[inline(always)]
-    pub fn ucfe_1(self) -> &'a mut W {
-        self.variant(UCFE_A::UCFE_1)
+    pub fn is_ucfe_1(&self) -> bool {
+        *self == Ucfe::Ucfe1
     }
 }
-#[doc = "Field `UCLISTEN` reader - Listen enable"]
-pub type UCLISTEN_R = crate::BitReader<UCLISTEN_A>;
+#[doc = "Field `UCFE` writer - Framing error flag"]
+pub type UcfeW<'a, REG> = crate::BitWriter<'a, REG, Ucfe>;
+impl<'a, REG> UcfeW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No error"]
+    #[inline(always)]
+    pub fn ucfe_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucfe::Ucfe0)
+    }
+    #[doc = "Bus conflict occurred"]
+    #[inline(always)]
+    pub fn ucfe_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucfe::Ucfe1)
+    }
+}
 #[doc = "Listen enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCLISTEN_A {
+pub enum Uclisten {
     #[doc = "0: Disabled"]
-    UCLISTEN_0 = 0,
+    Uclisten0 = 0,
     #[doc = "1: Enabled. UCAxTXD is internally fed back to the receiver"]
-    UCLISTEN_1 = 1,
+    Uclisten1 = 1,
 }
-impl From<UCLISTEN_A> for bool {
+impl From<Uclisten> for bool {
     #[inline(always)]
-    fn from(variant: UCLISTEN_A) -> Self {
+    fn from(variant: Uclisten) -> Self {
         variant as u8 != 0
     }
 }
-impl UCLISTEN_R {
+#[doc = "Field `UCLISTEN` reader - Listen enable"]
+pub type UclistenR = crate::BitReader<Uclisten>;
+impl UclistenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCLISTEN_A {
+    pub const fn variant(&self) -> Uclisten {
         match self.bits {
-            false => UCLISTEN_A::UCLISTEN_0,
-            true => UCLISTEN_A::UCLISTEN_1,
+            false => Uclisten::Uclisten0,
+            true => Uclisten::Uclisten1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCLISTEN_0`"]
-    #[inline(always)]
-    pub fn is_uclisten_0(&self) -> bool {
-        *self == UCLISTEN_A::UCLISTEN_0
-    }
-    #[doc = "Checks if the value of the field is `UCLISTEN_1`"]
-    #[inline(always)]
-    pub fn is_uclisten_1(&self) -> bool {
-        *self == UCLISTEN_A::UCLISTEN_1
-    }
-}
-#[doc = "Field `UCLISTEN` writer - Listen enable"]
-pub type UCLISTEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCA1STATW_SPI_SPEC, UCLISTEN_A, O>;
-impl<'a, const O: u8> UCLISTEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn uclisten_0(self) -> &'a mut W {
-        self.variant(UCLISTEN_A::UCLISTEN_0)
+    pub fn is_uclisten_0(&self) -> bool {
+        *self == Uclisten::Uclisten0
     }
     #[doc = "Enabled. UCAxTXD is internally fed back to the receiver"]
     #[inline(always)]
-    pub fn uclisten_1(self) -> &'a mut W {
-        self.variant(UCLISTEN_A::UCLISTEN_1)
+    pub fn is_uclisten_1(&self) -> bool {
+        *self == Uclisten::Uclisten1
+    }
+}
+#[doc = "Field `UCLISTEN` writer - Listen enable"]
+pub type UclistenW<'a, REG> = crate::BitWriter<'a, REG, Uclisten>;
+impl<'a, REG> UclistenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn uclisten_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uclisten::Uclisten0)
+    }
+    #[doc = "Enabled. UCAxTXD is internally fed back to the receiver"]
+    #[inline(always)]
+    pub fn uclisten_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uclisten::Uclisten1)
     }
 }
 impl R {
+    #[doc = "Bit 0 - eUSCI_A1 busy"]
+    #[inline(always)]
+    pub fn ucbusy(&self) -> UcbusyR {
+        UcbusyR::new((self.bits & 1) != 0)
+    }
     #[doc = "Bit 5 - Overrun error flag"]
     #[inline(always)]
-    pub fn ucoe(&self) -> UCOE_R {
-        UCOE_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucoe(&self) -> UcoeR {
+        UcoeR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Framing error flag"]
     #[inline(always)]
-    pub fn ucfe(&self) -> UCFE_R {
-        UCFE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucfe(&self) -> UcfeR {
+        UcfeR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Listen enable"]
     #[inline(always)]
-    pub fn uclisten(&self) -> UCLISTEN_R {
-        UCLISTEN_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn uclisten(&self) -> UclistenR {
+        UclistenR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 5 - Overrun error flag"]
     #[inline(always)]
-    pub fn ucoe(&mut self) -> UCOE_W<5> {
-        UCOE_W::new(self)
+    pub fn ucoe(&mut self) -> UcoeW<'_, Uca1statwSpiSpec> {
+        UcoeW::new(self, 5)
     }
     #[doc = "Bit 6 - Framing error flag"]
     #[inline(always)]
-    pub fn ucfe(&mut self) -> UCFE_W<6> {
-        UCFE_W::new(self)
+    pub fn ucfe(&mut self) -> UcfeW<'_, Uca1statwSpiSpec> {
+        UcfeW::new(self, 6)
     }
     #[doc = "Bit 7 - Listen enable"]
     #[inline(always)]
-    pub fn uclisten(&mut self) -> UCLISTEN_W<7> {
-        UCLISTEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn uclisten(&mut self) -> UclistenW<'_, Uca1statwSpiSpec> {
+        UclistenW::new(self, 7)
     }
 }
-#[doc = "UCA1STATW_SPI\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca1statw_spi](index.html) module"]
-pub struct UCA1STATW_SPI_SPEC;
-impl crate::RegisterSpec for UCA1STATW_SPI_SPEC {
+#[doc = "UCA1STATW_SPI\n\nYou can [`read`](crate::Reg::read) this register and get [`uca1statw_spi::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uca1statw_spi::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Uca1statwSpiSpec;
+impl crate::RegisterSpec for Uca1statwSpiSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [uca1statw_spi::R](R) reader structure"]
-impl crate::Readable for UCA1STATW_SPI_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [uca1statw_spi::W](W) writer structure"]
-impl crate::Writable for UCA1STATW_SPI_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`uca1statw_spi::R`](R) reader structure"]
+impl crate::Readable for Uca1statwSpiSpec {}
+#[doc = "`write(|w| ..)` method takes [`uca1statw_spi::W`](W) writer structure"]
+impl crate::Writable for Uca1statwSpiSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCA1STATW_SPI to value 0"]
-impl crate::Resettable for UCA1STATW_SPI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Uca1statwSpiSpec {}

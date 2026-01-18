@@ -1,117 +1,75 @@
 #[doc = "Register `CPIV` reader"]
-pub struct R(crate::R<CPIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CPIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CPIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CPIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CpivSpec>;
 #[doc = "Register `CPIV` writer"]
-pub struct W(crate::W<CPIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CPIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CPIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CPIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `CPIV` reader - Comparator interrupt vector word register"]
-pub type CPIV_R = crate::FieldReader<u16, CPIV_A>;
+pub type W = crate::W<CpivSpec>;
 #[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum CPIV_A {
+pub enum Cpiv {
     #[doc = "0: No interrupt pending"]
-    NONE = 0,
+    None = 0,
     #[doc = "2: CPIFG"]
-    CPIFG = 2,
+    Cpifg = 2,
     #[doc = "4: CPIIFG"]
-    CPIIFG = 4,
+    Cpiifg = 4,
 }
-impl From<CPIV_A> for u16 {
+impl From<Cpiv> for u16 {
     #[inline(always)]
-    fn from(variant: CPIV_A) -> Self {
+    fn from(variant: Cpiv) -> Self {
         variant as _
     }
 }
-impl CPIV_R {
+impl crate::FieldSpec for Cpiv {
+    type Ux = u16;
+}
+impl crate::IsEnum for Cpiv {}
+#[doc = "Field `CPIV` reader - Comparator interrupt vector word register"]
+pub type CpivR = crate::FieldReader<Cpiv>;
+impl CpivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CPIV_A> {
+    pub const fn variant(&self) -> Option<Cpiv> {
         match self.bits {
-            0 => Some(CPIV_A::NONE),
-            2 => Some(CPIV_A::CPIFG),
-            4 => Some(CPIV_A::CPIIFG),
+            0 => Some(Cpiv::None),
+            2 => Some(Cpiv::Cpifg),
+            4 => Some(Cpiv::Cpiifg),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == CPIV_A::NONE
+        *self == Cpiv::None
     }
-    #[doc = "Checks if the value of the field is `CPIFG`"]
+    #[doc = "CPIFG"]
     #[inline(always)]
     pub fn is_cpifg(&self) -> bool {
-        *self == CPIV_A::CPIFG
+        *self == Cpiv::Cpifg
     }
-    #[doc = "Checks if the value of the field is `CPIIFG`"]
+    #[doc = "CPIIFG"]
     #[inline(always)]
     pub fn is_cpiifg(&self) -> bool {
-        *self == CPIV_A::CPIIFG
+        *self == Cpiv::Cpiifg
     }
 }
 impl R {
     #[doc = "Bits 0:15 - Comparator interrupt vector word register"]
     #[inline(always)]
-    pub fn cpiv(&self) -> CPIV_R {
-        CPIV_R::new(self.bits)
+    pub fn cpiv(&self) -> CpivR {
+        CpivR::new(self.bits)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Comparator Interrupt Vector Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpiv](index.html) module"]
-pub struct CPIV_SPEC;
-impl crate::RegisterSpec for CPIV_SPEC {
+impl W {}
+#[doc = "Comparator Interrupt Vector Word Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpiv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpiv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CpivSpec;
+impl crate::RegisterSpec for CpivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [cpiv::R](R) reader structure"]
-impl crate::Readable for CPIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cpiv::W](W) writer structure"]
-impl crate::Writable for CPIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`cpiv::R`](R) reader structure"]
+impl crate::Readable for CpivSpec {}
+#[doc = "`write(|w| ..)` method takes [`cpiv::W`](W) writer structure"]
+impl crate::Writable for CpivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets CPIV to value 0"]
-impl crate::Resettable for CPIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for CpivSpec {}

@@ -1,966 +1,966 @@
 #[doc = "Register `UCB1IE` reader"]
-pub struct R(crate::R<UCB1IE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB1IE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB1IE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB1IE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb1ieSpec>;
 #[doc = "Register `UCB1IE` writer"]
-pub struct W(crate::W<UCB1IE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB1IE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Ucb1ieSpec>;
+#[doc = "Receive interrupt enable 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucrxie0 {
+    #[doc = "0: Interrupt disabled"]
+    Ucrxie0_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucrxie0_1 = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Ucrxie0> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB1IE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB1IE_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Ucrxie0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCRXIE0` reader - Receive interrupt enable 0"]
-pub type UCRXIE0_R = crate::BitReader<UCRXIE0_A>;
-#[doc = "Receive interrupt enable 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCRXIE0_A {
-    #[doc = "0: Interrupt disabled"]
-    UCRXIE0_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCRXIE0_1 = 1,
-}
-impl From<UCRXIE0_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCRXIE0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCRXIE0_R {
+pub type Ucrxie0R = crate::BitReader<Ucrxie0>;
+impl Ucrxie0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCRXIE0_A {
+    pub const fn variant(&self) -> Ucrxie0 {
         match self.bits {
-            false => UCRXIE0_A::UCRXIE0_0,
-            true => UCRXIE0_A::UCRXIE0_1,
+            false => Ucrxie0::Ucrxie0_0,
+            true => Ucrxie0::Ucrxie0_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCRXIE0_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucrxie0_0(&self) -> bool {
-        *self == UCRXIE0_A::UCRXIE0_0
+        *self == Ucrxie0::Ucrxie0_0
     }
-    #[doc = "Checks if the value of the field is `UCRXIE0_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucrxie0_1(&self) -> bool {
-        *self == UCRXIE0_A::UCRXIE0_1
+        *self == Ucrxie0::Ucrxie0_1
     }
 }
 #[doc = "Field `UCRXIE0` writer - Receive interrupt enable 0"]
-pub type UCRXIE0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCRXIE0_A, O>;
-impl<'a, const O: u8> UCRXIE0_W<'a, O> {
+pub type Ucrxie0W<'a, REG> = crate::BitWriter<'a, REG, Ucrxie0>;
+impl<'a, REG> Ucrxie0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucrxie0_0(self) -> &'a mut W {
-        self.variant(UCRXIE0_A::UCRXIE0_0)
+    pub fn ucrxie0_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie0::Ucrxie0_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucrxie0_1(self) -> &'a mut W {
-        self.variant(UCRXIE0_A::UCRXIE0_1)
+    pub fn ucrxie0_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie0::Ucrxie0_1)
+    }
+}
+#[doc = "Transmit interrupt enable 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Uctxie0 {
+    #[doc = "0: Interrupt disabled"]
+    Uctxie0_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Uctxie0_1 = 1,
+}
+impl From<Uctxie0> for bool {
+    #[inline(always)]
+    fn from(variant: Uctxie0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCTXIE0` reader - Transmit interrupt enable 0"]
-pub type UCTXIE0_R = crate::BitReader<UCTXIE0_A>;
-#[doc = "Transmit interrupt enable 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCTXIE0_A {
-    #[doc = "0: Interrupt disabled"]
-    UCTXIE0_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCTXIE0_1 = 1,
-}
-impl From<UCTXIE0_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCTXIE0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCTXIE0_R {
+pub type Uctxie0R = crate::BitReader<Uctxie0>;
+impl Uctxie0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCTXIE0_A {
+    pub const fn variant(&self) -> Uctxie0 {
         match self.bits {
-            false => UCTXIE0_A::UCTXIE0_0,
-            true => UCTXIE0_A::UCTXIE0_1,
+            false => Uctxie0::Uctxie0_0,
+            true => Uctxie0::Uctxie0_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCTXIE0_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_uctxie0_0(&self) -> bool {
-        *self == UCTXIE0_A::UCTXIE0_0
+        *self == Uctxie0::Uctxie0_0
     }
-    #[doc = "Checks if the value of the field is `UCTXIE0_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_uctxie0_1(&self) -> bool {
-        *self == UCTXIE0_A::UCTXIE0_1
+        *self == Uctxie0::Uctxie0_1
     }
 }
 #[doc = "Field `UCTXIE0` writer - Transmit interrupt enable 0"]
-pub type UCTXIE0_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCTXIE0_A, O>;
-impl<'a, const O: u8> UCTXIE0_W<'a, O> {
+pub type Uctxie0W<'a, REG> = crate::BitWriter<'a, REG, Uctxie0>;
+impl<'a, REG> Uctxie0W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn uctxie0_0(self) -> &'a mut W {
-        self.variant(UCTXIE0_A::UCTXIE0_0)
+    pub fn uctxie0_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie0::Uctxie0_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn uctxie0_1(self) -> &'a mut W {
-        self.variant(UCTXIE0_A::UCTXIE0_1)
+    pub fn uctxie0_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie0::Uctxie0_1)
+    }
+}
+#[doc = "START condition interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucsttie {
+    #[doc = "0: Interrupt disabled"]
+    Ucsttie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucsttie1 = 1,
+}
+impl From<Ucsttie> for bool {
+    #[inline(always)]
+    fn from(variant: Ucsttie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCSTTIE` reader - START condition interrupt enable"]
-pub type UCSTTIE_R = crate::BitReader<UCSTTIE_A>;
-#[doc = "START condition interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCSTTIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCSTTIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCSTTIE_1 = 1,
-}
-impl From<UCSTTIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCSTTIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCSTTIE_R {
+pub type UcsttieR = crate::BitReader<Ucsttie>;
+impl UcsttieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCSTTIE_A {
+    pub const fn variant(&self) -> Ucsttie {
         match self.bits {
-            false => UCSTTIE_A::UCSTTIE_0,
-            true => UCSTTIE_A::UCSTTIE_1,
+            false => Ucsttie::Ucsttie0,
+            true => Ucsttie::Ucsttie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCSTTIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucsttie_0(&self) -> bool {
-        *self == UCSTTIE_A::UCSTTIE_0
+        *self == Ucsttie::Ucsttie0
     }
-    #[doc = "Checks if the value of the field is `UCSTTIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucsttie_1(&self) -> bool {
-        *self == UCSTTIE_A::UCSTTIE_1
+        *self == Ucsttie::Ucsttie1
     }
 }
 #[doc = "Field `UCSTTIE` writer - START condition interrupt enable"]
-pub type UCSTTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCSTTIE_A, O>;
-impl<'a, const O: u8> UCSTTIE_W<'a, O> {
+pub type UcsttieW<'a, REG> = crate::BitWriter<'a, REG, Ucsttie>;
+impl<'a, REG> UcsttieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucsttie_0(self) -> &'a mut W {
-        self.variant(UCSTTIE_A::UCSTTIE_0)
+    pub fn ucsttie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucsttie::Ucsttie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucsttie_1(self) -> &'a mut W {
-        self.variant(UCSTTIE_A::UCSTTIE_1)
+    pub fn ucsttie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucsttie::Ucsttie1)
+    }
+}
+#[doc = "STOP condition interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucstpie {
+    #[doc = "0: Interrupt disabled"]
+    Ucstpie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucstpie1 = 1,
+}
+impl From<Ucstpie> for bool {
+    #[inline(always)]
+    fn from(variant: Ucstpie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCSTPIE` reader - STOP condition interrupt enable"]
-pub type UCSTPIE_R = crate::BitReader<UCSTPIE_A>;
-#[doc = "STOP condition interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCSTPIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCSTPIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCSTPIE_1 = 1,
-}
-impl From<UCSTPIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCSTPIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCSTPIE_R {
+pub type UcstpieR = crate::BitReader<Ucstpie>;
+impl UcstpieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCSTPIE_A {
+    pub const fn variant(&self) -> Ucstpie {
         match self.bits {
-            false => UCSTPIE_A::UCSTPIE_0,
-            true => UCSTPIE_A::UCSTPIE_1,
+            false => Ucstpie::Ucstpie0,
+            true => Ucstpie::Ucstpie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCSTPIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucstpie_0(&self) -> bool {
-        *self == UCSTPIE_A::UCSTPIE_0
+        *self == Ucstpie::Ucstpie0
     }
-    #[doc = "Checks if the value of the field is `UCSTPIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucstpie_1(&self) -> bool {
-        *self == UCSTPIE_A::UCSTPIE_1
+        *self == Ucstpie::Ucstpie1
     }
 }
 #[doc = "Field `UCSTPIE` writer - STOP condition interrupt enable"]
-pub type UCSTPIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCSTPIE_A, O>;
-impl<'a, const O: u8> UCSTPIE_W<'a, O> {
+pub type UcstpieW<'a, REG> = crate::BitWriter<'a, REG, Ucstpie>;
+impl<'a, REG> UcstpieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucstpie_0(self) -> &'a mut W {
-        self.variant(UCSTPIE_A::UCSTPIE_0)
+    pub fn ucstpie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucstpie::Ucstpie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucstpie_1(self) -> &'a mut W {
-        self.variant(UCSTPIE_A::UCSTPIE_1)
+    pub fn ucstpie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucstpie::Ucstpie1)
+    }
+}
+#[doc = "Arbitration lost interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucalie {
+    #[doc = "0: Interrupt disabled"]
+    Ucalie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucalie1 = 1,
+}
+impl From<Ucalie> for bool {
+    #[inline(always)]
+    fn from(variant: Ucalie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCALIE` reader - Arbitration lost interrupt enable"]
-pub type UCALIE_R = crate::BitReader<UCALIE_A>;
-#[doc = "Arbitration lost interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCALIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCALIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCALIE_1 = 1,
-}
-impl From<UCALIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCALIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCALIE_R {
+pub type UcalieR = crate::BitReader<Ucalie>;
+impl UcalieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCALIE_A {
+    pub const fn variant(&self) -> Ucalie {
         match self.bits {
-            false => UCALIE_A::UCALIE_0,
-            true => UCALIE_A::UCALIE_1,
+            false => Ucalie::Ucalie0,
+            true => Ucalie::Ucalie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCALIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucalie_0(&self) -> bool {
-        *self == UCALIE_A::UCALIE_0
+        *self == Ucalie::Ucalie0
     }
-    #[doc = "Checks if the value of the field is `UCALIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucalie_1(&self) -> bool {
-        *self == UCALIE_A::UCALIE_1
+        *self == Ucalie::Ucalie1
     }
 }
 #[doc = "Field `UCALIE` writer - Arbitration lost interrupt enable"]
-pub type UCALIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCALIE_A, O>;
-impl<'a, const O: u8> UCALIE_W<'a, O> {
+pub type UcalieW<'a, REG> = crate::BitWriter<'a, REG, Ucalie>;
+impl<'a, REG> UcalieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucalie_0(self) -> &'a mut W {
-        self.variant(UCALIE_A::UCALIE_0)
+    pub fn ucalie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucalie::Ucalie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucalie_1(self) -> &'a mut W {
-        self.variant(UCALIE_A::UCALIE_1)
+    pub fn ucalie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucalie::Ucalie1)
+    }
+}
+#[doc = "Not-acknowledge interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucnackie {
+    #[doc = "0: Interrupt disabled"]
+    Ucnackie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucnackie1 = 1,
+}
+impl From<Ucnackie> for bool {
+    #[inline(always)]
+    fn from(variant: Ucnackie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCNACKIE` reader - Not-acknowledge interrupt enable"]
-pub type UCNACKIE_R = crate::BitReader<UCNACKIE_A>;
-#[doc = "Not-acknowledge interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCNACKIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCNACKIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCNACKIE_1 = 1,
-}
-impl From<UCNACKIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCNACKIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCNACKIE_R {
+pub type UcnackieR = crate::BitReader<Ucnackie>;
+impl UcnackieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCNACKIE_A {
+    pub const fn variant(&self) -> Ucnackie {
         match self.bits {
-            false => UCNACKIE_A::UCNACKIE_0,
-            true => UCNACKIE_A::UCNACKIE_1,
+            false => Ucnackie::Ucnackie0,
+            true => Ucnackie::Ucnackie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCNACKIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucnackie_0(&self) -> bool {
-        *self == UCNACKIE_A::UCNACKIE_0
+        *self == Ucnackie::Ucnackie0
     }
-    #[doc = "Checks if the value of the field is `UCNACKIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucnackie_1(&self) -> bool {
-        *self == UCNACKIE_A::UCNACKIE_1
+        *self == Ucnackie::Ucnackie1
     }
 }
 #[doc = "Field `UCNACKIE` writer - Not-acknowledge interrupt enable"]
-pub type UCNACKIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCNACKIE_A, O>;
-impl<'a, const O: u8> UCNACKIE_W<'a, O> {
+pub type UcnackieW<'a, REG> = crate::BitWriter<'a, REG, Ucnackie>;
+impl<'a, REG> UcnackieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucnackie_0(self) -> &'a mut W {
-        self.variant(UCNACKIE_A::UCNACKIE_0)
+    pub fn ucnackie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucnackie::Ucnackie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucnackie_1(self) -> &'a mut W {
-        self.variant(UCNACKIE_A::UCNACKIE_1)
+    pub fn ucnackie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucnackie::Ucnackie1)
+    }
+}
+#[doc = "Byte counter interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucbcntie {
+    #[doc = "0: Interrupt disabled"]
+    Ucbcntie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucbcntie1 = 1,
+}
+impl From<Ucbcntie> for bool {
+    #[inline(always)]
+    fn from(variant: Ucbcntie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCBCNTIE` reader - Byte counter interrupt enable"]
-pub type UCBCNTIE_R = crate::BitReader<UCBCNTIE_A>;
-#[doc = "Byte counter interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCBCNTIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCBCNTIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCBCNTIE_1 = 1,
-}
-impl From<UCBCNTIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCBCNTIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCBCNTIE_R {
+pub type UcbcntieR = crate::BitReader<Ucbcntie>;
+impl UcbcntieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCBCNTIE_A {
+    pub const fn variant(&self) -> Ucbcntie {
         match self.bits {
-            false => UCBCNTIE_A::UCBCNTIE_0,
-            true => UCBCNTIE_A::UCBCNTIE_1,
+            false => Ucbcntie::Ucbcntie0,
+            true => Ucbcntie::Ucbcntie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCBCNTIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucbcntie_0(&self) -> bool {
-        *self == UCBCNTIE_A::UCBCNTIE_0
+        *self == Ucbcntie::Ucbcntie0
     }
-    #[doc = "Checks if the value of the field is `UCBCNTIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucbcntie_1(&self) -> bool {
-        *self == UCBCNTIE_A::UCBCNTIE_1
+        *self == Ucbcntie::Ucbcntie1
     }
 }
 #[doc = "Field `UCBCNTIE` writer - Byte counter interrupt enable"]
-pub type UCBCNTIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCBCNTIE_A, O>;
-impl<'a, const O: u8> UCBCNTIE_W<'a, O> {
+pub type UcbcntieW<'a, REG> = crate::BitWriter<'a, REG, Ucbcntie>;
+impl<'a, REG> UcbcntieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucbcntie_0(self) -> &'a mut W {
-        self.variant(UCBCNTIE_A::UCBCNTIE_0)
+    pub fn ucbcntie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbcntie::Ucbcntie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucbcntie_1(self) -> &'a mut W {
-        self.variant(UCBCNTIE_A::UCBCNTIE_1)
+    pub fn ucbcntie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbcntie::Ucbcntie1)
+    }
+}
+#[doc = "Clock low timeout interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Uccltoie {
+    #[doc = "0: Interrupt disabled"]
+    Uccltoie0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Uccltoie1 = 1,
+}
+impl From<Uccltoie> for bool {
+    #[inline(always)]
+    fn from(variant: Uccltoie) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCCLTOIE` reader - Clock low timeout interrupt enable"]
-pub type UCCLTOIE_R = crate::BitReader<UCCLTOIE_A>;
-#[doc = "Clock low timeout interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCCLTOIE_A {
-    #[doc = "0: Interrupt disabled"]
-    UCCLTOIE_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCCLTOIE_1 = 1,
-}
-impl From<UCCLTOIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCCLTOIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCCLTOIE_R {
+pub type UccltoieR = crate::BitReader<Uccltoie>;
+impl UccltoieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCCLTOIE_A {
+    pub const fn variant(&self) -> Uccltoie {
         match self.bits {
-            false => UCCLTOIE_A::UCCLTOIE_0,
-            true => UCCLTOIE_A::UCCLTOIE_1,
+            false => Uccltoie::Uccltoie0,
+            true => Uccltoie::Uccltoie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCCLTOIE_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_uccltoie_0(&self) -> bool {
-        *self == UCCLTOIE_A::UCCLTOIE_0
+        *self == Uccltoie::Uccltoie0
     }
-    #[doc = "Checks if the value of the field is `UCCLTOIE_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_uccltoie_1(&self) -> bool {
-        *self == UCCLTOIE_A::UCCLTOIE_1
+        *self == Uccltoie::Uccltoie1
     }
 }
 #[doc = "Field `UCCLTOIE` writer - Clock low timeout interrupt enable"]
-pub type UCCLTOIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCCLTOIE_A, O>;
-impl<'a, const O: u8> UCCLTOIE_W<'a, O> {
+pub type UccltoieW<'a, REG> = crate::BitWriter<'a, REG, Uccltoie>;
+impl<'a, REG> UccltoieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn uccltoie_0(self) -> &'a mut W {
-        self.variant(UCCLTOIE_A::UCCLTOIE_0)
+    pub fn uccltoie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uccltoie::Uccltoie0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn uccltoie_1(self) -> &'a mut W {
-        self.variant(UCCLTOIE_A::UCCLTOIE_1)
+    pub fn uccltoie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uccltoie::Uccltoie1)
+    }
+}
+#[doc = "Receive interrupt enable 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucrxie1 {
+    #[doc = "0: Interrupt disabled"]
+    Ucrxie1_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucrxie1_1 = 1,
+}
+impl From<Ucrxie1> for bool {
+    #[inline(always)]
+    fn from(variant: Ucrxie1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCRXIE1` reader - Receive interrupt enable 1"]
-pub type UCRXIE1_R = crate::BitReader<UCRXIE1_A>;
-#[doc = "Receive interrupt enable 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCRXIE1_A {
-    #[doc = "0: Interrupt disabled"]
-    UCRXIE1_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCRXIE1_1 = 1,
-}
-impl From<UCRXIE1_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCRXIE1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCRXIE1_R {
+pub type Ucrxie1R = crate::BitReader<Ucrxie1>;
+impl Ucrxie1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCRXIE1_A {
+    pub const fn variant(&self) -> Ucrxie1 {
         match self.bits {
-            false => UCRXIE1_A::UCRXIE1_0,
-            true => UCRXIE1_A::UCRXIE1_1,
+            false => Ucrxie1::Ucrxie1_0,
+            true => Ucrxie1::Ucrxie1_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCRXIE1_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucrxie1_0(&self) -> bool {
-        *self == UCRXIE1_A::UCRXIE1_0
+        *self == Ucrxie1::Ucrxie1_0
     }
-    #[doc = "Checks if the value of the field is `UCRXIE1_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucrxie1_1(&self) -> bool {
-        *self == UCRXIE1_A::UCRXIE1_1
+        *self == Ucrxie1::Ucrxie1_1
     }
 }
 #[doc = "Field `UCRXIE1` writer - Receive interrupt enable 1"]
-pub type UCRXIE1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCRXIE1_A, O>;
-impl<'a, const O: u8> UCRXIE1_W<'a, O> {
+pub type Ucrxie1W<'a, REG> = crate::BitWriter<'a, REG, Ucrxie1>;
+impl<'a, REG> Ucrxie1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucrxie1_0(self) -> &'a mut W {
-        self.variant(UCRXIE1_A::UCRXIE1_0)
+    pub fn ucrxie1_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie1::Ucrxie1_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucrxie1_1(self) -> &'a mut W {
-        self.variant(UCRXIE1_A::UCRXIE1_1)
+    pub fn ucrxie1_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie1::Ucrxie1_1)
+    }
+}
+#[doc = "Transmit interrupt enable 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Uctxie1 {
+    #[doc = "0: Interrupt disabled"]
+    Uctxie1_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Uctxie1_1 = 1,
+}
+impl From<Uctxie1> for bool {
+    #[inline(always)]
+    fn from(variant: Uctxie1) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCTXIE1` reader - Transmit interrupt enable 1"]
-pub type UCTXIE1_R = crate::BitReader<UCTXIE1_A>;
-#[doc = "Transmit interrupt enable 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCTXIE1_A {
-    #[doc = "0: Interrupt disabled"]
-    UCTXIE1_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCTXIE1_1 = 1,
-}
-impl From<UCTXIE1_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCTXIE1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCTXIE1_R {
+pub type Uctxie1R = crate::BitReader<Uctxie1>;
+impl Uctxie1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCTXIE1_A {
+    pub const fn variant(&self) -> Uctxie1 {
         match self.bits {
-            false => UCTXIE1_A::UCTXIE1_0,
-            true => UCTXIE1_A::UCTXIE1_1,
+            false => Uctxie1::Uctxie1_0,
+            true => Uctxie1::Uctxie1_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCTXIE1_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_uctxie1_0(&self) -> bool {
-        *self == UCTXIE1_A::UCTXIE1_0
+        *self == Uctxie1::Uctxie1_0
     }
-    #[doc = "Checks if the value of the field is `UCTXIE1_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_uctxie1_1(&self) -> bool {
-        *self == UCTXIE1_A::UCTXIE1_1
+        *self == Uctxie1::Uctxie1_1
     }
 }
 #[doc = "Field `UCTXIE1` writer - Transmit interrupt enable 1"]
-pub type UCTXIE1_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCTXIE1_A, O>;
-impl<'a, const O: u8> UCTXIE1_W<'a, O> {
+pub type Uctxie1W<'a, REG> = crate::BitWriter<'a, REG, Uctxie1>;
+impl<'a, REG> Uctxie1W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn uctxie1_0(self) -> &'a mut W {
-        self.variant(UCTXIE1_A::UCTXIE1_0)
+    pub fn uctxie1_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie1::Uctxie1_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn uctxie1_1(self) -> &'a mut W {
-        self.variant(UCTXIE1_A::UCTXIE1_1)
+    pub fn uctxie1_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie1::Uctxie1_1)
+    }
+}
+#[doc = "Receive interrupt enable 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucrxie2 {
+    #[doc = "0: Interrupt disabled"]
+    Ucrxie2_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucrxie2_1 = 1,
+}
+impl From<Ucrxie2> for bool {
+    #[inline(always)]
+    fn from(variant: Ucrxie2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCRXIE2` reader - Receive interrupt enable 2"]
-pub type UCRXIE2_R = crate::BitReader<UCRXIE2_A>;
-#[doc = "Receive interrupt enable 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCRXIE2_A {
-    #[doc = "0: Interrupt disabled"]
-    UCRXIE2_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCRXIE2_1 = 1,
-}
-impl From<UCRXIE2_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCRXIE2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCRXIE2_R {
+pub type Ucrxie2R = crate::BitReader<Ucrxie2>;
+impl Ucrxie2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCRXIE2_A {
+    pub const fn variant(&self) -> Ucrxie2 {
         match self.bits {
-            false => UCRXIE2_A::UCRXIE2_0,
-            true => UCRXIE2_A::UCRXIE2_1,
+            false => Ucrxie2::Ucrxie2_0,
+            true => Ucrxie2::Ucrxie2_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCRXIE2_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucrxie2_0(&self) -> bool {
-        *self == UCRXIE2_A::UCRXIE2_0
+        *self == Ucrxie2::Ucrxie2_0
     }
-    #[doc = "Checks if the value of the field is `UCRXIE2_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucrxie2_1(&self) -> bool {
-        *self == UCRXIE2_A::UCRXIE2_1
+        *self == Ucrxie2::Ucrxie2_1
     }
 }
 #[doc = "Field `UCRXIE2` writer - Receive interrupt enable 2"]
-pub type UCRXIE2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCRXIE2_A, O>;
-impl<'a, const O: u8> UCRXIE2_W<'a, O> {
+pub type Ucrxie2W<'a, REG> = crate::BitWriter<'a, REG, Ucrxie2>;
+impl<'a, REG> Ucrxie2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucrxie2_0(self) -> &'a mut W {
-        self.variant(UCRXIE2_A::UCRXIE2_0)
+    pub fn ucrxie2_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie2::Ucrxie2_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucrxie2_1(self) -> &'a mut W {
-        self.variant(UCRXIE2_A::UCRXIE2_1)
+    pub fn ucrxie2_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie2::Ucrxie2_1)
+    }
+}
+#[doc = "Transmit interrupt enable 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Uctxie2 {
+    #[doc = "0: Interrupt disabled"]
+    Uctxie2_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Uctxie2_1 = 1,
+}
+impl From<Uctxie2> for bool {
+    #[inline(always)]
+    fn from(variant: Uctxie2) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCTXIE2` reader - Transmit interrupt enable 2"]
-pub type UCTXIE2_R = crate::BitReader<UCTXIE2_A>;
-#[doc = "Transmit interrupt enable 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCTXIE2_A {
-    #[doc = "0: Interrupt disabled"]
-    UCTXIE2_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCTXIE2_1 = 1,
-}
-impl From<UCTXIE2_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCTXIE2_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCTXIE2_R {
+pub type Uctxie2R = crate::BitReader<Uctxie2>;
+impl Uctxie2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCTXIE2_A {
+    pub const fn variant(&self) -> Uctxie2 {
         match self.bits {
-            false => UCTXIE2_A::UCTXIE2_0,
-            true => UCTXIE2_A::UCTXIE2_1,
+            false => Uctxie2::Uctxie2_0,
+            true => Uctxie2::Uctxie2_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCTXIE2_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_uctxie2_0(&self) -> bool {
-        *self == UCTXIE2_A::UCTXIE2_0
+        *self == Uctxie2::Uctxie2_0
     }
-    #[doc = "Checks if the value of the field is `UCTXIE2_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_uctxie2_1(&self) -> bool {
-        *self == UCTXIE2_A::UCTXIE2_1
+        *self == Uctxie2::Uctxie2_1
     }
 }
 #[doc = "Field `UCTXIE2` writer - Transmit interrupt enable 2"]
-pub type UCTXIE2_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCTXIE2_A, O>;
-impl<'a, const O: u8> UCTXIE2_W<'a, O> {
+pub type Uctxie2W<'a, REG> = crate::BitWriter<'a, REG, Uctxie2>;
+impl<'a, REG> Uctxie2W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn uctxie2_0(self) -> &'a mut W {
-        self.variant(UCTXIE2_A::UCTXIE2_0)
+    pub fn uctxie2_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie2::Uctxie2_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn uctxie2_1(self) -> &'a mut W {
-        self.variant(UCTXIE2_A::UCTXIE2_1)
+    pub fn uctxie2_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie2::Uctxie2_1)
+    }
+}
+#[doc = "Receive interrupt enable 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucrxie3 {
+    #[doc = "0: Interrupt disabled"]
+    Ucrxie3_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Ucrxie3_1 = 1,
+}
+impl From<Ucrxie3> for bool {
+    #[inline(always)]
+    fn from(variant: Ucrxie3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCRXIE3` reader - Receive interrupt enable 3"]
-pub type UCRXIE3_R = crate::BitReader<UCRXIE3_A>;
-#[doc = "Receive interrupt enable 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCRXIE3_A {
-    #[doc = "0: Interrupt disabled"]
-    UCRXIE3_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCRXIE3_1 = 1,
-}
-impl From<UCRXIE3_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCRXIE3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCRXIE3_R {
+pub type Ucrxie3R = crate::BitReader<Ucrxie3>;
+impl Ucrxie3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCRXIE3_A {
+    pub const fn variant(&self) -> Ucrxie3 {
         match self.bits {
-            false => UCRXIE3_A::UCRXIE3_0,
-            true => UCRXIE3_A::UCRXIE3_1,
+            false => Ucrxie3::Ucrxie3_0,
+            true => Ucrxie3::Ucrxie3_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCRXIE3_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_ucrxie3_0(&self) -> bool {
-        *self == UCRXIE3_A::UCRXIE3_0
+        *self == Ucrxie3::Ucrxie3_0
     }
-    #[doc = "Checks if the value of the field is `UCRXIE3_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_ucrxie3_1(&self) -> bool {
-        *self == UCRXIE3_A::UCRXIE3_1
+        *self == Ucrxie3::Ucrxie3_1
     }
 }
 #[doc = "Field `UCRXIE3` writer - Receive interrupt enable 3"]
-pub type UCRXIE3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCRXIE3_A, O>;
-impl<'a, const O: u8> UCRXIE3_W<'a, O> {
+pub type Ucrxie3W<'a, REG> = crate::BitWriter<'a, REG, Ucrxie3>;
+impl<'a, REG> Ucrxie3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucrxie3_0(self) -> &'a mut W {
-        self.variant(UCRXIE3_A::UCRXIE3_0)
+    pub fn ucrxie3_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie3::Ucrxie3_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucrxie3_1(self) -> &'a mut W {
-        self.variant(UCRXIE3_A::UCRXIE3_1)
+    pub fn ucrxie3_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucrxie3::Ucrxie3_1)
+    }
+}
+#[doc = "Transmit interrupt enable 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Uctxie3 {
+    #[doc = "0: Interrupt disabled"]
+    Uctxie3_0 = 0,
+    #[doc = "1: Interrupt enabled"]
+    Uctxie3_1 = 1,
+}
+impl From<Uctxie3> for bool {
+    #[inline(always)]
+    fn from(variant: Uctxie3) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCTXIE3` reader - Transmit interrupt enable 3"]
-pub type UCTXIE3_R = crate::BitReader<UCTXIE3_A>;
-#[doc = "Transmit interrupt enable 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCTXIE3_A {
-    #[doc = "0: Interrupt disabled"]
-    UCTXIE3_0 = 0,
-    #[doc = "1: Interrupt enabled"]
-    UCTXIE3_1 = 1,
-}
-impl From<UCTXIE3_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCTXIE3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCTXIE3_R {
+pub type Uctxie3R = crate::BitReader<Uctxie3>;
+impl Uctxie3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCTXIE3_A {
+    pub const fn variant(&self) -> Uctxie3 {
         match self.bits {
-            false => UCTXIE3_A::UCTXIE3_0,
-            true => UCTXIE3_A::UCTXIE3_1,
+            false => Uctxie3::Uctxie3_0,
+            true => Uctxie3::Uctxie3_1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCTXIE3_0`"]
+    #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn is_uctxie3_0(&self) -> bool {
-        *self == UCTXIE3_A::UCTXIE3_0
+        *self == Uctxie3::Uctxie3_0
     }
-    #[doc = "Checks if the value of the field is `UCTXIE3_1`"]
+    #[doc = "Interrupt enabled"]
     #[inline(always)]
     pub fn is_uctxie3_1(&self) -> bool {
-        *self == UCTXIE3_A::UCTXIE3_1
+        *self == Uctxie3::Uctxie3_1
     }
 }
 #[doc = "Field `UCTXIE3` writer - Transmit interrupt enable 3"]
-pub type UCTXIE3_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCTXIE3_A, O>;
-impl<'a, const O: u8> UCTXIE3_W<'a, O> {
+pub type Uctxie3W<'a, REG> = crate::BitWriter<'a, REG, Uctxie3>;
+impl<'a, REG> Uctxie3W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn uctxie3_0(self) -> &'a mut W {
-        self.variant(UCTXIE3_A::UCTXIE3_0)
+    pub fn uctxie3_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie3::Uctxie3_0)
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn uctxie3_1(self) -> &'a mut W {
-        self.variant(UCTXIE3_A::UCTXIE3_1)
+    pub fn uctxie3_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Uctxie3::Uctxie3_1)
     }
 }
-#[doc = "Field `UCBIT9IE` reader - Bit position 9 interrupt enable"]
-pub type UCBIT9IE_R = crate::BitReader<UCBIT9IE_A>;
 #[doc = "Bit position 9 interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCBIT9IE_A {
+pub enum Ucbit9ie {
     #[doc = "0: Interrupt disabled"]
-    UCBIT9IE_0 = 0,
+    Ucbit9ie0 = 0,
     #[doc = "1: Interrupt enabled"]
-    UCBIT9IE_1 = 1,
+    Ucbit9ie1 = 1,
 }
-impl From<UCBIT9IE_A> for bool {
+impl From<Ucbit9ie> for bool {
     #[inline(always)]
-    fn from(variant: UCBIT9IE_A) -> Self {
+    fn from(variant: Ucbit9ie) -> Self {
         variant as u8 != 0
     }
 }
-impl UCBIT9IE_R {
+#[doc = "Field `UCBIT9IE` reader - Bit position 9 interrupt enable"]
+pub type Ucbit9ieR = crate::BitReader<Ucbit9ie>;
+impl Ucbit9ieR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCBIT9IE_A {
+    pub const fn variant(&self) -> Ucbit9ie {
         match self.bits {
-            false => UCBIT9IE_A::UCBIT9IE_0,
-            true => UCBIT9IE_A::UCBIT9IE_1,
+            false => Ucbit9ie::Ucbit9ie0,
+            true => Ucbit9ie::Ucbit9ie1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCBIT9IE_0`"]
-    #[inline(always)]
-    pub fn is_ucbit9ie_0(&self) -> bool {
-        *self == UCBIT9IE_A::UCBIT9IE_0
-    }
-    #[doc = "Checks if the value of the field is `UCBIT9IE_1`"]
-    #[inline(always)]
-    pub fn is_ucbit9ie_1(&self) -> bool {
-        *self == UCBIT9IE_A::UCBIT9IE_1
-    }
-}
-#[doc = "Field `UCBIT9IE` writer - Bit position 9 interrupt enable"]
-pub type UCBIT9IE_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCB1IE_SPEC, UCBIT9IE_A, O>;
-impl<'a, const O: u8> UCBIT9IE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
-    pub fn ucbit9ie_0(self) -> &'a mut W {
-        self.variant(UCBIT9IE_A::UCBIT9IE_0)
+    pub fn is_ucbit9ie_0(&self) -> bool {
+        *self == Ucbit9ie::Ucbit9ie0
     }
     #[doc = "Interrupt enabled"]
     #[inline(always)]
-    pub fn ucbit9ie_1(self) -> &'a mut W {
-        self.variant(UCBIT9IE_A::UCBIT9IE_1)
+    pub fn is_ucbit9ie_1(&self) -> bool {
+        *self == Ucbit9ie::Ucbit9ie1
+    }
+}
+#[doc = "Field `UCBIT9IE` writer - Bit position 9 interrupt enable"]
+pub type Ucbit9ieW<'a, REG> = crate::BitWriter<'a, REG, Ucbit9ie>;
+impl<'a, REG> Ucbit9ieW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Interrupt disabled"]
+    #[inline(always)]
+    pub fn ucbit9ie_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbit9ie::Ucbit9ie0)
+    }
+    #[doc = "Interrupt enabled"]
+    #[inline(always)]
+    pub fn ucbit9ie_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Ucbit9ie::Ucbit9ie1)
     }
 }
 impl R {
     #[doc = "Bit 0 - Receive interrupt enable 0"]
     #[inline(always)]
-    pub fn ucrxie0(&self) -> UCRXIE0_R {
-        UCRXIE0_R::new((self.bits & 1) != 0)
+    pub fn ucrxie0(&self) -> Ucrxie0R {
+        Ucrxie0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit interrupt enable 0"]
     #[inline(always)]
-    pub fn uctxie0(&self) -> UCTXIE0_R {
-        UCTXIE0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn uctxie0(&self) -> Uctxie0R {
+        Uctxie0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - START condition interrupt enable"]
     #[inline(always)]
-    pub fn ucsttie(&self) -> UCSTTIE_R {
-        UCSTTIE_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ucsttie(&self) -> UcsttieR {
+        UcsttieR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - STOP condition interrupt enable"]
     #[inline(always)]
-    pub fn ucstpie(&self) -> UCSTPIE_R {
-        UCSTPIE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ucstpie(&self) -> UcstpieR {
+        UcstpieR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Arbitration lost interrupt enable"]
     #[inline(always)]
-    pub fn ucalie(&self) -> UCALIE_R {
-        UCALIE_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ucalie(&self) -> UcalieR {
+        UcalieR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Not-acknowledge interrupt enable"]
     #[inline(always)]
-    pub fn ucnackie(&self) -> UCNACKIE_R {
-        UCNACKIE_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucnackie(&self) -> UcnackieR {
+        UcnackieR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Byte counter interrupt enable"]
     #[inline(always)]
-    pub fn ucbcntie(&self) -> UCBCNTIE_R {
-        UCBCNTIE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucbcntie(&self) -> UcbcntieR {
+        UcbcntieR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Clock low timeout interrupt enable"]
     #[inline(always)]
-    pub fn uccltoie(&self) -> UCCLTOIE_R {
-        UCCLTOIE_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn uccltoie(&self) -> UccltoieR {
+        UccltoieR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Receive interrupt enable 1"]
     #[inline(always)]
-    pub fn ucrxie1(&self) -> UCRXIE1_R {
-        UCRXIE1_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn ucrxie1(&self) -> Ucrxie1R {
+        Ucrxie1R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Transmit interrupt enable 1"]
     #[inline(always)]
-    pub fn uctxie1(&self) -> UCTXIE1_R {
-        UCTXIE1_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn uctxie1(&self) -> Uctxie1R {
+        Uctxie1R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Receive interrupt enable 2"]
     #[inline(always)]
-    pub fn ucrxie2(&self) -> UCRXIE2_R {
-        UCRXIE2_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn ucrxie2(&self) -> Ucrxie2R {
+        Ucrxie2R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Transmit interrupt enable 2"]
     #[inline(always)]
-    pub fn uctxie2(&self) -> UCTXIE2_R {
-        UCTXIE2_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn uctxie2(&self) -> Uctxie2R {
+        Uctxie2R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Receive interrupt enable 3"]
     #[inline(always)]
-    pub fn ucrxie3(&self) -> UCRXIE3_R {
-        UCRXIE3_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ucrxie3(&self) -> Ucrxie3R {
+        Ucrxie3R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Transmit interrupt enable 3"]
     #[inline(always)]
-    pub fn uctxie3(&self) -> UCTXIE3_R {
-        UCTXIE3_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn uctxie3(&self) -> Uctxie3R {
+        Uctxie3R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Bit position 9 interrupt enable"]
     #[inline(always)]
-    pub fn ucbit9ie(&self) -> UCBIT9IE_R {
-        UCBIT9IE_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn ucbit9ie(&self) -> Ucbit9ieR {
+        Ucbit9ieR::new(((self.bits >> 14) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Receive interrupt enable 0"]
     #[inline(always)]
-    pub fn ucrxie0(&mut self) -> UCRXIE0_W<0> {
-        UCRXIE0_W::new(self)
+    pub fn ucrxie0(&mut self) -> Ucrxie0W<'_, Ucb1ieSpec> {
+        Ucrxie0W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit interrupt enable 0"]
     #[inline(always)]
-    pub fn uctxie0(&mut self) -> UCTXIE0_W<1> {
-        UCTXIE0_W::new(self)
+    pub fn uctxie0(&mut self) -> Uctxie0W<'_, Ucb1ieSpec> {
+        Uctxie0W::new(self, 1)
     }
     #[doc = "Bit 2 - START condition interrupt enable"]
     #[inline(always)]
-    pub fn ucsttie(&mut self) -> UCSTTIE_W<2> {
-        UCSTTIE_W::new(self)
+    pub fn ucsttie(&mut self) -> UcsttieW<'_, Ucb1ieSpec> {
+        UcsttieW::new(self, 2)
     }
     #[doc = "Bit 3 - STOP condition interrupt enable"]
     #[inline(always)]
-    pub fn ucstpie(&mut self) -> UCSTPIE_W<3> {
-        UCSTPIE_W::new(self)
+    pub fn ucstpie(&mut self) -> UcstpieW<'_, Ucb1ieSpec> {
+        UcstpieW::new(self, 3)
     }
     #[doc = "Bit 4 - Arbitration lost interrupt enable"]
     #[inline(always)]
-    pub fn ucalie(&mut self) -> UCALIE_W<4> {
-        UCALIE_W::new(self)
+    pub fn ucalie(&mut self) -> UcalieW<'_, Ucb1ieSpec> {
+        UcalieW::new(self, 4)
     }
     #[doc = "Bit 5 - Not-acknowledge interrupt enable"]
     #[inline(always)]
-    pub fn ucnackie(&mut self) -> UCNACKIE_W<5> {
-        UCNACKIE_W::new(self)
+    pub fn ucnackie(&mut self) -> UcnackieW<'_, Ucb1ieSpec> {
+        UcnackieW::new(self, 5)
     }
     #[doc = "Bit 6 - Byte counter interrupt enable"]
     #[inline(always)]
-    pub fn ucbcntie(&mut self) -> UCBCNTIE_W<6> {
-        UCBCNTIE_W::new(self)
+    pub fn ucbcntie(&mut self) -> UcbcntieW<'_, Ucb1ieSpec> {
+        UcbcntieW::new(self, 6)
     }
     #[doc = "Bit 7 - Clock low timeout interrupt enable"]
     #[inline(always)]
-    pub fn uccltoie(&mut self) -> UCCLTOIE_W<7> {
-        UCCLTOIE_W::new(self)
+    pub fn uccltoie(&mut self) -> UccltoieW<'_, Ucb1ieSpec> {
+        UccltoieW::new(self, 7)
     }
     #[doc = "Bit 8 - Receive interrupt enable 1"]
     #[inline(always)]
-    pub fn ucrxie1(&mut self) -> UCRXIE1_W<8> {
-        UCRXIE1_W::new(self)
+    pub fn ucrxie1(&mut self) -> Ucrxie1W<'_, Ucb1ieSpec> {
+        Ucrxie1W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit interrupt enable 1"]
     #[inline(always)]
-    pub fn uctxie1(&mut self) -> UCTXIE1_W<9> {
-        UCTXIE1_W::new(self)
+    pub fn uctxie1(&mut self) -> Uctxie1W<'_, Ucb1ieSpec> {
+        Uctxie1W::new(self, 9)
     }
     #[doc = "Bit 10 - Receive interrupt enable 2"]
     #[inline(always)]
-    pub fn ucrxie2(&mut self) -> UCRXIE2_W<10> {
-        UCRXIE2_W::new(self)
+    pub fn ucrxie2(&mut self) -> Ucrxie2W<'_, Ucb1ieSpec> {
+        Ucrxie2W::new(self, 10)
     }
     #[doc = "Bit 11 - Transmit interrupt enable 2"]
     #[inline(always)]
-    pub fn uctxie2(&mut self) -> UCTXIE2_W<11> {
-        UCTXIE2_W::new(self)
+    pub fn uctxie2(&mut self) -> Uctxie2W<'_, Ucb1ieSpec> {
+        Uctxie2W::new(self, 11)
     }
     #[doc = "Bit 12 - Receive interrupt enable 3"]
     #[inline(always)]
-    pub fn ucrxie3(&mut self) -> UCRXIE3_W<12> {
-        UCRXIE3_W::new(self)
+    pub fn ucrxie3(&mut self) -> Ucrxie3W<'_, Ucb1ieSpec> {
+        Ucrxie3W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit interrupt enable 3"]
     #[inline(always)]
-    pub fn uctxie3(&mut self) -> UCTXIE3_W<13> {
-        UCTXIE3_W::new(self)
+    pub fn uctxie3(&mut self) -> Uctxie3W<'_, Ucb1ieSpec> {
+        Uctxie3W::new(self, 13)
     }
     #[doc = "Bit 14 - Bit position 9 interrupt enable"]
     #[inline(always)]
-    pub fn ucbit9ie(&mut self) -> UCBIT9IE_W<14> {
-        UCBIT9IE_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn ucbit9ie(&mut self) -> Ucbit9ieW<'_, Ucb1ieSpec> {
+        Ucbit9ieW::new(self, 14)
     }
 }
-#[doc = "eUSCI_Bx Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb1ie](index.html) module"]
-pub struct UCB1IE_SPEC;
-impl crate::RegisterSpec for UCB1IE_SPEC {
+#[doc = "eUSCI_Bx Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb1ie::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb1ie::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb1ieSpec;
+impl crate::RegisterSpec for Ucb1ieSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb1ie::R](R) reader structure"]
-impl crate::Readable for UCB1IE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb1ie::W](W) writer structure"]
-impl crate::Writable for UCB1IE_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb1ie::R`](R) reader structure"]
+impl crate::Readable for Ucb1ieSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb1ie::W`](W) writer structure"]
+impl crate::Writable for Ucb1ieSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB1IE to value 0"]
-impl crate::Resettable for UCB1IE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb1ieSpec {}

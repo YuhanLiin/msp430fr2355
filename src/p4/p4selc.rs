@@ -1,64 +1,23 @@
 #[doc = "Register `P4SELC` reader"]
-pub struct R(crate::R<P4SELC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<P4SELC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<P4SELC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<P4SELC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<P4selcSpec>;
 #[doc = "Register `P4SELC` writer"]
-pub struct W(crate::W<P4SELC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<P4SELC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<P4selcSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<P4SELC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<P4SELC_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Port 4 Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p4selc](index.html) module"]
-pub struct P4SELC_SPEC;
-impl crate::RegisterSpec for P4SELC_SPEC {
+impl W {}
+#[doc = "Port 4 Complement Select\n\nYou can [`read`](crate::Reg::read) this register and get [`p4selc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`p4selc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct P4selcSpec;
+impl crate::RegisterSpec for P4selcSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [p4selc::R](R) reader structure"]
-impl crate::Readable for P4SELC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [p4selc::W](W) writer structure"]
-impl crate::Writable for P4SELC_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`p4selc::R`](R) reader structure"]
+impl crate::Readable for P4selcSpec {}
+#[doc = "`write(|w| ..)` method takes [`p4selc::W`](W) writer structure"]
+impl crate::Writable for P4selcSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets P4SELC to value 0"]
-impl crate::Resettable for P4SELC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for P4selcSpec {}

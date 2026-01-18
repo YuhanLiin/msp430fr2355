@@ -1,551 +1,525 @@
 #[doc = "Register `ADCCTL0` reader"]
-pub struct R(crate::R<ADCCTL0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ADCCTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ADCCTL0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ADCCTL0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Adcctl0Spec>;
 #[doc = "Register `ADCCTL0` writer"]
-pub struct W(crate::W<ADCCTL0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ADCCTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Adcctl0Spec>;
+#[doc = "start conversion\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Adcsc {
+    #[doc = "0: No sample-and-conversion-start"]
+    Adcsc0 = 0,
+    #[doc = "1: Start sample-and-conversion"]
+    Adcsc1 = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Adcsc> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ADCCTL0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ADCCTL0_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Adcsc) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADCSC` reader - start conversion"]
-pub type ADCSC_R = crate::BitReader<ADCSC_A>;
-#[doc = "start conversion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ADCSC_A {
-    #[doc = "0: No sample-and-conversion-start"]
-    ADCSC_0 = 0,
-    #[doc = "1: Start sample-and-conversion"]
-    ADCSC_1 = 1,
-}
-impl From<ADCSC_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADCSC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADCSC_R {
+pub type AdcscR = crate::BitReader<Adcsc>;
+impl AdcscR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCSC_A {
+    pub const fn variant(&self) -> Adcsc {
         match self.bits {
-            false => ADCSC_A::ADCSC_0,
-            true => ADCSC_A::ADCSC_1,
+            false => Adcsc::Adcsc0,
+            true => Adcsc::Adcsc1,
         }
     }
-    #[doc = "Checks if the value of the field is `ADCSC_0`"]
-    #[inline(always)]
-    pub fn is_adcsc_0(&self) -> bool {
-        *self == ADCSC_A::ADCSC_0
-    }
-    #[doc = "Checks if the value of the field is `ADCSC_1`"]
-    #[inline(always)]
-    pub fn is_adcsc_1(&self) -> bool {
-        *self == ADCSC_A::ADCSC_1
-    }
-}
-#[doc = "Field `ADCSC` writer - start conversion"]
-pub type ADCSC_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, ADCSC_A, O>;
-impl<'a, const O: u8> ADCSC_W<'a, O> {
     #[doc = "No sample-and-conversion-start"]
     #[inline(always)]
-    pub fn adcsc_0(self) -> &'a mut W {
-        self.variant(ADCSC_A::ADCSC_0)
+    pub fn is_adcsc_0(&self) -> bool {
+        *self == Adcsc::Adcsc0
     }
     #[doc = "Start sample-and-conversion"]
     #[inline(always)]
-    pub fn adcsc_1(self) -> &'a mut W {
-        self.variant(ADCSC_A::ADCSC_1)
+    pub fn is_adcsc_1(&self) -> bool {
+        *self == Adcsc::Adcsc1
+    }
+}
+#[doc = "Field `ADCSC` writer - start conversion"]
+pub type AdcscW<'a, REG> = crate::BitWriter<'a, REG, Adcsc>;
+impl<'a, REG> AdcscW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No sample-and-conversion-start"]
+    #[inline(always)]
+    pub fn adcsc_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsc::Adcsc0)
+    }
+    #[doc = "Start sample-and-conversion"]
+    #[inline(always)]
+    pub fn adcsc_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsc::Adcsc1)
+    }
+}
+#[doc = "enable conversion\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Adcenc {
+    #[doc = "0: ADC disabled"]
+    Adcenc0 = 0,
+    #[doc = "1: ADC enabled"]
+    Adcenc1 = 1,
+}
+impl From<Adcenc> for bool {
+    #[inline(always)]
+    fn from(variant: Adcenc) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADCENC` reader - enable conversion"]
-pub type ADCENC_R = crate::BitReader<ADCENC_A>;
-#[doc = "enable conversion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ADCENC_A {
-    #[doc = "0: ADC disabled"]
-    ADCENC_0 = 0,
-    #[doc = "1: ADC enabled"]
-    ADCENC_1 = 1,
-}
-impl From<ADCENC_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADCENC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADCENC_R {
+pub type AdcencR = crate::BitReader<Adcenc>;
+impl AdcencR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCENC_A {
+    pub const fn variant(&self) -> Adcenc {
         match self.bits {
-            false => ADCENC_A::ADCENC_0,
-            true => ADCENC_A::ADCENC_1,
+            false => Adcenc::Adcenc0,
+            true => Adcenc::Adcenc1,
         }
     }
-    #[doc = "Checks if the value of the field is `ADCENC_0`"]
-    #[inline(always)]
-    pub fn is_adcenc_0(&self) -> bool {
-        *self == ADCENC_A::ADCENC_0
-    }
-    #[doc = "Checks if the value of the field is `ADCENC_1`"]
-    #[inline(always)]
-    pub fn is_adcenc_1(&self) -> bool {
-        *self == ADCENC_A::ADCENC_1
-    }
-}
-#[doc = "Field `ADCENC` writer - enable conversion"]
-pub type ADCENC_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, ADCENC_A, O>;
-impl<'a, const O: u8> ADCENC_W<'a, O> {
     #[doc = "ADC disabled"]
     #[inline(always)]
-    pub fn adcenc_0(self) -> &'a mut W {
-        self.variant(ADCENC_A::ADCENC_0)
+    pub fn is_adcenc_0(&self) -> bool {
+        *self == Adcenc::Adcenc0
     }
     #[doc = "ADC enabled"]
     #[inline(always)]
-    pub fn adcenc_1(self) -> &'a mut W {
-        self.variant(ADCENC_A::ADCENC_1)
+    pub fn is_adcenc_1(&self) -> bool {
+        *self == Adcenc::Adcenc1
+    }
+}
+#[doc = "Field `ADCENC` writer - enable conversion"]
+pub type AdcencW<'a, REG> = crate::BitWriter<'a, REG, Adcenc>;
+impl<'a, REG> AdcencW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "ADC disabled"]
+    #[inline(always)]
+    pub fn adcenc_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcenc::Adcenc0)
+    }
+    #[doc = "ADC enabled"]
+    #[inline(always)]
+    pub fn adcenc_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcenc::Adcenc1)
+    }
+}
+#[doc = "ADC on\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Adcon {
+    #[doc = "0: ADC off"]
+    Adcon0 = 0,
+    #[doc = "1: ADC on"]
+    Adcon1 = 1,
+}
+impl From<Adcon> for bool {
+    #[inline(always)]
+    fn from(variant: Adcon) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ADCON` reader - ADC on"]
-pub type ADCON_R = crate::BitReader<ADCON_A>;
-#[doc = "ADC on\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ADCON_A {
-    #[doc = "0: ADC off"]
-    ADCON_0 = 0,
-    #[doc = "1: ADC on"]
-    ADCON_1 = 1,
-}
-impl From<ADCON_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADCON_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ADCON_R {
+pub type AdconR = crate::BitReader<Adcon>;
+impl AdconR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCON_A {
+    pub const fn variant(&self) -> Adcon {
         match self.bits {
-            false => ADCON_A::ADCON_0,
-            true => ADCON_A::ADCON_1,
+            false => Adcon::Adcon0,
+            true => Adcon::Adcon1,
         }
     }
-    #[doc = "Checks if the value of the field is `ADCON_0`"]
-    #[inline(always)]
-    pub fn is_adcon_0(&self) -> bool {
-        *self == ADCON_A::ADCON_0
-    }
-    #[doc = "Checks if the value of the field is `ADCON_1`"]
-    #[inline(always)]
-    pub fn is_adcon_1(&self) -> bool {
-        *self == ADCON_A::ADCON_1
-    }
-}
-#[doc = "Field `ADCON` writer - ADC on"]
-pub type ADCON_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, ADCON_A, O>;
-impl<'a, const O: u8> ADCON_W<'a, O> {
     #[doc = "ADC off"]
     #[inline(always)]
-    pub fn adcon_0(self) -> &'a mut W {
-        self.variant(ADCON_A::ADCON_0)
+    pub fn is_adcon_0(&self) -> bool {
+        *self == Adcon::Adcon0
     }
     #[doc = "ADC on"]
     #[inline(always)]
-    pub fn adcon_1(self) -> &'a mut W {
-        self.variant(ADCON_A::ADCON_1)
+    pub fn is_adcon_1(&self) -> bool {
+        *self == Adcon::Adcon1
     }
 }
-#[doc = "Field `ADCMSC` reader - sample-and-hold time."]
-pub type ADCMSC_R = crate::BitReader<ADCMSC_A>;
+#[doc = "Field `ADCON` writer - ADC on"]
+pub type AdconW<'a, REG> = crate::BitWriter<'a, REG, Adcon>;
+impl<'a, REG> AdconW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "ADC off"]
+    #[inline(always)]
+    pub fn adcon_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcon::Adcon0)
+    }
+    #[doc = "ADC on"]
+    #[inline(always)]
+    pub fn adcon_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcon::Adcon1)
+    }
+}
 #[doc = "sample-and-hold time.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ADCMSC_A {
+pub enum Adcmsc {
     #[doc = "0: The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert."]
-    ADCMSC_0 = 0,
+    Adcmsc0 = 0,
     #[doc = "1: The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed."]
-    ADCMSC_1 = 1,
+    Adcmsc1 = 1,
 }
-impl From<ADCMSC_A> for bool {
+impl From<Adcmsc> for bool {
     #[inline(always)]
-    fn from(variant: ADCMSC_A) -> Self {
+    fn from(variant: Adcmsc) -> Self {
         variant as u8 != 0
     }
 }
-impl ADCMSC_R {
+#[doc = "Field `ADCMSC` reader - sample-and-hold time."]
+pub type AdcmscR = crate::BitReader<Adcmsc>;
+impl AdcmscR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCMSC_A {
+    pub const fn variant(&self) -> Adcmsc {
         match self.bits {
-            false => ADCMSC_A::ADCMSC_0,
-            true => ADCMSC_A::ADCMSC_1,
+            false => Adcmsc::Adcmsc0,
+            true => Adcmsc::Adcmsc1,
         }
     }
-    #[doc = "Checks if the value of the field is `ADCMSC_0`"]
-    #[inline(always)]
-    pub fn is_adcmsc_0(&self) -> bool {
-        *self == ADCMSC_A::ADCMSC_0
-    }
-    #[doc = "Checks if the value of the field is `ADCMSC_1`"]
-    #[inline(always)]
-    pub fn is_adcmsc_1(&self) -> bool {
-        *self == ADCMSC_A::ADCMSC_1
-    }
-}
-#[doc = "Field `ADCMSC` writer - sample-and-hold time."]
-pub type ADCMSC_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCCTL0_SPEC, ADCMSC_A, O>;
-impl<'a, const O: u8> ADCMSC_W<'a, O> {
     #[doc = "The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert."]
     #[inline(always)]
-    pub fn adcmsc_0(self) -> &'a mut W {
-        self.variant(ADCMSC_A::ADCMSC_0)
+    pub fn is_adcmsc_0(&self) -> bool {
+        *self == Adcmsc::Adcmsc0
     }
     #[doc = "The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed."]
     #[inline(always)]
-    pub fn adcmsc_1(self) -> &'a mut W {
-        self.variant(ADCMSC_A::ADCMSC_1)
+    pub fn is_adcmsc_1(&self) -> bool {
+        *self == Adcmsc::Adcmsc1
     }
 }
-#[doc = "Field `ADCSHT` reader - sample-and-hold time."]
-pub type ADCSHT_R = crate::FieldReader<u8, ADCSHT_A>;
+#[doc = "Field `ADCMSC` writer - sample-and-hold time."]
+pub type AdcmscW<'a, REG> = crate::BitWriter<'a, REG, Adcmsc>;
+impl<'a, REG> AdcmscW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert."]
+    #[inline(always)]
+    pub fn adcmsc_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcmsc::Adcmsc0)
+    }
+    #[doc = "The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed."]
+    #[inline(always)]
+    pub fn adcmsc_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcmsc::Adcmsc1)
+    }
+}
 #[doc = "sample-and-hold time.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ADCSHT_A {
+pub enum Adcsht {
     #[doc = "0: 4 ADCCLK cycles"]
-    ADCSHT_0 = 0,
+    Adcsht0 = 0,
     #[doc = "1: 8 ADCCLK cycles"]
-    ADCSHT_1 = 1,
+    Adcsht1 = 1,
     #[doc = "2: 16 ADCCLK cycles"]
-    ADCSHT_2 = 2,
+    Adcsht2 = 2,
     #[doc = "3: 32 ADCCLK cycles"]
-    ADCSHT_3 = 3,
+    Adcsht3 = 3,
     #[doc = "4: 64 ADCCLK cycles"]
-    ADCSHT_4 = 4,
+    Adcsht4 = 4,
     #[doc = "5: 96 ADCCLK cycles"]
-    ADCSHT_5 = 5,
+    Adcsht5 = 5,
     #[doc = "6: 128 ADCCLK cycles"]
-    ADCSHT_6 = 6,
+    Adcsht6 = 6,
     #[doc = "7: 192 ADCCLK cycles"]
-    ADCSHT_7 = 7,
+    Adcsht7 = 7,
     #[doc = "8: 256 ADCCLK cycles"]
-    ADCSHT_8 = 8,
+    Adcsht8 = 8,
     #[doc = "9: 384 ADCCLK cycles"]
-    ADCSHT_9 = 9,
+    Adcsht9 = 9,
     #[doc = "10: 512 ADCCLK cycles"]
-    ADCSHT_10 = 10,
+    Adcsht10 = 10,
     #[doc = "11: 768 ADCCLK cycles"]
-    ADCSHT_11 = 11,
+    Adcsht11 = 11,
     #[doc = "12: 1024 ADCCLK cycles"]
-    ADCSHT_12 = 12,
+    Adcsht12 = 12,
     #[doc = "13: 1024 ADCCLK cycles"]
-    ADCSHT_13 = 13,
+    Adcsht13 = 13,
     #[doc = "14: 1024 ADCCLK cycles"]
-    ADCSHT_14 = 14,
+    Adcsht14 = 14,
     #[doc = "15: 1024 ADCCLK cycles"]
-    ADCSHT_15 = 15,
+    Adcsht15 = 15,
 }
-impl From<ADCSHT_A> for u8 {
+impl From<Adcsht> for u8 {
     #[inline(always)]
-    fn from(variant: ADCSHT_A) -> Self {
+    fn from(variant: Adcsht) -> Self {
         variant as _
     }
 }
-impl ADCSHT_R {
+impl crate::FieldSpec for Adcsht {
+    type Ux = u8;
+}
+impl crate::IsEnum for Adcsht {}
+#[doc = "Field `ADCSHT` reader - sample-and-hold time."]
+pub type AdcshtR = crate::FieldReader<Adcsht>;
+impl AdcshtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCSHT_A {
+    pub const fn variant(&self) -> Adcsht {
         match self.bits {
-            0 => ADCSHT_A::ADCSHT_0,
-            1 => ADCSHT_A::ADCSHT_1,
-            2 => ADCSHT_A::ADCSHT_2,
-            3 => ADCSHT_A::ADCSHT_3,
-            4 => ADCSHT_A::ADCSHT_4,
-            5 => ADCSHT_A::ADCSHT_5,
-            6 => ADCSHT_A::ADCSHT_6,
-            7 => ADCSHT_A::ADCSHT_7,
-            8 => ADCSHT_A::ADCSHT_8,
-            9 => ADCSHT_A::ADCSHT_9,
-            10 => ADCSHT_A::ADCSHT_10,
-            11 => ADCSHT_A::ADCSHT_11,
-            12 => ADCSHT_A::ADCSHT_12,
-            13 => ADCSHT_A::ADCSHT_13,
-            14 => ADCSHT_A::ADCSHT_14,
-            15 => ADCSHT_A::ADCSHT_15,
+            0 => Adcsht::Adcsht0,
+            1 => Adcsht::Adcsht1,
+            2 => Adcsht::Adcsht2,
+            3 => Adcsht::Adcsht3,
+            4 => Adcsht::Adcsht4,
+            5 => Adcsht::Adcsht5,
+            6 => Adcsht::Adcsht6,
+            7 => Adcsht::Adcsht7,
+            8 => Adcsht::Adcsht8,
+            9 => Adcsht::Adcsht9,
+            10 => Adcsht::Adcsht10,
+            11 => Adcsht::Adcsht11,
+            12 => Adcsht::Adcsht12,
+            13 => Adcsht::Adcsht13,
+            14 => Adcsht::Adcsht14,
+            15 => Adcsht::Adcsht15,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ADCSHT_0`"]
-    #[inline(always)]
-    pub fn is_adcsht_0(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_0
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_1`"]
-    #[inline(always)]
-    pub fn is_adcsht_1(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_1
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_2`"]
-    #[inline(always)]
-    pub fn is_adcsht_2(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_2
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_3`"]
-    #[inline(always)]
-    pub fn is_adcsht_3(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_3
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_4`"]
-    #[inline(always)]
-    pub fn is_adcsht_4(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_4
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_5`"]
-    #[inline(always)]
-    pub fn is_adcsht_5(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_5
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_6`"]
-    #[inline(always)]
-    pub fn is_adcsht_6(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_6
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_7`"]
-    #[inline(always)]
-    pub fn is_adcsht_7(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_7
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_8`"]
-    #[inline(always)]
-    pub fn is_adcsht_8(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_8
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_9`"]
-    #[inline(always)]
-    pub fn is_adcsht_9(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_9
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_10`"]
-    #[inline(always)]
-    pub fn is_adcsht_10(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_10
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_11`"]
-    #[inline(always)]
-    pub fn is_adcsht_11(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_11
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_12`"]
-    #[inline(always)]
-    pub fn is_adcsht_12(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_12
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_13`"]
-    #[inline(always)]
-    pub fn is_adcsht_13(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_13
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_14`"]
-    #[inline(always)]
-    pub fn is_adcsht_14(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_14
-    }
-    #[doc = "Checks if the value of the field is `ADCSHT_15`"]
-    #[inline(always)]
-    pub fn is_adcsht_15(&self) -> bool {
-        *self == ADCSHT_A::ADCSHT_15
-    }
-}
-#[doc = "Field `ADCSHT` writer - sample-and-hold time."]
-pub type ADCSHT_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, ADCCTL0_SPEC, u8, ADCSHT_A, 4, O>;
-impl<'a, const O: u8> ADCSHT_W<'a, O> {
     #[doc = "4 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_0(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_0)
+    pub fn is_adcsht_0(&self) -> bool {
+        *self == Adcsht::Adcsht0
     }
     #[doc = "8 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_1(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_1)
+    pub fn is_adcsht_1(&self) -> bool {
+        *self == Adcsht::Adcsht1
     }
     #[doc = "16 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_2(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_2)
+    pub fn is_adcsht_2(&self) -> bool {
+        *self == Adcsht::Adcsht2
     }
     #[doc = "32 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_3(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_3)
+    pub fn is_adcsht_3(&self) -> bool {
+        *self == Adcsht::Adcsht3
     }
     #[doc = "64 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_4(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_4)
+    pub fn is_adcsht_4(&self) -> bool {
+        *self == Adcsht::Adcsht4
     }
     #[doc = "96 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_5(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_5)
+    pub fn is_adcsht_5(&self) -> bool {
+        *self == Adcsht::Adcsht5
     }
     #[doc = "128 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_6(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_6)
+    pub fn is_adcsht_6(&self) -> bool {
+        *self == Adcsht::Adcsht6
     }
     #[doc = "192 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_7(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_7)
+    pub fn is_adcsht_7(&self) -> bool {
+        *self == Adcsht::Adcsht7
     }
     #[doc = "256 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_8(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_8)
+    pub fn is_adcsht_8(&self) -> bool {
+        *self == Adcsht::Adcsht8
     }
     #[doc = "384 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_9(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_9)
+    pub fn is_adcsht_9(&self) -> bool {
+        *self == Adcsht::Adcsht9
     }
     #[doc = "512 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_10(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_10)
+    pub fn is_adcsht_10(&self) -> bool {
+        *self == Adcsht::Adcsht10
     }
     #[doc = "768 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_11(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_11)
+    pub fn is_adcsht_11(&self) -> bool {
+        *self == Adcsht::Adcsht11
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_12(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_12)
+    pub fn is_adcsht_12(&self) -> bool {
+        *self == Adcsht::Adcsht12
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_13(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_13)
+    pub fn is_adcsht_13(&self) -> bool {
+        *self == Adcsht::Adcsht13
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_14(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_14)
+    pub fn is_adcsht_14(&self) -> bool {
+        *self == Adcsht::Adcsht14
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_15(self) -> &'a mut W {
-        self.variant(ADCSHT_A::ADCSHT_15)
+    pub fn is_adcsht_15(&self) -> bool {
+        *self == Adcsht::Adcsht15
+    }
+}
+#[doc = "Field `ADCSHT` writer - sample-and-hold time."]
+pub type AdcshtW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcsht, crate::Safe>;
+impl<'a, REG> AdcshtW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "4 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht0)
+    }
+    #[doc = "8 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht1)
+    }
+    #[doc = "16 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht2)
+    }
+    #[doc = "32 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht3)
+    }
+    #[doc = "64 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht4)
+    }
+    #[doc = "96 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht5)
+    }
+    #[doc = "128 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_6(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht6)
+    }
+    #[doc = "192 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_7(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht7)
+    }
+    #[doc = "256 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht8)
+    }
+    #[doc = "384 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_9(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht9)
+    }
+    #[doc = "512 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_10(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht10)
+    }
+    #[doc = "768 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_11(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht11)
+    }
+    #[doc = "1024 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_12(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht12)
+    }
+    #[doc = "1024 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_13(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht13)
+    }
+    #[doc = "1024 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_14(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht14)
+    }
+    #[doc = "1024 ADCCLK cycles"]
+    #[inline(always)]
+    pub fn adcsht_15(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Adcsht15)
     }
 }
 impl R {
     #[doc = "Bit 0 - start conversion"]
     #[inline(always)]
-    pub fn adcsc(&self) -> ADCSC_R {
-        ADCSC_R::new((self.bits & 1) != 0)
+    pub fn adcsc(&self) -> AdcscR {
+        AdcscR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - enable conversion"]
     #[inline(always)]
-    pub fn adcenc(&self) -> ADCENC_R {
-        ADCENC_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn adcenc(&self) -> AdcencR {
+        AdcencR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - ADC on"]
     #[inline(always)]
-    pub fn adcon(&self) -> ADCON_R {
-        ADCON_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn adcon(&self) -> AdconR {
+        AdconR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 7 - sample-and-hold time."]
     #[inline(always)]
-    pub fn adcmsc(&self) -> ADCMSC_R {
-        ADCMSC_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn adcmsc(&self) -> AdcmscR {
+        AdcmscR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - sample-and-hold time."]
     #[inline(always)]
-    pub fn adcsht(&self) -> ADCSHT_R {
-        ADCSHT_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn adcsht(&self) -> AdcshtR {
+        AdcshtR::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - start conversion"]
     #[inline(always)]
-    pub fn adcsc(&mut self) -> ADCSC_W<0> {
-        ADCSC_W::new(self)
+    pub fn adcsc(&mut self) -> AdcscW<'_, Adcctl0Spec> {
+        AdcscW::new(self, 0)
     }
     #[doc = "Bit 1 - enable conversion"]
     #[inline(always)]
-    pub fn adcenc(&mut self) -> ADCENC_W<1> {
-        ADCENC_W::new(self)
+    pub fn adcenc(&mut self) -> AdcencW<'_, Adcctl0Spec> {
+        AdcencW::new(self, 1)
     }
     #[doc = "Bit 4 - ADC on"]
     #[inline(always)]
-    pub fn adcon(&mut self) -> ADCON_W<4> {
-        ADCON_W::new(self)
+    pub fn adcon(&mut self) -> AdconW<'_, Adcctl0Spec> {
+        AdconW::new(self, 4)
     }
     #[doc = "Bit 7 - sample-and-hold time."]
     #[inline(always)]
-    pub fn adcmsc(&mut self) -> ADCMSC_W<7> {
-        ADCMSC_W::new(self)
+    pub fn adcmsc(&mut self) -> AdcmscW<'_, Adcctl0Spec> {
+        AdcmscW::new(self, 7)
     }
     #[doc = "Bits 8:11 - sample-and-hold time."]
     #[inline(always)]
-    pub fn adcsht(&mut self) -> ADCSHT_W<8> {
-        ADCSHT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn adcsht(&mut self) -> AdcshtW<'_, Adcctl0Spec> {
+        AdcshtW::new(self, 8)
     }
 }
-#[doc = "ADC Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcctl0](index.html) module"]
-pub struct ADCCTL0_SPEC;
-impl crate::RegisterSpec for ADCCTL0_SPEC {
+#[doc = "ADC Control 0\n\nYou can [`read`](crate::Reg::read) this register and get [`adcctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adcctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Adcctl0Spec;
+impl crate::RegisterSpec for Adcctl0Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [adcctl0::R](R) reader structure"]
-impl crate::Readable for ADCCTL0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [adcctl0::W](W) writer structure"]
-impl crate::Writable for ADCCTL0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`adcctl0::R`](R) reader structure"]
+impl crate::Readable for Adcctl0Spec {}
+#[doc = "`write(|w| ..)` method takes [`adcctl0::W`](W) writer structure"]
+impl crate::Writable for Adcctl0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ADCCTL0 to value 0"]
-impl crate::Resettable for ADCCTL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Adcctl0Spec {}

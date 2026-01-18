@@ -1,196 +1,150 @@
 #[doc = "Register `UCB1STATW` reader"]
-pub struct R(crate::R<UCB1STATW_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB1STATW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB1STATW_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB1STATW_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb1statwSpec>;
 #[doc = "Register `UCB1STATW` writer"]
-pub struct W(crate::W<UCB1STATW_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB1STATW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Ucb1statwSpec>;
+#[doc = "Bus busy\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucbbusy {
+    #[doc = "0: Bus inactive"]
+    Idle = 0,
+    #[doc = "1: Bus busy"]
+    Busy = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Ucbbusy> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB1STATW_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB1STATW_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Ucbbusy) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCBBUSY` reader - Bus busy"]
-pub type UCBBUSY_R = crate::BitReader<UCBBUSY_A>;
-#[doc = "Bus busy\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCBBUSY_A {
-    #[doc = "0: Bus inactive"]
-    IDLE = 0,
-    #[doc = "1: Bus busy"]
-    BUSY = 1,
-}
-impl From<UCBBUSY_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCBBUSY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCBBUSY_R {
+pub type UcbbusyR = crate::BitReader<Ucbbusy>;
+impl UcbbusyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCBBUSY_A {
+    pub const fn variant(&self) -> Ucbbusy {
         match self.bits {
-            false => UCBBUSY_A::IDLE,
-            true => UCBBUSY_A::BUSY,
+            false => Ucbbusy::Idle,
+            true => Ucbbusy::Busy,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Bus inactive"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == UCBBUSY_A::IDLE
+        *self == Ucbbusy::Idle
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "Bus busy"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        *self == UCBBUSY_A::BUSY
+        *self == Ucbbusy::Busy
+    }
+}
+#[doc = "General call address received\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucgc {
+    #[doc = "0: No general call address received"]
+    Ucgc0 = 0,
+    #[doc = "1: General call address received"]
+    Ucgc1 = 1,
+}
+impl From<Ucgc> for bool {
+    #[inline(always)]
+    fn from(variant: Ucgc) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCGC` reader - General call address received"]
-pub type UCGC_R = crate::BitReader<UCGC_A>;
-#[doc = "General call address received\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCGC_A {
-    #[doc = "0: No general call address received"]
-    UCGC_0 = 0,
-    #[doc = "1: General call address received"]
-    UCGC_1 = 1,
-}
-impl From<UCGC_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCGC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCGC_R {
+pub type UcgcR = crate::BitReader<Ucgc>;
+impl UcgcR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCGC_A {
+    pub const fn variant(&self) -> Ucgc {
         match self.bits {
-            false => UCGC_A::UCGC_0,
-            true => UCGC_A::UCGC_1,
+            false => Ucgc::Ucgc0,
+            true => Ucgc::Ucgc1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCGC_0`"]
+    #[doc = "No general call address received"]
     #[inline(always)]
     pub fn is_ucgc_0(&self) -> bool {
-        *self == UCGC_A::UCGC_0
+        *self == Ucgc::Ucgc0
     }
-    #[doc = "Checks if the value of the field is `UCGC_1`"]
+    #[doc = "General call address received"]
     #[inline(always)]
     pub fn is_ucgc_1(&self) -> bool {
-        *self == UCGC_A::UCGC_1
+        *self == Ucgc::Ucgc1
+    }
+}
+#[doc = "SCL low\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ucscllow {
+    #[doc = "0: SCL is not held low"]
+    Ucscllow0 = 0,
+    #[doc = "1: SCL is held low"]
+    Ucscllow1 = 1,
+}
+impl From<Ucscllow> for bool {
+    #[inline(always)]
+    fn from(variant: Ucscllow) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `UCSCLLOW` reader - SCL low"]
-pub type UCSCLLOW_R = crate::BitReader<UCSCLLOW_A>;
-#[doc = "SCL low\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum UCSCLLOW_A {
-    #[doc = "0: SCL is not held low"]
-    UCSCLLOW_0 = 0,
-    #[doc = "1: SCL is held low"]
-    UCSCLLOW_1 = 1,
-}
-impl From<UCSCLLOW_A> for bool {
-    #[inline(always)]
-    fn from(variant: UCSCLLOW_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl UCSCLLOW_R {
+pub type UcscllowR = crate::BitReader<Ucscllow>;
+impl UcscllowR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UCSCLLOW_A {
+    pub const fn variant(&self) -> Ucscllow {
         match self.bits {
-            false => UCSCLLOW_A::UCSCLLOW_0,
-            true => UCSCLLOW_A::UCSCLLOW_1,
+            false => Ucscllow::Ucscllow0,
+            true => Ucscllow::Ucscllow1,
         }
     }
-    #[doc = "Checks if the value of the field is `UCSCLLOW_0`"]
+    #[doc = "SCL is not held low"]
     #[inline(always)]
     pub fn is_ucscllow_0(&self) -> bool {
-        *self == UCSCLLOW_A::UCSCLLOW_0
+        *self == Ucscllow::Ucscllow0
     }
-    #[doc = "Checks if the value of the field is `UCSCLLOW_1`"]
+    #[doc = "SCL is held low"]
     #[inline(always)]
     pub fn is_ucscllow_1(&self) -> bool {
-        *self == UCSCLLOW_A::UCSCLLOW_1
+        *self == Ucscllow::Ucscllow1
     }
 }
 #[doc = "Field `UCBCNT` reader - Hardware byte counter value"]
-pub type UCBCNT_R = crate::FieldReader<u8, u8>;
+pub type UcbcntR = crate::FieldReader;
 impl R {
     #[doc = "Bit 4 - Bus busy"]
     #[inline(always)]
-    pub fn ucbbusy(&self) -> UCBBUSY_R {
-        UCBBUSY_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ucbbusy(&self) -> UcbbusyR {
+        UcbbusyR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - General call address received"]
     #[inline(always)]
-    pub fn ucgc(&self) -> UCGC_R {
-        UCGC_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ucgc(&self) -> UcgcR {
+        UcgcR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
-    pub fn ucscllow(&self) -> UCSCLLOW_R {
-        UCSCLLOW_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ucscllow(&self) -> UcscllowR {
+        UcscllowR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:15 - Hardware byte counter value"]
     #[inline(always)]
-    pub fn ucbcnt(&self) -> UCBCNT_R {
-        UCBCNT_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn ucbcnt(&self) -> UcbcntR {
+        UcbcntR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "eUSCI_Bx Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb1statw](index.html) module"]
-pub struct UCB1STATW_SPEC;
-impl crate::RegisterSpec for UCB1STATW_SPEC {
+impl W {}
+#[doc = "eUSCI_Bx Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb1statw::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb1statw::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb1statwSpec;
+impl crate::RegisterSpec for Ucb1statwSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb1statw::R](R) reader structure"]
-impl crate::Readable for UCB1STATW_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb1statw::W](W) writer structure"]
-impl crate::Writable for UCB1STATW_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb1statw::R`](R) reader structure"]
+impl crate::Readable for Ucb1statwSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb1statw::W`](W) writer structure"]
+impl crate::Writable for Ucb1statwSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB1STATW to value 0"]
-impl crate::Resettable for UCB1STATW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb1statwSpec {}

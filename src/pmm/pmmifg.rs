@@ -1,387 +1,357 @@
 #[doc = "Register `PMMIFG` reader"]
-pub struct R(crate::R<PMMIFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMMIFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMMIFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMMIFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PmmifgSpec>;
 #[doc = "Register `PMMIFG` writer"]
-pub struct W(crate::W<PMMIFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMMIFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMMIFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMMIFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PmmifgSpec>;
 #[doc = "Field `PMMSPSIFG` reader - PMM secondary power supply interrupt flag. Reserved for future multi power supply systems."]
-pub type PMMSPSIFG_R = crate::BitReader<bool>;
-#[doc = "Field `PMMBORIFG` reader - PMM software brownout reset interrupt flag."]
-pub type PMMBORIFG_R = crate::BitReader<PMMBORIFG_A>;
+pub type PmmspsifgR = crate::BitReader;
 #[doc = "PMM software brownout reset interrupt flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PMMBORIFG_A {
+pub enum Pmmborifg {
     #[doc = "0: Reset not due to PMMSWBOR"]
-    PMMBORIFG_0 = 0,
+    Pmmborifg0 = 0,
     #[doc = "1: Reset due to PMMSWBOR"]
-    PMMBORIFG_1 = 1,
+    Pmmborifg1 = 1,
 }
-impl From<PMMBORIFG_A> for bool {
+impl From<Pmmborifg> for bool {
     #[inline(always)]
-    fn from(variant: PMMBORIFG_A) -> Self {
+    fn from(variant: Pmmborifg) -> Self {
         variant as u8 != 0
     }
 }
-impl PMMBORIFG_R {
+#[doc = "Field `PMMBORIFG` reader - PMM software brownout reset interrupt flag."]
+pub type PmmborifgR = crate::BitReader<Pmmborifg>;
+impl PmmborifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMMBORIFG_A {
+    pub const fn variant(&self) -> Pmmborifg {
         match self.bits {
-            false => PMMBORIFG_A::PMMBORIFG_0,
-            true => PMMBORIFG_A::PMMBORIFG_1,
+            false => Pmmborifg::Pmmborifg0,
+            true => Pmmborifg::Pmmborifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_0`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_0(&self) -> bool {
-        *self == PMMBORIFG_A::PMMBORIFG_0
-    }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_1`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_1(&self) -> bool {
-        *self == PMMBORIFG_A::PMMBORIFG_1
-    }
-}
-#[doc = "Field `PMMBORIFG` writer - PMM software brownout reset interrupt flag."]
-pub type PMMBORIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMIFG_SPEC, PMMBORIFG_A, O>;
-impl<'a, const O: u8> PMMBORIFG_W<'a, O> {
     #[doc = "Reset not due to PMMSWBOR"]
     #[inline(always)]
-    pub fn pmmborifg_0(self) -> &'a mut W {
-        self.variant(PMMBORIFG_A::PMMBORIFG_0)
+    pub fn is_pmmborifg_0(&self) -> bool {
+        *self == Pmmborifg::Pmmborifg0
     }
     #[doc = "Reset due to PMMSWBOR"]
     #[inline(always)]
-    pub fn pmmborifg_1(self) -> &'a mut W {
-        self.variant(PMMBORIFG_A::PMMBORIFG_1)
+    pub fn is_pmmborifg_1(&self) -> bool {
+        *self == Pmmborifg::Pmmborifg1
+    }
+}
+#[doc = "Field `PMMBORIFG` writer - PMM software brownout reset interrupt flag."]
+pub type PmmborifgW<'a, REG> = crate::BitWriter<'a, REG, Pmmborifg>;
+impl<'a, REG> PmmborifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset not due to PMMSWBOR"]
+    #[inline(always)]
+    pub fn pmmborifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmborifg::Pmmborifg0)
+    }
+    #[doc = "Reset due to PMMSWBOR"]
+    #[inline(always)]
+    pub fn pmmborifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmborifg::Pmmborifg1)
+    }
+}
+#[doc = "PMM reset pin interrupt flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pmmrstifg {
+    #[doc = "0: Reset not due to reset pin"]
+    Pmmborifg0 = 0,
+    #[doc = "1: Reset due to reset pin"]
+    Pmmborifg1 = 1,
+}
+impl From<Pmmrstifg> for bool {
+    #[inline(always)]
+    fn from(variant: Pmmrstifg) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `PMMRSTIFG` reader - PMM reset pin interrupt flag."]
-pub type PMMRSTIFG_R = crate::BitReader<PMMRSTIFG_A>;
-#[doc = "PMM reset pin interrupt flag.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PMMRSTIFG_A {
-    #[doc = "0: Reset not due to reset pin"]
-    PMMBORIFG_0 = 0,
-    #[doc = "1: Reset due to reset pin"]
-    PMMBORIFG_1 = 1,
-}
-impl From<PMMRSTIFG_A> for bool {
-    #[inline(always)]
-    fn from(variant: PMMRSTIFG_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PMMRSTIFG_R {
+pub type PmmrstifgR = crate::BitReader<Pmmrstifg>;
+impl PmmrstifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMMRSTIFG_A {
+    pub const fn variant(&self) -> Pmmrstifg {
         match self.bits {
-            false => PMMRSTIFG_A::PMMBORIFG_0,
-            true => PMMRSTIFG_A::PMMBORIFG_1,
+            false => Pmmrstifg::Pmmborifg0,
+            true => Pmmrstifg::Pmmborifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_0`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_0(&self) -> bool {
-        *self == PMMRSTIFG_A::PMMBORIFG_0
-    }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_1`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_1(&self) -> bool {
-        *self == PMMRSTIFG_A::PMMBORIFG_1
-    }
-}
-#[doc = "Field `PMMRSTIFG` writer - PMM reset pin interrupt flag."]
-pub type PMMRSTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMIFG_SPEC, PMMRSTIFG_A, O>;
-impl<'a, const O: u8> PMMRSTIFG_W<'a, O> {
     #[doc = "Reset not due to reset pin"]
     #[inline(always)]
-    pub fn pmmborifg_0(self) -> &'a mut W {
-        self.variant(PMMRSTIFG_A::PMMBORIFG_0)
+    pub fn is_pmmborifg_0(&self) -> bool {
+        *self == Pmmrstifg::Pmmborifg0
     }
     #[doc = "Reset due to reset pin"]
     #[inline(always)]
-    pub fn pmmborifg_1(self) -> &'a mut W {
-        self.variant(PMMRSTIFG_A::PMMBORIFG_1)
+    pub fn is_pmmborifg_1(&self) -> bool {
+        *self == Pmmrstifg::Pmmborifg1
+    }
+}
+#[doc = "Field `PMMRSTIFG` writer - PMM reset pin interrupt flag."]
+pub type PmmrstifgW<'a, REG> = crate::BitWriter<'a, REG, Pmmrstifg>;
+impl<'a, REG> PmmrstifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset not due to reset pin"]
+    #[inline(always)]
+    pub fn pmmborifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmrstifg::Pmmborifg0)
+    }
+    #[doc = "Reset due to reset pin"]
+    #[inline(always)]
+    pub fn pmmborifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmrstifg::Pmmborifg1)
+    }
+}
+#[doc = "PMM software POR interrupt flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pmmporifg {
+    #[doc = "0: Reset not due to PMMSWPOR"]
+    Pmmborifg0 = 0,
+    #[doc = "1: Reset due to PMMSWPOR"]
+    Pmmborifg1 = 1,
+}
+impl From<Pmmporifg> for bool {
+    #[inline(always)]
+    fn from(variant: Pmmporifg) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `PMMPORIFG` reader - PMM software POR interrupt flag."]
-pub type PMMPORIFG_R = crate::BitReader<PMMPORIFG_A>;
-#[doc = "PMM software POR interrupt flag.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PMMPORIFG_A {
-    #[doc = "0: Reset not due to PMMSWPOR"]
-    PMMBORIFG_0 = 0,
-    #[doc = "1: Reset due to PMMSWPOR"]
-    PMMBORIFG_1 = 1,
-}
-impl From<PMMPORIFG_A> for bool {
-    #[inline(always)]
-    fn from(variant: PMMPORIFG_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PMMPORIFG_R {
+pub type PmmporifgR = crate::BitReader<Pmmporifg>;
+impl PmmporifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMMPORIFG_A {
+    pub const fn variant(&self) -> Pmmporifg {
         match self.bits {
-            false => PMMPORIFG_A::PMMBORIFG_0,
-            true => PMMPORIFG_A::PMMBORIFG_1,
+            false => Pmmporifg::Pmmborifg0,
+            true => Pmmporifg::Pmmborifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_0`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_0(&self) -> bool {
-        *self == PMMPORIFG_A::PMMBORIFG_0
-    }
-    #[doc = "Checks if the value of the field is `PMMBORIFG_1`"]
-    #[inline(always)]
-    pub fn is_pmmborifg_1(&self) -> bool {
-        *self == PMMPORIFG_A::PMMBORIFG_1
-    }
-}
-#[doc = "Field `PMMPORIFG` writer - PMM software POR interrupt flag."]
-pub type PMMPORIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMIFG_SPEC, PMMPORIFG_A, O>;
-impl<'a, const O: u8> PMMPORIFG_W<'a, O> {
     #[doc = "Reset not due to PMMSWPOR"]
     #[inline(always)]
-    pub fn pmmborifg_0(self) -> &'a mut W {
-        self.variant(PMMPORIFG_A::PMMBORIFG_0)
+    pub fn is_pmmborifg_0(&self) -> bool {
+        *self == Pmmporifg::Pmmborifg0
     }
     #[doc = "Reset due to PMMSWPOR"]
     #[inline(always)]
-    pub fn pmmborifg_1(self) -> &'a mut W {
-        self.variant(PMMPORIFG_A::PMMBORIFG_1)
+    pub fn is_pmmborifg_1(&self) -> bool {
+        *self == Pmmporifg::Pmmborifg1
+    }
+}
+#[doc = "Field `PMMPORIFG` writer - PMM software POR interrupt flag."]
+pub type PmmporifgW<'a, REG> = crate::BitWriter<'a, REG, Pmmporifg>;
+impl<'a, REG> PmmporifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset not due to PMMSWPOR"]
+    #[inline(always)]
+    pub fn pmmborifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmporifg::Pmmborifg0)
+    }
+    #[doc = "Reset due to PMMSWPOR"]
+    #[inline(always)]
+    pub fn pmmborifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmporifg::Pmmborifg1)
     }
 }
 #[doc = "Field `SPWRIFG` reader - Secondary Power interrupt flag. This bit only works in multi power supply systems. When the secondary power is ready to use, this bit is set., In single power supply systems, this bit does not work."]
-pub type SPWRIFG_R = crate::BitReader<bool>;
+pub type SpwrifgR = crate::BitReader;
 #[doc = "Field `PPWRIFG` reader - Primary Power interrupt flag. This bit only works in multi power supply systems. When the primary power is ready to use, this bit is set. In single power supply systems, this bit does not work"]
-pub type PPWRIFG_R = crate::BitReader<bool>;
-#[doc = "Field `SVSHIFG` reader - High-side SVS interrupt flag."]
-pub type SVSHIFG_R = crate::BitReader<SVSHIFG_A>;
+pub type PpwrifgR = crate::BitReader;
 #[doc = "High-side SVS interrupt flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SVSHIFG_A {
+pub enum Svshifg {
     #[doc = "0: Reset not due to SVSH"]
-    SVSHIFG_0 = 0,
+    Svshifg0 = 0,
     #[doc = "1: Reset due to SVSH"]
-    SVSHIFG_1 = 1,
+    Svshifg1 = 1,
 }
-impl From<SVSHIFG_A> for bool {
+impl From<Svshifg> for bool {
     #[inline(always)]
-    fn from(variant: SVSHIFG_A) -> Self {
+    fn from(variant: Svshifg) -> Self {
         variant as u8 != 0
     }
 }
-impl SVSHIFG_R {
+#[doc = "Field `SVSHIFG` reader - High-side SVS interrupt flag."]
+pub type SvshifgR = crate::BitReader<Svshifg>;
+impl SvshifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SVSHIFG_A {
+    pub const fn variant(&self) -> Svshifg {
         match self.bits {
-            false => SVSHIFG_A::SVSHIFG_0,
-            true => SVSHIFG_A::SVSHIFG_1,
+            false => Svshifg::Svshifg0,
+            true => Svshifg::Svshifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `SVSHIFG_0`"]
-    #[inline(always)]
-    pub fn is_svshifg_0(&self) -> bool {
-        *self == SVSHIFG_A::SVSHIFG_0
-    }
-    #[doc = "Checks if the value of the field is `SVSHIFG_1`"]
-    #[inline(always)]
-    pub fn is_svshifg_1(&self) -> bool {
-        *self == SVSHIFG_A::SVSHIFG_1
-    }
-}
-#[doc = "Field `SVSHIFG` writer - High-side SVS interrupt flag."]
-pub type SVSHIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMIFG_SPEC, SVSHIFG_A, O>;
-impl<'a, const O: u8> SVSHIFG_W<'a, O> {
     #[doc = "Reset not due to SVSH"]
     #[inline(always)]
-    pub fn svshifg_0(self) -> &'a mut W {
-        self.variant(SVSHIFG_A::SVSHIFG_0)
+    pub fn is_svshifg_0(&self) -> bool {
+        *self == Svshifg::Svshifg0
     }
     #[doc = "Reset due to SVSH"]
     #[inline(always)]
-    pub fn svshifg_1(self) -> &'a mut W {
-        self.variant(SVSHIFG_A::SVSHIFG_1)
+    pub fn is_svshifg_1(&self) -> bool {
+        *self == Svshifg::Svshifg1
     }
 }
-#[doc = "Field `PMMLPM5IFG` reader - LPMx.5 flag."]
-pub type PMMLPM5IFG_R = crate::BitReader<PMMLPM5IFG_A>;
+#[doc = "Field `SVSHIFG` writer - High-side SVS interrupt flag."]
+pub type SvshifgW<'a, REG> = crate::BitWriter<'a, REG, Svshifg>;
+impl<'a, REG> SvshifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset not due to SVSH"]
+    #[inline(always)]
+    pub fn svshifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Svshifg::Svshifg0)
+    }
+    #[doc = "Reset due to SVSH"]
+    #[inline(always)]
+    pub fn svshifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Svshifg::Svshifg1)
+    }
+}
 #[doc = "LPMx.5 flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PMMLPM5IFG_A {
+pub enum Pmmlpm5ifg {
     #[doc = "0: Reset not due to wake-up from LPMx.5"]
-    PMMLPM5IFG_0 = 0,
+    Pmmlpm5ifg0 = 0,
     #[doc = "1: Reset due to wake-up from LPMx.5"]
-    PMMLPM5IFG_1 = 1,
+    Pmmlpm5ifg1 = 1,
 }
-impl From<PMMLPM5IFG_A> for bool {
+impl From<Pmmlpm5ifg> for bool {
     #[inline(always)]
-    fn from(variant: PMMLPM5IFG_A) -> Self {
+    fn from(variant: Pmmlpm5ifg) -> Self {
         variant as u8 != 0
     }
 }
-impl PMMLPM5IFG_R {
+#[doc = "Field `PMMLPM5IFG` reader - LPMx.5 flag."]
+pub type Pmmlpm5ifgR = crate::BitReader<Pmmlpm5ifg>;
+impl Pmmlpm5ifgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMMLPM5IFG_A {
+    pub const fn variant(&self) -> Pmmlpm5ifg {
         match self.bits {
-            false => PMMLPM5IFG_A::PMMLPM5IFG_0,
-            true => PMMLPM5IFG_A::PMMLPM5IFG_1,
+            false => Pmmlpm5ifg::Pmmlpm5ifg0,
+            true => Pmmlpm5ifg::Pmmlpm5ifg1,
         }
     }
-    #[doc = "Checks if the value of the field is `PMMLPM5IFG_0`"]
-    #[inline(always)]
-    pub fn is_pmmlpm5ifg_0(&self) -> bool {
-        *self == PMMLPM5IFG_A::PMMLPM5IFG_0
-    }
-    #[doc = "Checks if the value of the field is `PMMLPM5IFG_1`"]
-    #[inline(always)]
-    pub fn is_pmmlpm5ifg_1(&self) -> bool {
-        *self == PMMLPM5IFG_A::PMMLPM5IFG_1
-    }
-}
-#[doc = "Field `PMMLPM5IFG` writer - LPMx.5 flag."]
-pub type PMMLPM5IFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMMIFG_SPEC, PMMLPM5IFG_A, O>;
-impl<'a, const O: u8> PMMLPM5IFG_W<'a, O> {
     #[doc = "Reset not due to wake-up from LPMx.5"]
     #[inline(always)]
-    pub fn pmmlpm5ifg_0(self) -> &'a mut W {
-        self.variant(PMMLPM5IFG_A::PMMLPM5IFG_0)
+    pub fn is_pmmlpm5ifg_0(&self) -> bool {
+        *self == Pmmlpm5ifg::Pmmlpm5ifg0
     }
     #[doc = "Reset due to wake-up from LPMx.5"]
     #[inline(always)]
-    pub fn pmmlpm5ifg_1(self) -> &'a mut W {
-        self.variant(PMMLPM5IFG_A::PMMLPM5IFG_1)
+    pub fn is_pmmlpm5ifg_1(&self) -> bool {
+        *self == Pmmlpm5ifg::Pmmlpm5ifg1
+    }
+}
+#[doc = "Field `PMMLPM5IFG` writer - LPMx.5 flag."]
+pub type Pmmlpm5ifgW<'a, REG> = crate::BitWriter<'a, REG, Pmmlpm5ifg>;
+impl<'a, REG> Pmmlpm5ifgW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset not due to wake-up from LPMx.5"]
+    #[inline(always)]
+    pub fn pmmlpm5ifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmlpm5ifg::Pmmlpm5ifg0)
+    }
+    #[doc = "Reset due to wake-up from LPMx.5"]
+    #[inline(always)]
+    pub fn pmmlpm5ifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmlpm5ifg::Pmmlpm5ifg1)
     }
 }
 impl R {
     #[doc = "Bit 0 - PMM secondary power supply interrupt flag. Reserved for future multi power supply systems."]
     #[inline(always)]
-    pub fn pmmspsifg(&self) -> PMMSPSIFG_R {
-        PMMSPSIFG_R::new((self.bits & 1) != 0)
+    pub fn pmmspsifg(&self) -> PmmspsifgR {
+        PmmspsifgR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - PMM software brownout reset interrupt flag."]
     #[inline(always)]
-    pub fn pmmborifg(&self) -> PMMBORIFG_R {
-        PMMBORIFG_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pmmborifg(&self) -> PmmborifgR {
+        PmmborifgR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - PMM reset pin interrupt flag."]
     #[inline(always)]
-    pub fn pmmrstifg(&self) -> PMMRSTIFG_R {
-        PMMRSTIFG_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn pmmrstifg(&self) -> PmmrstifgR {
+        PmmrstifgR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - PMM software POR interrupt flag."]
     #[inline(always)]
-    pub fn pmmporifg(&self) -> PMMPORIFG_R {
-        PMMPORIFG_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn pmmporifg(&self) -> PmmporifgR {
+        PmmporifgR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Secondary Power interrupt flag. This bit only works in multi power supply systems. When the secondary power is ready to use, this bit is set., In single power supply systems, this bit does not work."]
     #[inline(always)]
-    pub fn spwrifg(&self) -> SPWRIFG_R {
-        SPWRIFG_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn spwrifg(&self) -> SpwrifgR {
+        SpwrifgR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Primary Power interrupt flag. This bit only works in multi power supply systems. When the primary power is ready to use, this bit is set. In single power supply systems, this bit does not work"]
     #[inline(always)]
-    pub fn ppwrifg(&self) -> PPWRIFG_R {
-        PPWRIFG_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ppwrifg(&self) -> PpwrifgR {
+        PpwrifgR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - High-side SVS interrupt flag."]
     #[inline(always)]
-    pub fn svshifg(&self) -> SVSHIFG_R {
-        SVSHIFG_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn svshifg(&self) -> SvshifgR {
+        SvshifgR::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 15 - LPMx.5 flag."]
     #[inline(always)]
-    pub fn pmmlpm5ifg(&self) -> PMMLPM5IFG_R {
-        PMMLPM5IFG_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn pmmlpm5ifg(&self) -> Pmmlpm5ifgR {
+        Pmmlpm5ifgR::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 8 - PMM software brownout reset interrupt flag."]
     #[inline(always)]
-    pub fn pmmborifg(&mut self) -> PMMBORIFG_W<8> {
-        PMMBORIFG_W::new(self)
+    pub fn pmmborifg(&mut self) -> PmmborifgW<'_, PmmifgSpec> {
+        PmmborifgW::new(self, 8)
     }
     #[doc = "Bit 9 - PMM reset pin interrupt flag."]
     #[inline(always)]
-    pub fn pmmrstifg(&mut self) -> PMMRSTIFG_W<9> {
-        PMMRSTIFG_W::new(self)
+    pub fn pmmrstifg(&mut self) -> PmmrstifgW<'_, PmmifgSpec> {
+        PmmrstifgW::new(self, 9)
     }
     #[doc = "Bit 10 - PMM software POR interrupt flag."]
     #[inline(always)]
-    pub fn pmmporifg(&mut self) -> PMMPORIFG_W<10> {
-        PMMPORIFG_W::new(self)
+    pub fn pmmporifg(&mut self) -> PmmporifgW<'_, PmmifgSpec> {
+        PmmporifgW::new(self, 10)
     }
     #[doc = "Bit 13 - High-side SVS interrupt flag."]
     #[inline(always)]
-    pub fn svshifg(&mut self) -> SVSHIFG_W<13> {
-        SVSHIFG_W::new(self)
+    pub fn svshifg(&mut self) -> SvshifgW<'_, PmmifgSpec> {
+        SvshifgW::new(self, 13)
     }
     #[doc = "Bit 15 - LPMx.5 flag."]
     #[inline(always)]
-    pub fn pmmlpm5ifg(&mut self) -> PMMLPM5IFG_W<15> {
-        PMMLPM5IFG_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn pmmlpm5ifg(&mut self) -> Pmmlpm5ifgW<'_, PmmifgSpec> {
+        Pmmlpm5ifgW::new(self, 15)
     }
 }
-#[doc = "PMM interrupt flag register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmmifg](index.html) module"]
-pub struct PMMIFG_SPEC;
-impl crate::RegisterSpec for PMMIFG_SPEC {
+#[doc = "PMM interrupt flag register\n\nYou can [`read`](crate::Reg::read) this register and get [`pmmifg::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmmifg::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct PmmifgSpec;
+impl crate::RegisterSpec for PmmifgSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [pmmifg::R](R) reader structure"]
-impl crate::Readable for PMMIFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pmmifg::W](W) writer structure"]
-impl crate::Writable for PMMIFG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`pmmifg::R`](R) reader structure"]
+impl crate::Readable for PmmifgSpec {}
+#[doc = "`write(|w| ..)` method takes [`pmmifg::W`](W) writer structure"]
+impl crate::Writable for PmmifgSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets PMMIFG to value 0"]
-impl crate::Resettable for PMMIFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for PmmifgSpec {}

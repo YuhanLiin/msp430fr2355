@@ -1,64 +1,23 @@
 #[doc = "Register `TB2R` reader"]
-pub struct R(crate::R<TB2R_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TB2R_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TB2R_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TB2R_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Tb2rSpec>;
 #[doc = "Register `TB2R` writer"]
-pub struct W(crate::W<TB2R_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TB2R_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+pub type W = crate::W<Tb2rSpec>;
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        write!(f, "{}", self.bits())
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TB2R_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TB2R_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Timer_B count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tb2r](index.html) module"]
-pub struct TB2R_SPEC;
-impl crate::RegisterSpec for TB2R_SPEC {
+impl W {}
+#[doc = "Timer_B count register\n\nYou can [`read`](crate::Reg::read) this register and get [`tb2r::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tb2r::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Tb2rSpec;
+impl crate::RegisterSpec for Tb2rSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [tb2r::R](R) reader structure"]
-impl crate::Readable for TB2R_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tb2r::W](W) writer structure"]
-impl crate::Writable for TB2R_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`tb2r::R`](R) reader structure"]
+impl crate::Readable for Tb2rSpec {}
+#[doc = "`write(|w| ..)` method takes [`tb2r::W`](W) writer structure"]
+impl crate::Writable for Tb2rSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets TB2R to value 0"]
-impl crate::Resettable for TB2R_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Tb2rSpec {}

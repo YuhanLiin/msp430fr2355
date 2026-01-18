@@ -1,512 +1,484 @@
 #[doc = "Register `ADCMCTL0` reader"]
-pub struct R(crate::R<ADCMCTL0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ADCMCTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ADCMCTL0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ADCMCTL0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Adcmctl0Spec>;
 #[doc = "Register `ADCMCTL0` writer"]
-pub struct W(crate::W<ADCMCTL0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ADCMCTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ADCMCTL0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ADCMCTL0_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `ADCINCH` reader - Input channel select"]
-pub type ADCINCH_R = crate::FieldReader<u8, ADCINCH_A>;
+pub type W = crate::W<Adcmctl0Spec>;
 #[doc = "Input channel select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ADCINCH_A {
+pub enum Adcinch {
     #[doc = "0: A0 - see device-specific data sheet"]
-    ADCINCH_0 = 0,
+    Adcinch0 = 0,
     #[doc = "1: A1 - see device-specific data sheet"]
-    ADCINCH_1 = 1,
+    Adcinch1 = 1,
     #[doc = "2: A2 - see device-specific data sheet"]
-    ADCINCH_2 = 2,
+    Adcinch2 = 2,
     #[doc = "3: A3 - see device-specific data sheet"]
-    ADCINCH_3 = 3,
+    Adcinch3 = 3,
     #[doc = "4: A4 - see device-specific data sheet"]
-    ADCINCH_4 = 4,
+    Adcinch4 = 4,
     #[doc = "5: A5 - see device-specific data sheet"]
-    ADCINCH_5 = 5,
+    Adcinch5 = 5,
     #[doc = "6: A2 - see device-specific data sheet"]
-    ADCINCH_6 = 6,
+    Adcinch6 = 6,
     #[doc = "7: A7 - see device-specific data sheet"]
-    ADCINCH_7 = 7,
+    Adcinch7 = 7,
     #[doc = "8: A8 - see device-specific data sheet"]
-    ADCINCH_8 = 8,
+    Adcinch8 = 8,
     #[doc = "9: A9 - see device-specific data sheet"]
-    ADCINCH_9 = 9,
+    Adcinch9 = 9,
     #[doc = "10: A10 - see device-specific data sheet"]
-    ADCINCH_10 = 10,
+    Adcinch10 = 10,
     #[doc = "11: A11 - see device-specific data sheet"]
-    ADCINCH_11 = 11,
+    Adcinch11 = 11,
     #[doc = "12: A12 - see device-specific data sheet"]
-    ADCINCH_12 = 12,
+    Adcinch12 = 12,
     #[doc = "13: A13 - see device-specific data sheet"]
-    ADCINCH_13 = 13,
+    Adcinch13 = 13,
     #[doc = "14: A14 - see device-specific data sheet"]
-    ADCINCH_14 = 14,
+    Adcinch14 = 14,
     #[doc = "15: A15 - see device-specific data sheet"]
-    ADCINCH_15 = 15,
+    Adcinch15 = 15,
 }
-impl From<ADCINCH_A> for u8 {
+impl From<Adcinch> for u8 {
     #[inline(always)]
-    fn from(variant: ADCINCH_A) -> Self {
+    fn from(variant: Adcinch) -> Self {
         variant as _
     }
 }
-impl ADCINCH_R {
+impl crate::FieldSpec for Adcinch {
+    type Ux = u8;
+}
+impl crate::IsEnum for Adcinch {}
+#[doc = "Field `ADCINCH` reader - Input channel select"]
+pub type AdcinchR = crate::FieldReader<Adcinch>;
+impl AdcinchR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCINCH_A {
+    pub const fn variant(&self) -> Adcinch {
         match self.bits {
-            0 => ADCINCH_A::ADCINCH_0,
-            1 => ADCINCH_A::ADCINCH_1,
-            2 => ADCINCH_A::ADCINCH_2,
-            3 => ADCINCH_A::ADCINCH_3,
-            4 => ADCINCH_A::ADCINCH_4,
-            5 => ADCINCH_A::ADCINCH_5,
-            6 => ADCINCH_A::ADCINCH_6,
-            7 => ADCINCH_A::ADCINCH_7,
-            8 => ADCINCH_A::ADCINCH_8,
-            9 => ADCINCH_A::ADCINCH_9,
-            10 => ADCINCH_A::ADCINCH_10,
-            11 => ADCINCH_A::ADCINCH_11,
-            12 => ADCINCH_A::ADCINCH_12,
-            13 => ADCINCH_A::ADCINCH_13,
-            14 => ADCINCH_A::ADCINCH_14,
-            15 => ADCINCH_A::ADCINCH_15,
+            0 => Adcinch::Adcinch0,
+            1 => Adcinch::Adcinch1,
+            2 => Adcinch::Adcinch2,
+            3 => Adcinch::Adcinch3,
+            4 => Adcinch::Adcinch4,
+            5 => Adcinch::Adcinch5,
+            6 => Adcinch::Adcinch6,
+            7 => Adcinch::Adcinch7,
+            8 => Adcinch::Adcinch8,
+            9 => Adcinch::Adcinch9,
+            10 => Adcinch::Adcinch10,
+            11 => Adcinch::Adcinch11,
+            12 => Adcinch::Adcinch12,
+            13 => Adcinch::Adcinch13,
+            14 => Adcinch::Adcinch14,
+            15 => Adcinch::Adcinch15,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ADCINCH_0`"]
-    #[inline(always)]
-    pub fn is_adcinch_0(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_0
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_1`"]
-    #[inline(always)]
-    pub fn is_adcinch_1(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_1
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_2`"]
-    #[inline(always)]
-    pub fn is_adcinch_2(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_2
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_3`"]
-    #[inline(always)]
-    pub fn is_adcinch_3(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_3
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_4`"]
-    #[inline(always)]
-    pub fn is_adcinch_4(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_4
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_5`"]
-    #[inline(always)]
-    pub fn is_adcinch_5(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_5
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_6`"]
-    #[inline(always)]
-    pub fn is_adcinch_6(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_6
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_7`"]
-    #[inline(always)]
-    pub fn is_adcinch_7(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_7
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_8`"]
-    #[inline(always)]
-    pub fn is_adcinch_8(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_8
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_9`"]
-    #[inline(always)]
-    pub fn is_adcinch_9(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_9
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_10`"]
-    #[inline(always)]
-    pub fn is_adcinch_10(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_10
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_11`"]
-    #[inline(always)]
-    pub fn is_adcinch_11(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_11
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_12`"]
-    #[inline(always)]
-    pub fn is_adcinch_12(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_12
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_13`"]
-    #[inline(always)]
-    pub fn is_adcinch_13(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_13
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_14`"]
-    #[inline(always)]
-    pub fn is_adcinch_14(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_14
-    }
-    #[doc = "Checks if the value of the field is `ADCINCH_15`"]
-    #[inline(always)]
-    pub fn is_adcinch_15(&self) -> bool {
-        *self == ADCINCH_A::ADCINCH_15
-    }
-}
-#[doc = "Field `ADCINCH` writer - Input channel select"]
-pub type ADCINCH_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, ADCMCTL0_SPEC, u8, ADCINCH_A, 4, O>;
-impl<'a, const O: u8> ADCINCH_W<'a, O> {
     #[doc = "A0 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_0(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_0)
+    pub fn is_adcinch_0(&self) -> bool {
+        *self == Adcinch::Adcinch0
     }
     #[doc = "A1 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_1(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_1)
+    pub fn is_adcinch_1(&self) -> bool {
+        *self == Adcinch::Adcinch1
     }
     #[doc = "A2 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_2(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_2)
+    pub fn is_adcinch_2(&self) -> bool {
+        *self == Adcinch::Adcinch2
     }
     #[doc = "A3 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_3(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_3)
+    pub fn is_adcinch_3(&self) -> bool {
+        *self == Adcinch::Adcinch3
     }
     #[doc = "A4 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_4(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_4)
+    pub fn is_adcinch_4(&self) -> bool {
+        *self == Adcinch::Adcinch4
     }
     #[doc = "A5 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_5(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_5)
+    pub fn is_adcinch_5(&self) -> bool {
+        *self == Adcinch::Adcinch5
     }
     #[doc = "A2 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_6(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_6)
+    pub fn is_adcinch_6(&self) -> bool {
+        *self == Adcinch::Adcinch6
     }
     #[doc = "A7 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_7(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_7)
+    pub fn is_adcinch_7(&self) -> bool {
+        *self == Adcinch::Adcinch7
     }
     #[doc = "A8 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_8(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_8)
+    pub fn is_adcinch_8(&self) -> bool {
+        *self == Adcinch::Adcinch8
     }
     #[doc = "A9 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_9(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_9)
+    pub fn is_adcinch_9(&self) -> bool {
+        *self == Adcinch::Adcinch9
     }
     #[doc = "A10 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_10(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_10)
+    pub fn is_adcinch_10(&self) -> bool {
+        *self == Adcinch::Adcinch10
     }
     #[doc = "A11 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_11(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_11)
+    pub fn is_adcinch_11(&self) -> bool {
+        *self == Adcinch::Adcinch11
     }
     #[doc = "A12 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_12(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_12)
+    pub fn is_adcinch_12(&self) -> bool {
+        *self == Adcinch::Adcinch12
     }
     #[doc = "A13 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_13(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_13)
+    pub fn is_adcinch_13(&self) -> bool {
+        *self == Adcinch::Adcinch13
     }
     #[doc = "A14 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_14(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_14)
+    pub fn is_adcinch_14(&self) -> bool {
+        *self == Adcinch::Adcinch14
     }
     #[doc = "A15 - see device-specific data sheet"]
     #[inline(always)]
-    pub fn adcinch_15(self) -> &'a mut W {
-        self.variant(ADCINCH_A::ADCINCH_15)
+    pub fn is_adcinch_15(&self) -> bool {
+        *self == Adcinch::Adcinch15
     }
 }
-#[doc = "Field `ADCSREF` reader - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
-pub type ADCSREF_R = crate::FieldReader<u8, ADCSREF_A>;
+#[doc = "Field `ADCINCH` writer - Input channel select"]
+pub type AdcinchW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcinch, crate::Safe>;
+impl<'a, REG> AdcinchW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "A0 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch0)
+    }
+    #[doc = "A1 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch1)
+    }
+    #[doc = "A2 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch2)
+    }
+    #[doc = "A3 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch3)
+    }
+    #[doc = "A4 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch4)
+    }
+    #[doc = "A5 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch5)
+    }
+    #[doc = "A2 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_6(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch6)
+    }
+    #[doc = "A7 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_7(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch7)
+    }
+    #[doc = "A8 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch8)
+    }
+    #[doc = "A9 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_9(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch9)
+    }
+    #[doc = "A10 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_10(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch10)
+    }
+    #[doc = "A11 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_11(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch11)
+    }
+    #[doc = "A12 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_12(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch12)
+    }
+    #[doc = "A13 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_13(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch13)
+    }
+    #[doc = "A14 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_14(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch14)
+    }
+    #[doc = "A15 - see device-specific data sheet"]
+    #[inline(always)]
+    pub fn adcinch_15(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcinch::Adcinch15)
+    }
+}
 #[doc = "Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ADCSREF_A {
+pub enum Adcsref {
     #[doc = "0: 000b = V(R+) = AVCC and V(R-) = AVSS"]
-    ADCSREF_0 = 0,
+    Adcsref0 = 0,
     #[doc = "1: 001b = V(R+) = VREF and V(R-) = AVSS"]
-    ADCSREF_1 = 1,
+    Adcsref1 = 1,
     #[doc = "2: 010b = V(R+) = VEREF+ buffered and V(R-) = AVSS"]
-    ADCSREF_2 = 2,
+    Adcsref2 = 2,
     #[doc = "3: 011b =V(R+) = VEREF+ and V(R-) = AVSS"]
-    ADCSREF_3 = 3,
+    Adcsref3 = 3,
     #[doc = "4: 100b = V(R+) = AVCC and V(R-) = VEREF-"]
-    ADCSREF_4 = 4,
+    Adcsref4 = 4,
     #[doc = "5: 101b = V(R+) = VREF and V(R-) = VEREF-"]
-    ADCSREF_5 = 5,
+    Adcsref5 = 5,
     #[doc = "6: 110b = V(R+) = VEREF+ buffered and V(R-) = VEREF-"]
-    ADCSREF_6 = 6,
+    Adcsref6 = 6,
     #[doc = "7: 111b = V(R+) = VEREF+ and V(R-) = VEREF-"]
-    ADCSREF_7 = 7,
+    Adcsref7 = 7,
 }
-impl From<ADCSREF_A> for u8 {
+impl From<Adcsref> for u8 {
     #[inline(always)]
-    fn from(variant: ADCSREF_A) -> Self {
+    fn from(variant: Adcsref) -> Self {
         variant as _
     }
 }
-impl ADCSREF_R {
+impl crate::FieldSpec for Adcsref {
+    type Ux = u8;
+}
+impl crate::IsEnum for Adcsref {}
+#[doc = "Field `ADCSREF` reader - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
+pub type AdcsrefR = crate::FieldReader<Adcsref>;
+impl AdcsrefR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCSREF_A {
+    pub const fn variant(&self) -> Adcsref {
         match self.bits {
-            0 => ADCSREF_A::ADCSREF_0,
-            1 => ADCSREF_A::ADCSREF_1,
-            2 => ADCSREF_A::ADCSREF_2,
-            3 => ADCSREF_A::ADCSREF_3,
-            4 => ADCSREF_A::ADCSREF_4,
-            5 => ADCSREF_A::ADCSREF_5,
-            6 => ADCSREF_A::ADCSREF_6,
-            7 => ADCSREF_A::ADCSREF_7,
+            0 => Adcsref::Adcsref0,
+            1 => Adcsref::Adcsref1,
+            2 => Adcsref::Adcsref2,
+            3 => Adcsref::Adcsref3,
+            4 => Adcsref::Adcsref4,
+            5 => Adcsref::Adcsref5,
+            6 => Adcsref::Adcsref6,
+            7 => Adcsref::Adcsref7,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ADCSREF_0`"]
-    #[inline(always)]
-    pub fn is_adcsref_0(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_0
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_1`"]
-    #[inline(always)]
-    pub fn is_adcsref_1(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_1
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_2`"]
-    #[inline(always)]
-    pub fn is_adcsref_2(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_2
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_3`"]
-    #[inline(always)]
-    pub fn is_adcsref_3(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_3
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_4`"]
-    #[inline(always)]
-    pub fn is_adcsref_4(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_4
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_5`"]
-    #[inline(always)]
-    pub fn is_adcsref_5(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_5
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_6`"]
-    #[inline(always)]
-    pub fn is_adcsref_6(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_6
-    }
-    #[doc = "Checks if the value of the field is `ADCSREF_7`"]
-    #[inline(always)]
-    pub fn is_adcsref_7(&self) -> bool {
-        *self == ADCSREF_A::ADCSREF_7
-    }
-}
-#[doc = "Field `ADCSREF` writer - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
-pub type ADCSREF_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u16, ADCMCTL0_SPEC, u8, ADCSREF_A, 3, O>;
-impl<'a, const O: u8> ADCSREF_W<'a, O> {
     #[doc = "000b = V(R+) = AVCC and V(R-) = AVSS"]
     #[inline(always)]
-    pub fn adcsref_0(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_0)
+    pub fn is_adcsref_0(&self) -> bool {
+        *self == Adcsref::Adcsref0
     }
     #[doc = "001b = V(R+) = VREF and V(R-) = AVSS"]
     #[inline(always)]
-    pub fn adcsref_1(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_1)
+    pub fn is_adcsref_1(&self) -> bool {
+        *self == Adcsref::Adcsref1
     }
     #[doc = "010b = V(R+) = VEREF+ buffered and V(R-) = AVSS"]
     #[inline(always)]
-    pub fn adcsref_2(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_2)
+    pub fn is_adcsref_2(&self) -> bool {
+        *self == Adcsref::Adcsref2
     }
     #[doc = "011b =V(R+) = VEREF+ and V(R-) = AVSS"]
     #[inline(always)]
-    pub fn adcsref_3(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_3)
+    pub fn is_adcsref_3(&self) -> bool {
+        *self == Adcsref::Adcsref3
     }
     #[doc = "100b = V(R+) = AVCC and V(R-) = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_4(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_4)
+    pub fn is_adcsref_4(&self) -> bool {
+        *self == Adcsref::Adcsref4
     }
     #[doc = "101b = V(R+) = VREF and V(R-) = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_5(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_5)
+    pub fn is_adcsref_5(&self) -> bool {
+        *self == Adcsref::Adcsref5
     }
     #[doc = "110b = V(R+) = VEREF+ buffered and V(R-) = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_6(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_6)
+    pub fn is_adcsref_6(&self) -> bool {
+        *self == Adcsref::Adcsref6
     }
     #[doc = "111b = V(R+) = VEREF+ and V(R-) = VEREF-"]
     #[inline(always)]
-    pub fn adcsref_7(self) -> &'a mut W {
-        self.variant(ADCSREF_A::ADCSREF_7)
+    pub fn is_adcsref_7(&self) -> bool {
+        *self == Adcsref::Adcsref7
     }
 }
-#[doc = "Field `EXPCHEN` reader - ADC input channels expanded"]
-pub type EXPCHEN_R = crate::BitReader<EXPCHEN_A>;
+#[doc = "Field `ADCSREF` writer - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
+pub type AdcsrefW<'a, REG> = crate::FieldWriter<'a, REG, 3, Adcsref, crate::Safe>;
+impl<'a, REG> AdcsrefW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "000b = V(R+) = AVCC and V(R-) = AVSS"]
+    #[inline(always)]
+    pub fn adcsref_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref0)
+    }
+    #[doc = "001b = V(R+) = VREF and V(R-) = AVSS"]
+    #[inline(always)]
+    pub fn adcsref_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref1)
+    }
+    #[doc = "010b = V(R+) = VEREF+ buffered and V(R-) = AVSS"]
+    #[inline(always)]
+    pub fn adcsref_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref2)
+    }
+    #[doc = "011b =V(R+) = VEREF+ and V(R-) = AVSS"]
+    #[inline(always)]
+    pub fn adcsref_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref3)
+    }
+    #[doc = "100b = V(R+) = AVCC and V(R-) = VEREF-"]
+    #[inline(always)]
+    pub fn adcsref_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref4)
+    }
+    #[doc = "101b = V(R+) = VREF and V(R-) = VEREF-"]
+    #[inline(always)]
+    pub fn adcsref_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref5)
+    }
+    #[doc = "110b = V(R+) = VEREF+ buffered and V(R-) = VEREF-"]
+    #[inline(always)]
+    pub fn adcsref_6(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref6)
+    }
+    #[doc = "111b = V(R+) = VEREF+ and V(R-) = VEREF-"]
+    #[inline(always)]
+    pub fn adcsref_7(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsref::Adcsref7)
+    }
+}
 #[doc = "ADC input channels expanded\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EXPCHEN_A {
+pub enum Expchen {
     #[doc = "0: ADC channel expanded disable"]
-    EXPCHEN_0 = 0,
+    Expchen0 = 0,
     #[doc = "1: ADC channel expanded enable"]
-    EXPCHEN_1 = 1,
+    Expchen1 = 1,
 }
-impl From<EXPCHEN_A> for bool {
+impl From<Expchen> for bool {
     #[inline(always)]
-    fn from(variant: EXPCHEN_A) -> Self {
+    fn from(variant: Expchen) -> Self {
         variant as u8 != 0
     }
 }
-impl EXPCHEN_R {
+#[doc = "Field `EXPCHEN` reader - ADC input channels expanded"]
+pub type ExpchenR = crate::BitReader<Expchen>;
+impl ExpchenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXPCHEN_A {
+    pub const fn variant(&self) -> Expchen {
         match self.bits {
-            false => EXPCHEN_A::EXPCHEN_0,
-            true => EXPCHEN_A::EXPCHEN_1,
+            false => Expchen::Expchen0,
+            true => Expchen::Expchen1,
         }
     }
-    #[doc = "Checks if the value of the field is `EXPCHEN_0`"]
-    #[inline(always)]
-    pub fn is_expchen_0(&self) -> bool {
-        *self == EXPCHEN_A::EXPCHEN_0
-    }
-    #[doc = "Checks if the value of the field is `EXPCHEN_1`"]
-    #[inline(always)]
-    pub fn is_expchen_1(&self) -> bool {
-        *self == EXPCHEN_A::EXPCHEN_1
-    }
-}
-#[doc = "Field `EXPCHEN` writer - ADC input channels expanded"]
-pub type EXPCHEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, ADCMCTL0_SPEC, EXPCHEN_A, O>;
-impl<'a, const O: u8> EXPCHEN_W<'a, O> {
     #[doc = "ADC channel expanded disable"]
     #[inline(always)]
-    pub fn expchen_0(self) -> &'a mut W {
-        self.variant(EXPCHEN_A::EXPCHEN_0)
+    pub fn is_expchen_0(&self) -> bool {
+        *self == Expchen::Expchen0
     }
     #[doc = "ADC channel expanded enable"]
     #[inline(always)]
-    pub fn expchen_1(self) -> &'a mut W {
-        self.variant(EXPCHEN_A::EXPCHEN_1)
+    pub fn is_expchen_1(&self) -> bool {
+        *self == Expchen::Expchen1
+    }
+}
+#[doc = "Field `EXPCHEN` writer - ADC input channels expanded"]
+pub type ExpchenW<'a, REG> = crate::BitWriter<'a, REG, Expchen>;
+impl<'a, REG> ExpchenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "ADC channel expanded disable"]
+    #[inline(always)]
+    pub fn expchen_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Expchen::Expchen0)
+    }
+    #[doc = "ADC channel expanded enable"]
+    #[inline(always)]
+    pub fn expchen_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Expchen::Expchen1)
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Input channel select"]
     #[inline(always)]
-    pub fn adcinch(&self) -> ADCINCH_R {
-        ADCINCH_R::new((self.bits & 0x0f) as u8)
+    pub fn adcinch(&self) -> AdcinchR {
+        AdcinchR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:6 - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
     #[inline(always)]
-    pub fn adcsref(&self) -> ADCSREF_R {
-        ADCSREF_R::new(((self.bits >> 4) & 7) as u8)
+    pub fn adcsref(&self) -> AdcsrefR {
+        AdcsrefR::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 8 - ADC input channels expanded"]
     #[inline(always)]
-    pub fn expchen(&self) -> EXPCHEN_R {
-        EXPCHEN_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn expchen(&self) -> ExpchenR {
+        ExpchenR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Input channel select"]
     #[inline(always)]
-    pub fn adcinch(&mut self) -> ADCINCH_W<0> {
-        ADCINCH_W::new(self)
+    pub fn adcinch(&mut self) -> AdcinchW<'_, Adcmctl0Spec> {
+        AdcinchW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Select reference. It is not recommended to change this setting while a conversion is ongoing. Can be modified only when ADCENC = 0. Resetting ADCENC = 0 by software and changing these fields immediately shows an effect when a conversion is active."]
     #[inline(always)]
-    pub fn adcsref(&mut self) -> ADCSREF_W<4> {
-        ADCSREF_W::new(self)
+    pub fn adcsref(&mut self) -> AdcsrefW<'_, Adcmctl0Spec> {
+        AdcsrefW::new(self, 4)
     }
     #[doc = "Bit 8 - ADC input channels expanded"]
     #[inline(always)]
-    pub fn expchen(&mut self) -> EXPCHEN_W<8> {
-        EXPCHEN_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn expchen(&mut self) -> ExpchenW<'_, Adcmctl0Spec> {
+        ExpchenW::new(self, 8)
     }
 }
-#[doc = "ADC Conversion Memory Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adcmctl0](index.html) module"]
-pub struct ADCMCTL0_SPEC;
-impl crate::RegisterSpec for ADCMCTL0_SPEC {
+#[doc = "ADC Conversion Memory Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`adcmctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adcmctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Adcmctl0Spec;
+impl crate::RegisterSpec for Adcmctl0Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [adcmctl0::R](R) reader structure"]
-impl crate::Readable for ADCMCTL0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [adcmctl0::W](W) writer structure"]
-impl crate::Writable for ADCMCTL0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`adcmctl0::R`](R) reader structure"]
+impl crate::Readable for Adcmctl0Spec {}
+#[doc = "`write(|w| ..)` method takes [`adcmctl0::W`](W) writer structure"]
+impl crate::Writable for Adcmctl0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets ADCMCTL0 to value 0"]
-impl crate::Resettable for ADCMCTL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Adcmctl0Spec {}

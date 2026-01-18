@@ -1,221 +1,179 @@
 #[doc = "Register `UCB0IV` reader"]
-pub struct R(crate::R<UCB0IV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<UCB0IV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<UCB0IV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<UCB0IV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Ucb0ivSpec>;
 #[doc = "Register `UCB0IV` writer"]
-pub struct W(crate::W<UCB0IV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<UCB0IV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<UCB0IV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<UCB0IV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `UCIV` reader - eUSCI_B interrupt vector value"]
-pub type UCIV_R = crate::FieldReader<u16, UCIV_A>;
+pub type W = crate::W<Ucb0ivSpec>;
 #[doc = "eUSCI_B interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum UCIV_A {
+pub enum Uciv {
     #[doc = "0: No interrupt pending"]
-    NONE = 0,
+    None = 0,
     #[doc = "2: Interrupt Source: Arbitration lost; Interrupt Flag: UCALIFG; Interrupt Priority: Highest"]
-    UCALIFG = 2,
+    Ucalifg = 2,
     #[doc = "4: Interrupt Source: Not acknowledgment; Interrupt Flag: UCNACKIFG"]
-    UCNACKIFG = 4,
+    Ucnackifg = 4,
     #[doc = "6: Interrupt Source: Start condition received; Interrupt Flag: UCSTTIFG"]
-    UCSTTIFG = 6,
+    Ucsttifg = 6,
     #[doc = "8: Interrupt Source: Stop condition received; Interrupt Flag: UCSTPIFG"]
-    UCSTPIFG = 8,
+    Ucstpifg = 8,
     #[doc = "10: Interrupt Source: Slave 3 Data received; Interrupt Flag: UCRXIFG3"]
-    UCRXIFG3 = 10,
+    Ucrxifg3 = 10,
     #[doc = "12: Interrupt Source: Slave 3 Transmit buffer empty; Interrupt Flag: UCTXIFG3"]
-    UCTXIFG3 = 12,
+    Uctxifg3 = 12,
     #[doc = "14: Interrupt Source: Slave 2 Data received; Interrupt Flag: UCRXIFG2"]
-    UCRXIFG2 = 14,
+    Ucrxifg2 = 14,
     #[doc = "16: Interrupt Source: Slave 2 Transmit buffer empty; Interrupt Flag: UCTXIFG2"]
-    UCTXIFG2 = 16,
+    Uctxifg2 = 16,
     #[doc = "18: Interrupt Source: Slave 1 Data received; Interrupt Flag: UCRXIFG1"]
-    UCRXIFG1 = 18,
+    Ucrxifg1 = 18,
     #[doc = "20: Interrupt Source: Slave 1 Transmit buffer empty; Interrupt Flag: UCTXIFG1"]
-    UCTXIFG1 = 20,
+    Uctxifg1 = 20,
     #[doc = "22: Interrupt Source: Data received; Interrupt Flag: UCRXIFG0"]
-    UCRXIFG0 = 22,
+    Ucrxifg0 = 22,
     #[doc = "24: Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG0"]
-    UCTXIFG0 = 24,
+    Uctxifg0 = 24,
     #[doc = "26: Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG"]
-    UCBCNTIFG = 26,
+    Ucbcntifg = 26,
     #[doc = "28: Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG"]
-    UCCLTOIFG = 28,
+    Uccltoifg = 28,
     #[doc = "30: Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
-    UCBIT9IFG = 30,
+    Ucbit9ifg = 30,
 }
-impl From<UCIV_A> for u16 {
+impl From<Uciv> for u16 {
     #[inline(always)]
-    fn from(variant: UCIV_A) -> Self {
+    fn from(variant: Uciv) -> Self {
         variant as _
     }
 }
-impl UCIV_R {
+impl crate::FieldSpec for Uciv {
+    type Ux = u16;
+}
+impl crate::IsEnum for Uciv {}
+#[doc = "Field `UCIV` reader - eUSCI_B interrupt vector value"]
+pub type UcivR = crate::FieldReader<Uciv>;
+impl UcivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<UCIV_A> {
+    pub const fn variant(&self) -> Option<Uciv> {
         match self.bits {
-            0 => Some(UCIV_A::NONE),
-            2 => Some(UCIV_A::UCALIFG),
-            4 => Some(UCIV_A::UCNACKIFG),
-            6 => Some(UCIV_A::UCSTTIFG),
-            8 => Some(UCIV_A::UCSTPIFG),
-            10 => Some(UCIV_A::UCRXIFG3),
-            12 => Some(UCIV_A::UCTXIFG3),
-            14 => Some(UCIV_A::UCRXIFG2),
-            16 => Some(UCIV_A::UCTXIFG2),
-            18 => Some(UCIV_A::UCRXIFG1),
-            20 => Some(UCIV_A::UCTXIFG1),
-            22 => Some(UCIV_A::UCRXIFG0),
-            24 => Some(UCIV_A::UCTXIFG0),
-            26 => Some(UCIV_A::UCBCNTIFG),
-            28 => Some(UCIV_A::UCCLTOIFG),
-            30 => Some(UCIV_A::UCBIT9IFG),
+            0 => Some(Uciv::None),
+            2 => Some(Uciv::Ucalifg),
+            4 => Some(Uciv::Ucnackifg),
+            6 => Some(Uciv::Ucsttifg),
+            8 => Some(Uciv::Ucstpifg),
+            10 => Some(Uciv::Ucrxifg3),
+            12 => Some(Uciv::Uctxifg3),
+            14 => Some(Uciv::Ucrxifg2),
+            16 => Some(Uciv::Uctxifg2),
+            18 => Some(Uciv::Ucrxifg1),
+            20 => Some(Uciv::Uctxifg1),
+            22 => Some(Uciv::Ucrxifg0),
+            24 => Some(Uciv::Uctxifg0),
+            26 => Some(Uciv::Ucbcntifg),
+            28 => Some(Uciv::Uccltoifg),
+            30 => Some(Uciv::Ucbit9ifg),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == UCIV_A::NONE
+        *self == Uciv::None
     }
-    #[doc = "Checks if the value of the field is `UCALIFG`"]
+    #[doc = "Interrupt Source: Arbitration lost; Interrupt Flag: UCALIFG; Interrupt Priority: Highest"]
     #[inline(always)]
     pub fn is_ucalifg(&self) -> bool {
-        *self == UCIV_A::UCALIFG
+        *self == Uciv::Ucalifg
     }
-    #[doc = "Checks if the value of the field is `UCNACKIFG`"]
+    #[doc = "Interrupt Source: Not acknowledgment; Interrupt Flag: UCNACKIFG"]
     #[inline(always)]
     pub fn is_ucnackifg(&self) -> bool {
-        *self == UCIV_A::UCNACKIFG
+        *self == Uciv::Ucnackifg
     }
-    #[doc = "Checks if the value of the field is `UCSTTIFG`"]
+    #[doc = "Interrupt Source: Start condition received; Interrupt Flag: UCSTTIFG"]
     #[inline(always)]
     pub fn is_ucsttifg(&self) -> bool {
-        *self == UCIV_A::UCSTTIFG
+        *self == Uciv::Ucsttifg
     }
-    #[doc = "Checks if the value of the field is `UCSTPIFG`"]
+    #[doc = "Interrupt Source: Stop condition received; Interrupt Flag: UCSTPIFG"]
     #[inline(always)]
     pub fn is_ucstpifg(&self) -> bool {
-        *self == UCIV_A::UCSTPIFG
+        *self == Uciv::Ucstpifg
     }
-    #[doc = "Checks if the value of the field is `UCRXIFG3`"]
+    #[doc = "Interrupt Source: Slave 3 Data received; Interrupt Flag: UCRXIFG3"]
     #[inline(always)]
     pub fn is_ucrxifg3(&self) -> bool {
-        *self == UCIV_A::UCRXIFG3
+        *self == Uciv::Ucrxifg3
     }
-    #[doc = "Checks if the value of the field is `UCTXIFG3`"]
+    #[doc = "Interrupt Source: Slave 3 Transmit buffer empty; Interrupt Flag: UCTXIFG3"]
     #[inline(always)]
     pub fn is_uctxifg3(&self) -> bool {
-        *self == UCIV_A::UCTXIFG3
+        *self == Uciv::Uctxifg3
     }
-    #[doc = "Checks if the value of the field is `UCRXIFG2`"]
+    #[doc = "Interrupt Source: Slave 2 Data received; Interrupt Flag: UCRXIFG2"]
     #[inline(always)]
     pub fn is_ucrxifg2(&self) -> bool {
-        *self == UCIV_A::UCRXIFG2
+        *self == Uciv::Ucrxifg2
     }
-    #[doc = "Checks if the value of the field is `UCTXIFG2`"]
+    #[doc = "Interrupt Source: Slave 2 Transmit buffer empty; Interrupt Flag: UCTXIFG2"]
     #[inline(always)]
     pub fn is_uctxifg2(&self) -> bool {
-        *self == UCIV_A::UCTXIFG2
+        *self == Uciv::Uctxifg2
     }
-    #[doc = "Checks if the value of the field is `UCRXIFG1`"]
+    #[doc = "Interrupt Source: Slave 1 Data received; Interrupt Flag: UCRXIFG1"]
     #[inline(always)]
     pub fn is_ucrxifg1(&self) -> bool {
-        *self == UCIV_A::UCRXIFG1
+        *self == Uciv::Ucrxifg1
     }
-    #[doc = "Checks if the value of the field is `UCTXIFG1`"]
+    #[doc = "Interrupt Source: Slave 1 Transmit buffer empty; Interrupt Flag: UCTXIFG1"]
     #[inline(always)]
     pub fn is_uctxifg1(&self) -> bool {
-        *self == UCIV_A::UCTXIFG1
+        *self == Uciv::Uctxifg1
     }
-    #[doc = "Checks if the value of the field is `UCRXIFG0`"]
+    #[doc = "Interrupt Source: Data received; Interrupt Flag: UCRXIFG0"]
     #[inline(always)]
     pub fn is_ucrxifg0(&self) -> bool {
-        *self == UCIV_A::UCRXIFG0
+        *self == Uciv::Ucrxifg0
     }
-    #[doc = "Checks if the value of the field is `UCTXIFG0`"]
+    #[doc = "Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG0"]
     #[inline(always)]
     pub fn is_uctxifg0(&self) -> bool {
-        *self == UCIV_A::UCTXIFG0
+        *self == Uciv::Uctxifg0
     }
-    #[doc = "Checks if the value of the field is `UCBCNTIFG`"]
+    #[doc = "Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG"]
     #[inline(always)]
     pub fn is_ucbcntifg(&self) -> bool {
-        *self == UCIV_A::UCBCNTIFG
+        *self == Uciv::Ucbcntifg
     }
-    #[doc = "Checks if the value of the field is `UCCLTOIFG`"]
+    #[doc = "Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG"]
     #[inline(always)]
     pub fn is_uccltoifg(&self) -> bool {
-        *self == UCIV_A::UCCLTOIFG
+        *self == Uciv::Uccltoifg
     }
-    #[doc = "Checks if the value of the field is `UCBIT9IFG`"]
+    #[doc = "Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest"]
     #[inline(always)]
     pub fn is_ucbit9ifg(&self) -> bool {
-        *self == UCIV_A::UCBIT9IFG
+        *self == Uciv::Ucbit9ifg
     }
 }
 impl R {
     #[doc = "Bits 0:15 - eUSCI_B interrupt vector value"]
     #[inline(always)]
-    pub fn uciv(&self) -> UCIV_R {
-        UCIV_R::new(self.bits)
+    pub fn uciv(&self) -> UcivR {
+        UcivR::new(self.bits)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "eUSCI_Bx Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0iv](index.html) module"]
-pub struct UCB0IV_SPEC;
-impl crate::RegisterSpec for UCB0IV_SPEC {
+impl W {}
+#[doc = "eUSCI_Bx Interrupt Vector Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ucb0iv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ucb0iv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Ucb0ivSpec;
+impl crate::RegisterSpec for Ucb0ivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [ucb0iv::R](R) reader structure"]
-impl crate::Readable for UCB0IV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ucb0iv::W](W) writer structure"]
-impl crate::Writable for UCB0IV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`ucb0iv::R`](R) reader structure"]
+impl crate::Readable for Ucb0ivSpec {}
+#[doc = "`write(|w| ..)` method takes [`ucb0iv::W`](W) writer structure"]
+impl crate::Writable for Ucb0ivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets UCB0IV to value 0"]
-impl crate::Resettable for UCB0IV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Ucb0ivSpec {}

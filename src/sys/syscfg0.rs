@@ -1,214 +1,175 @@
 #[doc = "Register `SYSCFG0` reader"]
-pub struct R(crate::R<SYSCFG0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYSCFG0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYSCFG0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYSCFG0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Syscfg0Spec>;
 #[doc = "Register `SYSCFG0` writer"]
-pub struct W(crate::W<SYSCFG0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYSCFG0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
+pub type W = crate::W<Syscfg0Spec>;
+#[doc = "Program FRAM write protection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pfwp {
+    #[doc = "0: Program FRAM write enable"]
+    Pfwp0 = 0,
+    #[doc = "1: Program FRAM write protected (not writable)"]
+    Pfwp1 = 1,
 }
-impl core::ops::DerefMut for W {
+impl From<Pfwp> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYSCFG0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYSCFG0_SPEC>) -> Self {
-        W(writer)
+    fn from(variant: Pfwp) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `PFWP` reader - Program FRAM write protection"]
-pub type PFWP_R = crate::BitReader<PFWP_A>;
-#[doc = "Program FRAM write protection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PFWP_A {
-    #[doc = "0: Program FRAM write enable"]
-    PFWP_0 = 0,
-    #[doc = "1: Program FRAM write protected (not writable)"]
-    PFWP_1 = 1,
-}
-impl From<PFWP_A> for bool {
-    #[inline(always)]
-    fn from(variant: PFWP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PFWP_R {
+pub type PfwpR = crate::BitReader<Pfwp>;
+impl PfwpR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFWP_A {
+    pub const fn variant(&self) -> Pfwp {
         match self.bits {
-            false => PFWP_A::PFWP_0,
-            true => PFWP_A::PFWP_1,
+            false => Pfwp::Pfwp0,
+            true => Pfwp::Pfwp1,
         }
     }
-    #[doc = "Checks if the value of the field is `PFWP_0`"]
-    #[inline(always)]
-    pub fn is_pfwp_0(&self) -> bool {
-        *self == PFWP_A::PFWP_0
-    }
-    #[doc = "Checks if the value of the field is `PFWP_1`"]
-    #[inline(always)]
-    pub fn is_pfwp_1(&self) -> bool {
-        *self == PFWP_A::PFWP_1
-    }
-}
-#[doc = "Field `PFWP` writer - Program FRAM write protection"]
-pub type PFWP_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG0_SPEC, PFWP_A, O>;
-impl<'a, const O: u8> PFWP_W<'a, O> {
     #[doc = "Program FRAM write enable"]
     #[inline(always)]
-    pub fn pfwp_0(self) -> &'a mut W {
-        self.variant(PFWP_A::PFWP_0)
+    pub fn is_pfwp_0(&self) -> bool {
+        *self == Pfwp::Pfwp0
     }
     #[doc = "Program FRAM write protected (not writable)"]
     #[inline(always)]
-    pub fn pfwp_1(self) -> &'a mut W {
-        self.variant(PFWP_A::PFWP_1)
+    pub fn is_pfwp_1(&self) -> bool {
+        *self == Pfwp::Pfwp1
     }
 }
-#[doc = "Field `DFWP` reader - Data FRAM write protection"]
-pub type DFWP_R = crate::BitReader<DFWP_A>;
+#[doc = "Field `PFWP` writer - Program FRAM write protection"]
+pub type PfwpW<'a, REG> = crate::BitWriter<'a, REG, Pfwp>;
+impl<'a, REG> PfwpW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Program FRAM write enable"]
+    #[inline(always)]
+    pub fn pfwp_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pfwp::Pfwp0)
+    }
+    #[doc = "Program FRAM write protected (not writable)"]
+    #[inline(always)]
+    pub fn pfwp_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pfwp::Pfwp1)
+    }
+}
 #[doc = "Data FRAM write protection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DFWP_A {
+pub enum Dfwp {
     #[doc = "0: Data FRAM write enable"]
-    DFWP_0 = 0,
+    Dfwp0 = 0,
     #[doc = "1: Data FRAM write protected (not writable)"]
-    DFWP_1 = 1,
+    Dfwp1 = 1,
 }
-impl From<DFWP_A> for bool {
+impl From<Dfwp> for bool {
     #[inline(always)]
-    fn from(variant: DFWP_A) -> Self {
+    fn from(variant: Dfwp) -> Self {
         variant as u8 != 0
     }
 }
-impl DFWP_R {
+#[doc = "Field `DFWP` reader - Data FRAM write protection"]
+pub type DfwpR = crate::BitReader<Dfwp>;
+impl DfwpR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DFWP_A {
+    pub const fn variant(&self) -> Dfwp {
         match self.bits {
-            false => DFWP_A::DFWP_0,
-            true => DFWP_A::DFWP_1,
+            false => Dfwp::Dfwp0,
+            true => Dfwp::Dfwp1,
         }
     }
-    #[doc = "Checks if the value of the field is `DFWP_0`"]
-    #[inline(always)]
-    pub fn is_dfwp_0(&self) -> bool {
-        *self == DFWP_A::DFWP_0
-    }
-    #[doc = "Checks if the value of the field is `DFWP_1`"]
-    #[inline(always)]
-    pub fn is_dfwp_1(&self) -> bool {
-        *self == DFWP_A::DFWP_1
-    }
-}
-#[doc = "Field `DFWP` writer - Data FRAM write protection"]
-pub type DFWP_W<'a, const O: u8> = crate::BitWriter<'a, u16, SYSCFG0_SPEC, DFWP_A, O>;
-impl<'a, const O: u8> DFWP_W<'a, O> {
     #[doc = "Data FRAM write enable"]
     #[inline(always)]
-    pub fn dfwp_0(self) -> &'a mut W {
-        self.variant(DFWP_A::DFWP_0)
+    pub fn is_dfwp_0(&self) -> bool {
+        *self == Dfwp::Dfwp0
     }
     #[doc = "Data FRAM write protected (not writable)"]
     #[inline(always)]
-    pub fn dfwp_1(self) -> &'a mut W {
-        self.variant(DFWP_A::DFWP_1)
+    pub fn is_dfwp_1(&self) -> bool {
+        *self == Dfwp::Dfwp1
+    }
+}
+#[doc = "Field `DFWP` writer - Data FRAM write protection"]
+pub type DfwpW<'a, REG> = crate::BitWriter<'a, REG, Dfwp>;
+impl<'a, REG> DfwpW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Data FRAM write enable"]
+    #[inline(always)]
+    pub fn dfwp_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfwp::Dfwp0)
+    }
+    #[doc = "Data FRAM write protected (not writable)"]
+    #[inline(always)]
+    pub fn dfwp_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfwp::Dfwp1)
     }
 }
 #[doc = "Field `FRWPOA` reader - Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution"]
-pub type FRWPOA_R = crate::FieldReader<u8, u8>;
+pub type FrwpoaR = crate::FieldReader;
 #[doc = "Field `FRWPOA` writer - Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution"]
-pub type FRWPOA_W<'a, const O: u8> = crate::FieldWriter<'a, u16, SYSCFG0_SPEC, u8, u8, 6, O>;
+pub type FrwpoaW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `FRWPPW` reader - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
-pub type FRWPPW_R = crate::FieldReader<u8, u8>;
+pub type FrwppwR = crate::FieldReader;
 #[doc = "Field `FRWPPW` writer - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
-pub type FRWPPW_W<'a, const O: u8> = crate::FieldWriter<'a, u16, SYSCFG0_SPEC, u8, u8, 8, O>;
+pub type FrwppwW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Program FRAM write protection"]
     #[inline(always)]
-    pub fn pfwp(&self) -> PFWP_R {
-        PFWP_R::new((self.bits & 1) != 0)
+    pub fn pfwp(&self) -> PfwpR {
+        PfwpR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Data FRAM write protection"]
     #[inline(always)]
-    pub fn dfwp(&self) -> DFWP_R {
-        DFWP_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn dfwp(&self) -> DfwpR {
+        DfwpR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:7 - Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution"]
     #[inline(always)]
-    pub fn frwpoa(&self) -> FRWPOA_R {
-        FRWPOA_R::new(((self.bits >> 2) & 0x3f) as u8)
+    pub fn frwpoa(&self) -> FrwpoaR {
+        FrwpoaR::new(((self.bits >> 2) & 0x3f) as u8)
     }
     #[doc = "Bits 8:15 - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
     #[inline(always)]
-    pub fn frwppw(&self) -> FRWPPW_R {
-        FRWPPW_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn frwppw(&self) -> FrwppwR {
+        FrwppwR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Program FRAM write protection"]
     #[inline(always)]
-    pub fn pfwp(&mut self) -> PFWP_W<0> {
-        PFWP_W::new(self)
+    pub fn pfwp(&mut self) -> PfwpW<'_, Syscfg0Spec> {
+        PfwpW::new(self, 0)
     }
     #[doc = "Bit 1 - Data FRAM write protection"]
     #[inline(always)]
-    pub fn dfwp(&mut self) -> DFWP_W<1> {
-        DFWP_W::new(self)
+    pub fn dfwp(&mut self) -> DfwpW<'_, Syscfg0Spec> {
+        DfwpW::new(self, 1)
     }
     #[doc = "Bits 2:7 - Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution"]
     #[inline(always)]
-    pub fn frwpoa(&mut self) -> FRWPOA_W<2> {
-        FRWPOA_W::new(self)
+    pub fn frwpoa(&mut self) -> FrwpoaW<'_, Syscfg0Spec> {
+        FrwpoaW::new(self, 2)
     }
     #[doc = "Bits 8:15 - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
     #[inline(always)]
-    pub fn frwppw(&mut self) -> FRWPPW_W<8> {
-        FRWPPW_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn frwppw(&mut self) -> FrwppwW<'_, Syscfg0Spec> {
+        FrwppwW::new(self, 8)
     }
 }
-#[doc = "System Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syscfg0](index.html) module"]
-pub struct SYSCFG0_SPEC;
-impl crate::RegisterSpec for SYSCFG0_SPEC {
+#[doc = "System Configuration Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`syscfg0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`syscfg0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Syscfg0Spec;
+impl crate::RegisterSpec for Syscfg0Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [syscfg0::R](R) reader structure"]
-impl crate::Readable for SYSCFG0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [syscfg0::W](W) writer structure"]
-impl crate::Writable for SYSCFG0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`syscfg0::R`](R) reader structure"]
+impl crate::Readable for Syscfg0Spec {}
+#[doc = "`write(|w| ..)` method takes [`syscfg0::W`](W) writer structure"]
+impl crate::Writable for Syscfg0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SYSCFG0 to value 0"]
-impl crate::Resettable for SYSCFG0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for Syscfg0Spec {}

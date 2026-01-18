@@ -1,245 +1,203 @@
 #[doc = "Register `SYSRSTIV` reader"]
-pub struct R(crate::R<SYSRSTIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYSRSTIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYSRSTIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYSRSTIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SysrstivSpec>;
 #[doc = "Register `SYSRSTIV` writer"]
-pub struct W(crate::W<SYSRSTIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYSRSTIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYSRSTIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYSRSTIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `SYSRSTIV` reader - Reset interrupt vector"]
-pub type SYSRSTIV_R = crate::FieldReader<u16, SYSRSTIV_A>;
+pub type W = crate::W<SysrstivSpec>;
 #[doc = "Reset interrupt vector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum SYSRSTIV_A {
+pub enum Sysrstiv {
     #[doc = "0: No interrupt pending"]
-    NONE = 0,
+    None = 0,
     #[doc = "2: Brownout"]
-    BOR = 2,
+    Bor = 2,
     #[doc = "4: RSTIFG RST/NMI"]
-    RSTNMI = 4,
+    Rstnmi = 4,
     #[doc = "6: PMMSWBOR software BOR"]
-    PMMSWBOR = 6,
+    Pmmswbor = 6,
     #[doc = "8: LPMx.5 wakeup"]
-    LPM5WU = 8,
+    Lpm5wu = 8,
     #[doc = "10: Security violation"]
-    SECYV = 10,
+    Secyv = 10,
     #[doc = "12: Reserved"]
-    SYSRSTIV_12 = 12,
+    Sysrstiv12 = 12,
     #[doc = "14: SVSHIFG SVSH event"]
-    SVSHIFG = 14,
+    Svshifg = 14,
     #[doc = "16: Reserved"]
-    SYSRSTIV_16 = 16,
+    Sysrstiv16 = 16,
     #[doc = "18: Reserved"]
-    SYSRSTIV_18 = 18,
+    Sysrstiv18 = 18,
     #[doc = "20: PMMSWPOR software POR"]
-    PMMSWPOR = 20,
+    Pmmswpor = 20,
     #[doc = "22: WDTIFG watchdog timeout"]
-    WDTIFG = 22,
+    Wdtifg = 22,
     #[doc = "24: WDTPW watchdog password violation"]
-    WDTPW = 24,
+    Wdtpw = 24,
     #[doc = "26: FRCTLPW password violation"]
-    FRCTLPW = 26,
+    Frctlpw = 26,
     #[doc = "28: Uncorrectable FRAM bit error detection"]
-    UBDIFG = 28,
+    Ubdifg = 28,
     #[doc = "30: Peripheral area fetch"]
-    PERF = 30,
+    Perf = 30,
     #[doc = "32: PMM password violation"]
-    PMMPW = 32,
+    Pmmpw = 32,
     #[doc = "34: Reserved"]
-    SYSRSTIV_34 = 34,
+    Sysrstiv34 = 34,
     #[doc = "36: FLL unlock (PUC)"]
-    FLLUL = 36,
+    Fllul = 36,
 }
-impl From<SYSRSTIV_A> for u16 {
+impl From<Sysrstiv> for u16 {
     #[inline(always)]
-    fn from(variant: SYSRSTIV_A) -> Self {
+    fn from(variant: Sysrstiv) -> Self {
         variant as _
     }
 }
-impl SYSRSTIV_R {
+impl crate::FieldSpec for Sysrstiv {
+    type Ux = u16;
+}
+impl crate::IsEnum for Sysrstiv {}
+#[doc = "Field `SYSRSTIV` reader - Reset interrupt vector"]
+pub type SysrstivR = crate::FieldReader<Sysrstiv>;
+impl SysrstivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSRSTIV_A> {
+    pub const fn variant(&self) -> Option<Sysrstiv> {
         match self.bits {
-            0 => Some(SYSRSTIV_A::NONE),
-            2 => Some(SYSRSTIV_A::BOR),
-            4 => Some(SYSRSTIV_A::RSTNMI),
-            6 => Some(SYSRSTIV_A::PMMSWBOR),
-            8 => Some(SYSRSTIV_A::LPM5WU),
-            10 => Some(SYSRSTIV_A::SECYV),
-            12 => Some(SYSRSTIV_A::SYSRSTIV_12),
-            14 => Some(SYSRSTIV_A::SVSHIFG),
-            16 => Some(SYSRSTIV_A::SYSRSTIV_16),
-            18 => Some(SYSRSTIV_A::SYSRSTIV_18),
-            20 => Some(SYSRSTIV_A::PMMSWPOR),
-            22 => Some(SYSRSTIV_A::WDTIFG),
-            24 => Some(SYSRSTIV_A::WDTPW),
-            26 => Some(SYSRSTIV_A::FRCTLPW),
-            28 => Some(SYSRSTIV_A::UBDIFG),
-            30 => Some(SYSRSTIV_A::PERF),
-            32 => Some(SYSRSTIV_A::PMMPW),
-            34 => Some(SYSRSTIV_A::SYSRSTIV_34),
-            36 => Some(SYSRSTIV_A::FLLUL),
+            0 => Some(Sysrstiv::None),
+            2 => Some(Sysrstiv::Bor),
+            4 => Some(Sysrstiv::Rstnmi),
+            6 => Some(Sysrstiv::Pmmswbor),
+            8 => Some(Sysrstiv::Lpm5wu),
+            10 => Some(Sysrstiv::Secyv),
+            12 => Some(Sysrstiv::Sysrstiv12),
+            14 => Some(Sysrstiv::Svshifg),
+            16 => Some(Sysrstiv::Sysrstiv16),
+            18 => Some(Sysrstiv::Sysrstiv18),
+            20 => Some(Sysrstiv::Pmmswpor),
+            22 => Some(Sysrstiv::Wdtifg),
+            24 => Some(Sysrstiv::Wdtpw),
+            26 => Some(Sysrstiv::Frctlpw),
+            28 => Some(Sysrstiv::Ubdifg),
+            30 => Some(Sysrstiv::Perf),
+            32 => Some(Sysrstiv::Pmmpw),
+            34 => Some(Sysrstiv::Sysrstiv34),
+            36 => Some(Sysrstiv::Fllul),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SYSRSTIV_A::NONE
+        *self == Sysrstiv::None
     }
-    #[doc = "Checks if the value of the field is `BOR`"]
+    #[doc = "Brownout"]
     #[inline(always)]
     pub fn is_bor(&self) -> bool {
-        *self == SYSRSTIV_A::BOR
+        *self == Sysrstiv::Bor
     }
-    #[doc = "Checks if the value of the field is `RSTNMI`"]
+    #[doc = "RSTIFG RST/NMI"]
     #[inline(always)]
     pub fn is_rstnmi(&self) -> bool {
-        *self == SYSRSTIV_A::RSTNMI
+        *self == Sysrstiv::Rstnmi
     }
-    #[doc = "Checks if the value of the field is `PMMSWBOR`"]
+    #[doc = "PMMSWBOR software BOR"]
     #[inline(always)]
     pub fn is_pmmswbor(&self) -> bool {
-        *self == SYSRSTIV_A::PMMSWBOR
+        *self == Sysrstiv::Pmmswbor
     }
-    #[doc = "Checks if the value of the field is `LPM5WU`"]
+    #[doc = "LPMx.5 wakeup"]
     #[inline(always)]
     pub fn is_lpm5wu(&self) -> bool {
-        *self == SYSRSTIV_A::LPM5WU
+        *self == Sysrstiv::Lpm5wu
     }
-    #[doc = "Checks if the value of the field is `SECYV`"]
+    #[doc = "Security violation"]
     #[inline(always)]
     pub fn is_secyv(&self) -> bool {
-        *self == SYSRSTIV_A::SECYV
+        *self == Sysrstiv::Secyv
     }
-    #[doc = "Checks if the value of the field is `SYSRSTIV_12`"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_sysrstiv_12(&self) -> bool {
-        *self == SYSRSTIV_A::SYSRSTIV_12
+        *self == Sysrstiv::Sysrstiv12
     }
-    #[doc = "Checks if the value of the field is `SVSHIFG`"]
+    #[doc = "SVSHIFG SVSH event"]
     #[inline(always)]
     pub fn is_svshifg(&self) -> bool {
-        *self == SYSRSTIV_A::SVSHIFG
+        *self == Sysrstiv::Svshifg
     }
-    #[doc = "Checks if the value of the field is `SYSRSTIV_16`"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_sysrstiv_16(&self) -> bool {
-        *self == SYSRSTIV_A::SYSRSTIV_16
+        *self == Sysrstiv::Sysrstiv16
     }
-    #[doc = "Checks if the value of the field is `SYSRSTIV_18`"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_sysrstiv_18(&self) -> bool {
-        *self == SYSRSTIV_A::SYSRSTIV_18
+        *self == Sysrstiv::Sysrstiv18
     }
-    #[doc = "Checks if the value of the field is `PMMSWPOR`"]
+    #[doc = "PMMSWPOR software POR"]
     #[inline(always)]
     pub fn is_pmmswpor(&self) -> bool {
-        *self == SYSRSTIV_A::PMMSWPOR
+        *self == Sysrstiv::Pmmswpor
     }
-    #[doc = "Checks if the value of the field is `WDTIFG`"]
+    #[doc = "WDTIFG watchdog timeout"]
     #[inline(always)]
     pub fn is_wdtifg(&self) -> bool {
-        *self == SYSRSTIV_A::WDTIFG
+        *self == Sysrstiv::Wdtifg
     }
-    #[doc = "Checks if the value of the field is `WDTPW`"]
+    #[doc = "WDTPW watchdog password violation"]
     #[inline(always)]
     pub fn is_wdtpw(&self) -> bool {
-        *self == SYSRSTIV_A::WDTPW
+        *self == Sysrstiv::Wdtpw
     }
-    #[doc = "Checks if the value of the field is `FRCTLPW`"]
+    #[doc = "FRCTLPW password violation"]
     #[inline(always)]
     pub fn is_frctlpw(&self) -> bool {
-        *self == SYSRSTIV_A::FRCTLPW
+        *self == Sysrstiv::Frctlpw
     }
-    #[doc = "Checks if the value of the field is `UBDIFG`"]
+    #[doc = "Uncorrectable FRAM bit error detection"]
     #[inline(always)]
     pub fn is_ubdifg(&self) -> bool {
-        *self == SYSRSTIV_A::UBDIFG
+        *self == Sysrstiv::Ubdifg
     }
-    #[doc = "Checks if the value of the field is `PERF`"]
+    #[doc = "Peripheral area fetch"]
     #[inline(always)]
     pub fn is_perf(&self) -> bool {
-        *self == SYSRSTIV_A::PERF
+        *self == Sysrstiv::Perf
     }
-    #[doc = "Checks if the value of the field is `PMMPW`"]
+    #[doc = "PMM password violation"]
     #[inline(always)]
     pub fn is_pmmpw(&self) -> bool {
-        *self == SYSRSTIV_A::PMMPW
+        *self == Sysrstiv::Pmmpw
     }
-    #[doc = "Checks if the value of the field is `SYSRSTIV_34`"]
+    #[doc = "Reserved"]
     #[inline(always)]
     pub fn is_sysrstiv_34(&self) -> bool {
-        *self == SYSRSTIV_A::SYSRSTIV_34
+        *self == Sysrstiv::Sysrstiv34
     }
-    #[doc = "Checks if the value of the field is `FLLUL`"]
+    #[doc = "FLL unlock (PUC)"]
     #[inline(always)]
     pub fn is_fllul(&self) -> bool {
-        *self == SYSRSTIV_A::FLLUL
+        *self == Sysrstiv::Fllul
     }
 }
 impl R {
     #[doc = "Bits 0:15 - Reset interrupt vector"]
     #[inline(always)]
-    pub fn sysrstiv(&self) -> SYSRSTIV_R {
-        SYSRSTIV_R::new(self.bits)
+    pub fn sysrstiv(&self) -> SysrstivR {
+        SysrstivR::new(self.bits)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Reset Vector Generator\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysrstiv](index.html) module"]
-pub struct SYSRSTIV_SPEC;
-impl crate::RegisterSpec for SYSRSTIV_SPEC {
+impl W {}
+#[doc = "Reset Vector Generator\n\nYou can [`read`](crate::Reg::read) this register and get [`sysrstiv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sysrstiv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SysrstivSpec;
+impl crate::RegisterSpec for SysrstivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [sysrstiv::R](R) reader structure"]
-impl crate::Readable for SYSRSTIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sysrstiv::W](W) writer structure"]
-impl crate::Writable for SYSRSTIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`sysrstiv::R`](R) reader structure"]
+impl crate::Readable for SysrstivSpec {}
+#[doc = "`write(|w| ..)` method takes [`sysrstiv::W`](W) writer structure"]
+impl crate::Writable for SysrstivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SYSRSTIV to value 0"]
-impl crate::Resettable for SYSRSTIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SysrstivSpec {}

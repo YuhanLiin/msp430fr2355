@@ -1,117 +1,75 @@
 #[doc = "Register `SYSUNIV` reader"]
-pub struct R(crate::R<SYSUNIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYSUNIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYSUNIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYSUNIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SysunivSpec>;
 #[doc = "Register `SYSUNIV` writer"]
-pub struct W(crate::W<SYSUNIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYSUNIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYSUNIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYSUNIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `SYSUNIV` reader - User NMI vector"]
-pub type SYSUNIV_R = crate::FieldReader<u16, SYSUNIV_A>;
+pub type W = crate::W<SysunivSpec>;
 #[doc = "User NMI vector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum SYSUNIV_A {
+pub enum Sysuniv {
     #[doc = "0: No interrupt pending"]
-    NONE = 0,
+    None = 0,
     #[doc = "2: NMIIFG NMI pin"]
-    NMIIFG = 2,
+    Nmiifg = 2,
     #[doc = "4: OFIFG oscillator fault"]
-    OFIFG = 4,
+    Ofifg = 4,
 }
-impl From<SYSUNIV_A> for u16 {
+impl From<Sysuniv> for u16 {
     #[inline(always)]
-    fn from(variant: SYSUNIV_A) -> Self {
+    fn from(variant: Sysuniv) -> Self {
         variant as _
     }
 }
-impl SYSUNIV_R {
+impl crate::FieldSpec for Sysuniv {
+    type Ux = u16;
+}
+impl crate::IsEnum for Sysuniv {}
+#[doc = "Field `SYSUNIV` reader - User NMI vector"]
+pub type SysunivR = crate::FieldReader<Sysuniv>;
+impl SysunivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSUNIV_A> {
+    pub const fn variant(&self) -> Option<Sysuniv> {
         match self.bits {
-            0 => Some(SYSUNIV_A::NONE),
-            2 => Some(SYSUNIV_A::NMIIFG),
-            4 => Some(SYSUNIV_A::OFIFG),
+            0 => Some(Sysuniv::None),
+            2 => Some(Sysuniv::Nmiifg),
+            4 => Some(Sysuniv::Ofifg),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SYSUNIV_A::NONE
+        *self == Sysuniv::None
     }
-    #[doc = "Checks if the value of the field is `NMIIFG`"]
+    #[doc = "NMIIFG NMI pin"]
     #[inline(always)]
     pub fn is_nmiifg(&self) -> bool {
-        *self == SYSUNIV_A::NMIIFG
+        *self == Sysuniv::Nmiifg
     }
-    #[doc = "Checks if the value of the field is `OFIFG`"]
+    #[doc = "OFIFG oscillator fault"]
     #[inline(always)]
     pub fn is_ofifg(&self) -> bool {
-        *self == SYSUNIV_A::OFIFG
+        *self == Sysuniv::Ofifg
     }
 }
 impl R {
     #[doc = "Bits 0:15 - User NMI vector"]
     #[inline(always)]
-    pub fn sysuniv(&self) -> SYSUNIV_R {
-        SYSUNIV_R::new(self.bits)
+    pub fn sysuniv(&self) -> SysunivR {
+        SysunivR::new(self.bits)
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "User NMI Vector Generator\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysuniv](index.html) module"]
-pub struct SYSUNIV_SPEC;
-impl crate::RegisterSpec for SYSUNIV_SPEC {
+impl W {}
+#[doc = "User NMI Vector Generator\n\nYou can [`read`](crate::Reg::read) this register and get [`sysuniv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sysuniv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct SysunivSpec;
+impl crate::RegisterSpec for SysunivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [sysuniv::R](R) reader structure"]
-impl crate::Readable for SYSUNIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sysuniv::W](W) writer structure"]
-impl crate::Writable for SYSUNIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`sysuniv::R`](R) reader structure"]
+impl crate::Readable for SysunivSpec {}
+#[doc = "`write(|w| ..)` method takes [`sysuniv::W`](W) writer structure"]
+impl crate::Writable for SysunivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets SYSUNIV to value 0"]
-impl crate::Resettable for SYSUNIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for SysunivSpec {}
