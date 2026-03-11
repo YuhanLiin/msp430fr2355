@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v0.6.1]
+
+- Fix docs.rs build issue
+
 ## [v0.6.0]
 
 - (Breaking) Regenerate with svd2rust 0.37.1

@@ -1,6 +1,6 @@
 [package]
 name = "msp430fr2355"
-version = "0.6.0"
+version = "0.6.1"
 edition = "2018"
 authors = ["YuhanLiin <linyuhan0315@hotmail.com>"]
 description = "Peripheral access crate for MSP430FR2355 microcontroller"
@@ -18,3 +18,7 @@ vcell = "0.1.0"
 
 [features]
 rt = ["msp430-rt/device"]
+
+[package.metadata.docs.rs]
+targets = ["msp430-none-elf"]
+cargo-args = ["-Z", "build-std=core"]
