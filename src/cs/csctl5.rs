@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl5Spec>;
 #[doc = "Register `CSCTL5` writer"]
 pub type W = crate::W<Csctl5Spec>;
 #[doc = "MCLK source divider\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divm {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "SMCLK source divider. SMCLK directly derives from MCLK. SMCLK frequency is the combination of DIVM and DIVS out of selected clock source.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Divs {
@@ -227,6 +229,7 @@ where
     }
 }
 #[doc = "SMCLK off. This bit turns off SMCLK clock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Smclkoff {
     #[doc = "0: SMCLK on"]
@@ -280,6 +283,7 @@ where
     }
 }
 #[doc = "VLO automatic off enable. This bit turns off VLO, if VLO is not used.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vloautooff {
     #[doc = "0: VLO always on"]

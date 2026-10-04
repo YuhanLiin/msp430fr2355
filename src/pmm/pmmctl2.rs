@@ -3,6 +3,7 @@ pub type R = crate::R<Pmmctl2Spec>;
 #[doc = "Register `PMMCTL2` writer"]
 pub type W = crate::W<Pmmctl2Spec>;
 #[doc = "Internal reference enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intrefen {
     #[doc = "0: Disable internal reference"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "External reference output enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Extrefen {
     #[doc = "0: Disable external reference output"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Temperature sensor enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tsensoren {
     #[doc = "0: Disable temperature sensor"]
@@ -162,17 +165,16 @@ where
     }
 }
 #[doc = "Reference voltage level select. Can be modified only when REFGENBUSY = 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Refvsel {
-    #[doc = "0: 00b = 1.5V"]
-    Refvsel0 = 0,
-    #[doc = "1: 01b = 2.0V"]
-    Refvsel1 = 1,
-    #[doc = "2: 10b = 2.5V"]
-    Refvsel2 = 2,
-    #[doc = "3: 11b = Reserved"]
-    Refvsel3 = 3,
+    #[doc = "0: 1.5 V"]
+    V1_5 = 0,
+    #[doc = "1: 2.0 V"]
+    V2_0 = 1,
+    #[doc = "2: 2.5 V"]
+    V2_5 = 2,
 }
 impl From<Refvsel> for u8 {
     #[inline(always)]
@@ -189,65 +191,55 @@ pub type RefvselR = crate::FieldReader<Refvsel>;
 impl RefvselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Refvsel {
+    pub const fn variant(&self) -> Option<Refvsel> {
         match self.bits {
-            0 => Refvsel::Refvsel0,
-            1 => Refvsel::Refvsel1,
-            2 => Refvsel::Refvsel2,
-            3 => Refvsel::Refvsel3,
-            _ => unreachable!(),
+            0 => Some(Refvsel::V1_5),
+            1 => Some(Refvsel::V2_0),
+            2 => Some(Refvsel::V2_5),
+            _ => None,
         }
     }
-    #[doc = "00b = 1.5V"]
+    #[doc = "1.5 V"]
     #[inline(always)]
-    pub fn is_refvsel_0(&self) -> bool {
-        *self == Refvsel::Refvsel0
+    pub fn is_v1_5(&self) -> bool {
+        *self == Refvsel::V1_5
     }
-    #[doc = "01b = 2.0V"]
+    #[doc = "2.0 V"]
     #[inline(always)]
-    pub fn is_refvsel_1(&self) -> bool {
-        *self == Refvsel::Refvsel1
+    pub fn is_v2_0(&self) -> bool {
+        *self == Refvsel::V2_0
     }
-    #[doc = "10b = 2.5V"]
+    #[doc = "2.5 V"]
     #[inline(always)]
-    pub fn is_refvsel_2(&self) -> bool {
-        *self == Refvsel::Refvsel2
-    }
-    #[doc = "11b = Reserved"]
-    #[inline(always)]
-    pub fn is_refvsel_3(&self) -> bool {
-        *self == Refvsel::Refvsel3
+    pub fn is_v2_5(&self) -> bool {
+        *self == Refvsel::V2_5
     }
 }
 #[doc = "Field `REFVSEL` writer - Reference voltage level select. Can be modified only when REFGENBUSY = 0."]
-pub type RefvselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Refvsel, crate::Safe>;
+pub type RefvselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Refvsel>;
 impl<'a, REG> RefvselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "00b = 1.5V"]
+    #[doc = "1.5 V"]
     #[inline(always)]
-    pub fn refvsel_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel0)
+    pub fn v1_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Refvsel::V1_5)
     }
-    #[doc = "01b = 2.0V"]
+    #[doc = "2.0 V"]
     #[inline(always)]
-    pub fn refvsel_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel1)
+    pub fn v2_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Refvsel::V2_0)
     }
-    #[doc = "10b = 2.5V"]
+    #[doc = "2.5 V"]
     #[inline(always)]
-    pub fn refvsel_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel2)
-    }
-    #[doc = "11b = Reserved"]
-    #[inline(always)]
-    pub fn refvsel_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Refvsel::Refvsel3)
+    pub fn v2_5(self) -> &'a mut crate::W<REG> {
+        self.variant(Refvsel::V2_5)
     }
 }
 #[doc = "Reference generator one-time trigger. If written with a 1, the generation of the variable reference voltage is started. When the reference voltage request is set, this bit is cleared by hardware.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refgen {
     #[doc = "0: No trigger"]
@@ -301,6 +293,7 @@ where
     }
 }
 #[doc = "Bandgap and bandgap buffer one-time trigger. If written with a 1, the generation of the buffered bandgap voltage is started. When the bandgap buffer voltage request is set, this bit is cleared by hardware.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refbgen {
     #[doc = "0: No trigger"]
@@ -354,6 +347,7 @@ where
     }
 }
 #[doc = "Reference generator active. Read only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refgenact {
     #[doc = "0: Reference generator not active"]
@@ -390,6 +384,7 @@ impl RefgenactR {
     }
 }
 #[doc = "Reference bandgap active. Ready only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refbgact {
     #[doc = "0: Reference bandgap buffer not active"]
@@ -426,6 +421,7 @@ impl RefbgactR {
     }
 }
 #[doc = "Bandgap mode. Ready only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bgmode {
     #[doc = "0: Static mode (higher precision)"]
@@ -479,6 +475,7 @@ where
     }
 }
 #[doc = "Variable reference voltage ready status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refgenrdy {
     #[doc = "0: Reference voltage output is not ready to be used."]
@@ -532,6 +529,7 @@ where
     }
 }
 #[doc = "Buffered bandgap voltage ready status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refbgrdy {
     #[doc = "0: Buffered bandgap voltage is not ready to be used"]
@@ -584,10 +582,6 @@ where
         self.variant(Refbgrdy::Refbgrdy1)
     }
 }
-#[doc = "Field `PWRMODE` reader - Power Mode Selection. The two bits are used to select the power supply in multi power supply systems. A single power supply system is not affected by the bits. Reserved for future use."]
-pub type PwrmodeR = crate::FieldReader;
-#[doc = "Field `PWRMODE` writer - Power Mode Selection. The two bits are used to select the power supply in multi power supply systems. A single power supply system is not affected by the bits. Reserved for future use."]
-pub type PwrmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bit 0 - Internal reference enable"]
     #[inline(always)]
@@ -644,11 +638,6 @@ impl R {
     pub fn refbgrdy(&self) -> RefbgrdyR {
         RefbgrdyR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bits 14:15 - Power Mode Selection. The two bits are used to select the power supply in multi power supply systems. A single power supply system is not affected by the bits. Reserved for future use."]
-    #[inline(always)]
-    pub fn pwrmode(&self) -> PwrmodeR {
-        PwrmodeR::new(((self.bits >> 14) & 3) as u8)
-    }
 }
 impl W {
     #[doc = "Bit 0 - Internal reference enable"]
@@ -695,11 +684,6 @@ impl W {
     #[inline(always)]
     pub fn refbgrdy(&mut self) -> RefbgrdyW<'_, Pmmctl2Spec> {
         RefbgrdyW::new(self, 13)
-    }
-    #[doc = "Bits 14:15 - Power Mode Selection. The two bits are used to select the power supply in multi power supply systems. A single power supply system is not affected by the bits. Reserved for future use."]
-    #[inline(always)]
-    pub fn pwrmode(&mut self) -> PwrmodeW<'_, Pmmctl2Spec> {
-        PwrmodeW::new(self, 14)
     }
 }
 #[doc = "Power Management Module Control Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`pmmctl2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pmmctl2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

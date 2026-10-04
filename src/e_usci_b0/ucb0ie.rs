@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb0ieSpec>;
 #[doc = "Register `UCB0IE` writer"]
 pub type W = crate::W<Ucb0ieSpec>;
 #[doc = "Receive interrupt enable 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxie0 {
     #[doc = "0: Interrupt disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit interrupt enable 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxie0 {
     #[doc = "0: Interrupt disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "START condition interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsttie {
     #[doc = "0: Interrupt disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "STOP condition interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucstpie {
     #[doc = "0: Interrupt disabled"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Arbitration lost interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucalie {
     #[doc = "0: Interrupt disabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Not-acknowledge interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucnackie {
     #[doc = "0: Interrupt disabled"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Byte counter interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbcntie {
     #[doc = "0: Interrupt disabled"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Clock low timeout interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uccltoie {
     #[doc = "0: Interrupt disabled"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Receive interrupt enable 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxie1 {
     #[doc = "0: Interrupt disabled"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Transmit interrupt enable 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxie1 {
     #[doc = "0: Interrupt disabled"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Receive interrupt enable 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxie2 {
     #[doc = "0: Interrupt disabled"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Transmit interrupt enable 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxie2 {
     #[doc = "0: Interrupt disabled"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Receive interrupt enable 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxie3 {
     #[doc = "0: Interrupt disabled"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Transmit interrupt enable 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxie3 {
     #[doc = "0: Interrupt disabled"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Bit position 9 interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbit9ie {
     #[doc = "0: Interrupt disabled"]

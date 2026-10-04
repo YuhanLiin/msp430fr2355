@@ -3,6 +3,7 @@ pub type R = crate::R<Gcctl0Spec>;
 #[doc = "Register `GCCTL0` writer"]
 pub type W = crate::W<Gcctl0Spec>;
 #[doc = "Enables FRAM auto power up after LPM\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Frlpmpwr {
     #[doc = "0: FRAM startup is delayed to the first FRAM access after exit from LPM"]
@@ -38,30 +39,14 @@ impl FrlpmpwrR {
         *self == Frlpmpwr::Frlpmpwr1
     }
 }
-#[doc = "Field `FRLPMPWR` writer - Enables FRAM auto power up after LPM"]
-pub type FrlpmpwrW<'a, REG> = crate::BitWriter<'a, REG, Frlpmpwr>;
-impl<'a, REG> FrlpmpwrW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "FRAM startup is delayed to the first FRAM access after exit from LPM"]
-    #[inline(always)]
-    pub fn frlpmpwr_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Frlpmpwr::Frlpmpwr0)
-    }
-    #[doc = "FRAM is powered up immediately on exit from LPM"]
-    #[inline(always)]
-    pub fn frlpmpwr_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Frlpmpwr::Frlpmpwr1)
-    }
-}
 #[doc = "FRAM Memory Power Control Request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Frpwr {
-    #[doc = "0: Enable INACTIVE mode."]
-    Frpwr0 = 0,
-    #[doc = "1: Enable ACTIVE mode."]
-    Frpwr1 = 1,
+    #[doc = "0: FRAM power supply disabled"]
+    Disabled = 0,
+    #[doc = "1: FRAM power supply enabled"]
+    Enabled = 1,
 }
 impl From<Frpwr> for bool {
     #[inline(always)]
@@ -76,19 +61,19 @@ impl FrpwrR {
     #[inline(always)]
     pub const fn variant(&self) -> Frpwr {
         match self.bits {
-            false => Frpwr::Frpwr0,
-            true => Frpwr::Frpwr1,
+            false => Frpwr::Disabled,
+            true => Frpwr::Enabled,
         }
     }
-    #[doc = "Enable INACTIVE mode."]
+    #[doc = "FRAM power supply disabled"]
     #[inline(always)]
-    pub fn is_frpwr_0(&self) -> bool {
-        *self == Frpwr::Frpwr0
+    pub fn is_disabled(&self) -> bool {
+        *self == Frpwr::Disabled
     }
-    #[doc = "Enable ACTIVE mode."]
+    #[doc = "FRAM power supply enabled"]
     #[inline(always)]
-    pub fn is_frpwr_1(&self) -> bool {
-        *self == Frpwr::Frpwr1
+    pub fn is_enabled(&self) -> bool {
+        *self == Frpwr::Enabled
     }
 }
 #[doc = "Field `FRPWR` writer - FRAM Memory Power Control Request"]
@@ -97,18 +82,19 @@ impl<'a, REG> FrpwrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Enable INACTIVE mode."]
+    #[doc = "FRAM power supply disabled"]
     #[inline(always)]
-    pub fn frpwr_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Frpwr::Frpwr0)
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Frpwr::Disabled)
     }
-    #[doc = "Enable ACTIVE mode."]
+    #[doc = "FRAM power supply enabled"]
     #[inline(always)]
-    pub fn frpwr_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Frpwr::Frpwr1)
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Frpwr::Enabled)
     }
 }
 #[doc = "Enable NMI event for the correctable bit error detection flag (CBDIFG)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cbdie {
     #[doc = "0: Disable NMI for the correctable bit error detection flag (CBDIFG)."]
@@ -162,6 +148,7 @@ where
     }
 }
 #[doc = "Enable NMI event for the uncorrectable bit error detection flag (UBDIFG)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ubdie {
     #[doc = "0: Disable NMI for the uncorrectable bit error detection flag (UBDIFG)."]
@@ -215,6 +202,7 @@ where
     }
 }
 #[doc = "Enable Power Up Clear (PUC) reset for the uncorrectable bit error detection flag (UBDIFG)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ubdrsten {
     #[doc = "0: PUC not initiated on uncorrectable bit error detection flag."]
@@ -295,11 +283,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 1 - Enables FRAM auto power up after LPM"]
-    #[inline(always)]
-    pub fn frlpmpwr(&mut self) -> FrlpmpwrW<'_, Gcctl0Spec> {
-        FrlpmpwrW::new(self, 1)
-    }
     #[doc = "Bit 2 - FRAM Memory Power Control Request"]
     #[inline(always)]
     pub fn frpwr(&mut self) -> FrpwrW<'_, Gcctl0Spec> {

@@ -3,6 +3,7 @@ pub type R = crate::R<Cp1dacctlSpec>;
 #[doc = "Register `CP1DACCTL` writer"]
 pub type W = crate::W<Cp1dacctlSpec>;
 #[doc = "This bit is only valid when CPDACBUFS is set to 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacsw {
     #[doc = "0: CPDACBUF1 selected"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC buffer controlled source selection.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacbufs {
     #[doc = "0: Comparator output is selected as the buffer control source"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC reference voltage selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacrefs {
     #[doc = "0: VDD selected"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC output control bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacen {
     #[doc = "0: DAC output is disabled."]

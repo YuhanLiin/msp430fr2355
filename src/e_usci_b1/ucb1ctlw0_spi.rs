@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb1ctlw0SpiSpec>;
 #[doc = "Register `UCB1CTLW0_SPI` writer"]
 pub type W = crate::W<Ucb1ctlw0SpiSpec>;
 #[doc = "Software reset enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucswrst {
     #[doc = "0: Disabled. eUSCI_B reset released for operation"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "STE mode select in master mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucstem {
     #[doc = "0: STE pin is used to prevent conflicts with other masters"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "eUSCI_B clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucssel {
@@ -195,6 +198,7 @@ where
     }
 }
 #[doc = "Synchronous mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsync {
     #[doc = "0: Asynchronous mode"]
@@ -248,6 +252,7 @@ where
     }
 }
 #[doc = "eUSCI mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucmode {
@@ -334,6 +339,7 @@ where
     }
 }
 #[doc = "Master mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucmst {
     #[doc = "0: Slave mode"]
@@ -387,6 +393,7 @@ where
     }
 }
 #[doc = "Character length\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uc7bit {
     #[doc = "0: 8-bit data"]
@@ -440,6 +447,7 @@ where
     }
 }
 #[doc = "MSB first select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucmsb {
     #[doc = "0: LSB first"]
@@ -493,6 +501,7 @@ where
     }
 }
 #[doc = "Clock polarity select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucckpl {
     #[doc = "0: The inactive state is low"]
@@ -546,6 +555,7 @@ where
     }
 }
 #[doc = "Clock phase select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucckph {
     #[doc = "0: Data is changed on the first UCLK edge and captured on the following edge."]

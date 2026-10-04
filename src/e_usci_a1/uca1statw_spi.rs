@@ -3,6 +3,7 @@ pub type R = crate::R<Uca1statwSpiSpec>;
 #[doc = "Register `UCA1STATW_SPI` writer"]
 pub type W = crate::W<Uca1statwSpiSpec>;
 #[doc = "eUSCI_A1 busy\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbusy {
     #[doc = "0: eUSCI_A1 inactive"]
@@ -39,6 +40,7 @@ impl UcbusyR {
     }
 }
 #[doc = "Overrun error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucoe {
     #[doc = "0: No error"]
@@ -92,6 +94,7 @@ where
     }
 }
 #[doc = "Framing error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucfe {
     #[doc = "0: No error"]
@@ -145,6 +148,7 @@ where
     }
 }
 #[doc = "Listen enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uclisten {
     #[doc = "0: Disabled"]

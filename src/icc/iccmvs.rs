@@ -11,6 +11,7 @@ pub type Icm2R = crate::FieldReader;
 #[doc = "Field `ICM3` reader - Interrupt compare mask virtual stack position 3 This field is the virtual stack register for ICM3."]
 pub type Icm3R = crate::FieldReader;
 #[doc = "MVS stack pointer indicate register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mvssp {

@@ -3,47 +3,38 @@ pub type R = crate::R<SysrstivSpec>;
 #[doc = "Register `SYSRSTIV` writer"]
 pub type W = crate::W<SysrstivSpec>;
 #[doc = "Reset interrupt vector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Sysrstiv {
-    #[doc = "0: No interrupt pending"]
-    None = 0,
-    #[doc = "2: Brownout"]
-    Bor = 2,
-    #[doc = "4: RSTIFG RST/NMI"]
-    Rstnmi = 4,
-    #[doc = "6: PMMSWBOR software BOR"]
-    Pmmswbor = 6,
-    #[doc = "8: LPMx.5 wakeup"]
-    Lpm5wu = 8,
-    #[doc = "10: Security violation"]
-    Secyv = 10,
-    #[doc = "12: Reserved"]
-    Sysrstiv12 = 12,
-    #[doc = "14: SVSHIFG SVSH event"]
-    Svshifg = 14,
-    #[doc = "16: Reserved"]
-    Sysrstiv16 = 16,
-    #[doc = "18: Reserved"]
-    Sysrstiv18 = 18,
-    #[doc = "20: PMMSWPOR software POR"]
-    Pmmswpor = 20,
-    #[doc = "22: WDTIFG watchdog timeout"]
-    Wdtifg = 22,
-    #[doc = "24: WDTPW watchdog password violation"]
-    Wdtpw = 24,
-    #[doc = "26: FRCTLPW password violation"]
-    Frctlpw = 26,
+    #[doc = "2: Brownout (BOR)"]
+    Brownout = 2,
+    #[doc = "4: RSTIFG RST/NMI (BOR)"]
+    ResetPin = 4,
+    #[doc = "6: PMMSWBOR software BOR (BOR)"]
+    SoftwareBor = 6,
+    #[doc = "8: LPMx.5 wakeup (BOR)"]
+    Lpmx5WakeUp = 8,
+    #[doc = "10: Security violation (BOR)"]
+    SecurityViolation = 10,
+    #[doc = "14: SVSHIFG SVSH event (BOR)"]
+    Svsh = 14,
+    #[doc = "20: PMMSWPOR software POR (POR)"]
+    SoftwarePor = 20,
+    #[doc = "22: WDTIFG watchdog time-out (PUC)"]
+    WatchdogTimeout = 22,
+    #[doc = "24: WDTPW password violation (PUC)"]
+    WatchdogPassword = 24,
+    #[doc = "26: FRCTLPW password violation (PUC)"]
+    FramPassword = 26,
     #[doc = "28: Uncorrectable FRAM bit error detection"]
-    Ubdifg = 28,
-    #[doc = "30: Peripheral area fetch"]
-    Perf = 30,
-    #[doc = "32: PMM password violation"]
-    Pmmpw = 32,
-    #[doc = "34: Reserved"]
-    Sysrstiv34 = 34,
+    FramBitError = 28,
+    #[doc = "30: Peripheral area fetch (PUC)"]
+    PeripheralAreaFetch = 30,
+    #[doc = "32: PMMPW PMM password violation (PUC)"]
+    PmmPassword = 32,
     #[doc = "36: FLL unlock (PUC)"]
-    Fllul = 36,
+    FllUnlock = 36,
 }
 impl From<Sysrstiv> for u16 {
     #[inline(always)]
@@ -62,122 +53,92 @@ impl SysrstivR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Sysrstiv> {
         match self.bits {
-            0 => Some(Sysrstiv::None),
-            2 => Some(Sysrstiv::Bor),
-            4 => Some(Sysrstiv::Rstnmi),
-            6 => Some(Sysrstiv::Pmmswbor),
-            8 => Some(Sysrstiv::Lpm5wu),
-            10 => Some(Sysrstiv::Secyv),
-            12 => Some(Sysrstiv::Sysrstiv12),
-            14 => Some(Sysrstiv::Svshifg),
-            16 => Some(Sysrstiv::Sysrstiv16),
-            18 => Some(Sysrstiv::Sysrstiv18),
-            20 => Some(Sysrstiv::Pmmswpor),
-            22 => Some(Sysrstiv::Wdtifg),
-            24 => Some(Sysrstiv::Wdtpw),
-            26 => Some(Sysrstiv::Frctlpw),
-            28 => Some(Sysrstiv::Ubdifg),
-            30 => Some(Sysrstiv::Perf),
-            32 => Some(Sysrstiv::Pmmpw),
-            34 => Some(Sysrstiv::Sysrstiv34),
-            36 => Some(Sysrstiv::Fllul),
+            2 => Some(Sysrstiv::Brownout),
+            4 => Some(Sysrstiv::ResetPin),
+            6 => Some(Sysrstiv::SoftwareBor),
+            8 => Some(Sysrstiv::Lpmx5WakeUp),
+            10 => Some(Sysrstiv::SecurityViolation),
+            14 => Some(Sysrstiv::Svsh),
+            20 => Some(Sysrstiv::SoftwarePor),
+            22 => Some(Sysrstiv::WatchdogTimeout),
+            24 => Some(Sysrstiv::WatchdogPassword),
+            26 => Some(Sysrstiv::FramPassword),
+            28 => Some(Sysrstiv::FramBitError),
+            30 => Some(Sysrstiv::PeripheralAreaFetch),
+            32 => Some(Sysrstiv::PmmPassword),
+            36 => Some(Sysrstiv::FllUnlock),
             _ => None,
         }
     }
-    #[doc = "No interrupt pending"]
+    #[doc = "Brownout (BOR)"]
     #[inline(always)]
-    pub fn is_none(&self) -> bool {
-        *self == Sysrstiv::None
+    pub fn is_brownout(&self) -> bool {
+        *self == Sysrstiv::Brownout
     }
-    #[doc = "Brownout"]
+    #[doc = "RSTIFG RST/NMI (BOR)"]
     #[inline(always)]
-    pub fn is_bor(&self) -> bool {
-        *self == Sysrstiv::Bor
+    pub fn is_reset_pin(&self) -> bool {
+        *self == Sysrstiv::ResetPin
     }
-    #[doc = "RSTIFG RST/NMI"]
+    #[doc = "PMMSWBOR software BOR (BOR)"]
     #[inline(always)]
-    pub fn is_rstnmi(&self) -> bool {
-        *self == Sysrstiv::Rstnmi
+    pub fn is_software_bor(&self) -> bool {
+        *self == Sysrstiv::SoftwareBor
     }
-    #[doc = "PMMSWBOR software BOR"]
+    #[doc = "LPMx.5 wakeup (BOR)"]
     #[inline(always)]
-    pub fn is_pmmswbor(&self) -> bool {
-        *self == Sysrstiv::Pmmswbor
+    pub fn is_lpmx5_wake_up(&self) -> bool {
+        *self == Sysrstiv::Lpmx5WakeUp
     }
-    #[doc = "LPMx.5 wakeup"]
+    #[doc = "Security violation (BOR)"]
     #[inline(always)]
-    pub fn is_lpm5wu(&self) -> bool {
-        *self == Sysrstiv::Lpm5wu
+    pub fn is_security_violation(&self) -> bool {
+        *self == Sysrstiv::SecurityViolation
     }
-    #[doc = "Security violation"]
+    #[doc = "SVSHIFG SVSH event (BOR)"]
     #[inline(always)]
-    pub fn is_secyv(&self) -> bool {
-        *self == Sysrstiv::Secyv
+    pub fn is_svsh(&self) -> bool {
+        *self == Sysrstiv::Svsh
     }
-    #[doc = "Reserved"]
+    #[doc = "PMMSWPOR software POR (POR)"]
     #[inline(always)]
-    pub fn is_sysrstiv_12(&self) -> bool {
-        *self == Sysrstiv::Sysrstiv12
+    pub fn is_software_por(&self) -> bool {
+        *self == Sysrstiv::SoftwarePor
     }
-    #[doc = "SVSHIFG SVSH event"]
+    #[doc = "WDTIFG watchdog time-out (PUC)"]
     #[inline(always)]
-    pub fn is_svshifg(&self) -> bool {
-        *self == Sysrstiv::Svshifg
+    pub fn is_watchdog_timeout(&self) -> bool {
+        *self == Sysrstiv::WatchdogTimeout
     }
-    #[doc = "Reserved"]
+    #[doc = "WDTPW password violation (PUC)"]
     #[inline(always)]
-    pub fn is_sysrstiv_16(&self) -> bool {
-        *self == Sysrstiv::Sysrstiv16
+    pub fn is_watchdog_password(&self) -> bool {
+        *self == Sysrstiv::WatchdogPassword
     }
-    #[doc = "Reserved"]
+    #[doc = "FRCTLPW password violation (PUC)"]
     #[inline(always)]
-    pub fn is_sysrstiv_18(&self) -> bool {
-        *self == Sysrstiv::Sysrstiv18
-    }
-    #[doc = "PMMSWPOR software POR"]
-    #[inline(always)]
-    pub fn is_pmmswpor(&self) -> bool {
-        *self == Sysrstiv::Pmmswpor
-    }
-    #[doc = "WDTIFG watchdog timeout"]
-    #[inline(always)]
-    pub fn is_wdtifg(&self) -> bool {
-        *self == Sysrstiv::Wdtifg
-    }
-    #[doc = "WDTPW watchdog password violation"]
-    #[inline(always)]
-    pub fn is_wdtpw(&self) -> bool {
-        *self == Sysrstiv::Wdtpw
-    }
-    #[doc = "FRCTLPW password violation"]
-    #[inline(always)]
-    pub fn is_frctlpw(&self) -> bool {
-        *self == Sysrstiv::Frctlpw
+    pub fn is_fram_password(&self) -> bool {
+        *self == Sysrstiv::FramPassword
     }
     #[doc = "Uncorrectable FRAM bit error detection"]
     #[inline(always)]
-    pub fn is_ubdifg(&self) -> bool {
-        *self == Sysrstiv::Ubdifg
+    pub fn is_fram_bit_error(&self) -> bool {
+        *self == Sysrstiv::FramBitError
     }
-    #[doc = "Peripheral area fetch"]
+    #[doc = "Peripheral area fetch (PUC)"]
     #[inline(always)]
-    pub fn is_perf(&self) -> bool {
-        *self == Sysrstiv::Perf
+    pub fn is_peripheral_area_fetch(&self) -> bool {
+        *self == Sysrstiv::PeripheralAreaFetch
     }
-    #[doc = "PMM password violation"]
+    #[doc = "PMMPW PMM password violation (PUC)"]
     #[inline(always)]
-    pub fn is_pmmpw(&self) -> bool {
-        *self == Sysrstiv::Pmmpw
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_sysrstiv_34(&self) -> bool {
-        *self == Sysrstiv::Sysrstiv34
+    pub fn is_pmm_password(&self) -> bool {
+        *self == Sysrstiv::PmmPassword
     }
     #[doc = "FLL unlock (PUC)"]
     #[inline(always)]
-    pub fn is_fllul(&self) -> bool {
-        *self == Sysrstiv::Fllul
+    pub fn is_fll_unlock(&self) -> bool {
+        *self == Sysrstiv::FllUnlock
     }
 }
 impl R {

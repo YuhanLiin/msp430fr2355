@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0abctlSpec>;
 #[doc = "Register `UCA0ABCTL` writer"]
 pub type W = crate::W<Uca0abctlSpec>;
 #[doc = "Automatic baud-rate detect enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucabden {
     #[doc = "0: Baud-rate detection disabled. Length of break and synch field is not measured."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Break time out error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbtoe {
     #[doc = "0: No error"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Synch field time out error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucstoe {
     #[doc = "0: No error"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Break/synch delimiter length\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucdelim {

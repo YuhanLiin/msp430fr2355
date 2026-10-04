@@ -3,6 +3,7 @@ pub type R = crate::R<Uca1ctlw1Spec>;
 #[doc = "Register `UCA1CTLW1` writer"]
 pub type W = crate::W<Uca1ctlw1Spec>;
 #[doc = "Deglitch time\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucglit {

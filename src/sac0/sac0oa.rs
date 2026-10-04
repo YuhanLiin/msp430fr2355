@@ -3,6 +3,7 @@ pub type R = crate::R<Sac0oaSpec>;
 #[doc = "Register `SAC0OA` writer"]
 pub type W = crate::W<Sac0oaSpec>;
 #[doc = "SAC OA Positive input source selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Psel {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "SAC Positive input MUX control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmuxen {
     #[doc = "0: All positive input sources are disconnected to OA positive port"]
@@ -129,6 +131,7 @@ where
     }
 }
 #[doc = "SAC OA Negative input source selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Nsel {
@@ -202,6 +205,7 @@ where
     }
 }
 #[doc = "SAC Negative input MUX controL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nmuxen {
     #[doc = "0: All negative input sources are disconnected to OA negative port"]
@@ -255,6 +259,7 @@ where
     }
 }
 #[doc = "SAC OA Enable selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Oaen {
     #[doc = "0: SAC OA is disabled, then the SAC OA output high impedance"]
@@ -308,6 +313,7 @@ where
     }
 }
 #[doc = "SAC OA power mode selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Oapm {
     #[doc = "0: High speed and high power"]
@@ -361,6 +367,7 @@ where
     }
 }
 #[doc = "SAC Enable selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sacen {
     #[doc = "0: SAC all modules are disabled, then the SAC output high impedance"]

@@ -3,6 +3,7 @@ pub type R = crate::R<RtcivSpec>;
 #[doc = "Register `RTCIV` writer"]
 pub type W = crate::W<RtcivSpec>;
 #[doc = "Real-time clock interrupt vector value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Rtciv {

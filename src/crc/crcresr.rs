@@ -2,9 +2,13 @@
 pub type R = crate::R<CrcresrSpec>;
 #[doc = "Register `CRCRESR` writer"]
 pub type W = crate::W<CrcresrSpec>;
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        write!(f, "{}", self.bits())
+#[doc = "Field `CRCRESR` reader - CRC result, bits reversed"]
+pub type CrcresrR = crate::FieldReader<u16>;
+impl R {
+    #[doc = "Bits 0:15 - CRC result, bits reversed"]
+    #[inline(always)]
+    pub fn crcresr(&self) -> CrcresrR {
+        CrcresrR::new(self.bits)
     }
 }
 impl W {}

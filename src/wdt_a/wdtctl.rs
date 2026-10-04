@@ -3,6 +3,7 @@ pub type R = crate::R<WdtctlSpec>;
 #[doc = "Register `WDTCTL` writer"]
 pub type W = crate::W<WdtctlSpec>;
 #[doc = "Watchdog timer interval select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Wdtis {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Watchdog timer counter clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdtcntcl {
     #[doc = "0: No action"]
@@ -194,6 +196,7 @@ where
     }
 }
 #[doc = "Watchdog timer mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdttmsel {
     #[doc = "0: Watchdog mode"]
@@ -247,6 +250,7 @@ where
     }
 }
 #[doc = "Watchdog timer clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Wdtssel {
@@ -333,6 +337,7 @@ where
     }
 }
 #[doc = "Watchdog timer hold\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdthold {
     #[doc = "0: Watchdog timer is not stopped"]
@@ -385,10 +390,72 @@ where
         self.variant(Wdthold::Hold)
     }
 }
+#[doc = "Watchdog timer password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Wdtpwr {
+    #[doc = "105: Value always read from the Watchdog Password field"]
+    Password = 105,
+}
+impl From<Wdtpwr> for u8 {
+    #[inline(always)]
+    fn from(variant: Wdtpwr) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Wdtpwr {
+    type Ux = u8;
+}
+impl crate::IsEnum for Wdtpwr {}
 #[doc = "Field `WDTPW` reader - Watchdog timer password"]
-pub type WdtpwR = crate::FieldReader;
+pub type WdtpwR = crate::FieldReader<Wdtpwr>;
+impl WdtpwR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Wdtpwr> {
+        match self.bits {
+            105 => Some(Wdtpwr::Password),
+            _ => None,
+        }
+    }
+    #[doc = "Value always read from the Watchdog Password field"]
+    #[inline(always)]
+    pub fn is_password(&self) -> bool {
+        *self == Wdtpwr::Password
+    }
+}
+#[doc = "Watchdog timer password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum WdtpwwWO {
+    #[doc = "90: Value which must be written to the Watchdog Password field"]
+    Password = 90,
+}
+impl From<WdtpwwWO> for u8 {
+    #[inline(always)]
+    fn from(variant: WdtpwwWO) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for WdtpwwWO {
+    type Ux = u8;
+}
+impl crate::IsEnum for WdtpwwWO {}
 #[doc = "Field `WDTPW` writer - Watchdog timer password"]
-pub type WdtpwW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type WdtpwW<'a, REG> = crate::FieldWriter<'a, REG, 8, WdtpwwWO>;
+impl<'a, REG> WdtpwW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Value which must be written to the Watchdog Password field"]
+    #[inline(always)]
+    pub fn password(self) -> &'a mut crate::W<REG> {
+        self.variant(WdtpwwWO::Password)
+    }
+}
 impl R {
     #[doc = "Bits 0:2 - Watchdog timer interval select"]
     #[inline(always)]

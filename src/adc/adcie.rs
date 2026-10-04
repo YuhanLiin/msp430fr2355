@@ -3,6 +3,7 @@ pub type R = crate::R<AdcieSpec>;
 #[doc = "Register `ADCIE` writer"]
 pub type W = crate::W<AdcieSpec>;
 #[doc = "Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcie0 {
     #[doc = "0: 0b = Interrupt disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Interrupt enable for the inside of window interrupt of the window comparator.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcinie {
     #[doc = "0: 0b = Inside of window interrupt disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Interrupt enable for the below lower threshold interrupt of the window comparator.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcloie {
     #[doc = "0: 0b = Below lower threshold interrupt disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Interrupt enable for the above upper threshold interrupt of the window comparator.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adchiie {
     #[doc = "0: 0b = Above upper threshold interrupt disabled"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "ADCMEM0 overflow interrupt enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcovie {
     #[doc = "0: 0b = Overflow interrupt disabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "ADC conversion-time-overflow interrupt enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adctovie {
     #[doc = "0: 0b = Conversion time overflow interrupt disabled"]

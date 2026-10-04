@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb1ifgSpiSpec>;
 #[doc = "Register `UCB1IFG_SPI` writer"]
 pub type W = crate::W<Ucb1ifgSpiSpec>;
 #[doc = "Receive interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg {
     #[doc = "0: No interrupt pending"]

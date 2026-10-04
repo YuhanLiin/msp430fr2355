@@ -3,6 +3,7 @@ pub type R = crate::R<SysjmbcSpec>;
 #[doc = "Register `SYSJMBC` writer"]
 pub type W = crate::W<SysjmbcSpec>;
 #[doc = "Incoming JTAG Mailbox 0 flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbin0fg {
     #[doc = "0: JMBI0 has no new data"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Incoming JTAG Mailbox 1 flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbin1fg {
     #[doc = "0: JMBI1 has no new data"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Outgoing JTAG Mailbox 0 flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbout0fg {
     #[doc = "0: JMBO0 is not ready to receive new data"]
@@ -145,6 +148,7 @@ impl Jmbout0fgR {
     }
 }
 #[doc = "Outgoing JTAG Mailbox 1 flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbout1fg {
     #[doc = "0: JMBO1 is not ready to receive new data"]
@@ -181,6 +185,7 @@ impl Jmbout1fgR {
     }
 }
 #[doc = "Operation mode of JMB\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbmode {
     #[doc = "0: 16-bit transfers using JMBO0 and JMBI0 only"]
@@ -234,6 +239,7 @@ where
     }
 }
 #[doc = "Incoming JTAG Mailbox 0 flag auto-clear disable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbclr0off {
     #[doc = "0: JMBIN0FG cleared on read of JMB0IN register"]
@@ -287,6 +293,7 @@ where
     }
 }
 #[doc = "Incoming JTAG Mailbox 1 flag auto-clear disable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbclr1off {
     #[doc = "0: JMBIN1FG cleared on read of JMB1IN register"]

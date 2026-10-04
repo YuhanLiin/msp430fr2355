@@ -1,8 +1,9 @@
-#[doc = "Register `CPDACDATA` reader"]
-pub type R = crate::R<CpdacdataSpec>;
-#[doc = "Register `CPDACDATA` writer"]
-pub type W = crate::W<CpdacdataSpec>;
+#[doc = "Register `CP0DACDATA` reader"]
+pub type R = crate::R<Cp0dacdataSpec>;
+#[doc = "Register `CP0DACDATA` writer"]
+pub type W = crate::W<Cp0dacdataSpec>;
 #[doc = "1st 6-bit DAC buffer Data\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpdacbuf1 {
@@ -869,6 +870,7 @@ where
     }
 }
 #[doc = "2nd 6-bit DAC buffer Data\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpdacbuf2 {
@@ -1749,25 +1751,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - 1st 6-bit DAC buffer Data"]
     #[inline(always)]
-    pub fn cpdacbuf1(&mut self) -> Cpdacbuf1W<'_, CpdacdataSpec> {
+    pub fn cpdacbuf1(&mut self) -> Cpdacbuf1W<'_, Cp0dacdataSpec> {
         Cpdacbuf1W::new(self, 0)
     }
     #[doc = "Bits 8:13 - 2nd 6-bit DAC buffer Data"]
     #[inline(always)]
-    pub fn cpdacbuf2(&mut self) -> Cpdacbuf2W<'_, CpdacdataSpec> {
+    pub fn cpdacbuf2(&mut self) -> Cpdacbuf2W<'_, Cp0dacdataSpec> {
         Cpdacbuf2W::new(self, 8)
     }
 }
-#[doc = "6-bit Comparator built-in DAC Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpdacdata::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpdacdata::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CpdacdataSpec;
-impl crate::RegisterSpec for CpdacdataSpec {
+#[doc = "6-bit Comparator built-in DAC Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0dacdata::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0dacdata::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0dacdataSpec;
+impl crate::RegisterSpec for Cp0dacdataSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpdacdata::R`](R) reader structure"]
-impl crate::Readable for CpdacdataSpec {}
-#[doc = "`write(|w| ..)` method takes [`cpdacdata::W`](W) writer structure"]
-impl crate::Writable for CpdacdataSpec {
+#[doc = "`read()` method returns [`cp0dacdata::R`](R) reader structure"]
+impl crate::Readable for Cp0dacdataSpec {}
+#[doc = "`write(|w| ..)` method takes [`cp0dacdata::W`](W) writer structure"]
+impl crate::Writable for Cp0dacdataSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPDACDATA to value 0"]
-impl crate::Resettable for CpdacdataSpec {}
+#[doc = "`reset()` method sets CP0DACDATA to value 0"]
+impl crate::Resettable for Cp0dacdataSpec {}

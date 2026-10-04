@@ -1,8 +1,9 @@
-#[doc = "Register `CPCTL0` reader"]
-pub type R = crate::R<Cpctl0Spec>;
-#[doc = "Register `CPCTL0` writer"]
-pub type W = crate::W<Cpctl0Spec>;
+#[doc = "Register `CP0CTL0` reader"]
+pub type R = crate::R<Cp0ctl0Spec>;
+#[doc = "Register `CP0CTL0` writer"]
+pub type W = crate::W<Cp0ctl0Spec>;
 #[doc = "Channel input selected for the V+ terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cppsel {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Channel input enable for the V+ terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cppen {
     #[doc = "0: Selected analog input channel for V+ terminal is disabled."]
@@ -194,6 +196,7 @@ where
     }
 }
 #[doc = "Channel input selected for the - terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpnsel {
@@ -332,6 +335,7 @@ where
     }
 }
 #[doc = "Channel input enable for the - terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpnen {
     #[doc = "0: Selected analog input channel for V- terminal is disabled."]
@@ -409,35 +413,35 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Channel input selected for the V+ terminal"]
     #[inline(always)]
-    pub fn cppsel(&mut self) -> CppselW<'_, Cpctl0Spec> {
+    pub fn cppsel(&mut self) -> CppselW<'_, Cp0ctl0Spec> {
         CppselW::new(self, 0)
     }
     #[doc = "Bit 4 - Channel input enable for the V+ terminal"]
     #[inline(always)]
-    pub fn cppen(&mut self) -> CppenW<'_, Cpctl0Spec> {
+    pub fn cppen(&mut self) -> CppenW<'_, Cp0ctl0Spec> {
         CppenW::new(self, 4)
     }
     #[doc = "Bits 8:10 - Channel input selected for the - terminal"]
     #[inline(always)]
-    pub fn cpnsel(&mut self) -> CpnselW<'_, Cpctl0Spec> {
+    pub fn cpnsel(&mut self) -> CpnselW<'_, Cp0ctl0Spec> {
         CpnselW::new(self, 8)
     }
     #[doc = "Bit 12 - Channel input enable for the - terminal"]
     #[inline(always)]
-    pub fn cpnen(&mut self) -> CpnenW<'_, Cpctl0Spec> {
+    pub fn cpnen(&mut self) -> CpnenW<'_, Cp0ctl0Spec> {
         CpnenW::new(self, 12)
     }
 }
-#[doc = "Comparator Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`cpctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Cpctl0Spec;
-impl crate::RegisterSpec for Cpctl0Spec {
+#[doc = "Comparator Control Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0ctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0ctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0ctl0Spec;
+impl crate::RegisterSpec for Cp0ctl0Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpctl0::R`](R) reader structure"]
-impl crate::Readable for Cpctl0Spec {}
-#[doc = "`write(|w| ..)` method takes [`cpctl0::W`](W) writer structure"]
-impl crate::Writable for Cpctl0Spec {
+#[doc = "`read()` method returns [`cp0ctl0::R`](R) reader structure"]
+impl crate::Readable for Cp0ctl0Spec {}
+#[doc = "`write(|w| ..)` method takes [`cp0ctl0::W`](W) writer structure"]
+impl crate::Writable for Cp0ctl0Spec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPCTL0 to value 0"]
-impl crate::Resettable for Cpctl0Spec {}
+#[doc = "`reset()` method sets CP0CTL0 to value 0"]
+impl crate::Resettable for Cp0ctl0Spec {}

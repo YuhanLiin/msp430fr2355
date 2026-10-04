@@ -3,6 +3,7 @@ pub type R = crate::R<Tb3ex0Spec>;
 #[doc = "Register `TB3EX0` writer"]
 pub type W = crate::W<Tb3ex0Spec>;
 #[doc = "Input divider expansion\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tbidex {

@@ -2,9 +2,67 @@
 pub type R = crate::R<IccscSpec>;
 #[doc = "Register `ICCSC` writer"]
 pub type W = crate::W<IccscSpec>;
+#[doc = "Current Interrupt Compare Mask of virtual stack specifies the current ICM at the top of virtual stack If ICM\\[1:0\\] is less than the priority level (ILSRx\\[1:0\\]) of the new interrupt, the corresponding source is sent to the CPU. Note that the ICMC is the element stack that the stack pointer is pointing to.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Icmc {
+    #[doc = "0: Level 0, the highest priority"]
+    Highest = 0,
+    #[doc = "1: Level 1"]
+    High = 1,
+    #[doc = "2: Level 2"]
+    Low = 2,
+    #[doc = "3: Level 3, the lowest priority"]
+    Lowest = 3,
+}
+impl From<Icmc> for u8 {
+    #[inline(always)]
+    fn from(variant: Icmc) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Icmc {
+    type Ux = u8;
+}
+impl crate::IsEnum for Icmc {}
 #[doc = "Field `ICMC` reader - Current Interrupt Compare Mask of virtual stack specifies the current ICM at the top of virtual stack If ICM\\[1:0\\] is less than the priority level (ILSRx\\[1:0\\]) of the new interrupt, the corresponding source is sent to the CPU. Note that the ICMC is the element stack that the stack pointer is pointing to."]
-pub type IcmcR = crate::FieldReader;
+pub type IcmcR = crate::FieldReader<Icmc>;
+impl IcmcR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Icmc {
+        match self.bits {
+            0 => Icmc::Highest,
+            1 => Icmc::High,
+            2 => Icmc::Low,
+            3 => Icmc::Lowest,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Level 0, the highest priority"]
+    #[inline(always)]
+    pub fn is_highest(&self) -> bool {
+        *self == Icmc::Highest
+    }
+    #[doc = "Level 1"]
+    #[inline(always)]
+    pub fn is_high(&self) -> bool {
+        *self == Icmc::High
+    }
+    #[doc = "Level 2"]
+    #[inline(always)]
+    pub fn is_low(&self) -> bool {
+        *self == Icmc::Low
+    }
+    #[doc = "Level 3, the lowest priority"]
+    #[inline(always)]
+    pub fn is_lowest(&self) -> bool {
+        *self == Icmc::Lowest
+    }
+}
 #[doc = "Virtual stack full flag This bit indicates whether or not the virtual stack is full. It is automatically updated when the stack is pushed or popped.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vsfflg {
     #[doc = "0: ICCMVS register is not full"]
@@ -41,6 +99,7 @@ impl VsfflgR {
     }
 }
 #[doc = "Virtual stack empty flag.This bit indicates whether or not the virtual stack is empty. It is automatically updated when the stack is pushed or popped.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vseflg {
     #[doc = "0: Stack has valid data"]
@@ -77,6 +136,7 @@ impl VseflgR {
     }
 }
 #[doc = "ICC enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iccen {
     #[doc = "0: ICC module disabled"]

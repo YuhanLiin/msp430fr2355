@@ -3,6 +3,7 @@ pub type R = crate::R<Tb0cctl2Spec>;
 #[doc = "Register `TB0CCTL2` writer"]
 pub type W = crate::W<Tb0cctl2Spec>;
 #[doc = "Capture/compare interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccifg {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Capture overflow\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cov {
     #[doc = "0: No capture overflow occurred"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Output\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Out {
     #[doc = "0: Output low"]
@@ -164,6 +167,7 @@ where
 #[doc = "Field `CCI` reader - Capture/compare input"]
 pub type CciR = crate::BitReader;
 #[doc = "Capture/compare interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccie {
     #[doc = "0: Interrupt disabled"]
@@ -217,6 +221,7 @@ where
     }
 }
 #[doc = "Output mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Outmod {
@@ -355,6 +360,7 @@ where
     }
 }
 #[doc = "Capture mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cap {
     #[doc = "0: Compare mode"]
@@ -408,6 +414,7 @@ where
     }
 }
 #[doc = "Compare latch load\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Clld {
@@ -494,6 +501,7 @@ where
     }
 }
 #[doc = "Synchronize capture source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scs {
     #[doc = "0: Asynchronous capture"]
@@ -547,6 +555,7 @@ where
     }
 }
 #[doc = "Capture/compare input select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ccis {
@@ -633,6 +642,7 @@ where
     }
 }
 #[doc = "Capture mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cm {

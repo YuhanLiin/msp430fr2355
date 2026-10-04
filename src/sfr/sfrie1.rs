@@ -3,6 +3,7 @@ pub type R = crate::R<Sfrie1Spec>;
 #[doc = "Register `SFRIE1` writer"]
 pub type W = crate::W<Sfrie1Spec>;
 #[doc = "Watchdog timer interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdtie {
     #[doc = "0: Interrupts disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Oscillator fault interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ofie {
     #[doc = "0: Interrupts disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Vacant memory access interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vmaie {
     #[doc = "0: Interrupts disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "NMI pin interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nmiie {
     #[doc = "0: Interrupts disabled"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "JTAG mailbox input interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbinie {
     #[doc = "0: Interrupts disabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "JTAG mailbox output interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmboutie {
     #[doc = "0: Interrupts disabled"]

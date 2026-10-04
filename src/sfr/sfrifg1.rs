@@ -3,6 +3,7 @@ pub type R = crate::R<Sfrifg1Spec>;
 #[doc = "Register `SFRIFG1` writer"]
 pub type W = crate::W<Sfrifg1Spec>;
 #[doc = "Watchdog timer interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdtifg {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Oscillator fault interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ofifg {
     #[doc = "0: No interrupt pending"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Vacant memory access interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vmaifg {
     #[doc = "0: No interrupt pending"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "NMI pin interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nmiifg {
     #[doc = "0: No interrupt pending"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "JTAG mailbox input interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmbinifg {
     #[doc = "0: No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBI0 is read by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBI0 and JMBI1 have been read by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "JTAG mailbox output interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Jmboutifg {
     #[doc = "0: No interrupt pending. When in 16-bit mode (JMBMODE = 0), this bit is cleared automatically when JMBO0 has been written with a new message to the JTAG module by the CPU. When in 32-bit mode (JMBMODE = 1), this bit is cleared automatically when both JMBO0 and JMBO1 have been written with new messages to the JTAG module by the CPU. This bit is also cleared when the associated vector in SYSUNIV has been read."]

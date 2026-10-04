@@ -3,35 +3,22 @@ pub type R = crate::R<SyssnivSpec>;
 #[doc = "Register `SYSSNIV` writer"]
 pub type W = crate::W<SyssnivSpec>;
 #[doc = "System NMI vector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Syssniv {
-    #[doc = "0: No interrupt pending"]
-    None = 0,
     #[doc = "2: SVS low-power reset entry"]
-    Svslifg = 2,
+    SvsLowPowerResetEntry = 2,
     #[doc = "4: Uncorrectable FRAM bit error detection"]
-    Ubdifg = 4,
-    #[doc = "6: FRAM Access Time Error"]
-    Accteifg = 6,
-    #[doc = "8: Reserved"]
-    Syssniv8 = 8,
-    #[doc = "10: Reserved"]
-    Syssniv10 = 10,
-    #[doc = "12: Reserved"]
-    Syssniv12 = 12,
-    #[doc = "14: Reserved"]
-    Syssniv14 = 14,
-    #[doc = "16: Reserved"]
-    Syssniv16 = 16,
-    #[doc = "18: VMAIFG Vacant memory access"]
-    Vmaifg = 18,
+    FramUncorrectableBitError = 4,
+    #[doc = "18: VMAIFG vacant memory access"]
+    VacantMemoryAccess = 18,
     #[doc = "20: JMBINIFG JTAG mailbox input"]
-    Jmbinifg = 20,
+    JtagMailboxIn = 20,
     #[doc = "22: JMBOUTIFG JTAG mailbox output"]
-    Jmboutifg = 22,
+    JtagMailboxOut = 22,
     #[doc = "24: Correctable FRAM bit error detection"]
-    Cbdifg = 24,
+    FramCorrectableBitError = 24,
 }
 impl From<Syssniv> for u16 {
     #[inline(always)]
@@ -50,86 +37,44 @@ impl SyssnivR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Syssniv> {
         match self.bits {
-            0 => Some(Syssniv::None),
-            2 => Some(Syssniv::Svslifg),
-            4 => Some(Syssniv::Ubdifg),
-            6 => Some(Syssniv::Accteifg),
-            8 => Some(Syssniv::Syssniv8),
-            10 => Some(Syssniv::Syssniv10),
-            12 => Some(Syssniv::Syssniv12),
-            14 => Some(Syssniv::Syssniv14),
-            16 => Some(Syssniv::Syssniv16),
-            18 => Some(Syssniv::Vmaifg),
-            20 => Some(Syssniv::Jmbinifg),
-            22 => Some(Syssniv::Jmboutifg),
-            24 => Some(Syssniv::Cbdifg),
+            2 => Some(Syssniv::SvsLowPowerResetEntry),
+            4 => Some(Syssniv::FramUncorrectableBitError),
+            18 => Some(Syssniv::VacantMemoryAccess),
+            20 => Some(Syssniv::JtagMailboxIn),
+            22 => Some(Syssniv::JtagMailboxOut),
+            24 => Some(Syssniv::FramCorrectableBitError),
             _ => None,
         }
     }
-    #[doc = "No interrupt pending"]
-    #[inline(always)]
-    pub fn is_none(&self) -> bool {
-        *self == Syssniv::None
-    }
     #[doc = "SVS low-power reset entry"]
     #[inline(always)]
-    pub fn is_svslifg(&self) -> bool {
-        *self == Syssniv::Svslifg
+    pub fn is_svs_low_power_reset_entry(&self) -> bool {
+        *self == Syssniv::SvsLowPowerResetEntry
     }
     #[doc = "Uncorrectable FRAM bit error detection"]
     #[inline(always)]
-    pub fn is_ubdifg(&self) -> bool {
-        *self == Syssniv::Ubdifg
+    pub fn is_fram_uncorrectable_bit_error(&self) -> bool {
+        *self == Syssniv::FramUncorrectableBitError
     }
-    #[doc = "FRAM Access Time Error"]
+    #[doc = "VMAIFG vacant memory access"]
     #[inline(always)]
-    pub fn is_accteifg(&self) -> bool {
-        *self == Syssniv::Accteifg
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_syssniv_8(&self) -> bool {
-        *self == Syssniv::Syssniv8
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_syssniv_10(&self) -> bool {
-        *self == Syssniv::Syssniv10
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_syssniv_12(&self) -> bool {
-        *self == Syssniv::Syssniv12
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_syssniv_14(&self) -> bool {
-        *self == Syssniv::Syssniv14
-    }
-    #[doc = "Reserved"]
-    #[inline(always)]
-    pub fn is_syssniv_16(&self) -> bool {
-        *self == Syssniv::Syssniv16
-    }
-    #[doc = "VMAIFG Vacant memory access"]
-    #[inline(always)]
-    pub fn is_vmaifg(&self) -> bool {
-        *self == Syssniv::Vmaifg
+    pub fn is_vacant_memory_access(&self) -> bool {
+        *self == Syssniv::VacantMemoryAccess
     }
     #[doc = "JMBINIFG JTAG mailbox input"]
     #[inline(always)]
-    pub fn is_jmbinifg(&self) -> bool {
-        *self == Syssniv::Jmbinifg
+    pub fn is_jtag_mailbox_in(&self) -> bool {
+        *self == Syssniv::JtagMailboxIn
     }
     #[doc = "JMBOUTIFG JTAG mailbox output"]
     #[inline(always)]
-    pub fn is_jmboutifg(&self) -> bool {
-        *self == Syssniv::Jmboutifg
+    pub fn is_jtag_mailbox_out(&self) -> bool {
+        *self == Syssniv::JtagMailboxOut
     }
     #[doc = "Correctable FRAM bit error detection"]
     #[inline(always)]
-    pub fn is_cbdifg(&self) -> bool {
-        *self == Syssniv::Cbdifg
+    pub fn is_fram_correctable_bit_error(&self) -> bool {
+        *self == Syssniv::FramCorrectableBitError
     }
 }
 impl R {

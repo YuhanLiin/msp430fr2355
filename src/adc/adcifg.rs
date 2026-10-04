@@ -3,6 +3,7 @@ pub type R = crate::R<AdcifgSpec>;
 #[doc = "Register `ADCIFG` writer"]
 pub type W = crate::W<AdcifgSpec>;
 #[doc = "ADCMEM0 interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcifg0 {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcinifg {
     #[doc = "0: No interrupt pending"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcloifg {
     #[doc = "0: No interrupt pending"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adchiifg {
     #[doc = "0: No interrupt pending"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcovifg {
     #[doc = "0: No interrupt pending"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adctovifg {
     #[doc = "0: No interrupt pending"]

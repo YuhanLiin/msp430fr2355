@@ -3,6 +3,7 @@ pub type R = crate::R<Cp1ctl0Spec>;
 #[doc = "Register `CP1CTL0` writer"]
 pub type W = crate::W<Cp1ctl0Spec>;
 #[doc = "Channel input selected for the V+ terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cppsel {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Channel input enable for the V+ terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cppen {
     #[doc = "0: Selected analog input channel for V+ terminal is disabled."]
@@ -194,6 +196,7 @@ where
     }
 }
 #[doc = "Channel input selected for the - terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpnsel {
@@ -332,6 +335,7 @@ where
     }
 }
 #[doc = "Channel input enable for the - terminal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpnen {
     #[doc = "0: Selected analog input channel for V- terminal is disabled."]

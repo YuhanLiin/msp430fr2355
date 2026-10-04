@@ -3,6 +3,7 @@ pub type R = crate::R<Syscfg3Spec>;
 #[doc = "Register `SYSCFG3` writer"]
 pub type W = crate::W<Syscfg3Spec>;
 #[doc = "eUSCIA remapping source selection, please refer to device specific for details\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usciarmp {
     #[doc = "0: P1.x is selected, please refer to device specific for details"]

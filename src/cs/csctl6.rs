@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl6Spec>;
 #[doc = "Register `CSCTL6` writer"]
 pub type W = crate::W<Csctl6Spec>;
 #[doc = "XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Xt1autooff {
     #[doc = "0: XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Automatic Gain Control (AGC) disable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Xt1agcoff {
     #[doc = "0: AGC on"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "The XT1 High-frequency selection. These bits must be set to appropriate frequency for crystal or bypass modes of operation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Xt1hffreq {
@@ -195,6 +198,7 @@ where
     }
 }
 #[doc = "XT1 bypass select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Xt1bypass {
     #[doc = "0: XT1 source internally"]
@@ -248,6 +252,7 @@ where
     }
 }
 #[doc = "XT1 mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Xts {
     #[doc = "0: Low-frequency mode."]
@@ -301,6 +306,7 @@ where
     }
 }
 #[doc = "The XT1 oscillator current can be adjusted to its drive needs. Initially, it starts with the highest supply current for reliable and quick startup. If needed, user software can reduce the drive strength. The configuration of these bits is retained during LPM3.5 until LOCKLPM5 is cleared, but not the register bits itself; therefore, reconfiguration after wake-up from LPM3.5 before clearing LOCKLPM5 is required.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Xt1drive {
@@ -387,6 +393,7 @@ where
     }
 }
 #[doc = "ACLK source divider.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Diva {
@@ -629,6 +636,7 @@ where
     }
 }
 #[doc = "The XT1 oscillator fault detection off\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Xt1faultoff {
     #[doc = "0: Enabling XT1 fault to switch ACLK to REFO"]

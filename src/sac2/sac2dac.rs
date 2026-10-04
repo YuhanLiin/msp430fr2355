@@ -3,6 +3,7 @@ pub type R = crate::R<Sac2dacSpec>;
 #[doc = "Register `SAC2DAC` writer"]
 pub type W = crate::W<Sac2dacSpec>;
 #[doc = "SAC DAC enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacen {
     #[doc = "0: Disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "SAC DAC interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacie {
     #[doc = "0: Disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "SAC DAC DMA request enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacdmae {
     #[doc = "0: DMA request disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "SAC DAC load select. Selects the load trigger for the DAC latch.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Daclsel {
@@ -235,6 +239,7 @@ where
     }
 }
 #[doc = "SAC DAC select reference voltage\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacsref {
     #[doc = "0: AVCC"]

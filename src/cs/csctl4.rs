@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl4Spec>;
 #[doc = "Register `CSCTL4` writer"]
 pub type W = crate::W<Csctl4Spec>;
 #[doc = "Selects the MCLK and SMCLK source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selms {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Selects the ACLK source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sela {

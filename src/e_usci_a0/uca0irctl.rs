@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0irctlSpec>;
 #[doc = "Register `UCA0IRCTL` writer"]
 pub type W = crate::W<Uca0irctlSpec>;
 #[doc = "IrDA encoder/decoder enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uciren {
     #[doc = "0: IrDA encoder/decoder disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "IrDA transmit pulse clock select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucirtxclk {
     #[doc = "0: BRCLK"]
@@ -113,6 +115,7 @@ pub type UcirtxplR = crate::FieldReader;
 #[doc = "Field `UCIRTXPL` writer - Transmit pulse length"]
 pub type UcirtxplW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "IrDA receive filter enabled\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucirrxfe {
     #[doc = "0: Receive filter disabled"]
@@ -166,6 +169,7 @@ where
     }
 }
 #[doc = "IrDA receive input UCAxRXD polarity\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucirrxpl {
     #[doc = "0: IrDA transceiver delivers a high pulse when a light pulse is seen"]

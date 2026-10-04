@@ -3,6 +3,7 @@ pub type R = crate::R<Gcctl1Spec>;
 #[doc = "Register `GCCTL1` writer"]
 pub type W = crate::W<Gcctl1Spec>;
 #[doc = "FRAM correctable bit error detection flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cbdifg {
     #[doc = "0: No interrupt is pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "FRAM uncorrectable bit error detection flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ubdifg {
     #[doc = "0: No interrupt pending."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Access time error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Accteifg {
     #[doc = "0: No interrupt pending."]

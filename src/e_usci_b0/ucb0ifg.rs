@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb0ifgSpec>;
 #[doc = "Register `UCB0IFG` writer"]
 pub type W = crate::W<Ucb0ifgSpec>;
 #[doc = "eUSCI_B receive interrupt flag 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg0 {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "eUSCI_B transmit interrupt flag 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg0 {
     #[doc = "0: No interrupt pending"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "START condition interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsttifg {
     #[doc = "0: No interrupt pending"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "STOP condition interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucstpifg {
     #[doc = "0: No interrupt pending"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Arbitration lost interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucalifg {
     #[doc = "0: No interrupt pending"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Not-acknowledge received interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucnackifg {
     #[doc = "0: No interrupt pending"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Byte counter interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbcntifg {
     #[doc = "0: No interrupt pending"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Clock low timeout interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uccltoifg {
     #[doc = "0: No interrupt pending"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "eUSCI_B receive interrupt flag 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg1 {
     #[doc = "0: No interrupt pending"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "eUSCI_B transmit interrupt flag 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg1 {
     #[doc = "0: No interrupt pending"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "eUSCI_B receive interrupt flag 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg2 {
     #[doc = "0: No interrupt pending"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "eUSCI_B transmit interrupt flag 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg2 {
     #[doc = "0: No interrupt pending"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "eUSCI_B receive interrupt flag 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg3 {
     #[doc = "0: No interrupt pending"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "eUSCI_B transmit interrupt flag 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg3 {
     #[doc = "0: No interrupt pending"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Bit position 9 interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbit9ifg {
     #[doc = "0: No interrupt pending"]

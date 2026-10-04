@@ -5,11 +5,11 @@ pub type W = crate::W<Csctl0Spec>;
 #[doc = "Field `DCO` reader - DCO tap selection. These bits select the DCO tap and are modified automatically during FLL operation."]
 pub type DcoR = crate::FieldReader<u16>;
 #[doc = "Field `DCO` writer - DCO tap selection. These bits select the DCO tap and are modified automatically during FLL operation."]
-pub type DcoW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
+pub type DcoW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16, crate::Safe>;
 #[doc = "Field `MOD` reader - Modulation bit counter. These bits select the modulation pattern. All MOD bits are modified automatically during FLL operation. The DCO register value is incremented when the modulation bit counter rolls over from 31 to 0. If the modulation bit counter decrements from 0 to the maximum count, the DCO register value is also decreased."]
 pub type ModR = crate::FieldReader;
 #[doc = "Field `MOD` writer - Modulation bit counter. These bits select the modulation pattern. All MOD bits are modified automatically during FLL operation. The DCO register value is incremented when the modulation bit counter rolls over from 31 to 0. If the modulation bit counter decrements from 0 to the maximum count, the DCO register value is also decreased."]
-pub type ModW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
+pub type ModW<'a, REG> = crate::FieldWriter<'a, REG, 5, u8, crate::Safe>;
 impl R {
     #[doc = "Bits 0:8 - DCO tap selection. These bits select the DCO tap and are modified automatically during FLL operation."]
     #[inline(always)]

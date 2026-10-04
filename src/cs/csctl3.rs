@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl3Spec>;
 #[doc = "Register `CSCTL3` writer"]
 pub type W = crate::W<Csctl3Spec>;
 #[doc = "FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fllrefdiv {
@@ -18,10 +19,10 @@ pub enum Fllrefdiv {
     _256 = 4,
     #[doc = "5: fFLLREFCLK / 512"]
     _512 = 5,
-    #[doc = "6: fFLLREFCLK / 640 (only available in 24MHz clock system)"]
-    Fllrefdiv6 = 6,
-    #[doc = "7: fFLLREFCLK / 768(only available in 24MHz clock system)"]
-    Fllrefdiv7 = 7,
+    #[doc = "6: fFLLREFCLK / 640"]
+    _640 = 6,
+    #[doc = "7: fFLLREFCLK / 768"]
+    _768 = 7,
 }
 impl From<Fllrefdiv> for u8 {
     #[inline(always)]
@@ -46,8 +47,8 @@ impl FllrefdivR {
             3 => Fllrefdiv::_128,
             4 => Fllrefdiv::_256,
             5 => Fllrefdiv::_512,
-            6 => Fllrefdiv::Fllrefdiv6,
-            7 => Fllrefdiv::Fllrefdiv7,
+            6 => Fllrefdiv::_640,
+            7 => Fllrefdiv::_768,
             _ => unreachable!(),
         }
     }
@@ -81,15 +82,15 @@ impl FllrefdivR {
     pub fn is_512(&self) -> bool {
         *self == Fllrefdiv::_512
     }
-    #[doc = "fFLLREFCLK / 640 (only available in 24MHz clock system)"]
+    #[doc = "fFLLREFCLK / 640"]
     #[inline(always)]
-    pub fn is_fllrefdiv_6(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv6
+    pub fn is_640(&self) -> bool {
+        *self == Fllrefdiv::_640
     }
-    #[doc = "fFLLREFCLK / 768(only available in 24MHz clock system)"]
+    #[doc = "fFLLREFCLK / 768"]
     #[inline(always)]
-    pub fn is_fllrefdiv_7(&self) -> bool {
-        *self == Fllrefdiv::Fllrefdiv7
+    pub fn is_768(&self) -> bool {
+        *self == Fllrefdiv::_768
     }
 }
 #[doc = "Field `FLLREFDIV` writer - FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1"]
@@ -129,18 +130,19 @@ where
     pub fn _512(self) -> &'a mut crate::W<REG> {
         self.variant(Fllrefdiv::_512)
     }
-    #[doc = "fFLLREFCLK / 640 (only available in 24MHz clock system)"]
+    #[doc = "fFLLREFCLK / 640"]
     #[inline(always)]
-    pub fn fllrefdiv_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv6)
+    pub fn _640(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_640)
     }
-    #[doc = "fFLLREFCLK / 768(only available in 24MHz clock system)"]
+    #[doc = "fFLLREFCLK / 768"]
     #[inline(always)]
-    pub fn fllrefdiv_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Fllrefdiv::Fllrefdiv7)
+    pub fn _768(self) -> &'a mut crate::W<REG> {
+        self.variant(Fllrefdiv::_768)
     }
 }
 #[doc = "FLL reference select. These bits select the FLL reference clock source.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selref {
@@ -227,6 +229,7 @@ where
     }
 }
 #[doc = "REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Refolp {
     #[doc = "0: REFO Low Power Disabled (High Power Mode)"]

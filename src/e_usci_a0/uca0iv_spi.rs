@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0ivSpiSpec>;
 #[doc = "Register `UCA0IV_SPI` writer"]
 pub type W = crate::W<Uca0ivSpiSpec>;
 #[doc = "eUSCI_A interrupt vector value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Uciv {

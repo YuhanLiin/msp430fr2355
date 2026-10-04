@@ -3,25 +3,26 @@ pub type R = crate::R<Frctl0Spec>;
 #[doc = "Register `FRCTL0` writer"]
 pub type W = crate::W<Frctl0Spec>;
 #[doc = "Wait state numbers\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Nwaits {
-    #[doc = "0: FRAM wait states: 0"]
-    Nwaits0 = 0,
-    #[doc = "1: FRAM wait states: 1"]
-    Nwaits1 = 1,
-    #[doc = "2: FRAM wait states: 2"]
-    Nwaits2 = 2,
-    #[doc = "3: FRAM wait states: 3"]
-    Nwaits3 = 3,
-    #[doc = "4: FRAM wait states: 4"]
-    Nwaits4 = 4,
-    #[doc = "5: FRAM wait states: 5"]
-    Nwaits5 = 5,
-    #[doc = "6: FRAM wait states: 6"]
-    Nwaits6 = 6,
-    #[doc = "7: FRAM wait states: 7"]
-    Nwaits7 = 7,
+    #[doc = "0: No wait state"]
+    Wait0 = 0,
+    #[doc = "1: 1 wait state"]
+    Wait1 = 1,
+    #[doc = "2: 2 wait states"]
+    Wait2 = 2,
+    #[doc = "3: 3 wait states"]
+    Wait3 = 3,
+    #[doc = "4: 4 wait states"]
+    Wait4 = 4,
+    #[doc = "5: 5 wait states"]
+    Wait5 = 5,
+    #[doc = "6: 6 wait states"]
+    Wait6 = 6,
+    #[doc = "7: 7 wait states"]
+    Wait7 = 7,
 }
 impl From<Nwaits> for u8 {
     #[inline(always)]
@@ -40,56 +41,56 @@ impl NwaitsR {
     #[inline(always)]
     pub const fn variant(&self) -> Nwaits {
         match self.bits {
-            0 => Nwaits::Nwaits0,
-            1 => Nwaits::Nwaits1,
-            2 => Nwaits::Nwaits2,
-            3 => Nwaits::Nwaits3,
-            4 => Nwaits::Nwaits4,
-            5 => Nwaits::Nwaits5,
-            6 => Nwaits::Nwaits6,
-            7 => Nwaits::Nwaits7,
+            0 => Nwaits::Wait0,
+            1 => Nwaits::Wait1,
+            2 => Nwaits::Wait2,
+            3 => Nwaits::Wait3,
+            4 => Nwaits::Wait4,
+            5 => Nwaits::Wait5,
+            6 => Nwaits::Wait6,
+            7 => Nwaits::Wait7,
             _ => unreachable!(),
         }
     }
-    #[doc = "FRAM wait states: 0"]
+    #[doc = "No wait state"]
     #[inline(always)]
-    pub fn is_nwaits_0(&self) -> bool {
-        *self == Nwaits::Nwaits0
+    pub fn is_wait0(&self) -> bool {
+        *self == Nwaits::Wait0
     }
-    #[doc = "FRAM wait states: 1"]
+    #[doc = "1 wait state"]
     #[inline(always)]
-    pub fn is_nwaits_1(&self) -> bool {
-        *self == Nwaits::Nwaits1
+    pub fn is_wait1(&self) -> bool {
+        *self == Nwaits::Wait1
     }
-    #[doc = "FRAM wait states: 2"]
+    #[doc = "2 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_2(&self) -> bool {
-        *self == Nwaits::Nwaits2
+    pub fn is_wait2(&self) -> bool {
+        *self == Nwaits::Wait2
     }
-    #[doc = "FRAM wait states: 3"]
+    #[doc = "3 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_3(&self) -> bool {
-        *self == Nwaits::Nwaits3
+    pub fn is_wait3(&self) -> bool {
+        *self == Nwaits::Wait3
     }
-    #[doc = "FRAM wait states: 4"]
+    #[doc = "4 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_4(&self) -> bool {
-        *self == Nwaits::Nwaits4
+    pub fn is_wait4(&self) -> bool {
+        *self == Nwaits::Wait4
     }
-    #[doc = "FRAM wait states: 5"]
+    #[doc = "5 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_5(&self) -> bool {
-        *self == Nwaits::Nwaits5
+    pub fn is_wait5(&self) -> bool {
+        *self == Nwaits::Wait5
     }
-    #[doc = "FRAM wait states: 6"]
+    #[doc = "6 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_6(&self) -> bool {
-        *self == Nwaits::Nwaits6
+    pub fn is_wait6(&self) -> bool {
+        *self == Nwaits::Wait6
     }
-    #[doc = "FRAM wait states: 7"]
+    #[doc = "7 wait states"]
     #[inline(always)]
-    pub fn is_nwaits_7(&self) -> bool {
-        *self == Nwaits::Nwaits7
+    pub fn is_wait7(&self) -> bool {
+        *self == Nwaits::Wait7
     }
 }
 #[doc = "Field `NWAITS` writer - Wait state numbers"]
@@ -99,51 +100,113 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "FRAM wait states: 0"]
+    #[doc = "No wait state"]
     #[inline(always)]
-    pub fn nwaits_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits0)
+    pub fn wait0(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait0)
     }
-    #[doc = "FRAM wait states: 1"]
+    #[doc = "1 wait state"]
     #[inline(always)]
-    pub fn nwaits_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits1)
+    pub fn wait1(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait1)
     }
-    #[doc = "FRAM wait states: 2"]
+    #[doc = "2 wait states"]
     #[inline(always)]
-    pub fn nwaits_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits2)
+    pub fn wait2(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait2)
     }
-    #[doc = "FRAM wait states: 3"]
+    #[doc = "3 wait states"]
     #[inline(always)]
-    pub fn nwaits_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits3)
+    pub fn wait3(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait3)
     }
-    #[doc = "FRAM wait states: 4"]
+    #[doc = "4 wait states"]
     #[inline(always)]
-    pub fn nwaits_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits4)
+    pub fn wait4(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait4)
     }
-    #[doc = "FRAM wait states: 5"]
+    #[doc = "5 wait states"]
     #[inline(always)]
-    pub fn nwaits_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits5)
+    pub fn wait5(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait5)
     }
-    #[doc = "FRAM wait states: 6"]
+    #[doc = "6 wait states"]
     #[inline(always)]
-    pub fn nwaits_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits6)
+    pub fn wait6(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait6)
     }
-    #[doc = "FRAM wait states: 7"]
+    #[doc = "7 wait states"]
     #[inline(always)]
-    pub fn nwaits_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Nwaits::Nwaits7)
+    pub fn wait7(self) -> &'a mut crate::W<REG> {
+        self.variant(Nwaits::Wait7)
     }
 }
+#[doc = "FRCTLPW password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Frctlpwr {
+    #[doc = "150: Value always read from the FRCTL0 password"]
+    Password = 150,
+}
+impl From<Frctlpwr> for u8 {
+    #[inline(always)]
+    fn from(variant: Frctlpwr) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Frctlpwr {
+    type Ux = u8;
+}
+impl crate::IsEnum for Frctlpwr {}
 #[doc = "Field `FRCTLPW` reader - FRCTLPW password"]
-pub type FrctlpwR = crate::FieldReader;
+pub type FrctlpwR = crate::FieldReader<Frctlpwr>;
+impl FrctlpwR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Frctlpwr> {
+        match self.bits {
+            150 => Some(Frctlpwr::Password),
+            _ => None,
+        }
+    }
+    #[doc = "Value always read from the FRCTL0 password"]
+    #[inline(always)]
+    pub fn is_password(&self) -> bool {
+        *self == Frctlpwr::Password
+    }
+}
+#[doc = "FRCTLPW password\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum FrctlpwwWO {
+    #[doc = "165: Value which must be written to the FRCTL0 password"]
+    Password = 165,
+}
+impl From<FrctlpwwWO> for u8 {
+    #[inline(always)]
+    fn from(variant: FrctlpwwWO) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for FrctlpwwWO {
+    type Ux = u8;
+}
+impl crate::IsEnum for FrctlpwwWO {}
 #[doc = "Field `FRCTLPW` writer - FRCTLPW password"]
-pub type FrctlpwW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type FrctlpwW<'a, REG> = crate::FieldWriter<'a, REG, 8, FrctlpwwWO>;
+impl<'a, REG> FrctlpwW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Value which must be written to the FRCTL0 password"]
+    #[inline(always)]
+    pub fn password(self) -> &'a mut crate::W<REG> {
+        self.variant(FrctlpwwWO::Password)
+    }
+}
 impl R {
     #[doc = "Bits 4:6 - Wait state numbers"]
     #[inline(always)]

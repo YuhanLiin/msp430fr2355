@@ -3,6 +3,7 @@ pub type R = crate::R<Tb3ivSpec>;
 #[doc = "Register `TB3IV` writer"]
 pub type W = crate::W<Tb3ivSpec>;
 #[doc = "Timer_B interrupt vector value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Tbiv {

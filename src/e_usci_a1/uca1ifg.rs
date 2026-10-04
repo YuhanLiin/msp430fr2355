@@ -3,6 +3,7 @@ pub type R = crate::R<Uca1ifgSpec>;
 #[doc = "Register `UCA1IFG` writer"]
 pub type W = crate::W<Uca1ifgSpec>;
 #[doc = "Receive interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxifg {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxifg {
     #[doc = "0: No interrupt pending"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Start bit interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsttifg {
     #[doc = "0: No interrupt pending"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Transmit ready interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxcptifg {
     #[doc = "0: No interrupt pending"]

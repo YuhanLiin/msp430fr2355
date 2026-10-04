@@ -3,6 +3,7 @@ pub type R = crate::R<Syscfg0Spec>;
 #[doc = "Register `SYSCFG0` writer"]
 pub type W = crate::W<Syscfg0Spec>;
 #[doc = "Program FRAM write protection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pfwp {
     #[doc = "0: Program FRAM write enable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Data FRAM write protection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dfwp {
     #[doc = "0: Data FRAM write enable"]
@@ -112,10 +114,72 @@ where
 pub type FrwpoaR = crate::FieldReader;
 #[doc = "Field `FRWPOA` writer - Program FRAM write protection offset address from the beginning of Program FRAM. The offset increases by 1KB resolution"]
 pub type FrwpoaW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+#[doc = "FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Frwppwr {
+    #[doc = "150: Value always read from the SYSCFG0 password field"]
+    Password = 150,
+}
+impl From<Frwppwr> for u8 {
+    #[inline(always)]
+    fn from(variant: Frwppwr) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Frwppwr {
+    type Ux = u8;
+}
+impl crate::IsEnum for Frwppwr {}
 #[doc = "Field `FRWPPW` reader - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
-pub type FrwppwR = crate::FieldReader;
+pub type FrwppwR = crate::FieldReader<Frwppwr>;
+impl FrwppwR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Frwppwr> {
+        match self.bits {
+            150 => Some(Frwppwr::Password),
+            _ => None,
+        }
+    }
+    #[doc = "Value always read from the SYSCFG0 password field"]
+    #[inline(always)]
+    pub fn is_password(&self) -> bool {
+        *self == Frwppwr::Password
+    }
+}
+#[doc = "FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum FrwppwwWO {
+    #[doc = "165: Value which must be written to the SYSCFG0 password field"]
+    Password = 165,
+}
+impl From<FrwppwwWO> for u8 {
+    #[inline(always)]
+    fn from(variant: FrwppwwWO) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for FrwppwwWO {
+    type Ux = u8;
+}
+impl crate::IsEnum for FrwppwwWO {}
 #[doc = "Field `FRWPPW` writer - FRAM protection password, FRAM protection password. Write with 0A5h to unlock the FRAM protection registers. Always reads as 096h"]
-pub type FrwppwW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type FrwppwW<'a, REG> = crate::FieldWriter<'a, REG, 8, FrwppwwWO>;
+impl<'a, REG> FrwppwW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Value which must be written to the SYSCFG0 password field"]
+    #[inline(always)]
+    pub fn password(self) -> &'a mut crate::W<REG> {
+        self.variant(FrwppwwWO::Password)
+    }
+}
 impl R {
     #[doc = "Bit 0 - Program FRAM write protection"]
     #[inline(always)]

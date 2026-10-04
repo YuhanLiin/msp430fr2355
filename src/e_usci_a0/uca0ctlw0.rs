@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0ctlw0Spec>;
 #[doc = "Register `UCA0CTLW0` writer"]
 pub type W = crate::W<Uca0ctlw0Spec>;
 #[doc = "Software reset enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucswrst {
     #[doc = "0: Disabled. eUSCI_A reset released for operation"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit break\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxbrk {
     #[doc = "0: Next frame transmitted is not a break"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Transmit address\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxaddr {
     #[doc = "0: Next frame transmitted is data"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Dormant\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucdorm {
     #[doc = "0: Not dormant. All received characters set UCRXIFG."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Receive break character interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbrkie {
     #[doc = "0: Received break characters do not set UCRXIFG"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Receive erroneous-character interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxeie {
     #[doc = "0: Erroneous characters rejected and UCRXIFG is not set"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "eUSCI_A clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucssel {
@@ -407,6 +414,7 @@ where
     }
 }
 #[doc = "Synchronous mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsync {
     #[doc = "0: Asynchronous mode"]
@@ -460,6 +468,7 @@ where
     }
 }
 #[doc = "eUSCI_A mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucmode {
@@ -546,6 +555,7 @@ where
     }
 }
 #[doc = "Stop bit select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucspb {
     #[doc = "0: One stop bit"]
@@ -599,6 +609,7 @@ where
     }
 }
 #[doc = "Character length\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uc7bit {
     #[doc = "0: 8-bit data"]
@@ -652,6 +663,7 @@ where
     }
 }
 #[doc = "MSB first select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucmsb {
     #[doc = "0: LSB first"]
@@ -705,6 +717,7 @@ where
     }
 }
 #[doc = "Parity select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucpar {
     #[doc = "0: Odd parity"]
@@ -758,6 +771,7 @@ where
     }
 }
 #[doc = "Parity enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucpen {
     #[doc = "0: Parity disabled"]

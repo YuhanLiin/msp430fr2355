@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb0ieSpiSpec>;
 #[doc = "Register `UCB0IE_SPI` writer"]
 pub type W = crate::W<Ucb0ieSpiSpec>;
 #[doc = "Receive interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxie {
     #[doc = "0: Interrupt disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxie {
     #[doc = "0: Interrupt disabled"]

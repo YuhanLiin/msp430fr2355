@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0statwSpec>;
 #[doc = "Register `UCA0STATW` writer"]
 pub type W = crate::W<Uca0statwSpec>;
 #[doc = "eUSCI_A busy\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbusy {
     #[doc = "0: eUSCI_A inactive"]
@@ -39,6 +40,7 @@ impl UcbusyR {
     }
 }
 #[doc = "Address received / Idle line detected\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UcaddrUcidle {
     #[doc = "0: UCADDR: Received character is data. UCIDLE: No idle line detected"]
@@ -92,6 +94,7 @@ where
     }
 }
 #[doc = "Receive error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucrxerr {
     #[doc = "0: No receive errors detected"]
@@ -145,6 +148,7 @@ where
     }
 }
 #[doc = "Break detect flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbrk {
     #[doc = "0: No break condition"]
@@ -198,6 +202,7 @@ where
     }
 }
 #[doc = "Parity error flag. When UCPEN = 0, UCPE is read as 0. UCPE is cleared when UCAxRXBUF is read.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucpe {
     #[doc = "0: No error"]
@@ -251,6 +256,7 @@ where
     }
 }
 #[doc = "Overrun error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucoe {
     #[doc = "0: No error"]
@@ -304,6 +310,7 @@ where
     }
 }
 #[doc = "Framing error flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucfe {
     #[doc = "0: No error"]
@@ -357,6 +364,7 @@ where
     }
 }
 #[doc = "Listen enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uclisten {
     #[doc = "0: Disabled"]

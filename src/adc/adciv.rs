@@ -3,23 +3,24 @@ pub type R = crate::R<AdcivSpec>;
 #[doc = "Register `ADCIV` writer"]
 pub type W = crate::W<AdcivSpec>;
 #[doc = "interrupt vector value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Adciv {
     #[doc = "0: No interrupt pending"]
     None = 0,
     #[doc = "2: Interrupt Source: ADCMEM0 overflow; Interrupt Flag: ADCOVIFG; Interrupt Priority: Highest"]
-    Adcovifg = 2,
+    Overflow = 2,
     #[doc = "4: Interrupt Source: Conversion time overflow; Interrupt Flag: ADCTOVIFG"]
-    Adctovifg = 4,
+    TimeOverflow = 4,
     #[doc = "6: Interrupt Source: ADCHI Interrupt flag; Interrupt Flag: ADCHIIFG"]
-    Adchiifg = 6,
+    AboveWindow = 6,
     #[doc = "8: Interrupt Source: ADCLO Interrupt flag; Interrupt Flag: ADCLOIFG"]
-    Adcloifg = 8,
-    #[doc = "10: nterrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
-    Adcinifg = 10,
+    BelowWindow = 8,
+    #[doc = "10: Interrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
+    InsideWindow = 10,
     #[doc = "12: Interrupt Source: ADC memory Interrupt flag; Interrupt Flag: ADCIFG0; Interrupt Priority: Lowest"]
-    Adcifg0 = 12,
+    ResultReady = 12,
 }
 impl From<Adciv> for u16 {
     #[inline(always)]
@@ -39,12 +40,12 @@ impl AdcivR {
     pub const fn variant(&self) -> Option<Adciv> {
         match self.bits {
             0 => Some(Adciv::None),
-            2 => Some(Adciv::Adcovifg),
-            4 => Some(Adciv::Adctovifg),
-            6 => Some(Adciv::Adchiifg),
-            8 => Some(Adciv::Adcloifg),
-            10 => Some(Adciv::Adcinifg),
-            12 => Some(Adciv::Adcifg0),
+            2 => Some(Adciv::Overflow),
+            4 => Some(Adciv::TimeOverflow),
+            6 => Some(Adciv::AboveWindow),
+            8 => Some(Adciv::BelowWindow),
+            10 => Some(Adciv::InsideWindow),
+            12 => Some(Adciv::ResultReady),
             _ => None,
         }
     }
@@ -55,33 +56,33 @@ impl AdcivR {
     }
     #[doc = "Interrupt Source: ADCMEM0 overflow; Interrupt Flag: ADCOVIFG; Interrupt Priority: Highest"]
     #[inline(always)]
-    pub fn is_adcovifg(&self) -> bool {
-        *self == Adciv::Adcovifg
+    pub fn is_overflow(&self) -> bool {
+        *self == Adciv::Overflow
     }
     #[doc = "Interrupt Source: Conversion time overflow; Interrupt Flag: ADCTOVIFG"]
     #[inline(always)]
-    pub fn is_adctovifg(&self) -> bool {
-        *self == Adciv::Adctovifg
+    pub fn is_time_overflow(&self) -> bool {
+        *self == Adciv::TimeOverflow
     }
     #[doc = "Interrupt Source: ADCHI Interrupt flag; Interrupt Flag: ADCHIIFG"]
     #[inline(always)]
-    pub fn is_adchiifg(&self) -> bool {
-        *self == Adciv::Adchiifg
+    pub fn is_above_window(&self) -> bool {
+        *self == Adciv::AboveWindow
     }
     #[doc = "Interrupt Source: ADCLO Interrupt flag; Interrupt Flag: ADCLOIFG"]
     #[inline(always)]
-    pub fn is_adcloifg(&self) -> bool {
-        *self == Adciv::Adcloifg
+    pub fn is_below_window(&self) -> bool {
+        *self == Adciv::BelowWindow
     }
-    #[doc = "nterrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
+    #[doc = "Interrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
     #[inline(always)]
-    pub fn is_adcinifg(&self) -> bool {
-        *self == Adciv::Adcinifg
+    pub fn is_inside_window(&self) -> bool {
+        *self == Adciv::InsideWindow
     }
     #[doc = "Interrupt Source: ADC memory Interrupt flag; Interrupt Flag: ADCIFG0; Interrupt Priority: Lowest"]
     #[inline(always)]
-    pub fn is_adcifg0(&self) -> bool {
-        *self == Adciv::Adcifg0
+    pub fn is_result_ready(&self) -> bool {
+        *self == Adciv::ResultReady
     }
 }
 #[doc = "Field `ADCIV` writer - interrupt vector value"]
@@ -98,33 +99,33 @@ where
     }
     #[doc = "Interrupt Source: ADCMEM0 overflow; Interrupt Flag: ADCOVIFG; Interrupt Priority: Highest"]
     #[inline(always)]
-    pub fn adcovifg(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adcovifg)
+    pub fn overflow(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::Overflow)
     }
     #[doc = "Interrupt Source: Conversion time overflow; Interrupt Flag: ADCTOVIFG"]
     #[inline(always)]
-    pub fn adctovifg(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adctovifg)
+    pub fn time_overflow(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::TimeOverflow)
     }
     #[doc = "Interrupt Source: ADCHI Interrupt flag; Interrupt Flag: ADCHIIFG"]
     #[inline(always)]
-    pub fn adchiifg(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adchiifg)
+    pub fn above_window(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::AboveWindow)
     }
     #[doc = "Interrupt Source: ADCLO Interrupt flag; Interrupt Flag: ADCLOIFG"]
     #[inline(always)]
-    pub fn adcloifg(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adcloifg)
+    pub fn below_window(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::BelowWindow)
     }
-    #[doc = "nterrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
+    #[doc = "Interrupt Source: ADCIN Interrupt flag; Interrupt Flag: ADCINIFG"]
     #[inline(always)]
-    pub fn adcinifg(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adcinifg)
+    pub fn inside_window(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::InsideWindow)
     }
     #[doc = "Interrupt Source: ADC memory Interrupt flag; Interrupt Flag: ADCIFG0; Interrupt Priority: Lowest"]
     #[inline(always)]
-    pub fn adcifg0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adciv::Adcifg0)
+    pub fn result_ready(self) -> &'a mut crate::W<REG> {
+        self.variant(Adciv::ResultReady)
     }
 }
 impl R {
