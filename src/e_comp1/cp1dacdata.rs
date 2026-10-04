@@ -3,6 +3,7 @@ pub type R = crate::R<Cp1dacdataSpec>;
 #[doc = "Register `CP1DACDATA` writer"]
 pub type W = crate::W<Cp1dacdataSpec>;
 #[doc = "1st 6-bit DAC buffer Data\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpdacbuf1 {
@@ -869,6 +870,7 @@ where
     }
 }
 #[doc = "2nd 6-bit DAC buffer Data\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpdacbuf2 {

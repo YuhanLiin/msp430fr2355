@@ -3,6 +3,7 @@ pub type R = crate::R<Sac3pgaSpec>;
 #[doc = "Register `SAC3PGA` writer"]
 pub type W = crate::W<Sac3pgaSpec>;
 #[doc = "SAC PGA Mode Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Msel {

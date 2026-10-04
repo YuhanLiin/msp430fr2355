@@ -3,60 +3,53 @@ pub type R = crate::R<Sac2ivSpec>;
 #[doc = "Register `SAC2IV` writer"]
 pub type W = crate::W<Sac2ivSpec>;
 #[doc = "SAC Interrupt Vector Register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum Saciv2 {
+pub enum Saciv {
     #[doc = "0: No interrupt pending"]
-    Saciv0 = 0,
-    #[doc = "2: S&H completed interrupt flag (Highest priority)"]
-    Saciv2 = 2,
+    None = 0,
     #[doc = "4: DAC channel update interrupt flag"]
-    Saciv4 = 4,
+    Dacifg = 4,
 }
-impl From<Saciv2> for u16 {
+impl From<Saciv> for u16 {
     #[inline(always)]
-    fn from(variant: Saciv2) -> Self {
+    fn from(variant: Saciv) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Saciv2 {
+impl crate::FieldSpec for Saciv {
     type Ux = u16;
 }
-impl crate::IsEnum for Saciv2 {}
-#[doc = "Field `SACIV2` reader - SAC Interrupt Vector Register"]
-pub type Saciv2R = crate::FieldReader<Saciv2>;
-impl Saciv2R {
+impl crate::IsEnum for Saciv {}
+#[doc = "Field `SACIV` reader - SAC Interrupt Vector Register"]
+pub type SacivR = crate::FieldReader<Saciv>;
+impl SacivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Saciv2> {
+    pub const fn variant(&self) -> Option<Saciv> {
         match self.bits {
-            0 => Some(Saciv2::Saciv0),
-            2 => Some(Saciv2::Saciv2),
-            4 => Some(Saciv2::Saciv4),
+            0 => Some(Saciv::None),
+            4 => Some(Saciv::Dacifg),
             _ => None,
         }
     }
     #[doc = "No interrupt pending"]
     #[inline(always)]
-    pub fn is_saciv_0(&self) -> bool {
-        *self == Saciv2::Saciv0
-    }
-    #[doc = "S&H completed interrupt flag (Highest priority)"]
-    #[inline(always)]
-    pub fn is_saciv_2(&self) -> bool {
-        *self == Saciv2::Saciv2
+    pub fn is_none(&self) -> bool {
+        *self == Saciv::None
     }
     #[doc = "DAC channel update interrupt flag"]
     #[inline(always)]
-    pub fn is_saciv_4(&self) -> bool {
-        *self == Saciv2::Saciv4
+    pub fn is_dacifg(&self) -> bool {
+        *self == Saciv::Dacifg
     }
 }
 impl R {
     #[doc = "Bits 0:15 - SAC Interrupt Vector Register"]
     #[inline(always)]
-    pub fn saciv2(&self) -> Saciv2R {
-        Saciv2R::new(self.bits)
+    pub fn saciv(&self) -> SacivR {
+        SacivR::new(self.bits)
     }
 }
 impl W {}

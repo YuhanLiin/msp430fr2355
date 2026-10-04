@@ -1,8 +1,9 @@
-#[doc = "Register `CPINT` reader"]
-pub type R = crate::R<CpintSpec>;
-#[doc = "Register `CPINT` writer"]
-pub type W = crate::W<CpintSpec>;
+#[doc = "Register `CP0INT` reader"]
+pub type R = crate::R<Cp0intSpec>;
+#[doc = "Register `CP0INT` writer"]
+pub type W = crate::W<Cp0intSpec>;
 #[doc = "Comparator output interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpifg {
     #[doc = "0: No interrupt pending."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Comparator output inverted interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpiifg {
     #[doc = "0: No interrupt pending."]
@@ -123,25 +125,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Comparator output interrupt flag"]
     #[inline(always)]
-    pub fn cpifg(&mut self) -> CpifgW<'_, CpintSpec> {
+    pub fn cpifg(&mut self) -> CpifgW<'_, Cp0intSpec> {
         CpifgW::new(self, 0)
     }
     #[doc = "Bit 1 - Comparator output inverted interrupt flag"]
     #[inline(always)]
-    pub fn cpiifg(&mut self) -> CpiifgW<'_, CpintSpec> {
+    pub fn cpiifg(&mut self) -> CpiifgW<'_, Cp0intSpec> {
         CpiifgW::new(self, 1)
     }
 }
-#[doc = "Comparator Interrupt Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpint::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpint::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CpintSpec;
-impl crate::RegisterSpec for CpintSpec {
+#[doc = "Comparator Interrupt Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0int::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0int::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0intSpec;
+impl crate::RegisterSpec for Cp0intSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpint::R`](R) reader structure"]
-impl crate::Readable for CpintSpec {}
-#[doc = "`write(|w| ..)` method takes [`cpint::W`](W) writer structure"]
-impl crate::Writable for CpintSpec {
+#[doc = "`read()` method returns [`cp0int::R`](R) reader structure"]
+impl crate::Readable for Cp0intSpec {}
+#[doc = "`write(|w| ..)` method takes [`cp0int::W`](W) writer structure"]
+impl crate::Writable for Cp0intSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPINT to value 0"]
-impl crate::Resettable for CpintSpec {}
+#[doc = "`reset()` method sets CP0INT to value 0"]
+impl crate::Resettable for Cp0intSpec {}

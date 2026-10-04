@@ -3,6 +3,7 @@ pub type R = crate::R<RtcctlSpec>;
 #[doc = "Register `RTCCTL` writer"]
 pub type W = crate::W<RtcctlSpec>;
 #[doc = "Real-time interrupt flag. This bit reports the status of a pending interrupt. This read only bit can be cleared by reading RTCIV register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtcifg {
     #[doc = "0: No interrupt pending"]
@@ -39,6 +40,7 @@ impl RtcifgR {
     }
 }
 #[doc = "Real-time interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtcie {
     #[doc = "0: Interrupt disabled"]
@@ -92,6 +94,7 @@ where
     }
 }
 #[doc = "Real-time software reset. This is a write only bit and is always read with logic 0. 0b = Write 0 has no effect\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtcsr {
     #[doc = "0: Write 0 has no effect"]
@@ -145,6 +148,7 @@ where
     }
 }
 #[doc = "Real-time clock pre-divider select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rtcps {
@@ -283,6 +287,7 @@ where
     }
 }
 #[doc = "Real-time clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rtcss {

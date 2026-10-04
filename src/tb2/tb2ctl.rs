@@ -3,6 +3,7 @@ pub type R = crate::R<Tb2ctlSpec>;
 #[doc = "Register `TB2CTL` writer"]
 pub type W = crate::W<Tb2ctlSpec>;
 #[doc = "TimerB interrupt flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tbifg {
     #[doc = "0: No interrupt pending"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "TimerB interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tbie {
     #[doc = "0: Interrupt disabled"]
@@ -113,6 +115,7 @@ pub type TbclrR = crate::BitReader;
 #[doc = "Field `TBCLR` writer - TimerB clear"]
 pub type TbclrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Mode control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mc {
@@ -199,6 +202,7 @@ where
     }
 }
 #[doc = "Input divider\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Id {
@@ -285,6 +289,7 @@ where
     }
 }
 #[doc = "TimerB clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tbssel {
@@ -371,6 +376,7 @@ where
     }
 }
 #[doc = "Counter length\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cntl {
@@ -457,6 +463,7 @@ where
     }
 }
 #[doc = "TBxCLn group\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tbclgrp {

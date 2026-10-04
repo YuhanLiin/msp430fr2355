@@ -3,6 +3,7 @@ pub type R = crate::R<Cp1ivSpec>;
 #[doc = "Register `CP1IV` writer"]
 pub type W = crate::W<Cp1ivSpec>;
 #[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Cpiv {

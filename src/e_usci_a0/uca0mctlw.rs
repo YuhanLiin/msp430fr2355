@@ -3,6 +3,7 @@ pub type R = crate::R<Uca0mctlwSpec>;
 #[doc = "Register `UCA0MCTLW` writer"]
 pub type W = crate::W<Uca0mctlwSpec>;
 #[doc = "Oversampling mode enabled\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucos16 {
     #[doc = "0: Disabled"]

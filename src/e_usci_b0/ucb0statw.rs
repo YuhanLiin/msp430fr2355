@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb0statwSpec>;
 #[doc = "Register `UCB0STATW` writer"]
 pub type W = crate::W<Ucb0statwSpec>;
 #[doc = "Bus busy\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucbbusy {
     #[doc = "0: Bus inactive"]
@@ -39,6 +40,7 @@ impl UcbbusyR {
     }
 }
 #[doc = "General call address received\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucgc {
     #[doc = "0: No general call address received"]
@@ -75,6 +77,7 @@ impl UcgcR {
     }
 }
 #[doc = "SCL low\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucscllow {
     #[doc = "0: SCL is not held low"]

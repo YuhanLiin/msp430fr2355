@@ -1,8 +1,9 @@
-#[doc = "Register `CPDACCTL` reader"]
-pub type R = crate::R<CpdacctlSpec>;
-#[doc = "Register `CPDACCTL` writer"]
-pub type W = crate::W<CpdacctlSpec>;
+#[doc = "Register `CP0DACCTL` reader"]
+pub type R = crate::R<Cp0dacctlSpec>;
+#[doc = "Register `CP0DACCTL` writer"]
+pub type W = crate::W<Cp0dacctlSpec>;
 #[doc = "This bit is only valid when CPDACBUFS is set to 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacsw {
     #[doc = "0: CPDACBUF1 selected"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC buffer controlled source selection.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacbufs {
     #[doc = "0: Comparator output is selected as the buffer control source"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC reference voltage selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacrefs {
     #[doc = "0: VDD selected"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Comparator built-in DAC output control bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpdacen {
     #[doc = "0: DAC output is disabled."]
@@ -239,35 +243,35 @@ impl R {
 impl W {
     #[doc = "Bit 0 - This bit is only valid when CPDACBUFS is set to 1."]
     #[inline(always)]
-    pub fn cpdacsw(&mut self) -> CpdacswW<'_, CpdacctlSpec> {
+    pub fn cpdacsw(&mut self) -> CpdacswW<'_, Cp0dacctlSpec> {
         CpdacswW::new(self, 0)
     }
     #[doc = "Bit 1 - Comparator built-in DAC buffer controlled source selection."]
     #[inline(always)]
-    pub fn cpdacbufs(&mut self) -> CpdacbufsW<'_, CpdacctlSpec> {
+    pub fn cpdacbufs(&mut self) -> CpdacbufsW<'_, Cp0dacctlSpec> {
         CpdacbufsW::new(self, 1)
     }
     #[doc = "Bit 2 - Comparator built-in DAC reference voltage selection"]
     #[inline(always)]
-    pub fn cpdacrefs(&mut self) -> CpdacrefsW<'_, CpdacctlSpec> {
+    pub fn cpdacrefs(&mut self) -> CpdacrefsW<'_, Cp0dacctlSpec> {
         CpdacrefsW::new(self, 2)
     }
     #[doc = "Bit 7 - Comparator built-in DAC output control bit."]
     #[inline(always)]
-    pub fn cpdacen(&mut self) -> CpdacenW<'_, CpdacctlSpec> {
+    pub fn cpdacen(&mut self) -> CpdacenW<'_, Cp0dacctlSpec> {
         CpdacenW::new(self, 7)
     }
 }
-#[doc = "6-bit Comparator built-in DAC Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpdacctl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpdacctl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CpdacctlSpec;
-impl crate::RegisterSpec for CpdacctlSpec {
+#[doc = "6-bit Comparator built-in DAC Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0dacctl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0dacctl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0dacctlSpec;
+impl crate::RegisterSpec for Cp0dacctlSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpdacctl::R`](R) reader structure"]
-impl crate::Readable for CpdacctlSpec {}
-#[doc = "`write(|w| ..)` method takes [`cpdacctl::W`](W) writer structure"]
-impl crate::Writable for CpdacctlSpec {
+#[doc = "`read()` method returns [`cp0dacctl::R`](R) reader structure"]
+impl crate::Readable for Cp0dacctlSpec {}
+#[doc = "`write(|w| ..)` method takes [`cp0dacctl::W`](W) writer structure"]
+impl crate::Writable for Cp0dacctlSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPDACCTL to value 0"]
-impl crate::Resettable for CpdacctlSpec {}
+#[doc = "`reset()` method sets CP0DACCTL to value 0"]
+impl crate::Resettable for Cp0dacctlSpec {}

@@ -3,15 +3,14 @@ pub type R = crate::R<SysunivSpec>;
 #[doc = "Register `SYSUNIV` writer"]
 pub type W = crate::W<SysunivSpec>;
 #[doc = "User NMI vector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Sysuniv {
-    #[doc = "0: No interrupt pending"]
-    None = 0,
-    #[doc = "2: NMIIFG NMI pin"]
-    Nmiifg = 2,
+    #[doc = "2: NMIIFG NMI pin or SVSH event"]
+    NmiPin = 2,
     #[doc = "4: OFIFG oscillator fault"]
-    Ofifg = 4,
+    OscillatorFault = 4,
 }
 impl From<Sysuniv> for u16 {
     #[inline(always)]
@@ -30,26 +29,20 @@ impl SysunivR {
     #[inline(always)]
     pub const fn variant(&self) -> Option<Sysuniv> {
         match self.bits {
-            0 => Some(Sysuniv::None),
-            2 => Some(Sysuniv::Nmiifg),
-            4 => Some(Sysuniv::Ofifg),
+            2 => Some(Sysuniv::NmiPin),
+            4 => Some(Sysuniv::OscillatorFault),
             _ => None,
         }
     }
-    #[doc = "No interrupt pending"]
+    #[doc = "NMIIFG NMI pin or SVSH event"]
     #[inline(always)]
-    pub fn is_none(&self) -> bool {
-        *self == Sysuniv::None
-    }
-    #[doc = "NMIIFG NMI pin"]
-    #[inline(always)]
-    pub fn is_nmiifg(&self) -> bool {
-        *self == Sysuniv::Nmiifg
+    pub fn is_nmi_pin(&self) -> bool {
+        *self == Sysuniv::NmiPin
     }
     #[doc = "OFIFG oscillator fault"]
     #[inline(always)]
-    pub fn is_ofifg(&self) -> bool {
-        *self == Sysuniv::Ofifg
+    pub fn is_oscillator_fault(&self) -> bool {
+        *self == Sysuniv::OscillatorFault
     }
 }
 impl R {

@@ -2,9 +2,8 @@
 pub type R = crate::R<PmmifgSpec>;
 #[doc = "Register `PMMIFG` writer"]
 pub type W = crate::W<PmmifgSpec>;
-#[doc = "Field `PMMSPSIFG` reader - PMM secondary power supply interrupt flag. Reserved for future multi power supply systems."]
-pub type PmmspsifgR = crate::BitReader;
 #[doc = "PMM software brownout reset interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmmborifg {
     #[doc = "0: Reset not due to PMMSWBOR"]
@@ -58,12 +57,13 @@ where
     }
 }
 #[doc = "PMM reset pin interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmmrstifg {
     #[doc = "0: Reset not due to reset pin"]
-    Pmmborifg0 = 0,
+    Pmmrstifg0 = 0,
     #[doc = "1: Reset due to reset pin"]
-    Pmmborifg1 = 1,
+    Pmmrstifg1 = 1,
 }
 impl From<Pmmrstifg> for bool {
     #[inline(always)]
@@ -78,19 +78,19 @@ impl PmmrstifgR {
     #[inline(always)]
     pub const fn variant(&self) -> Pmmrstifg {
         match self.bits {
-            false => Pmmrstifg::Pmmborifg0,
-            true => Pmmrstifg::Pmmborifg1,
+            false => Pmmrstifg::Pmmrstifg0,
+            true => Pmmrstifg::Pmmrstifg1,
         }
     }
     #[doc = "Reset not due to reset pin"]
     #[inline(always)]
-    pub fn is_pmmborifg_0(&self) -> bool {
-        *self == Pmmrstifg::Pmmborifg0
+    pub fn is_pmmrstifg_0(&self) -> bool {
+        *self == Pmmrstifg::Pmmrstifg0
     }
     #[doc = "Reset due to reset pin"]
     #[inline(always)]
-    pub fn is_pmmborifg_1(&self) -> bool {
-        *self == Pmmrstifg::Pmmborifg1
+    pub fn is_pmmrstifg_1(&self) -> bool {
+        *self == Pmmrstifg::Pmmrstifg1
     }
 }
 #[doc = "Field `PMMRSTIFG` writer - PMM reset pin interrupt flag."]
@@ -101,22 +101,23 @@ where
 {
     #[doc = "Reset not due to reset pin"]
     #[inline(always)]
-    pub fn pmmborifg_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Pmmrstifg::Pmmborifg0)
+    pub fn pmmrstifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmrstifg::Pmmrstifg0)
     }
     #[doc = "Reset due to reset pin"]
     #[inline(always)]
-    pub fn pmmborifg_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pmmrstifg::Pmmborifg1)
+    pub fn pmmrstifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmrstifg::Pmmrstifg1)
     }
 }
 #[doc = "PMM software POR interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmmporifg {
     #[doc = "0: Reset not due to PMMSWPOR"]
-    Pmmborifg0 = 0,
+    Pmmporifg0 = 0,
     #[doc = "1: Reset due to PMMSWPOR"]
-    Pmmborifg1 = 1,
+    Pmmporifg1 = 1,
 }
 impl From<Pmmporifg> for bool {
     #[inline(always)]
@@ -131,19 +132,19 @@ impl PmmporifgR {
     #[inline(always)]
     pub const fn variant(&self) -> Pmmporifg {
         match self.bits {
-            false => Pmmporifg::Pmmborifg0,
-            true => Pmmporifg::Pmmborifg1,
+            false => Pmmporifg::Pmmporifg0,
+            true => Pmmporifg::Pmmporifg1,
         }
     }
     #[doc = "Reset not due to PMMSWPOR"]
     #[inline(always)]
-    pub fn is_pmmborifg_0(&self) -> bool {
-        *self == Pmmporifg::Pmmborifg0
+    pub fn is_pmmporifg_0(&self) -> bool {
+        *self == Pmmporifg::Pmmporifg0
     }
     #[doc = "Reset due to PMMSWPOR"]
     #[inline(always)]
-    pub fn is_pmmborifg_1(&self) -> bool {
-        *self == Pmmporifg::Pmmborifg1
+    pub fn is_pmmporifg_1(&self) -> bool {
+        *self == Pmmporifg::Pmmporifg1
     }
 }
 #[doc = "Field `PMMPORIFG` writer - PMM software POR interrupt flag."]
@@ -154,20 +155,17 @@ where
 {
     #[doc = "Reset not due to PMMSWPOR"]
     #[inline(always)]
-    pub fn pmmborifg_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Pmmporifg::Pmmborifg0)
+    pub fn pmmporifg_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmporifg::Pmmporifg0)
     }
     #[doc = "Reset due to PMMSWPOR"]
     #[inline(always)]
-    pub fn pmmborifg_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pmmporifg::Pmmborifg1)
+    pub fn pmmporifg_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Pmmporifg::Pmmporifg1)
     }
 }
-#[doc = "Field `SPWRIFG` reader - Secondary Power interrupt flag. This bit only works in multi power supply systems. When the secondary power is ready to use, this bit is set., In single power supply systems, this bit does not work."]
-pub type SpwrifgR = crate::BitReader;
-#[doc = "Field `PPWRIFG` reader - Primary Power interrupt flag. This bit only works in multi power supply systems. When the primary power is ready to use, this bit is set. In single power supply systems, this bit does not work"]
-pub type PpwrifgR = crate::BitReader;
 #[doc = "High-side SVS interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Svshifg {
     #[doc = "0: Reset not due to SVSH"]
@@ -221,6 +219,7 @@ where
     }
 }
 #[doc = "LPMx.5 flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmmlpm5ifg {
     #[doc = "0: Reset not due to wake-up from LPMx.5"]
@@ -274,11 +273,6 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 0 - PMM secondary power supply interrupt flag. Reserved for future multi power supply systems."]
-    #[inline(always)]
-    pub fn pmmspsifg(&self) -> PmmspsifgR {
-        PmmspsifgR::new((self.bits & 1) != 0)
-    }
     #[doc = "Bit 8 - PMM software brownout reset interrupt flag."]
     #[inline(always)]
     pub fn pmmborifg(&self) -> PmmborifgR {
@@ -293,16 +287,6 @@ impl R {
     #[inline(always)]
     pub fn pmmporifg(&self) -> PmmporifgR {
         PmmporifgR::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 11 - Secondary Power interrupt flag. This bit only works in multi power supply systems. When the secondary power is ready to use, this bit is set., In single power supply systems, this bit does not work."]
-    #[inline(always)]
-    pub fn spwrifg(&self) -> SpwrifgR {
-        SpwrifgR::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 12 - Primary Power interrupt flag. This bit only works in multi power supply systems. When the primary power is ready to use, this bit is set. In single power supply systems, this bit does not work"]
-    #[inline(always)]
-    pub fn ppwrifg(&self) -> PpwrifgR {
-        PpwrifgR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - High-side SVS interrupt flag."]
     #[inline(always)]

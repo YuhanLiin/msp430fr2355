@@ -5,8 +5,9 @@ pub type W = crate::W<Csctl2Spec>;
 #[doc = "Field `FLLN` reader - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
 pub type FllnR = crate::FieldReader<u16>;
 #[doc = "Field `FLLN` writer - Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1."]
-pub type FllnW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
+pub type FllnW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16, crate::Safe>;
 #[doc = "FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Flld {

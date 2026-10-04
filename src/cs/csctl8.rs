@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl8Spec>;
 #[doc = "Register `CSCTL8` writer"]
 pub type W = crate::W<Csctl8Spec>;
 #[doc = "ACLK clock request enable. Setting this enables conditional module requests for ACLK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Aclkreqen {
     #[doc = "0: ACLK conditional requests are disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "MCLK clock request enable. Setting this enables conditional module requests for MCLK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mclkreqen {
     #[doc = "0: MCLK conditional requests are disabled."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "SMCLK clock request enable. Setting this enables conditional module requests for SMCLK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Smclkreqen {
     #[doc = "0: SMCLK conditional requests are disabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "MODOSC clock request enable. Setting this enables conditional module requests for MODOSC.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Modoscreqen {
     #[doc = "0: MODOSC conditional requests are disabled."]

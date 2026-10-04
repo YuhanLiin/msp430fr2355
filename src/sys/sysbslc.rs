@@ -3,12 +3,13 @@ pub type R = crate::R<SysbslcSpec>;
 #[doc = "Register `SYSBSLC` writer"]
 pub type W = crate::W<SysbslcSpec>;
 #[doc = "RAM assigned to BSL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysbslr {
     #[doc = "0: No RAM assigned to BSL area"]
-    Sysbslr0 = 0,
+    Noram = 0,
     #[doc = "1: Lowest 16 bytes of RAM assigned to BSL"]
-    Sysbslr1 = 1,
+    Ram = 1,
 }
 impl From<Sysbslr> for bool {
     #[inline(always)]
@@ -23,19 +24,19 @@ impl SysbslrR {
     #[inline(always)]
     pub const fn variant(&self) -> Sysbslr {
         match self.bits {
-            false => Sysbslr::Sysbslr0,
-            true => Sysbslr::Sysbslr1,
+            false => Sysbslr::Noram,
+            true => Sysbslr::Ram,
         }
     }
     #[doc = "No RAM assigned to BSL area"]
     #[inline(always)]
-    pub fn is_sysbslr_0(&self) -> bool {
-        *self == Sysbslr::Sysbslr0
+    pub fn is_noram(&self) -> bool {
+        *self == Sysbslr::Noram
     }
     #[doc = "Lowest 16 bytes of RAM assigned to BSL"]
     #[inline(always)]
-    pub fn is_sysbslr_1(&self) -> bool {
-        *self == Sysbslr::Sysbslr1
+    pub fn is_ram(&self) -> bool {
+        *self == Sysbslr::Ram
     }
 }
 #[doc = "Field `SYSBSLR` writer - RAM assigned to BSL"]
@@ -46,22 +47,23 @@ where
 {
     #[doc = "No RAM assigned to BSL area"]
     #[inline(always)]
-    pub fn sysbslr_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbslr::Sysbslr0)
+    pub fn noram(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslr::Noram)
     }
     #[doc = "Lowest 16 bytes of RAM assigned to BSL"]
     #[inline(always)]
-    pub fn sysbslr_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbslr::Sysbslr1)
+    pub fn ram(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslr::Ram)
     }
 }
 #[doc = "Bootstrap loader memory disable for the size covered in SYSBSLSIZE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysbsloff {
     #[doc = "0: BSL memory is addressed when this area is read."]
-    Sysbsloff0 = 0,
+    On = 0,
     #[doc = "1: BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
-    Sysbsloff1 = 1,
+    Off = 1,
 }
 impl From<Sysbsloff> for bool {
     #[inline(always)]
@@ -76,19 +78,19 @@ impl SysbsloffR {
     #[inline(always)]
     pub const fn variant(&self) -> Sysbsloff {
         match self.bits {
-            false => Sysbsloff::Sysbsloff0,
-            true => Sysbsloff::Sysbsloff1,
+            false => Sysbsloff::On,
+            true => Sysbsloff::Off,
         }
     }
     #[doc = "BSL memory is addressed when this area is read."]
     #[inline(always)]
-    pub fn is_sysbsloff_0(&self) -> bool {
-        *self == Sysbsloff::Sysbsloff0
+    pub fn is_on(&self) -> bool {
+        *self == Sysbsloff::On
     }
     #[doc = "BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
     #[inline(always)]
-    pub fn is_sysbsloff_1(&self) -> bool {
-        *self == Sysbsloff::Sysbsloff1
+    pub fn is_off(&self) -> bool {
+        *self == Sysbsloff::Off
     }
 }
 #[doc = "Field `SYSBSLOFF` writer - Bootstrap loader memory disable for the size covered in SYSBSLSIZE"]
@@ -99,22 +101,23 @@ where
 {
     #[doc = "BSL memory is addressed when this area is read."]
     #[inline(always)]
-    pub fn sysbsloff_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbsloff::Sysbsloff0)
+    pub fn on(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbsloff::On)
     }
     #[doc = "BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed."]
     #[inline(always)]
-    pub fn sysbsloff_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbsloff::Sysbsloff1)
+    pub fn off(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbsloff::Off)
     }
 }
 #[doc = "Bootstrap loader memory protection enable for the size covered in SYSBSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysbslpe {
     #[doc = "0: Area not protected. Read, program, and erase of BSL memory is possible."]
-    Sysbslpe0 = 0,
+    Notprot = 0,
     #[doc = "1: Area protected"]
-    Sysbslpe1 = 1,
+    Prot = 1,
 }
 impl From<Sysbslpe> for bool {
     #[inline(always)]
@@ -129,19 +132,19 @@ impl SysbslpeR {
     #[inline(always)]
     pub const fn variant(&self) -> Sysbslpe {
         match self.bits {
-            false => Sysbslpe::Sysbslpe0,
-            true => Sysbslpe::Sysbslpe1,
+            false => Sysbslpe::Notprot,
+            true => Sysbslpe::Prot,
         }
     }
     #[doc = "Area not protected. Read, program, and erase of BSL memory is possible."]
     #[inline(always)]
-    pub fn is_sysbslpe_0(&self) -> bool {
-        *self == Sysbslpe::Sysbslpe0
+    pub fn is_notprot(&self) -> bool {
+        *self == Sysbslpe::Notprot
     }
     #[doc = "Area protected"]
     #[inline(always)]
-    pub fn is_sysbslpe_1(&self) -> bool {
-        *self == Sysbslpe::Sysbslpe1
+    pub fn is_prot(&self) -> bool {
+        *self == Sysbslpe::Prot
     }
 }
 #[doc = "Field `SYSBSLPE` writer - Bootstrap loader memory protection enable for the size covered in SYSBSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit."]
@@ -152,13 +155,13 @@ where
 {
     #[doc = "Area not protected. Read, program, and erase of BSL memory is possible."]
     #[inline(always)]
-    pub fn sysbslpe_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbslpe::Sysbslpe0)
+    pub fn notprot(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslpe::Notprot)
     }
     #[doc = "Area protected"]
     #[inline(always)]
-    pub fn sysbslpe_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sysbslpe::Sysbslpe1)
+    pub fn prot(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslpe::Prot)
     }
 }
 impl R {

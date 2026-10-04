@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb1ctlw1Spec>;
 #[doc = "Register `UCB1CTLW1` writer"]
 pub type W = crate::W<Ucb1ctlw1Spec>;
 #[doc = "Deglitch time\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucglit {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Automatic STOP condition generation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucastp {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "SW or HW ACK control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucswack {
     #[doc = "0: The address acknowledge of the slave is controlled by the eUSCI_B module"]
@@ -228,6 +231,7 @@ where
     }
 }
 #[doc = "ACK all master bytes\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucstpnack {
     #[doc = "0: Send a non-acknowledge before the STOP condition as a master receiver (conform to I2C standard)"]
@@ -281,6 +285,7 @@ where
     }
 }
 #[doc = "Clock low timeout select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucclto {
@@ -367,6 +372,7 @@ where
     }
 }
 #[doc = "Early UCTXIFG0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucetxint {
     #[doc = "0: UCTXIFGx is set after an address match with UCxI2COAx and the direction bit indicating slave transmit"]

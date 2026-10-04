@@ -7,6 +7,7 @@ pub type I2coa3R = crate::FieldReader<u16>;
 #[doc = "Field `I2COA3` writer - I2C own address"]
 pub type I2coa3W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Own Address enable register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucoaen {
     #[doc = "0: The slave address defined in I2COA3 is disabled"]

@@ -3,6 +3,7 @@ pub type R = crate::R<Csctl1Spec>;
 #[doc = "Register `CSCTL1` writer"]
 pub type W = crate::W<Csctl1Spec>;
 #[doc = "Modulation. This bit enables/disables the modulation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dismod {
     #[doc = "0: Modulation enabled"]
@@ -56,25 +57,26 @@ where
     }
 }
 #[doc = "DCO Range Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dcorsel {
     #[doc = "0: 1 MHz"]
-    Dcorsel0 = 0,
+    Range1mhz = 0,
     #[doc = "1: 2 MHz"]
-    Dcorsel1 = 1,
+    Range2mhz = 1,
     #[doc = "2: 4 MHz"]
-    Dcorsel2 = 2,
+    Range4mhz = 2,
     #[doc = "3: 8 MHz"]
-    Dcorsel3 = 3,
+    Range8mhz = 3,
     #[doc = "4: 12 MHz"]
-    Dcorsel4 = 4,
+    Range12mhz = 4,
     #[doc = "5: 16 MHz"]
-    Dcorsel5 = 5,
-    #[doc = "6: 20 MHz(Only avaliable in 24MHz clock system)"]
-    Dcorsel6 = 6,
-    #[doc = "7: 24 MHz(Only avaliable in 24MHz clock system)"]
-    Dcorsel7 = 7,
+    Range16mhz = 5,
+    #[doc = "6: 20 MHz"]
+    Range20mhz = 6,
+    #[doc = "7: 24 MHz"]
+    Range24mhz = 7,
 }
 impl From<Dcorsel> for u8 {
     #[inline(always)]
@@ -93,56 +95,56 @@ impl DcorselR {
     #[inline(always)]
     pub const fn variant(&self) -> Dcorsel {
         match self.bits {
-            0 => Dcorsel::Dcorsel0,
-            1 => Dcorsel::Dcorsel1,
-            2 => Dcorsel::Dcorsel2,
-            3 => Dcorsel::Dcorsel3,
-            4 => Dcorsel::Dcorsel4,
-            5 => Dcorsel::Dcorsel5,
-            6 => Dcorsel::Dcorsel6,
-            7 => Dcorsel::Dcorsel7,
+            0 => Dcorsel::Range1mhz,
+            1 => Dcorsel::Range2mhz,
+            2 => Dcorsel::Range4mhz,
+            3 => Dcorsel::Range8mhz,
+            4 => Dcorsel::Range12mhz,
+            5 => Dcorsel::Range16mhz,
+            6 => Dcorsel::Range20mhz,
+            7 => Dcorsel::Range24mhz,
             _ => unreachable!(),
         }
     }
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_0(&self) -> bool {
-        *self == Dcorsel::Dcorsel0
+    pub fn is_range_1mhz(&self) -> bool {
+        *self == Dcorsel::Range1mhz
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_1(&self) -> bool {
-        *self == Dcorsel::Dcorsel1
+    pub fn is_range_2mhz(&self) -> bool {
+        *self == Dcorsel::Range2mhz
     }
     #[doc = "4 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_2(&self) -> bool {
-        *self == Dcorsel::Dcorsel2
+    pub fn is_range_4mhz(&self) -> bool {
+        *self == Dcorsel::Range4mhz
     }
     #[doc = "8 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_3(&self) -> bool {
-        *self == Dcorsel::Dcorsel3
+    pub fn is_range_8mhz(&self) -> bool {
+        *self == Dcorsel::Range8mhz
     }
     #[doc = "12 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_4(&self) -> bool {
-        *self == Dcorsel::Dcorsel4
+    pub fn is_range_12mhz(&self) -> bool {
+        *self == Dcorsel::Range12mhz
     }
     #[doc = "16 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_5(&self) -> bool {
-        *self == Dcorsel::Dcorsel5
+    pub fn is_range_16mhz(&self) -> bool {
+        *self == Dcorsel::Range16mhz
     }
-    #[doc = "20 MHz(Only avaliable in 24MHz clock system)"]
+    #[doc = "20 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_6(&self) -> bool {
-        *self == Dcorsel::Dcorsel6
+    pub fn is_range_20mhz(&self) -> bool {
+        *self == Dcorsel::Range20mhz
     }
-    #[doc = "24 MHz(Only avaliable in 24MHz clock system)"]
+    #[doc = "24 MHz"]
     #[inline(always)]
-    pub fn is_dcorsel_7(&self) -> bool {
-        *self == Dcorsel::Dcorsel7
+    pub fn is_range_24mhz(&self) -> bool {
+        *self == Dcorsel::Range24mhz
     }
 }
 #[doc = "Field `DCORSEL` writer - DCO Range Select"]
@@ -154,50 +156,51 @@ where
 {
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn dcorsel_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel0)
+    pub fn range_1mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range1mhz)
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn dcorsel_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel1)
+    pub fn range_2mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range2mhz)
     }
     #[doc = "4 MHz"]
     #[inline(always)]
-    pub fn dcorsel_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel2)
+    pub fn range_4mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range4mhz)
     }
     #[doc = "8 MHz"]
     #[inline(always)]
-    pub fn dcorsel_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel3)
+    pub fn range_8mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range8mhz)
     }
     #[doc = "12 MHz"]
     #[inline(always)]
-    pub fn dcorsel_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel4)
+    pub fn range_12mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range12mhz)
     }
     #[doc = "16 MHz"]
     #[inline(always)]
-    pub fn dcorsel_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel5)
+    pub fn range_16mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range16mhz)
     }
-    #[doc = "20 MHz(Only avaliable in 24MHz clock system)"]
+    #[doc = "20 MHz"]
     #[inline(always)]
-    pub fn dcorsel_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel6)
+    pub fn range_20mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range20mhz)
     }
-    #[doc = "24 MHz(Only avaliable in 24MHz clock system)"]
+    #[doc = "24 MHz"]
     #[inline(always)]
-    pub fn dcorsel_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Dcorsel::Dcorsel7)
+    pub fn range_24mhz(self) -> &'a mut crate::W<REG> {
+        self.variant(Dcorsel::Range24mhz)
     }
 }
 #[doc = "Field `DCOFTRIM` reader - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
 pub type DcoftrimR = crate::FieldReader;
 #[doc = "Field `DCOFTRIM` writer - DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code."]
-pub type DcoftrimW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type DcoftrimW<'a, REG> = crate::FieldWriter<'a, REG, 3, u8, crate::Safe>;
 #[doc = "DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dcoftrimen {
     #[doc = "0: Disable frequency trim"]

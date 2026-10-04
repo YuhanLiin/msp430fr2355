@@ -3,11 +3,12 @@ pub type R = crate::R<SysctlSpec>;
 #[doc = "Register `SYSCTL` writer"]
 pub type W = crate::W<SysctlSpec>;
 #[doc = "RAM-based interrupt vectors\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysrivect {
-    #[doc = "0: Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh"]
+    #[doc = "0: Interrupt vectors generated with end address TOP of lower 64KB of FRAM FFFFh"]
     Fram = 0,
-    #[doc = "1: Interrupt vectors generated with end address TOP of RAM, when RAM available"]
+    #[doc = "1: Interrupt vectors generated with end address TOP of RAM"]
     Ram = 1,
 }
 impl From<Sysrivect> for bool {
@@ -27,12 +28,12 @@ impl SysrivectR {
             true => Sysrivect::Ram,
         }
     }
-    #[doc = "Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh"]
+    #[doc = "Interrupt vectors generated with end address TOP of lower 64KB of FRAM FFFFh"]
     #[inline(always)]
     pub fn is_fram(&self) -> bool {
         *self == Sysrivect::Fram
     }
-    #[doc = "Interrupt vectors generated with end address TOP of RAM, when RAM available"]
+    #[doc = "Interrupt vectors generated with end address TOP of RAM"]
     #[inline(always)]
     pub fn is_ram(&self) -> bool {
         *self == Sysrivect::Ram
@@ -44,24 +45,25 @@ impl<'a, REG> SysrivectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh"]
+    #[doc = "Interrupt vectors generated with end address TOP of lower 64KB of FRAM FFFFh"]
     #[inline(always)]
     pub fn fram(self) -> &'a mut crate::W<REG> {
         self.variant(Sysrivect::Fram)
     }
-    #[doc = "Interrupt vectors generated with end address TOP of RAM, when RAM available"]
+    #[doc = "Interrupt vectors generated with end address TOP of RAM"]
     #[inline(always)]
     pub fn ram(self) -> &'a mut crate::W<REG> {
         self.variant(Sysrivect::Ram)
     }
 }
 #[doc = "PMM access protect\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Syspmmpe {
     #[doc = "0: Access from anywhere in memory"]
-    Syspmmpe0 = 0,
-    #[doc = "1: Access only from the BSL segments"]
-    Syspmmpe1 = 1,
+    Dis = 0,
+    #[doc = "1: Access only from the protected BSL segments"]
+    En = 1,
 }
 impl From<Syspmmpe> for bool {
     #[inline(always)]
@@ -76,19 +78,19 @@ impl SyspmmpeR {
     #[inline(always)]
     pub const fn variant(&self) -> Syspmmpe {
         match self.bits {
-            false => Syspmmpe::Syspmmpe0,
-            true => Syspmmpe::Syspmmpe1,
+            false => Syspmmpe::Dis,
+            true => Syspmmpe::En,
         }
     }
     #[doc = "Access from anywhere in memory"]
     #[inline(always)]
-    pub fn is_syspmmpe_0(&self) -> bool {
-        *self == Syspmmpe::Syspmmpe0
+    pub fn is_dis(&self) -> bool {
+        *self == Syspmmpe::Dis
     }
-    #[doc = "Access only from the BSL segments"]
+    #[doc = "Access only from the protected BSL segments"]
     #[inline(always)]
-    pub fn is_syspmmpe_1(&self) -> bool {
-        *self == Syspmmpe::Syspmmpe1
+    pub fn is_en(&self) -> bool {
+        *self == Syspmmpe::En
     }
 }
 #[doc = "Field `SYSPMMPE` writer - PMM access protect"]
@@ -99,22 +101,23 @@ where
 {
     #[doc = "Access from anywhere in memory"]
     #[inline(always)]
-    pub fn syspmmpe_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Syspmmpe::Syspmmpe0)
+    pub fn dis(self) -> &'a mut crate::W<REG> {
+        self.variant(Syspmmpe::Dis)
     }
-    #[doc = "Access only from the BSL segments"]
+    #[doc = "Access only from the protected BSL segments"]
     #[inline(always)]
-    pub fn syspmmpe_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Syspmmpe::Syspmmpe1)
+    pub fn en(self) -> &'a mut crate::W<REG> {
+        self.variant(Syspmmpe::En)
     }
 }
 #[doc = "BSL entry indication\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysbslind {
     #[doc = "0: No BSL entry sequence detected"]
-    Sysbslind0 = 0,
+    Clr = 0,
     #[doc = "1: BSL entry sequence detected"]
-    Sysbslind1 = 1,
+    Set = 1,
 }
 impl From<Sysbslind> for bool {
     #[inline(always)]
@@ -129,25 +132,43 @@ impl SysbslindR {
     #[inline(always)]
     pub const fn variant(&self) -> Sysbslind {
         match self.bits {
-            false => Sysbslind::Sysbslind0,
-            true => Sysbslind::Sysbslind1,
+            false => Sysbslind::Clr,
+            true => Sysbslind::Set,
         }
     }
     #[doc = "No BSL entry sequence detected"]
     #[inline(always)]
-    pub fn is_sysbslind_0(&self) -> bool {
-        *self == Sysbslind::Sysbslind0
+    pub fn is_clr(&self) -> bool {
+        *self == Sysbslind::Clr
     }
     #[doc = "BSL entry sequence detected"]
     #[inline(always)]
-    pub fn is_sysbslind_1(&self) -> bool {
-        *self == Sysbslind::Sysbslind1
+    pub fn is_set(&self) -> bool {
+        *self == Sysbslind::Set
+    }
+}
+#[doc = "Field `SYSBSLIND` writer - BSL entry indication"]
+pub type SysbslindW<'a, REG> = crate::BitWriter<'a, REG, Sysbslind>;
+impl<'a, REG> SysbslindW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "No BSL entry sequence detected"]
+    #[inline(always)]
+    pub fn clr(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslind::Clr)
+    }
+    #[doc = "BSL entry sequence detected"]
+    #[inline(always)]
+    pub fn set_(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysbslind::Set)
     }
 }
 #[doc = "Dedicated JTAG pins enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysjtagpin {
-    #[doc = "0: Shared JTAG pins (JTAG mode selectable using SBW sequence)"]
+    #[doc = "0: Shared JTAG pins (JTAG mode selectable by JTAG/SBW sequence)"]
     Shared = 0,
     #[doc = "1: Dedicated JTAG pins (explicit 4-wire JTAG mode selection)"]
     Dedicated = 1,
@@ -169,7 +190,7 @@ impl SysjtagpinR {
             true => Sysjtagpin::Dedicated,
         }
     }
-    #[doc = "Shared JTAG pins (JTAG mode selectable using SBW sequence)"]
+    #[doc = "Shared JTAG pins (JTAG mode selectable by JTAG/SBW sequence)"]
     #[inline(always)]
     pub fn is_shared(&self) -> bool {
         *self == Sysjtagpin::Shared
@@ -186,7 +207,7 @@ impl<'a, REG> SysjtagpinW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Shared JTAG pins (JTAG mode selectable using SBW sequence)"]
+    #[doc = "Shared JTAG pins (JTAG mode selectable by JTAG/SBW sequence)"]
     #[inline(always)]
     pub fn shared(self) -> &'a mut crate::W<REG> {
         self.variant(Sysjtagpin::Shared)
@@ -229,6 +250,11 @@ impl W {
     #[inline(always)]
     pub fn syspmmpe(&mut self) -> SyspmmpeW<'_, SysctlSpec> {
         SyspmmpeW::new(self, 2)
+    }
+    #[doc = "Bit 4 - BSL entry indication"]
+    #[inline(always)]
+    pub fn sysbslind(&mut self) -> SysbslindW<'_, SysctlSpec> {
+        SysbslindW::new(self, 4)
     }
     #[doc = "Bit 5 - Dedicated JTAG pins enable"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<Syscfg2Spec>;
 #[doc = "Register `SYSCFG2` writer"]
 pub type W = crate::W<Syscfg2Spec>;
 #[doc = "ADC input A0 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl0 {
     #[doc = "0: ADC input A0 disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "ADC input A1 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl1 {
     #[doc = "0: ADC input A1 disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "ADC input A2 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl2 {
     #[doc = "0: ADC input A2 disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "ADC input A3 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl3 {
     #[doc = "0: ADC input A3 disabled"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "ADC input A4 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl4 {
     #[doc = "0: ADC input A4 disabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "ADC input A5 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl5 {
     #[doc = "0: ADC input A5 disabled"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "ADC input A6 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl6 {
     #[doc = "0: ADC input A6 disabled"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "ADC input A7 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl7 {
     #[doc = "0: ADC input A7 disabled"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "ADC input A8 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl8 {
     #[doc = "0: ADC input A8 disabled"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "ADC input A9 pin select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcpctl9 {
     #[doc = "0: ADC input A9 disabled"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "RTC clock selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtccksel {
     #[doc = "0: SMCLK is selected"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "eUSCIB Remapping source selection , please refer to device specific for details\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uscibrmp {
     #[doc = "0: P1.x is selected, please refer to device specific for details"]
@@ -636,6 +648,222 @@ where
     #[inline(always)]
     pub fn uscibrmp_1(self) -> &'a mut crate::W<REG> {
         self.variant(Uscibrmp::Uscibrmp1)
+    }
+}
+#[doc = "TB3OUTH trigger select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tb3trgsel {
+    #[doc = "0: Internal source selected (eCOMP1)"]
+    Tb3trgsel0 = 0,
+    #[doc = "1: External source selected (not available)"]
+    Tb3trgsel1 = 1,
+}
+impl From<Tb3trgsel> for bool {
+    #[inline(always)]
+    fn from(variant: Tb3trgsel) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TB3TRGSEL` reader - TB3OUTH trigger select"]
+pub type Tb3trgselR = crate::BitReader<Tb3trgsel>;
+impl Tb3trgselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Tb3trgsel {
+        match self.bits {
+            false => Tb3trgsel::Tb3trgsel0,
+            true => Tb3trgsel::Tb3trgsel1,
+        }
+    }
+    #[doc = "Internal source selected (eCOMP1)"]
+    #[inline(always)]
+    pub fn is_tb3trgsel_0(&self) -> bool {
+        *self == Tb3trgsel::Tb3trgsel0
+    }
+    #[doc = "External source selected (not available)"]
+    #[inline(always)]
+    pub fn is_tb3trgsel_1(&self) -> bool {
+        *self == Tb3trgsel::Tb3trgsel1
+    }
+}
+#[doc = "Field `TB3TRGSEL` writer - TB3OUTH trigger select"]
+pub type Tb3trgselW<'a, REG> = crate::BitWriter<'a, REG, Tb3trgsel>;
+impl<'a, REG> Tb3trgselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Internal source selected (eCOMP1)"]
+    #[inline(always)]
+    pub fn tb3trgsel_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb3trgsel::Tb3trgsel0)
+    }
+    #[doc = "External source selected (not available)"]
+    #[inline(always)]
+    pub fn tb3trgsel_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb3trgsel::Tb3trgsel1)
+    }
+}
+#[doc = "TB2OUTH trigger select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tb2trgsel {
+    #[doc = "0: Internal source selected (eCOMP1)"]
+    Tb2trgsel0 = 0,
+    #[doc = "1: External source selected (TB2TRG pin)"]
+    Tb2trgsel1 = 1,
+}
+impl From<Tb2trgsel> for bool {
+    #[inline(always)]
+    fn from(variant: Tb2trgsel) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TB2TRGSEL` reader - TB2OUTH trigger select"]
+pub type Tb2trgselR = crate::BitReader<Tb2trgsel>;
+impl Tb2trgselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Tb2trgsel {
+        match self.bits {
+            false => Tb2trgsel::Tb2trgsel0,
+            true => Tb2trgsel::Tb2trgsel1,
+        }
+    }
+    #[doc = "Internal source selected (eCOMP1)"]
+    #[inline(always)]
+    pub fn is_tb2trgsel_0(&self) -> bool {
+        *self == Tb2trgsel::Tb2trgsel0
+    }
+    #[doc = "External source selected (TB2TRG pin)"]
+    #[inline(always)]
+    pub fn is_tb2trgsel_1(&self) -> bool {
+        *self == Tb2trgsel::Tb2trgsel1
+    }
+}
+#[doc = "Field `TB2TRGSEL` writer - TB2OUTH trigger select"]
+pub type Tb2trgselW<'a, REG> = crate::BitWriter<'a, REG, Tb2trgsel>;
+impl<'a, REG> Tb2trgselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Internal source selected (eCOMP1)"]
+    #[inline(always)]
+    pub fn tb2trgsel_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb2trgsel::Tb2trgsel0)
+    }
+    #[doc = "External source selected (TB2TRG pin)"]
+    #[inline(always)]
+    pub fn tb2trgsel_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb2trgsel::Tb2trgsel1)
+    }
+}
+#[doc = "TB1OUTH trigger select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tb1trgsel {
+    #[doc = "0: Internal source selected (eCOMP0)"]
+    Tb1trgsel0 = 0,
+    #[doc = "1: External source selected (TB1TRG pin)"]
+    Tb1trgsel1 = 1,
+}
+impl From<Tb1trgsel> for bool {
+    #[inline(always)]
+    fn from(variant: Tb1trgsel) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TB1TRGSEL` reader - TB1OUTH trigger select"]
+pub type Tb1trgselR = crate::BitReader<Tb1trgsel>;
+impl Tb1trgselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Tb1trgsel {
+        match self.bits {
+            false => Tb1trgsel::Tb1trgsel0,
+            true => Tb1trgsel::Tb1trgsel1,
+        }
+    }
+    #[doc = "Internal source selected (eCOMP0)"]
+    #[inline(always)]
+    pub fn is_tb1trgsel_0(&self) -> bool {
+        *self == Tb1trgsel::Tb1trgsel0
+    }
+    #[doc = "External source selected (TB1TRG pin)"]
+    #[inline(always)]
+    pub fn is_tb1trgsel_1(&self) -> bool {
+        *self == Tb1trgsel::Tb1trgsel1
+    }
+}
+#[doc = "Field `TB1TRGSEL` writer - TB1OUTH trigger select"]
+pub type Tb1trgselW<'a, REG> = crate::BitWriter<'a, REG, Tb1trgsel>;
+impl<'a, REG> Tb1trgselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Internal source selected (eCOMP0)"]
+    #[inline(always)]
+    pub fn tb1trgsel_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb1trgsel::Tb1trgsel0)
+    }
+    #[doc = "External source selected (TB1TRG pin)"]
+    #[inline(always)]
+    pub fn tb1trgsel_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb1trgsel::Tb1trgsel1)
+    }
+}
+#[doc = "TB0OUTH trigger select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tb0trgsel {
+    #[doc = "0: Internal source selected (eCOMP0)"]
+    Tb0trgsel0 = 0,
+    #[doc = "1: External source selected (TB0TRG pin)"]
+    Tb0trgsel1 = 1,
+}
+impl From<Tb0trgsel> for bool {
+    #[inline(always)]
+    fn from(variant: Tb0trgsel) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TB0TRGSEL` reader - TB0OUTH trigger select"]
+pub type Tb0trgselR = crate::BitReader<Tb0trgsel>;
+impl Tb0trgselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Tb0trgsel {
+        match self.bits {
+            false => Tb0trgsel::Tb0trgsel0,
+            true => Tb0trgsel::Tb0trgsel1,
+        }
+    }
+    #[doc = "Internal source selected (eCOMP0)"]
+    #[inline(always)]
+    pub fn is_tb0trgsel_0(&self) -> bool {
+        *self == Tb0trgsel::Tb0trgsel0
+    }
+    #[doc = "External source selected (TB0TRG pin)"]
+    #[inline(always)]
+    pub fn is_tb0trgsel_1(&self) -> bool {
+        *self == Tb0trgsel::Tb0trgsel1
+    }
+}
+#[doc = "Field `TB0TRGSEL` writer - TB0OUTH trigger select"]
+pub type Tb0trgselW<'a, REG> = crate::BitWriter<'a, REG, Tb0trgsel>;
+impl<'a, REG> Tb0trgselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Internal source selected (eCOMP0)"]
+    #[inline(always)]
+    pub fn tb0trgsel_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb0trgsel::Tb0trgsel0)
+    }
+    #[doc = "External source selected (TB0TRG pin)"]
+    #[inline(always)]
+    pub fn tb0trgsel_1(self) -> &'a mut crate::W<REG> {
+        self.variant(Tb0trgsel::Tb0trgsel1)
     }
 }
 impl R {
@@ -699,6 +927,26 @@ impl R {
     pub fn uscibrmp(&self) -> UscibrmpR {
         UscibrmpR::new(((self.bits >> 11) & 1) != 0)
     }
+    #[doc = "Bit 12 - TB3OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb3trgsel(&self) -> Tb3trgselR {
+        Tb3trgselR::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Bit 13 - TB2OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb2trgsel(&self) -> Tb2trgselR {
+        Tb2trgselR::new(((self.bits >> 13) & 1) != 0)
+    }
+    #[doc = "Bit 14 - TB1OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb1trgsel(&self) -> Tb1trgselR {
+        Tb1trgselR::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 15 - TB0OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb0trgsel(&self) -> Tb0trgselR {
+        Tb0trgselR::new(((self.bits >> 15) & 1) != 0)
+    }
 }
 impl W {
     #[doc = "Bit 0 - ADC input A0 pin select"]
@@ -760,6 +1008,26 @@ impl W {
     #[inline(always)]
     pub fn uscibrmp(&mut self) -> UscibrmpW<'_, Syscfg2Spec> {
         UscibrmpW::new(self, 11)
+    }
+    #[doc = "Bit 12 - TB3OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb3trgsel(&mut self) -> Tb3trgselW<'_, Syscfg2Spec> {
+        Tb3trgselW::new(self, 12)
+    }
+    #[doc = "Bit 13 - TB2OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb2trgsel(&mut self) -> Tb2trgselW<'_, Syscfg2Spec> {
+        Tb2trgselW::new(self, 13)
+    }
+    #[doc = "Bit 14 - TB1OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb1trgsel(&mut self) -> Tb1trgselW<'_, Syscfg2Spec> {
+        Tb1trgselW::new(self, 14)
+    }
+    #[doc = "Bit 15 - TB0OUTH trigger select"]
+    #[inline(always)]
+    pub fn tb0trgsel(&mut self) -> Tb0trgselW<'_, Syscfg2Spec> {
+        Tb0trgselW::new(self, 15)
     }
 }
 #[doc = "System Configuration Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`syscfg2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`syscfg2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

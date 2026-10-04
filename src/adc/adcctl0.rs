@@ -3,6 +3,7 @@ pub type R = crate::R<Adcctl0Spec>;
 #[doc = "Register `ADCCTL0` writer"]
 pub type W = crate::W<Adcctl0Spec>;
 #[doc = "start conversion\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcsc {
     #[doc = "0: No sample-and-conversion-start"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "enable conversion\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcenc {
     #[doc = "0: ADC disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "ADC on\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcon {
     #[doc = "0: ADC off"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "sample-and-hold time.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcmsc {
     #[doc = "0: The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert."]
@@ -215,41 +219,36 @@ where
     }
 }
 #[doc = "sample-and-hold time.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcsht {
     #[doc = "0: 4 ADCCLK cycles"]
-    Adcsht0 = 0,
+    Cycles4 = 0,
     #[doc = "1: 8 ADCCLK cycles"]
-    Adcsht1 = 1,
+    Cycles8 = 1,
     #[doc = "2: 16 ADCCLK cycles"]
-    Adcsht2 = 2,
+    Cycles16 = 2,
     #[doc = "3: 32 ADCCLK cycles"]
-    Adcsht3 = 3,
+    Cycles32 = 3,
     #[doc = "4: 64 ADCCLK cycles"]
-    Adcsht4 = 4,
+    Cycles64 = 4,
     #[doc = "5: 96 ADCCLK cycles"]
-    Adcsht5 = 5,
+    Cycles96 = 5,
     #[doc = "6: 128 ADCCLK cycles"]
-    Adcsht6 = 6,
+    Cycles128 = 6,
     #[doc = "7: 192 ADCCLK cycles"]
-    Adcsht7 = 7,
+    Cycles192 = 7,
     #[doc = "8: 256 ADCCLK cycles"]
-    Adcsht8 = 8,
+    Cycles256 = 8,
     #[doc = "9: 384 ADCCLK cycles"]
-    Adcsht9 = 9,
+    Cycles384 = 9,
     #[doc = "10: 512 ADCCLK cycles"]
-    Adcsht10 = 10,
+    Cycles512 = 10,
     #[doc = "11: 768 ADCCLK cycles"]
-    Adcsht11 = 11,
+    Cycles768 = 11,
     #[doc = "12: 1024 ADCCLK cycles"]
-    Adcsht12 = 12,
-    #[doc = "13: 1024 ADCCLK cycles"]
-    Adcsht13 = 13,
-    #[doc = "14: 1024 ADCCLK cycles"]
-    Adcsht14 = 14,
-    #[doc = "15: 1024 ADCCLK cycles"]
-    Adcsht15 = 15,
+    Cycles1024 = 12,
 }
 impl From<Adcsht> for u8 {
     #[inline(always)]
@@ -266,110 +265,92 @@ pub type AdcshtR = crate::FieldReader<Adcsht>;
 impl AdcshtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Adcsht {
+    pub const fn variant(&self) -> Option<Adcsht> {
         match self.bits {
-            0 => Adcsht::Adcsht0,
-            1 => Adcsht::Adcsht1,
-            2 => Adcsht::Adcsht2,
-            3 => Adcsht::Adcsht3,
-            4 => Adcsht::Adcsht4,
-            5 => Adcsht::Adcsht5,
-            6 => Adcsht::Adcsht6,
-            7 => Adcsht::Adcsht7,
-            8 => Adcsht::Adcsht8,
-            9 => Adcsht::Adcsht9,
-            10 => Adcsht::Adcsht10,
-            11 => Adcsht::Adcsht11,
-            12 => Adcsht::Adcsht12,
-            13 => Adcsht::Adcsht13,
-            14 => Adcsht::Adcsht14,
-            15 => Adcsht::Adcsht15,
-            _ => unreachable!(),
+            0 => Some(Adcsht::Cycles4),
+            1 => Some(Adcsht::Cycles8),
+            2 => Some(Adcsht::Cycles16),
+            3 => Some(Adcsht::Cycles32),
+            4 => Some(Adcsht::Cycles64),
+            5 => Some(Adcsht::Cycles96),
+            6 => Some(Adcsht::Cycles128),
+            7 => Some(Adcsht::Cycles192),
+            8 => Some(Adcsht::Cycles256),
+            9 => Some(Adcsht::Cycles384),
+            10 => Some(Adcsht::Cycles512),
+            11 => Some(Adcsht::Cycles768),
+            12 => Some(Adcsht::Cycles1024),
+            _ => None,
         }
     }
     #[doc = "4 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_0(&self) -> bool {
-        *self == Adcsht::Adcsht0
+    pub fn is_cycles_4(&self) -> bool {
+        *self == Adcsht::Cycles4
     }
     #[doc = "8 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_1(&self) -> bool {
-        *self == Adcsht::Adcsht1
+    pub fn is_cycles_8(&self) -> bool {
+        *self == Adcsht::Cycles8
     }
     #[doc = "16 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_2(&self) -> bool {
-        *self == Adcsht::Adcsht2
+    pub fn is_cycles_16(&self) -> bool {
+        *self == Adcsht::Cycles16
     }
     #[doc = "32 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_3(&self) -> bool {
-        *self == Adcsht::Adcsht3
+    pub fn is_cycles_32(&self) -> bool {
+        *self == Adcsht::Cycles32
     }
     #[doc = "64 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_4(&self) -> bool {
-        *self == Adcsht::Adcsht4
+    pub fn is_cycles_64(&self) -> bool {
+        *self == Adcsht::Cycles64
     }
     #[doc = "96 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_5(&self) -> bool {
-        *self == Adcsht::Adcsht5
+    pub fn is_cycles_96(&self) -> bool {
+        *self == Adcsht::Cycles96
     }
     #[doc = "128 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_6(&self) -> bool {
-        *self == Adcsht::Adcsht6
+    pub fn is_cycles_128(&self) -> bool {
+        *self == Adcsht::Cycles128
     }
     #[doc = "192 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_7(&self) -> bool {
-        *self == Adcsht::Adcsht7
+    pub fn is_cycles_192(&self) -> bool {
+        *self == Adcsht::Cycles192
     }
     #[doc = "256 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_8(&self) -> bool {
-        *self == Adcsht::Adcsht8
+    pub fn is_cycles_256(&self) -> bool {
+        *self == Adcsht::Cycles256
     }
     #[doc = "384 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_9(&self) -> bool {
-        *self == Adcsht::Adcsht9
+    pub fn is_cycles_384(&self) -> bool {
+        *self == Adcsht::Cycles384
     }
     #[doc = "512 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_10(&self) -> bool {
-        *self == Adcsht::Adcsht10
+    pub fn is_cycles_512(&self) -> bool {
+        *self == Adcsht::Cycles512
     }
     #[doc = "768 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_11(&self) -> bool {
-        *self == Adcsht::Adcsht11
+    pub fn is_cycles_768(&self) -> bool {
+        *self == Adcsht::Cycles768
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn is_adcsht_12(&self) -> bool {
-        *self == Adcsht::Adcsht12
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn is_adcsht_13(&self) -> bool {
-        *self == Adcsht::Adcsht13
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn is_adcsht_14(&self) -> bool {
-        *self == Adcsht::Adcsht14
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn is_adcsht_15(&self) -> bool {
-        *self == Adcsht::Adcsht15
+    pub fn is_cycles_1024(&self) -> bool {
+        *self == Adcsht::Cycles1024
     }
 }
 #[doc = "Field `ADCSHT` writer - sample-and-hold time."]
-pub type AdcshtW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcsht, crate::Safe>;
+pub type AdcshtW<'a, REG> = crate::FieldWriter<'a, REG, 4, Adcsht>;
 impl<'a, REG> AdcshtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -377,83 +358,68 @@ where
 {
     #[doc = "4 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht0)
+    pub fn cycles_4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles4)
     }
     #[doc = "8 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht1)
+    pub fn cycles_8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles8)
     }
     #[doc = "16 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht2)
+    pub fn cycles_16(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles16)
     }
     #[doc = "32 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht3)
+    pub fn cycles_32(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles32)
     }
     #[doc = "64 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht4)
+    pub fn cycles_64(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles64)
     }
     #[doc = "96 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht5)
+    pub fn cycles_96(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles96)
     }
     #[doc = "128 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht6)
+    pub fn cycles_128(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles128)
     }
     #[doc = "192 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht7)
+    pub fn cycles_192(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles192)
     }
     #[doc = "256 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_8(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht8)
+    pub fn cycles_256(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles256)
     }
     #[doc = "384 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_9(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht9)
+    pub fn cycles_384(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles384)
     }
     #[doc = "512 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_10(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht10)
+    pub fn cycles_512(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles512)
     }
     #[doc = "768 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_11(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht11)
+    pub fn cycles_768(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles768)
     }
     #[doc = "1024 ADCCLK cycles"]
     #[inline(always)]
-    pub fn adcsht_12(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht12)
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn adcsht_13(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht13)
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn adcsht_14(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht14)
-    }
-    #[doc = "1024 ADCCLK cycles"]
-    #[inline(always)]
-    pub fn adcsht_15(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcsht::Adcsht15)
+    pub fn cycles_1024(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcsht::Cycles1024)
     }
 }
 impl R {

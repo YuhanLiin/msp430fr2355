@@ -3,6 +3,7 @@ pub type R = crate::R<SfrrpcrSpec>;
 #[doc = "Register `SFRRPCR` writer"]
 pub type W = crate::W<SfrrpcrSpec>;
 #[doc = "NMI select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysnmi {
     #[doc = "0: Reset function"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "NMI edge select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysnmiies {
     #[doc = "0: NMI on rising edge"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Reset resistor pin pullup or pulldown\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysrstup {
     #[doc = "0: Pulldown is selected"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Reset pin resistor enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sysrstre {
     #[doc = "0: Pullup or pulldown resistor at the RST/NMI pin is disabled"]
@@ -214,6 +218,60 @@ where
         self.variant(Sysrstre::Enable)
     }
 }
+#[doc = "Reset pin filter enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sysflte {
+    #[doc = "0: Reset pin filter disabled"]
+    Disabled = 0,
+    #[doc = "1: Reset pin filter enabled"]
+    Enabled = 1,
+}
+impl From<Sysflte> for bool {
+    #[inline(always)]
+    fn from(variant: Sysflte) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `SYSFLTE` reader - Reset pin filter enable"]
+pub type SysflteR = crate::BitReader<Sysflte>;
+impl SysflteR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Sysflte {
+        match self.bits {
+            false => Sysflte::Disabled,
+            true => Sysflte::Enabled,
+        }
+    }
+    #[doc = "Reset pin filter disabled"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == Sysflte::Disabled
+    }
+    #[doc = "Reset pin filter enabled"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == Sysflte::Enabled
+    }
+}
+#[doc = "Field `SYSFLTE` writer - Reset pin filter enable"]
+pub type SysflteW<'a, REG> = crate::BitWriter<'a, REG, Sysflte>;
+impl<'a, REG> SysflteW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "Reset pin filter disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysflte::Disabled)
+    }
+    #[doc = "Reset pin filter enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
+        self.variant(Sysflte::Enabled)
+    }
+}
 impl R {
     #[doc = "Bit 0 - NMI select"]
     #[inline(always)]
@@ -234,6 +292,11 @@ impl R {
     #[inline(always)]
     pub fn sysrstre(&self) -> SysrstreR {
         SysrstreR::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - Reset pin filter enable"]
+    #[inline(always)]
+    pub fn sysflte(&self) -> SysflteR {
+        SysflteR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
@@ -256,6 +319,11 @@ impl W {
     #[inline(always)]
     pub fn sysrstre(&mut self) -> SysrstreW<'_, SfrrpcrSpec> {
         SysrstreW::new(self, 3)
+    }
+    #[doc = "Bit 4 - Reset pin filter enable"]
+    #[inline(always)]
+    pub fn sysflte(&mut self) -> SysflteW<'_, SfrrpcrSpec> {
+        SysflteW::new(self, 4)
     }
 }
 #[doc = "Reset Pin Control\n\nYou can [`read`](crate::Reg::read) this register and get [`sfrrpcr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sfrrpcr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

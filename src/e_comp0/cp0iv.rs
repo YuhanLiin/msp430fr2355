@@ -1,8 +1,9 @@
-#[doc = "Register `CPIV` reader"]
-pub type R = crate::R<CpivSpec>;
-#[doc = "Register `CPIV` writer"]
-pub type W = crate::W<CpivSpec>;
+#[doc = "Register `CP0IV` reader"]
+pub type R = crate::R<Cp0ivSpec>;
+#[doc = "Register `CP0IV` writer"]
+pub type W = crate::W<Cp0ivSpec>;
 #[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Cpiv {
@@ -60,16 +61,16 @@ impl R {
     }
 }
 impl W {}
-#[doc = "Comparator Interrupt Vector Word Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpiv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpiv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CpivSpec;
-impl crate::RegisterSpec for CpivSpec {
+#[doc = "Comparator Interrupt Vector Word Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0iv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0iv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0ivSpec;
+impl crate::RegisterSpec for Cp0ivSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpiv::R`](R) reader structure"]
-impl crate::Readable for CpivSpec {}
-#[doc = "`write(|w| ..)` method takes [`cpiv::W`](W) writer structure"]
-impl crate::Writable for CpivSpec {
+#[doc = "`read()` method returns [`cp0iv::R`](R) reader structure"]
+impl crate::Readable for Cp0ivSpec {}
+#[doc = "`write(|w| ..)` method takes [`cp0iv::W`](W) writer structure"]
+impl crate::Writable for Cp0ivSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPIV to value 0"]
-impl crate::Resettable for CpivSpec {}
+#[doc = "`reset()` method sets CP0IV to value 0"]
+impl crate::Resettable for Cp0ivSpec {}

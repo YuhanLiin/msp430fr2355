@@ -3,6 +3,7 @@ pub type R = crate::R<Ucb0ctlw0Spec>;
 #[doc = "Register `UCB0CTLW0` writer"]
 pub type W = crate::W<Ucb0ctlw0Spec>;
 #[doc = "Software reset enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucswrst {
     #[doc = "0: Disabled. eUSCI_B reset released for operation"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transmit START condition in master mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxstt {
     #[doc = "0: Do not generate START condition"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Transmit STOP condition in master mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxstp {
     #[doc = "0: No STOP generated"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Transmit a NACK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxnack {
     #[doc = "0: Acknowledge normally"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Transmitter/receiver\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctr {
     #[doc = "0: Receiver"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Transmit ACK condition in slave mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uctxack {
     #[doc = "0: Do not acknowledge the slave address"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "eUSCI_B clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucssel {
@@ -407,6 +414,7 @@ where
     }
 }
 #[doc = "Synchronous mode enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsync {
     #[doc = "0: Asynchronous mode"]
@@ -460,6 +468,7 @@ where
     }
 }
 #[doc = "eUSCI_B mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ucmode {
@@ -546,6 +555,7 @@ where
     }
 }
 #[doc = "Master mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucmst {
     #[doc = "0: Slave mode"]
@@ -599,6 +609,7 @@ where
     }
 }
 #[doc = "Multi-master environment select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucmm {
     #[doc = "0: Single master environment. There is no other master in the system. The address compare unit is disabled."]
@@ -652,6 +663,7 @@ where
     }
 }
 #[doc = "Slave addressing mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ucsla10 {
     #[doc = "0: Address slave with 7-bit address"]
@@ -705,6 +717,7 @@ where
     }
 }
 #[doc = "Own addressing mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Uca10 {
     #[doc = "0: Own address is a 7-bit address"]

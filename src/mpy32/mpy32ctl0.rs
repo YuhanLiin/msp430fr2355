@@ -3,6 +3,7 @@ pub type R = crate::R<Mpy32ctl0Spec>;
 #[doc = "Register `MPY32CTL0` writer"]
 pub type W = crate::W<Mpy32ctl0Spec>;
 #[doc = "Carry of the multiplier\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpyc {
     #[doc = "0: No carry for result."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Fractional mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpyfrac {
     #[doc = "0: Fractional mode disabled."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Saturation mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpysat {
     #[doc = "0: Saturation mode disabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Multiplier mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mpym {
@@ -248,6 +252,7 @@ where
     }
 }
 #[doc = "Multiplier bit width of operand 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpyop1_32 {
     #[doc = "0: 16 bits."]
@@ -301,6 +306,7 @@ where
     }
 }
 #[doc = "Multiplier bit width of operand 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpyop2_32 {
     #[doc = "0: 16 bits."]
@@ -354,6 +360,7 @@ where
     }
 }
 #[doc = "Delayed write enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpydlywrten {
     #[doc = "0: Writes are not delayed."]
@@ -407,6 +414,7 @@ where
     }
 }
 #[doc = "Delayed write mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mpydly32 {
     #[doc = "0: Writes are delayed until 64-bit result (RES0 to RES3) is available."]

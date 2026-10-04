@@ -3,6 +3,7 @@ pub type R = crate::R<Adcctl1Spec>;
 #[doc = "Register `ADCCTL1` writer"]
 pub type W = crate::W<Adcctl1Spec>;
 #[doc = "ADC busy\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcbusy {
     #[doc = "0: No operation is active."]
@@ -39,17 +40,18 @@ impl AdcbusyR {
     }
 }
 #[doc = "conversion sequence mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcconseq {
-    #[doc = "0: Single-channel, single-conversion"]
-    Adcconseq0 = 0,
-    #[doc = "1: Sequence-of-channels"]
-    Adcconseq1 = 1,
-    #[doc = "2: Repeat-single-channel"]
-    Adcconseq2 = 2,
-    #[doc = "3: Repeat-sequence-of-channels"]
-    Adcconseq3 = 3,
+    #[doc = "0: Single-channel, single-conversion: a single channel is converted once"]
+    Single = 0,
+    #[doc = "1: Sequence-of-channels: a sequence of channels is converted once"]
+    Sequence = 1,
+    #[doc = "2: Repeat-single-channel: a single channel is converted repeatedly"]
+    RepeatSingle = 2,
+    #[doc = "3: Repeat-sequence-of-channels: a sequence of channels is converted repeatedly"]
+    RepeatSequence = 3,
 }
 impl From<Adcconseq> for u8 {
     #[inline(always)]
@@ -68,32 +70,32 @@ impl AdcconseqR {
     #[inline(always)]
     pub const fn variant(&self) -> Adcconseq {
         match self.bits {
-            0 => Adcconseq::Adcconseq0,
-            1 => Adcconseq::Adcconseq1,
-            2 => Adcconseq::Adcconseq2,
-            3 => Adcconseq::Adcconseq3,
+            0 => Adcconseq::Single,
+            1 => Adcconseq::Sequence,
+            2 => Adcconseq::RepeatSingle,
+            3 => Adcconseq::RepeatSequence,
             _ => unreachable!(),
         }
     }
-    #[doc = "Single-channel, single-conversion"]
+    #[doc = "Single-channel, single-conversion: a single channel is converted once"]
     #[inline(always)]
-    pub fn is_adcconseq_0(&self) -> bool {
-        *self == Adcconseq::Adcconseq0
+    pub fn is_single(&self) -> bool {
+        *self == Adcconseq::Single
     }
-    #[doc = "Sequence-of-channels"]
+    #[doc = "Sequence-of-channels: a sequence of channels is converted once"]
     #[inline(always)]
-    pub fn is_adcconseq_1(&self) -> bool {
-        *self == Adcconseq::Adcconseq1
+    pub fn is_sequence(&self) -> bool {
+        *self == Adcconseq::Sequence
     }
-    #[doc = "Repeat-single-channel"]
+    #[doc = "Repeat-single-channel: a single channel is converted repeatedly"]
     #[inline(always)]
-    pub fn is_adcconseq_2(&self) -> bool {
-        *self == Adcconseq::Adcconseq2
+    pub fn is_repeat_single(&self) -> bool {
+        *self == Adcconseq::RepeatSingle
     }
-    #[doc = "Repeat-sequence-of-channels"]
+    #[doc = "Repeat-sequence-of-channels: a sequence of channels is converted repeatedly"]
     #[inline(always)]
-    pub fn is_adcconseq_3(&self) -> bool {
-        *self == Adcconseq::Adcconseq3
+    pub fn is_repeat_sequence(&self) -> bool {
+        *self == Adcconseq::RepeatSequence
     }
 }
 #[doc = "Field `ADCCONSEQ` writer - conversion sequence mode select"]
@@ -103,39 +105,38 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Single-channel, single-conversion"]
+    #[doc = "Single-channel, single-conversion: a single channel is converted once"]
     #[inline(always)]
-    pub fn adcconseq_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcconseq::Adcconseq0)
+    pub fn single(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcconseq::Single)
     }
-    #[doc = "Sequence-of-channels"]
+    #[doc = "Sequence-of-channels: a sequence of channels is converted once"]
     #[inline(always)]
-    pub fn adcconseq_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcconseq::Adcconseq1)
+    pub fn sequence(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcconseq::Sequence)
     }
-    #[doc = "Repeat-single-channel"]
+    #[doc = "Repeat-single-channel: a single channel is converted repeatedly"]
     #[inline(always)]
-    pub fn adcconseq_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcconseq::Adcconseq2)
+    pub fn repeat_single(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcconseq::RepeatSingle)
     }
-    #[doc = "Repeat-sequence-of-channels"]
+    #[doc = "Repeat-sequence-of-channels: a sequence of channels is converted repeatedly"]
     #[inline(always)]
-    pub fn adcconseq_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcconseq::Adcconseq3)
+    pub fn repeat_sequence(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcconseq::RepeatSequence)
     }
 }
 #[doc = "clock source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcssel {
-    #[doc = "0: ADCOSC (MODOSC)"]
-    Adcssel0 = 0,
+    #[doc = "0: MODCLK"]
+    Modclk = 0,
     #[doc = "1: ACLK"]
-    Adcssel1 = 1,
-    #[doc = "2: MCLK"]
-    Adcssel2 = 2,
-    #[doc = "3: SMCLK"]
-    Adcssel3 = 3,
+    Aclk = 1,
+    #[doc = "2: SMCLK"]
+    Smclk = 2,
 }
 impl From<Adcssel> for u8 {
     #[inline(always)]
@@ -152,84 +153,74 @@ pub type AdcsselR = crate::FieldReader<Adcssel>;
 impl AdcsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Adcssel {
+    pub const fn variant(&self) -> Option<Adcssel> {
         match self.bits {
-            0 => Adcssel::Adcssel0,
-            1 => Adcssel::Adcssel1,
-            2 => Adcssel::Adcssel2,
-            3 => Adcssel::Adcssel3,
-            _ => unreachable!(),
+            0 => Some(Adcssel::Modclk),
+            1 => Some(Adcssel::Aclk),
+            2 => Some(Adcssel::Smclk),
+            _ => None,
         }
     }
-    #[doc = "ADCOSC (MODOSC)"]
+    #[doc = "MODCLK"]
     #[inline(always)]
-    pub fn is_adcssel_0(&self) -> bool {
-        *self == Adcssel::Adcssel0
+    pub fn is_modclk(&self) -> bool {
+        *self == Adcssel::Modclk
     }
     #[doc = "ACLK"]
     #[inline(always)]
-    pub fn is_adcssel_1(&self) -> bool {
-        *self == Adcssel::Adcssel1
-    }
-    #[doc = "MCLK"]
-    #[inline(always)]
-    pub fn is_adcssel_2(&self) -> bool {
-        *self == Adcssel::Adcssel2
+    pub fn is_aclk(&self) -> bool {
+        *self == Adcssel::Aclk
     }
     #[doc = "SMCLK"]
     #[inline(always)]
-    pub fn is_adcssel_3(&self) -> bool {
-        *self == Adcssel::Adcssel3
+    pub fn is_smclk(&self) -> bool {
+        *self == Adcssel::Smclk
     }
 }
 #[doc = "Field `ADCSSEL` writer - clock source select"]
-pub type AdcsselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcssel, crate::Safe>;
+pub type AdcsselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Adcssel>;
 impl<'a, REG> AdcsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ADCOSC (MODOSC)"]
+    #[doc = "MODCLK"]
     #[inline(always)]
-    pub fn adcssel_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcssel::Adcssel0)
+    pub fn modclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcssel::Modclk)
     }
     #[doc = "ACLK"]
     #[inline(always)]
-    pub fn adcssel_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcssel::Adcssel1)
-    }
-    #[doc = "MCLK"]
-    #[inline(always)]
-    pub fn adcssel_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcssel::Adcssel2)
+    pub fn aclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcssel::Aclk)
     }
     #[doc = "SMCLK"]
     #[inline(always)]
-    pub fn adcssel_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcssel::Adcssel3)
+    pub fn smclk(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcssel::Smclk)
     }
 }
 #[doc = "clock divider\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcdiv {
-    #[doc = "0: /1"]
-    Adcdiv0 = 0,
-    #[doc = "1: /2"]
-    Adcdiv1 = 1,
-    #[doc = "2: /3"]
-    Adcdiv2 = 2,
-    #[doc = "3: /4"]
-    Adcdiv3 = 3,
-    #[doc = "4: /5"]
-    Adcdiv4 = 4,
-    #[doc = "5: /6"]
-    Adcdiv5 = 5,
-    #[doc = "6: /7"]
-    Adcdiv6 = 6,
-    #[doc = "7: /8"]
-    Adcdiv7 = 7,
+    #[doc = "0: Divide by 1"]
+    _1 = 0,
+    #[doc = "1: Divide by 2"]
+    _2 = 1,
+    #[doc = "2: Divide by 3"]
+    _3 = 2,
+    #[doc = "3: Divide by 4"]
+    _4 = 3,
+    #[doc = "4: Divide by 5"]
+    _5 = 4,
+    #[doc = "5: Divide by 6"]
+    _6 = 5,
+    #[doc = "6: Divide by 7"]
+    _7 = 6,
+    #[doc = "7: Divide by 8"]
+    _8 = 7,
 }
 impl From<Adcdiv> for u8 {
     #[inline(always)]
@@ -248,56 +239,56 @@ impl AdcdivR {
     #[inline(always)]
     pub const fn variant(&self) -> Adcdiv {
         match self.bits {
-            0 => Adcdiv::Adcdiv0,
-            1 => Adcdiv::Adcdiv1,
-            2 => Adcdiv::Adcdiv2,
-            3 => Adcdiv::Adcdiv3,
-            4 => Adcdiv::Adcdiv4,
-            5 => Adcdiv::Adcdiv5,
-            6 => Adcdiv::Adcdiv6,
-            7 => Adcdiv::Adcdiv7,
+            0 => Adcdiv::_1,
+            1 => Adcdiv::_2,
+            2 => Adcdiv::_3,
+            3 => Adcdiv::_4,
+            4 => Adcdiv::_5,
+            5 => Adcdiv::_6,
+            6 => Adcdiv::_7,
+            7 => Adcdiv::_8,
             _ => unreachable!(),
         }
     }
-    #[doc = "/1"]
+    #[doc = "Divide by 1"]
     #[inline(always)]
-    pub fn is_adcdiv_0(&self) -> bool {
-        *self == Adcdiv::Adcdiv0
+    pub fn is_1(&self) -> bool {
+        *self == Adcdiv::_1
     }
-    #[doc = "/2"]
+    #[doc = "Divide by 2"]
     #[inline(always)]
-    pub fn is_adcdiv_1(&self) -> bool {
-        *self == Adcdiv::Adcdiv1
+    pub fn is_2(&self) -> bool {
+        *self == Adcdiv::_2
     }
-    #[doc = "/3"]
+    #[doc = "Divide by 3"]
     #[inline(always)]
-    pub fn is_adcdiv_2(&self) -> bool {
-        *self == Adcdiv::Adcdiv2
+    pub fn is_3(&self) -> bool {
+        *self == Adcdiv::_3
     }
-    #[doc = "/4"]
+    #[doc = "Divide by 4"]
     #[inline(always)]
-    pub fn is_adcdiv_3(&self) -> bool {
-        *self == Adcdiv::Adcdiv3
+    pub fn is_4(&self) -> bool {
+        *self == Adcdiv::_4
     }
-    #[doc = "/5"]
+    #[doc = "Divide by 5"]
     #[inline(always)]
-    pub fn is_adcdiv_4(&self) -> bool {
-        *self == Adcdiv::Adcdiv4
+    pub fn is_5(&self) -> bool {
+        *self == Adcdiv::_5
     }
-    #[doc = "/6"]
+    #[doc = "Divide by 6"]
     #[inline(always)]
-    pub fn is_adcdiv_5(&self) -> bool {
-        *self == Adcdiv::Adcdiv5
+    pub fn is_6(&self) -> bool {
+        *self == Adcdiv::_6
     }
-    #[doc = "/7"]
+    #[doc = "Divide by 7"]
     #[inline(always)]
-    pub fn is_adcdiv_6(&self) -> bool {
-        *self == Adcdiv::Adcdiv6
+    pub fn is_7(&self) -> bool {
+        *self == Adcdiv::_7
     }
-    #[doc = "/8"]
+    #[doc = "Divide by 8"]
     #[inline(always)]
-    pub fn is_adcdiv_7(&self) -> bool {
-        *self == Adcdiv::Adcdiv7
+    pub fn is_8(&self) -> bool {
+        *self == Adcdiv::_8
     }
 }
 #[doc = "Field `ADCDIV` writer - clock divider"]
@@ -307,48 +298,49 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "/1"]
+    #[doc = "Divide by 1"]
     #[inline(always)]
-    pub fn adcdiv_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv0)
+    pub fn _1(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_1)
     }
-    #[doc = "/2"]
+    #[doc = "Divide by 2"]
     #[inline(always)]
-    pub fn adcdiv_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv1)
+    pub fn _2(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_2)
     }
-    #[doc = "/3"]
+    #[doc = "Divide by 3"]
     #[inline(always)]
-    pub fn adcdiv_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv2)
+    pub fn _3(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_3)
     }
-    #[doc = "/4"]
+    #[doc = "Divide by 4"]
     #[inline(always)]
-    pub fn adcdiv_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv3)
+    pub fn _4(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_4)
     }
-    #[doc = "/5"]
+    #[doc = "Divide by 5"]
     #[inline(always)]
-    pub fn adcdiv_4(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv4)
+    pub fn _5(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_5)
     }
-    #[doc = "/6"]
+    #[doc = "Divide by 6"]
     #[inline(always)]
-    pub fn adcdiv_5(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv5)
+    pub fn _6(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_6)
     }
-    #[doc = "/7"]
+    #[doc = "Divide by 7"]
     #[inline(always)]
-    pub fn adcdiv_6(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv6)
+    pub fn _7(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_7)
     }
-    #[doc = "/8"]
+    #[doc = "Divide by 8"]
     #[inline(always)]
-    pub fn adcdiv_7(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcdiv::Adcdiv7)
+    pub fn _8(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcdiv::_8)
     }
 }
 #[doc = "invert signal sample-and-hold\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcissh {
     #[doc = "0: The sample-input signal is not inverted."]
@@ -402,6 +394,7 @@ where
     }
 }
 #[doc = "sample-and-hold pulse-mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcshp {
     #[doc = "0: SAMPCON signal is sourced from the sample-input signal."]
@@ -455,17 +448,18 @@ where
     }
 }
 #[doc = "sample-and-hold source select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adcshs {
-    #[doc = "0: ADCSC bit"]
-    Adcshs0 = 0,
-    #[doc = "1: see the device-specific data sheet for source"]
-    Adcshs1 = 1,
-    #[doc = "2: see the device-specific data sheet for source"]
-    Adcshs2 = 2,
-    #[doc = "3: see the device-specific data sheet for source"]
-    Adcshs3 = 3,
+    #[doc = "0: ADCSC bit (software trigger)"]
+    Software = 0,
+    #[doc = "1: RTC event"]
+    Rtc = 1,
+    #[doc = "2: TB1.1B"]
+    Timer = 2,
+    #[doc = "3: eCOMP0 COUT"]
+    Comparator = 3,
 }
 impl From<Adcshs> for u8 {
     #[inline(always)]
@@ -484,32 +478,32 @@ impl AdcshsR {
     #[inline(always)]
     pub const fn variant(&self) -> Adcshs {
         match self.bits {
-            0 => Adcshs::Adcshs0,
-            1 => Adcshs::Adcshs1,
-            2 => Adcshs::Adcshs2,
-            3 => Adcshs::Adcshs3,
+            0 => Adcshs::Software,
+            1 => Adcshs::Rtc,
+            2 => Adcshs::Timer,
+            3 => Adcshs::Comparator,
             _ => unreachable!(),
         }
     }
-    #[doc = "ADCSC bit"]
+    #[doc = "ADCSC bit (software trigger)"]
     #[inline(always)]
-    pub fn is_adcshs_0(&self) -> bool {
-        *self == Adcshs::Adcshs0
+    pub fn is_software(&self) -> bool {
+        *self == Adcshs::Software
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "RTC event"]
     #[inline(always)]
-    pub fn is_adcshs_1(&self) -> bool {
-        *self == Adcshs::Adcshs1
+    pub fn is_rtc(&self) -> bool {
+        *self == Adcshs::Rtc
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "TB1.1B"]
     #[inline(always)]
-    pub fn is_adcshs_2(&self) -> bool {
-        *self == Adcshs::Adcshs2
+    pub fn is_timer(&self) -> bool {
+        *self == Adcshs::Timer
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "eCOMP0 COUT"]
     #[inline(always)]
-    pub fn is_adcshs_3(&self) -> bool {
-        *self == Adcshs::Adcshs3
+    pub fn is_comparator(&self) -> bool {
+        *self == Adcshs::Comparator
     }
 }
 #[doc = "Field `ADCSHS` writer - sample-and-hold source select"]
@@ -519,25 +513,25 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ADCSC bit"]
+    #[doc = "ADCSC bit (software trigger)"]
     #[inline(always)]
-    pub fn adcshs_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcshs::Adcshs0)
+    pub fn software(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcshs::Software)
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "RTC event"]
     #[inline(always)]
-    pub fn adcshs_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcshs::Adcshs1)
+    pub fn rtc(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcshs::Rtc)
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "TB1.1B"]
     #[inline(always)]
-    pub fn adcshs_2(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcshs::Adcshs2)
+    pub fn timer(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcshs::Timer)
     }
-    #[doc = "see the device-specific data sheet for source"]
+    #[doc = "eCOMP0 COUT"]
     #[inline(always)]
-    pub fn adcshs_3(self) -> &'a mut crate::W<REG> {
-        self.variant(Adcshs::Adcshs3)
+    pub fn comparator(self) -> &'a mut crate::W<REG> {
+        self.variant(Adcshs::Comparator)
     }
 }
 impl R {

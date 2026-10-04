@@ -5,6 +5,7 @@ pub type W = crate::W<Cp1ctl1Spec>;
 #[doc = "Field `CPOUT` reader - Comparator output value"]
 pub type CpoutR = crate::BitReader;
 #[doc = "Comparator output polarity\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpinv {
     #[doc = "0: Comparator output is non-inverted"]
@@ -58,6 +59,7 @@ where
     }
 }
 #[doc = "Interrupt edge select for CEIIFG and CEIFG\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpies {
     #[doc = "0: Rising edge for CPIFG, falling edge for CPIIFG"]
@@ -111,6 +113,7 @@ where
     }
 }
 #[doc = "Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpflt {
     #[doc = "0: Comparator output is not filtered"]
@@ -164,6 +167,7 @@ where
     }
 }
 #[doc = "Analog Filter Delay selection. These bits are used to select the analog filter delay\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpfltdly {
@@ -250,6 +254,7 @@ where
     }
 }
 #[doc = "Power mode selection.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpmsel {
     #[doc = "0: High-power & High speed mode (500nA)"]
@@ -303,6 +308,7 @@ where
     }
 }
 #[doc = "Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpen {
     #[doc = "0: Comparator is disabled"]
@@ -356,6 +362,7 @@ where
     }
 }
 #[doc = "Programable Hysteresis mode. These bits are used to select the Hysteresis mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cphsel {
@@ -442,6 +449,7 @@ where
     }
 }
 #[doc = "Comparator interrupt output enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpie {
     #[doc = "0: Interrupt output is disabled"]
@@ -495,6 +503,7 @@ where
     }
 }
 #[doc = "Comparator inverted interrupt output enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpiie {
     #[doc = "0: Interrupt inverted output is disabled"]

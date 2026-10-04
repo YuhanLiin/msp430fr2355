@@ -1,10 +1,11 @@
-#[doc = "Register `CPCTL1` reader"]
-pub type R = crate::R<Cpctl1Spec>;
-#[doc = "Register `CPCTL1` writer"]
-pub type W = crate::W<Cpctl1Spec>;
+#[doc = "Register `CP0CTL1` reader"]
+pub type R = crate::R<Cp0ctl1Spec>;
+#[doc = "Register `CP0CTL1` writer"]
+pub type W = crate::W<Cp0ctl1Spec>;
 #[doc = "Field `CPOUT` reader - Comparator output value"]
 pub type CpoutR = crate::BitReader;
 #[doc = "Comparator output polarity\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpinv {
     #[doc = "0: Comparator output is non-inverted"]
@@ -58,6 +59,7 @@ where
     }
 }
 #[doc = "Interrupt edge select for CEIIFG and CEIFG\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpies {
     #[doc = "0: Rising edge for CPIFG, falling edge for CPIIFG"]
@@ -111,6 +113,7 @@ where
     }
 }
 #[doc = "Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpflt {
     #[doc = "0: Comparator output is not filtered"]
@@ -164,6 +167,7 @@ where
     }
 }
 #[doc = "Analog Filter Delay selection. These bits are used to select the analog filter delay\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cpfltdly {
@@ -250,6 +254,7 @@ where
     }
 }
 #[doc = "Power mode selection.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpmsel {
     #[doc = "0: High-power & High speed mode (500nA)"]
@@ -303,6 +308,7 @@ where
     }
 }
 #[doc = "Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpen {
     #[doc = "0: Comparator is disabled"]
@@ -356,6 +362,7 @@ where
     }
 }
 #[doc = "Programable Hysteresis mode. These bits are used to select the Hysteresis mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cphsel {
@@ -442,6 +449,7 @@ where
     }
 }
 #[doc = "Comparator interrupt output enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpie {
     #[doc = "0: Interrupt output is disabled"]
@@ -495,6 +503,7 @@ where
     }
 }
 #[doc = "Comparator inverted interrupt output enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpiie {
     #[doc = "0: Interrupt inverted output is disabled"]
@@ -602,60 +611,60 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Comparator output polarity"]
     #[inline(always)]
-    pub fn cpinv(&mut self) -> CpinvW<'_, Cpctl1Spec> {
+    pub fn cpinv(&mut self) -> CpinvW<'_, Cp0ctl1Spec> {
         CpinvW::new(self, 1)
     }
     #[doc = "Bit 4 - Interrupt edge select for CEIIFG and CEIFG"]
     #[inline(always)]
-    pub fn cpies(&mut self) -> CpiesW<'_, Cpctl1Spec> {
+    pub fn cpies(&mut self) -> CpiesW<'_, Cp0ctl1Spec> {
         CpiesW::new(self, 4)
     }
     #[doc = "Bit 5 - Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag."]
     #[inline(always)]
-    pub fn cpflt(&mut self) -> CpfltW<'_, Cpctl1Spec> {
+    pub fn cpflt(&mut self) -> CpfltW<'_, Cp0ctl1Spec> {
         CpfltW::new(self, 5)
     }
     #[doc = "Bits 6:7 - Analog Filter Delay selection. These bits are used to select the analog filter delay"]
     #[inline(always)]
-    pub fn cpfltdly(&mut self) -> CpfltdlyW<'_, Cpctl1Spec> {
+    pub fn cpfltdly(&mut self) -> CpfltdlyW<'_, Cp0ctl1Spec> {
         CpfltdlyW::new(self, 6)
     }
     #[doc = "Bit 8 - Power mode selection."]
     #[inline(always)]
-    pub fn cpmsel(&mut self) -> CpmselW<'_, Cpctl1Spec> {
+    pub fn cpmsel(&mut self) -> CpmselW<'_, Cp0ctl1Spec> {
         CpmselW::new(self, 8)
     }
     #[doc = "Bit 9 - Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power."]
     #[inline(always)]
-    pub fn cpen(&mut self) -> CpenW<'_, Cpctl1Spec> {
+    pub fn cpen(&mut self) -> CpenW<'_, Cp0ctl1Spec> {
         CpenW::new(self, 9)
     }
     #[doc = "Bits 10:11 - Programable Hysteresis mode. These bits are used to select the Hysteresis mode."]
     #[inline(always)]
-    pub fn cphsel(&mut self) -> CphselW<'_, Cpctl1Spec> {
+    pub fn cphsel(&mut self) -> CphselW<'_, Cp0ctl1Spec> {
         CphselW::new(self, 10)
     }
     #[doc = "Bit 14 - Comparator interrupt output enable bit"]
     #[inline(always)]
-    pub fn cpie(&mut self) -> CpieW<'_, Cpctl1Spec> {
+    pub fn cpie(&mut self) -> CpieW<'_, Cp0ctl1Spec> {
         CpieW::new(self, 14)
     }
     #[doc = "Bit 15 - Comparator inverted interrupt output enable bit"]
     #[inline(always)]
-    pub fn cpiie(&mut self) -> CpiieW<'_, Cpctl1Spec> {
+    pub fn cpiie(&mut self) -> CpiieW<'_, Cp0ctl1Spec> {
         CpiieW::new(self, 15)
     }
 }
-#[doc = "Comparator Control Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`cpctl1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cpctl1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Cpctl1Spec;
-impl crate::RegisterSpec for Cpctl1Spec {
+#[doc = "Comparator Control Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`cp0ctl1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cp0ctl1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Cp0ctl1Spec;
+impl crate::RegisterSpec for Cp0ctl1Spec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [`cpctl1::R`](R) reader structure"]
-impl crate::Readable for Cpctl1Spec {}
-#[doc = "`write(|w| ..)` method takes [`cpctl1::W`](W) writer structure"]
-impl crate::Writable for Cpctl1Spec {
+#[doc = "`read()` method returns [`cp0ctl1::R`](R) reader structure"]
+impl crate::Readable for Cp0ctl1Spec {}
+#[doc = "`write(|w| ..)` method takes [`cp0ctl1::W`](W) writer structure"]
+impl crate::Writable for Cp0ctl1Spec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets CPCTL1 to value 0"]
-impl crate::Resettable for Cpctl1Spec {}
+#[doc = "`reset()` method sets CP0CTL1 to value 0"]
+impl crate::Resettable for Cp0ctl1Spec {}
